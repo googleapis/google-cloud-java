@@ -41,6 +41,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   private Reservation() {
     name_ = "";
     edition_ = 0;
+    primaryLocation_ = "";
+    secondaryLocation_ = "";
+    originalPrimaryLocation_ = "";
   }
 
   @java.lang.Override
@@ -74,7 +77,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The slot capacity added to this reservation when autoscale
-     * happens. Will be between [0, max_slots].
+     * happens. Will be between [0, max_slots]. Note: after users reduce
+     * max_slots, it may take a while before it can be propagated, so
+     * current_slots may stay in the original value and could be larger than
+     * max_slots for that brief period (less than one minute)
      * </pre>
      *
      * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -145,7 +151,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The slot capacity added to this reservation when autoscale
-     * happens. Will be between [0, max_slots].
+     * happens. Will be between [0, max_slots]. Note: after users reduce
+     * max_slots, it may take a while before it can be propagated, so
+     * current_slots may stay in the original value and could be larger than
+     * max_slots for that brief period (less than one minute)
      * </pre>
      *
      * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -552,7 +561,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The slot capacity added to this reservation when autoscale
-       * happens. Will be between [0, max_slots].
+       * happens. Will be between [0, max_slots]. Note: after users reduce
+       * max_slots, it may take a while before it can be propagated, so
+       * current_slots may stay in the original value and could be larger than
+       * max_slots for that brief period (less than one minute)
        * </pre>
        *
        * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -568,7 +580,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The slot capacity added to this reservation when autoscale
-       * happens. Will be between [0, max_slots].
+       * happens. Will be between [0, max_slots]. Note: after users reduce
+       * max_slots, it may take a while before it can be propagated, so
+       * current_slots may stay in the original value and could be larger than
+       * max_slots for that brief period (less than one minute)
        * </pre>
        *
        * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -588,7 +603,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Output only. The slot capacity added to this reservation when autoscale
-       * happens. Will be between [0, max_slots].
+       * happens. Will be between [0, max_slots]. Note: after users reduce
+       * max_slots, it may take a while before it can be propagated, so
+       * current_slots may stay in the original value and could be larger than
+       * max_slots for that brief period (less than one minute)
        * </pre>
        *
        * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -788,20 +806,26 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Minimum slots available to this reservation. A slot is a unit of
+   * Baseline slots available to this reservation. A slot is a unit of
    * computational power in BigQuery, and serves as the unit of parallelism.
    *
    * Queries using this reservation might use more slots during runtime if
-   * ignore_idle_slots is set to false.
+   * ignore_idle_slots is set to false, or autoscaling is enabled.
    *
-   * If total slot_capacity of the reservation and its siblings
-   * exceeds the total slot_count of all capacity commitments, the request will
-   * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
+   * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
+   * reservation and its siblings exceeds the total slot_count of all capacity
+   * commitments, the request will fail with
+   * `google.rpc.Code.RESOURCE_EXHAUSTED`.
    *
-   *
-   * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
-   * are checked separately for default and auxiliary regions. See
-   * multi_region_auxiliary flag for more details.
+   * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
+   * is not needed. The total slot_capacity of the reservation and its siblings
+   * may exceed the total slot_count of capacity commitments. In that case, the
+   * exceeding slots will be charged with the autoscale SKU. You can increase
+   * the number of baseline slots in a reservation every few minutes. If you
+   * want to decrease your baseline slots, you are limited to once an hour if
+   * you have recently changed your baseline slot capacity and your baseline
+   * slots exceed your committed slots. Otherwise, you can decrease your
+   * baseline slots every few minutes.
    * </pre>
    *
    * <code>int64 slot_capacity = 2;</code>
@@ -840,8 +864,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature. Note this is an
-   * alpha feature.
+   * The configuration parameters for the auto scaling feature.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -856,8 +879,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature. Note this is an
-   * alpha feature.
+   * The configuration parameters for the auto scaling feature.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -874,8 +896,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature. Note this is an
-   * alpha feature.
+   * The configuration parameters for the auto scaling feature.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -900,8 +921,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * queries.
    * Default value is 0 which means that concurrency target will be
    * automatically computed by the system.
-   * NOTE: this field is exposed as `target_job_concurrency` in the Information
-   * Schema, DDL and BQ CLI.
+   * NOTE: this field is exposed as target job concurrency in the Information
+   * Schema, DDL and BigQuery CLI.
    * </pre>
    *
    * <code>int64 concurrency = 16;</code>
@@ -1079,6 +1100,187 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.bigquery.reservation.v1.Edition.UNRECOGNIZED : result;
   }
 
+  public static final int PRIMARY_LOCATION_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryLocation_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current location of the reservation's primary replica. This
+   * field is only set for reservations using the managed disaster recovery
+   * feature.
+   * </pre>
+   *
+   * <code>
+   * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The primaryLocation.
+   */
+  @java.lang.Override
+  public java.lang.String getPrimaryLocation() {
+    java.lang.Object ref = primaryLocation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      primaryLocation_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current location of the reservation's primary replica. This
+   * field is only set for reservations using the managed disaster recovery
+   * feature.
+   * </pre>
+   *
+   * <code>
+   * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for primaryLocation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPrimaryLocationBytes() {
+    java.lang.Object ref = primaryLocation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      primaryLocation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SECONDARY_LOCATION_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secondaryLocation_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current location of the reservation's secondary replica. This
+   * field is only set for reservations using the managed disaster recovery
+   * feature. Users can set this in create reservation calls
+   * to create a failover reservation or in update reservation calls to convert
+   * a non-failover reservation to a failover reservation(or vice versa).
+   * </pre>
+   *
+   * <code>
+   * string secondary_location = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The secondaryLocation.
+   */
+  @java.lang.Override
+  public java.lang.String getSecondaryLocation() {
+    java.lang.Object ref = secondaryLocation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secondaryLocation_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current location of the reservation's secondary replica. This
+   * field is only set for reservations using the managed disaster recovery
+   * feature. Users can set this in create reservation calls
+   * to create a failover reservation or in update reservation calls to convert
+   * a non-failover reservation to a failover reservation(or vice versa).
+   * </pre>
+   *
+   * <code>
+   * string secondary_location = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for secondaryLocation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecondaryLocationBytes() {
+    java.lang.Object ref = secondaryLocation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      secondaryLocation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORIGINAL_PRIMARY_LOCATION_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object originalPrimaryLocation_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The location where the reservation was originally created. This
+   * is set only during the failover reservation's creation. All billing charges
+   * for the failover reservation will be applied to this location.
+   * </pre>
+   *
+   * <code>
+   * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The originalPrimaryLocation.
+   */
+  @java.lang.Override
+  public java.lang.String getOriginalPrimaryLocation() {
+    java.lang.Object ref = originalPrimaryLocation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      originalPrimaryLocation_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The location where the reservation was originally created. This
+   * is set only during the failover reservation's creation. All billing charges
+   * for the failover reservation will be applied to this location.
+   * </pre>
+   *
+   * <code>
+   * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for originalPrimaryLocation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOriginalPrimaryLocationBytes() {
+    java.lang.Object ref = originalPrimaryLocation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      originalPrimaryLocation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1121,6 +1323,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.bigquery.reservation.v1.Edition.EDITION_UNSPECIFIED.getNumber()) {
       output.writeEnum(17, edition_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryLocation_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, primaryLocation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryLocation_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, secondaryLocation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originalPrimaryLocation_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, originalPrimaryLocation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1158,6 +1369,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.bigquery.reservation.v1.Edition.EDITION_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, edition_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryLocation_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, primaryLocation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryLocation_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, secondaryLocation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originalPrimaryLocation_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(20, originalPrimaryLocation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1192,6 +1413,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     if (getMultiRegionAuxiliary() != other.getMultiRegionAuxiliary()) return false;
     if (edition_ != other.edition_) return false;
+    if (!getPrimaryLocation().equals(other.getPrimaryLocation())) return false;
+    if (!getSecondaryLocation().equals(other.getSecondaryLocation())) return false;
+    if (!getOriginalPrimaryLocation().equals(other.getOriginalPrimaryLocation())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1227,6 +1451,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultiRegionAuxiliary());
     hash = (37 * hash) + EDITION_FIELD_NUMBER;
     hash = (53 * hash) + edition_;
+    hash = (37 * hash) + PRIMARY_LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getPrimaryLocation().hashCode();
+    hash = (37 * hash) + SECONDARY_LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getSecondaryLocation().hashCode();
+    hash = (37 * hash) + ORIGINAL_PRIMARY_LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getOriginalPrimaryLocation().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1398,6 +1628,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       multiRegionAuxiliary_ = false;
       edition_ = 0;
+      primaryLocation_ = "";
+      secondaryLocation_ = "";
+      originalPrimaryLocation_ = "";
       return this;
     }
 
@@ -1465,6 +1698,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.edition_ = edition_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.primaryLocation_ = primaryLocation_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.secondaryLocation_ = secondaryLocation_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.originalPrimaryLocation_ = originalPrimaryLocation_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1543,6 +1785,21 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.edition_ != 0) {
         setEditionValue(other.getEditionValue());
+      }
+      if (!other.getPrimaryLocation().isEmpty()) {
+        primaryLocation_ = other.primaryLocation_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getSecondaryLocation().isEmpty()) {
+        secondaryLocation_ = other.secondaryLocation_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getOriginalPrimaryLocation().isEmpty()) {
+        originalPrimaryLocation_ = other.originalPrimaryLocation_;
+        bitField0_ |= 0x00000800;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1624,6 +1881,24 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 136
+            case 146:
+              {
+                primaryLocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 146
+            case 154:
+              {
+                secondaryLocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 154
+            case 162:
+              {
+                originalPrimaryLocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1774,20 +2049,26 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum slots available to this reservation. A slot is a unit of
+     * Baseline slots available to this reservation. A slot is a unit of
      * computational power in BigQuery, and serves as the unit of parallelism.
      *
      * Queries using this reservation might use more slots during runtime if
-     * ignore_idle_slots is set to false.
+     * ignore_idle_slots is set to false, or autoscaling is enabled.
      *
-     * If total slot_capacity of the reservation and its siblings
-     * exceeds the total slot_count of all capacity commitments, the request will
-     * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
+     * reservation and its siblings exceeds the total slot_count of all capacity
+     * commitments, the request will fail with
+     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
      *
-     *
-     * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
-     * are checked separately for default and auxiliary regions. See
-     * multi_region_auxiliary flag for more details.
+     * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
+     * is not needed. The total slot_capacity of the reservation and its siblings
+     * may exceed the total slot_count of capacity commitments. In that case, the
+     * exceeding slots will be charged with the autoscale SKU. You can increase
+     * the number of baseline slots in a reservation every few minutes. If you
+     * want to decrease your baseline slots, you are limited to once an hour if
+     * you have recently changed your baseline slot capacity and your baseline
+     * slots exceed your committed slots. Otherwise, you can decrease your
+     * baseline slots every few minutes.
      * </pre>
      *
      * <code>int64 slot_capacity = 2;</code>
@@ -1802,20 +2083,26 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum slots available to this reservation. A slot is a unit of
+     * Baseline slots available to this reservation. A slot is a unit of
      * computational power in BigQuery, and serves as the unit of parallelism.
      *
      * Queries using this reservation might use more slots during runtime if
-     * ignore_idle_slots is set to false.
+     * ignore_idle_slots is set to false, or autoscaling is enabled.
      *
-     * If total slot_capacity of the reservation and its siblings
-     * exceeds the total slot_count of all capacity commitments, the request will
-     * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
+     * reservation and its siblings exceeds the total slot_count of all capacity
+     * commitments, the request will fail with
+     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
      *
-     *
-     * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
-     * are checked separately for default and auxiliary regions. See
-     * multi_region_auxiliary flag for more details.
+     * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
+     * is not needed. The total slot_capacity of the reservation and its siblings
+     * may exceed the total slot_count of capacity commitments. In that case, the
+     * exceeding slots will be charged with the autoscale SKU. You can increase
+     * the number of baseline slots in a reservation every few minutes. If you
+     * want to decrease your baseline slots, you are limited to once an hour if
+     * you have recently changed your baseline slot capacity and your baseline
+     * slots exceed your committed slots. Otherwise, you can decrease your
+     * baseline slots every few minutes.
      * </pre>
      *
      * <code>int64 slot_capacity = 2;</code>
@@ -1834,20 +2121,26 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum slots available to this reservation. A slot is a unit of
+     * Baseline slots available to this reservation. A slot is a unit of
      * computational power in BigQuery, and serves as the unit of parallelism.
      *
      * Queries using this reservation might use more slots during runtime if
-     * ignore_idle_slots is set to false.
+     * ignore_idle_slots is set to false, or autoscaling is enabled.
      *
-     * If total slot_capacity of the reservation and its siblings
-     * exceeds the total slot_count of all capacity commitments, the request will
-     * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
+     * reservation and its siblings exceeds the total slot_count of all capacity
+     * commitments, the request will fail with
+     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
      *
-     *
-     * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
-     * are checked separately for default and auxiliary regions. See
-     * multi_region_auxiliary flag for more details.
+     * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
+     * is not needed. The total slot_capacity of the reservation and its siblings
+     * may exceed the total slot_count of capacity commitments. In that case, the
+     * exceeding slots will be charged with the autoscale SKU. You can increase
+     * the number of baseline slots in a reservation every few minutes. If you
+     * want to decrease your baseline slots, you are limited to once an hour if
+     * you have recently changed your baseline slot capacity and your baseline
+     * slots exceed your committed slots. Otherwise, you can decrease your
+     * baseline slots every few minutes.
      * </pre>
      *
      * <code>int64 slot_capacity = 2;</code>
@@ -1933,8 +2226,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -1948,8 +2240,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -1969,8 +2260,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -1993,8 +2283,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -2014,8 +2303,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -2045,8 +2333,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -2065,8 +2352,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -2081,8 +2367,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -2101,8 +2386,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature. Note this is an
-     * alpha feature.
+     * The configuration parameters for the auto scaling feature.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
@@ -2135,8 +2419,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * queries.
      * Default value is 0 which means that concurrency target will be
      * automatically computed by the system.
-     * NOTE: this field is exposed as `target_job_concurrency` in the Information
-     * Schema, DDL and BQ CLI.
+     * NOTE: this field is exposed as target job concurrency in the Information
+     * Schema, DDL and BigQuery CLI.
      * </pre>
      *
      * <code>int64 concurrency = 16;</code>
@@ -2157,8 +2441,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * queries.
      * Default value is 0 which means that concurrency target will be
      * automatically computed by the system.
-     * NOTE: this field is exposed as `target_job_concurrency` in the Information
-     * Schema, DDL and BQ CLI.
+     * NOTE: this field is exposed as target job concurrency in the Information
+     * Schema, DDL and BigQuery CLI.
      * </pre>
      *
      * <code>int64 concurrency = 16;</code>
@@ -2183,8 +2467,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * queries.
      * Default value is 0 which means that concurrency target will be
      * automatically computed by the system.
-     * NOTE: this field is exposed as `target_job_concurrency` in the Information
-     * Schema, DDL and BQ CLI.
+     * NOTE: this field is exposed as target job concurrency in the Information
+     * Schema, DDL and BigQuery CLI.
      * </pre>
      *
      * <code>int64 concurrency = 16;</code>
@@ -2769,6 +3053,394 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEdition() {
       bitField0_ = (bitField0_ & ~0x00000100);
       edition_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object primaryLocation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's primary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The primaryLocation.
+     */
+    public java.lang.String getPrimaryLocation() {
+      java.lang.Object ref = primaryLocation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        primaryLocation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's primary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for primaryLocation.
+     */
+    public com.google.protobuf.ByteString getPrimaryLocationBytes() {
+      java.lang.Object ref = primaryLocation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        primaryLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's primary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The primaryLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      primaryLocation_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's primary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrimaryLocation() {
+      primaryLocation_ = getDefaultInstance().getPrimaryLocation();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's primary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for primaryLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      primaryLocation_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object secondaryLocation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's secondary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature. Users can set this in create reservation calls
+     * to create a failover reservation or in update reservation calls to convert
+     * a non-failover reservation to a failover reservation(or vice versa).
+     * </pre>
+     *
+     * <code>
+     * string secondary_location = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The secondaryLocation.
+     */
+    public java.lang.String getSecondaryLocation() {
+      java.lang.Object ref = secondaryLocation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secondaryLocation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's secondary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature. Users can set this in create reservation calls
+     * to create a failover reservation or in update reservation calls to convert
+     * a non-failover reservation to a failover reservation(or vice versa).
+     * </pre>
+     *
+     * <code>
+     * string secondary_location = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for secondaryLocation.
+     */
+    public com.google.protobuf.ByteString getSecondaryLocationBytes() {
+      java.lang.Object ref = secondaryLocation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        secondaryLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's secondary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature. Users can set this in create reservation calls
+     * to create a failover reservation or in update reservation calls to convert
+     * a non-failover reservation to a failover reservation(or vice versa).
+     * </pre>
+     *
+     * <code>
+     * string secondary_location = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The secondaryLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecondaryLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      secondaryLocation_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's secondary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature. Users can set this in create reservation calls
+     * to create a failover reservation or in update reservation calls to convert
+     * a non-failover reservation to a failover reservation(or vice versa).
+     * </pre>
+     *
+     * <code>
+     * string secondary_location = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecondaryLocation() {
+      secondaryLocation_ = getDefaultInstance().getSecondaryLocation();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current location of the reservation's secondary replica. This
+     * field is only set for reservations using the managed disaster recovery
+     * feature. Users can set this in create reservation calls
+     * to create a failover reservation or in update reservation calls to convert
+     * a non-failover reservation to a failover reservation(or vice versa).
+     * </pre>
+     *
+     * <code>
+     * string secondary_location = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for secondaryLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecondaryLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      secondaryLocation_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object originalPrimaryLocation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location where the reservation was originally created. This
+     * is set only during the failover reservation's creation. All billing charges
+     * for the failover reservation will be applied to this location.
+     * </pre>
+     *
+     * <code>
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The originalPrimaryLocation.
+     */
+    public java.lang.String getOriginalPrimaryLocation() {
+      java.lang.Object ref = originalPrimaryLocation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        originalPrimaryLocation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location where the reservation was originally created. This
+     * is set only during the failover reservation's creation. All billing charges
+     * for the failover reservation will be applied to this location.
+     * </pre>
+     *
+     * <code>
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for originalPrimaryLocation.
+     */
+    public com.google.protobuf.ByteString getOriginalPrimaryLocationBytes() {
+      java.lang.Object ref = originalPrimaryLocation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        originalPrimaryLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location where the reservation was originally created. This
+     * is set only during the failover reservation's creation. All billing charges
+     * for the failover reservation will be applied to this location.
+     * </pre>
+     *
+     * <code>
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The originalPrimaryLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginalPrimaryLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      originalPrimaryLocation_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location where the reservation was originally created. This
+     * is set only during the failover reservation's creation. All billing charges
+     * for the failover reservation will be applied to this location.
+     * </pre>
+     *
+     * <code>
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginalPrimaryLocation() {
+      originalPrimaryLocation_ = getDefaultInstance().getOriginalPrimaryLocation();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location where the reservation was originally created. This
+     * is set only during the failover reservation's creation. All billing charges
+     * for the failover reservation will be applied to this location.
+     * </pre>
+     *
+     * <code>
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for originalPrimaryLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginalPrimaryLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      originalPrimaryLocation_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

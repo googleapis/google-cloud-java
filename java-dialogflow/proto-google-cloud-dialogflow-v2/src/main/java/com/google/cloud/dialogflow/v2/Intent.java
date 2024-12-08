@@ -255,7 +255,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of this training phrase.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -267,7 +267,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of this training phrase.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -1916,7 +1916,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of this training phrase.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -1939,7 +1939,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of this training phrase.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -2677,7 +2677,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The name.
        */
@@ -2699,7 +2699,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for name.
        */
@@ -2721,7 +2721,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The name to set.
        * @return This builder for chaining.
@@ -2742,7 +2742,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2759,7 +2759,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for name to set.
        * @return This builder for chaining.

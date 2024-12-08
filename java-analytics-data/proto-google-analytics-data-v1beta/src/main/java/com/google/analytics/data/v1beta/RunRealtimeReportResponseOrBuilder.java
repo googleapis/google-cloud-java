@@ -365,7 +365,8 @@ public interface RunRealtimeReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's Realtime quota state including this request.
+   * This Google Analytics property's Realtime quota state including this
+   * request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 8;</code>
@@ -377,7 +378,8 @@ public interface RunRealtimeReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's Realtime quota state including this request.
+   * This Google Analytics property's Realtime quota state including this
+   * request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 8;</code>
@@ -389,7 +391,8 @@ public interface RunRealtimeReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's Realtime quota state including this request.
+   * This Google Analytics property's Realtime quota state including this
+   * request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 8;</code>

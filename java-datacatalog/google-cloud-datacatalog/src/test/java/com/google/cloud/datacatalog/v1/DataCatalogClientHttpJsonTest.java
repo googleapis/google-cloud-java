@@ -152,6 +152,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -203,6 +204,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -254,6 +256,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -301,6 +304,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -348,6 +352,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -397,6 +402,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -446,6 +452,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -455,6 +462,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
 
     EntryGroup actualResponse = client.updateEntryGroup(entryGroup);
@@ -489,6 +497,7 @@ public class DataCatalogClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setDescription("description-1724546052")
               .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+              .setTransferredToDataplex(true)
               .build();
       client.updateEntryGroup(entryGroup);
       Assert.fail("No exception raised");
@@ -505,6 +514,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -514,6 +524,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -549,6 +560,7 @@ public class DataCatalogClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setDescription("description-1724546052")
               .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+              .setTransferredToDataplex(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEntryGroup(entryGroup, updateMask);
@@ -3497,6 +3509,158 @@ public class DataCatalogClientHttpJsonTest {
       client.importEntriesAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void setConfigTest() throws Exception {
+    MigrationConfig expectedResponse =
+        MigrationConfig.newBuilder()
+            .setTagTemplateMigration(TagTemplateMigration.forNumber(0))
+            .setCatalogUiExperience(CatalogUIExperience.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SetConfigRequest request =
+        SetConfigRequest.newBuilder()
+            .setName("organizations/organization-7066/locations/location-7066")
+            .build();
+
+    MigrationConfig actualResponse = client.setConfig(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetConfigRequest request =
+          SetConfigRequest.newBuilder()
+              .setName("organizations/organization-7066/locations/location-7066")
+              .build();
+      client.setConfig(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retrieveConfigTest() throws Exception {
+    OrganizationConfig expectedResponse =
+        OrganizationConfig.newBuilder()
+            .putAllConfig(new HashMap<String, MigrationConfig>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RetrieveConfigRequest request =
+        RetrieveConfigRequest.newBuilder()
+            .setName("organizations/organization-7066/locations/location-7066")
+            .build();
+
+    OrganizationConfig actualResponse = client.retrieveConfig(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void retrieveConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RetrieveConfigRequest request =
+          RetrieveConfigRequest.newBuilder()
+              .setName("organizations/organization-7066/locations/location-7066")
+              .build();
+      client.retrieveConfig(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retrieveEffectiveConfigTest() throws Exception {
+    MigrationConfig expectedResponse =
+        MigrationConfig.newBuilder()
+            .setTagTemplateMigration(TagTemplateMigration.forNumber(0))
+            .setCatalogUiExperience(CatalogUIExperience.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RetrieveEffectiveConfigRequest request =
+        RetrieveEffectiveConfigRequest.newBuilder()
+            .setName("organizations/organization-7066/locations/location-7066")
+            .build();
+
+    MigrationConfig actualResponse = client.retrieveEffectiveConfig(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void retrieveEffectiveConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RetrieveEffectiveConfigRequest request =
+          RetrieveEffectiveConfigRequest.newBuilder()
+              .setName("organizations/organization-7066/locations/location-7066")
+              .build();
+      client.retrieveEffectiveConfig(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

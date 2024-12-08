@@ -750,14 +750,14 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
-   * of versions.
+   * Optional. The Skaffold version to use when operating on this release, such
+   * as "1.20.0". Not all versions are valid; Cloud Deploy supports a specific
+   * set of versions.
    *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
    *
-   * <code>string skaffold_version = 19;</code>
+   * <code>string skaffold_version = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The skaffoldVersion.
    */
@@ -766,14 +766,14 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
-   * of versions.
+   * Optional. The Skaffold version to use when operating on this release, such
+   * as "1.20.0". Not all versions are valid; Cloud Deploy supports a specific
+   * set of versions.
    *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
    *
-   * <code>string skaffold_version = 19;</code>
+   * <code>string skaffold_version = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for skaffoldVersion.
    */

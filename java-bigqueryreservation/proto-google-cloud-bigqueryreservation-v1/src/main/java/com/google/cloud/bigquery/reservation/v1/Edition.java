@@ -65,7 +65,7 @@ public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Enterprise plus edition.
+   * Enterprise Plus edition.
    * </pre>
    *
    * <code>ENTERPRISE_PLUS = 3;</code>
@@ -108,7 +108,7 @@ public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Enterprise plus edition.
+   * Enterprise Plus edition.
    * </pre>
    *
    * <code>ENTERPRISE_PLUS = 3;</code>

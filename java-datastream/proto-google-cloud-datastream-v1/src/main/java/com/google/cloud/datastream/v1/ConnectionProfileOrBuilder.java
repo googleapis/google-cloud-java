@@ -387,6 +387,41 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
+   * SQLServer Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
+   *
+   * @return Whether the sqlServerProfile field is set.
+   */
+  boolean hasSqlServerProfile();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
+   *
+   * @return The sqlServerProfile.
+   */
+  com.google.cloud.datastream.v1.SqlServerProfile getSqlServerProfile();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
+   */
+  com.google.cloud.datastream.v1.SqlServerProfileOrBuilder getSqlServerProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Static Service IP connectivity.
    * </pre>
    *

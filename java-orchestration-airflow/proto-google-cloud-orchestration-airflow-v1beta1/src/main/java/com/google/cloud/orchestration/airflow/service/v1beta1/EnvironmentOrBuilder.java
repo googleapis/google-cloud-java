@@ -28,14 +28,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * The resource name of the environment, in the form:
+   * Identifier. The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,14 +44,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * The resource name of the environment, in the form:
+   * Identifier. The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -61,10 +61,12 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -73,10 +75,12 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The config.
    */
@@ -85,10 +89,12 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfigOrBuilder
       getConfigOrBuilder();

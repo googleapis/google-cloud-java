@@ -28,7 +28,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    *
    * <pre>
-   * A Google Analytics GA4 property identifier whose events are tracked.
+   * A Google Analytics property identifier whose events are tracked.
    * Specified in the URL path and not the body. To learn more, see [where to
    * find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
@@ -45,7 +45,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    *
    * <pre>
-   * A Google Analytics GA4 property identifier whose events are tracked.
+   * A Google Analytics property identifier whose events are tracked.
    * Specified in the URL path and not the body. To learn more, see [where to
    * find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
@@ -381,8 +381,9 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    *
    * <pre>
-   * Toggles whether to return the current state of this Analytics Property's
-   * Realtime quota. Quota is returned in [PropertyQuota](#PropertyQuota).
+   * Toggles whether to return the current state of this Google Analytics
+   * property's Realtime quota. Quota is returned in
+   * [PropertyQuota](#PropertyQuota).
    * </pre>
    *
    * <code>bool return_property_quota = 9;</code>

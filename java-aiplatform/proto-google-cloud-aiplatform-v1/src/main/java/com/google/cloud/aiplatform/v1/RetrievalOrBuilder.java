@@ -63,6 +63,44 @@ public interface RetrievalOrBuilder
    *
    *
    * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.VertexRagStore vertex_rag_store = 4;</code>
+   *
+   * @return Whether the vertexRagStore field is set.
+   */
+  boolean hasVertexRagStore();
+  /**
+   *
+   *
+   * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.VertexRagStore vertex_rag_store = 4;</code>
+   *
+   * @return The vertexRagStore.
+   */
+  com.google.cloud.aiplatform.v1.VertexRagStore getVertexRagStore();
+  /**
+   *
+   *
+   * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.VertexRagStore vertex_rag_store = 4;</code>
+   */
+  com.google.cloud.aiplatform.v1.VertexRagStoreOrBuilder getVertexRagStoreOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Deprecated. This option is no longer supported.
    * </pre>
    *
@@ -71,7 +109,7 @@ public interface RetrievalOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.Retrieval.disable_attribution is deprecated. See
-   *     google/cloud/aiplatform/v1/tool.proto;l=138
+   *     google/cloud/aiplatform/v1/tool.proto;l=142
    * @return The disableAttribution.
    */
   @java.lang.Deprecated

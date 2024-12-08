@@ -165,6 +165,27 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
   }
 
   @Override
+  public void failoverReservation(
+      FailoverReservationRequest request, StreamObserver<Reservation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Reservation) {
+      requests.add(request);
+      responseObserver.onNext(((Reservation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FailoverReservation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Reservation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createCapacityCommitment(
       CreateCapacityCommitmentRequest request,
       StreamObserver<CapacityCommitment> responseObserver) {

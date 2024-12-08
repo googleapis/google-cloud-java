@@ -50,6 +50,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     routingVpcs_ = java.util.Collections.emptyList();
     routeTables_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    policyMode_ = 0;
+    presetTopology_ = 0;
   }
 
   @java.lang.Override
@@ -733,6 +735,139 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         : spokeSummary_;
   }
 
+  public static final int POLICY_MODE_FIELD_NUMBER = 13;
+  private int policyMode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy mode of this hub. This field can be either
+   * PRESET or CUSTOM. If unspecified, the
+   * policy_mode defaults to PRESET.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for policyMode.
+   */
+  @java.lang.Override
+  public int getPolicyModeValue() {
+    return policyMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy mode of this hub. This field can be either
+   * PRESET or CUSTOM. If unspecified, the
+   * policy_mode defaults to PRESET.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The policyMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.PolicyMode getPolicyMode() {
+    com.google.cloud.networkconnectivity.v1.PolicyMode result =
+        com.google.cloud.networkconnectivity.v1.PolicyMode.forNumber(policyMode_);
+    return result == null
+        ? com.google.cloud.networkconnectivity.v1.PolicyMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int PRESET_TOPOLOGY_FIELD_NUMBER = 14;
+  private int presetTopology_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The topology implemented in this hub. Currently, this field is
+   * only used when policy_mode = PRESET. The available preset topologies are
+   * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+   * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+   * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for presetTopology.
+   */
+  @java.lang.Override
+  public int getPresetTopologyValue() {
+    return presetTopology_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The topology implemented in this hub. Currently, this field is
+   * only used when policy_mode = PRESET. The available preset topologies are
+   * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+   * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+   * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The presetTopology.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.PresetTopology getPresetTopology() {
+    com.google.cloud.networkconnectivity.v1.PresetTopology result =
+        com.google.cloud.networkconnectivity.v1.PresetTopology.forNumber(presetTopology_);
+    return result == null
+        ? com.google.cloud.networkconnectivity.v1.PresetTopology.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int EXPORT_PSC_FIELD_NUMBER = 15;
+  private boolean exportPsc_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether Private Service Connect transitivity is enabled for the
+   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
+   * the hub are made accessible to other VPC spokes attached to the hub.
+   * The default value is false.
+   * </pre>
+   *
+   * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the exportPsc field is set.
+   */
+  @java.lang.Override
+  public boolean hasExportPsc() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether Private Service Connect transitivity is enabled for the
+   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
+   * the hub are made accessible to other VPC spokes attached to the hub.
+   * The default value is false.
+   * </pre>
+   *
+   * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The exportPsc.
+   */
+  @java.lang.Override
+  public boolean getExportPsc() {
+    return exportPsc_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -775,6 +910,18 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(12, getSpokeSummary());
+    }
+    if (policyMode_
+        != com.google.cloud.networkconnectivity.v1.PolicyMode.POLICY_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(13, policyMode_);
+    }
+    if (presetTopology_
+        != com.google.cloud.networkconnectivity.v1.PresetTopology.PRESET_TOPOLOGY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(14, presetTopology_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(15, exportPsc_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -827,6 +974,18 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSpokeSummary());
     }
+    if (policyMode_
+        != com.google.cloud.networkconnectivity.v1.PolicyMode.POLICY_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, policyMode_);
+    }
+    if (presetTopology_
+        != com.google.cloud.networkconnectivity.v1.PresetTopology.PRESET_TOPOLOGY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, presetTopology_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, exportPsc_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -861,6 +1020,12 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     if (hasSpokeSummary() != other.hasSpokeSummary()) return false;
     if (hasSpokeSummary()) {
       if (!getSpokeSummary().equals(other.getSpokeSummary())) return false;
+    }
+    if (policyMode_ != other.policyMode_) return false;
+    if (presetTopology_ != other.presetTopology_) return false;
+    if (hasExportPsc() != other.hasExportPsc()) return false;
+    if (hasExportPsc()) {
+      if (getExportPsc() != other.getExportPsc()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -904,6 +1069,14 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     if (hasSpokeSummary()) {
       hash = (37 * hash) + SPOKE_SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getSpokeSummary().hashCode();
+    }
+    hash = (37 * hash) + POLICY_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + policyMode_;
+    hash = (37 * hash) + PRESET_TOPOLOGY_FIELD_NUMBER;
+    hash = (53 * hash) + presetTopology_;
+    if (hasExportPsc()) {
+      hash = (37 * hash) + EXPORT_PSC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExportPsc());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1111,6 +1284,9 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         spokeSummaryBuilder_.dispose();
         spokeSummaryBuilder_ = null;
       }
+      policyMode_ = 0;
+      presetTopology_ = 0;
+      exportPsc_ = false;
       return this;
     }
 
@@ -1193,6 +1369,16 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         result.spokeSummary_ =
             spokeSummaryBuilder_ == null ? spokeSummary_ : spokeSummaryBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.policyMode_ = policyMode_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.presetTopology_ = presetTopology_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.exportPsc_ = exportPsc_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1308,6 +1494,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSpokeSummary()) {
         mergeSpokeSummary(other.getSpokeSummary());
       }
+      if (other.policyMode_ != 0) {
+        setPolicyModeValue(other.getPolicyModeValue());
+      }
+      if (other.presetTopology_ != 0) {
+        setPresetTopologyValue(other.getPresetTopologyValue());
+      }
+      if (other.hasExportPsc()) {
+        setExportPsc(other.getExportPsc());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1409,6 +1604,24 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 98
+            case 104:
+              {
+                policyMode_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 104
+            case 112:
+              {
+                presetTopology_ = input.readEnum();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 112
+            case 120:
+              {
+                exportPsc_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 120
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3320,6 +3533,320 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         spokeSummary_ = null;
       }
       return spokeSummaryBuilder_;
+    }
+
+    private int policyMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy mode of this hub. This field can be either
+     * PRESET or CUSTOM. If unspecified, the
+     * policy_mode defaults to PRESET.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for policyMode.
+     */
+    @java.lang.Override
+    public int getPolicyModeValue() {
+      return policyMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy mode of this hub. This field can be either
+     * PRESET or CUSTOM. If unspecified, the
+     * policy_mode defaults to PRESET.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for policyMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyModeValue(int value) {
+      policyMode_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy mode of this hub. This field can be either
+     * PRESET or CUSTOM. If unspecified, the
+     * policy_mode defaults to PRESET.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The policyMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1.PolicyMode getPolicyMode() {
+      com.google.cloud.networkconnectivity.v1.PolicyMode result =
+          com.google.cloud.networkconnectivity.v1.PolicyMode.forNumber(policyMode_);
+      return result == null
+          ? com.google.cloud.networkconnectivity.v1.PolicyMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy mode of this hub. This field can be either
+     * PRESET or CUSTOM. If unspecified, the
+     * policy_mode defaults to PRESET.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The policyMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyMode(com.google.cloud.networkconnectivity.v1.PolicyMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      policyMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy mode of this hub. This field can be either
+     * PRESET or CUSTOM. If unspecified, the
+     * policy_mode defaults to PRESET.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicyMode() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      policyMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int presetTopology_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The topology implemented in this hub. Currently, this field is
+     * only used when policy_mode = PRESET. The available preset topologies are
+     * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+     * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+     * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for presetTopology.
+     */
+    @java.lang.Override
+    public int getPresetTopologyValue() {
+      return presetTopology_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The topology implemented in this hub. Currently, this field is
+     * only used when policy_mode = PRESET. The available preset topologies are
+     * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+     * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+     * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for presetTopology to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPresetTopologyValue(int value) {
+      presetTopology_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The topology implemented in this hub. Currently, this field is
+     * only used when policy_mode = PRESET. The available preset topologies are
+     * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+     * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+     * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The presetTopology.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1.PresetTopology getPresetTopology() {
+      com.google.cloud.networkconnectivity.v1.PresetTopology result =
+          com.google.cloud.networkconnectivity.v1.PresetTopology.forNumber(presetTopology_);
+      return result == null
+          ? com.google.cloud.networkconnectivity.v1.PresetTopology.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The topology implemented in this hub. Currently, this field is
+     * only used when policy_mode = PRESET. The available preset topologies are
+     * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+     * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+     * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The presetTopology to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPresetTopology(com.google.cloud.networkconnectivity.v1.PresetTopology value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      presetTopology_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The topology implemented in this hub. Currently, this field is
+     * only used when policy_mode = PRESET. The available preset topologies are
+     * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+     * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+     * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPresetTopology() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      presetTopology_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean exportPsc_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether Private Service Connect transitivity is enabled for the
+     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
+     * the hub are made accessible to other VPC spokes attached to the hub.
+     * The default value is false.
+     * </pre>
+     *
+     * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the exportPsc field is set.
+     */
+    @java.lang.Override
+    public boolean hasExportPsc() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether Private Service Connect transitivity is enabled for the
+     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
+     * the hub are made accessible to other VPC spokes attached to the hub.
+     * The default value is false.
+     * </pre>
+     *
+     * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The exportPsc.
+     */
+    @java.lang.Override
+    public boolean getExportPsc() {
+      return exportPsc_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether Private Service Connect transitivity is enabled for the
+     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
+     * the hub are made accessible to other VPC spokes attached to the hub.
+     * The default value is false.
+     * </pre>
+     *
+     * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The exportPsc to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExportPsc(boolean value) {
+
+      exportPsc_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether Private Service Connect transitivity is enabled for the
+     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
+     * the hub are made accessible to other VPC spokes attached to the hub.
+     * The default value is false.
+     * </pre>
+     *
+     * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExportPsc() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      exportPsc_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -51,15 +51,20 @@ import com.google.cloud.datacatalog.v1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.MigrationConfig;
 import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
+import com.google.cloud.datacatalog.v1.OrganizationConfig;
 import com.google.cloud.datacatalog.v1.ReconcileTagsMetadata;
 import com.google.cloud.datacatalog.v1.ReconcileTagsRequest;
 import com.google.cloud.datacatalog.v1.ReconcileTagsResponse;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.v1.RetrieveConfigRequest;
+import com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogResponse;
+import com.google.cloud.datacatalog.v1.SetConfigRequest;
 import com.google.cloud.datacatalog.v1.StarEntryRequest;
 import com.google.cloud.datacatalog.v1.StarEntryResponse;
 import com.google.cloud.datacatalog.v1.Tag;
@@ -267,6 +272,19 @@ public abstract class DataCatalogStub implements BackgroundResource {
 
   public UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable() {
     throw new UnsupportedOperationException("Not implemented: importEntriesCallable()");
+  }
+
+  public UnaryCallable<SetConfigRequest, MigrationConfig> setConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: setConfigCallable()");
+  }
+
+  public UnaryCallable<RetrieveConfigRequest, OrganizationConfig> retrieveConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: retrieveConfigCallable()");
+  }
+
+  public UnaryCallable<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: retrieveEffectiveConfigCallable()");
   }
 
   @Override

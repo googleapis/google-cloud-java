@@ -415,7 +415,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * Output only. The location of the route.
+   * Output only. The origin location of the route.
    * Uses the following form: "projects/{project}/locations/{location}"
    * Example: projects/1234/locations/us-central1
    * </pre>
@@ -429,7 +429,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * Output only. The location of the route.
+   * Output only. The origin location of the route.
    * Uses the following form: "projects/{project}/locations/{location}"
    * Example: projects/1234/locations/us-central1
    * </pre>
@@ -439,4 +439,149 @@ public interface RouteOrBuilder
    * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The priority of this route. Priority is used to break ties in
+   * cases where a destination matches more than one route. In these cases the
+   * route with the lowest-numbered priority value wins.
+   * </pre>
+   *
+   * <code>int64 priority = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The priority.
+   */
+  long getPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VPN tunnel for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the nextHopVpnTunnel field is set.
+   */
+  boolean hasNextHopVpnTunnel();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VPN tunnel for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The nextHopVpnTunnel.
+   */
+  com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel getNextHopVpnTunnel();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VPN tunnel for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.NextHopVPNTunnelOrBuilder getNextHopVpnTunnelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop Router appliance instance for packets on this
+   * route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the nextHopRouterApplianceInstance field is set.
+   */
+  boolean hasNextHopRouterApplianceInstance();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop Router appliance instance for packets on this
+   * route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The nextHopRouterApplianceInstance.
+   */
+  com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+      getNextHopRouterApplianceInstance();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop Router appliance instance for packets on this
+   * route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstanceOrBuilder
+      getNextHopRouterApplianceInstanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VLAN attachment for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the nextHopInterconnectAttachment field is set.
+   */
+  boolean hasNextHopInterconnectAttachment();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VLAN attachment for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The nextHopInterconnectAttachment.
+   */
+  com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
+      getNextHopInterconnectAttachment();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VLAN attachment for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachmentOrBuilder
+      getNextHopInterconnectAttachmentOrBuilder();
 }

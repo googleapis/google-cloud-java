@@ -23,7 +23,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Metadata for a [ConversationProfile.SetSuggestionFeatureConfig][]
+ * Metadata for a
+ * [ConversationProfiles.SetSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.SetSuggestionFeatureConfig]
  * operation.
  * </pre>
  *
@@ -460,7 +461,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
    *
    *
    * <pre>
-   * Metadata for a [ConversationProfile.SetSuggestionFeatureConfig][]
+   * Metadata for a
+   * [ConversationProfiles.SetSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.SetSuggestionFeatureConfig]
    * operation.
    * </pre>
    *

@@ -197,6 +197,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> QueryHubStatus</td>
+ *      <td><p> Query the Private Service Connect propagation status of a Network Connectivity Center hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryHubStatus(QueryHubStatusRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> queryHubStatus(HubName name)
+ *           <li><p> queryHubStatus(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryHubStatusPagedCallable()
+ *           <li><p> queryHubStatusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListSpokes</td>
  *      <td><p> Lists the Network Connectivity Center spokes in a specified project and location.</td>
  *      <td>
@@ -378,7 +398,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListRoutes</td>
- *      <td><p> Lists routes in a given project.</td>
+ *      <td><p> Lists routes in a given route table.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -398,7 +418,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListRouteTables</td>
- *      <td><p> Lists route tables in a given project.</td>
+ *      <td><p> Lists route tables in a given hub.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -452,6 +472,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listGroupsPagedCallable()
  *           <li><p> listGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGroup</td>
+ *      <td><p> Updates the parameters of a Network Connectivity Center group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGroupAsync(UpdateGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateGroupAsync(Group group, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGroupOperationCallable()
+ *           <li><p> updateGroupCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1496,6 +1535,176 @@ public class HubServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListHubSpokesRequest, ListHubSpokesResponse> listHubSpokesCallable() {
     return stub.listHubSpokesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   for (HubStatusEntry element : hubServiceClient.queryHubStatus(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryHubStatusPagedResponse queryHubStatus(HubName name) {
+    QueryHubStatusRequest request =
+        QueryHubStatusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return queryHubStatus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   for (HubStatusEntry element : hubServiceClient.queryHubStatus(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryHubStatusPagedResponse queryHubStatus(String name) {
+    QueryHubStatusRequest request = QueryHubStatusRequest.newBuilder().setName(name).build();
+    return queryHubStatus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   QueryHubStatusRequest request =
+   *       QueryHubStatusRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setGroupBy("groupBy293428022")
+   *           .build();
+   *   for (HubStatusEntry element : hubServiceClient.queryHubStatus(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryHubStatusPagedResponse queryHubStatus(QueryHubStatusRequest request) {
+    return queryHubStatusPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   QueryHubStatusRequest request =
+   *       QueryHubStatusRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setGroupBy("groupBy293428022")
+   *           .build();
+   *   ApiFuture<HubStatusEntry> future =
+   *       hubServiceClient.queryHubStatusPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (HubStatusEntry element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryHubStatusRequest, QueryHubStatusPagedResponse>
+      queryHubStatusPagedCallable() {
+    return stub.queryHubStatusPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   QueryHubStatusRequest request =
+   *       QueryHubStatusRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setGroupBy("groupBy293428022")
+   *           .build();
+   *   while (true) {
+   *     QueryHubStatusResponse response = hubServiceClient.queryHubStatusCallable().call(request);
+   *     for (HubStatusEntry element : response.getHubStatusEntriesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryHubStatusRequest, QueryHubStatusResponse>
+      queryHubStatusCallable() {
+    return stub.queryHubStatusCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2876,7 +3085,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -2905,7 +3114,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -2933,7 +3142,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -2967,7 +3176,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -3000,7 +3209,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -3040,7 +3249,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -3071,7 +3280,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -3099,7 +3308,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -3133,7 +3342,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -3168,7 +3377,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -3477,6 +3686,130 @@ public class HubServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
     return stub.listGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   Group group = Group.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Group response = hubServiceClient.updateGroupAsync(group, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param group Required. The state that the group should be in after the update.
+   * @param updateMask Optional. In the case of an update to an existing group, field mask is used
+   *     to specify the fields to be overwritten. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field is overwritten if it is in the
+   *     mask. If the user does not provide a mask, then all fields are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Group, OperationMetadata> updateGroupAsync(
+      Group group, FieldMask updateMask) {
+    UpdateGroupRequest request =
+        UpdateGroupRequest.newBuilder().setGroup(group).setUpdateMask(updateMask).build();
+    return updateGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGroupRequest request =
+   *       UpdateGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGroup(Group.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Group response = hubServiceClient.updateGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Group, OperationMetadata> updateGroupAsync(
+      UpdateGroupRequest request) {
+    return updateGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGroupRequest request =
+   *       UpdateGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGroup(Group.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Group, OperationMetadata> future =
+   *       hubServiceClient.updateGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Group response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationCallable() {
+    return stub.updateGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGroupRequest request =
+   *       UpdateGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGroup(Group.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.updateGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable() {
+    return stub.updateGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3990,6 +4323,82 @@ public class HubServiceClient implements BackgroundResource {
     protected ListHubSpokesFixedSizeCollection createCollection(
         List<ListHubSpokesPage> pages, int collectionSize) {
       return new ListHubSpokesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class QueryHubStatusPagedResponse
+      extends AbstractPagedListResponse<
+          QueryHubStatusRequest,
+          QueryHubStatusResponse,
+          HubStatusEntry,
+          QueryHubStatusPage,
+          QueryHubStatusFixedSizeCollection> {
+
+    public static ApiFuture<QueryHubStatusPagedResponse> createAsync(
+        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        ApiFuture<QueryHubStatusResponse> futureResponse) {
+      ApiFuture<QueryHubStatusPage> futurePage =
+          QueryHubStatusPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new QueryHubStatusPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private QueryHubStatusPagedResponse(QueryHubStatusPage page) {
+      super(page, QueryHubStatusFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class QueryHubStatusPage
+      extends AbstractPage<
+          QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry, QueryHubStatusPage> {
+
+    private QueryHubStatusPage(
+        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        QueryHubStatusResponse response) {
+      super(context, response);
+    }
+
+    private static QueryHubStatusPage createEmptyPage() {
+      return new QueryHubStatusPage(null, null);
+    }
+
+    @Override
+    protected QueryHubStatusPage createPage(
+        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        QueryHubStatusResponse response) {
+      return new QueryHubStatusPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<QueryHubStatusPage> createPageAsync(
+        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        ApiFuture<QueryHubStatusResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class QueryHubStatusFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          QueryHubStatusRequest,
+          QueryHubStatusResponse,
+          HubStatusEntry,
+          QueryHubStatusPage,
+          QueryHubStatusFixedSizeCollection> {
+
+    private QueryHubStatusFixedSizeCollection(List<QueryHubStatusPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static QueryHubStatusFixedSizeCollection createEmptyCollection() {
+      return new QueryHubStatusFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected QueryHubStatusFixedSizeCollection createCollection(
+        List<QueryHubStatusPage> pages, int collectionSize) {
+      return new QueryHubStatusFixedSizeCollection(pages, collectionSize);
     }
   }
 

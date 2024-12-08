@@ -585,7 +585,7 @@ public interface EndpointOrBuilder
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-   *     See google/cloud/aiplatform/v1/endpoint.proto;l=127
+   *     See google/cloud/aiplatform/v1/endpoint.proto;l=128
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Deprecated
@@ -774,6 +774,42 @@ public interface EndpointOrBuilder
    * @return The bytes for dedicatedEndpointDns.
    */
   com.google.protobuf.ByteString getDedicatedEndpointDnsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configurations that are applied to the endpoint for online prediction.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ClientConnectionConfig client_connection_config = 23;</code>
+   *
+   * @return Whether the clientConnectionConfig field is set.
+   */
+  boolean hasClientConnectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configurations that are applied to the endpoint for online prediction.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ClientConnectionConfig client_connection_config = 23;</code>
+   *
+   * @return The clientConnectionConfig.
+   */
+  com.google.cloud.aiplatform.v1.ClientConnectionConfig getClientConnectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configurations that are applied to the endpoint for online prediction.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ClientConnectionConfig client_connection_config = 23;</code>
+   */
+  com.google.cloud.aiplatform.v1.ClientConnectionConfigOrBuilder
+      getClientConnectionConfigOrBuilder();
 
   /**
    *

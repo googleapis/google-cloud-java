@@ -28,6 +28,49 @@ public interface TokenOptionsOrBuilder
    *
    *
    * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the awsPrincipalTagsOptions field is set.
+   */
+  boolean hasAwsPrincipalTagsOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The awsPrincipalTagsOptions.
+   */
+  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+      getAwsPrincipalTagsOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder
+      getAwsPrincipalTagsOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Optional string to issue the token with a custom audience claim.
    * Required if one or more nonces are specified.
    * </pre>
@@ -138,4 +181,7 @@ public interface TokenOptionsOrBuilder
    * @return The tokenType.
    */
   com.google.cloud.confidentialcomputing.v1.TokenType getTokenType();
+
+  com.google.cloud.confidentialcomputing.v1.TokenOptions.TokenTypeOptionsCase
+      getTokenTypeOptionsCase();
 }

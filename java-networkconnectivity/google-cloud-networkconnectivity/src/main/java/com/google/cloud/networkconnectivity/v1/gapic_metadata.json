@@ -67,6 +67,9 @@
             "ListSpokes": {
               "methods": ["listSpokes", "listSpokes", "listSpokes", "listSpokesPagedCallable", "listSpokesCallable"]
             },
+            "QueryHubStatus": {
+              "methods": ["queryHubStatus", "queryHubStatus", "queryHubStatus", "queryHubStatusPagedCallable", "queryHubStatusCallable"]
+            },
             "RejectHubSpoke": {
               "methods": ["rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeOperationCallable", "rejectHubSpokeCallable"]
             },
@@ -75,6 +78,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateGroup": {
+              "methods": ["updateGroupAsync", "updateGroupAsync", "updateGroupOperationCallable", "updateGroupCallable"]
             },
             "UpdateHub": {
               "methods": ["updateHubAsync", "updateHubAsync", "updateHubOperationCallable", "updateHubCallable"]

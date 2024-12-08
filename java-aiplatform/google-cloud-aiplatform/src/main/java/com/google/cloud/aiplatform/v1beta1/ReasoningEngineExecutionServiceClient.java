@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
+import com.google.api.HttpBody;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -24,6 +25,7 @@ import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.ReasoningEngineExecutionServiceStub;
 import com.google.cloud.aiplatform.v1beta1.stub.ReasoningEngineExecutionServiceStubSettings;
@@ -63,6 +65,7 @@ import javax.annotation.Generated;
  *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
  *                   .toString())
  *           .setInput(Struct.newBuilder().build())
+ *           .setClassMethod("classMethod-937857927")
  *           .build();
  *   QueryReasoningEngineResponse response =
  *       reasoningEngineExecutionServiceClient.queryReasoningEngine(request);
@@ -91,6 +94,16 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> queryReasoningEngineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamQueryReasoningEngine</td>
+ *      <td><p> Streams queries using a reasoning engine.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamQueryReasoningEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -286,6 +299,7 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
    *           .setInput(Struct.newBuilder().build())
+   *           .setClassMethod("classMethod-937857927")
    *           .build();
    *   QueryReasoningEngineResponse response =
    *       reasoningEngineExecutionServiceClient.queryReasoningEngine(request);
@@ -320,6 +334,7 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
    *           .setInput(Struct.newBuilder().build())
+   *           .setClassMethod("classMethod-937857927")
    *           .build();
    *   ApiFuture<QueryReasoningEngineResponse> future =
    *       reasoningEngineExecutionServiceClient.queryReasoningEngineCallable().futureCall(request);
@@ -331,6 +346,41 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
   public final UnaryCallable<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineCallable() {
     return stub.queryReasoningEngineCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Streams queries using a reasoning engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+   *     ReasoningEngineExecutionServiceClient.create()) {
+   *   StreamQueryReasoningEngineRequest request =
+   *       StreamQueryReasoningEngineRequest.newBuilder()
+   *           .setName(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
+   *           .setInput(Struct.newBuilder().build())
+   *           .setClassMethod("classMethod-937857927")
+   *           .build();
+   *   ServerStream<HttpBody> stream =
+   *       reasoningEngineExecutionServiceClient.streamQueryReasoningEngineCallable().call(request);
+   *   for (HttpBody response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineCallable() {
+    return stub.streamQueryReasoningEngineCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

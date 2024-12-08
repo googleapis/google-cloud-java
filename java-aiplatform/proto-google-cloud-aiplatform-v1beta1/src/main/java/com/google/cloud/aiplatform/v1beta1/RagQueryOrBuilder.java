@@ -68,10 +68,14 @@ public interface RagQueryOrBuilder
    * Optional. The number of contexts to retrieve.
    * </pre>
    *
-   * <code>int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=91
    * @return The similarityTopK.
    */
+  @java.lang.Deprecated
   int getSimilarityTopK();
 
   /**
@@ -82,11 +86,14 @@ public interface RagQueryOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
    * @return Whether the ranking field is set.
    */
+  @java.lang.Deprecated
   boolean hasRanking();
   /**
    *
@@ -96,11 +103,14 @@ public interface RagQueryOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
    * @return The ranking.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getRanking();
   /**
    *
@@ -110,10 +120,52 @@ public interface RagQueryOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder getRankingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ragRetrievalConfig field is set.
+   */
+  boolean hasRagRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ragRetrievalConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig getRagRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder getRagRetrievalConfigOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.RagQuery.QueryCase getQueryCase();
 }

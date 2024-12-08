@@ -23,7 +23,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [ConversationProfiles.ClearFeature][].
+ * The request message for
+ * [ConversationProfiles.ClearSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.ClearSuggestionFeatureConfig].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest}
@@ -391,7 +392,8 @@ public final class ClearSuggestionFeatureConfigRequest
    *
    *
    * <pre>
-   * The request message for [ConversationProfiles.ClearFeature][].
+   * The request message for
+   * [ConversationProfiles.ClearSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.ClearSuggestionFeatureConfig].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest}

@@ -119,6 +119,24 @@ public interface DedicatedResourcesOrBuilder
    *
    *
    * <pre>
+   * Optional. Number of required available replicas for the deployment to
+   * succeed. This field is only needed when partial model deployment/mutation
+   * is desired. If set, the model deploy/mutate operation will succeed once
+   * available_replica_count reaches required_replica_count, and the rest of
+   * the replicas will be retried. If not set, the default
+   * required_replica_count will be min_replica_count.
+   * </pre>
+   *
+   * <code>int32 required_replica_count = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requiredReplicaCount.
+   */
+  int getRequiredReplicaCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. The metric specifications that overrides a resource
    * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
    * target value (default to 60 if not set). At most one entry is allowed per

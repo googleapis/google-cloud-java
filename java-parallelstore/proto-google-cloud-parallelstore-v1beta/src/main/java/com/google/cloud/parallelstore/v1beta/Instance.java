@@ -49,6 +49,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     effectiveReservedIpRange_ = "";
     fileStripeLevel_ = 0;
     directoryStripeLevel_ = 0;
+    deploymentType_ = 0;
   }
 
   @java.lang.Override
@@ -1089,6 +1090,53 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int DEPLOYMENT_TYPE_FIELD_NUMBER = 17;
+  private int deploymentType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment type of the instance. Allowed values are:
+   *
+   * * `SCRATCH`: the instance is a scratch instance.
+   * * `PERSISTENT`: the instance is a persistent instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentType.
+   */
+  @java.lang.Override
+  public int getDeploymentTypeValue() {
+    return deploymentType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment type of the instance. Allowed values are:
+   *
+   * * `SCRATCH`: the instance is a scratch instance.
+   * * `PERSISTENT`: the instance is a persistent instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deploymentType.
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.DeploymentType getDeploymentType() {
+    com.google.cloud.parallelstore.v1beta.DeploymentType result =
+        com.google.cloud.parallelstore.v1beta.DeploymentType.forNumber(deploymentType_);
+    return result == null
+        ? com.google.cloud.parallelstore.v1beta.DeploymentType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1149,6 +1197,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             .DIRECTORY_STRIPE_LEVEL_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(16, directoryStripeLevel_);
+    }
+    if (deploymentType_
+        != com.google.cloud.parallelstore.v1beta.DeploymentType.DEPLOYMENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, deploymentType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1220,6 +1273,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, directoryStripeLevel_);
     }
+    if (deploymentType_
+        != com.google.cloud.parallelstore.v1beta.DeploymentType.DEPLOYMENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, deploymentType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1256,6 +1314,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getEffectiveReservedIpRange().equals(other.getEffectiveReservedIpRange())) return false;
     if (fileStripeLevel_ != other.fileStripeLevel_) return false;
     if (directoryStripeLevel_ != other.directoryStripeLevel_) return false;
+    if (deploymentType_ != other.deploymentType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1303,6 +1362,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + fileStripeLevel_;
     hash = (37 * hash) + DIRECTORY_STRIPE_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + directoryStripeLevel_;
+    hash = (37 * hash) + DEPLOYMENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + deploymentType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1496,6 +1557,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       effectiveReservedIpRange_ = "";
       fileStripeLevel_ = 0;
       directoryStripeLevel_ = 0;
+      deploymentType_ = 0;
       return this;
     }
 
@@ -1578,6 +1640,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.directoryStripeLevel_ = directoryStripeLevel_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.deploymentType_ = deploymentType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1686,6 +1751,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.directoryStripeLevel_ != 0) {
         setDirectoryStripeLevelValue(other.getDirectoryStripeLevelValue());
+      }
+      if (other.deploymentType_ != 0) {
+        setDeploymentTypeValue(other.getDeploymentTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1804,6 +1872,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 128
+            case 136:
+              {
+                deploymentType_ = input.readEnum();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3727,6 +3801,123 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDirectoryStripeLevel() {
       bitField0_ = (bitField0_ & ~0x00002000);
       directoryStripeLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int deploymentType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment type of the instance. Allowed values are:
+     *
+     * * `SCRATCH`: the instance is a scratch instance.
+     * * `PERSISTENT`: the instance is a persistent instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for deploymentType.
+     */
+    @java.lang.Override
+    public int getDeploymentTypeValue() {
+      return deploymentType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment type of the instance. Allowed values are:
+     *
+     * * `SCRATCH`: the instance is a scratch instance.
+     * * `PERSISTENT`: the instance is a persistent instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for deploymentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentTypeValue(int value) {
+      deploymentType_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment type of the instance. Allowed values are:
+     *
+     * * `SCRATCH`: the instance is a scratch instance.
+     * * `PERSISTENT`: the instance is a persistent instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deploymentType.
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.DeploymentType getDeploymentType() {
+      com.google.cloud.parallelstore.v1beta.DeploymentType result =
+          com.google.cloud.parallelstore.v1beta.DeploymentType.forNumber(deploymentType_);
+      return result == null
+          ? com.google.cloud.parallelstore.v1beta.DeploymentType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment type of the instance. Allowed values are:
+     *
+     * * `SCRATCH`: the instance is a scratch instance.
+     * * `PERSISTENT`: the instance is a persistent instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The deploymentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentType(com.google.cloud.parallelstore.v1beta.DeploymentType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00004000;
+      deploymentType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment type of the instance. Allowed values are:
+     *
+     * * `SCRATCH`: the instance is a scratch instance.
+     * * `PERSISTENT`: the instance is a persistent instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeploymentType() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      deploymentType_ = 0;
       onChanged();
       return this;
     }

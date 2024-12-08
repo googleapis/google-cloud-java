@@ -23,8 +23,8 @@ package com.google.analytics.data.v1beta;
  *
  *
  * <pre>
- * Categories of data that you may be restricted from viewing on certain GA4
- * properties.
+ * Categories of data that you may be restricted from viewing on certain
+ * Google Analytics properties.
  * </pre>
  *
  * Protobuf enum {@code google.analytics.data.v1beta.RestrictedMetricType}

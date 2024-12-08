@@ -40,13 +40,13 @@ public final class RoutingPreferenceProto {
           + "nce.proto\022\026google.maps.routing.v2*z\n\021Rou"
           + "tingPreference\022\"\n\036ROUTING_PREFERENCE_UNS"
           + "PECIFIED\020\000\022\023\n\017TRAFFIC_UNAWARE\020\001\022\021\n\rTRAFF"
-          + "IC_AWARE\020\002\022\031\n\025TRAFFIC_AWARE_OPTIMAL\020\003B\313\001"
+          + "IC_AWARE\020\002\022\031\n\025TRAFFIC_AWARE_OPTIMAL\020\003B\310\001"
           + "\n\032com.google.maps.routing.v2B\026RoutingPre"
           + "ferenceProtoP\001Z:cloud.google.com/go/maps"
-          + "/routing/apiv2/routingpb;routingpb\370\001\001\242\002\005"
-          + "GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Google\\"
-          + "Maps\\Routing\\V2\352\002\031Google::Maps::Routing:"
-          + ":V2b\006proto3"
+          + "/routing/apiv2/routingpb;routingpb\242\002\005GMR"
+          + "V2\252\002\026Google.Maps.Routing.V2\312\002\026Google\\Map"
+          + "s\\Routing\\V2\352\002\031Google::Maps::Routing::V2"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
