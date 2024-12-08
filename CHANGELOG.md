@@ -1,5 +1,89 @@
 # Changelog
 
+## [1.48.0](https://github.com/googleapis/google-cloud-java/compare/v1.47.0...v1.48.0) (2024-11-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* [alloydb] deprecated various PSC instance configuration fields
+* [alloydb] deprecated various PSC instance configuration fields
+* [deploy] added new fields for the Automation Repair rule
+
+### Features
+
+* [aiplatform] add a `nfs_mounts` to RaySpec in PersistentResource API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add BatchCreateFeatures rpc to feature_registry_service.proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add BatchCreateFeatures rpc to feature_registry_service.proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add BYOSA field to tuning_job ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add BYOSA field to tuning_job ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add code execution tool API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add fast_tryout_enabled to FasterDeploymentConfig message in aiplatform v1beta1 endpoint.proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add fast_tryout_enabled to FasterDeploymentConfig v1 proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] Add Feature Monitoring API to Feature Store ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add StopNotebookRuntime method ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add StopNotebookRuntime method ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add system labels field to model garden deployments ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add system labels field to model garden deployments ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] add UpdateEndpointLongRunning API in v1beta1 version ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] added support for specifying function response type in `FunctionDeclaration` ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] COMET added to evaluation service proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [aiplatform] metricX added to evaluation service proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [cloudquotas] A new value `NOT_SUPPORTED` is added to enum `IneligibilityReason` ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [compute] Update Compute Engine API to revision 20241015 ([#903](https://github.com/googleapis/google-cloud-java/issues/903)) ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [compute] Update Compute Engine API to revision 20241105 ([#954](https://github.com/googleapis/google-cloud-java/issues/954)) ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [contact-center-insights] Add FeedbackLabel resource and APIs ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [container] add LocalSsdEncryptionMode in NodeConfig ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [datacatalog] A new field `feature_online_store_spec` is added to message `.google.cloud.datacatalog.v1.Entry` ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [dataplex] update Go Datastore import path ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [deploy] A new field `timed_promote_release_rule` is added to message `.google.cloud.deploy.v1.AutomationRule` ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [deploy] added new fields for the Automation Repair rule ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [dialogflow-cx] add options of client_certificate_settings, bigquery_export_settings, bearer_token_config and boost_control_spec; add support of ALAW encoding ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [dialogflow-cx] add options of client_certificate_settings, bigquery_export_settings, bearer_token_config and boost_control_spec; add support of ALAW encoding ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [dialogflow] add options of query_source, search_config, end_user_metadata and exact_search ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [dialogflow] add options of query_source, search_config, end_user_metadata and exact_search ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [dialogflow] added support for ALAW encoding ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [dialogflow] added support for ALAW encoding ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [discoveryengine] Add GroundedGenerationService API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [distributedcloudedge] add storage schema to local control plane config ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [eventarc-publishing] Publish Eventarc Advanced Publishing API proto, allowing publishing events to a Message Bus ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [eventarc] Publish Eventarc Advanced protos ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [gdchardwaremanagement] add DNS address, Kubernetes primary VLAN ID, and provisioning state to the Zone resource ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [gkehub] Add policycontroller feature to gkehub v1beta API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [maps-fleetengine-delivery] new module for maps-fleetengine-delivery ([#11310](https://github.com/googleapis/google-cloud-java/issues/11310)) ([2bd0d65](https://github.com/googleapis/google-cloud-java/commit/2bd0d6571e9857c99c18a602d34fb0915dfd7718))
+* [maps-fleetengine] new module for maps-fleetengine ([#11309](https://github.com/googleapis/google-cloud-java/issues/11309)) ([17abf97](https://github.com/googleapis/google-cloud-java/commit/17abf973a52e1dedb56dc16f689ca2c4249e7f65))
+* [maps-places] update attributes in Places API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [network-management] add DNS endpoint of Google Kubernetes Engine cluster control plane ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [network-management] add DNS endpoint of Google Kubernetes Engine cluster control plane ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [network-management] add round-trip mode ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [network-management] add round-trip mode ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [recaptchaenterprise] A new enum `Challenge` is added ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [recaptchaenterprise] support for ListIpOverrides and RemoveIpOverride ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [run] support advanced configurations options for cloud storage volumes by setting `mount_options` in the GCSVolumeSource configuration ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [securitycenter] make client libraries GA for SCC v2 ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [texttospeech] add multi-speaker markup, which allows generating dialogue between multiple speakers ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [translate] Adds Contextual Glossary support for Translation and AdaptiveMt ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+### Bug Fixes
+
+* [alloydb] deprecated various PSC instance configuration fields ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [alloydb] deprecated various PSC instance configuration fields ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [asset] removes default scopes for some LRO methods ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.134.1 ([#11279](https://github.com/googleapis/google-cloud-java/issues/11279)) ([3f05ca4](https://github.com/googleapis/google-cloud-java/commit/3f05ca43ca702d2a26220976ca3533c781aeea78))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.50.0 ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* official name for java-managedkafka is Managed Service for Apache Kafka API ([#11308](https://github.com/googleapis/google-cloud-java/issues/11308)) ([32c071a](https://github.com/googleapis/google-cloud-java/commit/32c071ad4cbe80def08277923ccdee7f3ffc4be6))
+
+
+### Documentation
+
+* [eventarc] Fixed typo in comments in Eventarc protos ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [kms] comment formatting ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [maps-places] update issue tracker link ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [recaptchaenterprise] remove documentation overview config ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [run]fixed formatting of some documentation ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [securitycentermanagement] update documentation ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* [servicehealth] add missing doc comments ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
 ## [1.47.0](https://github.com/googleapis/google-cloud-java/compare/v1.46.0...v1.47.0) (2024-10-28)
 
 

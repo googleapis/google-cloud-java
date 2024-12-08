@@ -140,7 +140,7 @@ def group_changes_by_api(main_changes: [str]):
 def find_repo_wide_dependency_changes(main_changes: [str]):
     repo_wide_changes = []
     for changelog in main_changes:
-        match = re.search(r'\* (.+com\.google\.cloud:google-cloud-shared.+)',
+        match = re.search(r'\* (.+com\.google\.cloud:sdk-platform-java-config.+)',
                           changelog)
         if match:
             note = match.group(1)

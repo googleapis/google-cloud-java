@@ -14,7 +14,6 @@
 
 
 deep-remove-regex:
-- "/java-connectgateway/grpc-google-.*/src"
 - "/java-connectgateway/proto-google-.*/src"
 - "/java-connectgateway/google-.*/src"
 - "/java-connectgateway/samples/snippets/generated"
@@ -25,8 +24,6 @@ deep-preserve-regex:
 deep-copy-regex:
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-connectgateway/$1/proto-google-cloud-connectgateway-$1/src"
-- source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-connectgateway/$1/grpc-google-cloud-connectgateway-$1/src"
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-connectgateway/$1/google-cloud-connectgateway/src"
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/samples/snippets/generated"

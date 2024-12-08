@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.50.0 (2024-11-18)
+
+### Features
+
+* Add GroundedGenerationService API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 0.49.0 (2024-10-28)
 
 ### ⚠ BREAKING CHANGES

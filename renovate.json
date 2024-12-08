@@ -11,13 +11,13 @@
         "*"
       ],
       "enabled": false
-    },
+    }, 
     {
       "matchPackagePatterns": [
-        "^com.google.api:gapic-generator-java",
         "^com.google.cloud:sdk-platform-java-config"
       ],
-      "groupName": "SDK platform Java dependencies"
+      "semanticCommitType": "fix",
+      "semanticCommitScope": null
     }
   ],
   "includePaths": [
@@ -65,12 +65,10 @@
     {
       "fileMatch": [
         ".github/workflows/ci.yaml",
-        ".github/workflows/generated_files_sync.yaml",
-        ".github/workflows/hermetic_library_generation.yaml"
+        ".github/workflows/generated_files_sync.yaml"
       ],
       "matchStrings": [
-        "library_generation_image_tag\\s*:\\s*(?<currentValue>.*?)\\n",
-        "uses: googleapis/sdk-platform-java/.github/scripts@v(?<currentValue>.+?)\\n"
+        "library_generation_image_tag\\s*:\\s*(?<currentValue>.*?)\\n"
       ],
       "depNameTemplate": "com.google.api:gapic-generator-java",
       "datasourceTemplate": "maven"
