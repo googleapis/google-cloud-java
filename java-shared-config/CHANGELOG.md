@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.1](https://github.com/googleapis/java-shared-config/compare/v1.12.0...v1.12.1) (2024-12-09)
+
+
+### Dependencies
+
+* Update dependency com.puppycrawl.tools:checkstyle to v10.20.2 ([#938](https://github.com/googleapis/java-shared-config/issues/938)) ([d5c3385](https://github.com/googleapis/java-shared-config/commit/d5c3385396815bcd57f5717b5e2db22185cf223c))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.4 ([#939](https://github.com/googleapis/java-shared-config/issues/939)) ([1c5920c](https://github.com/googleapis/java-shared-config/commit/1c5920c3cdca5163b4290ec85b3c1d804377e3e1))
+
 ## [1.12.0](https://github.com/googleapis/java-shared-config/compare/v1.11.3...v1.12.0) (2024-11-13)
 
 
