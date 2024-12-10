@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.50.0](https://github.com/googleapis/java-bigtable/compare/v2.49.0...v2.50.0) (2024-12-06)
+
+
+### Features
+
+* Add support for Row Affinity app profiles ([#2341](https://github.com/googleapis/java-bigtable/issues/2341)) ([cb4d60e](https://github.com/googleapis/java-bigtable/commit/cb4d60e8ce2079a270739ad91efb05cbb1ff74f8))
+
 ## [2.49.0](https://github.com/googleapis/java-bigtable/compare/v2.48.0...v2.49.0) (2024-12-03)
 
 
