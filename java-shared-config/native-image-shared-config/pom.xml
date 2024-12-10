@@ -99,14 +99,62 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
+    <extensions>
+      <extension>
+        <!--
+          Enables the "artifactregistry://" URL scheme (go/airlock/howto_maven).
+          Note that Maven extensions cannot be included in profiles (
+          https://maven.apache.org/guides/introduction/introduction-to-profiles.html#profiles-in-poms)
+        -->
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <version>2.2.3</version>
+      </extension>
+    </extensions>
   </build>
   <profiles>
+    <profile>
+      <!-- By default, we release artifacts to Sonatype, which requires
+          nexus-staging-maven-plugin. -->
+      <id>release-sonatype</id>
+      <activation>
+        <property>
+          <!-- Only when we use the release-gcp-artifact-registry profile,
+          which comes with artifact-registry-url property, this profile is
+          turned off. -->
+          <name>!artifact-registry-url</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <!-- Optionally, we can publish the artifacts to GCP Artifact Registry specifying
+          this release-gcp-artifact-registry profile:
+          mvn deploy -P=release-gcp-artifact-registry -P=-release-sonatype \
+              -Dartifact-registry-url=artifactregistry://us-maven.pkg.dev/...
+          -->
+      <id>release-gcp-artifact-registry</id>
+      <properties>
+        <artifact-registry-url>artifactregistry://undefined-artifact-registry-url-value</artifact-registry-url>
+      </properties>
+      <distributionManagement>
+        <repository>
+          <id>gcp-artifact-registry-repository</id>
+          <url>${artifact-registry-url}</url>
+        </repository>
+        <snapshotRepository>
+          <id>gcp-artifact-registry-repository</id>
+          <url>${artifact-registry-url}</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
     <profile>
       <id>release</id>
       <activation>
