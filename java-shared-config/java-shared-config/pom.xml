@@ -381,6 +381,18 @@
         </executions>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <!--
+          Enables the "artifactregistry://" URL scheme (go/airlock/howto_maven).
+          Note that Maven extensions cannot be included in profiles (
+          https://maven.apache.org/guides/introduction/introduction-to-profiles.html#profiles-in-poms)
+        -->
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <version>2.2.3</version>
+      </extension>
+    </extensions>
   </build>
 
   <reporting>
