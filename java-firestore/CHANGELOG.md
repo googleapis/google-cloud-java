@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.30.1](https://github.com/googleapis/java-firestore/compare/v3.30.0...v3.30.1) (2024-12-09)
+
+
+### Bug Fixes
+
+* BulkWriter flush logic ([#1778](https://github.com/googleapis/java-firestore/issues/1778)) ([627619d](https://github.com/googleapis/java-firestore/commit/627619d33a051f6709a563b7375ebe39956f9ebf))
+
+
+### Dependencies
+
+* Update opentelemetry.version to v1.45.0 ([#1947](https://github.com/googleapis/java-firestore/issues/1947)) ([5bb839c](https://github.com/googleapis/java-firestore/commit/5bb839cdab3e8f5d4214a2fbce07f9ed34e769ca))
+
 ## [3.30.0](https://github.com/googleapis/java-firestore/compare/v3.29.1...v3.30.0) (2024-11-26)
 
 
