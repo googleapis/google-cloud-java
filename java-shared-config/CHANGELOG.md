@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.2](https://github.com/googleapis/java-shared-config/compare/v1.12.1...v1.12.2) (2024-12-10)
+
+
+### Bug Fixes
+
+* Fixed the profile for Artifact Registry deployment ([#950](https://github.com/googleapis/java-shared-config/issues/950)) ([8a496d3](https://github.com/googleapis/java-shared-config/commit/8a496d3c4efafee21c07ebca0836657882e76b2e))
+
 ## [1.12.1](https://github.com/googleapis/java-shared-config/compare/v1.12.0...v1.12.1) (2024-12-09)
 
 
