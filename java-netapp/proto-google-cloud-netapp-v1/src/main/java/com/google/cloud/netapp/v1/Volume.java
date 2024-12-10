@@ -184,6 +184,28 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 7;</code>
      */
     ERROR(7),
+    /**
+     *
+     *
+     * <pre>
+     * Volume State is Preparing. Note that this is different from CREATING
+     * where CREATING means the volume is being created, while PREPARING means
+     * the volume is created and now being prepared for the replication.
+     * </pre>
+     *
+     * <code>PREPARING = 8;</code>
+     */
+    PREPARING(8),
+    /**
+     *
+     *
+     * <pre>
+     * Volume State is Read Only
+     * </pre>
+     *
+     * <code>READ_ONLY = 9;</code>
+     */
+    READ_ONLY(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -267,6 +289,28 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 7;</code>
      */
     public static final int ERROR_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Volume State is Preparing. Note that this is different from CREATING
+     * where CREATING means the volume is being created, while PREPARING means
+     * the volume is created and now being prepared for the replication.
+     * </pre>
+     *
+     * <code>PREPARING = 8;</code>
+     */
+    public static final int PREPARING_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Volume State is Read Only
+     * </pre>
+     *
+     * <code>READ_ONLY = 9;</code>
+     */
+    public static final int READ_ONLY_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -308,6 +352,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           return DISABLED;
         case 7:
           return ERROR;
+        case 8:
+          return PREPARING;
+        case 9:
+          return READ_ONLY;
         default:
           return null;
       }
@@ -2166,6 +2214,63 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return coldTierSizeGib_;
   }
 
+  public static final int HYBRID_REPLICATION_PARAMETERS_FIELD_NUMBER = 40;
+  private com.google.cloud.netapp.v1.HybridReplicationParameters hybridReplicationParameters_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hybridReplicationParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasHybridReplicationParameters() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hybridReplicationParameters.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.HybridReplicationParameters getHybridReplicationParameters() {
+    return hybridReplicationParameters_ == null
+        ? com.google.cloud.netapp.v1.HybridReplicationParameters.getDefaultInstance()
+        : hybridReplicationParameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder
+      getHybridReplicationParametersOrBuilder() {
+    return hybridReplicationParameters_ == null
+        ? com.google.cloud.netapp.v1.HybridReplicationParameters.getDefaultInstance()
+        : hybridReplicationParameters_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2305,6 +2410,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     if (coldTierSizeGib_ != 0L) {
       output.writeInt64(39, coldTierSizeGib_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(40, getHybridReplicationParameters());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2464,6 +2572,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (coldTierSizeGib_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(39, coldTierSizeGib_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              40, getHybridReplicationParameters());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2535,6 +2648,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!getReplicaZone().equals(other.getReplicaZone())) return false;
     if (!getZone().equals(other.getZone())) return false;
     if (getColdTierSizeGib() != other.getColdTierSizeGib()) return false;
+    if (hasHybridReplicationParameters() != other.hasHybridReplicationParameters()) return false;
+    if (hasHybridReplicationParameters()) {
+      if (!getHybridReplicationParameters().equals(other.getHybridReplicationParameters()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2645,6 +2763,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getZone().hashCode();
     hash = (37 * hash) + COLD_TIER_SIZE_GIB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getColdTierSizeGib());
+    if (hasHybridReplicationParameters()) {
+      hash = (37 * hash) + HYBRID_REPLICATION_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getHybridReplicationParameters().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2813,6 +2935,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         getRestoreParametersFieldBuilder();
         getBackupConfigFieldBuilder();
         getTieringPolicyFieldBuilder();
+        getHybridReplicationParametersFieldBuilder();
       }
     }
 
@@ -2891,6 +3014,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       replicaZone_ = "";
       zone_ = "";
       coldTierSizeGib_ = 0L;
+      hybridReplicationParameters_ = null;
+      if (hybridReplicationParametersBuilder_ != null) {
+        hybridReplicationParametersBuilder_.dispose();
+        hybridReplicationParametersBuilder_ = null;
+      }
       return this;
     }
 
@@ -3076,6 +3204,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField1_ & 0x00000010) != 0)) {
         result.coldTierSizeGib_ = coldTierSizeGib_;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
+        result.hybridReplicationParameters_ =
+            hybridReplicationParametersBuilder_ == null
+                ? hybridReplicationParameters_
+                : hybridReplicationParametersBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3303,6 +3438,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getColdTierSizeGib() != 0L) {
         setColdTierSizeGib(other.getColdTierSizeGib());
+      }
+      if (other.hasHybridReplicationParameters()) {
+        mergeHybridReplicationParameters(other.getHybridReplicationParameters());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3605,6 +3743,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000010;
                 break;
               } // case 312
+            case 322:
+              {
+                input.readMessage(
+                    getHybridReplicationParametersFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000020;
+                break;
+              } // case 322
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8381,6 +8526,215 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       coldTierSizeGib_ = 0L;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.netapp.v1.HybridReplicationParameters hybridReplicationParameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.HybridReplicationParameters,
+            com.google.cloud.netapp.v1.HybridReplicationParameters.Builder,
+            com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder>
+        hybridReplicationParametersBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hybridReplicationParameters field is set.
+     */
+    public boolean hasHybridReplicationParameters() {
+      return ((bitField1_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hybridReplicationParameters.
+     */
+    public com.google.cloud.netapp.v1.HybridReplicationParameters getHybridReplicationParameters() {
+      if (hybridReplicationParametersBuilder_ == null) {
+        return hybridReplicationParameters_ == null
+            ? com.google.cloud.netapp.v1.HybridReplicationParameters.getDefaultInstance()
+            : hybridReplicationParameters_;
+      } else {
+        return hybridReplicationParametersBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHybridReplicationParameters(
+        com.google.cloud.netapp.v1.HybridReplicationParameters value) {
+      if (hybridReplicationParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hybridReplicationParameters_ = value;
+      } else {
+        hybridReplicationParametersBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHybridReplicationParameters(
+        com.google.cloud.netapp.v1.HybridReplicationParameters.Builder builderForValue) {
+      if (hybridReplicationParametersBuilder_ == null) {
+        hybridReplicationParameters_ = builderForValue.build();
+      } else {
+        hybridReplicationParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeHybridReplicationParameters(
+        com.google.cloud.netapp.v1.HybridReplicationParameters value) {
+      if (hybridReplicationParametersBuilder_ == null) {
+        if (((bitField1_ & 0x00000020) != 0)
+            && hybridReplicationParameters_ != null
+            && hybridReplicationParameters_
+                != com.google.cloud.netapp.v1.HybridReplicationParameters.getDefaultInstance()) {
+          getHybridReplicationParametersBuilder().mergeFrom(value);
+        } else {
+          hybridReplicationParameters_ = value;
+        }
+      } else {
+        hybridReplicationParametersBuilder_.mergeFrom(value);
+      }
+      if (hybridReplicationParameters_ != null) {
+        bitField1_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearHybridReplicationParameters() {
+      bitField1_ = (bitField1_ & ~0x00000020);
+      hybridReplicationParameters_ = null;
+      if (hybridReplicationParametersBuilder_ != null) {
+        hybridReplicationParametersBuilder_.dispose();
+        hybridReplicationParametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.HybridReplicationParameters.Builder
+        getHybridReplicationParametersBuilder() {
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return getHybridReplicationParametersFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder
+        getHybridReplicationParametersOrBuilder() {
+      if (hybridReplicationParametersBuilder_ != null) {
+        return hybridReplicationParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return hybridReplicationParameters_ == null
+            ? com.google.cloud.netapp.v1.HybridReplicationParameters.getDefaultInstance()
+            : hybridReplicationParameters_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Hybrid Replication parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.HybridReplicationParameters,
+            com.google.cloud.netapp.v1.HybridReplicationParameters.Builder,
+            com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder>
+        getHybridReplicationParametersFieldBuilder() {
+      if (hybridReplicationParametersBuilder_ == null) {
+        hybridReplicationParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.netapp.v1.HybridReplicationParameters,
+                com.google.cloud.netapp.v1.HybridReplicationParameters.Builder,
+                com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder>(
+                getHybridReplicationParameters(), getParentForChildren(), isClean());
+        hybridReplicationParameters_ = null;
+      }
+      return hybridReplicationParametersBuilder_;
     }
 
     @java.lang.Override

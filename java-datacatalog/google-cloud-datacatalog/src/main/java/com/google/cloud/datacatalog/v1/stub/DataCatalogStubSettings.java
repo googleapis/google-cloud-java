@@ -78,16 +78,21 @@ import com.google.cloud.datacatalog.v1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.MigrationConfig;
 import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
+import com.google.cloud.datacatalog.v1.OrganizationConfig;
 import com.google.cloud.datacatalog.v1.ReconcileTagsMetadata;
 import com.google.cloud.datacatalog.v1.ReconcileTagsRequest;
 import com.google.cloud.datacatalog.v1.ReconcileTagsResponse;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.v1.RetrieveConfigRequest;
+import com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogResponse;
 import com.google.cloud.datacatalog.v1.SearchCatalogResult;
+import com.google.cloud.datacatalog.v1.SetConfigRequest;
 import com.google.cloud.datacatalog.v1.StarEntryRequest;
 import com.google.cloud.datacatalog.v1.StarEntryResponse;
 import com.google.cloud.datacatalog.v1.Tag;
@@ -251,6 +256,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   private final OperationCallSettings<
           ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
       importEntriesOperationSettings;
+  private final UnaryCallSettings<SetConfigRequest, MigrationConfig> setConfigSettings;
+  private final UnaryCallSettings<RetrieveConfigRequest, OrganizationConfig> retrieveConfigSettings;
+  private final UnaryCallSettings<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigSettings;
 
   private static final PagedListDescriptor<
           SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
@@ -654,6 +663,22 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     return importEntriesOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setConfig. */
+  public UnaryCallSettings<SetConfigRequest, MigrationConfig> setConfigSettings() {
+    return setConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to retrieveConfig. */
+  public UnaryCallSettings<RetrieveConfigRequest, OrganizationConfig> retrieveConfigSettings() {
+    return retrieveConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to retrieveEffectiveConfig. */
+  public UnaryCallSettings<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigSettings() {
+    return retrieveEffectiveConfigSettings;
+  }
+
   public DataCatalogStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -802,6 +827,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     importEntriesSettings = settingsBuilder.importEntriesSettings().build();
     importEntriesOperationSettings = settingsBuilder.importEntriesOperationSettings().build();
+    setConfigSettings = settingsBuilder.setConfigSettings().build();
+    retrieveConfigSettings = settingsBuilder.retrieveConfigSettings().build();
+    retrieveEffectiveConfigSettings = settingsBuilder.retrieveEffectiveConfigSettings().build();
   }
 
   /** Builder for DataCatalogStubSettings. */
@@ -872,6 +900,11 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private final OperationCallSettings.Builder<
             ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
         importEntriesOperationSettings;
+    private final UnaryCallSettings.Builder<SetConfigRequest, MigrationConfig> setConfigSettings;
+    private final UnaryCallSettings.Builder<RetrieveConfigRequest, OrganizationConfig>
+        retrieveConfigSettings;
+    private final UnaryCallSettings.Builder<RetrieveEffectiveConfigRequest, MigrationConfig>
+        retrieveEffectiveConfigSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -950,6 +983,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importEntriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importEntriesOperationSettings = OperationCallSettings.newBuilder();
+      setConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      retrieveConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      retrieveEffectiveConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -986,7 +1022,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings,
-              importEntriesSettings);
+              importEntriesSettings,
+              setConfigSettings,
+              retrieveConfigSettings,
+              retrieveEffectiveConfigSettings);
       initDefaults(this);
     }
 
@@ -1030,6 +1069,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       importEntriesSettings = settings.importEntriesSettings.toBuilder();
       importEntriesOperationSettings = settings.importEntriesOperationSettings.toBuilder();
+      setConfigSettings = settings.setConfigSettings.toBuilder();
+      retrieveConfigSettings = settings.retrieveConfigSettings.toBuilder();
+      retrieveEffectiveConfigSettings = settings.retrieveEffectiveConfigSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1066,7 +1108,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings,
-              importEntriesSettings);
+              importEntriesSettings,
+              setConfigSettings,
+              retrieveConfigSettings,
+              retrieveEffectiveConfigSettings);
     }
 
     private static Builder createDefault() {
@@ -1261,6 +1306,21 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
       builder
           .importEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .retrieveConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .retrieveEffectiveConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1532,6 +1592,23 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
             ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
         importEntriesOperationSettings() {
       return importEntriesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setConfig. */
+    public UnaryCallSettings.Builder<SetConfigRequest, MigrationConfig> setConfigSettings() {
+      return setConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveConfig. */
+    public UnaryCallSettings.Builder<RetrieveConfigRequest, OrganizationConfig>
+        retrieveConfigSettings() {
+      return retrieveConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveEffectiveConfig. */
+    public UnaryCallSettings.Builder<RetrieveEffectiveConfigRequest, MigrationConfig>
+        retrieveEffectiveConfigSettings() {
+      return retrieveEffectiveConfigSettings;
     }
 
     @Override

@@ -24,11 +24,13 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * The top-level message returned from the
- * `StreamingDetectIntent` method.
+ * [StreamingDetectIntent][] method.
  *
  * Multiple response messages can be returned in order:
  *
- * 1.  If the `StreamingDetectIntentRequest.input_audio` field was
+ * 1.  If the
+ * [StreamingDetectIntentRequest.input_audio][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.input_audio]
+ * field was
  *     set, the `recognition_result` field is populated for one
  *     or more messages.
  *     See the
@@ -362,7 +364,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -378,7 +381,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -396,7 +400,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -653,11 +658,13 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * The top-level message returned from the
-   * `StreamingDetectIntent` method.
+   * [StreamingDetectIntent][] method.
    *
    * Multiple response messages can be returned in order:
    *
-   * 1.  If the `StreamingDetectIntentRequest.input_audio` field was
+   * 1.  If the
+   * [StreamingDetectIntentRequest.input_audio][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.input_audio]
+   * field was
    *     set, the `recognition_result` field is populated for one
    *     or more messages.
    *     See the
@@ -1922,7 +1929,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -1937,7 +1945,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -1958,7 +1967,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -1982,7 +1992,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -2003,7 +2014,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -2034,7 +2046,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -2054,7 +2067,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -2070,7 +2084,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -2090,7 +2105,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * Debugging info that would get populated when
-     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+     * is set to true.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>

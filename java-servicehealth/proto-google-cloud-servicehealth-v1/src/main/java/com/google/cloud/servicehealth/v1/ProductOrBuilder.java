@@ -48,4 +48,29 @@ public interface ProductOrBuilder
    * @return The bytes for productName.
    */
   com.google.protobuf.ByteString getProductNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier for the product.
+   * </pre>
+   *
+   * <code>string id = 2;</code>
+   *
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier for the product.
+   * </pre>
+   *
+   * <code>string id = 2;</code>
+   *
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString getIdBytes();
 }

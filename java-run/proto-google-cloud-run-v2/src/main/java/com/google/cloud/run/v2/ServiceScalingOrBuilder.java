@@ -67,4 +67,35 @@ public interface ServiceScalingOrBuilder
    * @return The scalingMode.
    */
   com.google.cloud.run.v2.ServiceScaling.ScalingMode getScalingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. total instance count for the service in manual scaling mode. This
+   * number of instances is divided among all revisions with specified traffic
+   * based on the percent of traffic they are receiving.
+   * </pre>
+   *
+   * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the manualInstanceCount field is set.
+   */
+  boolean hasManualInstanceCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. total instance count for the service in manual scaling mode. This
+   * number of instances is divided among all revisions with specified traffic
+   * based on the percent of traffic they are receiving.
+   * </pre>
+   *
+   * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The manualInstanceCount.
+   */
+  int getManualInstanceCount();
 }

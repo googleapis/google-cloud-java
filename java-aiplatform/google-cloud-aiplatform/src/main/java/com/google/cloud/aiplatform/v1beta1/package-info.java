@@ -575,6 +575,7 @@
  *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
  *                   .toString())
  *           .setInput(Struct.newBuilder().build())
+ *           .setClassMethod("classMethod-937857927")
  *           .build();
  *   QueryReasoningEngineResponse response =
  *       reasoningEngineExecutionServiceClient.queryReasoningEngine(request);

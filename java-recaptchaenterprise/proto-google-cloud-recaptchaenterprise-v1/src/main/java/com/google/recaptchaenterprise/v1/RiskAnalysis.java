@@ -343,7 +343,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Challenge information for SCORE_AND_CHALLENGE keys
+   * Challenge information for SCORE_AND_CHALLENGE and INVISIBLE keys
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge}
@@ -736,7 +736,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+   * keys
    * </pre>
    *
    * <code>
@@ -753,7 +754,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+   * keys
    * </pre>
    *
    * <code>
@@ -1759,7 +1761,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+     * keys
      * </pre>
      *
      * <code>
@@ -1776,7 +1779,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+     * keys
      * </pre>
      *
      * <code>
@@ -1796,7 +1800,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+     * keys
      * </pre>
      *
      * <code>
@@ -1817,7 +1822,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+     * keys
      * </pre>
      *
      * <code>
@@ -1840,7 +1846,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+     * keys
      * </pre>
      *
      * <code>

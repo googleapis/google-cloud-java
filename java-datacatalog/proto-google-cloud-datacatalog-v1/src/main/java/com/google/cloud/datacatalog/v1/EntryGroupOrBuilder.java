@@ -151,4 +151,21 @@ public interface EntryGroupOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder getDataCatalogTimestampsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to [true], it means DataCatalog EntryGroup was
+   * transferred to Dataplex Catalog Service. It makes EntryGroup and its
+   * Entries to be read-only in DataCatalog. However, new Tags on EntryGroup and
+   * its Entries can be created. After setting the flag to [true] it cannot be
+   * unset.
+   * </pre>
+   *
+   * <code>bool transferred_to_dataplex = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The transferredToDataplex.
+   */
+  boolean getTransferredToDataplex();
 }

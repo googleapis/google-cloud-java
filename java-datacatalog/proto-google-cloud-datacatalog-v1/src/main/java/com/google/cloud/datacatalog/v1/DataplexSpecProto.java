@@ -72,12 +72,12 @@ public final class DataplexSpecProto {
           + "ogle.cloud.datacatalog.v1.IntegratedSyst"
           + "em\022\034\n\024fully_qualified_name\030\034 \001(\t\022\035\n\025goog"
           + "le_cloud_resource\030\003 \001(\t\022\032\n\022data_catalog_"
-          + "entry\030\004 \001(\tB\331\001\n\037com.google.cloud.datacat"
+          + "entry\030\004 \001(\tB\326\001\n\037com.google.cloud.datacat"
           + "alog.v1B\021DataplexSpecProtoP\001ZAcloud.goog"
           + "le.com/go/datacatalog/apiv1/datacatalogp"
-          + "b;datacatalogpb\370\001\001\252\002\033Google.Cloud.DataCa"
-          + "talog.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002"
-          + "\036Google::Cloud::DataCatalog::V1b\006proto3"
+          + "b;datacatalogpb\252\002\033Google.Cloud.DataCatal"
+          + "og.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Go"
+          + "ogle::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -504,10 +504,12 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Backfill job state.
+   * Output only. Backfill job state.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+   * <code>
+   * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -519,10 +521,12 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Backfill job state.
+   * Output only. Backfill job state.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+   * <code>
+   * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -1277,10 +1281,12 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Backfill job state.
+     * Output only. Backfill job state.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+     * <code>
+     * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -1292,10 +1298,12 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Backfill job state.
+     * Output only. Backfill job state.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+     * <code>
+     * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -1310,10 +1318,12 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Backfill job state.
+     * Output only. Backfill job state.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+     * <code>
+     * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -1329,10 +1339,12 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Backfill job state.
+     * Output only. Backfill job state.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+     * <code>
+     * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -1350,10 +1362,12 @@ public final class BackfillJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Backfill job state.
+     * Output only. Backfill job state.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+     * <code>
+     * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */

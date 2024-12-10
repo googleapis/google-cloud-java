@@ -63,14 +63,14 @@ public final class ServiceProto {
           + "\0028\001:\177\352A|\n\'servicedirectory.googleapis.co"
           + "m/Service\022Qprojects/{project}/locations/"
           + "{location}/namespaces/{namespace}/servic"
-          + "es/{service}B\220\002\n)com.google.cloud.servic"
+          + "es/{service}B\215\002\n)com.google.cloud.servic"
           + "edirectory.v1beta1B\014ServiceProtoP\001ZUclou"
           + "d.google.com/go/servicedirectory/apiv1be"
           + "ta1/servicedirectorypb;servicedirectoryp"
-          + "b\370\001\001\252\002%Google.Cloud.ServiceDirectory.V1B"
-          + "eta1\312\002%Google\\Cloud\\ServiceDirectory\\V1b"
-          + "eta1\352\002(Google::Cloud::ServiceDirectory::"
-          + "V1beta1b\006proto3"
+          + "b\252\002%Google.Cloud.ServiceDirectory.V1Beta"
+          + "1\312\002%Google\\Cloud\\ServiceDirectory\\V1beta"
+          + "1\352\002(Google::Cloud::ServiceDirectory::V1b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

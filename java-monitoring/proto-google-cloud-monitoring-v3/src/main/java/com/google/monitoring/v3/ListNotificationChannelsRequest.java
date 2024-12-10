@@ -152,14 +152,14 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If provided, this field specifies the criteria that must be met by
-   * notification channels to be included in the response.
+   * Optional. If provided, this field specifies the criteria that must be met
+   * by notification channels to be included in the response.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 6;</code>
+   * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -179,14 +179,14 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If provided, this field specifies the criteria that must be met by
-   * notification channels to be included in the response.
+   * Optional. If provided, this field specifies the criteria that must be met
+   * by notification channels to be included in the response.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 6;</code>
+   * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -211,15 +211,15 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * A comma-separated list of fields by which to sort the result. Supports
-   * the same set of fields as in `filter`. Entries can be prefixed with
-   * a minus sign to sort in descending rather than ascending order.
+   * Optional. A comma-separated list of fields by which to sort the result.
+   * Supports the same set of fields as in `filter`. Entries can be prefixed
+   * with a minus sign to sort in descending rather than ascending order.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 7;</code>
+   * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -239,15 +239,15 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * A comma-separated list of fields by which to sort the result. Supports
-   * the same set of fields as in `filter`. Entries can be prefixed with
-   * a minus sign to sort in descending rather than ascending order.
+   * Optional. A comma-separated list of fields by which to sort the result.
+   * Supports the same set of fields as in `filter`. Entries can be prefixed
+   * with a minus sign to sort in descending rather than ascending order.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 7;</code>
+   * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -270,12 +270,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The maximum number of results to return in a single response. If
+   * Optional. The maximum number of results to return in a single response. If
    * not set to a positive number, a reasonable value will be chosen by the
    * service.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -292,12 +292,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If non-empty, `page_token` must contain a value returned as the
+   * Optional. If non-empty, `page_token` must contain a value returned as the
    * `next_page_token` in a previous response to request the next set
    * of results.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -317,12 +317,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If non-empty, `page_token` must contain a value returned as the
+   * Optional. If non-empty, `page_token` must contain a value returned as the
    * `next_page_token` in a previous response to request the next set
    * of results.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -952,14 +952,14 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * notification channels to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by notification channels to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 6;</code>
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -978,14 +978,14 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * notification channels to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by notification channels to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 6;</code>
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -1004,14 +1004,14 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * notification channels to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by notification channels to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 6;</code>
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1029,14 +1029,14 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * notification channels to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by notification channels to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 6;</code>
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1050,14 +1050,14 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * notification channels to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by notification channels to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 6;</code>
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1078,15 +1078,15 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of fields as in `filter`. Entries can be prefixed with
-     * a minus sign to sort in descending rather than ascending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of fields as in `filter`. Entries can be prefixed
+     * with a minus sign to sort in descending rather than ascending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 7;</code>
+     * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The orderBy.
      */
@@ -1105,15 +1105,15 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of fields as in `filter`. Entries can be prefixed with
-     * a minus sign to sort in descending rather than ascending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of fields as in `filter`. Entries can be prefixed
+     * with a minus sign to sort in descending rather than ascending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 7;</code>
+     * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for orderBy.
      */
@@ -1132,15 +1132,15 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of fields as in `filter`. Entries can be prefixed with
-     * a minus sign to sort in descending rather than ascending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of fields as in `filter`. Entries can be prefixed
+     * with a minus sign to sort in descending rather than ascending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 7;</code>
+     * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1158,15 +1158,15 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of fields as in `filter`. Entries can be prefixed with
-     * a minus sign to sort in descending rather than ascending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of fields as in `filter`. Entries can be prefixed
+     * with a minus sign to sort in descending rather than ascending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 7;</code>
+     * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1180,15 +1180,15 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of fields as in `filter`. Entries can be prefixed with
-     * a minus sign to sort in descending rather than ascending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of fields as in `filter`. Entries can be prefixed
+     * with a minus sign to sort in descending rather than ascending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 7;</code>
+     * <code>string order_by = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.
@@ -1209,12 +1209,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of results to return in a single response. If
+     * Optional. The maximum number of results to return in a single response. If
      * not set to a positive number, a reasonable value will be chosen by the
      * service.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -1226,12 +1226,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of results to return in a single response. If
+     * Optional. The maximum number of results to return in a single response. If
      * not set to a positive number, a reasonable value will be chosen by the
      * service.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -1247,12 +1247,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of results to return in a single response. If
+     * Optional. The maximum number of results to return in a single response. If
      * not set to a positive number, a reasonable value will be chosen by the
      * service.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1268,12 +1268,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If non-empty, `page_token` must contain a value returned as the
+     * Optional. If non-empty, `page_token` must contain a value returned as the
      * `next_page_token` in a previous response to request the next set
      * of results.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -1292,12 +1292,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If non-empty, `page_token` must contain a value returned as the
+     * Optional. If non-empty, `page_token` must contain a value returned as the
      * `next_page_token` in a previous response to request the next set
      * of results.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1316,12 +1316,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If non-empty, `page_token` must contain a value returned as the
+     * Optional. If non-empty, `page_token` must contain a value returned as the
      * `next_page_token` in a previous response to request the next set
      * of results.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1339,12 +1339,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If non-empty, `page_token` must contain a value returned as the
+     * Optional. If non-empty, `page_token` must contain a value returned as the
      * `next_page_token` in a previous response to request the next set
      * of results.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1358,12 +1358,12 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If non-empty, `page_token` must contain a value returned as the
+     * Optional. If non-empty, `page_token` must contain a value returned as the
      * `next_page_token` in a previous response to request the next set
      * of results.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

@@ -1487,9 +1487,11 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
    *
    * <pre>
    * Number of messages prior to and including
-   * [last_conversation_message][] used to compile the suggestion. It may be
-   * smaller than the [GenerateStatelessSummaryRequest.context_size][] field in
-   * the request if there weren't that many messages in the conversation.
+   * [latest_message][google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse.latest_message]
+   * used to compile the suggestion. It may be smaller than the
+   * [GenerateStatelessSummaryRequest.max_context_size][google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest.max_context_size]
+   * field in the request if there weren't that many messages in the
+   * conversation.
    * </pre>
    *
    * <code>int32 context_size = 3;</code>
@@ -2240,9 +2242,11 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
      *
      * <pre>
      * Number of messages prior to and including
-     * [last_conversation_message][] used to compile the suggestion. It may be
-     * smaller than the [GenerateStatelessSummaryRequest.context_size][] field in
-     * the request if there weren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse.latest_message]
+     * used to compile the suggestion. It may be smaller than the
+     * [GenerateStatelessSummaryRequest.max_context_size][google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest.max_context_size]
+     * field in the request if there weren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -2258,9 +2262,11 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
      *
      * <pre>
      * Number of messages prior to and including
-     * [last_conversation_message][] used to compile the suggestion. It may be
-     * smaller than the [GenerateStatelessSummaryRequest.context_size][] field in
-     * the request if there weren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse.latest_message]
+     * used to compile the suggestion. It may be smaller than the
+     * [GenerateStatelessSummaryRequest.max_context_size][google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest.max_context_size]
+     * field in the request if there weren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -2280,9 +2286,11 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
      *
      * <pre>
      * Number of messages prior to and including
-     * [last_conversation_message][] used to compile the suggestion. It may be
-     * smaller than the [GenerateStatelessSummaryRequest.context_size][] field in
-     * the request if there weren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse.latest_message]
+     * used to compile the suggestion. It may be smaller than the
+     * [GenerateStatelessSummaryRequest.max_context_size][google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest.max_context_size]
+     * field in the request if there weren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>

@@ -62,6 +62,7 @@ import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
+import com.google.cloud.netapp.v1.EstablishPeeringRequest;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -99,6 +100,7 @@ import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
+import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -495,6 +497,26 @@ public class GrpcNetAppStub extends NetAppStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<EstablishPeeringRequest, Operation>
+      establishPeeringMethodDescriptor =
+          MethodDescriptor.<EstablishPeeringRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/EstablishPeering")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EstablishPeeringRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SyncReplicationRequest, Operation>
+      syncReplicationMethodDescriptor =
+          MethodDescriptor.<SyncReplicationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SyncReplication")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SyncReplicationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateBackupVaultRequest, Operation>
       createBackupVaultMethodDescriptor =
           MethodDescriptor.<CreateBackupVaultRequest, Operation>newBuilder()
@@ -769,6 +791,12 @@ public class GrpcNetAppStub extends NetAppStub {
   private final OperationCallable<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable;
+  private final UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable;
+  private final OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable;
+  private final UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable;
+  private final OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable;
   private final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable;
   private final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationCallable;
@@ -1240,6 +1268,26 @@ public class GrpcNetAppStub extends NetAppStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<EstablishPeeringRequest, Operation> establishPeeringTransportSettings =
+        GrpcCallSettings.<EstablishPeeringRequest, Operation>newBuilder()
+            .setMethodDescriptor(establishPeeringMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<SyncReplicationRequest, Operation> syncReplicationTransportSettings =
+        GrpcCallSettings.<SyncReplicationRequest, Operation>newBuilder()
+            .setMethodDescriptor(syncReplicationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
         GrpcCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupVaultMethodDescriptor)
@@ -1716,6 +1764,24 @@ public class GrpcNetAppStub extends NetAppStub {
         callableFactory.createOperationCallable(
             reverseReplicationDirectionTransportSettings,
             settings.reverseReplicationDirectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.establishPeeringCallable =
+        callableFactory.createUnaryCallable(
+            establishPeeringTransportSettings, settings.establishPeeringSettings(), clientContext);
+    this.establishPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            establishPeeringTransportSettings,
+            settings.establishPeeringOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.syncReplicationCallable =
+        callableFactory.createUnaryCallable(
+            syncReplicationTransportSettings, settings.syncReplicationSettings(), clientContext);
+    this.syncReplicationOperationCallable =
+        callableFactory.createOperationCallable(
+            syncReplicationTransportSettings,
+            settings.syncReplicationOperationSettings(),
             clientContext,
             operationsStub);
     this.createBackupVaultCallable =
@@ -2227,6 +2293,28 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable() {
     return reverseReplicationDirectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    return establishPeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    return establishPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    return syncReplicationCallable;
+  }
+
+  @Override
+  public OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    return syncReplicationOperationCallable;
   }
 
   @Override

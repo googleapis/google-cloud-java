@@ -210,12 +210,12 @@ public final class RouteProto {
           + "s\022;\n\014arrival_time\030\001 \001(\0132%.google.maps.ro"
           + "uting.v2.LocalizedTime\022=\n\016departure_time"
           + "\030\002 \001(\0132%.google.maps.routing.v2.Localize"
-          + "dTimeB\277\001\n\032com.google.maps.routing.v2B\nRo"
+          + "dTimeB\274\001\n\032com.google.maps.routing.v2B\nRo"
           + "uteProtoP\001Z:cloud.google.com/go/maps/rou"
-          + "ting/apiv2/routingpb;routingpb\370\001\001\242\002\005GMRV"
-          + "2\252\002\026Google.Maps.Routing.V2\312\002\026Google\\Maps"
-          + "\\Routing\\V2\352\002\031Google::Maps::Routing::V2b"
-          + "\006proto3"
+          + "ting/apiv2/routingpb;routingpb\242\002\005GMRV2\252\002"
+          + "\026Google.Maps.Routing.V2\312\002\026Google\\Maps\\Ro"
+          + "uting\\V2\352\002\031Google::Maps::Routing::V2b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

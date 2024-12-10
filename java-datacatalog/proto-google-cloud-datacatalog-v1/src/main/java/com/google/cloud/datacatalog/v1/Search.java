@@ -58,13 +58,12 @@ public final class Search {
           + "\024\n\014display_name\030\014 \001(\t\022\023\n\013description\030\r \001"
           + "(\tB\010\n\006system*d\n\020SearchResultType\022\"\n\036SEAR"
           + "CH_RESULT_TYPE_UNSPECIFIED\020\000\022\t\n\005ENTRY\020\001\022"
-          + "\020\n\014TAG_TEMPLATE\020\002\022\017\n\013ENTRY_GROUP\020\003B\306\001\n\037c"
+          + "\020\n\014TAG_TEMPLATE\020\002\022\017\n\013ENTRY_GROUP\020\003B\303\001\n\037c"
           + "om.google.cloud.datacatalog.v1P\001ZAcloud."
           + "google.com/go/datacatalog/apiv1/datacata"
-          + "logpb;datacatalogpb\370\001\001\252\002\033Google.Cloud.Da"
-          + "taCatalog.V1\312\002\033Google\\Cloud\\DataCatalog\\"
-          + "V1\352\002\036Google::Cloud::DataCatalog::V1b\006pro"
-          + "to3"
+          + "logpb;datacatalogpb\252\002\033Google.Cloud.DataC"
+          + "atalog.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352"
+          + "\002\036Google::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -28,10 +28,11 @@ public interface UpdateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * The fields to update.
+   * Optional. The fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -40,10 +41,11 @@ public interface UpdateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * The fields to update.
+   * Optional. The fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -52,10 +54,11 @@ public interface UpdateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * The fields to update.
+   * Optional. The fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 

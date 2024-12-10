@@ -984,6 +984,7 @@ public class ChatServiceClientTest {
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1035,6 +1036,7 @@ public class ChatServiceClientTest {
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1086,6 +1088,7 @@ public class ChatServiceClientTest {
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1137,6 +1140,7 @@ public class ChatServiceClientTest {
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1200,6 +1204,7 @@ public class ChatServiceClientTest {
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1362,6 +1367,7 @@ public class ChatServiceClientTest {
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
             .setSpaceUri("spaceUri2047440518")
+            .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
     mockChatService.addResponse(expectedResponse);
 

@@ -47,6 +47,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     template_ = "";
     templateDisplayName_ = "";
+    dataplexTransferStatus_ = 0;
   }
 
   @java.lang.Override
@@ -512,6 +513,49 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int DATAPLEX_TRANSFER_STATUS_FIELD_NUMBER = 7;
+  private int dataplexTransferStatus_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Denotes the transfer status of the Tag Template.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataplexTransferStatus.
+   */
+  @java.lang.Override
+  public int getDataplexTransferStatusValue() {
+    return dataplexTransferStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Denotes the transfer status of the Tag Template.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataplexTransferStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus
+      getDataplexTransferStatus() {
+    com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus result =
+        com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.forNumber(
+            dataplexTransferStatus_);
+    return result == null
+        ? com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -539,6 +583,12 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(templateDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, templateDisplayName_);
+    }
+    if (dataplexTransferStatus_
+        != com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus
+            .DATAPLEX_TRANSFER_STATUS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, dataplexTransferStatus_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -572,6 +622,12 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(templateDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, templateDisplayName_);
     }
+    if (dataplexTransferStatus_
+        != com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus
+            .DATAPLEX_TRANSFER_STATUS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, dataplexTransferStatus_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -591,6 +647,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     if (!getTemplate().equals(other.getTemplate())) return false;
     if (!getTemplateDisplayName().equals(other.getTemplateDisplayName())) return false;
     if (!internalGetFields().equals(other.internalGetFields())) return false;
+    if (dataplexTransferStatus_ != other.dataplexTransferStatus_) return false;
     if (!getScopeCase().equals(other.getScopeCase())) return false;
     switch (scopeCase_) {
       case 4:
@@ -620,6 +677,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetFields().hashCode();
     }
+    hash = (37 * hash) + DATAPLEX_TRANSFER_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + dataplexTransferStatus_;
     switch (scopeCase_) {
       case 4:
         hash = (37 * hash) + COLUMN_FIELD_NUMBER;
@@ -797,6 +856,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       template_ = "";
       templateDisplayName_ = "";
       internalGetMutableFields().clear();
+      dataplexTransferStatus_ = 0;
       scopeCase_ = 0;
       scope_ = null;
       return this;
@@ -846,6 +906,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.fields_ = internalGetFields().build(FieldsDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dataplexTransferStatus_ = dataplexTransferStatus_;
       }
     }
 
@@ -916,6 +979,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableFields().mergeFrom(other.internalGetFields());
       bitField0_ |= 0x00000010;
+      if (other.dataplexTransferStatus_ != 0) {
+        setDataplexTransferStatusValue(other.getDataplexTransferStatusValue());
+      }
       switch (other.getScopeCase()) {
         case COLUMN:
           {
@@ -994,6 +1060,12 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 42
+            case 56:
+              {
+                dataplexTransferStatus_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1822,6 +1894,111 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
         builderMap.put(key, entry);
       }
       return (com.google.cloud.datacatalog.v1.TagField.Builder) entry;
+    }
+
+    private int dataplexTransferStatus_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Denotes the transfer status of the Tag Template.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataplexTransferStatus.
+     */
+    @java.lang.Override
+    public int getDataplexTransferStatusValue() {
+      return dataplexTransferStatus_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Denotes the transfer status of the Tag Template.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for dataplexTransferStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataplexTransferStatusValue(int value) {
+      dataplexTransferStatus_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Denotes the transfer status of the Tag Template.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataplexTransferStatus.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus
+        getDataplexTransferStatus() {
+      com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus result =
+          com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.forNumber(
+              dataplexTransferStatus_);
+      return result == null
+          ? com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Denotes the transfer status of the Tag Template.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The dataplexTransferStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataplexTransferStatus(
+        com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      dataplexTransferStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Denotes the transfer status of the Tag Template.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataplexTransferStatus() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      dataplexTransferStatus_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

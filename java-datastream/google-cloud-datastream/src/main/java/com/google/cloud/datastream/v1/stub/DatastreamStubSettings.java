@@ -86,6 +86,7 @@ import com.google.cloud.datastream.v1.LookupStreamObjectRequest;
 import com.google.cloud.datastream.v1.OperationMetadata;
 import com.google.cloud.datastream.v1.PrivateConnection;
 import com.google.cloud.datastream.v1.Route;
+import com.google.cloud.datastream.v1.RunStreamRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobResponse;
 import com.google.cloud.datastream.v1.StopBackfillJobRequest;
@@ -225,6 +226,9 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
   private final UnaryCallSettings<DeleteStreamRequest, Operation> deleteStreamSettings;
   private final OperationCallSettings<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationSettings;
+  private final UnaryCallSettings<RunStreamRequest, Operation> runStreamSettings;
+  private final OperationCallSettings<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationSettings;
   private final UnaryCallSettings<GetStreamObjectRequest, StreamObject> getStreamObjectSettings;
   private final UnaryCallSettings<LookupStreamObjectRequest, StreamObject>
       lookupStreamObjectSettings;
@@ -769,6 +773,17 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     return deleteStreamOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to runStream. */
+  public UnaryCallSettings<RunStreamRequest, Operation> runStreamSettings() {
+    return runStreamSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runStream. */
+  public OperationCallSettings<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationSettings() {
+    return runStreamOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getStreamObject. */
   public UnaryCallSettings<GetStreamObjectRequest, StreamObject> getStreamObjectSettings() {
     return getStreamObjectSettings;
@@ -1019,6 +1034,8 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     updateStreamOperationSettings = settingsBuilder.updateStreamOperationSettings().build();
     deleteStreamSettings = settingsBuilder.deleteStreamSettings().build();
     deleteStreamOperationSettings = settingsBuilder.deleteStreamOperationSettings().build();
+    runStreamSettings = settingsBuilder.runStreamSettings().build();
+    runStreamOperationSettings = settingsBuilder.runStreamOperationSettings().build();
     getStreamObjectSettings = settingsBuilder.getStreamObjectSettings().build();
     lookupStreamObjectSettings = settingsBuilder.lookupStreamObjectSettings().build();
     listStreamObjectsSettings = settingsBuilder.listStreamObjectsSettings().build();
@@ -1084,6 +1101,9 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     private final UnaryCallSettings.Builder<DeleteStreamRequest, Operation> deleteStreamSettings;
     private final OperationCallSettings.Builder<DeleteStreamRequest, Empty, OperationMetadata>
         deleteStreamOperationSettings;
+    private final UnaryCallSettings.Builder<RunStreamRequest, Operation> runStreamSettings;
+    private final OperationCallSettings.Builder<RunStreamRequest, Stream, OperationMetadata>
+        runStreamOperationSettings;
     private final UnaryCallSettings.Builder<GetStreamObjectRequest, StreamObject>
         getStreamObjectSettings;
     private final UnaryCallSettings.Builder<LookupStreamObjectRequest, StreamObject>
@@ -1195,6 +1215,8 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
       updateStreamOperationSettings = OperationCallSettings.newBuilder();
       deleteStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteStreamOperationSettings = OperationCallSettings.newBuilder();
+      runStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      runStreamOperationSettings = OperationCallSettings.newBuilder();
       getStreamObjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       lookupStreamObjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listStreamObjectsSettings = PagedCallSettings.newBuilder(LIST_STREAM_OBJECTS_PAGE_STR_FACT);
@@ -1230,6 +1252,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
               createStreamSettings,
               updateStreamSettings,
               deleteStreamSettings,
+              runStreamSettings,
               getStreamObjectSettings,
               lookupStreamObjectSettings,
               listStreamObjectsSettings,
@@ -1272,6 +1295,8 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
       updateStreamOperationSettings = settings.updateStreamOperationSettings.toBuilder();
       deleteStreamSettings = settings.deleteStreamSettings.toBuilder();
       deleteStreamOperationSettings = settings.deleteStreamOperationSettings.toBuilder();
+      runStreamSettings = settings.runStreamSettings.toBuilder();
+      runStreamOperationSettings = settings.runStreamOperationSettings.toBuilder();
       getStreamObjectSettings = settings.getStreamObjectSettings.toBuilder();
       lookupStreamObjectSettings = settings.lookupStreamObjectSettings.toBuilder();
       listStreamObjectsSettings = settings.listStreamObjectsSettings.toBuilder();
@@ -1308,6 +1333,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
               createStreamSettings,
               updateStreamSettings,
               deleteStreamSettings,
+              runStreamSettings,
               getStreamObjectSettings,
               lookupStreamObjectSettings,
               listStreamObjectsSettings,
@@ -1405,6 +1431,11 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .deleteStreamSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .runStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getStreamObjectSettings()
@@ -1616,6 +1647,29 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .runStreamOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<RunStreamRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Stream.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1845,6 +1899,17 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     public OperationCallSettings.Builder<DeleteStreamRequest, Empty, OperationMetadata>
         deleteStreamOperationSettings() {
       return deleteStreamOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runStream. */
+    public UnaryCallSettings.Builder<RunStreamRequest, Operation> runStreamSettings() {
+      return runStreamSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runStream. */
+    public OperationCallSettings.Builder<RunStreamRequest, Stream, OperationMetadata>
+        runStreamOperationSettings() {
+      return runStreamOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getStreamObject. */

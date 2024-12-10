@@ -549,6 +549,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.analytics.data.v1beta.Filter$EmptyFilter",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1beta.Filter$EmptyFilter$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.analytics.data.v1beta.Filter$InListFilter",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
