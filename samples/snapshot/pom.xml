@@ -58,7 +58,7 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-exporter-logging</artifactId>
-      <version>1.44.1</version>
+      <version>1.45.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud.opentelemetry</groupId>
