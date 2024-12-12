@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.135.0](https://github.com/googleapis/java-pubsub/compare/v1.134.2...v1.135.0) (2024-12-12)
+
+
+### Features
+
+* Introduce `java.time` variables and methods ([#2271](https://github.com/googleapis/java-pubsub/issues/2271)) ([7edfd9c](https://github.com/googleapis/java-pubsub/commit/7edfd9c315405c7703509fb9b7bc4f0d2686d870))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.0 ([0b0d52c](https://github.com/googleapis/java-pubsub/commit/0b0d52c8fca179a913a8b04d76b44748f1886f45))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.44.0 ([#2270](https://github.com/googleapis/java-pubsub/issues/2270)) ([a5f70a9](https://github.com/googleapis/java-pubsub/commit/a5f70a9c2397a2c8f4642729922b742a3df01ed6))
+* Update dependency com.google.cloud:google-cloud-core to v2.48.0 ([#2263](https://github.com/googleapis/java-pubsub/issues/2263)) ([d7e5588](https://github.com/googleapis/java-pubsub/commit/d7e55886b62826f54f0bb12a6bfa4ef67dee6521))
+* Update dependency com.google.cloud:google-cloud-core to v2.49.0 ([#2285](https://github.com/googleapis/java-pubsub/issues/2285)) ([cd94a19](https://github.com/googleapis/java-pubsub/commit/cd94a1987271eea4d7744286a7daeb071bb9456a))
+* Update dependency com.google.cloud:google-cloud-storage to v2.45.0 ([#2268](https://github.com/googleapis/java-pubsub/issues/2268)) ([80a09e6](https://github.com/googleapis/java-pubsub/commit/80a09e69111229080c413eff8426bd0b3d50458d))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#2286](https://github.com/googleapis/java-pubsub/issues/2286)) ([0c0a1b9](https://github.com/googleapis/java-pubsub/commit/0c0a1b9231953e5c9878e0dfcf5a55d01794f6c4))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.29.0 ([#2276](https://github.com/googleapis/java-pubsub/issues/2276)) ([54ef88d](https://github.com/googleapis/java-pubsub/commit/54ef88d7f822d8130717e3be9bcf7fe9901d6cb0))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.29.1 ([#2279](https://github.com/googleapis/java-pubsub/issues/2279)) ([de3c9e1](https://github.com/googleapis/java-pubsub/commit/de3c9e1c7f2fe6413d0ae7a18955f16611df95c6))
+* Update googleapis/sdk-platform-java action to v2.51.0 ([#2284](https://github.com/googleapis/java-pubsub/issues/2284)) ([0be820e](https://github.com/googleapis/java-pubsub/commit/0be820e2044253bf484d88d703ce2dfade7aa137))
+
+
+### Documentation
+
+* Fix repository URL in samples README ([#2280](https://github.com/googleapis/java-pubsub/issues/2280)) ([8aeff1a](https://github.com/googleapis/java-pubsub/commit/8aeff1a375f3aa989d2c4bde0ed3dd2f329601fc))
+
 ## [1.134.2](https://github.com/googleapis/java-pubsub/compare/v1.134.1...v1.134.2) (2024-11-18)
 
 
