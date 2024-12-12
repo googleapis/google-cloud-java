@@ -30,7 +30,7 @@ public interface GetMetadataRequestOrBuilder
    * <pre>
    * Required. The resource name of the metadata to retrieve. This name field is
    * specified in the URL path and not URL parameters. Property is a numeric
-   * Google Analytics GA4 Property identifier. To learn more, see [where to find
+   * Google Analytics property identifier. To learn more, see [where to find
    * your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    *
@@ -54,7 +54,7 @@ public interface GetMetadataRequestOrBuilder
    * <pre>
    * Required. The resource name of the metadata to retrieve. This name field is
    * specified in the URL path and not URL parameters. Property is a numeric
-   * Google Analytics GA4 Property identifier. To learn more, see [where to find
+   * Google Analytics property identifier. To learn more, see [where to find
    * your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    *

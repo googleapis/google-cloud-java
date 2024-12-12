@@ -175,6 +175,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> FailoverReservation</td>
+ *      <td><p> Fail over a reservation to the secondary location. The operation should be done in the current secondary location, which will be promoted to the new primary location for the reservation. Attempting to failover a reservation in the current primary location will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> failoverReservation(FailoverReservationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> failoverReservationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateCapacityCommitment</td>
  *      <td><p> Creates a new capacity commitment resource.</td>
  *      <td>
@@ -1259,6 +1273,69 @@ public class ReservationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
     return stub.updateReservationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fail over a reservation to the secondary location. The operation should be done in the current
+   * secondary location, which will be promoted to the new primary location for the reservation.
+   * Attempting to failover a reservation in the current primary location will fail with the error
+   * code `google.rpc.Code.FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   FailoverReservationRequest request =
+   *       FailoverReservationRequest.newBuilder()
+   *           .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .build();
+   *   Reservation response = reservationServiceClient.failoverReservation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Reservation failoverReservation(FailoverReservationRequest request) {
+    return failoverReservationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fail over a reservation to the secondary location. The operation should be done in the current
+   * secondary location, which will be promoted to the new primary location for the reservation.
+   * Attempting to failover a reservation in the current primary location will fail with the error
+   * code `google.rpc.Code.FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   FailoverReservationRequest request =
+   *       FailoverReservationRequest.newBuilder()
+   *           .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .build();
+   *   ApiFuture<Reservation> future =
+   *       reservationServiceClient.failoverReservationCallable().futureCall(request);
+   *   // Do something.
+   *   Reservation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FailoverReservationRequest, Reservation>
+      failoverReservationCallable() {
+    return stub.failoverReservationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -28,7 +28,7 @@ public interface SoftwareConfigOrBuilder
    *
    *
    * <pre>
-   * The version of the software running in the environment.
+   * Optional. The version of the software running in the environment.
    * This encapsulates both the version of Cloud Composer functionality and the
    * version of Apache Airflow. It must match the regular expression
    * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
@@ -54,7 +54,7 @@ public interface SoftwareConfigOrBuilder
    * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
    * </pre>
    *
-   * <code>string image_version = 1;</code>
+   * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The imageVersion.
    */
@@ -63,7 +63,7 @@ public interface SoftwareConfigOrBuilder
    *
    *
    * <pre>
-   * The version of the software running in the environment.
+   * Optional. The version of the software running in the environment.
    * This encapsulates both the version of Cloud Composer functionality and the
    * version of Apache Airflow. It must match the regular expression
    * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
@@ -89,7 +89,7 @@ public interface SoftwareConfigOrBuilder
    * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
    * </pre>
    *
-   * <code>string image_version = 1;</code>
+   * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for imageVersion.
    */

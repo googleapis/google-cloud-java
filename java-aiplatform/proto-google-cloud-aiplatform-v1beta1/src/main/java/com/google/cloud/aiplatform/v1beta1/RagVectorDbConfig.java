@@ -4017,6 +4017,63 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         : apiAuth_;
   }
 
+  public static final int RAG_EMBEDDING_MODEL_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig ragEmbeddingModelConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the Vector DB.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the ragEmbeddingModelConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagEmbeddingModelConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the Vector DB.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The ragEmbeddingModelConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig getRagEmbeddingModelConfig() {
+    return ragEmbeddingModelConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.getDefaultInstance()
+        : ragEmbeddingModelConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the Vector DB.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
+      getRagEmbeddingModelConfigOrBuilder() {
+    return ragEmbeddingModelConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.getDefaultInstance()
+        : ragEmbeddingModelConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4053,6 +4110,9 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     if (vectorDbCase_ == 6) {
       output.writeMessage(
           6, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) vectorDb_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getRagEmbeddingModelConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4093,6 +4153,10 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
               6,
               (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch) vectorDb_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRagEmbeddingModelConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4112,6 +4176,10 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     if (hasApiAuth() != other.hasApiAuth()) return false;
     if (hasApiAuth()) {
       if (!getApiAuth().equals(other.getApiAuth())) return false;
+    }
+    if (hasRagEmbeddingModelConfig() != other.hasRagEmbeddingModelConfig()) return false;
+    if (hasRagEmbeddingModelConfig()) {
+      if (!getRagEmbeddingModelConfig().equals(other.getRagEmbeddingModelConfig())) return false;
     }
     if (!getVectorDbCase().equals(other.getVectorDbCase())) return false;
     switch (vectorDbCase_) {
@@ -4147,6 +4215,10 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     if (hasApiAuth()) {
       hash = (37 * hash) + API_AUTH_FIELD_NUMBER;
       hash = (53 * hash) + getApiAuth().hashCode();
+    }
+    if (hasRagEmbeddingModelConfig()) {
+      hash = (37 * hash) + RAG_EMBEDDING_MODEL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRagEmbeddingModelConfig().hashCode();
     }
     switch (vectorDbCase_) {
       case 1:
@@ -4314,6 +4386,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getApiAuthFieldBuilder();
+        getRagEmbeddingModelConfigFieldBuilder();
       }
     }
 
@@ -4340,6 +4413,11 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       if (apiAuthBuilder_ != null) {
         apiAuthBuilder_.dispose();
         apiAuthBuilder_ = null;
+      }
+      ragEmbeddingModelConfig_ = null;
+      if (ragEmbeddingModelConfigBuilder_ != null) {
+        ragEmbeddingModelConfigBuilder_.dispose();
+        ragEmbeddingModelConfigBuilder_ = null;
       }
       vectorDbCase_ = 0;
       vectorDb_ = null;
@@ -4384,6 +4462,13 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.apiAuth_ = apiAuthBuilder_ == null ? apiAuth_ : apiAuthBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.ragEmbeddingModelConfig_ =
+            ragEmbeddingModelConfigBuilder_ == null
+                ? ragEmbeddingModelConfig_
+                : ragEmbeddingModelConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4456,6 +4541,9 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return this;
       if (other.hasApiAuth()) {
         mergeApiAuth(other.getApiAuth());
+      }
+      if (other.hasRagEmbeddingModelConfig()) {
+        mergeRagEmbeddingModelConfig(other.getRagEmbeddingModelConfig());
       }
       switch (other.getVectorDbCase()) {
         case RAG_MANAGED_DB:
@@ -4552,6 +4640,13 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
                 vectorDbCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getRagEmbeddingModelConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5919,6 +6014,217 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         apiAuth_ = null;
       }
       return apiAuthBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig ragEmbeddingModelConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig,
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder>
+        ragEmbeddingModelConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the ragEmbeddingModelConfig field is set.
+     */
+    public boolean hasRagEmbeddingModelConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The ragEmbeddingModelConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+        getRagEmbeddingModelConfig() {
+      if (ragEmbeddingModelConfigBuilder_ == null) {
+        return ragEmbeddingModelConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.getDefaultInstance()
+            : ragEmbeddingModelConfig_;
+      } else {
+        return ragEmbeddingModelConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setRagEmbeddingModelConfig(
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig value) {
+      if (ragEmbeddingModelConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragEmbeddingModelConfig_ = value;
+      } else {
+        ragEmbeddingModelConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setRagEmbeddingModelConfig(
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder builderForValue) {
+      if (ragEmbeddingModelConfigBuilder_ == null) {
+        ragEmbeddingModelConfig_ = builderForValue.build();
+      } else {
+        ragEmbeddingModelConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeRagEmbeddingModelConfig(
+        com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig value) {
+      if (ragEmbeddingModelConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && ragEmbeddingModelConfig_ != null
+            && ragEmbeddingModelConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
+                    .getDefaultInstance()) {
+          getRagEmbeddingModelConfigBuilder().mergeFrom(value);
+        } else {
+          ragEmbeddingModelConfig_ = value;
+        }
+      } else {
+        ragEmbeddingModelConfigBuilder_.mergeFrom(value);
+      }
+      if (ragEmbeddingModelConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearRagEmbeddingModelConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ragEmbeddingModelConfig_ = null;
+      if (ragEmbeddingModelConfigBuilder_ != null) {
+        ragEmbeddingModelConfigBuilder_.dispose();
+        ragEmbeddingModelConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder
+        getRagEmbeddingModelConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getRagEmbeddingModelConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
+        getRagEmbeddingModelConfigOrBuilder() {
+      if (ragEmbeddingModelConfigBuilder_ != null) {
+        return ragEmbeddingModelConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ragEmbeddingModelConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.getDefaultInstance()
+            : ragEmbeddingModelConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The embedding model config of the Vector DB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig,
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder>
+        getRagEmbeddingModelConfigFieldBuilder() {
+      if (ragEmbeddingModelConfigBuilder_ == null) {
+        ragEmbeddingModelConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig,
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder>(
+                getRagEmbeddingModelConfig(), getParentForChildren(), isClean());
+        ragEmbeddingModelConfig_ = null;
+      }
+      return ragEmbeddingModelConfigBuilder_;
     }
 
     @java.lang.Override

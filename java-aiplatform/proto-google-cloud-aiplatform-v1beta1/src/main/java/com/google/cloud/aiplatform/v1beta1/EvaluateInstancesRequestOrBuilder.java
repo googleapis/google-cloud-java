@@ -937,6 +937,257 @@ public interface EvaluateInstancesRequestOrBuilder
    *
    *
    * <pre>
+   * Input for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+   * </code>
+   *
+   * @return Whether the trajectoryExactMatchInput field is set.
+   */
+  boolean hasTrajectoryExactMatchInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+   * </code>
+   *
+   * @return The trajectoryExactMatchInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput getTrajectoryExactMatchInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInputOrBuilder
+      getTrajectoryExactMatchInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+   * </code>
+   *
+   * @return Whether the trajectoryInOrderMatchInput field is set.
+   */
+  boolean hasTrajectoryInOrderMatchInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+   * </code>
+   *
+   * @return The trajectoryInOrderMatchInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput getTrajectoryInOrderMatchInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInputOrBuilder
+      getTrajectoryInOrderMatchInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory match any order metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+   * </code>
+   *
+   * @return Whether the trajectoryAnyOrderMatchInput field is set.
+   */
+  boolean hasTrajectoryAnyOrderMatchInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory match any order metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+   * </code>
+   *
+   * @return The trajectoryAnyOrderMatchInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput
+      getTrajectoryAnyOrderMatchInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory match any order metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInputOrBuilder
+      getTrajectoryAnyOrderMatchInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+   * </code>
+   *
+   * @return Whether the trajectoryPrecisionInput field is set.
+   */
+  boolean hasTrajectoryPrecisionInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+   * </code>
+   *
+   * @return The trajectoryPrecisionInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput getTrajectoryPrecisionInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInputOrBuilder
+      getTrajectoryPrecisionInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+   * </code>
+   *
+   * @return Whether the trajectoryRecallInput field is set.
+   */
+  boolean hasTrajectoryRecallInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+   * </code>
+   *
+   * @return The trajectoryRecallInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput getTrajectoryRecallInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInputOrBuilder
+      getTrajectoryRecallInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+   * </code>
+   *
+   * @return Whether the trajectorySingleToolUseInput field is set.
+   */
+  boolean hasTrajectorySingleToolUseInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+   * </code>
+   *
+   * @return The trajectorySingleToolUseInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput
+      getTrajectorySingleToolUseInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInputOrBuilder
+      getTrajectorySingleToolUseInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource name of the Location to evaluate the instances.
    * Format: `projects/{project}/locations/{location}`
    * </pre>

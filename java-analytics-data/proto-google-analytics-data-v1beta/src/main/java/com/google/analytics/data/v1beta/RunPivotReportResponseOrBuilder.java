@@ -522,7 +522,7 @@ public interface RunPivotReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 7;</code>
@@ -534,7 +534,7 @@ public interface RunPivotReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 7;</code>
@@ -546,7 +546,7 @@ public interface RunPivotReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 7;</code>

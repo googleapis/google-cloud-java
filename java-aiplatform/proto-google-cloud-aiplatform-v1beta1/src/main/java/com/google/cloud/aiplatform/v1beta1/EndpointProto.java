@@ -45,6 +45,10 @@ public final class EndpointProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_Status_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_Status_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_SystemLabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_SystemLabelsEntry_fieldAccessorTable;
@@ -57,13 +61,13 @@ public final class EndpointProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PredictRequestResponseLoggingConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -120,7 +124,7 @@ public final class EndpointProto {
           + ".com/Endpoint\022<projects/{project}/locati"
           + "ons/{location}/endpoints/{endpoint}\022Mpro"
           + "jects/{project}/locations/{location}/pub"
-          + "lishers/{publisher}/models/{model}\"\326\007\n\rD"
+          + "lishers/{publisher}/models/{model}\"\243\t\n\rD"
           + "eployedModel\022R\n\023dedicated_resources\030\007 \001("
           + "\01323.google.cloud.aiplatform.v1beta1.Dedi"
           + "catedResourcesH\000\022R\n\023automatic_resources\030"
@@ -141,28 +145,33 @@ public final class EndpointProto {
           + "d.aiplatform.v1beta1.PrivateEndpointsB\003\340"
           + "A\003\022Y\n\030faster_deployment_config\030\027 \001(\01327.g"
           + "oogle.cloud.aiplatform.v1beta1.FasterDep"
-          + "loymentConfig\022W\n\rsystem_labels\030\034 \003(\0132@.g"
-          + "oogle.cloud.aiplatform.v1beta1.DeployedM"
-          + "odel.SystemLabelsEntry\0323\n\021SystemLabelsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\026\n\024p"
-          + "rediction_resources\"\217\001\n\020PrivateEndpoints"
-          + "\022\035\n\020predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020expla"
-          + "in_http_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_http_ur"
-          + "i\030\003 \001(\tB\003\340A\003\022\037\n\022service_attachment\030\004 \001(\t"
-          + "B\003\340A\003\"\241\001\n#PredictRequestResponseLoggingC"
-          + "onfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_rate\030"
-          + "\002 \001(\001\022R\n\024bigquery_destination\030\003 \001(\01324.go"
-          + "ogle.cloud.aiplatform.v1beta1.BigQueryDe"
-          + "stination\"5\n\026FasterDeploymentConfig\022\033\n\023f"
-          + "ast_tryout_enabled\030\002 \001(\010\"N\n\026ClientConnec"
-          + "tionConfig\0224\n\021inference_timeout\030\001 \001(\0132\031."
-          + "google.protobuf.DurationB\344\001\n#com.google."
-          + "cloud.aiplatform.v1beta1B\rEndpointProtoP"
-          + "\001ZCcloud.google.com/go/aiplatform/apiv1b"
-          + "eta1/aiplatformpb;aiplatformpb\252\002\037Google."
-          + "Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\"
-          + "AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPl"
-          + "atform::V1beta1b\006proto3"
+          + "loymentConfig\022J\n\006status\030\032 \001(\01325.google.c"
+          + "loud.aiplatform.v1beta1.DeployedModel.St"
+          + "atusB\003\340A\003\022W\n\rsystem_labels\030\034 \003(\0132@.googl"
+          + "e.cloud.aiplatform.v1beta1.DeployedModel"
+          + ".SystemLabelsEntry\032\177\n\006Status\022\024\n\007message\030"
+          + "\001 \001(\tB\003\340A\003\0229\n\020last_update_time\030\002 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\022$\n\027availab"
+          + "le_replica_count\030\003 \001(\005B\003\340A\003\0323\n\021SystemLab"
+          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+          + "B\026\n\024prediction_resources\"\217\001\n\020PrivateEndp"
+          + "oints\022\035\n\020predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020"
+          + "explain_http_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_ht"
+          + "tp_uri\030\003 \001(\tB\003\340A\003\022\037\n\022service_attachment\030"
+          + "\004 \001(\tB\003\340A\003\"\241\001\n#PredictRequestResponseLog"
+          + "gingConfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_"
+          + "rate\030\002 \001(\001\022R\n\024bigquery_destination\030\003 \001(\013"
+          + "24.google.cloud.aiplatform.v1beta1.BigQu"
+          + "eryDestination\"N\n\026ClientConnectionConfig"
+          + "\0224\n\021inference_timeout\030\001 \001(\0132\031.google.pro"
+          + "tobuf.Duration\"5\n\026FasterDeploymentConfig"
+          + "\022\033\n\023fast_tryout_enabled\030\002 \001(\010B\344\001\n#com.go"
+          + "ogle.cloud.aiplatform.v1beta1B\rEndpointP"
+          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
+          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
+          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
+          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
+          + ":AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -242,13 +251,24 @@ public final class EndpointProto {
               "EnableAccessLogging",
               "PrivateEndpoints",
               "FasterDeploymentConfig",
+              "Status",
               "SystemLabels",
               "PredictionResources",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_Status_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_Status_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_Status_descriptor,
+            new java.lang.String[] {
+              "Message", "LastUpdateTime", "AvailableReplicaCount",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_SystemLabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(1);
     internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_SystemLabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_SystemLabelsEntry_descriptor,
@@ -271,21 +291,21 @@ public final class EndpointProto {
             new java.lang.String[] {
               "Enabled", "SamplingRate", "BigqueryDestination",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor =
-        getDescriptor().getMessageTypes().get(4);
-    internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor,
-            new java.lang.String[] {
-              "FastTryoutEnabled",
-            });
     internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_descriptor,
             new java.lang.String[] {
               "InferenceTimeout",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor,
+            new java.lang.String[] {
+              "FastTryoutEnabled",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

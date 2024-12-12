@@ -91,7 +91,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    *     then a new `[CONDITION_ID]` is created.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -126,7 +127,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    *     then a new `[CONDITION_ID]` is created.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -161,7 +163,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    *     then a new `[CONDITION_ID]` is created.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -661,7 +664,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -695,7 +699,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -735,7 +740,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -777,7 +783,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -816,7 +823,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -863,7 +871,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -902,7 +911,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       bitField0_ |= 0x00000001;
@@ -936,7 +946,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -974,7 +985,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      *     then a new `[CONDITION_ID]` is created.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

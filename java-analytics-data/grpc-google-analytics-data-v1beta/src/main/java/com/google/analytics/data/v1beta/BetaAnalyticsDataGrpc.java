@@ -662,7 +662,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     default void batchRunReports(
@@ -678,7 +678,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     default void batchRunPivotReports(
@@ -695,7 +695,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -956,7 +956,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public void batchRunReports(
@@ -974,7 +974,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public void batchRunPivotReports(
@@ -993,7 +993,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -1247,7 +1247,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunReportsResponse batchRunReports(
@@ -1261,7 +1261,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunPivotReportsResponse batchRunPivotReports(
@@ -1276,7 +1276,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -1505,7 +1505,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1520,7 +1520,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1536,7 +1536,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is

@@ -112,9 +112,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -126,9 +127,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -140,9 +142,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -317,9 +320,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -334,9 +338,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -351,9 +356,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1125,9 +1131,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1141,9 +1148,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1161,9 +1169,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1185,9 +1194,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1206,9 +1216,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1235,9 +1246,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1256,9 +1268,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1272,9 +1285,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1290,9 +1304,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -2485,11 +2500,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A web-safe, base64-encoded route token that can be passed to the Navigation
-   * SDK, that allows the Navigation SDK to reconstruct the route during
-   * navigation, and, in the event of rerouting, honor the original intention
-   * when you created the route by calling ComputeRoutes. Customers should treat
-   * this token as an opaque blob. It is not meant for reading or mutating.
+   * An opaque token that can be passed to [Navigation
+   * SDK](https://developers.google.com/maps/documentation/navigation) to
+   * reconstruct the route during navigation, and, in the event of rerouting,
+   * honor the original intention when the route was created. Treat this token
+   * as an opaque blob.  Don't compare its value across requests as its value
+   * may change even if the service returns the exact same route.
+   *
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
    * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -2516,11 +2533,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A web-safe, base64-encoded route token that can be passed to the Navigation
-   * SDK, that allows the Navigation SDK to reconstruct the route during
-   * navigation, and, in the event of rerouting, honor the original intention
-   * when you created the route by calling ComputeRoutes. Customers should treat
-   * this token as an opaque blob. It is not meant for reading or mutating.
+   * An opaque token that can be passed to [Navigation
+   * SDK](https://developers.google.com/maps/documentation/navigation) to
+   * reconstruct the route during navigation, and, in the event of rerouting,
+   * honor the original intention when the route was created. Treat this token
+   * as an opaque blob.  Don't compare its value across requests as its value
+   * may change even if the service returns the exact same route.
+   *
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
    * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5749,11 +5768,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5779,11 +5800,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5809,11 +5832,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5838,11 +5863,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5863,11 +5890,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests

@@ -161,5 +161,40 @@ public interface SourceConfigOrBuilder
   com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder
       getPostgresqlSourceConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   *
+   * @return Whether the sqlServerSourceConfig field is set.
+   */
+  boolean hasSqlServerSourceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   *
+   * @return The sqlServerSourceConfig.
+   */
+  com.google.cloud.datastream.v1.SqlServerSourceConfig getSqlServerSourceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   */
+  com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder getSqlServerSourceConfigOrBuilder();
+
   com.google.cloud.datastream.v1.SourceConfig.SourceStreamConfigCase getSourceStreamConfigCase();
 }

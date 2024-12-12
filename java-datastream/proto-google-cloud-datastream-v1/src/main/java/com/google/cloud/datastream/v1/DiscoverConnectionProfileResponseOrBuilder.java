@@ -129,6 +129,41 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    */
   com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlRdbmsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   *
+   * @return Whether the sqlServerRdbms field is set.
+   */
+  boolean hasSqlServerRdbms();
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   *
+   * @return The sqlServerRdbms.
+   */
+  com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerRdbms();
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   */
+  com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerRdbmsOrBuilder();
+
   com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse.DataObjectCase
       getDataObjectCase();
 }

@@ -69,10 +69,10 @@ public interface UpdateReasoningEngineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask specifying which fields to update.
+   * Optional. Mask specifying which fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -82,10 +82,10 @@ public interface UpdateReasoningEngineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask specifying which fields to update.
+   * Optional. Mask specifying which fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -95,10 +95,10 @@ public interface UpdateReasoningEngineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask specifying which fields to update.
+   * Optional. Mask specifying which fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();

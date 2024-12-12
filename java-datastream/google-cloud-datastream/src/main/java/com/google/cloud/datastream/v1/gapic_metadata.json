@@ -79,6 +79,9 @@
             "LookupStreamObject": {
               "methods": ["lookupStreamObject", "lookupStreamObjectCallable"]
             },
+            "RunStream": {
+              "methods": ["runStreamAsync", "runStreamOperationCallable", "runStreamCallable"]
+            },
             "StartBackfillJob": {
               "methods": ["startBackfillJob", "startBackfillJob", "startBackfillJob", "startBackfillJobCallable"]
             },

@@ -219,7 +219,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -232,7 +233,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -245,7 +247,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>

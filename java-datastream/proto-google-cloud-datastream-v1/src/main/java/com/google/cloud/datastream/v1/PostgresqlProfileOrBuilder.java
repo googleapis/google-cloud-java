@@ -91,10 +91,11 @@ public interface PostgresqlProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Password for the PostgreSQL connection.
+   * Optional. Password for the PostgreSQL connection. Mutually exclusive with
+   * the `secret_manager_stored_password` field.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The password.
    */
@@ -103,10 +104,11 @@ public interface PostgresqlProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Password for the PostgreSQL connection.
+   * Optional. Password for the PostgreSQL connection. Mutually exclusive with
+   * the `secret_manager_stored_password` field.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for password.
    */

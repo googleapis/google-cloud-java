@@ -91,10 +91,11 @@ public interface OracleProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Password for the Oracle connection.
+   * Optional. Password for the Oracle connection. Mutually exclusive with the
+   * `secret_manager_stored_password` field.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The password.
    */
@@ -103,10 +104,11 @@ public interface OracleProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Password for the Oracle connection.
+   * Optional. Password for the Oracle connection. Mutually exclusive with the
+   * `secret_manager_stored_password` field.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for password.
    */
@@ -194,4 +196,115 @@ public interface OracleProfileOrBuilder
    * <code>map&lt;string, string&gt; connection_attributes = 6;</code>
    */
   java.lang.String getConnectionAttributesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the Oracle connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the oracleSslConfig field is set.
+   */
+  boolean hasOracleSslConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the Oracle connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The oracleSslConfig.
+   */
+  com.google.cloud.datastream.v1.OracleSslConfig getOracleSslConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the Oracle connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.OracleSslConfigOrBuilder getOracleSslConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Oracle ASM connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the oracleAsmConfig field is set.
+   */
+  boolean hasOracleAsmConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Oracle ASM connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The oracleAsmConfig.
+   */
+  com.google.cloud.datastream.v1.OracleAsmConfig getOracleAsmConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Oracle ASM connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.OracleAsmConfigOrBuilder getOracleAsmConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the Oracle
+   * connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  java.lang.String getSecretManagerStoredPassword();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the Oracle
+   * connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes();
 }

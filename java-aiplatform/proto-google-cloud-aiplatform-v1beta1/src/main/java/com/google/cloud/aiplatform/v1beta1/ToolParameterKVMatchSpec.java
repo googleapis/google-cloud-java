@@ -67,7 +67,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Whether to use STRCIT string match on parameter values.
+   * Optional. Whether to use STRICT string match on parameter values.
    * </pre>
    *
    * <code>bool use_strict_string_match = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -428,7 +428,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Whether to use STRCIT string match on parameter values.
+     * Optional. Whether to use STRICT string match on parameter values.
      * </pre>
      *
      * <code>bool use_strict_string_match = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -443,7 +443,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Whether to use STRCIT string match on parameter values.
+     * Optional. Whether to use STRICT string match on parameter values.
      * </pre>
      *
      * <code>bool use_strict_string_match = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -462,7 +462,7 @@ public final class ToolParameterKVMatchSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Whether to use STRCIT string match on parameter values.
+     * Optional. Whether to use STRICT string match on parameter values.
      * </pre>
      *
      * <code>bool use_strict_string_match = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

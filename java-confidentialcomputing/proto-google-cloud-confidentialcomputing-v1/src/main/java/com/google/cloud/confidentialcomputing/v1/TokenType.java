@@ -70,6 +70,16 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOKEN_TYPE_LIMITED_AWS = 3;</code>
    */
   TOKEN_TYPE_LIMITED_AWS(3),
+  /**
+   *
+   *
+   * <pre>
+   * Principal-tag-based token for AWS integration
+   * </pre>
+   *
+   * <code>TOKEN_TYPE_AWS_PRINCIPALTAGS = 4;</code>
+   */
+  TOKEN_TYPE_AWS_PRINCIPALTAGS(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -113,6 +123,16 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOKEN_TYPE_LIMITED_AWS = 3;</code>
    */
   public static final int TOKEN_TYPE_LIMITED_AWS_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Principal-tag-based token for AWS integration
+   * </pre>
+   *
+   * <code>TOKEN_TYPE_AWS_PRINCIPALTAGS = 4;</code>
+   */
+  public static final int TOKEN_TYPE_AWS_PRINCIPALTAGS_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -146,6 +166,8 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
         return TOKEN_TYPE_PKI;
       case 3:
         return TOKEN_TYPE_LIMITED_AWS;
+      case 4:
+        return TOKEN_TYPE_AWS_PRINCIPALTAGS;
       default:
         return null;
     }

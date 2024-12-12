@@ -284,4 +284,92 @@ public interface ResponseMetaDataOrBuilder
    * @return The subjectToThresholding.
    */
   boolean getSubjectToThresholding();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata> getSamplingMetadatasList();
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  com.google.analytics.data.v1alpha.SamplingMetadata getSamplingMetadatas(int index);
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  int getSamplingMetadatasCount();
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  java.util.List<? extends com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder>
+      getSamplingMetadatasOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder getSamplingMetadatasOrBuilder(
+      int index);
 }

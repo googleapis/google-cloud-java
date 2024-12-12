@@ -888,6 +888,7 @@ public class NetAppClientHttpJsonTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -969,6 +970,7 @@ public class NetAppClientHttpJsonTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1050,6 +1052,7 @@ public class NetAppClientHttpJsonTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1140,6 +1143,7 @@ public class NetAppClientHttpJsonTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1230,6 +1234,7 @@ public class NetAppClientHttpJsonTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1279,6 +1284,7 @@ public class NetAppClientHttpJsonTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1349,6 +1355,7 @@ public class NetAppClientHttpJsonTest {
               .setReplicaZone("replicaZone-1063236476")
               .setZone("zone3744684")
               .setColdTierSizeGib(212809252)
+              .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVolumeAsync(volume, updateMask).get();
@@ -1489,6 +1496,7 @@ public class NetAppClientHttpJsonTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3348,6 +3356,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3405,6 +3415,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3462,6 +3474,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3527,6 +3541,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3686,6 +3702,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3709,6 +3727,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3752,6 +3772,8 @@ public class NetAppClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
               .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+              .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+              .setClusterLocation("clusterLocation-732398641")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateReplicationAsync(replication, updateMask).get();
@@ -3776,6 +3798,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3848,6 +3872,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3918,6 +3944,8 @@ public class NetAppClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3967,6 +3995,158 @@ public class NetAppClientHttpJsonTest {
                       .toString())
               .build();
       client.reverseReplicationDirectionAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void establishPeeringTest() throws Exception {
+    Replication expectedResponse =
+        Replication.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setStateDetails("stateDetails1730982001")
+            .setHealthy(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestinationVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setTransferStats(TransferStats.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
+            .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("establishPeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    EstablishPeeringRequest request =
+        EstablishPeeringRequest.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setPeerClusterName("peerClusterName313022691")
+            .setPeerSvmName("peerSvmName1014209619")
+            .addAllPeerIpAddresses(new ArrayList<String>())
+            .setPeerVolumeName("peerVolumeName1542206407")
+            .build();
+
+    Replication actualResponse = client.establishPeeringAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void establishPeeringExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EstablishPeeringRequest request =
+          EstablishPeeringRequest.newBuilder()
+              .setName(
+                  ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                      .toString())
+              .setPeerClusterName("peerClusterName313022691")
+              .setPeerSvmName("peerSvmName1014209619")
+              .addAllPeerIpAddresses(new ArrayList<String>())
+              .setPeerVolumeName("peerVolumeName1542206407")
+              .build();
+      client.establishPeeringAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void syncReplicationTest() throws Exception {
+    Replication expectedResponse =
+        Replication.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setStateDetails("stateDetails1730982001")
+            .setHealthy(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestinationVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setTransferStats(TransferStats.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
+            .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("syncReplicationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SyncReplicationRequest request =
+        SyncReplicationRequest.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .build();
+
+    Replication actualResponse = client.syncReplicationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void syncReplicationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SyncReplicationRequest request =
+          SyncReplicationRequest.newBuilder()
+              .setName(
+                  ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                      .toString())
+              .build();
+      client.syncReplicationAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

@@ -147,4 +147,45 @@ public interface DestinationVolumeParametersOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tieringPolicy field is set.
+   */
+  boolean hasTieringPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tieringPolicy.
+   */
+  com.google.cloud.netapp.v1.TieringPolicy getTieringPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.TieringPolicyOrBuilder getTieringPolicyOrBuilder();
 }

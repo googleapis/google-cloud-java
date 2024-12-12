@@ -501,5 +501,49 @@ public interface StreamOrBuilder
    */
   com.google.protobuf.ByteString getCustomerManagedEncryptionKeyBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastRecoveryTime field is set.
+   */
+  boolean hasLastRecoveryTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastRecoveryTime.
+   */
+  com.google.protobuf.Timestamp getLastRecoveryTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastRecoveryTimeOrBuilder();
+
   com.google.cloud.datastream.v1.Stream.BackfillStrategyCase getBackfillStrategyCase();
 }

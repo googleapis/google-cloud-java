@@ -769,4 +769,67 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void setConfig(
+      SetConfigRequest request, StreamObserver<MigrationConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MigrationConfig) {
+      requests.add(request);
+      responseObserver.onNext(((MigrationConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MigrationConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void retrieveConfig(
+      RetrieveConfigRequest request, StreamObserver<OrganizationConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OrganizationConfig) {
+      requests.add(request);
+      responseObserver.onNext(((OrganizationConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetrieveConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OrganizationConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void retrieveEffectiveConfig(
+      RetrieveEffectiveConfigRequest request, StreamObserver<MigrationConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MigrationConfig) {
+      requests.add(request);
+      responseObserver.onNext(((MigrationConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetrieveEffectiveConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MigrationConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

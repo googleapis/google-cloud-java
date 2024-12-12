@@ -545,6 +545,47 @@ public final class DatastreamGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datastream.v1.RunStreamRequest, com.google.longrunning.Operation>
+      getRunStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunStream",
+      requestType = com.google.cloud.datastream.v1.RunStreamRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datastream.v1.RunStreamRequest, com.google.longrunning.Operation>
+      getRunStreamMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datastream.v1.RunStreamRequest, com.google.longrunning.Operation>
+        getRunStreamMethod;
+    if ((getRunStreamMethod = DatastreamGrpc.getRunStreamMethod) == null) {
+      synchronized (DatastreamGrpc.class) {
+        if ((getRunStreamMethod = DatastreamGrpc.getRunStreamMethod) == null) {
+          DatastreamGrpc.getRunStreamMethod =
+              getRunStreamMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datastream.v1.RunStreamRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunStream"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datastream.v1.RunStreamRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DatastreamMethodDescriptorSupplier("RunStream"))
+                      .build();
+        }
+      }
+    }
+    return getRunStreamMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datastream.v1.GetStreamObjectRequest,
           com.google.cloud.datastream.v1.StreamObject>
       getGetStreamObjectMethod;
@@ -1406,6 +1447,20 @@ public final class DatastreamGrpc {
      *
      *
      * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    default void runStream(
+        com.google.cloud.datastream.v1.RunStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunStreamMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Use this method to get details about a stream object.
      * </pre>
      */
@@ -1827,6 +1882,21 @@ public final class DatastreamGrpc {
      *
      *
      * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    public void runStream(
+        com.google.cloud.datastream.v1.RunStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunStreamMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Use this method to get details about a stream object.
      * </pre>
      */
@@ -2226,6 +2296,20 @@ public final class DatastreamGrpc {
      *
      *
      * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runStream(
+        com.google.cloud.datastream.v1.RunStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Use this method to get details about a stream object.
      * </pre>
      */
@@ -2587,6 +2671,20 @@ public final class DatastreamGrpc {
      *
      *
      * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        runStream(com.google.cloud.datastream.v1.RunStreamRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunStreamMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Use this method to get details about a stream object.
      * </pre>
      */
@@ -2793,20 +2891,21 @@ public final class DatastreamGrpc {
   private static final int METHODID_CREATE_STREAM = 8;
   private static final int METHODID_UPDATE_STREAM = 9;
   private static final int METHODID_DELETE_STREAM = 10;
-  private static final int METHODID_GET_STREAM_OBJECT = 11;
-  private static final int METHODID_LOOKUP_STREAM_OBJECT = 12;
-  private static final int METHODID_LIST_STREAM_OBJECTS = 13;
-  private static final int METHODID_START_BACKFILL_JOB = 14;
-  private static final int METHODID_STOP_BACKFILL_JOB = 15;
-  private static final int METHODID_FETCH_STATIC_IPS = 16;
-  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 17;
-  private static final int METHODID_GET_PRIVATE_CONNECTION = 18;
-  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 19;
-  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 20;
-  private static final int METHODID_CREATE_ROUTE = 21;
-  private static final int METHODID_GET_ROUTE = 22;
-  private static final int METHODID_LIST_ROUTES = 23;
-  private static final int METHODID_DELETE_ROUTE = 24;
+  private static final int METHODID_RUN_STREAM = 11;
+  private static final int METHODID_GET_STREAM_OBJECT = 12;
+  private static final int METHODID_LOOKUP_STREAM_OBJECT = 13;
+  private static final int METHODID_LIST_STREAM_OBJECTS = 14;
+  private static final int METHODID_START_BACKFILL_JOB = 15;
+  private static final int METHODID_STOP_BACKFILL_JOB = 16;
+  private static final int METHODID_FETCH_STATIC_IPS = 17;
+  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 18;
+  private static final int METHODID_GET_PRIVATE_CONNECTION = 19;
+  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 20;
+  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 21;
+  private static final int METHODID_CREATE_ROUTE = 22;
+  private static final int METHODID_GET_ROUTE = 23;
+  private static final int METHODID_LIST_ROUTES = 24;
+  private static final int METHODID_DELETE_ROUTE = 25;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2885,6 +2984,11 @@ public final class DatastreamGrpc {
         case METHODID_DELETE_STREAM:
           serviceImpl.deleteStream(
               (com.google.cloud.datastream.v1.DeleteStreamRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RUN_STREAM:
+          serviceImpl.runStream(
+              (com.google.cloud.datastream.v1.RunStreamRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_STREAM_OBJECT:
@@ -3057,6 +3161,12 @@ public final class DatastreamGrpc {
                     com.google.cloud.datastream.v1.DeleteStreamRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_STREAM)))
         .addMethod(
+            getRunStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1.RunStreamRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_STREAM)))
+        .addMethod(
             getGetStreamObjectMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3211,6 +3321,7 @@ public final class DatastreamGrpc {
                       .addMethod(getCreateStreamMethod())
                       .addMethod(getUpdateStreamMethod())
                       .addMethod(getDeleteStreamMethod())
+                      .addMethod(getRunStreamMethod())
                       .addMethod(getGetStreamObjectMethod())
                       .addMethod(getLookupStreamObjectMethod())
                       .addMethod(getListStreamObjectsMethod())

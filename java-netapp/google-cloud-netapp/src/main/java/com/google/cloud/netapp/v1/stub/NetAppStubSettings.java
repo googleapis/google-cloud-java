@@ -84,6 +84,7 @@ import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
+import com.google.cloud.netapp.v1.EstablishPeeringRequest;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -121,6 +122,7 @@ import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
+import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -333,6 +335,12 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final OperationCallSettings<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationSettings;
+  private final UnaryCallSettings<EstablishPeeringRequest, Operation> establishPeeringSettings;
+  private final OperationCallSettings<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationSettings;
+  private final UnaryCallSettings<SyncReplicationRequest, Operation> syncReplicationSettings;
+  private final OperationCallSettings<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationSettings;
   private final UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings;
   private final OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationSettings;
@@ -1273,6 +1281,28 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return reverseReplicationDirectionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public UnaryCallSettings<EstablishPeeringRequest, Operation> establishPeeringSettings() {
+    return establishPeeringSettings;
+  }
+
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public OperationCallSettings<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationSettings() {
+    return establishPeeringOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public UnaryCallSettings<SyncReplicationRequest, Operation> syncReplicationSettings() {
+    return syncReplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public OperationCallSettings<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationSettings() {
+    return syncReplicationOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createBackupVault. */
   public UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings() {
     return createBackupVaultSettings;
@@ -1601,6 +1631,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         settingsBuilder.reverseReplicationDirectionSettings().build();
     reverseReplicationDirectionOperationSettings =
         settingsBuilder.reverseReplicationDirectionOperationSettings().build();
+    establishPeeringSettings = settingsBuilder.establishPeeringSettings().build();
+    establishPeeringOperationSettings = settingsBuilder.establishPeeringOperationSettings().build();
+    syncReplicationSettings = settingsBuilder.syncReplicationSettings().build();
+    syncReplicationOperationSettings = settingsBuilder.syncReplicationOperationSettings().build();
     createBackupVaultSettings = settingsBuilder.createBackupVaultSettings().build();
     createBackupVaultOperationSettings =
         settingsBuilder.createBackupVaultOperationSettings().build();
@@ -1774,6 +1808,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final OperationCallSettings.Builder<
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings;
+    private final UnaryCallSettings.Builder<EstablishPeeringRequest, Operation>
+        establishPeeringSettings;
+    private final OperationCallSettings.Builder<
+            EstablishPeeringRequest, Replication, OperationMetadata>
+        establishPeeringOperationSettings;
+    private final UnaryCallSettings.Builder<SyncReplicationRequest, Operation>
+        syncReplicationSettings;
+    private final OperationCallSettings.Builder<
+            SyncReplicationRequest, Replication, OperationMetadata>
+        syncReplicationOperationSettings;
     private final UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
         createBackupVaultSettings;
     private final OperationCallSettings.Builder<
@@ -1942,6 +1986,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       resumeReplicationOperationSettings = OperationCallSettings.newBuilder();
       reverseReplicationDirectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reverseReplicationDirectionOperationSettings = OperationCallSettings.newBuilder();
+      establishPeeringSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      establishPeeringOperationSettings = OperationCallSettings.newBuilder();
+      syncReplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      syncReplicationOperationSettings = OperationCallSettings.newBuilder();
       createBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupVaultOperationSettings = OperationCallSettings.newBuilder();
       getBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2008,6 +2056,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               stopReplicationSettings,
               resumeReplicationSettings,
               reverseReplicationDirectionSettings,
+              establishPeeringSettings,
+              syncReplicationSettings,
               createBackupVaultSettings,
               getBackupVaultSettings,
               listBackupVaultsSettings,
@@ -2098,6 +2148,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           settings.reverseReplicationDirectionSettings.toBuilder();
       reverseReplicationDirectionOperationSettings =
           settings.reverseReplicationDirectionOperationSettings.toBuilder();
+      establishPeeringSettings = settings.establishPeeringSettings.toBuilder();
+      establishPeeringOperationSettings = settings.establishPeeringOperationSettings.toBuilder();
+      syncReplicationSettings = settings.syncReplicationSettings.toBuilder();
+      syncReplicationOperationSettings = settings.syncReplicationOperationSettings.toBuilder();
       createBackupVaultSettings = settings.createBackupVaultSettings.toBuilder();
       createBackupVaultOperationSettings = settings.createBackupVaultOperationSettings.toBuilder();
       getBackupVaultSettings = settings.getBackupVaultSettings.toBuilder();
@@ -2167,6 +2221,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               stopReplicationSettings,
               resumeReplicationSettings,
               reverseReplicationDirectionSettings,
+              establishPeeringSettings,
+              syncReplicationSettings,
               createBackupVaultSettings,
               getBackupVaultSettings,
               listBackupVaultsSettings,
@@ -2395,6 +2451,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .reverseReplicationDirectionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .establishPeeringSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .syncReplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createBackupVaultSettings()
@@ -3059,6 +3125,54 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                       .build()));
 
       builder
+          .establishPeeringOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EstablishPeeringRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Replication.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .syncReplicationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SyncReplicationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Replication.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .createBackupVaultOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -3651,6 +3765,29 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings() {
       return reverseReplicationDirectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public UnaryCallSettings.Builder<EstablishPeeringRequest, Operation>
+        establishPeeringSettings() {
+      return establishPeeringSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public OperationCallSettings.Builder<EstablishPeeringRequest, Replication, OperationMetadata>
+        establishPeeringOperationSettings() {
+      return establishPeeringOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public UnaryCallSettings.Builder<SyncReplicationRequest, Operation> syncReplicationSettings() {
+      return syncReplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public OperationCallSettings.Builder<SyncReplicationRequest, Replication, OperationMetadata>
+        syncReplicationOperationSettings() {
+      return syncReplicationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createBackupVault. */

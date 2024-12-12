@@ -106,8 +106,8 @@ public interface QueryResultOrBuilder
    * was not set.
    *
    * This field is not guaranteed to be accurate or set. In particular this
-   * field isn't set for StreamingDetectIntent since the streaming endpoint has
-   * separate confidence estimates per portion of the audio in
+   * field isn't set for [StreamingDetectIntent][] since the streaming endpoint
+   * has separate confidence estimates per portion of the audio in
    * StreamingRecognitionResult.
    * </pre>
    *

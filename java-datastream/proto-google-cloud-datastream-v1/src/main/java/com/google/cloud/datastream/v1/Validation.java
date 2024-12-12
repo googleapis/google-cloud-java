@@ -116,6 +116,16 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * <code>PASSED = 3;</code>
      */
     PASSED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Validation executed with warnings.
+     * </pre>
+     *
+     * <code>WARNING = 4;</code>
+     */
+    WARNING(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -159,6 +169,16 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * <code>PASSED = 3;</code>
      */
     public static final int PASSED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Validation executed with warnings.
+     * </pre>
+     *
+     * <code>WARNING = 4;</code>
+     */
+    public static final int WARNING_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -192,6 +212,8 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 3:
           return PASSED;
+        case 4:
+          return WARNING;
         default:
           return null;
       }
@@ -302,10 +324,12 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Validation execution status.
+   * Output only. Validation execution status.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+   * <code>
+   * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -317,10 +341,12 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Validation execution status.
+   * Output only. Validation execution status.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+   * <code>
+   * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -1023,10 +1049,12 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Validation execution status.
+     * Output only. Validation execution status.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+     * <code>
+     * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -1038,10 +1066,12 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Validation execution status.
+     * Output only. Validation execution status.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+     * <code>
+     * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -1056,10 +1086,12 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Validation execution status.
+     * Output only. Validation execution status.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+     * <code>
+     * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -1073,10 +1105,12 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Validation execution status.
+     * Output only. Validation execution status.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+     * <code>
+     * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -1094,10 +1128,12 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Validation execution status.
+     * Output only. Validation execution status.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+     * <code>
+     * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */

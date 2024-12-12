@@ -53,10 +53,12 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Validation execution status.
+   * Output only. Validation execution status.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+   * <code>
+   * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -65,10 +67,12 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Validation execution status.
+   * Output only. Validation execution status.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.Validation.State state = 2;</code>
+   * <code>
+   * .google.cloud.datastream.v1.Validation.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */

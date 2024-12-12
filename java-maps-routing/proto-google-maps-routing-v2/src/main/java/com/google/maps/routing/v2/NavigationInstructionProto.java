@@ -46,12 +46,12 @@ public final class NavigationInstructionProto {
           + "oogle/maps/routing/v2/maneuver.proto\"a\n\025"
           + "NavigationInstruction\0222\n\010maneuver\030\001 \001(\0162"
           + " .google.maps.routing.v2.Maneuver\022\024\n\014ins"
-          + "tructions\030\002 \001(\tB\317\001\n\032com.google.maps.rout"
+          + "tructions\030\002 \001(\tB\314\001\n\032com.google.maps.rout"
           + "ing.v2B\032NavigationInstructionProtoP\001Z:cl"
           + "oud.google.com/go/maps/routing/apiv2/rou"
-          + "tingpb;routingpb\370\001\001\242\002\005GMRV2\252\002\026Google.Map"
-          + "s.Routing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031"
-          + "Google::Maps::Routing::V2b\006proto3"
+          + "tingpb;routingpb\242\002\005GMRV2\252\002\026Google.Maps.R"
+          + "outing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Goo"
+          + "gle::Maps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

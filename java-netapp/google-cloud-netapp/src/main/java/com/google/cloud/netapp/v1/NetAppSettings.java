@@ -476,6 +476,28 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return ((NetAppStubSettings) getStubSettings()).reverseReplicationDirectionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public UnaryCallSettings<EstablishPeeringRequest, Operation> establishPeeringSettings() {
+    return ((NetAppStubSettings) getStubSettings()).establishPeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public OperationCallSettings<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).establishPeeringOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public UnaryCallSettings<SyncReplicationRequest, Operation> syncReplicationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).syncReplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public OperationCallSettings<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).syncReplicationOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createBackupVault. */
   public UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings() {
     return ((NetAppStubSettings) getStubSettings()).createBackupVaultSettings();
@@ -1091,6 +1113,29 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings() {
       return getStubSettingsBuilder().reverseReplicationDirectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public UnaryCallSettings.Builder<EstablishPeeringRequest, Operation>
+        establishPeeringSettings() {
+      return getStubSettingsBuilder().establishPeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public OperationCallSettings.Builder<EstablishPeeringRequest, Replication, OperationMetadata>
+        establishPeeringOperationSettings() {
+      return getStubSettingsBuilder().establishPeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public UnaryCallSettings.Builder<SyncReplicationRequest, Operation> syncReplicationSettings() {
+      return getStubSettingsBuilder().syncReplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public OperationCallSettings.Builder<SyncReplicationRequest, Replication, OperationMetadata>
+        syncReplicationOperationSettings() {
+      return getStubSettingsBuilder().syncReplicationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createBackupVault. */

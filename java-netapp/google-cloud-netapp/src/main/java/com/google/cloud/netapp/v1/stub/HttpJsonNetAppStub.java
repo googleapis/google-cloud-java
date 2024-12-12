@@ -70,6 +70,7 @@ import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
+import com.google.cloud.netapp.v1.EstablishPeeringRequest;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -107,6 +108,7 @@ import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
+import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -1591,6 +1593,86 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<EstablishPeeringRequest, Operation>
+      establishPeeringMethodDescriptor =
+          ApiMethodDescriptor.<EstablishPeeringRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/EstablishPeering")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<EstablishPeeringRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/replications/*}:establishPeering",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EstablishPeeringRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EstablishPeeringRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (EstablishPeeringRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<SyncReplicationRequest, Operation>
+      syncReplicationMethodDescriptor =
+          ApiMethodDescriptor.<SyncReplicationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SyncReplication")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SyncReplicationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/replications/*}:sync",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SyncReplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SyncReplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SyncReplicationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<CreateBackupVaultRequest, Operation>
       createBackupVaultMethodDescriptor =
           ApiMethodDescriptor.<CreateBackupVaultRequest, Operation>newBuilder()
@@ -2344,6 +2426,12 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final OperationCallable<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable;
+  private final UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable;
+  private final OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable;
+  private final UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable;
+  private final OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable;
   private final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable;
   private final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationCallable;
@@ -2881,6 +2969,28 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<EstablishPeeringRequest, Operation> establishPeeringTransportSettings =
+        HttpJsonCallSettings.<EstablishPeeringRequest, Operation>newBuilder()
+            .setMethodDescriptor(establishPeeringMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<SyncReplicationRequest, Operation> syncReplicationTransportSettings =
+        HttpJsonCallSettings.<SyncReplicationRequest, Operation>newBuilder()
+            .setMethodDescriptor(syncReplicationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
         HttpJsonCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupVaultMethodDescriptor)
@@ -3377,6 +3487,24 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.reverseReplicationDirectionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.establishPeeringCallable =
+        callableFactory.createUnaryCallable(
+            establishPeeringTransportSettings, settings.establishPeeringSettings(), clientContext);
+    this.establishPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            establishPeeringTransportSettings,
+            settings.establishPeeringOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.syncReplicationCallable =
+        callableFactory.createUnaryCallable(
+            syncReplicationTransportSettings, settings.syncReplicationSettings(), clientContext);
+    this.syncReplicationOperationCallable =
+        callableFactory.createOperationCallable(
+            syncReplicationTransportSettings,
+            settings.syncReplicationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createBackupVaultCallable =
         callableFactory.createUnaryCallable(
             createBackupVaultTransportSettings,
@@ -3555,6 +3683,8 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(stopReplicationMethodDescriptor);
     methodDescriptors.add(resumeReplicationMethodDescriptor);
     methodDescriptors.add(reverseReplicationDirectionMethodDescriptor);
+    methodDescriptors.add(establishPeeringMethodDescriptor);
+    methodDescriptors.add(syncReplicationMethodDescriptor);
     methodDescriptors.add(createBackupVaultMethodDescriptor);
     methodDescriptors.add(getBackupVaultMethodDescriptor);
     methodDescriptors.add(listBackupVaultsMethodDescriptor);
@@ -3946,6 +4076,28 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable() {
     return reverseReplicationDirectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    return establishPeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    return establishPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    return syncReplicationCallable;
+  }
+
+  @Override
+  public OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    return syncReplicationOperationCallable;
   }
 
   @Override

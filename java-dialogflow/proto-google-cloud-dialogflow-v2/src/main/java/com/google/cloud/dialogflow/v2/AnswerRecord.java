@@ -49,8 +49,9 @@ package com.google.cloud.dialogflow.v2;
  *    returned to the customers.
  * 2. The customer uses the
  * [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
- *    [UpdateAnswerRecord][] method to send feedback about a specific answer
- *    that they believe is wrong.
+ *    [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+ *    method to send feedback about a specific answer that they believe is
+ *    wrong.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.AnswerRecord}
@@ -539,8 +540,9 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *    returned to the customers.
    * 2. The customer uses the
    * [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
-   *    [UpdateAnswerRecord][] method to send feedback about a specific answer
-   *    that they believe is wrong.
+   *    [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
+   *    method to send feedback about a specific answer that they believe is
+   *    wrong.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.AnswerRecord}

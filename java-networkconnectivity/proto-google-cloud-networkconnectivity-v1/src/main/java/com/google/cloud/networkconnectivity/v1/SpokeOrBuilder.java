@@ -446,6 +446,48 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the linkedProducerVpcNetwork field is set.
+   */
+  boolean hasLinkedProducerVpcNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The linkedProducerVpcNetwork.
+   */
+  com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork getLinkedProducerVpcNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetworkOrBuilder
+      getLinkedProducerVpcNetworkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The Google-generated UUID for the spoke. This value is unique
    * across all spoke resources. If a spoke is deleted and another with the same
    * name is created, the new spoke is assigned a different `unique_id`.

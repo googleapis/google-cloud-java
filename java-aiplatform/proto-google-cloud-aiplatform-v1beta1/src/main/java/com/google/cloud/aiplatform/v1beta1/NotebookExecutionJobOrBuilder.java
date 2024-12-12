@@ -202,6 +202,49 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
+   * The custom compute configuration for an execution job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpec custom_environment_spec = 16;
+   * </code>
+   *
+   * @return Whether the customEnvironmentSpec field is set.
+   */
+  boolean hasCustomEnvironmentSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The custom compute configuration for an execution job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpec custom_environment_spec = 16;
+   * </code>
+   *
+   * @return The customEnvironmentSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpec
+      getCustomEnvironmentSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The custom compute configuration for an execution job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpec custom_environment_spec = 16;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpecOrBuilder
+      getCustomEnvironmentSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The Cloud Storage location to upload the result to. Format:
    * `gs://bucket-name`
    * </pre>
@@ -311,6 +354,48 @@ public interface NotebookExecutionJobOrBuilder
    * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Workbench runtime configuration to use for the notebook execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+   * </code>
+   *
+   * @return Whether the workbenchRuntime field is set.
+   */
+  boolean hasWorkbenchRuntime();
+  /**
+   *
+   *
+   * <pre>
+   * The Workbench runtime configuration to use for the notebook execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+   * </code>
+   *
+   * @return The workbenchRuntime.
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.WorkbenchRuntime getWorkbenchRuntime();
+  /**
+   *
+   *
+   * <pre>
+   * The Workbench runtime configuration to use for the notebook execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.WorkbenchRuntime workbench_runtime = 23;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.WorkbenchRuntimeOrBuilder
+      getWorkbenchRuntimeOrBuilder();
 
   /**
    *
@@ -685,9 +770,37 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
+   * The name of the kernel to use during notebook execution. If unset, the
+   * default kernel is used.
+   * </pre>
+   *
+   * <code>string kernel_name = 20;</code>
+   *
+   * @return The kernelName.
+   */
+  java.lang.String getKernelName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the kernel to use during notebook execution. If unset, the
+   * default kernel is used.
+   * </pre>
+   *
+   * <code>string kernel_name = 20;</code>
+   *
+   * @return The bytes for kernelName.
+   */
+  com.google.protobuf.ByteString getKernelNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Customer-managed encryption key spec for the notebook execution job.
    * This field is auto-populated if the
-   * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+   * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate]
+   * has an encryption spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 22;</code>
@@ -701,7 +814,8 @@ public interface NotebookExecutionJobOrBuilder
    * <pre>
    * Customer-managed encryption key spec for the notebook execution job.
    * This field is auto-populated if the
-   * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+   * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate]
+   * has an encryption spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 22;</code>
@@ -715,7 +829,8 @@ public interface NotebookExecutionJobOrBuilder
    * <pre>
    * Customer-managed encryption key spec for the notebook execution job.
    * This field is auto-populated if the
-   * [NotebookService.NotebookRuntimeTemplate][] has an encryption spec.
+   * [NotebookRuntimeTemplate][google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate]
+   * has an encryption spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 22;</code>
@@ -732,4 +847,7 @@ public interface NotebookExecutionJobOrBuilder
 
   com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.ExecutionIdentityCase
       getExecutionIdentityCase();
+
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.RuntimeEnvironmentCase
+      getRuntimeEnvironmentCase();
 }

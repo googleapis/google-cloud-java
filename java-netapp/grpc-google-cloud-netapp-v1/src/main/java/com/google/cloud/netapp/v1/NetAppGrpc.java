@@ -1637,6 +1637,90 @@ public final class NetAppGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+      getEstablishPeeringMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EstablishPeering",
+      requestType = com.google.cloud.netapp.v1.EstablishPeeringRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+      getEstablishPeeringMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+        getEstablishPeeringMethod;
+    if ((getEstablishPeeringMethod = NetAppGrpc.getEstablishPeeringMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getEstablishPeeringMethod = NetAppGrpc.getEstablishPeeringMethod) == null) {
+          NetAppGrpc.getEstablishPeeringMethod =
+              getEstablishPeeringMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.EstablishPeeringRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EstablishPeering"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.EstablishPeeringRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("EstablishPeering"))
+                      .build();
+        }
+      }
+    }
+    return getEstablishPeeringMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+      getSyncReplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SyncReplication",
+      requestType = com.google.cloud.netapp.v1.SyncReplicationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+      getSyncReplicationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+        getSyncReplicationMethod;
+    if ((getSyncReplicationMethod = NetAppGrpc.getSyncReplicationMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getSyncReplicationMethod = NetAppGrpc.getSyncReplicationMethod) == null) {
+          NetAppGrpc.getSyncReplicationMethod =
+              getSyncReplicationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.SyncReplicationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SyncReplication"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.SyncReplicationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("SyncReplication"))
+                      .build();
+        }
+      }
+    }
+    return getSyncReplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.netapp.v1.CreateBackupVaultRequest, com.google.longrunning.Operation>
       getCreateBackupVaultMethod;
 
@@ -2859,6 +2943,35 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    default void establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEstablishPeeringMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    default void syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSyncReplicationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates new backup vault
      * </pre>
      */
@@ -3710,6 +3823,39 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public void establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEstablishPeeringMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public void syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSyncReplicationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates new backup vault
      * </pre>
      */
@@ -4460,6 +4606,33 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public com.google.longrunning.Operation establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEstablishPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public com.google.longrunning.Operation syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSyncReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates new backup vault
      * </pre>
      */
@@ -5175,6 +5348,33 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        establishPeering(com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEstablishPeeringMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        syncReplication(com.google.cloud.netapp.v1.SyncReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSyncReplicationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates new backup vault
      * </pre>
      */
@@ -5412,21 +5612,23 @@ public final class NetAppGrpc {
   private static final int METHODID_STOP_REPLICATION = 34;
   private static final int METHODID_RESUME_REPLICATION = 35;
   private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 36;
-  private static final int METHODID_CREATE_BACKUP_VAULT = 37;
-  private static final int METHODID_GET_BACKUP_VAULT = 38;
-  private static final int METHODID_LIST_BACKUP_VAULTS = 39;
-  private static final int METHODID_UPDATE_BACKUP_VAULT = 40;
-  private static final int METHODID_DELETE_BACKUP_VAULT = 41;
-  private static final int METHODID_CREATE_BACKUP = 42;
-  private static final int METHODID_GET_BACKUP = 43;
-  private static final int METHODID_LIST_BACKUPS = 44;
-  private static final int METHODID_DELETE_BACKUP = 45;
-  private static final int METHODID_UPDATE_BACKUP = 46;
-  private static final int METHODID_CREATE_BACKUP_POLICY = 47;
-  private static final int METHODID_GET_BACKUP_POLICY = 48;
-  private static final int METHODID_LIST_BACKUP_POLICIES = 49;
-  private static final int METHODID_UPDATE_BACKUP_POLICY = 50;
-  private static final int METHODID_DELETE_BACKUP_POLICY = 51;
+  private static final int METHODID_ESTABLISH_PEERING = 37;
+  private static final int METHODID_SYNC_REPLICATION = 38;
+  private static final int METHODID_CREATE_BACKUP_VAULT = 39;
+  private static final int METHODID_GET_BACKUP_VAULT = 40;
+  private static final int METHODID_LIST_BACKUP_VAULTS = 41;
+  private static final int METHODID_UPDATE_BACKUP_VAULT = 42;
+  private static final int METHODID_DELETE_BACKUP_VAULT = 43;
+  private static final int METHODID_CREATE_BACKUP = 44;
+  private static final int METHODID_GET_BACKUP = 45;
+  private static final int METHODID_LIST_BACKUPS = 46;
+  private static final int METHODID_DELETE_BACKUP = 47;
+  private static final int METHODID_UPDATE_BACKUP = 48;
+  private static final int METHODID_CREATE_BACKUP_POLICY = 49;
+  private static final int METHODID_GET_BACKUP_POLICY = 50;
+  private static final int METHODID_LIST_BACKUP_POLICIES = 51;
+  private static final int METHODID_UPDATE_BACKUP_POLICY = 52;
+  private static final int METHODID_DELETE_BACKUP_POLICY = 53;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5639,6 +5841,16 @@ public final class NetAppGrpc {
         case METHODID_REVERSE_REPLICATION_DIRECTION:
           serviceImpl.reverseReplicationDirection(
               (com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ESTABLISH_PEERING:
+          serviceImpl.establishPeering(
+              (com.google.cloud.netapp.v1.EstablishPeeringRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SYNC_REPLICATION:
+          serviceImpl.syncReplication(
+              (com.google.cloud.netapp.v1.SyncReplicationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_BACKUP_VAULT:
@@ -5972,6 +6184,18 @@ public final class NetAppGrpc {
                     com.google.longrunning.Operation>(
                     service, METHODID_REVERSE_REPLICATION_DIRECTION)))
         .addMethod(
+            getEstablishPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.EstablishPeeringRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ESTABLISH_PEERING)))
+        .addMethod(
+            getSyncReplicationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.SyncReplicationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SYNC_REPLICATION)))
+        .addMethod(
             getCreateBackupVaultMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -6150,6 +6374,8 @@ public final class NetAppGrpc {
                       .addMethod(getStopReplicationMethod())
                       .addMethod(getResumeReplicationMethod())
                       .addMethod(getReverseReplicationDirectionMethod())
+                      .addMethod(getEstablishPeeringMethod())
+                      .addMethod(getSyncReplicationMethod())
                       .addMethod(getCreateBackupVaultMethod())
                       .addMethod(getGetBackupVaultMethod())
                       .addMethod(getListBackupVaultsMethod())

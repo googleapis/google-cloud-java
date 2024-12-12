@@ -165,7 +165,7 @@ public interface OracleSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Stream large object values. NOTE: This feature is currently experimental.
+   * Stream large object values.
    * </pre>
    *
    * <code>
@@ -179,7 +179,7 @@ public interface OracleSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Stream large object values. NOTE: This feature is currently experimental.
+   * Stream large object values.
    * </pre>
    *
    * <code>
@@ -193,7 +193,7 @@ public interface OracleSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Stream large object values. NOTE: This feature is currently experimental.
+   * Stream large object values.
    * </pre>
    *
    * <code>
@@ -203,6 +203,82 @@ public interface OracleSourceConfigOrBuilder
   com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjectsOrBuilder
       getStreamLargeObjectsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Use LogMiner.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+   *
+   * @return Whether the logMiner field is set.
+   */
+  boolean hasLogMiner();
+  /**
+   *
+   *
+   * <pre>
+   * Use LogMiner.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+   *
+   * @return The logMiner.
+   */
+  com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner getLogMiner();
+  /**
+   *
+   *
+   * <pre>
+   * Use LogMiner.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+   */
+  com.google.cloud.datastream.v1.OracleSourceConfig.LogMinerOrBuilder getLogMinerOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary Log Parser.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+   * </code>
+   *
+   * @return Whether the binaryLogParser field is set.
+   */
+  boolean hasBinaryLogParser();
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary Log Parser.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+   * </code>
+   *
+   * @return The binaryLogParser.
+   */
+  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser getBinaryLogParser();
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary Log Parser.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParserOrBuilder
+      getBinaryLogParserOrBuilder();
+
   com.google.cloud.datastream.v1.OracleSourceConfig.LargeObjectsHandlingCase
       getLargeObjectsHandlingCase();
+
+  com.google.cloud.datastream.v1.OracleSourceConfig.CdcMethodCase getCdcMethodCase();
 }

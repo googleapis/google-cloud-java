@@ -152,6 +152,49 @@ public interface SourceObjectIdentifierOrBuilder
   com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifierOrBuilder
       getPostgresqlIdentifierOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+   * </code>
+   *
+   * @return Whether the sqlServerIdentifier field is set.
+   */
+  boolean hasSqlServerIdentifier();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+   * </code>
+   *
+   * @return The sqlServerIdentifier.
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+      getSqlServerIdentifier();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifierOrBuilder
+      getSqlServerIdentifierOrBuilder();
+
   com.google.cloud.datastream.v1.SourceObjectIdentifier.SourceIdentifierCase
       getSourceIdentifierCase();
 }

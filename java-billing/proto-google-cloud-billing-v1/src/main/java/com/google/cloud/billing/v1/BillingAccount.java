@@ -45,6 +45,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     masterBillingAccount_ = "";
     parent_ = "";
+    currencyCode_ = "";
   }
 
   @java.lang.Override
@@ -327,6 +328,73 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CURRENCY_CODE_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currencyCode_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The currency in which the billing account is billed and charged,
+   * represented as an ISO 4217 code such as `USD`.
+   *
+   * Billing account currency is determined at the time of billing account
+   * creation and cannot be updated subsequently, so this field should not be
+   * set on update requests. In addition, a subaccount always matches the
+   * currency of its parent billing account, so this field should not be set on
+   * subaccount creation requests. Clients can read this field to determine the
+   * currency of an existing billing account.
+   * </pre>
+   *
+   * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The currencyCode.
+   */
+  @java.lang.Override
+  public java.lang.String getCurrencyCode() {
+    java.lang.Object ref = currencyCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      currencyCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The currency in which the billing account is billed and charged,
+   * represented as an ISO 4217 code such as `USD`.
+   *
+   * Billing account currency is determined at the time of billing account
+   * creation and cannot be updated subsequently, so this field should not be
+   * set on update requests. In addition, a subaccount always matches the
+   * currency of its parent billing account, so this field should not be set on
+   * subaccount creation requests. Clients can read this field to determine the
+   * currency of an existing billing account.
+   * </pre>
+   *
+   * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for currencyCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCurrencyCodeBytes() {
+    java.lang.Object ref = currencyCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      currencyCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -356,6 +424,9 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, parent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, currencyCode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -380,6 +451,9 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, parent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, currencyCode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -401,6 +475,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getMasterBillingAccount().equals(other.getMasterBillingAccount())) return false;
     if (!getParent().equals(other.getParent())) return false;
+    if (!getCurrencyCode().equals(other.getCurrencyCode())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -422,6 +497,8 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getMasterBillingAccount().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrencyCode().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -568,6 +645,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       masterBillingAccount_ = "";
       parent_ = "";
+      currencyCode_ = "";
       return this;
     }
 
@@ -618,6 +696,9 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.currencyCode_ = currencyCode_;
       }
     }
 
@@ -689,6 +770,11 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getCurrencyCode().isEmpty()) {
+        currencyCode_ = other.currencyCode_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -745,6 +831,12 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 58:
+              {
+                currencyCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1331,6 +1423,152 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       parent_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object currencyCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The currency in which the billing account is billed and charged,
+     * represented as an ISO 4217 code such as `USD`.
+     *
+     * Billing account currency is determined at the time of billing account
+     * creation and cannot be updated subsequently, so this field should not be
+     * set on update requests. In addition, a subaccount always matches the
+     * currency of its parent billing account, so this field should not be set on
+     * subaccount creation requests. Clients can read this field to determine the
+     * currency of an existing billing account.
+     * </pre>
+     *
+     * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The currencyCode.
+     */
+    public java.lang.String getCurrencyCode() {
+      java.lang.Object ref = currencyCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currencyCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The currency in which the billing account is billed and charged,
+     * represented as an ISO 4217 code such as `USD`.
+     *
+     * Billing account currency is determined at the time of billing account
+     * creation and cannot be updated subsequently, so this field should not be
+     * set on update requests. In addition, a subaccount always matches the
+     * currency of its parent billing account, so this field should not be set on
+     * subaccount creation requests. Clients can read this field to determine the
+     * currency of an existing billing account.
+     * </pre>
+     *
+     * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for currencyCode.
+     */
+    public com.google.protobuf.ByteString getCurrencyCodeBytes() {
+      java.lang.Object ref = currencyCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        currencyCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The currency in which the billing account is billed and charged,
+     * represented as an ISO 4217 code such as `USD`.
+     *
+     * Billing account currency is determined at the time of billing account
+     * creation and cannot be updated subsequently, so this field should not be
+     * set on update requests. In addition, a subaccount always matches the
+     * currency of its parent billing account, so this field should not be set on
+     * subaccount creation requests. Clients can read this field to determine the
+     * currency of an existing billing account.
+     * </pre>
+     *
+     * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The currencyCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrencyCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      currencyCode_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The currency in which the billing account is billed and charged,
+     * represented as an ISO 4217 code such as `USD`.
+     *
+     * Billing account currency is determined at the time of billing account
+     * creation and cannot be updated subsequently, so this field should not be
+     * set on update requests. In addition, a subaccount always matches the
+     * currency of its parent billing account, so this field should not be set on
+     * subaccount creation requests. Clients can read this field to determine the
+     * currency of an existing billing account.
+     * </pre>
+     *
+     * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrencyCode() {
+      currencyCode_ = getDefaultInstance().getCurrencyCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The currency in which the billing account is billed and charged,
+     * represented as an ISO 4217 code such as `USD`.
+     *
+     * Billing account currency is determined at the time of billing account
+     * creation and cannot be updated subsequently, so this field should not be
+     * set on update requests. In addition, a subaccount always matches the
+     * currency of its parent billing account, so this field should not be set on
+     * subaccount creation requests. Clients can read this field to determine the
+     * currency of an existing billing account.
+     * </pre>
+     *
+     * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for currencyCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrencyCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      currencyCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

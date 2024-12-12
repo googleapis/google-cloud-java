@@ -531,10 +531,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration settings for software inside the environment.
+   * Optional. The configuration settings for software inside the environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the softwareConfig field is set.
@@ -547,10 +548,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration settings for software inside the environment.
+   * Optional. The configuration settings for software inside the environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The softwareConfig.
@@ -565,10 +567,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration settings for software inside the environment.
+   * Optional. The configuration settings for software inside the environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -585,10 +588,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration used for the Kubernetes Engine cluster.
+   * Optional. The configuration used for the Kubernetes Engine cluster.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the nodeConfig field is set.
    */
@@ -600,10 +605,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration used for the Kubernetes Engine cluster.
+   * Optional. The configuration used for the Kubernetes Engine cluster.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The nodeConfig.
    */
@@ -617,10 +624,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration used for the Kubernetes Engine cluster.
+   * Optional. The configuration used for the Kubernetes Engine cluster.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfigOrBuilder
@@ -637,11 +646,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration used for the Private IP Cloud Composer environment.
+   * Optional. The configuration used for the Private IP Cloud Composer
+   * environment.
    * </pre>
    *
    * <code>
-   * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+   * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the privateEnvironmentConfig field is set.
@@ -654,11 +664,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration used for the Private IP Cloud Composer environment.
+   * Optional. The configuration used for the Private IP Cloud Composer
+   * environment.
    * </pre>
    *
    * <code>
-   * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+   * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The privateEnvironmentConfig.
@@ -675,11 +686,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration used for the Private IP Cloud Composer environment.
+   * Optional. The configuration used for the Private IP Cloud Composer
+   * environment.
    * </pre>
    *
    * <code>
-   * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+   * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2808,10 +2820,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the softwareConfig field is set.
@@ -2823,10 +2836,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The softwareConfig.
@@ -2846,10 +2860,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSoftwareConfig(
@@ -2870,10 +2885,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSoftwareConfig(
@@ -2892,10 +2908,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeSoftwareConfig(
@@ -2923,10 +2940,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearSoftwareConfig() {
@@ -2943,10 +2961,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.Builder
@@ -2959,10 +2978,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfigOrBuilder
@@ -2980,10 +3000,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration settings for software inside the environment.
+     * Optional. The configuration settings for software inside the environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3013,10 +3034,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the nodeConfig field is set.
      */
@@ -3027,10 +3050,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The nodeConfig.
      */
@@ -3047,10 +3072,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setNodeConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig value) {
@@ -3070,10 +3097,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setNodeConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.Builder builderForValue) {
@@ -3090,10 +3119,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeNodeConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig value) {
@@ -3120,10 +3151,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearNodeConfig() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -3139,10 +3172,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.Builder
         getNodeConfigBuilder() {
@@ -3154,10 +3189,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfigOrBuilder
         getNodeConfigOrBuilder() {
@@ -3173,10 +3210,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Kubernetes Engine cluster.
+     * Optional. The configuration used for the Kubernetes Engine cluster.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig,
@@ -3207,11 +3246,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the privateEnvironmentConfig field is set.
@@ -3223,11 +3263,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The privateEnvironmentConfig.
@@ -3247,11 +3288,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPrivateEnvironmentConfig(
@@ -3272,11 +3314,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPrivateEnvironmentConfig(
@@ -3295,11 +3338,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergePrivateEnvironmentConfig(
@@ -3327,11 +3371,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearPrivateEnvironmentConfig() {
@@ -3348,11 +3393,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig.Builder
@@ -3365,11 +3411,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfigOrBuilder
@@ -3387,11 +3434,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The configuration used for the Private IP Cloud Composer environment.
+     * Optional. The configuration used for the Private IP Cloud Composer
+     * environment.
      * </pre>
      *
      * <code>
-     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7;
+     * .google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
