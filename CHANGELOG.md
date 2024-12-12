@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.49.0](https://github.com/googleapis/google-cloud-java/compare/v1.48.0...v1.49.0) (2024-12-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remove grpc module for gke-connect-gateway ([#11315](https://github.com/googleapis/google-cloud-java/issues/11315))
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20241113-2.0.0 ([#11251](https://github.com/googleapis/google-cloud-java/issues/11251)) ([d5891b2](https://github.com/googleapis/google-cloud-java/commit/d5891b2106a2e16c90ebfe66a0061c8f0725b2a2))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20241206-2.0.0 ([#11346](https://github.com/googleapis/google-cloud-java/issues/11346)) ([e9ab002](https://github.com/googleapis/google-cloud-java/commit/e9ab002c0b6f3d23a47982e794cf04f88a75e5c5))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.134.2 ([#11317](https://github.com/googleapis/google-cloud-java/issues/11317)) ([c802212](https://github.com/googleapis/google-cloud-java/commit/c802212c5fba20d0cc3ac9f319641a4e3db576e9))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.45.0 ([#11266](https://github.com/googleapis/google-cloud-java/issues/11266)) ([ec66fe7](https://github.com/googleapis/google-cloud-java/commit/ec66fe7a39501cfeb2f7e06dda8f71fea1233f3e))
+* Propagate repo level dependency change sdk-platform-java-config to each module's release notes ([#11294](https://github.com/googleapis/google-cloud-java/issues/11294)) ([6fafcb3](https://github.com/googleapis/google-cloud-java/commit/6fafcb3247cc7f377e465fc1144fb9d2227be899))
+* Remove grpc module for gke-connect-gateway ([#11315](https://github.com/googleapis/google-cloud-java/issues/11315)) ([a406306](https://github.com/googleapis/google-cloud-java/commit/a406306ac4060a24dc6ed78b0313bcbf75b9ab87))
+
 ## [1.48.0](https://github.com/googleapis/google-cloud-java/compare/v1.47.0...v1.48.0) (2024-11-18)
 
 
