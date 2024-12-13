@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.21.0](https://github.com/googleapis/java-logging/compare/v3.20.7...v3.21.0) (2024-12-13)
+
+
+### Features
+
+* Introduce `java.time` methods ([#1729](https://github.com/googleapis/java-logging/issues/1729)) ([323eb33](https://github.com/googleapis/java-logging/commit/323eb332a65f39c5588cf65ecae0a3454903a1c6))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.0 ([04d8868](https://github.com/googleapis/java-logging/commit/04d886849a4b41fad17f501f2c40ae54e6daa71a))
+
+
+### Dependencies
+
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.45.0 ([#1638](https://github.com/googleapis/java-logging/issues/1638)) ([7e007d4](https://github.com/googleapis/java-logging/commit/7e007d4f966ed7e9c75cbf0ce951441052e8735c))
+* Update sdk platform java dependencies ([#1736](https://github.com/googleapis/java-logging/issues/1736)) ([88b4cdf](https://github.com/googleapis/java-logging/commit/88b4cdf71463285e50a815e0635d36301d583e4c))
+
 ## [3.20.7](https://github.com/googleapis/java-logging/compare/v3.20.6...v3.20.7) (2024-11-18)
 
 
