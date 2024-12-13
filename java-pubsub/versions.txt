@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-pubsub:1.135.0:1.135.0
-grpc-google-cloud-pubsub-v1:1.117.0:1.117.0
-proto-google-cloud-pubsub-v1:1.117.0:1.117.0
+google-cloud-pubsub:1.135.0:1.135.1-SNAPSHOT
+grpc-google-cloud-pubsub-v1:1.117.0:1.117.1-SNAPSHOT
+proto-google-cloud-pubsub-v1:1.117.0:1.117.1-SNAPSHOT
