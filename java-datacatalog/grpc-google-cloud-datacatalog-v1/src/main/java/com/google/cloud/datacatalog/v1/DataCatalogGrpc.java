@@ -1557,6 +1557,147 @@ public final class DataCatalogGrpc {
     return getImportEntriesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.SetConfigRequest,
+          com.google.cloud.datacatalog.v1.MigrationConfig>
+      getSetConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetConfig",
+      requestType = com.google.cloud.datacatalog.v1.SetConfigRequest.class,
+      responseType = com.google.cloud.datacatalog.v1.MigrationConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.SetConfigRequest,
+          com.google.cloud.datacatalog.v1.MigrationConfig>
+      getSetConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.SetConfigRequest,
+            com.google.cloud.datacatalog.v1.MigrationConfig>
+        getSetConfigMethod;
+    if ((getSetConfigMethod = DataCatalogGrpc.getSetConfigMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getSetConfigMethod = DataCatalogGrpc.getSetConfigMethod) == null) {
+          DataCatalogGrpc.getSetConfigMethod =
+              getSetConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.SetConfigRequest,
+                          com.google.cloud.datacatalog.v1.MigrationConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.SetConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.MigrationConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataCatalogMethodDescriptorSupplier("SetConfig"))
+                      .build();
+        }
+      }
+    }
+    return getSetConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.RetrieveConfigRequest,
+          com.google.cloud.datacatalog.v1.OrganizationConfig>
+      getRetrieveConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RetrieveConfig",
+      requestType = com.google.cloud.datacatalog.v1.RetrieveConfigRequest.class,
+      responseType = com.google.cloud.datacatalog.v1.OrganizationConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.RetrieveConfigRequest,
+          com.google.cloud.datacatalog.v1.OrganizationConfig>
+      getRetrieveConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.RetrieveConfigRequest,
+            com.google.cloud.datacatalog.v1.OrganizationConfig>
+        getRetrieveConfigMethod;
+    if ((getRetrieveConfigMethod = DataCatalogGrpc.getRetrieveConfigMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getRetrieveConfigMethod = DataCatalogGrpc.getRetrieveConfigMethod) == null) {
+          DataCatalogGrpc.getRetrieveConfigMethod =
+              getRetrieveConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.RetrieveConfigRequest,
+                          com.google.cloud.datacatalog.v1.OrganizationConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RetrieveConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.RetrieveConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.OrganizationConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataCatalogMethodDescriptorSupplier("RetrieveConfig"))
+                      .build();
+        }
+      }
+    }
+    return getRetrieveConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest,
+          com.google.cloud.datacatalog.v1.MigrationConfig>
+      getRetrieveEffectiveConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RetrieveEffectiveConfig",
+      requestType = com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest.class,
+      responseType = com.google.cloud.datacatalog.v1.MigrationConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest,
+          com.google.cloud.datacatalog.v1.MigrationConfig>
+      getRetrieveEffectiveConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest,
+            com.google.cloud.datacatalog.v1.MigrationConfig>
+        getRetrieveEffectiveConfigMethod;
+    if ((getRetrieveEffectiveConfigMethod = DataCatalogGrpc.getRetrieveEffectiveConfigMethod)
+        == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getRetrieveEffectiveConfigMethod = DataCatalogGrpc.getRetrieveEffectiveConfigMethod)
+            == null) {
+          DataCatalogGrpc.getRetrieveEffectiveConfigMethod =
+              getRetrieveEffectiveConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest,
+                          com.google.cloud.datacatalog.v1.MigrationConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RetrieveEffectiveConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.MigrationConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataCatalogMethodDescriptorSupplier("RetrieveEffectiveConfig"))
+                      .build();
+        }
+      }
+    }
+    return getRetrieveEffectiveConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataCatalogStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataCatalogStub> factory =
@@ -2253,6 +2394,57 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getImportEntriesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the configuration related to the migration to Dataplex for an
+     * organization or project.
+     * </pre>
+     */
+    default void setConfig(
+        com.google.cloud.datacatalog.v1.SetConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the configuration related to the migration from Data Catalog to
+     * Dataplex for a specific organization, including all the projects under it
+     * which have a separate configuration set.
+     * </pre>
+     */
+    default void retrieveConfig(
+        com.google.cloud.datacatalog.v1.RetrieveConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.OrganizationConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRetrieveConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the effective configuration related to the migration from Data
+     * Catalog to Dataplex for a specific organization or project. If there is no
+     * specific configuration set for the resource, the setting is checked
+     * hierarchicahlly through the ancestors of the resource, starting from the
+     * resource itself.
+     * </pre>
+     */
+    default void retrieveEffectiveConfig(
+        com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRetrieveEffectiveConfigMethod(), responseObserver);
     }
   }
 
@@ -3001,6 +3193,62 @@ public final class DataCatalogGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the configuration related to the migration to Dataplex for an
+     * organization or project.
+     * </pre>
+     */
+    public void setConfig(
+        com.google.cloud.datacatalog.v1.SetConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the configuration related to the migration from Data Catalog to
+     * Dataplex for a specific organization, including all the projects under it
+     * which have a separate configuration set.
+     * </pre>
+     */
+    public void retrieveConfig(
+        com.google.cloud.datacatalog.v1.RetrieveConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.OrganizationConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRetrieveConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the effective configuration related to the migration from Data
+     * Catalog to Dataplex for a specific organization or project. If there is no
+     * specific configuration set for the resource, the setting is checked
+     * hierarchicahlly through the ancestors of the resource, starting from the
+     * resource itself.
+     * </pre>
+     */
+    public void retrieveEffectiveConfig(
+        com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRetrieveEffectiveConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3627,6 +3875,52 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1.ImportEntriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the configuration related to the migration to Dataplex for an
+     * organization or project.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.MigrationConfig setConfig(
+        com.google.cloud.datacatalog.v1.SetConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the configuration related to the migration from Data Catalog to
+     * Dataplex for a specific organization, including all the projects under it
+     * which have a separate configuration set.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.OrganizationConfig retrieveConfig(
+        com.google.cloud.datacatalog.v1.RetrieveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the effective configuration related to the migration from Data
+     * Catalog to Dataplex for a specific organization or project. If there is no
+     * specific configuration set for the resource, the setting is checked
+     * hierarchicahlly through the ancestors of the resource, starting from the
+     * resource itself.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.MigrationConfig retrieveEffectiveConfig(
+        com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveEffectiveConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -4282,6 +4576,56 @@ public final class DataCatalogGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportEntriesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the configuration related to the migration to Dataplex for an
+     * organization or project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.v1.MigrationConfig>
+        setConfig(com.google.cloud.datacatalog.v1.SetConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the configuration related to the migration from Data Catalog to
+     * Dataplex for a specific organization, including all the projects under it
+     * which have a separate configuration set.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.v1.OrganizationConfig>
+        retrieveConfig(com.google.cloud.datacatalog.v1.RetrieveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRetrieveConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the effective configuration related to the migration from Data
+     * Catalog to Dataplex for a specific organization or project. If there is no
+     * specific configuration set for the resource, the setting is checked
+     * hierarchicahlly through the ancestors of the resource, starting from the
+     * resource itself.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.v1.MigrationConfig>
+        retrieveEffectiveConfig(
+            com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRetrieveEffectiveConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SEARCH_CATALOG = 0;
@@ -4318,6 +4662,9 @@ public final class DataCatalogGrpc {
   private static final int METHODID_GET_IAM_POLICY = 31;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 32;
   private static final int METHODID_IMPORT_ENTRIES = 33;
+  private static final int METHODID_SET_CONFIG = 34;
+  private static final int METHODID_RETRIEVE_CONFIG = 35;
+  private static final int METHODID_RETRIEVE_EFFECTIVE_CONFIG = 36;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4528,6 +4875,24 @@ public final class DataCatalogGrpc {
           serviceImpl.importEntries(
               (com.google.cloud.datacatalog.v1.ImportEntriesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SET_CONFIG:
+          serviceImpl.setConfig(
+              (com.google.cloud.datacatalog.v1.SetConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>)
+                  responseObserver);
+          break;
+        case METHODID_RETRIEVE_CONFIG:
+          serviceImpl.retrieveConfig(
+              (com.google.cloud.datacatalog.v1.RetrieveConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.OrganizationConfig>)
+                  responseObserver);
+          break;
+        case METHODID_RETRIEVE_EFFECTIVE_CONFIG:
+          serviceImpl.retrieveEffectiveConfig(
+              (com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4766,6 +5131,26 @@ public final class DataCatalogGrpc {
                 new MethodHandlers<
                     com.google.cloud.datacatalog.v1.ImportEntriesRequest,
                     com.google.longrunning.Operation>(service, METHODID_IMPORT_ENTRIES)))
+        .addMethod(
+            getSetConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.SetConfigRequest,
+                    com.google.cloud.datacatalog.v1.MigrationConfig>(service, METHODID_SET_CONFIG)))
+        .addMethod(
+            getRetrieveConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.RetrieveConfigRequest,
+                    com.google.cloud.datacatalog.v1.OrganizationConfig>(
+                    service, METHODID_RETRIEVE_CONFIG)))
+        .addMethod(
+            getRetrieveEffectiveConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest,
+                    com.google.cloud.datacatalog.v1.MigrationConfig>(
+                    service, METHODID_RETRIEVE_EFFECTIVE_CONFIG)))
         .build();
   }
 
@@ -4851,6 +5236,9 @@ public final class DataCatalogGrpc {
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
                       .addMethod(getImportEntriesMethod())
+                      .addMethod(getSetConfigMethod())
+                      .addMethod(getRetrieveConfigMethod())
+                      .addMethod(getRetrieveEffectiveConfigMethod())
                       .build();
         }
       }

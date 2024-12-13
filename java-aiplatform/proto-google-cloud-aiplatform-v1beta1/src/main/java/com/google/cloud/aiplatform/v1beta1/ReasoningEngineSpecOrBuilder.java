@@ -70,7 +70,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -82,7 +83,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -94,7 +96,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -106,7 +109,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -118,7 +122,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>

@@ -77,14 +77,14 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * If provided, this field specifies the criteria that must be met by
-   * alert policies to be included in the response.
+   * Optional. If provided, this field specifies the criteria that must be met
+   * by alert policies to be included in the response.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -93,14 +93,14 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * If provided, this field specifies the criteria that must be met by
-   * alert policies to be included in the response.
+   * Optional. If provided, this field specifies the criteria that must be met
+   * by alert policies to be included in the response.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -110,15 +110,15 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * A comma-separated list of fields by which to sort the result. Supports
-   * the same set of field references as the `filter` field. Entries can be
-   * prefixed with a minus sign to sort by the field in descending order.
+   * Optional. A comma-separated list of fields by which to sort the result.
+   * Supports the same set of field references as the `filter` field. Entries
+   * can be prefixed with a minus sign to sort by the field in descending order.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 6;</code>
+   * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -127,15 +127,15 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * A comma-separated list of fields by which to sort the result. Supports
-   * the same set of field references as the `filter` field. Entries can be
-   * prefixed with a minus sign to sort by the field in descending order.
+   * Optional. A comma-separated list of fields by which to sort the result.
+   * Supports the same set of field references as the `filter` field. Entries
+   * can be prefixed with a minus sign to sort by the field in descending order.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 6;</code>
+   * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -145,10 +145,10 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of results to return in a single response.
+   * Optional. The maximum number of results to return in a single response.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -158,12 +158,13 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
-   * returned by a previous call to this method.  Using this field causes the
-   * method to return more results from the previous method call.
+   * Optional. If this field is not empty then it must contain the
+   * `nextPageToken` value returned by a previous call to this method.  Using
+   * this field causes the method to return more results from the previous
+   * method call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -172,12 +173,13 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
-   * returned by a previous call to this method.  Using this field causes the
-   * method to return more results from the previous method call.
+   * Optional. If this field is not empty then it must contain the
+   * `nextPageToken` value returned by a previous call to this method.  Using
+   * this field causes the method to return more results from the previous
+   * method call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

@@ -107,4 +107,126 @@ public interface LinkedVpcNetworkOrBuilder
    * @return The bytes of the excludeExportRanges at the given index.
    */
   com.google.protobuf.ByteString getExcludeExportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included from peering.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the includeExportRanges.
+   */
+  java.util.List<java.lang.String> getIncludeExportRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included from peering.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of includeExportRanges.
+   */
+  int getIncludeExportRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included from peering.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeExportRanges at the given index.
+   */
+  java.lang.String getIncludeExportRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included from peering.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getIncludeExportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of Producer VPC spokes that this VPC spoke is a
+   * service consumer VPC spoke for. These producer VPCs are connected through
+   * VPC peering to this spoke's backing VPC network.
+   * </pre>
+   *
+   * <code>
+   * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the producerVpcSpokes.
+   */
+  java.util.List<java.lang.String> getProducerVpcSpokesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of Producer VPC spokes that this VPC spoke is a
+   * service consumer VPC spoke for. These producer VPCs are connected through
+   * VPC peering to this spoke's backing VPC network.
+   * </pre>
+   *
+   * <code>
+   * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of producerVpcSpokes.
+   */
+  int getProducerVpcSpokesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of Producer VPC spokes that this VPC spoke is a
+   * service consumer VPC spoke for. These producer VPCs are connected through
+   * VPC peering to this spoke's backing VPC network.
+   * </pre>
+   *
+   * <code>
+   * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The producerVpcSpokes at the given index.
+   */
+  java.lang.String getProducerVpcSpokes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of Producer VPC spokes that this VPC spoke is a
+   * service consumer VPC spoke for. These producer VPCs are connected through
+   * VPC peering to this spoke's backing VPC network.
+   * </pre>
+   *
+   * <code>
+   * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the producerVpcSpokes at the given index.
+   */
+  com.google.protobuf.ByteString getProducerVpcSpokesBytes(int index);
 }

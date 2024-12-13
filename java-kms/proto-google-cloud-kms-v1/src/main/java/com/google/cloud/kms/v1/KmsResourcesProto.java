@@ -253,11 +253,11 @@ public final class KmsResourcesProto {
           + "ER_INITIATED_ACCESS\020\010\022.\n*MODIFIED_GOOGLE"
           + "_INITIATED_SYSTEM_OPERATION\020\t\022\'\n#GOOGLE_"
           + "RESPONSE_TO_PRODUCTION_ALERT\020\n\022*\n&CUSTOM"
-          + "ER_AUTHORIZED_WORKFLOW_SERVICING\020\013B\210\001\n\027c"
+          + "ER_AUTHORIZED_WORKFLOW_SERVICING\020\013B\205\001\n\027c"
           + "om.google.cloud.kms.v1B\021KmsResourcesProt"
           + "oP\001Z)cloud.google.com/go/kms/apiv1/kmspb"
-          + ";kmspb\370\001\001\252\002\023Google.Cloud.Kms.V1\312\002\023Google"
-          + "\\Cloud\\Kms\\V1b\006proto3"
+          + ";kmspb\252\002\023Google.Cloud.Kms.V1\312\002\023Google\\Cl"
+          + "oud\\Kms\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

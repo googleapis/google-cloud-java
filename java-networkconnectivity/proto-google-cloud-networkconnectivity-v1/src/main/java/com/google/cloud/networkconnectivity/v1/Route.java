@@ -708,7 +708,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The location of the route.
+   * Output only. The origin location of the route.
    * Uses the following form: "projects/{project}/locations/{location}"
    * Example: projects/1234/locations/us-central1
    * </pre>
@@ -733,7 +733,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The location of the route.
+   * Output only. The origin location of the route.
    * Uses the following form: "projects/{project}/locations/{location}"
    * Example: projects/1234/locations/us-central1
    * </pre>
@@ -753,6 +753,206 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PRIORITY_FIELD_NUMBER = 13;
+  private long priority_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The priority of this route. Priority is used to break ties in
+   * cases where a destination matches more than one route. In these cases the
+   * route with the lowest-numbered priority value wins.
+   * </pre>
+   *
+   * <code>int64 priority = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The priority.
+   */
+  @java.lang.Override
+  public long getPriority() {
+    return priority_;
+  }
+
+  public static final int NEXT_HOP_VPN_TUNNEL_FIELD_NUMBER = 14;
+  private com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel nextHopVpnTunnel_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VPN tunnel for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the nextHopVpnTunnel field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopVpnTunnel() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VPN tunnel for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The nextHopVpnTunnel.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel getNextHopVpnTunnel() {
+    return nextHopVpnTunnel_ == null
+        ? com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.getDefaultInstance()
+        : nextHopVpnTunnel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VPN tunnel for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.NextHopVPNTunnelOrBuilder
+      getNextHopVpnTunnelOrBuilder() {
+    return nextHopVpnTunnel_ == null
+        ? com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.getDefaultInstance()
+        : nextHopVpnTunnel_;
+  }
+
+  public static final int NEXT_HOP_ROUTER_APPLIANCE_INSTANCE_FIELD_NUMBER = 15;
+  private com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+      nextHopRouterApplianceInstance_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop Router appliance instance for packets on this
+   * route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the nextHopRouterApplianceInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopRouterApplianceInstance() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop Router appliance instance for packets on this
+   * route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The nextHopRouterApplianceInstance.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+      getNextHopRouterApplianceInstance() {
+    return nextHopRouterApplianceInstance_ == null
+        ? com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+            .getDefaultInstance()
+        : nextHopRouterApplianceInstance_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop Router appliance instance for packets on this
+   * route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstanceOrBuilder
+      getNextHopRouterApplianceInstanceOrBuilder() {
+    return nextHopRouterApplianceInstance_ == null
+        ? com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+            .getDefaultInstance()
+        : nextHopRouterApplianceInstance_;
+  }
+
+  public static final int NEXT_HOP_INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 16;
+  private com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
+      nextHopInterconnectAttachment_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VLAN attachment for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the nextHopInterconnectAttachment field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopInterconnectAttachment() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VLAN attachment for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The nextHopInterconnectAttachment.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
+      getNextHopInterconnectAttachment() {
+    return nextHopInterconnectAttachment_ == null
+        ? com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.getDefaultInstance()
+        : nextHopInterconnectAttachment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop VLAN attachment for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachmentOrBuilder
+      getNextHopInterconnectAttachmentOrBuilder() {
+    return nextHopInterconnectAttachment_ == null
+        ? com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.getDefaultInstance()
+        : nextHopInterconnectAttachment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -804,6 +1004,18 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, location_);
+    }
+    if (priority_ != 0L) {
+      output.writeInt64(13, priority_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(14, getNextHopVpnTunnel());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(15, getNextHopRouterApplianceInstance());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(16, getNextHopInterconnectAttachment());
     }
     getUnknownFields().writeTo(output);
   }
@@ -858,6 +1070,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, location_);
     }
+    if (priority_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(13, priority_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getNextHopVpnTunnel());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, getNextHopRouterApplianceInstance());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, getNextHopInterconnectAttachment());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -895,6 +1123,23 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (!getSpoke().equals(other.getSpoke())) return false;
     if (!getLocation().equals(other.getLocation())) return false;
+    if (getPriority() != other.getPriority()) return false;
+    if (hasNextHopVpnTunnel() != other.hasNextHopVpnTunnel()) return false;
+    if (hasNextHopVpnTunnel()) {
+      if (!getNextHopVpnTunnel().equals(other.getNextHopVpnTunnel())) return false;
+    }
+    if (hasNextHopRouterApplianceInstance() != other.hasNextHopRouterApplianceInstance())
+      return false;
+    if (hasNextHopRouterApplianceInstance()) {
+      if (!getNextHopRouterApplianceInstance().equals(other.getNextHopRouterApplianceInstance()))
+        return false;
+    }
+    if (hasNextHopInterconnectAttachment() != other.hasNextHopInterconnectAttachment())
+      return false;
+    if (hasNextHopInterconnectAttachment()) {
+      if (!getNextHopInterconnectAttachment().equals(other.getNextHopInterconnectAttachment()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -938,6 +1183,20 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSpoke().hashCode();
     hash = (37 * hash) + LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getLocation().hashCode();
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPriority());
+    if (hasNextHopVpnTunnel()) {
+      hash = (37 * hash) + NEXT_HOP_VPN_TUNNEL_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopVpnTunnel().hashCode();
+    }
+    if (hasNextHopRouterApplianceInstance()) {
+      hash = (37 * hash) + NEXT_HOP_ROUTER_APPLIANCE_INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopRouterApplianceInstance().hashCode();
+    }
+    if (hasNextHopInterconnectAttachment()) {
+      hash = (37 * hash) + NEXT_HOP_INTERCONNECT_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopInterconnectAttachment().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1104,6 +1363,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getNextHopVpcNetworkFieldBuilder();
+        getNextHopVpnTunnelFieldBuilder();
+        getNextHopRouterApplianceInstanceFieldBuilder();
+        getNextHopInterconnectAttachmentFieldBuilder();
       }
     }
 
@@ -1135,6 +1397,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       spoke_ = "";
       location_ = "";
+      priority_ = 0L;
+      nextHopVpnTunnel_ = null;
+      if (nextHopVpnTunnelBuilder_ != null) {
+        nextHopVpnTunnelBuilder_.dispose();
+        nextHopVpnTunnelBuilder_ = null;
+      }
+      nextHopRouterApplianceInstance_ = null;
+      if (nextHopRouterApplianceInstanceBuilder_ != null) {
+        nextHopRouterApplianceInstanceBuilder_.dispose();
+        nextHopRouterApplianceInstanceBuilder_ = null;
+      }
+      nextHopInterconnectAttachment_ = null;
+      if (nextHopInterconnectAttachmentBuilder_ != null) {
+        nextHopInterconnectAttachmentBuilder_.dispose();
+        nextHopInterconnectAttachmentBuilder_ = null;
+      }
       return this;
     }
 
@@ -1214,6 +1492,28 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.priority_ = priority_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.nextHopVpnTunnel_ =
+            nextHopVpnTunnelBuilder_ == null ? nextHopVpnTunnel_ : nextHopVpnTunnelBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.nextHopRouterApplianceInstance_ =
+            nextHopRouterApplianceInstanceBuilder_ == null
+                ? nextHopRouterApplianceInstance_
+                : nextHopRouterApplianceInstanceBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.nextHopInterconnectAttachment_ =
+            nextHopInterconnectAttachmentBuilder_ == null
+                ? nextHopInterconnectAttachment_
+                : nextHopInterconnectAttachmentBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1309,6 +1609,18 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         location_ = other.location_;
         bitField0_ |= 0x00000800;
         onChanged();
+      }
+      if (other.getPriority() != 0L) {
+        setPriority(other.getPriority());
+      }
+      if (other.hasNextHopVpnTunnel()) {
+        mergeNextHopVpnTunnel(other.getNextHopVpnTunnel());
+      }
+      if (other.hasNextHopRouterApplianceInstance()) {
+        mergeNextHopRouterApplianceInstance(other.getNextHopRouterApplianceInstance());
+      }
+      if (other.hasNextHopInterconnectAttachment()) {
+        mergeNextHopInterconnectAttachment(other.getNextHopInterconnectAttachment());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1415,6 +1727,34 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
+            case 104:
+              {
+                priority_ = input.readInt64();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
+            case 114:
+              {
+                input.readMessage(
+                    getNextHopVpnTunnelFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getNextHopRouterApplianceInstanceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    getNextHopInterconnectAttachmentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3008,7 +3348,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The location of the route.
+     * Output only. The origin location of the route.
      * Uses the following form: "projects/{project}/locations/{location}"
      * Example: projects/1234/locations/us-central1
      * </pre>
@@ -3032,7 +3372,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The location of the route.
+     * Output only. The origin location of the route.
      * Uses the following form: "projects/{project}/locations/{location}"
      * Example: projects/1234/locations/us-central1
      * </pre>
@@ -3056,7 +3396,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The location of the route.
+     * Output only. The origin location of the route.
      * Uses the following form: "projects/{project}/locations/{location}"
      * Example: projects/1234/locations/us-central1
      * </pre>
@@ -3079,7 +3419,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The location of the route.
+     * Output only. The origin location of the route.
      * Uses the following form: "projects/{project}/locations/{location}"
      * Example: projects/1234/locations/us-central1
      * </pre>
@@ -3098,7 +3438,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The location of the route.
+     * Output only. The origin location of the route.
      * Uses the following form: "projects/{project}/locations/{location}"
      * Example: projects/1234/locations/us-central1
      * </pre>
@@ -3117,6 +3457,713 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
+    }
+
+    private long priority_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The priority of this route. Priority is used to break ties in
+     * cases where a destination matches more than one route. In these cases the
+     * route with the lowest-numbered priority value wins.
+     * </pre>
+     *
+     * <code>int64 priority = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The priority.
+     */
+    @java.lang.Override
+    public long getPriority() {
+      return priority_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The priority of this route. Priority is used to break ties in
+     * cases where a destination matches more than one route. In these cases the
+     * route with the lowest-numbered priority value wins.
+     * </pre>
+     *
+     * <code>int64 priority = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriority(long value) {
+
+      priority_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The priority of this route. Priority is used to break ties in
+     * cases where a destination matches more than one route. In these cases the
+     * route with the lowest-numbered priority value wins.
+     * </pre>
+     *
+     * <code>int64 priority = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPriority() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      priority_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel nextHopVpnTunnel_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel,
+            com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.Builder,
+            com.google.cloud.networkconnectivity.v1.NextHopVPNTunnelOrBuilder>
+        nextHopVpnTunnelBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the nextHopVpnTunnel field is set.
+     */
+    public boolean hasNextHopVpnTunnel() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The nextHopVpnTunnel.
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel getNextHopVpnTunnel() {
+      if (nextHopVpnTunnelBuilder_ == null) {
+        return nextHopVpnTunnel_ == null
+            ? com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.getDefaultInstance()
+            : nextHopVpnTunnel_;
+      } else {
+        return nextHopVpnTunnelBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNextHopVpnTunnel(
+        com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel value) {
+      if (nextHopVpnTunnelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nextHopVpnTunnel_ = value;
+      } else {
+        nextHopVpnTunnelBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNextHopVpnTunnel(
+        com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.Builder builderForValue) {
+      if (nextHopVpnTunnelBuilder_ == null) {
+        nextHopVpnTunnel_ = builderForValue.build();
+      } else {
+        nextHopVpnTunnelBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeNextHopVpnTunnel(
+        com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel value) {
+      if (nextHopVpnTunnelBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && nextHopVpnTunnel_ != null
+            && nextHopVpnTunnel_
+                != com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.getDefaultInstance()) {
+          getNextHopVpnTunnelBuilder().mergeFrom(value);
+        } else {
+          nextHopVpnTunnel_ = value;
+        }
+      } else {
+        nextHopVpnTunnelBuilder_.mergeFrom(value);
+      }
+      if (nextHopVpnTunnel_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearNextHopVpnTunnel() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      nextHopVpnTunnel_ = null;
+      if (nextHopVpnTunnelBuilder_ != null) {
+        nextHopVpnTunnelBuilder_.dispose();
+        nextHopVpnTunnelBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.Builder
+        getNextHopVpnTunnelBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getNextHopVpnTunnelFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopVPNTunnelOrBuilder
+        getNextHopVpnTunnelOrBuilder() {
+      if (nextHopVpnTunnelBuilder_ != null) {
+        return nextHopVpnTunnelBuilder_.getMessageOrBuilder();
+      } else {
+        return nextHopVpnTunnel_ == null
+            ? com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.getDefaultInstance()
+            : nextHopVpnTunnel_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VPN tunnel for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopVPNTunnel next_hop_vpn_tunnel = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel,
+            com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.Builder,
+            com.google.cloud.networkconnectivity.v1.NextHopVPNTunnelOrBuilder>
+        getNextHopVpnTunnelFieldBuilder() {
+      if (nextHopVpnTunnelBuilder_ == null) {
+        nextHopVpnTunnelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel,
+                com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.Builder,
+                com.google.cloud.networkconnectivity.v1.NextHopVPNTunnelOrBuilder>(
+                getNextHopVpnTunnel(), getParentForChildren(), isClean());
+        nextHopVpnTunnel_ = null;
+      }
+      return nextHopVpnTunnelBuilder_;
+    }
+
+    private com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+        nextHopRouterApplianceInstance_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance,
+            com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance.Builder,
+            com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstanceOrBuilder>
+        nextHopRouterApplianceInstanceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the nextHopRouterApplianceInstance field is set.
+     */
+    public boolean hasNextHopRouterApplianceInstance() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The nextHopRouterApplianceInstance.
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+        getNextHopRouterApplianceInstance() {
+      if (nextHopRouterApplianceInstanceBuilder_ == null) {
+        return nextHopRouterApplianceInstance_ == null
+            ? com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+                .getDefaultInstance()
+            : nextHopRouterApplianceInstance_;
+      } else {
+        return nextHopRouterApplianceInstanceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNextHopRouterApplianceInstance(
+        com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance value) {
+      if (nextHopRouterApplianceInstanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nextHopRouterApplianceInstance_ = value;
+      } else {
+        nextHopRouterApplianceInstanceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNextHopRouterApplianceInstance(
+        com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance.Builder
+            builderForValue) {
+      if (nextHopRouterApplianceInstanceBuilder_ == null) {
+        nextHopRouterApplianceInstance_ = builderForValue.build();
+      } else {
+        nextHopRouterApplianceInstanceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeNextHopRouterApplianceInstance(
+        com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance value) {
+      if (nextHopRouterApplianceInstanceBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && nextHopRouterApplianceInstance_ != null
+            && nextHopRouterApplianceInstance_
+                != com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+                    .getDefaultInstance()) {
+          getNextHopRouterApplianceInstanceBuilder().mergeFrom(value);
+        } else {
+          nextHopRouterApplianceInstance_ = value;
+        }
+      } else {
+        nextHopRouterApplianceInstanceBuilder_.mergeFrom(value);
+      }
+      if (nextHopRouterApplianceInstance_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearNextHopRouterApplianceInstance() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      nextHopRouterApplianceInstance_ = null;
+      if (nextHopRouterApplianceInstanceBuilder_ != null) {
+        nextHopRouterApplianceInstanceBuilder_.dispose();
+        nextHopRouterApplianceInstanceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance.Builder
+        getNextHopRouterApplianceInstanceBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getNextHopRouterApplianceInstanceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstanceOrBuilder
+        getNextHopRouterApplianceInstanceOrBuilder() {
+      if (nextHopRouterApplianceInstanceBuilder_ != null) {
+        return nextHopRouterApplianceInstanceBuilder_.getMessageOrBuilder();
+      } else {
+        return nextHopRouterApplianceInstance_ == null
+            ? com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
+                .getDefaultInstance()
+            : nextHopRouterApplianceInstance_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop Router appliance instance for packets on this
+     * route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance next_hop_router_appliance_instance = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance,
+            com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance.Builder,
+            com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstanceOrBuilder>
+        getNextHopRouterApplianceInstanceFieldBuilder() {
+      if (nextHopRouterApplianceInstanceBuilder_ == null) {
+        nextHopRouterApplianceInstanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance,
+                com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance.Builder,
+                com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstanceOrBuilder>(
+                getNextHopRouterApplianceInstance(), getParentForChildren(), isClean());
+        nextHopRouterApplianceInstance_ = null;
+      }
+      return nextHopRouterApplianceInstanceBuilder_;
+    }
+
+    private com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
+        nextHopInterconnectAttachment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment,
+            com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.Builder,
+            com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachmentOrBuilder>
+        nextHopInterconnectAttachmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the nextHopInterconnectAttachment field is set.
+     */
+    public boolean hasNextHopInterconnectAttachment() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The nextHopInterconnectAttachment.
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
+        getNextHopInterconnectAttachment() {
+      if (nextHopInterconnectAttachmentBuilder_ == null) {
+        return nextHopInterconnectAttachment_ == null
+            ? com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
+                .getDefaultInstance()
+            : nextHopInterconnectAttachment_;
+      } else {
+        return nextHopInterconnectAttachmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNextHopInterconnectAttachment(
+        com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment value) {
+      if (nextHopInterconnectAttachmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nextHopInterconnectAttachment_ = value;
+      } else {
+        nextHopInterconnectAttachmentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNextHopInterconnectAttachment(
+        com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.Builder
+            builderForValue) {
+      if (nextHopInterconnectAttachmentBuilder_ == null) {
+        nextHopInterconnectAttachment_ = builderForValue.build();
+      } else {
+        nextHopInterconnectAttachmentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeNextHopInterconnectAttachment(
+        com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment value) {
+      if (nextHopInterconnectAttachmentBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && nextHopInterconnectAttachment_ != null
+            && nextHopInterconnectAttachment_
+                != com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
+                    .getDefaultInstance()) {
+          getNextHopInterconnectAttachmentBuilder().mergeFrom(value);
+        } else {
+          nextHopInterconnectAttachment_ = value;
+        }
+      } else {
+        nextHopInterconnectAttachmentBuilder_.mergeFrom(value);
+      }
+      if (nextHopInterconnectAttachment_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearNextHopInterconnectAttachment() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      nextHopInterconnectAttachment_ = null;
+      if (nextHopInterconnectAttachmentBuilder_ != null) {
+        nextHopInterconnectAttachmentBuilder_.dispose();
+        nextHopInterconnectAttachmentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.Builder
+        getNextHopInterconnectAttachmentBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getNextHopInterconnectAttachmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachmentOrBuilder
+        getNextHopInterconnectAttachmentOrBuilder() {
+      if (nextHopInterconnectAttachmentBuilder_ != null) {
+        return nextHopInterconnectAttachmentBuilder_.getMessageOrBuilder();
+      } else {
+        return nextHopInterconnectAttachment_ == null
+            ? com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
+                .getDefaultInstance()
+            : nextHopInterconnectAttachment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop VLAN attachment for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment next_hop_interconnect_attachment = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment,
+            com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.Builder,
+            com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachmentOrBuilder>
+        getNextHopInterconnectAttachmentFieldBuilder() {
+      if (nextHopInterconnectAttachmentBuilder_ == null) {
+        nextHopInterconnectAttachmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment,
+                com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.Builder,
+                com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachmentOrBuilder>(
+                getNextHopInterconnectAttachment(), getParentForChildren(), isClean());
+        nextHopInterconnectAttachment_ = null;
+      }
+      return nextHopInterconnectAttachmentBuilder_;
     }
 
     @java.lang.Override

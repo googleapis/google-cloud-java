@@ -61,6 +61,18 @@ public enum RouteType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VPC_SECONDARY_SUBNET = 2;</code>
    */
   VPC_SECONDARY_SUBNET(2),
+  /**
+   *
+   *
+   * <pre>
+   * The route leads to a destination in a dynamic route. Dynamic routes are
+   * derived from Border Gateway Protocol (BGP) advertisements received from an
+   * NCC hybrid spoke.
+   * </pre>
+   *
+   * <code>DYNAMIC_ROUTE = 3;</code>
+   */
+  DYNAMIC_ROUTE(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -96,6 +108,18 @@ public enum RouteType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VPC_SECONDARY_SUBNET = 2;</code>
    */
   public static final int VPC_SECONDARY_SUBNET_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The route leads to a destination in a dynamic route. Dynamic routes are
+   * derived from Border Gateway Protocol (BGP) advertisements received from an
+   * NCC hybrid spoke.
+   * </pre>
+   *
+   * <code>DYNAMIC_ROUTE = 3;</code>
+   */
+  public static final int DYNAMIC_ROUTE_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -127,6 +151,8 @@ public enum RouteType implements com.google.protobuf.ProtocolMessageEnum {
         return VPC_PRIMARY_SUBNET;
       case 2:
         return VPC_SECONDARY_SUBNET;
+      case 3:
+        return DYNAMIC_ROUTE;
       default:
         return null;
     }

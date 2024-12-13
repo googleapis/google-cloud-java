@@ -50,12 +50,12 @@ public final class PolylineProto {
           + "ALITY_UNSPECIFIED\020\000\022\020\n\014HIGH_QUALITY\020\001\022\014\n"
           + "\010OVERVIEW\020\002*d\n\020PolylineEncoding\022!\n\035POLYL"
           + "INE_ENCODING_UNSPECIFIED\020\000\022\024\n\020ENCODED_PO"
-          + "LYLINE\020\001\022\027\n\023GEO_JSON_LINESTRING\020\002B\302\001\n\032co"
+          + "LYLINE\020\001\022\027\n\023GEO_JSON_LINESTRING\020\002B\277\001\n\032co"
           + "m.google.maps.routing.v2B\rPolylineProtoP"
           + "\001Z:cloud.google.com/go/maps/routing/apiv"
-          + "2/routingpb;routingpb\370\001\001\242\002\005GMRV2\252\002\026Googl"
-          + "e.Maps.Routing.V2\312\002\026Google\\Maps\\Routing\\"
-          + "V2\352\002\031Google::Maps::Routing::V2b\006proto3"
+          + "2/routingpb;routingpb\242\002\005GMRV2\252\002\026Google.M"
+          + "aps.Routing.V2\312\002\026Google\\Maps\\Routing\\V2\352"
+          + "\002\031Google::Maps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

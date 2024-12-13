@@ -62,39 +62,39 @@ public final class ModelGardenServiceProto {
           + ".google.cloud.aiplatform.v1beta1.Publish"
           + "erModelViewB\003\340A\001\022\"\n\025is_hugging_face_mode"
           + "l\030\005 \001(\010B\003\340A\001\022\037\n\022hugging_face_token\030\006 \001(\t"
-          + "B\003\340A\001\"\362\001\n\032ListPublisherModelsRequest\022\023\n\006"
+          + "B\003\340A\001\"\222\002\n\032ListPublisherModelsRequest\022\023\n\006"
           + "parent\030\001 \001(\tB\003\340A\002\022\023\n\006filter\030\002 \001(\tB\003\340A\001\022\026"
           + "\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\npage_token\030\004 \001"
           + "(\tB\003\340A\001\022F\n\004view\030\005 \001(\01623.google.cloud.aip"
           + "latform.v1beta1.PublisherModelViewB\003\340A\001\022"
           + "\025\n\010order_by\030\006 \001(\tB\003\340A\001\022\032\n\rlanguage_code\030"
-          + "\007 \001(\tB\003\340A\001\"\201\001\n\033ListPublisherModelsRespon"
-          + "se\022I\n\020publisher_models\030\001 \003(\0132/.google.cl"
-          + "oud.aiplatform.v1beta1.PublisherModel\022\027\n"
-          + "\017next_page_token\030\002 \001(\t*\241\001\n\022PublisherMode"
-          + "lView\022$\n PUBLISHER_MODEL_VIEW_UNSPECIFIE"
-          + "D\020\000\022\036\n\032PUBLISHER_MODEL_VIEW_BASIC\020\001\022\035\n\031P"
-          + "UBLISHER_MODEL_VIEW_FULL\020\002\022&\n\"PUBLISHER_"
-          + "MODEL_VERSION_VIEW_BASIC\020\0032\346\003\n\022ModelGard"
-          + "enService\022\265\001\n\021GetPublisherModel\0229.google"
-          + ".cloud.aiplatform.v1beta1.GetPublisherMo"
-          + "delRequest\032/.google.cloud.aiplatform.v1b"
-          + "eta1.PublisherModel\"4\332A\004name\202\323\344\223\002\'\022%/v1b"
-          + "eta1/{name=publishers/*/models/*}\022\310\001\n\023Li"
-          + "stPublisherModels\022;.google.cloud.aiplatf"
-          + "orm.v1beta1.ListPublisherModelsRequest\032<"
-          + ".google.cloud.aiplatform.v1beta1.ListPub"
-          + "lisherModelsResponse\"6\332A\006parent\202\323\344\223\002\'\022%/"
-          + "v1beta1/{parent=publishers/*}/models\032M\312A"
-          + "\031aiplatform.googleapis.com\322A.https://www"
-          + ".googleapis.com/auth/cloud-platformB\356\001\n#"
-          + "com.google.cloud.aiplatform.v1beta1B\027Mod"
-          + "elGardenServiceProtoP\001ZCcloud.google.com"
-          + "/go/aiplatform/apiv1beta1/aiplatformpb;a"
-          + "iplatformpb\252\002\037Google.Cloud.AIPlatform.V1"
-          + "Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352"
-          + "\002\"Google::Cloud::AIPlatform::V1beta1b\006pr"
-          + "oto3"
+          + "\007 \001(\tB\003\340A\001\022\036\n\021list_all_versions\030\010 \001(\010B\003\340"
+          + "A\001\"\201\001\n\033ListPublisherModelsResponse\022I\n\020pu"
+          + "blisher_models\030\001 \003(\0132/.google.cloud.aipl"
+          + "atform.v1beta1.PublisherModel\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t*\241\001\n\022PublisherModelView\022$\n"
+          + " PUBLISHER_MODEL_VIEW_UNSPECIFIED\020\000\022\036\n\032P"
+          + "UBLISHER_MODEL_VIEW_BASIC\020\001\022\035\n\031PUBLISHER"
+          + "_MODEL_VIEW_FULL\020\002\022&\n\"PUBLISHER_MODEL_VE"
+          + "RSION_VIEW_BASIC\020\0032\346\003\n\022ModelGardenServic"
+          + "e\022\265\001\n\021GetPublisherModel\0229.google.cloud.a"
+          + "iplatform.v1beta1.GetPublisherModelReque"
+          + "st\032/.google.cloud.aiplatform.v1beta1.Pub"
+          + "lisherModel\"4\332A\004name\202\323\344\223\002\'\022%/v1beta1/{na"
+          + "me=publishers/*/models/*}\022\310\001\n\023ListPublis"
+          + "herModels\022;.google.cloud.aiplatform.v1be"
+          + "ta1.ListPublisherModelsRequest\032<.google."
+          + "cloud.aiplatform.v1beta1.ListPublisherMo"
+          + "delsResponse\"6\332A\006parent\202\323\344\223\002\'\022%/v1beta1/"
+          + "{parent=publishers/*}/models\032M\312A\031aiplatf"
+          + "orm.googleapis.com\322A.https://www.googlea"
+          + "pis.com/auth/cloud-platformB\356\001\n#com.goog"
+          + "le.cloud.aiplatform.v1beta1B\027ModelGarden"
+          + "ServiceProtoP\001ZCcloud.google.com/go/aipl"
+          + "atform/apiv1beta1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
+          + "::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -120,7 +120,14 @@ public final class ModelGardenServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListPublisherModelsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Filter", "PageSize", "PageToken", "View", "OrderBy", "LanguageCode",
+              "Parent",
+              "Filter",
+              "PageSize",
+              "PageToken",
+              "View",
+              "OrderBy",
+              "LanguageCode",
+              "ListAllVersions",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListPublisherModelsResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);

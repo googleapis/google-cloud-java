@@ -278,9 +278,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Only set if a Dialogflow automated agent has responded.
-   * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-   * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+   * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+   * [Sessions.DetectIntentResponse.output_audio][]
+   * and [Sessions.DetectIntentResponse.output_audio_config][]
    * are always empty, use
    * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
    * instead.
@@ -298,9 +298,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Only set if a Dialogflow automated agent has responded.
-   * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-   * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+   * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+   * [Sessions.DetectIntentResponse.output_audio][]
+   * and [Sessions.DetectIntentResponse.output_audio_config][]
    * are always empty, use
    * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
    * instead.
@@ -320,9 +320,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Only set if a Dialogflow automated agent has responded.
-   * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-   * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+   * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+   * [Sessions.DetectIntentResponse.output_audio][]
+   * and [Sessions.DetectIntentResponse.output_audio_config][]
    * are always empty, use
    * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
    * instead.
@@ -2003,9 +2003,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.
@@ -2022,9 +2022,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.
@@ -2047,9 +2047,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.
@@ -2075,9 +2075,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.
@@ -2100,9 +2100,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.
@@ -2134,9 +2134,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.
@@ -2158,9 +2158,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.
@@ -2178,9 +2178,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.
@@ -2202,9 +2202,9 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Only set if a Dialogflow automated agent has responded.
-     * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
-     * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
+     * Note that in [AutomatedAgentReply.DetectIntentResponse][],
+     * [Sessions.DetectIntentResponse.output_audio][]
+     * and [Sessions.DetectIntentResponse.output_audio_config][]
      * are always empty, use
      * [reply_audio][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.reply_audio]
      * instead.

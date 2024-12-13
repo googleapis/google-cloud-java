@@ -23,7 +23,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Metadata for a [ConversationProfile.ClearSuggestionFeatureConfig][]
+ * Metadata for a
+ * [ConversationProfiles.ClearSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.ClearSuggestionFeatureConfig]
  * operation.
  * </pre>
  *
@@ -460,7 +461,8 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
    *
    *
    * <pre>
-   * Metadata for a [ConversationProfile.ClearSuggestionFeatureConfig][]
+   * Metadata for a
+   * [ConversationProfiles.ClearSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.ClearSuggestionFeatureConfig]
    * operation.
    * </pre>
    *

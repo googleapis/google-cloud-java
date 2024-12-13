@@ -93,6 +93,44 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> AugmentPrompt</td>
+ *      <td><p> Given an input prompt, it returns augmented prompt from vertex rag store  to guide LLM towards generating grounded responses.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> augmentPrompt(AugmentPromptRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> augmentPrompt(LocationName parent, AugmentPromptRequest.Model model, VertexRagStore vertexRagStore)
+ *           <li><p> augmentPrompt(String parent, AugmentPromptRequest.Model model, VertexRagStore vertexRagStore)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> augmentPromptCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CorroborateContent</td>
+ *      <td><p> Given an input text, it returns a score that evaluates the factuality of the text. It also extracts and returns claims from the text and provides supporting facts.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> corroborateContent(CorroborateContentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> corroborateContent(LocationName parent, Content content, List&lt;Fact&gt; facts)
+ *           <li><p> corroborateContent(String parent, Content content, List&lt;Fact&gt; facts)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> corroborateContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -381,6 +419,295 @@ public class VertexRagServiceClient implements BackgroundResource {
   public final UnaryCallable<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsCallable() {
     return stub.retrieveContextsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards
+   * generating grounded responses.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AugmentPromptRequest.Model model = AugmentPromptRequest.Model.newBuilder().build();
+   *   VertexRagStore vertexRagStore = VertexRagStore.newBuilder().build();
+   *   AugmentPromptResponse response =
+   *       vertexRagServiceClient.augmentPrompt(parent, model, vertexRagStore);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to augment prompt. The
+   *     users must have permission to make a call in the project. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param model Optional. Metadata of the backend deployed model.
+   * @param vertexRagStore Optional. Retrieves contexts from the Vertex RagStore.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AugmentPromptResponse augmentPrompt(
+      LocationName parent, AugmentPromptRequest.Model model, VertexRagStore vertexRagStore) {
+    AugmentPromptRequest request =
+        AugmentPromptRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setModel(model)
+            .setVertexRagStore(vertexRagStore)
+            .build();
+    return augmentPrompt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards
+   * generating grounded responses.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AugmentPromptRequest.Model model = AugmentPromptRequest.Model.newBuilder().build();
+   *   VertexRagStore vertexRagStore = VertexRagStore.newBuilder().build();
+   *   AugmentPromptResponse response =
+   *       vertexRagServiceClient.augmentPrompt(parent, model, vertexRagStore);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to augment prompt. The
+   *     users must have permission to make a call in the project. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param model Optional. Metadata of the backend deployed model.
+   * @param vertexRagStore Optional. Retrieves contexts from the Vertex RagStore.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AugmentPromptResponse augmentPrompt(
+      String parent, AugmentPromptRequest.Model model, VertexRagStore vertexRagStore) {
+    AugmentPromptRequest request =
+        AugmentPromptRequest.newBuilder()
+            .setParent(parent)
+            .setModel(model)
+            .setVertexRagStore(vertexRagStore)
+            .build();
+    return augmentPrompt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards
+   * generating grounded responses.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   AugmentPromptRequest request =
+   *       AugmentPromptRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllContents(new ArrayList<Content>())
+   *           .setModel(AugmentPromptRequest.Model.newBuilder().build())
+   *           .build();
+   *   AugmentPromptResponse response = vertexRagServiceClient.augmentPrompt(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AugmentPromptResponse augmentPrompt(AugmentPromptRequest request) {
+    return augmentPromptCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards
+   * generating grounded responses.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   AugmentPromptRequest request =
+   *       AugmentPromptRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllContents(new ArrayList<Content>())
+   *           .setModel(AugmentPromptRequest.Model.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AugmentPromptResponse> future =
+   *       vertexRagServiceClient.augmentPromptCallable().futureCall(request);
+   *   // Do something.
+   *   AugmentPromptResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AugmentPromptRequest, AugmentPromptResponse> augmentPromptCallable() {
+    return stub.augmentPromptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given an input text, it returns a score that evaluates the factuality of the text. It also
+   * extracts and returns claims from the text and provides supporting facts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Content content = Content.newBuilder().build();
+   *   List<Fact> facts = new ArrayList<>();
+   *   CorroborateContentResponse response =
+   *       vertexRagServiceClient.corroborateContent(parent, content, facts);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to corroborate text. The
+   *     users must have permission to make a call in the project. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param content Optional. Input content to corroborate, only text format is supported for now.
+   * @param facts Optional. Facts used to generate the text can also be used to corroborate the
+   *     text.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CorroborateContentResponse corroborateContent(
+      LocationName parent, Content content, List<Fact> facts) {
+    CorroborateContentRequest request =
+        CorroborateContentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setContent(content)
+            .addAllFacts(facts)
+            .build();
+    return corroborateContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given an input text, it returns a score that evaluates the factuality of the text. It also
+   * extracts and returns claims from the text and provides supporting facts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Content content = Content.newBuilder().build();
+   *   List<Fact> facts = new ArrayList<>();
+   *   CorroborateContentResponse response =
+   *       vertexRagServiceClient.corroborateContent(parent, content, facts);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to corroborate text. The
+   *     users must have permission to make a call in the project. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param content Optional. Input content to corroborate, only text format is supported for now.
+   * @param facts Optional. Facts used to generate the text can also be used to corroborate the
+   *     text.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CorroborateContentResponse corroborateContent(
+      String parent, Content content, List<Fact> facts) {
+    CorroborateContentRequest request =
+        CorroborateContentRequest.newBuilder()
+            .setParent(parent)
+            .setContent(content)
+            .addAllFacts(facts)
+            .build();
+    return corroborateContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given an input text, it returns a score that evaluates the factuality of the text. It also
+   * extracts and returns claims from the text and provides supporting facts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   CorroborateContentRequest request =
+   *       CorroborateContentRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setContent(Content.newBuilder().build())
+   *           .addAllFacts(new ArrayList<Fact>())
+   *           .setParameters(CorroborateContentRequest.Parameters.newBuilder().build())
+   *           .build();
+   *   CorroborateContentResponse response = vertexRagServiceClient.corroborateContent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CorroborateContentResponse corroborateContent(CorroborateContentRequest request) {
+    return corroborateContentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given an input text, it returns a score that evaluates the factuality of the text. It also
+   * extracts and returns claims from the text and provides supporting facts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   CorroborateContentRequest request =
+   *       CorroborateContentRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setContent(Content.newBuilder().build())
+   *           .addAllFacts(new ArrayList<Fact>())
+   *           .setParameters(CorroborateContentRequest.Parameters.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CorroborateContentResponse> future =
+   *       vertexRagServiceClient.corroborateContentCallable().futureCall(request);
+   *   // Do something.
+   *   CorroborateContentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentCallable() {
+    return stub.corroborateContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

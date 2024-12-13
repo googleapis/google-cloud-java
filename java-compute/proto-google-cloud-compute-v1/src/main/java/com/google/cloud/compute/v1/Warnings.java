@@ -298,6 +298,16 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Quota information is not available to client requests (e.g: regions.list).
+     * </pre>
+     *
+     * <code>QUOTA_INFO_UNAVAILABLE = 304294182;</code>
+     */
+    QUOTA_INFO_UNAVAILABLE(304294182),
+    /**
+     *
+     *
+     * <pre>
      * The user attempted to use a resource that requires a TOS they have not accepted.
      * </pre>
      *
@@ -591,6 +601,16 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Quota information is not available to client requests (e.g: regions.list).
+     * </pre>
+     *
+     * <code>QUOTA_INFO_UNAVAILABLE = 304294182;</code>
+     */
+    public static final int QUOTA_INFO_UNAVAILABLE_VALUE = 304294182;
+    /**
+     *
+     *
+     * <pre>
      * The user attempted to use a resource that requires a TOS they have not accepted.
      * </pre>
      *
@@ -726,6 +746,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
           return NO_RESULTS_ON_PAGE;
         case 39966469:
           return PARTIAL_SUCCESS;
+        case 304294182:
+          return QUOTA_INFO_UNAVAILABLE;
         case 3745539:
           return REQUIRED_TOS_AGREEMENT;
         case 496728641:

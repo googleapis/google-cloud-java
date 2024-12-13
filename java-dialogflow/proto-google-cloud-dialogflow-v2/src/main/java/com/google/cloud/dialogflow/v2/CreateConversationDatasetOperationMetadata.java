@@ -23,7 +23,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Metadata for [ConversationDatasets][CreateConversationDataset].
+ * Metadata for [CreateConversationDataset][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata}
@@ -287,7 +287,7 @@ public final class CreateConversationDatasetOperationMetadata
    *
    *
    * <pre>
-   * Metadata for [ConversationDatasets][CreateConversationDataset].
+   * Metadata for [CreateConversationDataset][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata}

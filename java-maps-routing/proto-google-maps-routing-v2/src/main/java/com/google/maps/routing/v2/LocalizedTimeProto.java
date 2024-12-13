@@ -45,12 +45,12 @@ public final class LocalizedTimeProto {
           + "proto\022\026google.maps.routing.v2\032 google/ty"
           + "pe/localized_text.proto\"L\n\rLocalizedTime"
           + "\022(\n\004time\030\001 \001(\0132\032.google.type.LocalizedTe"
-          + "xt\022\021\n\ttime_zone\030\002 \001(\tB\307\001\n\032com.google.map"
+          + "xt\022\021\n\ttime_zone\030\002 \001(\tB\304\001\n\032com.google.map"
           + "s.routing.v2B\022LocalizedTimeProtoP\001Z:clou"
           + "d.google.com/go/maps/routing/apiv2/routi"
-          + "ngpb;routingpb\370\001\001\242\002\005GMRV2\252\002\026Google.Maps."
-          + "Routing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Go"
-          + "ogle::Maps::Routing::V2b\006proto3"
+          + "ngpb;routingpb\242\002\005GMRV2\252\002\026Google.Maps.Rou"
+          + "ting.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Googl"
+          + "e::Maps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

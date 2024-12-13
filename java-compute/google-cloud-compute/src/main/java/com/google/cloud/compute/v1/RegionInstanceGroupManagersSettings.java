@@ -306,6 +306,20 @@ public class RegionInstanceGroupManagersSettings
     return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).resizeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to resumeInstances. */
+  public UnaryCallSettings<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+      resumeInstancesSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).resumeInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resumeInstances. */
+  public OperationCallSettings<
+          ResumeInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
+        .resumeInstancesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setInstanceTemplate. */
   public UnaryCallSettings<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateSettings() {
@@ -333,6 +347,47 @@ public class RegionInstanceGroupManagersSettings
       setTargetPoolsOperationSettings() {
     return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
         .setTargetPoolsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startInstances. */
+  public UnaryCallSettings<StartInstancesRegionInstanceGroupManagerRequest, Operation>
+      startInstancesSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).startInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startInstances. */
+  public OperationCallSettings<
+          StartInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
+        .startInstancesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopInstances. */
+  public UnaryCallSettings<StopInstancesRegionInstanceGroupManagerRequest, Operation>
+      stopInstancesSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).stopInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopInstances. */
+  public OperationCallSettings<StopInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
+        .stopInstancesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to suspendInstances. */
+  public UnaryCallSettings<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+      suspendInstancesSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).suspendInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to suspendInstances. */
+  public OperationCallSettings<
+          SuspendInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
+        .suspendInstancesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to updatePerInstanceConfigs. */
@@ -636,6 +691,19 @@ public class RegionInstanceGroupManagersSettings
       return getStubSettingsBuilder().resizeOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to resumeInstances. */
+    public UnaryCallSettings.Builder<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+        resumeInstancesSettings() {
+      return getStubSettingsBuilder().resumeInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resumeInstances. */
+    public OperationCallSettings.Builder<
+            ResumeInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        resumeInstancesOperationSettings() {
+      return getStubSettingsBuilder().resumeInstancesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setInstanceTemplate. */
     public UnaryCallSettings.Builder<
             SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
@@ -661,6 +729,45 @@ public class RegionInstanceGroupManagersSettings
             SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
         setTargetPoolsOperationSettings() {
       return getStubSettingsBuilder().setTargetPoolsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startInstances. */
+    public UnaryCallSettings.Builder<StartInstancesRegionInstanceGroupManagerRequest, Operation>
+        startInstancesSettings() {
+      return getStubSettingsBuilder().startInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startInstances. */
+    public OperationCallSettings.Builder<
+            StartInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        startInstancesOperationSettings() {
+      return getStubSettingsBuilder().startInstancesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstances. */
+    public UnaryCallSettings.Builder<StopInstancesRegionInstanceGroupManagerRequest, Operation>
+        stopInstancesSettings() {
+      return getStubSettingsBuilder().stopInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstances. */
+    public OperationCallSettings.Builder<
+            StopInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        stopInstancesOperationSettings() {
+      return getStubSettingsBuilder().stopInstancesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suspendInstances. */
+    public UnaryCallSettings.Builder<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+        suspendInstancesSettings() {
+      return getStubSettingsBuilder().suspendInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suspendInstances. */
+    public OperationCallSettings.Builder<
+            SuspendInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        suspendInstancesOperationSettings() {
+      return getStubSettingsBuilder().suspendInstancesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */

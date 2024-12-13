@@ -28,10 +28,12 @@ public interface BackfillJobOrBuilder
    *
    *
    * <pre>
-   * Backfill job state.
+   * Output only. Backfill job state.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+   * <code>
+   * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -40,10 +42,12 @@ public interface BackfillJobOrBuilder
    *
    *
    * <pre>
-   * Backfill job state.
+   * Output only. Backfill job state.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.BackfillJob.State state = 1;</code>
+   * <code>
+   * .google.cloud.datastream.v1.BackfillJob.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */

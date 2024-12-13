@@ -236,7 +236,9 @@ public class ProductsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the product to retrieve. Format:
-   *     `accounts/{account}/products/{product}`
+   *     `accounts/{account}/products/{product}` where the last section `product` consists of 4
+   *     parts: channel~content_language~feed_label~offer_id example for product name is
+   *     "accounts/123/products/online~en~US~sku123"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product getProduct(ProductName name) {
@@ -267,7 +269,9 @@ public class ProductsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the product to retrieve. Format:
-   *     `accounts/{account}/products/{product}`
+   *     `accounts/{account}/products/{product}` where the last section `product` consists of 4
+   *     parts: channel~content_language~feed_label~offer_id example for product name is
+   *     "accounts/123/products/online~en~US~sku123"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product getProduct(String name) {

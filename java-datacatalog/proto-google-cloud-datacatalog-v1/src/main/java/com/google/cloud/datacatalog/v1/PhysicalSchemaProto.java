@@ -82,12 +82,12 @@ public final class PhysicalSchemaProto {
           + "\014\n\004text\030\001 \001(\t\032\034\n\014ThriftSchema\022\014\n\004text\030\001 "
           + "\001(\t\032\036\n\016ProtobufSchema\022\014\n\004text\030\001 \001(\t\032\017\n\rP"
           + "arquetSchema\032\013\n\tOrcSchema\032\013\n\tCsvSchemaB\010"
-          + "\n\006schemaB\333\001\n\037com.google.cloud.datacatalo"
+          + "\n\006schemaB\330\001\n\037com.google.cloud.datacatalo"
           + "g.v1B\023PhysicalSchemaProtoP\001ZAcloud.googl"
           + "e.com/go/datacatalog/apiv1/datacatalogpb"
-          + ";datacatalogpb\370\001\001\252\002\033Google.Cloud.DataCat"
-          + "alog.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036"
-          + "Google::Cloud::DataCatalog::V1b\006proto3"
+          + ";datacatalogpb\252\002\033Google.Cloud.DataCatalo"
+          + "g.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Goo"
+          + "gle::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

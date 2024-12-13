@@ -194,6 +194,8 @@ public class ManagedKafkaClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCapacityConfig(CapacityConfig.newBuilder().build())
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     mockManagedKafka.addResponse(expectedResponse);
 
@@ -237,6 +239,8 @@ public class ManagedKafkaClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCapacityConfig(CapacityConfig.newBuilder().build())
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     mockManagedKafka.addResponse(expectedResponse);
 
@@ -280,6 +284,8 @@ public class ManagedKafkaClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCapacityConfig(CapacityConfig.newBuilder().build())
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -337,6 +343,8 @@ public class ManagedKafkaClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCapacityConfig(CapacityConfig.newBuilder().build())
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -394,6 +402,8 @@ public class ManagedKafkaClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCapacityConfig(CapacityConfig.newBuilder().build())
             .setRebalanceConfig(RebalanceConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

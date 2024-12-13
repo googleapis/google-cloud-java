@@ -93,6 +93,10 @@ public final class DatastreamProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_DeleteStreamRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_RunStreamRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_RunStreamRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datastream_v1_GetStreamObjectRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_GetStreamObjectRequest_fieldAccessorTable;
@@ -186,7 +190,7 @@ public final class DatastreamProto {
           + "oto\032#google/longrunning/operations.proto"
           + "\032\033google/protobuf/empty.proto\032 google/pr"
           + "otobuf/field_mask.proto\032\037google/protobuf"
-          + "/timestamp.proto\"\375\003\n DiscoverConnectionP"
+          + "/timestamp.proto\"\305\004\n DiscoverConnectionP"
           + "rofileRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+d"
           + "atastream.googleapis.com/ConnectionProfi"
           + "le\022L\n\022connection_profile\030\310\001 \001(\0132-.google"
@@ -198,279 +202,291 @@ public final class DatastreamProto {
           + "sql_rdbms\030e \001(\0132&.google.cloud.datastrea"
           + "m.v1.MysqlRdbmsH\002\022G\n\020postgresql_rdbms\030f "
           + "\001(\0132+.google.cloud.datastream.v1.Postgre"
-          + "sqlRdbmsH\002B\010\n\006targetB\013\n\thierarchyB\r\n\013dat"
-          + "a_object\"\373\001\n!DiscoverConnectionProfileRe"
-          + "sponse\022?\n\014oracle_rdbms\030d \001(\0132\'.google.cl"
-          + "oud.datastream.v1.OracleRdbmsH\000\022=\n\013mysql"
-          + "_rdbms\030e \001(\0132&.google.cloud.datastream.v"
-          + "1.MysqlRdbmsH\000\022G\n\020postgresql_rdbms\030f \001(\013"
-          + "2+.google.cloud.datastream.v1.Postgresql"
-          + "RdbmsH\000B\r\n\013data_object\"w\n\025FetchStaticIps"
-          + "Request\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!locations"
-          + ".googleapis.com/Location\022\021\n\tpage_size\030\002 "
-          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\"E\n\026FetchStaticIp"
-          + "sResponse\022\022\n\nstatic_ips\030\001 \003(\t\022\027\n\017next_pa"
-          + "ge_token\030\002 \001(\t\"\255\001\n\035ListConnectionProfile"
-          + "sRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+datast"
-          + "ream.googleapis.com/ConnectionProfile\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006"
-          + "filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\232\001\n\036ListC"
-          + "onnectionProfilesResponse\022J\n\023connection_"
-          + "profiles\030\001 \003(\0132-.google.cloud.datastream"
-          + ".v1.ConnectionProfile\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"`\n\033GetConnec"
-          + "tionProfileRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-"
-          + "\n+datastream.googleapis.com/ConnectionPr"
-          + "ofile\"\242\002\n\036CreateConnectionProfileRequest"
-          + "\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+datastream.goo"
-          + "gleapis.com/ConnectionProfile\022\"\n\025connect"
-          + "ion_profile_id\030\002 \001(\tB\003\340A\002\022N\n\022connection_"
-          + "profile\030\003 \001(\0132-.google.cloud.datastream."
-          + "v1.ConnectionProfileB\003\340A\002\022\027\n\nrequest_id\030"
-          + "\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\022\022"
-          + "\n\005force\030\006 \001(\010B\003\340A\001\"\357\001\n\036UpdateConnectionP"
-          + "rofileRequest\0224\n\013update_mask\030\001 \001(\0132\032.goo"
-          + "gle.protobuf.FieldMaskB\003\340A\001\022N\n\022connectio"
-          + "n_profile\030\002 \001(\0132-.google.cloud.datastrea"
-          + "m.v1.ConnectionProfileB\003\340A\002\022\027\n\nrequest_i"
-          + "d\030\003 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001"
-          + "\022\022\n\005force\030\005 \001(\010B\003\340A\001\"|\n\036DeleteConnection"
-          + "ProfileRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+da"
-          + "tastream.googleapis.com/ConnectionProfil"
-          + "e\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\227\001\n\022ListStrea"
-          + "msRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 datas"
-          + "tream.googleapis.com/Stream\022\021\n\tpage_size"
-          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001"
-          + "(\t\022\020\n\010order_by\030\005 \001(\t\"x\n\023ListStreamsRespo"
-          + "nse\0223\n\007streams\030\001 \003(\0132\".google.cloud.data"
-          + "stream.v1.Stream\022\027\n\017next_page_token\030\002 \001("
-          + "\t\022\023\n\013unreachable\030\003 \003(\t\"J\n\020GetStreamReque"
-          + "st\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n datastream.goo"
-          + "gleapis.com/Stream\"\351\001\n\023CreateStreamReque"
-          + "st\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 datastream.g"
-          + "oogleapis.com/Stream\022\026\n\tstream_id\030\002 \001(\tB"
-          + "\003\340A\002\0227\n\006stream\030\003 \001(\0132\".google.cloud.data"
-          + "stream.v1.StreamB\003\340A\002\022\027\n\nrequest_id\030\004 \001("
-          + "\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\022\022\n\005fo"
-          + "rce\030\006 \001(\010B\003\340A\001\"\315\001\n\023UpdateStreamRequest\0224"
-          + "\n\013update_mask\030\001 \001(\0132\032.google.protobuf.Fi"
-          + "eldMaskB\003\340A\001\0227\n\006stream\030\002 \001(\0132\".google.cl"
-          + "oud.datastream.v1.StreamB\003\340A\002\022\027\n\nrequest"
-          + "_id\030\003 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340"
-          + "A\001\022\022\n\005force\030\005 \001(\010B\003\340A\001\"f\n\023DeleteStreamRe"
-          + "quest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n datastream."
-          + "googleapis.com/Stream\022\027\n\nrequest_id\030\002 \001("
-          + "\tB\003\340A\001\"V\n\026GetStreamObjectRequest\022<\n\004name"
-          + "\030\001 \001(\tB.\340A\002\372A(\n&datastream.googleapis.co"
-          + "m/StreamObject\"\260\001\n\031LookupStreamObjectReq"
-          + "uest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n datastream"
-          + ".googleapis.com/Stream\022Y\n\030source_object_"
-          + "identifier\030\002 \001(\01322.google.cloud.datastre"
-          + "am.v1.SourceObjectIdentifierB\003\340A\002\"Y\n\027Sta"
-          + "rtBackfillJobRequest\022>\n\006object\030\001 \001(\tB.\340A"
-          + "\002\372A(\n&datastream.googleapis.com/StreamOb"
-          + "ject\"T\n\030StartBackfillJobResponse\0228\n\006obje"
-          + "ct\030\001 \001(\0132(.google.cloud.datastream.v1.St"
-          + "reamObject\"X\n\026StopBackfillJobRequest\022>\n\006"
-          + "object\030\001 \001(\tB.\340A\002\372A(\n&datastream.googlea"
-          + "pis.com/StreamObject\"S\n\027StopBackfillJobR"
-          + "esponse\0228\n\006object\030\001 \001(\0132(.google.cloud.d"
-          + "atastream.v1.StreamObject\"\201\001\n\030ListStream"
-          + "ObjectsRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\022&"
-          + "datastream.googleapis.com/StreamObject\022\021"
-          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"v\n"
-          + "\031ListStreamObjectsResponse\022@\n\016stream_obj"
-          + "ects\030\001 \003(\0132(.google.cloud.datastream.v1."
-          + "StreamObject\022\027\n\017next_page_token\030\002 \001(\t\"\316\002"
-          + "\n\021OperationMetadata\0224\n\013create_time\030\001 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\0221\n\010end"
-          + "_time\030\002 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB"
-          + "\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#\n\026req"
-          + "uested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_ve"
-          + "rsion\030\007 \001(\tB\003\340A\003\022L\n\021validation_result\030\010 "
-          + "\001(\0132,.google.cloud.datastream.v1.Validat"
-          + "ionResultB\003\340A\003\"\206\002\n\036CreatePrivateConnecti"
-          + "onRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+datas"
-          + "tream.googleapis.com/PrivateConnection\022\""
-          + "\n\025private_connection_id\030\002 \001(\tB\003\340A\002\022N\n\022pr"
-          + "ivate_connection\030\003 \001(\0132-.google.cloud.da"
-          + "tastream.v1.PrivateConnectionB\003\340A\002\022\027\n\nre"
-          + "quest_id\030\004 \001(\tB\003\340A\001\022\022\n\005force\030\006 \001(\010B\003\340A\001\""
-          + "\255\001\n\035ListPrivateConnectionsRequest\022C\n\006par"
-          + "ent\030\001 \001(\tB3\340A\002\372A-\022+datastream.googleapis"
-          + ".com/PrivateConnection\022\021\n\tpage_size\030\002 \001("
-          + "\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n"
-          + "\010order_by\030\005 \001(\t\"\232\001\n\036ListPrivateConnectio"
-          + "nsResponse\022J\n\023private_connections\030\001 \003(\0132"
-          + "-.google.cloud.datastream.v1.PrivateConn"
-          + "ection\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
-          + "chable\030\003 \003(\t\"\220\001\n\036DeletePrivateConnection"
-          + "Request\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+datastrea"
-          + "m.googleapis.com/PrivateConnection\022\027\n\nre"
-          + "quest_id\030\002 \001(\tB\003\340A\001\022\022\n\005force\030\003 \001(\010B\003\340A\001\""
-          + "`\n\033GetPrivateConnectionRequest\022A\n\004name\030\001"
-          + " \001(\tB3\340A\002\372A-\n+datastream.googleapis.com/"
-          + "PrivateConnection\"\264\001\n\022CreateRouteRequest"
-          + "\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\022\037datastream.goo"
-          + "gleapis.com/Route\022\025\n\010route_id\030\002 \001(\tB\003\340A\002"
-          + "\0225\n\005route\030\003 \001(\0132!.google.cloud.datastrea"
-          + "m.v1.RouteB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001"
-          + "\"\225\001\n\021ListRoutesRequest\0227\n\006parent\030\001 \001(\tB\'"
-          + "\340A\002\372A!\022\037datastream.googleapis.com/Route\022"
-          + "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016"
-          + "\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"u\n\022List"
-          + "RoutesResponse\0221\n\006routes\030\001 \003(\0132!.google."
-          + "cloud.datastream.v1.Route\022\027\n\017next_page_t"
-          + "oken\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"d\n\022Delet"
-          + "eRouteRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037dat"
-          + "astream.googleapis.com/Route\022\027\n\nrequest_"
-          + "id\030\002 \001(\tB\003\340A\001\"H\n\017GetRouteRequest\0225\n\004name"
-          + "\030\001 \001(\tB\'\340A\002\372A!\n\037datastream.googleapis.co"
-          + "m/Route2\375*\n\nDatastream\022\330\001\n\026ListConnectio"
-          + "nProfiles\0229.google.cloud.datastream.v1.L"
-          + "istConnectionProfilesRequest\032:.google.cl"
-          + "oud.datastream.v1.ListConnectionProfiles"
-          + "Response\"G\332A\006parent\202\323\344\223\0028\0226/v1/{parent=p"
-          + "rojects/*/locations/*}/connectionProfile"
-          + "s\022\305\001\n\024GetConnectionProfile\0227.google.clou"
-          + "d.datastream.v1.GetConnectionProfileRequ"
-          + "est\032-.google.cloud.datastream.v1.Connect"
-          + "ionProfile\"E\332A\004name\202\323\344\223\0028\0226/v1/{name=pro"
-          + "jects/*/locations/*/connectionProfiles/*"
-          + "}\022\244\002\n\027CreateConnectionProfile\022:.google.c"
-          + "loud.datastream.v1.CreateConnectionProfi"
-          + "leRequest\032\035.google.longrunning.Operation"
-          + "\"\255\001\312A&\n\021ConnectionProfile\022\021OperationMeta"
-          + "data\332A/parent,connection_profile,connect"
-          + "ion_profile_id\202\323\344\223\002L\"6/v1/{parent=projec"
-          + "ts/*/locations/*}/connectionProfiles:\022co"
-          + "nnection_profile\022\246\002\n\027UpdateConnectionPro"
-          + "file\022:.google.cloud.datastream.v1.Update"
-          + "ConnectionProfileRequest\032\035.google.longru"
-          + "nning.Operation\"\257\001\312A&\n\021ConnectionProfile"
-          + "\022\021OperationMetadata\332A\036connection_profile"
-          + ",update_mask\202\323\344\223\002_2I/v1/{connection_prof"
-          + "ile.name=projects/*/locations/*/connecti"
-          + "onProfiles/*}:\022connection_profile\022\350\001\n\027De"
-          + "leteConnectionProfile\022:.google.cloud.dat"
-          + "astream.v1.DeleteConnectionProfileReques"
+          + "sqlRdbmsH\002\022F\n\020sql_server_rdbms\030g \001(\0132*.g"
+          + "oogle.cloud.datastream.v1.SqlServerRdbms"
+          + "H\002B\010\n\006targetB\013\n\thierarchyB\r\n\013data_object"
+          + "\"\303\002\n!DiscoverConnectionProfileResponse\022?"
+          + "\n\014oracle_rdbms\030d \001(\0132\'.google.cloud.data"
+          + "stream.v1.OracleRdbmsH\000\022=\n\013mysql_rdbms\030e"
+          + " \001(\0132&.google.cloud.datastream.v1.MysqlR"
+          + "dbmsH\000\022G\n\020postgresql_rdbms\030f \001(\0132+.googl"
+          + "e.cloud.datastream.v1.PostgresqlRdbmsH\000\022"
+          + "F\n\020sql_server_rdbms\030g \001(\0132*.google.cloud"
+          + ".datastream.v1.SqlServerRdbmsH\000B\r\n\013data_"
+          + "object\"w\n\025FetchStaticIpsRequest\0227\n\004name\030"
+          + "\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.com/"
+          + "Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
+          + "n\030\003 \001(\t\"E\n\026FetchStaticIpsResponse\022\022\n\nsta"
+          + "tic_ips\030\001 \003(\t\022\027\n\017next_page_token\030\002 \001(\t\"\255"
+          + "\001\n\035ListConnectionProfilesRequest\022C\n\006pare"
+          + "nt\030\001 \001(\tB3\340A\002\372A-\022+datastream.googleapis."
+          + "com/ConnectionProfile\022\021\n\tpage_size\030\002 \001(\005"
+          + "\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010"
+          + "order_by\030\005 \001(\t\"\232\001\n\036ListConnectionProfile"
+          + "sResponse\022J\n\023connection_profiles\030\001 \003(\0132-"
+          + ".google.cloud.datastream.v1.ConnectionPr"
+          + "ofile\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreac"
+          + "hable\030\003 \003(\t\"`\n\033GetConnectionProfileReque"
+          + "st\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+datastream.goo"
+          + "gleapis.com/ConnectionProfile\"\242\002\n\036Create"
+          + "ConnectionProfileRequest\022C\n\006parent\030\001 \001(\t"
+          + "B3\340A\002\372A-\022+datastream.googleapis.com/Conn"
+          + "ectionProfile\022\"\n\025connection_profile_id\030\002"
+          + " \001(\tB\003\340A\002\022N\n\022connection_profile\030\003 \001(\0132-."
+          + "google.cloud.datastream.v1.ConnectionPro"
+          + "fileB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\022\032\n\rva"
+          + "lidate_only\030\005 \001(\010B\003\340A\001\022\022\n\005force\030\006 \001(\010B\003\340"
+          + "A\001\"\357\001\n\036UpdateConnectionProfileRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.Fie"
+          + "ldMaskB\003\340A\001\022N\n\022connection_profile\030\002 \001(\0132"
+          + "-.google.cloud.datastream.v1.ConnectionP"
+          + "rofileB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032\n\r"
+          + "validate_only\030\004 \001(\010B\003\340A\001\022\022\n\005force\030\005 \001(\010B"
+          + "\003\340A\001\"|\n\036DeleteConnectionProfileRequest\022A"
+          + "\n\004name\030\001 \001(\tB3\340A\002\372A-\n+datastream.googlea"
+          + "pis.com/ConnectionProfile\022\027\n\nrequest_id\030"
+          + "\002 \001(\tB\003\340A\001\"\227\001\n\022ListStreamsRequest\0228\n\006par"
+          + "ent\030\001 \001(\tB(\340A\002\372A\"\022 datastream.googleapis"
+          + ".com/Stream\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
+          + "oken\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005"
+          + " \001(\t\"x\n\023ListStreamsResponse\0223\n\007streams\030\001"
+          + " \003(\0132\".google.cloud.datastream.v1.Stream"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable"
+          + "\030\003 \003(\t\"J\n\020GetStreamRequest\0226\n\004name\030\001 \001(\t"
+          + "B(\340A\002\372A\"\n datastream.googleapis.com/Stre"
+          + "am\"\351\001\n\023CreateStreamRequest\0228\n\006parent\030\001 \001"
+          + "(\tB(\340A\002\372A\"\022 datastream.googleapis.com/St"
+          + "ream\022\026\n\tstream_id\030\002 \001(\tB\003\340A\002\0227\n\006stream\030\003"
+          + " \001(\0132\".google.cloud.datastream.v1.Stream"
+          + "B\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalida"
+          + "te_only\030\005 \001(\010B\003\340A\001\022\022\n\005force\030\006 \001(\010B\003\340A\001\"\315"
+          + "\001\n\023UpdateStreamRequest\0224\n\013update_mask\030\001 "
+          + "\001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\0227\n\006"
+          + "stream\030\002 \001(\0132\".google.cloud.datastream.v"
+          + "1.StreamB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032"
+          + "\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\022\n\005force\030\005 \001("
+          + "\010B\003\340A\001\"f\n\023DeleteStreamRequest\0226\n\004name\030\001 "
+          + "\001(\tB(\340A\002\372A\"\n datastream.googleapis.com/S"
+          + "tream\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\242\001\n\020RunSt"
+          + "reamRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n datas"
+          + "tream.googleapis.com/Stream\022B\n\014cdc_strat"
+          + "egy\030\002 \001(\0132\'.google.cloud.datastream.v1.C"
+          + "dcStrategyB\003\340A\001\022\022\n\005force\030\003 \001(\010B\003\340A\001\"V\n\026G"
+          + "etStreamObjectRequest\022<\n\004name\030\001 \001(\tB.\340A\002"
+          + "\372A(\n&datastream.googleapis.com/StreamObj"
+          + "ect\"\260\001\n\031LookupStreamObjectRequest\0228\n\006par"
+          + "ent\030\001 \001(\tB(\340A\002\372A\"\n datastream.googleapis"
+          + ".com/Stream\022Y\n\030source_object_identifier\030"
+          + "\002 \001(\01322.google.cloud.datastream.v1.Sourc"
+          + "eObjectIdentifierB\003\340A\002\"Y\n\027StartBackfillJ"
+          + "obRequest\022>\n\006object\030\001 \001(\tB.\340A\002\372A(\n&datas"
+          + "tream.googleapis.com/StreamObject\"T\n\030Sta"
+          + "rtBackfillJobResponse\0228\n\006object\030\001 \001(\0132(."
+          + "google.cloud.datastream.v1.StreamObject\""
+          + "X\n\026StopBackfillJobRequest\022>\n\006object\030\001 \001("
+          + "\tB.\340A\002\372A(\n&datastream.googleapis.com/Str"
+          + "eamObject\"S\n\027StopBackfillJobResponse\0228\n\006"
+          + "object\030\001 \001(\0132(.google.cloud.datastream.v"
+          + "1.StreamObject\"\201\001\n\030ListStreamObjectsRequ"
+          + "est\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\022&datastream."
+          + "googleapis.com/StreamObject\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"v\n\031ListStream"
+          + "ObjectsResponse\022@\n\016stream_objects\030\001 \003(\0132"
+          + "(.google.cloud.datastream.v1.StreamObjec"
+          + "t\022\027\n\017next_page_token\030\002 \001(\t\"\316\002\n\021Operation"
+          + "Metadata\0224\n\013create_time\030\001 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\022\023\n\006tar"
+          + "get\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016sta"
+          + "tus_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_canc"
+          + "ellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\t"
+          + "B\003\340A\003\022L\n\021validation_result\030\010 \001(\0132,.googl"
+          + "e.cloud.datastream.v1.ValidationResultB\003"
+          + "\340A\003\"\206\002\n\036CreatePrivateConnectionRequest\022C"
+          + "\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+datastream.googl"
+          + "eapis.com/PrivateConnection\022\"\n\025private_c"
+          + "onnection_id\030\002 \001(\tB\003\340A\002\022N\n\022private_conne"
+          + "ction\030\003 \001(\0132-.google.cloud.datastream.v1"
+          + ".PrivateConnectionB\003\340A\002\022\027\n\nrequest_id\030\004 "
+          + "\001(\tB\003\340A\001\022\022\n\005force\030\006 \001(\010B\003\340A\001\"\255\001\n\035ListPri"
+          + "vateConnectionsRequest\022C\n\006parent\030\001 \001(\tB3"
+          + "\340A\002\372A-\022+datastream.googleapis.com/Privat"
+          + "eConnection\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
+          + "oken\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005"
+          + " \001(\t\"\232\001\n\036ListPrivateConnectionsResponse\022"
+          + "J\n\023private_connections\030\001 \003(\0132-.google.cl"
+          + "oud.datastream.v1.PrivateConnection\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003("
+          + "\t\"\220\001\n\036DeletePrivateConnectionRequest\022A\n\004"
+          + "name\030\001 \001(\tB3\340A\002\372A-\n+datastream.googleapi"
+          + "s.com/PrivateConnection\022\027\n\nrequest_id\030\002 "
+          + "\001(\tB\003\340A\001\022\022\n\005force\030\003 \001(\010B\003\340A\001\"`\n\033GetPriva"
+          + "teConnectionRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A"
+          + "-\n+datastream.googleapis.com/PrivateConn"
+          + "ection\"\264\001\n\022CreateRouteRequest\0227\n\006parent\030"
+          + "\001 \001(\tB\'\340A\002\372A!\022\037datastream.googleapis.com"
+          + "/Route\022\025\n\010route_id\030\002 \001(\tB\003\340A\002\0225\n\005route\030\003"
+          + " \001(\0132!.google.cloud.datastream.v1.RouteB"
+          + "\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"\225\001\n\021ListRo"
+          + "utesRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\022\037dat"
+          + "astream.googleapis.com/Route\022\021\n\tpage_siz"
+          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 "
+          + "\001(\t\022\020\n\010order_by\030\005 \001(\t\"u\n\022ListRoutesRespo"
+          + "nse\0221\n\006routes\030\001 \003(\0132!.google.cloud.datas"
+          + "tream.v1.Route\022\027\n\017next_page_token\030\002 \001(\t\022"
+          + "\023\n\013unreachable\030\003 \003(\t\"d\n\022DeleteRouteReque"
+          + "st\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037datastream.goo"
+          + "gleapis.com/Route\022\027\n\nrequest_id\030\002 \001(\tB\003\340"
+          + "A\001\"H\n\017GetRouteRequest\0225\n\004name\030\001 \001(\tB\'\340A\002"
+          + "\372A!\n\037datastream.googleapis.com/Route2\262,\n"
+          + "\nDatastream\022\330\001\n\026ListConnectionProfiles\0229"
+          + ".google.cloud.datastream.v1.ListConnecti"
+          + "onProfilesRequest\032:.google.cloud.datastr"
+          + "eam.v1.ListConnectionProfilesResponse\"G\332"
+          + "A\006parent\202\323\344\223\0028\0226/v1/{parent=projects/*/l"
+          + "ocations/*}/connectionProfiles\022\305\001\n\024GetCo"
+          + "nnectionProfile\0227.google.cloud.datastrea"
+          + "m.v1.GetConnectionProfileRequest\032-.googl"
+          + "e.cloud.datastream.v1.ConnectionProfile\""
+          + "E\332A\004name\202\323\344\223\0028\0226/v1/{name=projects/*/loc"
+          + "ations/*/connectionProfiles/*}\022\244\002\n\027Creat"
+          + "eConnectionProfile\022:.google.cloud.datast"
+          + "ream.v1.CreateConnectionProfileRequest\032\035"
+          + ".google.longrunning.Operation\"\255\001\312A&\n\021Con"
+          + "nectionProfile\022\021OperationMetadata\332A/pare"
+          + "nt,connection_profile,connection_profile"
+          + "_id\202\323\344\223\002L\"6/v1/{parent=projects/*/locati"
+          + "ons/*}/connectionProfiles:\022connection_pr"
+          + "ofile\022\246\002\n\027UpdateConnectionProfile\022:.goog"
+          + "le.cloud.datastream.v1.UpdateConnectionP"
+          + "rofileRequest\032\035.google.longrunning.Opera"
+          + "tion\"\257\001\312A&\n\021ConnectionProfile\022\021Operation"
+          + "Metadata\332A\036connection_profile,update_mas"
+          + "k\202\323\344\223\002_2I/v1/{connection_profile.name=pr"
+          + "ojects/*/locations/*/connectionProfiles/"
+          + "*}:\022connection_profile\022\350\001\n\027DeleteConnect"
+          + "ionProfile\022:.google.cloud.datastream.v1."
+          + "DeleteConnectionProfileRequest\032\035.google."
+          + "longrunning.Operation\"r\312A*\n\025google.proto"
+          + "buf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
+          + "8*6/v1/{name=projects/*/locations/*/conn"
+          + "ectionProfiles/*}\022\344\001\n\031DiscoverConnection"
+          + "Profile\022<.google.cloud.datastream.v1.Dis"
+          + "coverConnectionProfileRequest\032=.google.c"
+          + "loud.datastream.v1.DiscoverConnectionPro"
+          + "fileResponse\"J\202\323\344\223\002D\"?/v1/{parent=projec"
+          + "ts/*/locations/*}/connectionProfiles:dis"
+          + "cover:\001*\022\254\001\n\013ListStreams\022..google.cloud."
+          + "datastream.v1.ListStreamsRequest\032/.googl"
+          + "e.cloud.datastream.v1.ListStreamsRespons"
+          + "e\"<\332A\006parent\202\323\344\223\002-\022+/v1/{parent=projects"
+          + "/*/locations/*}/streams\022\231\001\n\tGetStream\022,."
+          + "google.cloud.datastream.v1.GetStreamRequ"
+          + "est\032\".google.cloud.datastream.v1.Stream\""
+          + ":\332A\004name\202\323\344\223\002-\022+/v1/{name=projects/*/loc"
+          + "ations/*/streams/*}\022\323\001\n\014CreateStream\022/.g"
+          + "oogle.cloud.datastream.v1.CreateStreamRe"
+          + "quest\032\035.google.longrunning.Operation\"s\312A"
+          + "\033\n\006Stream\022\021OperationMetadata\332A\027parent,st"
+          + "ream,stream_id\202\323\344\223\0025\"+/v1/{parent=projec"
+          + "ts/*/locations/*}/streams:\006stream\022\325\001\n\014Up"
+          + "dateStream\022/.google.cloud.datastream.v1."
+          + "UpdateStreamRequest\032\035.google.longrunning"
+          + ".Operation\"u\312A\033\n\006Stream\022\021OperationMetada"
+          + "ta\332A\022stream,update_mask\202\323\344\223\002<22/v1/{stre"
+          + "am.name=projects/*/locations/*/streams/*"
+          + "}:\006stream\022\307\001\n\014DeleteStream\022/.google.clou"
+          + "d.datastream.v1.DeleteStreamRequest\032\035.go"
+          + "ogle.longrunning.Operation\"g\312A*\n\025google."
+          + "protobuf.Empty\022\021OperationMetadata\332A\004name"
+          + "\202\323\344\223\002-*+/v1/{name=projects/*/locations/*"
+          + "/streams/*}\022\262\001\n\tRunStream\022,.google.cloud"
+          + ".datastream.v1.RunStreamRequest\032\035.google"
+          + ".longrunning.Operation\"X\312A\033\n\006Stream\022\021Ope"
+          + "rationMetadata\202\323\344\223\0024\"//v1/{name=projects"
+          + "/*/locations/*/streams/*}:run:\001*\022\265\001\n\017Get"
+          + "StreamObject\0222.google.cloud.datastream.v"
+          + "1.GetStreamObjectRequest\032(.google.cloud."
+          + "datastream.v1.StreamObject\"D\332A\004name\202\323\344\223\002"
+          + "7\0225/v1/{name=projects/*/locations/*/stre"
+          + "ams/*/objects/*}\022\276\001\n\022LookupStreamObject\022"
+          + "5.google.cloud.datastream.v1.LookupStrea"
+          + "mObjectRequest\032(.google.cloud.datastream"
+          + ".v1.StreamObject\"G\202\323\344\223\002A\"</v1/{parent=pr"
+          + "ojects/*/locations/*/streams/*}/objects:"
+          + "lookup:\001*\022\310\001\n\021ListStreamObjects\0224.google"
+          + ".cloud.datastream.v1.ListStreamObjectsRe"
+          + "quest\0325.google.cloud.datastream.v1.ListS"
+          + "treamObjectsResponse\"F\332A\006parent\202\323\344\223\0027\0225/"
+          + "v1/{parent=projects/*/locations/*/stream"
+          + "s/*}/objects\022\333\001\n\020StartBackfillJob\0223.goog"
+          + "le.cloud.datastream.v1.StartBackfillJobR"
+          + "equest\0324.google.cloud.datastream.v1.Star"
+          + "tBackfillJobResponse\"\\\332A\006object\202\323\344\223\002M\"H/"
+          + "v1/{object=projects/*/locations/*/stream"
+          + "s/*/objects/*}:startBackfillJob:\001*\022\327\001\n\017S"
+          + "topBackfillJob\0222.google.cloud.datastream"
+          + ".v1.StopBackfillJobRequest\0323.google.clou"
+          + "d.datastream.v1.StopBackfillJobResponse\""
+          + "[\332A\006object\202\323\344\223\002L\"G/v1/{object=projects/*"
+          + "/locations/*/streams/*/objects/*}:stopBa"
+          + "ckfillJob:\001*\022\270\001\n\016FetchStaticIps\0221.google"
+          + ".cloud.datastream.v1.FetchStaticIpsReque"
+          + "st\0322.google.cloud.datastream.v1.FetchSta"
+          + "ticIpsResponse\"?\332A\004name\202\323\344\223\0022\0220/v1/{name"
+          + "=projects/*/locations/*}:fetchStaticIps\022"
+          + "\244\002\n\027CreatePrivateConnection\022:.google.clo"
+          + "ud.datastream.v1.CreatePrivateConnection"
+          + "Request\032\035.google.longrunning.Operation\"\255"
+          + "\001\312A&\n\021PrivateConnection\022\021OperationMetada"
+          + "ta\332A/parent,private_connection,private_c"
+          + "onnection_id\202\323\344\223\002L\"6/v1/{parent=projects"
+          + "/*/locations/*}/privateConnections:\022priv"
+          + "ate_connection\022\305\001\n\024GetPrivateConnection\022"
+          + "7.google.cloud.datastream.v1.GetPrivateC"
+          + "onnectionRequest\032-.google.cloud.datastre"
+          + "am.v1.PrivateConnection\"E\332A\004name\202\323\344\223\0028\0226"
+          + "/v1/{name=projects/*/locations/*/private"
+          + "Connections/*}\022\330\001\n\026ListPrivateConnection"
+          + "s\0229.google.cloud.datastream.v1.ListPriva"
+          + "teConnectionsRequest\032:.google.cloud.data"
+          + "stream.v1.ListPrivateConnectionsResponse"
+          + "\"G\332A\006parent\202\323\344\223\0028\0226/v1/{parent=projects/"
+          + "*/locations/*}/privateConnections\022\350\001\n\027De"
+          + "letePrivateConnection\022:.google.cloud.dat"
+          + "astream.v1.DeletePrivateConnectionReques"
           + "t\032\035.google.longrunning.Operation\"r\312A*\n\025g"
           + "oogle.protobuf.Empty\022\021OperationMetadata\332"
           + "A\004name\202\323\344\223\0028*6/v1/{name=projects/*/locat"
-          + "ions/*/connectionProfiles/*}\022\344\001\n\031Discove"
-          + "rConnectionProfile\022<.google.cloud.datast"
-          + "ream.v1.DiscoverConnectionProfileRequest"
-          + "\032=.google.cloud.datastream.v1.DiscoverCo"
-          + "nnectionProfileResponse\"J\202\323\344\223\002D\"?/v1/{pa"
-          + "rent=projects/*/locations/*}/connectionP"
-          + "rofiles:discover:\001*\022\254\001\n\013ListStreams\022..go"
-          + "ogle.cloud.datastream.v1.ListStreamsRequ"
-          + "est\032/.google.cloud.datastream.v1.ListStr"
-          + "eamsResponse\"<\332A\006parent\202\323\344\223\002-\022+/v1/{pare"
-          + "nt=projects/*/locations/*}/streams\022\231\001\n\tG"
-          + "etStream\022,.google.cloud.datastream.v1.Ge"
-          + "tStreamRequest\032\".google.cloud.datastream"
-          + ".v1.Stream\":\332A\004name\202\323\344\223\002-\022+/v1/{name=pro"
-          + "jects/*/locations/*/streams/*}\022\323\001\n\014Creat"
-          + "eStream\022/.google.cloud.datastream.v1.Cre"
-          + "ateStreamRequest\032\035.google.longrunning.Op"
-          + "eration\"s\312A\033\n\006Stream\022\021OperationMetadata\332"
-          + "A\027parent,stream,stream_id\202\323\344\223\0025\"+/v1/{pa"
-          + "rent=projects/*/locations/*}/streams:\006st"
-          + "ream\022\325\001\n\014UpdateStream\022/.google.cloud.dat"
-          + "astream.v1.UpdateStreamRequest\032\035.google."
-          + "longrunning.Operation\"u\312A\033\n\006Stream\022\021Oper"
-          + "ationMetadata\332A\022stream,update_mask\202\323\344\223\002<"
-          + "22/v1/{stream.name=projects/*/locations/"
-          + "*/streams/*}:\006stream\022\307\001\n\014DeleteStream\022/."
-          + "google.cloud.datastream.v1.DeleteStreamR"
-          + "equest\032\035.google.longrunning.Operation\"g\312"
+          + "ions/*/privateConnections/*}\022\342\001\n\013CreateR"
+          + "oute\022..google.cloud.datastream.v1.Create"
+          + "RouteRequest\032\035.google.longrunning.Operat"
+          + "ion\"\203\001\312A\032\n\005Route\022\021OperationMetadata\332A\025pa"
+          + "rent,route,route_id\202\323\344\223\002H\"?/v1/{parent=p"
+          + "rojects/*/locations/*/privateConnections"
+          + "/*}/routes:\005route\022\252\001\n\010GetRoute\022+.google."
+          + "cloud.datastream.v1.GetRouteRequest\032!.go"
+          + "ogle.cloud.datastream.v1.Route\"N\332A\004name\202"
+          + "\323\344\223\002A\022?/v1/{name=projects/*/locations/*/"
+          + "privateConnections/*/routes/*}\022\275\001\n\nListR"
+          + "outes\022-.google.cloud.datastream.v1.ListR"
+          + "outesRequest\032..google.cloud.datastream.v"
+          + "1.ListRoutesResponse\"P\332A\006parent\202\323\344\223\002A\022?/"
+          + "v1/{parent=projects/*/locations/*/privat"
+          + "eConnections/*}/routes\022\331\001\n\013DeleteRoute\022."
+          + ".google.cloud.datastream.v1.DeleteRouteR"
+          + "equest\032\035.google.longrunning.Operation\"{\312"
           + "A*\n\025google.protobuf.Empty\022\021OperationMeta"
-          + "data\332A\004name\202\323\344\223\002-*+/v1/{name=projects/*/"
-          + "locations/*/streams/*}\022\265\001\n\017GetStreamObje"
-          + "ct\0222.google.cloud.datastream.v1.GetStrea"
-          + "mObjectRequest\032(.google.cloud.datastream"
-          + ".v1.StreamObject\"D\332A\004name\202\323\344\223\0027\0225/v1/{na"
-          + "me=projects/*/locations/*/streams/*/obje"
-          + "cts/*}\022\276\001\n\022LookupStreamObject\0225.google.c"
-          + "loud.datastream.v1.LookupStreamObjectReq"
-          + "uest\032(.google.cloud.datastream.v1.Stream"
-          + "Object\"G\202\323\344\223\002A\"</v1/{parent=projects/*/l"
-          + "ocations/*/streams/*}/objects:lookup:\001*\022"
-          + "\310\001\n\021ListStreamObjects\0224.google.cloud.dat"
-          + "astream.v1.ListStreamObjectsRequest\0325.go"
-          + "ogle.cloud.datastream.v1.ListStreamObjec"
-          + "tsResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/{parent"
-          + "=projects/*/locations/*/streams/*}/objec"
-          + "ts\022\333\001\n\020StartBackfillJob\0223.google.cloud.d"
-          + "atastream.v1.StartBackfillJobRequest\0324.g"
-          + "oogle.cloud.datastream.v1.StartBackfillJ"
-          + "obResponse\"\\\332A\006object\202\323\344\223\002M\"H/v1/{object"
-          + "=projects/*/locations/*/streams/*/object"
-          + "s/*}:startBackfillJob:\001*\022\327\001\n\017StopBackfil"
-          + "lJob\0222.google.cloud.datastream.v1.StopBa"
-          + "ckfillJobRequest\0323.google.cloud.datastre"
-          + "am.v1.StopBackfillJobResponse\"[\332A\006object"
-          + "\202\323\344\223\002L\"G/v1/{object=projects/*/locations"
-          + "/*/streams/*/objects/*}:stopBackfillJob:"
-          + "\001*\022\270\001\n\016FetchStaticIps\0221.google.cloud.dat"
-          + "astream.v1.FetchStaticIpsRequest\0322.googl"
-          + "e.cloud.datastream.v1.FetchStaticIpsResp"
-          + "onse\"?\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/"
-          + "*/locations/*}:fetchStaticIps\022\244\002\n\027Create"
-          + "PrivateConnection\022:.google.cloud.datastr"
-          + "eam.v1.CreatePrivateConnectionRequest\032\035."
-          + "google.longrunning.Operation\"\255\001\312A&\n\021Priv"
-          + "ateConnection\022\021OperationMetadata\332A/paren"
-          + "t,private_connection,private_connection_"
-          + "id\202\323\344\223\002L\"6/v1/{parent=projects/*/locatio"
-          + "ns/*}/privateConnections:\022private_connec"
-          + "tion\022\305\001\n\024GetPrivateConnection\0227.google.c"
-          + "loud.datastream.v1.GetPrivateConnectionR"
-          + "equest\032-.google.cloud.datastream.v1.Priv"
-          + "ateConnection\"E\332A\004name\202\323\344\223\0028\0226/v1/{name="
-          + "projects/*/locations/*/privateConnection"
-          + "s/*}\022\330\001\n\026ListPrivateConnections\0229.google"
-          + ".cloud.datastream.v1.ListPrivateConnecti"
-          + "onsRequest\032:.google.cloud.datastream.v1."
-          + "ListPrivateConnectionsResponse\"G\332A\006paren"
-          + "t\202\323\344\223\0028\0226/v1/{parent=projects/*/location"
-          + "s/*}/privateConnections\022\350\001\n\027DeletePrivat"
-          + "eConnection\022:.google.cloud.datastream.v1"
-          + ".DeletePrivateConnectionRequest\032\035.google"
-          + ".longrunning.Operation\"r\312A*\n\025google.prot"
-          + "obuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223"
-          + "\0028*6/v1/{name=projects/*/locations/*/pri"
-          + "vateConnections/*}\022\342\001\n\013CreateRoute\022..goo"
-          + "gle.cloud.datastream.v1.CreateRouteReque"
-          + "st\032\035.google.longrunning.Operation\"\203\001\312A\032\n"
-          + "\005Route\022\021OperationMetadata\332A\025parent,route"
-          + ",route_id\202\323\344\223\002H\"?/v1/{parent=projects/*/"
-          + "locations/*/privateConnections/*}/routes"
-          + ":\005route\022\252\001\n\010GetRoute\022+.google.cloud.data"
-          + "stream.v1.GetRouteRequest\032!.google.cloud"
-          + ".datastream.v1.Route\"N\332A\004name\202\323\344\223\002A\022?/v1"
-          + "/{name=projects/*/locations/*/privateCon"
-          + "nections/*/routes/*}\022\275\001\n\nListRoutes\022-.go"
-          + "ogle.cloud.datastream.v1.ListRoutesReque"
-          + "st\032..google.cloud.datastream.v1.ListRout"
-          + "esResponse\"P\332A\006parent\202\323\344\223\002A\022?/v1/{parent"
-          + "=projects/*/locations/*/privateConnectio"
-          + "ns/*}/routes\022\331\001\n\013DeleteRoute\022..google.cl"
-          + "oud.datastream.v1.DeleteRouteRequest\032\035.g"
-          + "oogle.longrunning.Operation\"{\312A*\n\025google"
-          + ".protobuf.Empty\022\021OperationMetadata\332A\004nam"
-          + "e\202\323\344\223\002A*?/v1/{name=projects/*/locations/"
-          + "*/privateConnections/*/routes/*}\032M\312A\031dat"
-          + "astream.googleapis.com\322A.https://www.goo"
-          + "gleapis.com/auth/cloud-platformB\315\001\n\036com."
-          + "google.cloud.datastream.v1B\017DatastreamPr"
-          + "otoP\001Z>cloud.google.com/go/datastream/ap"
-          + "iv1/datastreampb;datastreampb\252\002\032Google.C"
-          + "loud.Datastream.V1\312\002\032Google\\Cloud\\Datast"
-          + "ream\\V1\352\002\035Google::Cloud::Datastream::V1b"
-          + "\006proto3"
+          + "data\332A\004name\202\323\344\223\002A*?/v1/{name=projects/*/"
+          + "locations/*/privateConnections/*/routes/"
+          + "*}\032M\312A\031datastream.googleapis.com\322A.https"
+          + "://www.googleapis.com/auth/cloud-platfor"
+          + "mB\315\001\n\036com.google.cloud.datastream.v1B\017Da"
+          + "tastreamProtoP\001Z>cloud.google.com/go/dat"
+          + "astream/apiv1/datastreampb;datastreampb\252"
+          + "\002\032Google.Cloud.Datastream.V1\312\002\032Google\\Cl"
+          + "oud\\Datastream\\V1\352\002\035Google::Cloud::Datas"
+          + "tream::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -500,6 +516,7 @@ public final class DatastreamProto {
               "OracleRdbms",
               "MysqlRdbms",
               "PostgresqlRdbms",
+              "SqlServerRdbms",
               "Target",
               "Hierarchy",
               "DataObject",
@@ -510,7 +527,7 @@ public final class DatastreamProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_DiscoverConnectionProfileResponse_descriptor,
             new java.lang.String[] {
-              "OracleRdbms", "MysqlRdbms", "PostgresqlRdbms", "DataObject",
+              "OracleRdbms", "MysqlRdbms", "PostgresqlRdbms", "SqlServerRdbms", "DataObject",
             });
     internal_static_google_cloud_datastream_v1_FetchStaticIpsRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -629,8 +646,16 @@ public final class DatastreamProto {
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_datastream_v1_GetStreamObjectRequest_descriptor =
+    internal_static_google_cloud_datastream_v1_RunStreamRequest_descriptor =
         getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_datastream_v1_RunStreamRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_RunStreamRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "CdcStrategy", "Force",
+            });
+    internal_static_google_cloud_datastream_v1_GetStreamObjectRequest_descriptor =
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_datastream_v1_GetStreamObjectRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_GetStreamObjectRequest_descriptor,
@@ -638,7 +663,7 @@ public final class DatastreamProto {
               "Name",
             });
     internal_static_google_cloud_datastream_v1_LookupStreamObjectRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_datastream_v1_LookupStreamObjectRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_LookupStreamObjectRequest_descriptor,
@@ -646,7 +671,7 @@ public final class DatastreamProto {
               "Parent", "SourceObjectIdentifier",
             });
     internal_static_google_cloud_datastream_v1_StartBackfillJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_datastream_v1_StartBackfillJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_StartBackfillJobRequest_descriptor,
@@ -654,7 +679,7 @@ public final class DatastreamProto {
               "Object",
             });
     internal_static_google_cloud_datastream_v1_StartBackfillJobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_datastream_v1_StartBackfillJobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_StartBackfillJobResponse_descriptor,
@@ -662,7 +687,7 @@ public final class DatastreamProto {
               "Object",
             });
     internal_static_google_cloud_datastream_v1_StopBackfillJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_datastream_v1_StopBackfillJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_StopBackfillJobRequest_descriptor,
@@ -670,7 +695,7 @@ public final class DatastreamProto {
               "Object",
             });
     internal_static_google_cloud_datastream_v1_StopBackfillJobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_datastream_v1_StopBackfillJobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_StopBackfillJobResponse_descriptor,
@@ -678,7 +703,7 @@ public final class DatastreamProto {
               "Object",
             });
     internal_static_google_cloud_datastream_v1_ListStreamObjectsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_datastream_v1_ListStreamObjectsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ListStreamObjectsRequest_descriptor,
@@ -686,7 +711,7 @@ public final class DatastreamProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datastream_v1_ListStreamObjectsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_datastream_v1_ListStreamObjectsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ListStreamObjectsResponse_descriptor,
@@ -694,7 +719,7 @@ public final class DatastreamProto {
               "StreamObjects", "NextPageToken",
             });
     internal_static_google_cloud_datastream_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_datastream_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_OperationMetadata_descriptor,
@@ -709,7 +734,7 @@ public final class DatastreamProto {
               "ValidationResult",
             });
     internal_static_google_cloud_datastream_v1_CreatePrivateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_datastream_v1_CreatePrivateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_CreatePrivateConnectionRequest_descriptor,
@@ -717,7 +742,7 @@ public final class DatastreamProto {
               "Parent", "PrivateConnectionId", "PrivateConnection", "RequestId", "Force",
             });
     internal_static_google_cloud_datastream_v1_ListPrivateConnectionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_datastream_v1_ListPrivateConnectionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ListPrivateConnectionsRequest_descriptor,
@@ -725,7 +750,7 @@ public final class DatastreamProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_datastream_v1_ListPrivateConnectionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_datastream_v1_ListPrivateConnectionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ListPrivateConnectionsResponse_descriptor,
@@ -733,7 +758,7 @@ public final class DatastreamProto {
               "PrivateConnections", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_datastream_v1_DeletePrivateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_datastream_v1_DeletePrivateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_DeletePrivateConnectionRequest_descriptor,
@@ -741,7 +766,7 @@ public final class DatastreamProto {
               "Name", "RequestId", "Force",
             });
     internal_static_google_cloud_datastream_v1_GetPrivateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_datastream_v1_GetPrivateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_GetPrivateConnectionRequest_descriptor,
@@ -749,7 +774,7 @@ public final class DatastreamProto {
               "Name",
             });
     internal_static_google_cloud_datastream_v1_CreateRouteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_datastream_v1_CreateRouteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_CreateRouteRequest_descriptor,
@@ -757,7 +782,7 @@ public final class DatastreamProto {
               "Parent", "RouteId", "Route", "RequestId",
             });
     internal_static_google_cloud_datastream_v1_ListRoutesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_datastream_v1_ListRoutesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ListRoutesRequest_descriptor,
@@ -765,7 +790,7 @@ public final class DatastreamProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_datastream_v1_ListRoutesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_datastream_v1_ListRoutesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ListRoutesResponse_descriptor,
@@ -773,7 +798,7 @@ public final class DatastreamProto {
               "Routes", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_datastream_v1_DeleteRouteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_datastream_v1_DeleteRouteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_DeleteRouteRequest_descriptor,
@@ -781,7 +806,7 @@ public final class DatastreamProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_datastream_v1_GetRouteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_datastream_v1_GetRouteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_GetRouteRequest_descriptor,

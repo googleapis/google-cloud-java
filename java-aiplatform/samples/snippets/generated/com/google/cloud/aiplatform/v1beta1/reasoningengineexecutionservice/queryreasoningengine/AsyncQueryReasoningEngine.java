@@ -44,6 +44,7 @@ public class AsyncQueryReasoningEngine {
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
               .setInput(Struct.newBuilder().build())
+              .setClassMethod("classMethod-937857927")
               .build();
       ApiFuture<QueryReasoningEngineResponse> future =
           reasoningEngineExecutionServiceClient.queryReasoningEngineCallable().futureCall(request);

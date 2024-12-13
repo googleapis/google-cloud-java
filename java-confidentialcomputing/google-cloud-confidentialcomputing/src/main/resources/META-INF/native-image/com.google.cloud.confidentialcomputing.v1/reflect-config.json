@@ -576,6 +576,60 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.confidentialcomputing.v1.TokenOptions$AwsPrincipalTagsOptions",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.confidentialcomputing.v1.TokenOptions$AwsPrincipalTagsOptions$AllowedPrincipalTags",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.confidentialcomputing.v1.TokenOptions$AwsPrincipalTagsOptions$AllowedPrincipalTags$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.confidentialcomputing.v1.TokenOptions$AwsPrincipalTagsOptions$AllowedPrincipalTags$ContainerImageSignatures",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.confidentialcomputing.v1.TokenOptions$AwsPrincipalTagsOptions$AllowedPrincipalTags$ContainerImageSignatures$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.confidentialcomputing.v1.TokenOptions$AwsPrincipalTagsOptions$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.confidentialcomputing.v1.TokenOptions$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

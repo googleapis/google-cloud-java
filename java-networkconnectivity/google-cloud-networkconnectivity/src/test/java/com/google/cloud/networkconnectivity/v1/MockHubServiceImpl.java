@@ -181,6 +181,27 @@ public class MockHubServiceImpl extends HubServiceImplBase {
   }
 
   @Override
+  public void queryHubStatus(
+      QueryHubStatusRequest request, StreamObserver<QueryHubStatusResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryHubStatusResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryHubStatusResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryHubStatus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryHubStatusResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listSpokes(
       ListSpokesRequest request, StreamObserver<ListSpokesResponse> responseObserver) {
     Object response = responses.poll();
@@ -443,6 +464,26 @@ public class MockHubServiceImpl extends HubServiceImplBase {
                   "Unrecognized response type %s for method ListGroups, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGroupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGroup(UpdateGroupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

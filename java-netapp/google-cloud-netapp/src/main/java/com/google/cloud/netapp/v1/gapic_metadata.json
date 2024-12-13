@@ -67,6 +67,9 @@
             "EncryptVolumes": {
               "methods": ["encryptVolumesAsync", "encryptVolumesOperationCallable", "encryptVolumesCallable"]
             },
+            "EstablishPeering": {
+              "methods": ["establishPeeringAsync", "establishPeeringOperationCallable", "establishPeeringCallable"]
+            },
             "GetActiveDirectory": {
               "methods": ["getActiveDirectory", "getActiveDirectory", "getActiveDirectory", "getActiveDirectoryCallable"]
             },
@@ -141,6 +144,9 @@
             },
             "SwitchActiveReplicaZone": {
               "methods": ["switchActiveReplicaZoneAsync", "switchActiveReplicaZoneOperationCallable", "switchActiveReplicaZoneCallable"]
+            },
+            "SyncReplication": {
+              "methods": ["syncReplicationAsync", "syncReplicationOperationCallable", "syncReplicationCallable"]
             },
             "UpdateActiveDirectory": {
               "methods": ["updateActiveDirectoryAsync", "updateActiveDirectoryAsync", "updateActiveDirectoryOperationCallable", "updateActiveDirectoryCallable"]

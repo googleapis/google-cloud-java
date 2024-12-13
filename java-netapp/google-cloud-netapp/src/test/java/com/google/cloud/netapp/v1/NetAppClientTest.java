@@ -803,6 +803,7 @@ public class NetAppClientTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -878,6 +879,7 @@ public class NetAppClientTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -953,6 +955,7 @@ public class NetAppClientTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1042,6 +1045,7 @@ public class NetAppClientTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1131,6 +1135,7 @@ public class NetAppClientTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1301,6 +1306,7 @@ public class NetAppClientTest {
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2947,6 +2953,8 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -2998,6 +3006,8 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -3047,6 +3057,8 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3111,6 +3123,8 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3261,6 +3275,8 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3321,6 +3337,8 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3391,6 +3409,8 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3458,6 +3478,8 @@ public class NetAppClientTest {
             .setDescription("description-1724546052")
             .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3502,6 +3524,156 @@ public class NetAppClientTest {
                       .toString())
               .build();
       client.reverseReplicationDirectionAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void establishPeeringTest() throws Exception {
+    Replication expectedResponse =
+        Replication.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setStateDetails("stateDetails1730982001")
+            .setHealthy(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestinationVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setTransferStats(TransferStats.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
+            .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("establishPeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    EstablishPeeringRequest request =
+        EstablishPeeringRequest.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setPeerClusterName("peerClusterName313022691")
+            .setPeerSvmName("peerSvmName1014209619")
+            .addAllPeerIpAddresses(new ArrayList<String>())
+            .setPeerVolumeName("peerVolumeName1542206407")
+            .build();
+
+    Replication actualResponse = client.establishPeeringAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EstablishPeeringRequest actualRequest = ((EstablishPeeringRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getPeerClusterName(), actualRequest.getPeerClusterName());
+    Assert.assertEquals(request.getPeerSvmName(), actualRequest.getPeerSvmName());
+    Assert.assertEquals(request.getPeerIpAddressesList(), actualRequest.getPeerIpAddressesList());
+    Assert.assertEquals(request.getPeerVolumeName(), actualRequest.getPeerVolumeName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void establishPeeringExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      EstablishPeeringRequest request =
+          EstablishPeeringRequest.newBuilder()
+              .setName(
+                  ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                      .toString())
+              .setPeerClusterName("peerClusterName313022691")
+              .setPeerSvmName("peerSvmName1014209619")
+              .addAllPeerIpAddresses(new ArrayList<String>())
+              .setPeerVolumeName("peerVolumeName1542206407")
+              .build();
+      client.establishPeeringAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void syncReplicationTest() throws Exception {
+    Replication expectedResponse =
+        Replication.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .setStateDetails("stateDetails1730982001")
+            .setHealthy(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestinationVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setTransferStats(TransferStats.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDestinationVolumeParameters(DestinationVolumeParameters.newBuilder().build())
+            .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
+            .setClusterLocation("clusterLocation-732398641")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("syncReplicationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    SyncReplicationRequest request =
+        SyncReplicationRequest.newBuilder()
+            .setName(
+                ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                    .toString())
+            .build();
+
+    Replication actualResponse = client.syncReplicationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SyncReplicationRequest actualRequest = ((SyncReplicationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void syncReplicationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      SyncReplicationRequest request =
+          SyncReplicationRequest.newBuilder()
+              .setName(
+                  ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+                      .toString())
+              .build();
+      client.syncReplicationAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

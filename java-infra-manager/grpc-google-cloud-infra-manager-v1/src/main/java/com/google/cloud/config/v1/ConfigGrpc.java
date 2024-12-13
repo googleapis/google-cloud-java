@@ -1208,7 +1208,7 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
      * </pre>
      */
     default void listResources(
@@ -1592,7 +1592,7 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
      * </pre>
      */
     public void listResources(
@@ -1964,7 +1964,7 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
      * </pre>
      */
     public com.google.cloud.config.v1.ListResourcesResponse listResources(
@@ -2291,7 +2291,7 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -248,6 +248,12 @@ public interface LicenseOrBuilder
   com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * [Input Only] Deprecated.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>
@@ -256,6 +262,12 @@ public interface LicenseOrBuilder
    */
   boolean hasResourceRequirements();
   /**
+   *
+   *
+   * <pre>
+   * [Input Only] Deprecated.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>
@@ -264,6 +276,12 @@ public interface LicenseOrBuilder
    */
   com.google.cloud.compute.v1.LicenseResourceRequirements getResourceRequirements();
   /**
+   *
+   *
+   * <pre>
+   * [Input Only] Deprecated.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>

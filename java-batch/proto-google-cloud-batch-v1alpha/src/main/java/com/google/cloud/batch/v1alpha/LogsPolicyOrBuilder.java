@@ -28,7 +28,7 @@ public interface LogsPolicyOrBuilder
    *
    *
    * <pre>
-   * Where logs should be saved.
+   * If and where logs should be saved.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.LogsPolicy.Destination destination = 1;</code>
@@ -40,7 +40,7 @@ public interface LogsPolicyOrBuilder
    *
    *
    * <pre>
-   * Where logs should be saved.
+   * If and where logs should be saved.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.LogsPolicy.Destination destination = 1;</code>
@@ -53,9 +53,14 @@ public interface LogsPolicyOrBuilder
    *
    *
    * <pre>
-   * The path to which logs are saved when the destination = PATH. This can be a
-   * local file path on the VM, or under the mount point of a Persistent Disk or
-   * Filestore, or a Cloud Storage path.
+   * When `destination` is set to `PATH`, you must set this field to the path
+   * where you want logs to be saved. This path can point to a local directory
+   * on the VM or (if congifured) a directory under the mount path of any
+   * Cloud Storage bucket, network file system (NFS), or writable persistent
+   * disk that is mounted to the job. For example, if the job has a bucket with
+   * `mountPath` set to `/mnt/disks/my-bucket`, you can write logs to the
+   * root directory of the `remotePath` of that bucket by setting this field to
+   * `/mnt/disks/my-bucket/`.
    * </pre>
    *
    * <code>string logs_path = 2;</code>
@@ -67,9 +72,14 @@ public interface LogsPolicyOrBuilder
    *
    *
    * <pre>
-   * The path to which logs are saved when the destination = PATH. This can be a
-   * local file path on the VM, or under the mount point of a Persistent Disk or
-   * Filestore, or a Cloud Storage path.
+   * When `destination` is set to `PATH`, you must set this field to the path
+   * where you want logs to be saved. This path can point to a local directory
+   * on the VM or (if congifured) a directory under the mount path of any
+   * Cloud Storage bucket, network file system (NFS), or writable persistent
+   * disk that is mounted to the job. For example, if the job has a bucket with
+   * `mountPath` set to `/mnt/disks/my-bucket`, you can write logs to the
+   * root directory of the `remotePath` of that bucket by setting this field to
+   * `/mnt/disks/my-bucket/`.
    * </pre>
    *
    * <code>string logs_path = 2;</code>
@@ -82,8 +92,8 @@ public interface LogsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional settings for Cloud Logging. It will only take effect
-   * when the destination of `LogsPolicy` is set to `CLOUD_LOGGING`.
+   * Optional. When `destination` is set to `CLOUD_LOGGING`, you can optionally
+   * set this field to configure additional settings for Cloud Logging.
    * </pre>
    *
    * <code>
@@ -97,8 +107,8 @@ public interface LogsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional settings for Cloud Logging. It will only take effect
-   * when the destination of `LogsPolicy` is set to `CLOUD_LOGGING`.
+   * Optional. When `destination` is set to `CLOUD_LOGGING`, you can optionally
+   * set this field to configure additional settings for Cloud Logging.
    * </pre>
    *
    * <code>
@@ -112,8 +122,8 @@ public interface LogsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional settings for Cloud Logging. It will only take effect
-   * when the destination of `LogsPolicy` is set to `CLOUD_LOGGING`.
+   * Optional. When `destination` is set to `CLOUD_LOGGING`, you can optionally
+   * set this field to configure additional settings for Cloud Logging.
    * </pre>
    *
    * <code>

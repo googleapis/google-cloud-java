@@ -109,7 +109,7 @@ public interface CreateMessageRequestOrBuilder
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=504
+   *     google/chat/v1/message.proto;l=510
    * @return The threadKey.
    */
   @java.lang.Deprecated
@@ -131,7 +131,7 @@ public interface CreateMessageRequestOrBuilder
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=504
+   *     google/chat/v1/message.proto;l=510
    * @return The bytes for threadKey.
    */
   @java.lang.Deprecated
@@ -172,6 +172,12 @@ public interface CreateMessageRequestOrBuilder
    * <pre>
    * Optional. Specifies whether a message starts a thread or replies to one.
    * Only supported in named spaces.
+   *
+   * When [responding to user
+   * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+   * this field is ignored. For interactions within a thread, the reply is
+   * created in the same thread. Otherwise, the reply is created as a new
+   * thread.
    * </pre>
    *
    * <code>
@@ -187,6 +193,12 @@ public interface CreateMessageRequestOrBuilder
    * <pre>
    * Optional. Specifies whether a message starts a thread or replies to one.
    * Only supported in named spaces.
+   *
+   * When [responding to user
+   * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+   * this field is ignored. For interactions within a thread, the reply is
+   * created in the same thread. Otherwise, the reply is created as a new
+   * thread.
    * </pre>
    *
    * <code>

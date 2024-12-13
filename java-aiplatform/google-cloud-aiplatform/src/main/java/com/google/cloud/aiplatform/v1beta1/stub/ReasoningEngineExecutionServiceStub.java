@@ -18,11 +18,14 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceClient.ListLocationsPagedResponse;
 
+import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -47,6 +50,12 @@ public abstract class ReasoningEngineExecutionServiceStub implements BackgroundR
   public UnaryCallable<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineCallable() {
     throw new UnsupportedOperationException("Not implemented: queryReasoningEngineCallable()");
+  }
+
+  public ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamQueryReasoningEngineCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

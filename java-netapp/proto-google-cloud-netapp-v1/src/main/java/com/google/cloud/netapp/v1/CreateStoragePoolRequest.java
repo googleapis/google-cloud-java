@@ -129,9 +129,9 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Id of the requesting storage pool. Must be unique within the
-   * parent resource. Must contain only letters, numbers, underscore and hyphen,
-   * with the first character a letter or underscore, the last a letter or
-   * underscore or a number, and a 63 character maximum.
+   * parent resource. Must contain only letters, numbers and hyphen, with the
+   * first character a letter, the last a letter or a number, and a 63 character
+   * maximum.
    * </pre>
    *
    * <code>string storage_pool_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -155,9 +155,9 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Id of the requesting storage pool. Must be unique within the
-   * parent resource. Must contain only letters, numbers, underscore and hyphen,
-   * with the first character a letter or underscore, the last a letter or
-   * underscore or a number, and a 63 character maximum.
+   * parent resource. Must contain only letters, numbers and hyphen, with the
+   * first character a letter, the last a letter or a number, and a 63 character
+   * maximum.
    * </pre>
    *
    * <code>string storage_pool_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -765,9 +765,9 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Id of the requesting storage pool. Must be unique within the
-     * parent resource. Must contain only letters, numbers, underscore and hyphen,
-     * with the first character a letter or underscore, the last a letter or
-     * underscore or a number, and a 63 character maximum.
+     * parent resource. Must contain only letters, numbers and hyphen, with the
+     * first character a letter, the last a letter or a number, and a 63 character
+     * maximum.
      * </pre>
      *
      * <code>string storage_pool_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -790,9 +790,9 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Id of the requesting storage pool. Must be unique within the
-     * parent resource. Must contain only letters, numbers, underscore and hyphen,
-     * with the first character a letter or underscore, the last a letter or
-     * underscore or a number, and a 63 character maximum.
+     * parent resource. Must contain only letters, numbers and hyphen, with the
+     * first character a letter, the last a letter or a number, and a 63 character
+     * maximum.
      * </pre>
      *
      * <code>string storage_pool_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -815,9 +815,9 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Id of the requesting storage pool. Must be unique within the
-     * parent resource. Must contain only letters, numbers, underscore and hyphen,
-     * with the first character a letter or underscore, the last a letter or
-     * underscore or a number, and a 63 character maximum.
+     * parent resource. Must contain only letters, numbers and hyphen, with the
+     * first character a letter, the last a letter or a number, and a 63 character
+     * maximum.
      * </pre>
      *
      * <code>string storage_pool_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -839,9 +839,9 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Id of the requesting storage pool. Must be unique within the
-     * parent resource. Must contain only letters, numbers, underscore and hyphen,
-     * with the first character a letter or underscore, the last a letter or
-     * underscore or a number, and a 63 character maximum.
+     * parent resource. Must contain only letters, numbers and hyphen, with the
+     * first character a letter, the last a letter or a number, and a 63 character
+     * maximum.
      * </pre>
      *
      * <code>string storage_pool_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -859,9 +859,9 @@ public final class CreateStoragePoolRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Id of the requesting storage pool. Must be unique within the
-     * parent resource. Must contain only letters, numbers, underscore and hyphen,
-     * with the first character a letter or underscore, the last a letter or
-     * underscore or a number, and a 63 character maximum.
+     * parent resource. Must contain only letters, numbers and hyphen, with the
+     * first character a letter, the last a letter or a number, and a 63 character
+     * maximum.
      * </pre>
      *
      * <code>string storage_pool_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

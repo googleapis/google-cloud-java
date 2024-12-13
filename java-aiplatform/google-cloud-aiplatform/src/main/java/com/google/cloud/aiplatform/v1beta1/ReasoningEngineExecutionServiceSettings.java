@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceClient.ListLocationsPagedResponse;
 
+import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -27,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.aiplatform.v1beta1.stub.ReasoningEngineExecutionServiceStubSettings;
@@ -104,6 +106,13 @@ public class ReasoningEngineExecutionServiceSettings
       queryReasoningEngineSettings() {
     return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
         .queryReasoningEngineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamQueryReasoningEngine. */
+  public ServerStreamingCallSettings<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineSettings() {
+    return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
+        .streamQueryReasoningEngineSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -236,6 +245,12 @@ public class ReasoningEngineExecutionServiceSettings
     public UnaryCallSettings.Builder<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
         queryReasoningEngineSettings() {
       return getStubSettingsBuilder().queryReasoningEngineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamQueryReasoningEngine. */
+    public ServerStreamingCallSettings.Builder<StreamQueryReasoningEngineRequest, HttpBody>
+        streamQueryReasoningEngineSettings() {
+      return getStubSettingsBuilder().streamQueryReasoningEngineSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

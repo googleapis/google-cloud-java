@@ -28,11 +28,11 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * Resource name of the attachment, in the form
+   * Optional. Resource name of the attachment, in the form
    * `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -41,11 +41,11 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * Resource name of the attachment, in the form
+   * Optional. Resource name of the attachment, in the form
    * `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -105,11 +105,14 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * A reference to the attachment data. This field is used with the media API
-   * to download the attachment data.
+   * Optional. A reference to the attachment data. This field is used to
+   * create or update messages with attachments, or with the media API to
+   * download the attachment data.
    * </pre>
    *
-   * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+   * <code>
+   * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the attachmentDataRef field is set.
    */
@@ -118,11 +121,14 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * A reference to the attachment data. This field is used with the media API
-   * to download the attachment data.
+   * Optional. A reference to the attachment data. This field is used to
+   * create or update messages with attachments, or with the media API to
+   * download the attachment data.
    * </pre>
    *
-   * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+   * <code>
+   * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The attachmentDataRef.
    */
@@ -131,11 +137,14 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * A reference to the attachment data. This field is used with the media API
-   * to download the attachment data.
+   * Optional. A reference to the attachment data. This field is used to
+   * create or update messages with attachments, or with the media API to
+   * download the attachment data.
    * </pre>
    *
-   * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+   * <code>
+   * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.chat.v1.AttachmentDataRefOrBuilder getAttachmentDataRefOrBuilder();
 

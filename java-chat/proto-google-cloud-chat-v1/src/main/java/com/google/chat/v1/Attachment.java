@@ -280,11 +280,11 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the attachment, in the form
+   * Optional. Resource name of the attachment, in the form
    * `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -304,11 +304,11 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the attachment, in the form
+   * Optional. Resource name of the attachment, in the form
    * `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -432,11 +432,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A reference to the attachment data. This field is used with the media API
-   * to download the attachment data.
+   * Optional. A reference to the attachment data. This field is used to
+   * create or update messages with attachments, or with the media API to
+   * download the attachment data.
    * </pre>
    *
-   * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+   * <code>
+   * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the attachmentDataRef field is set.
    */
@@ -448,11 +451,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A reference to the attachment data. This field is used with the media API
-   * to download the attachment data.
+   * Optional. A reference to the attachment data. This field is used to
+   * create or update messages with attachments, or with the media API to
+   * download the attachment data.
    * </pre>
    *
-   * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+   * <code>
+   * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The attachmentDataRef.
    */
@@ -467,11 +473,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A reference to the attachment data. This field is used with the media API
-   * to download the attachment data.
+   * Optional. A reference to the attachment data. This field is used to
+   * create or update messages with attachments, or with the media API to
+   * download the attachment data.
    * </pre>
    *
-   * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+   * <code>
+   * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.chat.v1.AttachmentDataRefOrBuilder getAttachmentDataRefOrBuilder() {
@@ -1252,11 +1261,11 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the attachment, in the form
+     * Optional. Resource name of the attachment, in the form
      * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -1275,11 +1284,11 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the attachment, in the form
+     * Optional. Resource name of the attachment, in the form
      * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -1298,11 +1307,11 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the attachment, in the form
+     * Optional. Resource name of the attachment, in the form
      * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1320,11 +1329,11 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the attachment, in the form
+     * Optional. Resource name of the attachment, in the form
      * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1338,11 +1347,11 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the attachment, in the form
+     * Optional. Resource name of the attachment, in the form
      * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1579,11 +1588,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the attachmentDataRef field is set.
      */
@@ -1595,11 +1607,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The attachmentDataRef.
      */
@@ -1621,11 +1636,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAttachmentDataRef(com.google.chat.v1.AttachmentDataRef value) {
       if (attachmentDataRefBuilder_ == null) {
@@ -1644,11 +1662,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAttachmentDataRef(
         com.google.chat.v1.AttachmentDataRef.Builder builderForValue) {
@@ -1665,11 +1686,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAttachmentDataRef(com.google.chat.v1.AttachmentDataRef value) {
       if (attachmentDataRefBuilder_ == null) {
@@ -1698,11 +1722,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAttachmentDataRef() {
       if (attachmentDataRefBuilder_ == null) {
@@ -1724,11 +1751,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.AttachmentDataRef.Builder getAttachmentDataRefBuilder() {
       return getAttachmentDataRefFieldBuilder().getBuilder();
@@ -1737,11 +1767,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.AttachmentDataRefOrBuilder getAttachmentDataRefOrBuilder() {
@@ -1758,11 +1791,14 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to the attachment data. This field is used with the media API
-     * to download the attachment data.
+     * Optional. A reference to the attachment data. This field is used to
+     * create or update messages with attachments, or with the media API to
+     * download the attachment data.
      * </pre>
      *
-     * <code>.google.chat.v1.AttachmentDataRef attachment_data_ref = 4;</code>
+     * <code>
+     * .google.chat.v1.AttachmentDataRef attachment_data_ref = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.chat.v1.AttachmentDataRef,

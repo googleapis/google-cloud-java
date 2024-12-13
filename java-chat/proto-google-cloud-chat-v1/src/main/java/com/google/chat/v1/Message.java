@@ -81,7 +81,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the message.
+   * Identifier. Resource name of the message.
    *
    * Format: `spaces/{space}/messages/{message}`
    *
@@ -98,7 +98,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -118,7 +118,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the message.
+   * Identifier. Resource name of the message.
    *
    * Format: `spaces/{space}/messages/{message}`
    *
@@ -135,7 +135,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -402,10 +402,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Plain-text body of the message. The first link to an image, video, or web
-   * page generates a
-   * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-   * You can also [&#64;mention a Google Chat
+   * Optional. Plain-text body of the message. The first link to an image,
+   * video, or web page generates a [preview
+   * chip](https://developers.google.com/workspace/chat/preview-links). You can
+   * also [&#64;mention a Google Chat
    * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
    * or everyone in the space.
    *
@@ -413,7 +413,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * message](https://developers.google.com/workspace/chat/create-messages).
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The text.
    */
@@ -433,10 +433,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Plain-text body of the message. The first link to an image, video, or web
-   * page generates a
-   * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-   * You can also [&#64;mention a Google Chat
+   * Optional. Plain-text body of the message. The first link to an image,
+   * video, or web page generates a [preview
+   * chip](https://developers.google.com/workspace/chat/preview-links). You can
+   * also [&#64;mention a Google Chat
    * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
    * or everyone in the space.
    *
@@ -444,7 +444,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * message](https://developers.google.com/workspace/chat/create-messages).
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for text.
    */
@@ -665,7 +665,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -678,7 +678,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.chat.v1.CardWithId> getCardsV2List() {
@@ -688,7 +690,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -701,7 +703,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.chat.v1.CardWithIdOrBuilder>
@@ -712,7 +716,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -725,7 +729,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getCardsV2Count() {
@@ -735,7 +741,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -748,7 +754,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.chat.v1.CardWithId getCardsV2(int index) {
@@ -758,7 +766,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -771,7 +779,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.chat.v1.CardWithIdOrBuilder getCardsV2OrBuilder(int index) {
@@ -917,14 +927,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If your Chat app [authenticates as a
+   * Output only. If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
-   * <code>.google.chat.v1.Space space = 12;</code>
+   * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the space field is set.
    */
@@ -936,14 +946,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If your Chat app [authenticates as a
+   * Output only. If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
-   * <code>.google.chat.v1.Space space = 12;</code>
+   * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The space.
    */
@@ -955,14 +965,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If your Chat app [authenticates as a
+   * Output only. If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
-   * <code>.google.chat.v1.Space space = 12;</code>
+   * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.chat.v1.SpaceOrBuilder getSpaceOrBuilder() {
@@ -977,11 +987,11 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A plain-text description of the message's cards, used when the actual cards
-   * can't be displayed—for example, mobile notifications.
+   * Optional. A plain-text description of the message's cards, used when the
+   * actual cards can't be displayed—for example, mobile notifications.
    * </pre>
    *
-   * <code>string fallback_text = 13;</code>
+   * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The fallbackText.
    */
@@ -1001,11 +1011,11 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A plain-text description of the message's cards, used when the actual cards
-   * can't be displayed—for example, mobile notifications.
+   * Optional. A plain-text description of the message's cards, used when the
+   * actual cards can't be displayed—for example, mobile notifications.
    * </pre>
    *
-   * <code>string fallback_text = 13;</code>
+   * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for fallbackText.
    */
@@ -1198,10 +1208,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.chat.v1.Attachment> getAttachmentList() {
@@ -1211,10 +1223,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.chat.v1.AttachmentOrBuilder>
@@ -1225,10 +1239,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getAttachmentCount() {
@@ -1238,10 +1254,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.chat.v1.Attachment getAttachment(int index) {
@@ -1251,10 +1269,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.chat.v1.AttachmentOrBuilder getAttachmentOrBuilder(int index) {
@@ -1355,7 +1375,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
-   * <code>string client_assigned_message_id = 32;</code>
+   * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The clientAssignedMessageId.
    */
@@ -1383,7 +1403,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
-   * <code>string client_assigned_message_id = 32;</code>
+   * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for clientAssignedMessageId.
    */
@@ -1488,10 +1508,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Input for creating a message, otherwise output only. The user
-   * that can view the message. When set, the message is private and only
-   * visible to the specified user and the Chat app. To include this field in
-   * your request, you must call the Chat API using [app
+   * Optional. Immutable. Input for creating a message, otherwise output only.
+   * The user that can view the message. When set, the message is private and
+   * only visible to the specified user and the Chat app. To include this field
+   * in your request, you must call the Chat API using [app
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
    * and omit the following:
    *
@@ -1504,7 +1524,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the privateMessageViewer field is set.
@@ -1517,10 +1537,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Input for creating a message, otherwise output only. The user
-   * that can view the message. When set, the message is private and only
-   * visible to the specified user and the Chat app. To include this field in
-   * your request, you must call the Chat API using [app
+   * Optional. Immutable. Input for creating a message, otherwise output only.
+   * The user that can view the message. When set, the message is private and
+   * only visible to the specified user and the Chat app. To include this field
+   * in your request, you must call the Chat API using [app
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
    * and omit the following:
    *
@@ -1533,7 +1553,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The privateMessageViewer.
@@ -1548,10 +1568,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Input for creating a message, otherwise output only. The user
-   * that can view the message. When set, the message is private and only
-   * visible to the specified user and the Chat app. To include this field in
-   * your request, you must call the Chat API using [app
+   * Optional. Immutable. Input for creating a message, otherwise output only.
+   * The user that can view the message. When set, the message is private and
+   * only visible to the specified user and the Chat app. To include this field
+   * in your request, you must call the Chat API using [app
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
    * and omit the following:
    *
@@ -1564,7 +1584,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1781,10 +1801,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1792,7 +1812,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.chat.v1.AccessoryWidget> getAccessoryWidgetsList() {
@@ -1802,10 +1824,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1813,7 +1835,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.chat.v1.AccessoryWidgetOrBuilder>
@@ -1824,10 +1848,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1835,7 +1859,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getAccessoryWidgetsCount() {
@@ -1845,10 +1871,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1856,7 +1882,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.chat.v1.AccessoryWidget getAccessoryWidgets(int index) {
@@ -1866,10 +1894,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1877,7 +1905,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.chat.v1.AccessoryWidgetOrBuilder getAccessoryWidgetsOrBuilder(int index) {
@@ -3268,7 +3298,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the message.
+     * Identifier. Resource name of the message.
      *
      * Format: `spaces/{space}/messages/{message}`
      *
@@ -3285,7 +3315,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -3304,7 +3334,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the message.
+     * Identifier. Resource name of the message.
      *
      * Format: `spaces/{space}/messages/{message}`
      *
@@ -3321,7 +3351,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -3340,7 +3370,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the message.
+     * Identifier. Resource name of the message.
      *
      * Format: `spaces/{space}/messages/{message}`
      *
@@ -3357,7 +3387,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3375,7 +3405,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the message.
+     * Identifier. Resource name of the message.
      *
      * Format: `spaces/{space}/messages/{message}`
      *
@@ -3392,7 +3422,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -3406,7 +3436,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the message.
+     * Identifier. Resource name of the message.
      *
      * Format: `spaces/{space}/messages/{message}`
      *
@@ -3423,7 +3453,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4350,10 +4380,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Plain-text body of the message. The first link to an image, video, or web
-     * page generates a
-     * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-     * You can also [&#64;mention a Google Chat
+     * Optional. Plain-text body of the message. The first link to an image,
+     * video, or web page generates a [preview
+     * chip](https://developers.google.com/workspace/chat/preview-links). You can
+     * also [&#64;mention a Google Chat
      * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
      * or everyone in the space.
      *
@@ -4361,7 +4391,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages).
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The text.
      */
@@ -4380,10 +4410,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Plain-text body of the message. The first link to an image, video, or web
-     * page generates a
-     * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-     * You can also [&#64;mention a Google Chat
+     * Optional. Plain-text body of the message. The first link to an image,
+     * video, or web page generates a [preview
+     * chip](https://developers.google.com/workspace/chat/preview-links). You can
+     * also [&#64;mention a Google Chat
      * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
      * or everyone in the space.
      *
@@ -4391,7 +4421,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages).
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for text.
      */
@@ -4410,10 +4440,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Plain-text body of the message. The first link to an image, video, or web
-     * page generates a
-     * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-     * You can also [&#64;mention a Google Chat
+     * Optional. Plain-text body of the message. The first link to an image,
+     * video, or web page generates a [preview
+     * chip](https://developers.google.com/workspace/chat/preview-links). You can
+     * also [&#64;mention a Google Chat
      * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
      * or everyone in the space.
      *
@@ -4421,7 +4451,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages).
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The text to set.
      * @return This builder for chaining.
@@ -4439,10 +4469,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Plain-text body of the message. The first link to an image, video, or web
-     * page generates a
-     * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-     * You can also [&#64;mention a Google Chat
+     * Optional. Plain-text body of the message. The first link to an image,
+     * video, or web page generates a [preview
+     * chip](https://developers.google.com/workspace/chat/preview-links). You can
+     * also [&#64;mention a Google Chat
      * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
      * or everyone in the space.
      *
@@ -4450,7 +4480,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages).
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4464,10 +4494,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Plain-text body of the message. The first link to an image, video, or web
-     * page generates a
-     * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-     * You can also [&#64;mention a Google Chat
+     * Optional. Plain-text body of the message. The first link to an image,
+     * video, or web page generates a [preview
+     * chip](https://developers.google.com/workspace/chat/preview-links). You can
+     * also [&#64;mention a Google Chat
      * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
      * or everyone in the space.
      *
@@ -4475,7 +4505,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages).
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for text to set.
      * @return This builder for chaining.
@@ -5202,7 +5232,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5215,7 +5245,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.chat.v1.CardWithId> getCardsV2List() {
       if (cardsV2Builder_ == null) {
@@ -5228,7 +5260,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5241,7 +5273,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getCardsV2Count() {
       if (cardsV2Builder_ == null) {
@@ -5254,7 +5288,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5267,7 +5301,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.CardWithId getCardsV2(int index) {
       if (cardsV2Builder_ == null) {
@@ -5280,7 +5316,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5293,7 +5329,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCardsV2(int index, com.google.chat.v1.CardWithId value) {
       if (cardsV2Builder_ == null) {
@@ -5312,7 +5350,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5325,7 +5363,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCardsV2(int index, com.google.chat.v1.CardWithId.Builder builderForValue) {
       if (cardsV2Builder_ == null) {
@@ -5341,7 +5381,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5354,7 +5394,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addCardsV2(com.google.chat.v1.CardWithId value) {
       if (cardsV2Builder_ == null) {
@@ -5373,7 +5415,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5386,7 +5428,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addCardsV2(int index, com.google.chat.v1.CardWithId value) {
       if (cardsV2Builder_ == null) {
@@ -5405,7 +5449,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5418,7 +5462,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addCardsV2(com.google.chat.v1.CardWithId.Builder builderForValue) {
       if (cardsV2Builder_ == null) {
@@ -5434,7 +5480,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5447,7 +5493,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addCardsV2(int index, com.google.chat.v1.CardWithId.Builder builderForValue) {
       if (cardsV2Builder_ == null) {
@@ -5463,7 +5511,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5476,7 +5524,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllCardsV2(
         java.lang.Iterable<? extends com.google.chat.v1.CardWithId> values) {
@@ -5493,7 +5543,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5506,7 +5556,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearCardsV2() {
       if (cardsV2Builder_ == null) {
@@ -5522,7 +5574,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5535,7 +5587,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeCardsV2(int index) {
       if (cardsV2Builder_ == null) {
@@ -5551,7 +5605,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5564,7 +5618,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.CardWithId.Builder getCardsV2Builder(int index) {
       return getCardsV2FieldBuilder().getBuilder(index);
@@ -5573,7 +5629,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5586,7 +5642,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.CardWithIdOrBuilder getCardsV2OrBuilder(int index) {
       if (cardsV2Builder_ == null) {
@@ -5599,7 +5657,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5612,7 +5670,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.chat.v1.CardWithIdOrBuilder>
         getCardsV2OrBuilderList() {
@@ -5626,7 +5686,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5639,7 +5699,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.CardWithId.Builder addCardsV2Builder() {
       return getCardsV2FieldBuilder()
@@ -5649,7 +5711,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5662,7 +5724,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.CardWithId.Builder addCardsV2Builder(int index) {
       return getCardsV2FieldBuilder()
@@ -5672,7 +5736,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of
+     * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
      * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -5685,7 +5749,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * [Card builder](https://addons.gsuite.google.com/uikit/builder)
      * </pre>
      *
-     * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+     * <code>
+     * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.chat.v1.CardWithId.Builder> getCardsV2BuilderList() {
       return getCardsV2FieldBuilder().getBuilderList();
@@ -6300,14 +6366,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the space field is set.
      */
@@ -6318,14 +6384,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The space.
      */
@@ -6340,14 +6406,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setSpace(com.google.chat.v1.Space value) {
       if (spaceBuilder_ == null) {
@@ -6366,14 +6432,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setSpace(com.google.chat.v1.Space.Builder builderForValue) {
       if (spaceBuilder_ == null) {
@@ -6389,14 +6455,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeSpace(com.google.chat.v1.Space value) {
       if (spaceBuilder_ == null) {
@@ -6420,14 +6486,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearSpace() {
       bitField0_ = (bitField0_ & ~0x00000800);
@@ -6443,14 +6509,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.chat.v1.Space.Builder getSpaceBuilder() {
       bitField0_ |= 0x00000800;
@@ -6461,14 +6527,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.chat.v1.SpaceOrBuilder getSpaceOrBuilder() {
       if (spaceBuilder_ != null) {
@@ -6481,14 +6547,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If your Chat app [authenticates as a
+     * Output only. If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
      * `name`.
      * </pre>
      *
-     * <code>.google.chat.v1.Space space = 12;</code>
+     * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.chat.v1.Space,
@@ -6511,11 +6577,11 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A plain-text description of the message's cards, used when the actual cards
-     * can't be displayed—for example, mobile notifications.
+     * Optional. A plain-text description of the message's cards, used when the
+     * actual cards can't be displayed—for example, mobile notifications.
      * </pre>
      *
-     * <code>string fallback_text = 13;</code>
+     * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The fallbackText.
      */
@@ -6534,11 +6600,11 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A plain-text description of the message's cards, used when the actual cards
-     * can't be displayed—for example, mobile notifications.
+     * Optional. A plain-text description of the message's cards, used when the
+     * actual cards can't be displayed—for example, mobile notifications.
      * </pre>
      *
-     * <code>string fallback_text = 13;</code>
+     * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for fallbackText.
      */
@@ -6557,11 +6623,11 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A plain-text description of the message's cards, used when the actual cards
-     * can't be displayed—for example, mobile notifications.
+     * Optional. A plain-text description of the message's cards, used when the
+     * actual cards can't be displayed—for example, mobile notifications.
      * </pre>
      *
-     * <code>string fallback_text = 13;</code>
+     * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The fallbackText to set.
      * @return This builder for chaining.
@@ -6579,11 +6645,11 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A plain-text description of the message's cards, used when the actual cards
-     * can't be displayed—for example, mobile notifications.
+     * Optional. A plain-text description of the message's cards, used when the
+     * actual cards can't be displayed—for example, mobile notifications.
      * </pre>
      *
-     * <code>string fallback_text = 13;</code>
+     * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -6597,11 +6663,11 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A plain-text description of the message's cards, used when the actual cards
-     * can't be displayed—for example, mobile notifications.
+     * Optional. A plain-text description of the message's cards, used when the
+     * actual cards can't be displayed—for example, mobile notifications.
      * </pre>
      *
-     * <code>string fallback_text = 13;</code>
+     * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for fallbackText to set.
      * @return This builder for chaining.
@@ -7163,10 +7229,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.chat.v1.Attachment> getAttachmentList() {
       if (attachmentBuilder_ == null) {
@@ -7179,10 +7247,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getAttachmentCount() {
       if (attachmentBuilder_ == null) {
@@ -7195,10 +7265,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.Attachment getAttachment(int index) {
       if (attachmentBuilder_ == null) {
@@ -7211,10 +7283,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAttachment(int index, com.google.chat.v1.Attachment value) {
       if (attachmentBuilder_ == null) {
@@ -7233,10 +7307,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAttachment(int index, com.google.chat.v1.Attachment.Builder builderForValue) {
       if (attachmentBuilder_ == null) {
@@ -7252,10 +7328,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAttachment(com.google.chat.v1.Attachment value) {
       if (attachmentBuilder_ == null) {
@@ -7274,10 +7352,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAttachment(int index, com.google.chat.v1.Attachment value) {
       if (attachmentBuilder_ == null) {
@@ -7296,10 +7376,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAttachment(com.google.chat.v1.Attachment.Builder builderForValue) {
       if (attachmentBuilder_ == null) {
@@ -7315,10 +7397,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAttachment(int index, com.google.chat.v1.Attachment.Builder builderForValue) {
       if (attachmentBuilder_ == null) {
@@ -7334,10 +7418,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllAttachment(
         java.lang.Iterable<? extends com.google.chat.v1.Attachment> values) {
@@ -7354,10 +7440,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAttachment() {
       if (attachmentBuilder_ == null) {
@@ -7373,10 +7461,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAttachment(int index) {
       if (attachmentBuilder_ == null) {
@@ -7392,10 +7482,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.Attachment.Builder getAttachmentBuilder(int index) {
       return getAttachmentFieldBuilder().getBuilder(index);
@@ -7404,10 +7496,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.AttachmentOrBuilder getAttachmentOrBuilder(int index) {
       if (attachmentBuilder_ == null) {
@@ -7420,10 +7514,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.chat.v1.AttachmentOrBuilder>
         getAttachmentOrBuilderList() {
@@ -7437,10 +7533,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.Attachment.Builder addAttachmentBuilder() {
       return getAttachmentFieldBuilder()
@@ -7450,10 +7548,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.Attachment.Builder addAttachmentBuilder(int index) {
       return getAttachmentFieldBuilder()
@@ -7463,10 +7563,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-uploaded attachment.
+     * Optional. User-uploaded attachment.
      * </pre>
      *
-     * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+     * <code>
+     * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.chat.v1.Attachment.Builder> getAttachmentBuilderList() {
       return getAttachmentFieldBuilder().getBuilderList();
@@ -7791,7 +7893,8 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string client_assigned_message_id = 32;</code>
+     * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The clientAssignedMessageId.
      */
@@ -7818,7 +7921,8 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string client_assigned_message_id = 32;</code>
+     * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for clientAssignedMessageId.
      */
@@ -7845,7 +7949,8 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string client_assigned_message_id = 32;</code>
+     * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The clientAssignedMessageId to set.
      * @return This builder for chaining.
@@ -7871,7 +7976,8 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string client_assigned_message_id = 32;</code>
+     * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -7893,7 +7999,8 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
-     * <code>string client_assigned_message_id = 32;</code>
+     * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for clientAssignedMessageId to set.
      * @return This builder for chaining.
@@ -8315,10 +8422,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8331,7 +8438,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the privateMessageViewer field is set.
@@ -8343,10 +8450,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8359,7 +8466,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The privateMessageViewer.
@@ -8377,10 +8484,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8393,7 +8500,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPrivateMessageViewer(com.google.chat.v1.User value) {
@@ -8413,10 +8520,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8429,7 +8536,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPrivateMessageViewer(com.google.chat.v1.User.Builder builderForValue) {
@@ -8446,10 +8553,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8462,7 +8569,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergePrivateMessageViewer(com.google.chat.v1.User value) {
@@ -8487,10 +8594,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8503,7 +8610,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearPrivateMessageViewer() {
@@ -8520,10 +8627,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8536,7 +8643,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.chat.v1.User.Builder getPrivateMessageViewerBuilder() {
@@ -8548,10 +8655,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8564,7 +8671,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.chat.v1.UserOrBuilder getPrivateMessageViewerOrBuilder() {
@@ -8580,10 +8687,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Input for creating a message, otherwise output only. The user
-     * that can view the message. When set, the message is private and only
-     * visible to the specified user and the Chat app. To include this field in
-     * your request, you must call the Chat API using [app
+     * Optional. Immutable. Input for creating a message, otherwise output only.
+     * The user that can view the message. When set, the message is private and
+     * only visible to the specified user and the Chat app. To include this field
+     * in your request, you must call the Chat API using [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and omit the following:
      *
@@ -8596,7 +8703,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -9448,10 +9555,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9459,7 +9566,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.chat.v1.AccessoryWidget> getAccessoryWidgetsList() {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9472,10 +9581,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9483,7 +9592,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getAccessoryWidgetsCount() {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9496,10 +9607,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9507,7 +9618,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.AccessoryWidget getAccessoryWidgets(int index) {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9520,10 +9633,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9531,7 +9644,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAccessoryWidgets(int index, com.google.chat.v1.AccessoryWidget value) {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9550,10 +9665,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9561,7 +9676,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAccessoryWidgets(
         int index, com.google.chat.v1.AccessoryWidget.Builder builderForValue) {
@@ -9578,10 +9695,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9589,7 +9706,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAccessoryWidgets(com.google.chat.v1.AccessoryWidget value) {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9608,10 +9727,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9619,7 +9738,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAccessoryWidgets(int index, com.google.chat.v1.AccessoryWidget value) {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9638,10 +9759,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9649,7 +9770,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAccessoryWidgets(com.google.chat.v1.AccessoryWidget.Builder builderForValue) {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9665,10 +9788,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9676,7 +9799,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAccessoryWidgets(
         int index, com.google.chat.v1.AccessoryWidget.Builder builderForValue) {
@@ -9693,10 +9818,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9704,7 +9829,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllAccessoryWidgets(
         java.lang.Iterable<? extends com.google.chat.v1.AccessoryWidget> values) {
@@ -9721,10 +9848,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9732,7 +9859,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAccessoryWidgets() {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9748,10 +9877,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9759,7 +9888,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAccessoryWidgets(int index) {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9775,10 +9906,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9786,7 +9917,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.AccessoryWidget.Builder getAccessoryWidgetsBuilder(int index) {
       return getAccessoryWidgetsFieldBuilder().getBuilder(index);
@@ -9795,10 +9928,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9806,7 +9939,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.AccessoryWidgetOrBuilder getAccessoryWidgetsOrBuilder(int index) {
       if (accessoryWidgetsBuilder_ == null) {
@@ -9819,10 +9954,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9830,7 +9965,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.chat.v1.AccessoryWidgetOrBuilder>
         getAccessoryWidgetsOrBuilderList() {
@@ -9844,10 +9981,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9855,7 +9992,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.AccessoryWidget.Builder addAccessoryWidgetsBuilder() {
       return getAccessoryWidgetsFieldBuilder()
@@ -9865,10 +10004,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9876,7 +10015,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.AccessoryWidget.Builder addAccessoryWidgetsBuilder(int index) {
       return getAccessoryWidgetsFieldBuilder()
@@ -9886,10 +10027,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more interactive widgets that appear at the bottom of a message.
-     * You can add accessory widgets to messages that contain text, cards, or both
-     * text and cards. Not supported for messages that contain dialogs. For
-     * details, see [Add interactive widgets at the bottom of a
+     * Optional. One or more interactive widgets that appear at the bottom of a
+     * message. You can add accessory widgets to messages that contain text,
+     * cards, or both text and cards. Not supported for messages that contain
+     * dialogs. For details, see [Add interactive widgets at the bottom of a
      * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
      *
      * Creating a message with accessory widgets requires [app
@@ -9897,7 +10038,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     * <code>
+     * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.chat.v1.AccessoryWidget.Builder>
         getAccessoryWidgetsBuilderList() {

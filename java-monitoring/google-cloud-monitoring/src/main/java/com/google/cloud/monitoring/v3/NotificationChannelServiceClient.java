@@ -1520,7 +1520,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param updateMask The fields to update.
+   * @param updateMask Optional. The fields to update.
    * @param notificationChannel Required. A description of the changes to be applied to the
    *     specified notification channel. The description must provide a definition for fields to be
    *     updated; the names of these fields should also be included in the `update_mask`.
@@ -1636,9 +1636,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @param name Required. The channel for which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * @param force If true, the notification channel will be deleted regardless of its use in alert
-   *     policies (the policies will be updated to remove the channel). If false, channels that are
-   *     still referenced by an existing alerting policy will fail to be deleted in a delete
-   *     operation.
+   *     policies (the policies will be updated to remove the channel). If false, this operation
+   *     will fail if the notification channel is referenced by existing alerting policies.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteNotificationChannel(NotificationChannelName name, boolean force) {
@@ -1680,9 +1679,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @param name Required. The channel for which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * @param force If true, the notification channel will be deleted regardless of its use in alert
-   *     policies (the policies will be updated to remove the channel). If false, channels that are
-   *     still referenced by an existing alerting policy will fail to be deleted in a delete
-   *     operation.
+   *     policies (the policies will be updated to remove the channel). If false, this operation
+   *     will fail if the notification channel is referenced by existing alerting policies.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteNotificationChannel(String name, boolean force) {

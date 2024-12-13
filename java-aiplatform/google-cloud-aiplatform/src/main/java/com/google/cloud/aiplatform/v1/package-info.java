@@ -538,6 +538,44 @@
  * }
  * }</pre>
  *
+ * <p>======================= VertexRagDataServiceClient =======================
+ *
+ * <p>Service Description: A service for managing user data for RAG.
+ *
+ * <p>Sample for VertexRagDataServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+ *     VertexRagDataServiceClient.create()) {
+ *   RagCorpusName name = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]");
+ *   RagCorpus response = vertexRagDataServiceClient.getRagCorpus(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= VertexRagServiceClient =======================
+ *
+ * <p>Service Description: A service for retrieving relevant contexts.
+ *
+ * <p>Sample for VertexRagServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   RagQuery query = RagQuery.newBuilder().build();
+ *   RetrieveContextsResponse response = vertexRagServiceClient.retrieveContexts(parent, query);
+ * }
+ * }</pre>
+ *
  * <p>======================= VizierServiceClient =======================
  *
  * <p>Service Description: Vertex AI Vizier API.

@@ -128,14 +128,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. URI of an object in Google Cloud Storage.
+   * URI of an object in Google Cloud Storage.
    * Format: `gs://{bucket}/{object}`
    *
    * URI may also specify an object version for zipped objects.
    * Format: `gs://{bucket}/{object}#{version}`
    * </pre>
    *
-   * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string gcs_source = 1;</code>
    *
    * @return Whether the gcsSource field is set.
    */
@@ -146,14 +146,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. URI of an object in Google Cloud Storage.
+   * URI of an object in Google Cloud Storage.
    * Format: `gs://{bucket}/{object}`
    *
    * URI may also specify an object version for zipped objects.
    * Format: `gs://{bucket}/{object}#{version}`
    * </pre>
    *
-   * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string gcs_source = 1;</code>
    *
    * @return The gcsSource.
    */
@@ -177,14 +177,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. URI of an object in Google Cloud Storage.
+   * URI of an object in Google Cloud Storage.
    * Format: `gs://{bucket}/{object}`
    *
    * URI may also specify an object version for zipped objects.
    * Format: `gs://{bucket}/{object}#{version}`
    * </pre>
    *
-   * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string gcs_source = 1;</code>
    *
    * @return The bytes for gcsSource.
    */
@@ -210,12 +210,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. URI of a public Git repo.
+   * URI of a public Git repo.
    * </pre>
    *
-   * <code>
-   * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
    *
    * @return Whether the gitSource field is set.
    */
@@ -227,12 +225,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. URI of a public Git repo.
+   * URI of a public Git repo.
    * </pre>
    *
-   * <code>
-   * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
    *
    * @return The gitSource.
    */
@@ -247,12 +243,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. URI of a public Git repo.
+   * URI of a public Git repo.
    * </pre>
    *
-   * <code>
-   * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.config.v1.GitSourceOrBuilder getGitSourceOrBuilder() {
@@ -854,14 +848,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of an object in Google Cloud Storage.
+     * URI of an object in Google Cloud Storage.
      * Format: `gs://{bucket}/{object}`
      *
      * URI may also specify an object version for zipped objects.
      * Format: `gs://{bucket}/{object}#{version}`
      * </pre>
      *
-     * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string gcs_source = 1;</code>
      *
      * @return Whether the gcsSource field is set.
      */
@@ -873,14 +867,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of an object in Google Cloud Storage.
+     * URI of an object in Google Cloud Storage.
      * Format: `gs://{bucket}/{object}`
      *
      * URI may also specify an object version for zipped objects.
      * Format: `gs://{bucket}/{object}#{version}`
      * </pre>
      *
-     * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string gcs_source = 1;</code>
      *
      * @return The gcsSource.
      */
@@ -905,14 +899,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of an object in Google Cloud Storage.
+     * URI of an object in Google Cloud Storage.
      * Format: `gs://{bucket}/{object}`
      *
      * URI may also specify an object version for zipped objects.
      * Format: `gs://{bucket}/{object}#{version}`
      * </pre>
      *
-     * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string gcs_source = 1;</code>
      *
      * @return The bytes for gcsSource.
      */
@@ -937,14 +931,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of an object in Google Cloud Storage.
+     * URI of an object in Google Cloud Storage.
      * Format: `gs://{bucket}/{object}`
      *
      * URI may also specify an object version for zipped objects.
      * Format: `gs://{bucket}/{object}#{version}`
      * </pre>
      *
-     * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string gcs_source = 1;</code>
      *
      * @param value The gcsSource to set.
      * @return This builder for chaining.
@@ -962,14 +956,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of an object in Google Cloud Storage.
+     * URI of an object in Google Cloud Storage.
      * Format: `gs://{bucket}/{object}`
      *
      * URI may also specify an object version for zipped objects.
      * Format: `gs://{bucket}/{object}#{version}`
      * </pre>
      *
-     * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string gcs_source = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -985,14 +979,14 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of an object in Google Cloud Storage.
+     * URI of an object in Google Cloud Storage.
      * Format: `gs://{bucket}/{object}`
      *
      * URI may also specify an object version for zipped objects.
      * Format: `gs://{bucket}/{object}#{version}`
      * </pre>
      *
-     * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string gcs_source = 1;</code>
      *
      * @param value The bytes for gcsSource to set.
      * @return This builder for chaining.
@@ -1017,12 +1011,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      *
      * @return Whether the gitSource field is set.
      */
@@ -1034,12 +1026,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      *
      * @return The gitSource.
      */
@@ -1061,12 +1051,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      */
     public Builder setGitSource(com.google.cloud.config.v1.GitSource value) {
       if (gitSourceBuilder_ == null) {
@@ -1085,12 +1073,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      */
     public Builder setGitSource(com.google.cloud.config.v1.GitSource.Builder builderForValue) {
       if (gitSourceBuilder_ == null) {
@@ -1106,12 +1092,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      */
     public Builder mergeGitSource(com.google.cloud.config.v1.GitSource value) {
       if (gitSourceBuilder_ == null) {
@@ -1140,12 +1124,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      */
     public Builder clearGitSource() {
       if (gitSourceBuilder_ == null) {
@@ -1167,12 +1149,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      */
     public com.google.cloud.config.v1.GitSource.Builder getGitSourceBuilder() {
       return getGitSourceFieldBuilder().getBuilder();
@@ -1181,12 +1161,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      */
     @java.lang.Override
     public com.google.cloud.config.v1.GitSourceOrBuilder getGitSourceOrBuilder() {
@@ -1203,12 +1181,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. URI of a public Git repo.
+     * URI of a public Git repo.
      * </pre>
      *
-     * <code>
-     * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.config.v1.GitSource,

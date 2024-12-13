@@ -112,9 +112,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -126,9 +127,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -140,9 +142,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -317,9 +320,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -334,9 +338,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -351,9 +356,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration, represented in
-     * text form. Note: If you did not request traffic information, this value
-     * will be the same value as `static_duration`.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1125,9 +1131,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1141,9 +1148,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1161,9 +1169,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1185,9 +1194,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1206,9 +1216,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1235,9 +1246,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1256,9 +1268,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1272,9 +1285,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1290,9 +1304,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration, represented in
-       * text form. Note: If you did not request traffic information, this value
-       * will be the same value as `static_duration`.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -2485,11 +2500,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A web-safe, base64-encoded route token that can be passed to the Navigation
-   * SDK, that allows the Navigation SDK to reconstruct the route during
-   * navigation, and, in the event of rerouting, honor the original intention
-   * when you created the route by calling ComputeRoutes. Customers should treat
-   * this token as an opaque blob. It is not meant for reading or mutating.
+   * An opaque token that can be passed to [Navigation
+   * SDK](https://developers.google.com/maps/documentation/navigation) to
+   * reconstruct the route during navigation, and, in the event of rerouting,
+   * honor the original intention when the route was created. Treat this token
+   * as an opaque blob.  Don't compare its value across requests as its value
+   * may change even if the service returns the exact same route.
+   *
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
    * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -2516,11 +2533,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A web-safe, base64-encoded route token that can be passed to the Navigation
-   * SDK, that allows the Navigation SDK to reconstruct the route during
-   * navigation, and, in the event of rerouting, honor the original intention
-   * when you created the route by calling ComputeRoutes. Customers should treat
-   * this token as an opaque blob. It is not meant for reading or mutating.
+   * An opaque token that can be passed to [Navigation
+   * SDK](https://developers.google.com/maps/documentation/navigation) to
+   * reconstruct the route during navigation, and, in the event of rerouting,
+   * honor the original intention when the route was created. Treat this token
+   * as an opaque blob.  Don't compare its value across requests as its value
+   * may change even if the service returns the exact same route.
+   *
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
    * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -2542,6 +2561,56 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int POLYLINE_DETAILS_FIELD_NUMBER = 14;
+  private com.google.maps.routing.v2.PolylineDetails polylineDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   *
+   * @return Whether the polylineDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasPolylineDetails() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   *
+   * @return The polylineDetails.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.PolylineDetails getPolylineDetails() {
+    return polylineDetails_ == null
+        ? com.google.maps.routing.v2.PolylineDetails.getDefaultInstance()
+        : polylineDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.PolylineDetailsOrBuilder getPolylineDetailsOrBuilder() {
+    return polylineDetails_ == null
+        ? com.google.maps.routing.v2.PolylineDetails.getDefaultInstance()
+        : polylineDetails_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2605,6 +2674,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < routeLabels_.size(); i++) {
       output.writeEnumNoTag(routeLabels_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(14, getPolylineDetails());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2679,6 +2751,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       routeLabelsMemoizedSerializedSize = dataSize;
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getPolylineDetails());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2726,6 +2801,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (!getLocalizedValues().equals(other.getLocalizedValues())) return false;
     }
     if (!getRouteToken().equals(other.getRouteToken())) return false;
+    if (hasPolylineDetails() != other.hasPolylineDetails()) return false;
+    if (hasPolylineDetails()) {
+      if (!getPolylineDetails().equals(other.getPolylineDetails())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2783,6 +2862,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ROUTE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getRouteToken().hashCode();
+    if (hasPolylineDetails()) {
+      hash = (37 * hash) + POLYLINE_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getPolylineDetails().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2930,6 +3013,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         getViewportFieldBuilder();
         getTravelAdvisoryFieldBuilder();
         getLocalizedValuesFieldBuilder();
+        getPolylineDetailsFieldBuilder();
       }
     }
 
@@ -2981,6 +3065,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         localizedValuesBuilder_ = null;
       }
       routeToken_ = "";
+      polylineDetails_ = null;
+      if (polylineDetailsBuilder_ != null) {
+        polylineDetailsBuilder_.dispose();
+        polylineDetailsBuilder_ = null;
+      }
       return this;
     }
 
@@ -3078,6 +3167,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.routeToken_ = routeToken_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.polylineDetails_ =
+            polylineDetailsBuilder_ == null ? polylineDetails_ : polylineDetailsBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3216,6 +3310,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasPolylineDetails()) {
+        mergePolylineDetails(other.getPolylineDetails());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3353,6 +3450,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getPolylineDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5749,11 +5852,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5779,11 +5884,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5809,11 +5916,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5838,11 +5947,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5863,11 +5974,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A web-safe, base64-encoded route token that can be passed to the Navigation
-     * SDK, that allows the Navigation SDK to reconstruct the route during
-     * navigation, and, in the event of rerouting, honor the original intention
-     * when you created the route by calling ComputeRoutes. Customers should treat
-     * this token as an opaque blob. It is not meant for reading or mutating.
+     * An opaque token that can be passed to [Navigation
+     * SDK](https://developers.google.com/maps/documentation/navigation) to
+     * reconstruct the route during navigation, and, in the event of rerouting,
+     * honor the original intention when the route was created. Treat this token
+     * as an opaque blob.  Don't compare its value across requests as its value
+     * may change even if the service returns the exact same route.
+     *
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
      * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -5888,6 +6001,193 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       onChanged();
       return this;
+    }
+
+    private com.google.maps.routing.v2.PolylineDetails polylineDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.PolylineDetails,
+            com.google.maps.routing.v2.PolylineDetails.Builder,
+            com.google.maps.routing.v2.PolylineDetailsOrBuilder>
+        polylineDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     *
+     * @return Whether the polylineDetails field is set.
+     */
+    public boolean hasPolylineDetails() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     *
+     * @return The polylineDetails.
+     */
+    public com.google.maps.routing.v2.PolylineDetails getPolylineDetails() {
+      if (polylineDetailsBuilder_ == null) {
+        return polylineDetails_ == null
+            ? com.google.maps.routing.v2.PolylineDetails.getDefaultInstance()
+            : polylineDetails_;
+      } else {
+        return polylineDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     */
+    public Builder setPolylineDetails(com.google.maps.routing.v2.PolylineDetails value) {
+      if (polylineDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        polylineDetails_ = value;
+      } else {
+        polylineDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     */
+    public Builder setPolylineDetails(
+        com.google.maps.routing.v2.PolylineDetails.Builder builderForValue) {
+      if (polylineDetailsBuilder_ == null) {
+        polylineDetails_ = builderForValue.build();
+      } else {
+        polylineDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     */
+    public Builder mergePolylineDetails(com.google.maps.routing.v2.PolylineDetails value) {
+      if (polylineDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && polylineDetails_ != null
+            && polylineDetails_
+                != com.google.maps.routing.v2.PolylineDetails.getDefaultInstance()) {
+          getPolylineDetailsBuilder().mergeFrom(value);
+        } else {
+          polylineDetails_ = value;
+        }
+      } else {
+        polylineDetailsBuilder_.mergeFrom(value);
+      }
+      if (polylineDetails_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     */
+    public Builder clearPolylineDetails() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      polylineDetails_ = null;
+      if (polylineDetailsBuilder_ != null) {
+        polylineDetailsBuilder_.dispose();
+        polylineDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.Builder getPolylineDetailsBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getPolylineDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetailsOrBuilder getPolylineDetailsOrBuilder() {
+      if (polylineDetailsBuilder_ != null) {
+        return polylineDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return polylineDetails_ == null
+            ? com.google.maps.routing.v2.PolylineDetails.getDefaultInstance()
+            : polylineDetails_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about details along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.PolylineDetails,
+            com.google.maps.routing.v2.PolylineDetails.Builder,
+            com.google.maps.routing.v2.PolylineDetailsOrBuilder>
+        getPolylineDetailsFieldBuilder() {
+      if (polylineDetailsBuilder_ == null) {
+        polylineDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.PolylineDetails,
+                com.google.maps.routing.v2.PolylineDetails.Builder,
+                com.google.maps.routing.v2.PolylineDetailsOrBuilder>(
+                getPolylineDetails(), getParentForChildren(), isClean());
+        polylineDetails_ = null;
+      }
+      return polylineDetailsBuilder_;
     }
 
     @java.lang.Override

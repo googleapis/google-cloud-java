@@ -360,8 +360,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the directory where the output is to
-   * be written to.
+   * Required. The Google Cloud Storage location of the directory where the
+   * output is to be written to.
    * </pre>
    *
    * <code>
@@ -378,8 +378,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the directory where the output is to
-   * be written to.
+   * Required. The Google Cloud Storage location of the directory where the
+   * output is to be written to.
    * </pre>
    *
    * <code>
@@ -399,8 +399,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the directory where the output is to
-   * be written to.
+   * Required. The Google Cloud Storage location of the directory where the
+   * output is to be written to.
    * </pre>
    *
    * <code>
@@ -1059,8 +1059,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>
@@ -1077,8 +1077,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>
@@ -1105,8 +1105,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>
@@ -1130,8 +1130,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>
@@ -1153,8 +1153,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>
@@ -1188,8 +1188,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>
@@ -1216,8 +1216,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>
@@ -1231,8 +1231,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>
@@ -1254,8 +1254,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The Google Cloud Storage location of the directory where the output is to
-     * be written to.
+     * Required. The Google Cloud Storage location of the directory where the
+     * output is to be written to.
      * </pre>
      *
      * <code>

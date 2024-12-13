@@ -78,7 +78,7 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A Google Analytics GA4 property identifier whose events are tracked. To
+   * A Google Analytics property identifier whose events are tracked. To
    * learn more, see [where to find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * `property` should be the same value as in your `runReport` request.
@@ -106,7 +106,7 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A Google Analytics GA4 property identifier whose events are tracked. To
+   * A Google Analytics property identifier whose events are tracked. To
    * learn more, see [where to find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * `property` should be the same value as in your `runReport` request.
@@ -1022,7 +1022,7 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked. To
+     * A Google Analytics property identifier whose events are tracked. To
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
@@ -1049,7 +1049,7 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked. To
+     * A Google Analytics property identifier whose events are tracked. To
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
@@ -1076,7 +1076,7 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked. To
+     * A Google Analytics property identifier whose events are tracked. To
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
@@ -1102,7 +1102,7 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked. To
+     * A Google Analytics property identifier whose events are tracked. To
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
@@ -1124,7 +1124,7 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked. To
+     * A Google Analytics property identifier whose events are tracked. To
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.

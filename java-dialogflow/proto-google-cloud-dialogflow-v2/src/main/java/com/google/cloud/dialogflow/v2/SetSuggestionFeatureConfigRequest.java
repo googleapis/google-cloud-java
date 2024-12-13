@@ -24,7 +24,7 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * The request message for
- * [ConversationProfiles.SetSuggestionFeature][].
+ * [ConversationProfiles.SetSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.SetSuggestionFeatureConfig].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest}
@@ -415,7 +415,7 @@ public final class SetSuggestionFeatureConfigRequest extends com.google.protobuf
    *
    * <pre>
    * The request message for
-   * [ConversationProfiles.SetSuggestionFeature][].
+   * [ConversationProfiles.SetSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.SetSuggestionFeatureConfig].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest}

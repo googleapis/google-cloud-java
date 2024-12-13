@@ -23,7 +23,7 @@ package com.google.recaptchaenterprise.v1;
  *
  *
  * <pre>
- * The removeIpOverride request message.
+ * The RemoveIpOverride request message.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1.RemoveIpOverrideRequest}
@@ -355,7 +355,7 @@ public final class RemoveIpOverrideRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The removeIpOverride request message.
+   * The RemoveIpOverride request message.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1.RemoveIpOverrideRequest}

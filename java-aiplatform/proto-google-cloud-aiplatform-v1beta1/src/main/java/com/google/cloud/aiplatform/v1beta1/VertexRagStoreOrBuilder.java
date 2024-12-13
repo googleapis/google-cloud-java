@@ -36,7 +36,7 @@ public interface VertexRagStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=267
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=277
    * @return A list containing the ragCorpora.
    */
   @java.lang.Deprecated
@@ -53,7 +53,7 @@ public interface VertexRagStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=267
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=277
    * @return The count of ragCorpora.
    */
   @java.lang.Deprecated
@@ -70,7 +70,7 @@ public interface VertexRagStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=267
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=277
    * @param index The index of the element to return.
    * @return The ragCorpora at the given index.
    */
@@ -88,7 +88,7 @@ public interface VertexRagStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=267
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=277
    * @param index The index of the value to return.
    * @return The bytes of the ragCorpora at the given index.
    */
@@ -181,10 +181,15 @@ public interface VertexRagStoreOrBuilder
    * Optional. Number of top k results to return from the selected corpora.
    * </pre>
    *
-   * <code>optional int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=293
    * @return Whether the similarityTopK field is set.
    */
+  @java.lang.Deprecated
   boolean hasSimilarityTopK();
   /**
    *
@@ -193,10 +198,15 @@ public interface VertexRagStoreOrBuilder
    * Optional. Number of top k results to return from the selected corpora.
    * </pre>
    *
-   * <code>optional int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=293
    * @return The similarityTopK.
    */
+  @java.lang.Deprecated
   int getSimilarityTopK();
 
   /**
@@ -207,11 +217,15 @@ public interface VertexRagStoreOrBuilder
    * threshold.
    * </pre>
    *
-   * <code>optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double vector_distance_threshold = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=298
    * @return Whether the vectorDistanceThreshold field is set.
    */
+  @java.lang.Deprecated
   boolean hasVectorDistanceThreshold();
   /**
    *
@@ -221,10 +235,55 @@ public interface VertexRagStoreOrBuilder
    * threshold.
    * </pre>
    *
-   * <code>optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double vector_distance_threshold = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=298
    * @return The vectorDistanceThreshold.
    */
+  @java.lang.Deprecated
   double getVectorDistanceThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the Rag query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ragRetrievalConfig field is set.
+   */
+  boolean hasRagRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the Rag query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ragRetrievalConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig getRagRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the Rag query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder getRagRetrievalConfigOrBuilder();
 }

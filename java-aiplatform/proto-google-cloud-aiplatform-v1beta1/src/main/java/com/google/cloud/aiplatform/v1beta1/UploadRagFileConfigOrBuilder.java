@@ -31,11 +31,15 @@ public interface UploadRagFileConfigOrBuilder
    * Specifies the size and overlap of chunks after uploading RagFile.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=479
    * @return Whether the ragFileChunkingConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasRagFileChunkingConfig();
   /**
    *
@@ -44,11 +48,15 @@ public interface UploadRagFileConfigOrBuilder
    * Specifies the size and overlap of chunks after uploading RagFile.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=479
    * @return The ragFileChunkingConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig getRagFileChunkingConfig();
   /**
    *
@@ -57,9 +65,53 @@ public interface UploadRagFileConfigOrBuilder
    * Specifies the size and overlap of chunks after uploading RagFile.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder
       getRagFileChunkingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+   * </code>
+   *
+   * @return Whether the ragFileTransformationConfig field is set.
+   */
+  boolean hasRagFileTransformationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+   * </code>
+   *
+   * @return The ragFileTransformationConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig getRagFileTransformationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder
+      getRagFileTransformationConfigOrBuilder();
 }

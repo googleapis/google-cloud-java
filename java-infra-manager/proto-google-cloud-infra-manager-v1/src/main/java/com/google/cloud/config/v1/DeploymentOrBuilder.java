@@ -597,13 +597,13 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. User-specified Service Account (SA) credentials to be used when
+   * Required. User-specified Service Account (SA) credentials to be used when
    * actuating resources.
    * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
-   * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return Whether the serviceAccount field is set.
@@ -613,13 +613,13 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. User-specified Service Account (SA) credentials to be used when
+   * Required. User-specified Service Account (SA) credentials to be used when
    * actuating resources.
    * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
-   * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The serviceAccount.
@@ -629,13 +629,13 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. User-specified Service Account (SA) credentials to be used when
+   * Required. User-specified Service Account (SA) credentials to be used when
    * actuating resources.
    * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
-   * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for serviceAccount.

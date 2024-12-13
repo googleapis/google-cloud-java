@@ -103,6 +103,17 @@ public class VertexRagServiceSettings extends ClientSettings<VertexRagServiceSet
     return ((VertexRagServiceStubSettings) getStubSettings()).retrieveContextsSettings();
   }
 
+  /** Returns the object with the settings used for calls to augmentPrompt. */
+  public UnaryCallSettings<AugmentPromptRequest, AugmentPromptResponse> augmentPromptSettings() {
+    return ((VertexRagServiceStubSettings) getStubSettings()).augmentPromptSettings();
+  }
+
+  /** Returns the object with the settings used for calls to corroborateContent. */
+  public UnaryCallSettings<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentSettings() {
+    return ((VertexRagServiceStubSettings) getStubSettings()).corroborateContentSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -230,6 +241,18 @@ public class VertexRagServiceSettings extends ClientSettings<VertexRagServiceSet
     public UnaryCallSettings.Builder<RetrieveContextsRequest, RetrieveContextsResponse>
         retrieveContextsSettings() {
       return getStubSettingsBuilder().retrieveContextsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to augmentPrompt. */
+    public UnaryCallSettings.Builder<AugmentPromptRequest, AugmentPromptResponse>
+        augmentPromptSettings() {
+      return getStubSettingsBuilder().augmentPromptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to corroborateContent. */
+    public UnaryCallSettings.Builder<CorroborateContentRequest, CorroborateContentResponse>
+        corroborateContentSettings() {
+      return getStubSettingsBuilder().corroborateContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

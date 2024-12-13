@@ -71,40 +71,43 @@ public final class ReactionProto {
     java.lang.String[] descriptorData = {
       "\n\035google/chat/v1/reaction.proto\022\016google."
           + "chat.v1\032\037google/api/field_behavior.proto"
-          + "\032\031google/api/resource.proto\032\031google/chat"
-          + "/v1/user.proto\"\302\001\n\010Reaction\022\014\n\004name\030\001 \001("
-          + "\t\022\'\n\004user\030\002 \001(\0132\024.google.chat.v1.UserB\003\340"
-          + "A\003\022$\n\005emoji\030\003 \001(\0132\025.google.chat.v1.Emoji"
-          + ":Y\352AV\n\034chat.googleapis.com/Reaction\0226spa"
-          + "ces/{space}/messages/{message}/reactions"
-          + "/{reaction}\"_\n\005Emoji\022\021\n\007unicode\030\001 \001(\tH\000\022"
-          + "8\n\014custom_emoji\030\002 \001(\0132\033.google.chat.v1.C"
-          + "ustomEmojiB\003\340A\003H\000B\t\n\007content\"\037\n\013CustomEm"
-          + "oji\022\020\n\003uid\030\001 \001(\tB\003\340A\003\"l\n\024EmojiReactionSu"
-          + "mmary\022$\n\005emoji\030\001 \001(\0132\025.google.chat.v1.Em"
-          + "oji\022\033\n\016reaction_count\030\002 \001(\005H\000\210\001\001B\021\n\017_rea"
-          + "ction_count\"~\n\025CreateReactionRequest\0224\n\006"
-          + "parent\030\001 \001(\tB$\340A\002\372A\036\022\034chat.googleapis.co"
-          + "m/Reaction\022/\n\010reaction\030\002 \001(\0132\030.google.ch"
-          + "at.v1.ReactionB\003\340A\002\"\222\001\n\024ListReactionsReq"
-          + "uest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\022\034chat.googl"
-          + "eapis.com/Reaction\022\026\n\tpage_size\030\002 \001(\005B\003\340"
-          + "A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 "
-          + "\001(\tB\003\340A\001\"]\n\025ListReactionsResponse\022+\n\trea"
-          + "ctions\030\001 \003(\0132\030.google.chat.v1.Reaction\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\"K\n\025DeleteReactio"
-          + "nRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034chat.goo"
-          + "gleapis.com/ReactionB\246\001\n\022com.google.chat"
-          + ".v1B\rReactionProtoP\001Z,cloud.google.com/g"
-          + "o/chat/apiv1/chatpb;chatpb\242\002\013DYNAPIProto"
-          + "\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Cha"
-          + "t\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "\032\033google/api/field_info.proto\032\031google/ap"
+          + "i/resource.proto\032\031google/chat/v1/user.pr"
+          + "oto\"\314\001\n\010Reaction\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\'\n\004u"
+          + "ser\030\002 \001(\0132\024.google.chat.v1.UserB\003\340A\003\022)\n\005"
+          + "emoji\030\003 \001(\0132\025.google.chat.v1.EmojiB\003\340A\002:"
+          + "Y\352AV\n\034chat.googleapis.com/Reaction\0226spac"
+          + "es/{space}/messages/{message}/reactions/"
+          + "{reaction}\"d\n\005Emoji\022\026\n\007unicode\030\001 \001(\tB\003\340A"
+          + "\001H\000\0228\n\014custom_emoji\030\002 \001(\0132\033.google.chat."
+          + "v1.CustomEmojiB\003\340A\003H\000B\t\n\007content\"\'\n\013Cust"
+          + "omEmoji\022\030\n\003uid\030\001 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\"v\n\024Emo"
+          + "jiReactionSummary\022)\n\005emoji\030\001 \001(\0132\025.googl"
+          + "e.chat.v1.EmojiB\003\340A\003\022 \n\016reaction_count\030\002"
+          + " \001(\005B\003\340A\003H\000\210\001\001B\021\n\017_reaction_count\"~\n\025Cre"
+          + "ateReactionRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372"
+          + "A\036\022\034chat.googleapis.com/Reaction\022/\n\010reac"
+          + "tion\030\002 \001(\0132\030.google.chat.v1.ReactionB\003\340A"
+          + "\002\"\222\001\n\024ListReactionsRequest\0224\n\006parent\030\001 \001"
+          + "(\tB$\340A\002\372A\036\022\034chat.googleapis.com/Reaction"
+          + "\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003"
+          + " \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\"]\n\025ListRe"
+          + "actionsResponse\022+\n\treactions\030\001 \003(\0132\030.goo"
+          + "gle.chat.v1.Reaction\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\"K\n\025DeleteReactionRequest\0222\n\004name\030\001"
+          + " \001(\tB$\340A\002\372A\036\n\034chat.googleapis.com/Reacti"
+          + "onB\246\001\n\022com.google.chat.v1B\rReactionProto"
+          + "P\001Z,cloud.google.com/go/chat/apiv1/chatp"
+          + "b;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Cha"
+          + "t.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::App"
+          + "s::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.chat.v1.UserProto.getDescriptor(),
             });
@@ -173,11 +176,13 @@ public final class ReactionProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.chat.v1.UserProto.getDescriptor();
   }

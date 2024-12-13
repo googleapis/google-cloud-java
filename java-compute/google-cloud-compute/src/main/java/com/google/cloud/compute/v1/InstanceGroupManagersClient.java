@@ -392,6 +392,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ResumeInstances</td>
+ *      <td><p> Flags the specified instances in the managed instance group to be resumed. This method increases the targetSize and decreases the targetSuspendedSize of the managed instance group by the number of instances that you resume. The resumeInstances operation is marked DONE if the resumeInstances request is successful. The underlying actions take additional time. You must separately verify the status of the RESUMING action with the listmanagedinstances method. In this request, you can only specify instances that are suspended. For example, if an instance was previously suspended using the suspendInstances method, it can be resumed using the resumeInstances method. If a health check is attached to the managed instance group, the specified instances will be verified as healthy after they are resumed. You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resumeInstancesAsync(ResumeInstancesInstanceGroupManagerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> resumeInstancesAsync(String project, String zone, String instanceGroupManager, InstanceGroupManagersResumeInstancesRequest instanceGroupManagersResumeInstancesRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resumeInstancesOperationCallable()
+ *           <li><p> resumeInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SetInstanceTemplate</td>
  *      <td><p> Specifies the instance template to use when creating new instances in this group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.</td>
  *      <td>
@@ -426,6 +445,63 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> setTargetPoolsOperationCallable()
  *           <li><p> setTargetPoolsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StartInstances</td>
+ *      <td><p> Flags the specified instances in the managed instance group to be started. This method increases the targetSize and decreases the targetStoppedSize of the managed instance group by the number of instances that you start. The startInstances operation is marked DONE if the startInstances request is successful. The underlying actions take additional time. You must separately verify the status of the STARTING action with the listmanagedinstances method. In this request, you can only specify instances that are stopped. For example, if an instance was previously stopped using the stopInstances method, it can be started using the startInstances method. If a health check is attached to the managed instance group, the specified instances will be verified as healthy after they are started. You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startInstancesAsync(StartInstancesInstanceGroupManagerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> startInstancesAsync(String project, String zone, String instanceGroupManager, InstanceGroupManagersStartInstancesRequest instanceGroupManagersStartInstancesRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startInstancesOperationCallable()
+ *           <li><p> startInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StopInstances</td>
+ *      <td><p> Flags the specified instances in the managed instance group to be immediately stopped. You can only specify instances that are running in this request. This method reduces the targetSize and increases the targetStoppedSize of the managed instance group by the number of instances that you stop. The stopInstances operation is marked DONE if the stopInstances request is successful. The underlying actions take additional time. You must separately verify the status of the STOPPING action with the listmanagedinstances method. If the standbyPolicy.initialDelaySec field is set, the group delays stopping the instances until initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was created). This delay gives your application time to set itself up and initialize on the instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp when this method is called, there will be zero delay. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is stopped. Stopped instances can be started using the startInstances method. You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopInstancesAsync(StopInstancesInstanceGroupManagerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> stopInstancesAsync(String project, String zone, String instanceGroupManager, InstanceGroupManagersStopInstancesRequest instanceGroupManagersStopInstancesRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopInstancesOperationCallable()
+ *           <li><p> stopInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SuspendInstances</td>
+ *      <td><p> Flags the specified instances in the managed instance group to be immediately suspended. You can only specify instances that are running in this request. This method reduces the targetSize and increases the targetSuspendedSize of the managed instance group by the number of instances that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request is successful. The underlying actions take additional time. You must separately verify the status of the SUSPENDING action with the listmanagedinstances method. If the standbyPolicy.initialDelaySec field is set, the group delays suspension of the instances until initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was created). This delay gives your application time to set itself up and initialize on the instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp when this method is called, there will be zero delay. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is suspended. Suspended instances can be resumed using the resumeInstances method. You can specify a maximum of 1000 instances with this method per request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> suspendInstancesAsync(SuspendInstancesInstanceGroupManagerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> suspendInstancesAsync(String project, String zone, String instanceGroupManager, InstanceGroupManagersSuspendInstancesRequest instanceGroupManagersSuspendInstancesRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> suspendInstancesOperationCallable()
+ *           <li><p> suspendInstancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -3408,6 +3484,201 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Flags the specified instances in the managed instance group to be resumed. This method
+   * increases the targetSize and decreases the targetSuspendedSize of the managed instance group by
+   * the number of instances that you resume. The resumeInstances operation is marked DONE if the
+   * resumeInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of the RESUMING action with the listmanagedinstances method. In
+   * this request, you can only specify instances that are suspended. For example, if an instance
+   * was previously suspended using the suspendInstances method, it can be resumed using the
+   * resumeInstances method. If a health check is attached to the managed instance group, the
+   * specified instances will be verified as healthy after they are resumed. You can specify a
+   * maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManagersResumeInstancesRequest
+   *       instanceGroupManagersResumeInstancesRequestResource =
+   *           InstanceGroupManagersResumeInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupManagersClient
+   *           .resumeInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersResumeInstancesRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone where the managed instance group is located.
+   * @param instanceGroupManager The name of the managed instance group.
+   * @param instanceGroupManagersResumeInstancesRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> resumeInstancesAsync(
+      String project,
+      String zone,
+      String instanceGroupManager,
+      InstanceGroupManagersResumeInstancesRequest
+          instanceGroupManagersResumeInstancesRequestResource) {
+    ResumeInstancesInstanceGroupManagerRequest request =
+        ResumeInstancesInstanceGroupManagerRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagersResumeInstancesRequestResource(
+                instanceGroupManagersResumeInstancesRequestResource)
+            .build();
+    return resumeInstancesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be resumed. This method
+   * increases the targetSize and decreases the targetSuspendedSize of the managed instance group by
+   * the number of instances that you resume. The resumeInstances operation is marked DONE if the
+   * resumeInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of the RESUMING action with the listmanagedinstances method. In
+   * this request, you can only specify instances that are suspended. For example, if an instance
+   * was previously suspended using the suspendInstances method, it can be resumed using the
+   * resumeInstances method. If a health check is attached to the managed instance group, the
+   * specified instances will be verified as healthy after they are resumed. You can specify a
+   * maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   ResumeInstancesInstanceGroupManagerRequest request =
+   *       ResumeInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersResumeInstancesRequestResource(
+   *               InstanceGroupManagersResumeInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instanceGroupManagersClient.resumeInstancesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> resumeInstancesAsync(
+      ResumeInstancesInstanceGroupManagerRequest request) {
+    return resumeInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be resumed. This method
+   * increases the targetSize and decreases the targetSuspendedSize of the managed instance group by
+   * the number of instances that you resume. The resumeInstances operation is marked DONE if the
+   * resumeInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of the RESUMING action with the listmanagedinstances method. In
+   * this request, you can only specify instances that are suspended. For example, if an instance
+   * was previously suspended using the suspendInstances method, it can be resumed using the
+   * resumeInstances method. If a health check is attached to the managed instance group, the
+   * specified instances will be verified as healthy after they are resumed. You can specify a
+   * maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   ResumeInstancesInstanceGroupManagerRequest request =
+   *       ResumeInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersResumeInstancesRequestResource(
+   *               InstanceGroupManagersResumeInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.resumeInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationCallable() {
+    return stub.resumeInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be resumed. This method
+   * increases the targetSize and decreases the targetSuspendedSize of the managed instance group by
+   * the number of instances that you resume. The resumeInstances operation is marked DONE if the
+   * resumeInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of the RESUMING action with the listmanagedinstances method. In
+   * this request, you can only specify instances that are suspended. For example, if an instance
+   * was previously suspended using the suspendInstances method, it can be resumed using the
+   * resumeInstances method. If a health check is attached to the managed instance group, the
+   * specified instances will be verified as healthy after they are resumed. You can specify a
+   * maximum of 1000 instances with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   ResumeInstancesInstanceGroupManagerRequest request =
+   *       ResumeInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersResumeInstancesRequestResource(
+   *               InstanceGroupManagersResumeInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupManagersClient.resumeInstancesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResumeInstancesInstanceGroupManagerRequest, Operation>
+      resumeInstancesCallable() {
+    return stub.resumeInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Specifies the instance template to use when creating new instances in this group. The templates
    * for existing instances in the group do not change unless you run recreateInstances, run
    * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
@@ -3748,6 +4019,629 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   public final UnaryCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable() {
     return stub.setTargetPoolsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be started. This method
+   * increases the targetSize and decreases the targetStoppedSize of the managed instance group by
+   * the number of instances that you start. The startInstances operation is marked DONE if the
+   * startInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of the STARTING action with the listmanagedinstances method. In
+   * this request, you can only specify instances that are stopped. For example, if an instance was
+   * previously stopped using the stopInstances method, it can be started using the startInstances
+   * method. If a health check is attached to the managed instance group, the specified instances
+   * will be verified as healthy after they are started. You can specify a maximum of 1000 instances
+   * with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManagersStartInstancesRequest
+   *       instanceGroupManagersStartInstancesRequestResource =
+   *           InstanceGroupManagersStartInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupManagersClient
+   *           .startInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersStartInstancesRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone where the managed instance group is located.
+   * @param instanceGroupManager The name of the managed instance group.
+   * @param instanceGroupManagersStartInstancesRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> startInstancesAsync(
+      String project,
+      String zone,
+      String instanceGroupManager,
+      InstanceGroupManagersStartInstancesRequest
+          instanceGroupManagersStartInstancesRequestResource) {
+    StartInstancesInstanceGroupManagerRequest request =
+        StartInstancesInstanceGroupManagerRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagersStartInstancesRequestResource(
+                instanceGroupManagersStartInstancesRequestResource)
+            .build();
+    return startInstancesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be started. This method
+   * increases the targetSize and decreases the targetStoppedSize of the managed instance group by
+   * the number of instances that you start. The startInstances operation is marked DONE if the
+   * startInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of the STARTING action with the listmanagedinstances method. In
+   * this request, you can only specify instances that are stopped. For example, if an instance was
+   * previously stopped using the stopInstances method, it can be started using the startInstances
+   * method. If a health check is attached to the managed instance group, the specified instances
+   * will be verified as healthy after they are started. You can specify a maximum of 1000 instances
+   * with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StartInstancesInstanceGroupManagerRequest request =
+   *       StartInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStartInstancesRequestResource(
+   *               InstanceGroupManagersStartInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instanceGroupManagersClient.startInstancesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> startInstancesAsync(
+      StartInstancesInstanceGroupManagerRequest request) {
+    return startInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be started. This method
+   * increases the targetSize and decreases the targetStoppedSize of the managed instance group by
+   * the number of instances that you start. The startInstances operation is marked DONE if the
+   * startInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of the STARTING action with the listmanagedinstances method. In
+   * this request, you can only specify instances that are stopped. For example, if an instance was
+   * previously stopped using the stopInstances method, it can be started using the startInstances
+   * method. If a health check is attached to the managed instance group, the specified instances
+   * will be verified as healthy after they are started. You can specify a maximum of 1000 instances
+   * with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StartInstancesInstanceGroupManagerRequest request =
+   *       StartInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStartInstancesRequestResource(
+   *               InstanceGroupManagersStartInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.startInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationCallable() {
+    return stub.startInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be started. This method
+   * increases the targetSize and decreases the targetStoppedSize of the managed instance group by
+   * the number of instances that you start. The startInstances operation is marked DONE if the
+   * startInstances request is successful. The underlying actions take additional time. You must
+   * separately verify the status of the STARTING action with the listmanagedinstances method. In
+   * this request, you can only specify instances that are stopped. For example, if an instance was
+   * previously stopped using the stopInstances method, it can be started using the startInstances
+   * method. If a health check is attached to the managed instance group, the specified instances
+   * will be verified as healthy after they are started. You can specify a maximum of 1000 instances
+   * with this method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StartInstancesInstanceGroupManagerRequest request =
+   *       StartInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStartInstancesRequestResource(
+   *               InstanceGroupManagersStartInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupManagersClient.startInstancesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartInstancesInstanceGroupManagerRequest, Operation>
+      startInstancesCallable() {
+    return stub.startInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately stopped. You can
+   * only specify instances that are running in this request. This method reduces the targetSize and
+   * increases the targetStoppedSize of the managed instance group by the number of instances that
+   * you stop. The stopInstances operation is marked DONE if the stopInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of the STOPPING action with the listmanagedinstances method. If the
+   * standbyPolicy.initialDelaySec field is set, the group delays stopping the instances until
+   * initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was
+   * created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp
+   * when this method is called, there will be zero delay. If the group is part of a backend service
+   * that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is stopped. Stopped instances can be
+   * started using the startInstances method. You can specify a maximum of 1000 instances with this
+   * method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManagersStopInstancesRequest instanceGroupManagersStopInstancesRequestResource =
+   *       InstanceGroupManagersStopInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupManagersClient
+   *           .stopInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersStopInstancesRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone where the managed instance group is located.
+   * @param instanceGroupManager The name of the managed instance group.
+   * @param instanceGroupManagersStopInstancesRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> stopInstancesAsync(
+      String project,
+      String zone,
+      String instanceGroupManager,
+      InstanceGroupManagersStopInstancesRequest instanceGroupManagersStopInstancesRequestResource) {
+    StopInstancesInstanceGroupManagerRequest request =
+        StopInstancesInstanceGroupManagerRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagersStopInstancesRequestResource(
+                instanceGroupManagersStopInstancesRequestResource)
+            .build();
+    return stopInstancesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately stopped. You can
+   * only specify instances that are running in this request. This method reduces the targetSize and
+   * increases the targetStoppedSize of the managed instance group by the number of instances that
+   * you stop. The stopInstances operation is marked DONE if the stopInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of the STOPPING action with the listmanagedinstances method. If the
+   * standbyPolicy.initialDelaySec field is set, the group delays stopping the instances until
+   * initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was
+   * created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp
+   * when this method is called, there will be zero delay. If the group is part of a backend service
+   * that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is stopped. Stopped instances can be
+   * started using the startInstances method. You can specify a maximum of 1000 instances with this
+   * method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StopInstancesInstanceGroupManagerRequest request =
+   *       StopInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStopInstancesRequestResource(
+   *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instanceGroupManagersClient.stopInstancesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> stopInstancesAsync(
+      StopInstancesInstanceGroupManagerRequest request) {
+    return stopInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately stopped. You can
+   * only specify instances that are running in this request. This method reduces the targetSize and
+   * increases the targetStoppedSize of the managed instance group by the number of instances that
+   * you stop. The stopInstances operation is marked DONE if the stopInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of the STOPPING action with the listmanagedinstances method. If the
+   * standbyPolicy.initialDelaySec field is set, the group delays stopping the instances until
+   * initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was
+   * created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp
+   * when this method is called, there will be zero delay. If the group is part of a backend service
+   * that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is stopped. Stopped instances can be
+   * started using the startInstances method. You can specify a maximum of 1000 instances with this
+   * method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StopInstancesInstanceGroupManagerRequest request =
+   *       StopInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStopInstancesRequestResource(
+   *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.stopInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationCallable() {
+    return stub.stopInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately stopped. You can
+   * only specify instances that are running in this request. This method reduces the targetSize and
+   * increases the targetStoppedSize of the managed instance group by the number of instances that
+   * you stop. The stopInstances operation is marked DONE if the stopInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of the STOPPING action with the listmanagedinstances method. If the
+   * standbyPolicy.initialDelaySec field is set, the group delays stopping the instances until
+   * initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was
+   * created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp
+   * when this method is called, there will be zero delay. If the group is part of a backend service
+   * that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is stopped. Stopped instances can be
+   * started using the startInstances method. You can specify a maximum of 1000 instances with this
+   * method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   StopInstancesInstanceGroupManagerRequest request =
+   *       StopInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersStopInstancesRequestResource(
+   *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupManagersClient.stopInstancesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopInstancesInstanceGroupManagerRequest, Operation>
+      stopInstancesCallable() {
+    return stub.stopInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately suspended. You
+   * can only specify instances that are running in this request. This method reduces the targetSize
+   * and increases the targetSuspendedSize of the managed instance group by the number of instances
+   * that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request
+   * is successful. The underlying actions take additional time. You must separately verify the
+   * status of the SUSPENDING action with the listmanagedinstances method. If the
+   * standbyPolicy.initialDelaySec field is set, the group delays suspension of the instances until
+   * initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was
+   * created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp
+   * when this method is called, there will be zero delay. If the group is part of a backend service
+   * that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is suspended. Suspended instances can be
+   * resumed using the resumeInstances method. You can specify a maximum of 1000 instances with this
+   * method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instanceGroupManager = "instanceGroupManager-388242077";
+   *   InstanceGroupManagersSuspendInstancesRequest
+   *       instanceGroupManagersSuspendInstancesRequestResource =
+   *           InstanceGroupManagersSuspendInstancesRequest.newBuilder().build();
+   *   Operation response =
+   *       instanceGroupManagersClient
+   *           .suspendInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersSuspendInstancesRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone where the managed instance group is located.
+   * @param instanceGroupManager The name of the managed instance group.
+   * @param instanceGroupManagersSuspendInstancesRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> suspendInstancesAsync(
+      String project,
+      String zone,
+      String instanceGroupManager,
+      InstanceGroupManagersSuspendInstancesRequest
+          instanceGroupManagersSuspendInstancesRequestResource) {
+    SuspendInstancesInstanceGroupManagerRequest request =
+        SuspendInstancesInstanceGroupManagerRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagersSuspendInstancesRequestResource(
+                instanceGroupManagersSuspendInstancesRequestResource)
+            .build();
+    return suspendInstancesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately suspended. You
+   * can only specify instances that are running in this request. This method reduces the targetSize
+   * and increases the targetSuspendedSize of the managed instance group by the number of instances
+   * that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request
+   * is successful. The underlying actions take additional time. You must separately verify the
+   * status of the SUSPENDING action with the listmanagedinstances method. If the
+   * standbyPolicy.initialDelaySec field is set, the group delays suspension of the instances until
+   * initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was
+   * created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp
+   * when this method is called, there will be zero delay. If the group is part of a backend service
+   * that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is suspended. Suspended instances can be
+   * resumed using the resumeInstances method. You can specify a maximum of 1000 instances with this
+   * method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   SuspendInstancesInstanceGroupManagerRequest request =
+   *       SuspendInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersSuspendInstancesRequestResource(
+   *               InstanceGroupManagersSuspendInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instanceGroupManagersClient.suspendInstancesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> suspendInstancesAsync(
+      SuspendInstancesInstanceGroupManagerRequest request) {
+    return suspendInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately suspended. You
+   * can only specify instances that are running in this request. This method reduces the targetSize
+   * and increases the targetSuspendedSize of the managed instance group by the number of instances
+   * that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request
+   * is successful. The underlying actions take additional time. You must separately verify the
+   * status of the SUSPENDING action with the listmanagedinstances method. If the
+   * standbyPolicy.initialDelaySec field is set, the group delays suspension of the instances until
+   * initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was
+   * created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp
+   * when this method is called, there will be zero delay. If the group is part of a backend service
+   * that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is suspended. Suspended instances can be
+   * resumed using the resumeInstances method. You can specify a maximum of 1000 instances with this
+   * method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   SuspendInstancesInstanceGroupManagerRequest request =
+   *       SuspendInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersSuspendInstancesRequestResource(
+   *               InstanceGroupManagersSuspendInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.suspendInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationCallable() {
+    return stub.suspendInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group to be immediately suspended. You
+   * can only specify instances that are running in this request. This method reduces the targetSize
+   * and increases the targetSuspendedSize of the managed instance group by the number of instances
+   * that you suspend. The suspendInstances operation is marked DONE if the suspendInstances request
+   * is successful. The underlying actions take additional time. You must separately verify the
+   * status of the SUSPENDING action with the listmanagedinstances method. If the
+   * standbyPolicy.initialDelaySec field is set, the group delays suspension of the instances until
+   * initialDelaySec have passed from instance.creationTimestamp (that is, when the instance was
+   * created). This delay gives your application time to set itself up and initialize on the
+   * instance. If more than initialDelaySec seconds have passed since instance.creationTimestamp
+   * when this method is called, there will be zero delay. If the group is part of a backend service
+   * that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is suspended. Suspended instances can be
+   * resumed using the resumeInstances method. You can specify a maximum of 1000 instances with this
+   * method per request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   SuspendInstancesInstanceGroupManagerRequest request =
+   *       SuspendInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersSuspendInstancesRequestResource(
+   *               InstanceGroupManagersSuspendInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instanceGroupManagersClient.suspendInstancesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SuspendInstancesInstanceGroupManagerRequest, Operation>
+      suspendInstancesCallable() {
+    return stub.suspendInstancesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

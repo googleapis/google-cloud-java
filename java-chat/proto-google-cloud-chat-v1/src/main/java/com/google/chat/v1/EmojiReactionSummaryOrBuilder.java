@@ -28,10 +28,10 @@ public interface EmojiReactionSummaryOrBuilder
    *
    *
    * <pre>
-   * Emoji associated with the reactions.
+   * Output only. Emoji associated with the reactions.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 1;</code>
+   * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the emoji field is set.
    */
@@ -40,10 +40,10 @@ public interface EmojiReactionSummaryOrBuilder
    *
    *
    * <pre>
-   * Emoji associated with the reactions.
+   * Output only. Emoji associated with the reactions.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 1;</code>
+   * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The emoji.
    */
@@ -52,10 +52,10 @@ public interface EmojiReactionSummaryOrBuilder
    *
    *
    * <pre>
-   * Emoji associated with the reactions.
+   * Output only. Emoji associated with the reactions.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 1;</code>
+   * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.chat.v1.EmojiOrBuilder getEmojiOrBuilder();
 
@@ -63,10 +63,10 @@ public interface EmojiReactionSummaryOrBuilder
    *
    *
    * <pre>
-   * The total number of reactions using the associated emoji.
+   * Output only. The total number of reactions using the associated emoji.
    * </pre>
    *
-   * <code>optional int32 reaction_count = 2;</code>
+   * <code>optional int32 reaction_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the reactionCount field is set.
    */
@@ -75,10 +75,10 @@ public interface EmojiReactionSummaryOrBuilder
    *
    *
    * <pre>
-   * The total number of reactions using the associated emoji.
+   * Output only. The total number of reactions using the associated emoji.
    * </pre>
    *
-   * <code>optional int32 reaction_count = 2;</code>
+   * <code>optional int32 reaction_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The reactionCount.
    */

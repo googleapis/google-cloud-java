@@ -785,7 +785,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * and
    * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_MULAW]
    * - Lifecycle: conversation should be in `Assist Stage`, go to
-   *   [Conversation.CreateConversation][] for more information.
+   *   [Conversations.CreateConversation][google.cloud.dialogflow.v2.Conversations.CreateConversation]
+   *   for more information.
    *
    * InvalidArgument Error will be returned if the one of restriction checks
    * failed.
@@ -3529,7 +3530,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * and
      * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_MULAW]
      * - Lifecycle: conversation should be in `Assist Stage`, go to
-     *   [Conversation.CreateConversation][] for more information.
+     *   [Conversations.CreateConversation][google.cloud.dialogflow.v2.Conversations.CreateConversation]
+     *   for more information.
      *
      * InvalidArgument Error will be returned if the one of restriction checks
      * failed.
@@ -3562,7 +3564,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * and
      * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_MULAW]
      * - Lifecycle: conversation should be in `Assist Stage`, go to
-     *   [Conversation.CreateConversation][] for more information.
+     *   [Conversations.CreateConversation][google.cloud.dialogflow.v2.Conversations.CreateConversation]
+     *   for more information.
      *
      * InvalidArgument Error will be returned if the one of restriction checks
      * failed.
@@ -3599,7 +3602,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * and
      * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_MULAW]
      * - Lifecycle: conversation should be in `Assist Stage`, go to
-     *   [Conversation.CreateConversation][] for more information.
+     *   [Conversations.CreateConversation][google.cloud.dialogflow.v2.Conversations.CreateConversation]
+     *   for more information.
      *
      * InvalidArgument Error will be returned if the one of restriction checks
      * failed.

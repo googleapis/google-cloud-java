@@ -93,6 +93,10 @@ public final class ReportingApiProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_BetweenFilter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1alpha_EmptyFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_data_v1alpha_EmptyFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_data_v1alpha_NumericValue_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_NumericValue_fieldAccessorTable;
@@ -342,7 +346,7 @@ public final class ReportingApiProto {
           + "nalytics.data.v1alpha.FilterH\000B\006\n\004expr\"\\"
           + "\n\024FilterExpressionList\022D\n\013expressions\030\001 "
           + "\003(\0132/.google.analytics.data.v1alpha.Filt"
-          + "erExpression\"\307\002\n\006Filter\022\022\n\nfield_name\030\001 "
+          + "erExpression\"\213\003\n\006Filter\022\022\n\nfield_name\030\001 "
           + "\001(\t\022D\n\rstring_filter\030\002 \001(\0132+.google.anal"
           + "ytics.data.v1alpha.StringFilterH\000\022E\n\016in_"
           + "list_filter\030\003 \001(\0132+.google.analytics.dat"
@@ -350,62 +354,66 @@ public final class ReportingApiProto {
           + "er\030\004 \001(\0132,.google.analytics.data.v1alpha"
           + ".NumericFilterH\000\022F\n\016between_filter\030\005 \001(\013"
           + "2,.google.analytics.data.v1alpha.Between"
-          + "FilterH\000B\014\n\none_filter\"\210\002\n\014StringFilter\022"
-          + "I\n\nmatch_type\030\001 \001(\01625.google.analytics.d"
-          + "ata.v1alpha.StringFilter.MatchType\022\r\n\005va"
-          + "lue\030\002 \001(\t\022\026\n\016case_sensitive\030\003 \001(\010\"\205\001\n\tMa"
-          + "tchType\022\032\n\026MATCH_TYPE_UNSPECIFIED\020\000\022\t\n\005E"
-          + "XACT\020\001\022\017\n\013BEGINS_WITH\020\002\022\r\n\tENDS_WITH\020\003\022\014"
-          + "\n\010CONTAINS\020\004\022\017\n\013FULL_REGEXP\020\005\022\022\n\016PARTIAL"
-          + "_REGEXP\020\006\"6\n\014InListFilter\022\016\n\006values\030\001 \003("
-          + "\t\022\026\n\016case_sensitive\030\002 \001(\010\"\236\002\n\rNumericFil"
-          + "ter\022I\n\toperation\030\001 \001(\01626.google.analytic"
-          + "s.data.v1alpha.NumericFilter.Operation\022:"
-          + "\n\005value\030\002 \001(\0132+.google.analytics.data.v1"
-          + "alpha.NumericValue\"\205\001\n\tOperation\022\031\n\025OPER"
-          + "ATION_UNSPECIFIED\020\000\022\t\n\005EQUAL\020\001\022\r\n\tLESS_T"
-          + "HAN\020\002\022\026\n\022LESS_THAN_OR_EQUAL\020\003\022\020\n\014GREATER"
-          + "_THAN\020\004\022\031\n\025GREATER_THAN_OR_EQUAL\020\005\"\322\003\n\007O"
-          + "rderBy\022F\n\006metric\030\001 \001(\01324.google.analytic"
-          + "s.data.v1alpha.OrderBy.MetricOrderByH\000\022L"
-          + "\n\tdimension\030\002 \001(\01327.google.analytics.dat"
-          + "a.v1alpha.OrderBy.DimensionOrderByH\000\022\014\n\004"
-          + "desc\030\004 \001(\010\032$\n\rMetricOrderBy\022\023\n\013metric_na"
-          + "me\030\001 \001(\t\032\354\001\n\020DimensionOrderBy\022\026\n\016dimensi"
-          + "on_name\030\001 \001(\t\022U\n\norder_type\030\002 \001(\0162A.goog"
-          + "le.analytics.data.v1alpha.OrderBy.Dimens"
-          + "ionOrderBy.OrderType\"i\n\tOrderType\022\032\n\026ORD"
-          + "ER_TYPE_UNSPECIFIED\020\000\022\020\n\014ALPHANUMERIC\020\001\022"
-          + "!\n\035CASE_INSENSITIVE_ALPHANUMERIC\020\002\022\013\n\007NU"
-          + "MERIC\020\003B\016\n\014one_order_by\"\217\001\n\rBetweenFilte"
-          + "r\022?\n\nfrom_value\030\001 \001(\0132+.google.analytics"
-          + ".data.v1alpha.NumericValue\022=\n\010to_value\030\002"
-          + " \001(\0132+.google.analytics.data.v1alpha.Num"
-          + "ericValue\"J\n\014NumericValue\022\025\n\013int64_value"
-          + "\030\001 \001(\003H\000\022\026\n\014double_value\030\002 \001(\001H\000B\013\n\tone_"
-          + "value\"\335\001\n\nCohortSpec\0226\n\007cohorts\030\001 \003(\0132%."
-          + "google.analytics.data.v1alpha.Cohort\022B\n\r"
-          + "cohorts_range\030\002 \001(\0132+.google.analytics.d"
-          + "ata.v1alpha.CohortsRange\022S\n\026cohort_repor"
-          + "t_settings\030\003 \001(\01323.google.analytics.data"
-          + ".v1alpha.CohortReportSettings\"g\n\006Cohort\022"
-          + "\014\n\004name\030\001 \001(\t\022\021\n\tdimension\030\002 \001(\t\022<\n\ndate"
-          + "_range\030\003 \001(\0132(.google.analytics.data.v1a"
-          + "lpha.DateRange\"\326\001\n\014CohortsRange\022L\n\013granu"
-          + "larity\030\001 \001(\01627.google.analytics.data.v1a"
-          + "lpha.CohortsRange.Granularity\022\024\n\014start_o"
-          + "ffset\030\002 \001(\005\022\022\n\nend_offset\030\003 \001(\005\"N\n\013Granu"
-          + "larity\022\033\n\027GRANULARITY_UNSPECIFIED\020\000\022\t\n\005D"
-          + "AILY\020\001\022\n\n\006WEEKLY\020\002\022\013\n\007MONTHLY\020\003\"*\n\024Cohor"
-          + "tReportSettings\022\022\n\naccumulate\030\001 \001(\010\"\315\005\n\020"
-          + "ResponseMetaData\022 \n\030data_loss_from_other"
-          + "_row\030\003 \001(\010\022s\n\033schema_restriction_respons"
-          + "e\030\004 \001(\0132I.google.analytics.data.v1alpha."
-          + "ResponseMetaData.SchemaRestrictionRespon"
-          + "seH\000\210\001\001\022\032\n\rcurrency_code\030\005 \001(\tH\001\210\001\001\022\026\n\tt"
-          + "ime_zone\030\006 \001(\tH\002\210\001\001\022\031\n\014empty_reason\030\007 \001("
-          + "\tH\003\210\001\001\022$\n\027subject_to_thresholding\030\010 \001(\010H"
-          + "\004\210\001\001\032\277\002\n\031SchemaRestrictionResponse\022\205\001\n\032a"
+          + "FilterH\000\022B\n\014empty_filter\030\006 \001(\0132*.google."
+          + "analytics.data.v1alpha.EmptyFilterH\000B\014\n\n"
+          + "one_filter\"\210\002\n\014StringFilter\022I\n\nmatch_typ"
+          + "e\030\001 \001(\01625.google.analytics.data.v1alpha."
+          + "StringFilter.MatchType\022\r\n\005value\030\002 \001(\t\022\026\n"
+          + "\016case_sensitive\030\003 \001(\010\"\205\001\n\tMatchType\022\032\n\026M"
+          + "ATCH_TYPE_UNSPECIFIED\020\000\022\t\n\005EXACT\020\001\022\017\n\013BE"
+          + "GINS_WITH\020\002\022\r\n\tENDS_WITH\020\003\022\014\n\010CONTAINS\020\004"
+          + "\022\017\n\013FULL_REGEXP\020\005\022\022\n\016PARTIAL_REGEXP\020\006\"6\n"
+          + "\014InListFilter\022\016\n\006values\030\001 \003(\t\022\026\n\016case_se"
+          + "nsitive\030\002 \001(\010\"\236\002\n\rNumericFilter\022I\n\topera"
+          + "tion\030\001 \001(\01626.google.analytics.data.v1alp"
+          + "ha.NumericFilter.Operation\022:\n\005value\030\002 \001("
+          + "\0132+.google.analytics.data.v1alpha.Numeri"
+          + "cValue\"\205\001\n\tOperation\022\031\n\025OPERATION_UNSPEC"
+          + "IFIED\020\000\022\t\n\005EQUAL\020\001\022\r\n\tLESS_THAN\020\002\022\026\n\022LES"
+          + "S_THAN_OR_EQUAL\020\003\022\020\n\014GREATER_THAN\020\004\022\031\n\025G"
+          + "REATER_THAN_OR_EQUAL\020\005\"\322\003\n\007OrderBy\022F\n\006me"
+          + "tric\030\001 \001(\01324.google.analytics.data.v1alp"
+          + "ha.OrderBy.MetricOrderByH\000\022L\n\tdimension\030"
+          + "\002 \001(\01327.google.analytics.data.v1alpha.Or"
+          + "derBy.DimensionOrderByH\000\022\014\n\004desc\030\004 \001(\010\032$"
+          + "\n\rMetricOrderBy\022\023\n\013metric_name\030\001 \001(\t\032\354\001\n"
+          + "\020DimensionOrderBy\022\026\n\016dimension_name\030\001 \001("
+          + "\t\022U\n\norder_type\030\002 \001(\0162A.google.analytics"
+          + ".data.v1alpha.OrderBy.DimensionOrderBy.O"
+          + "rderType\"i\n\tOrderType\022\032\n\026ORDER_TYPE_UNSP"
+          + "ECIFIED\020\000\022\020\n\014ALPHANUMERIC\020\001\022!\n\035CASE_INSE"
+          + "NSITIVE_ALPHANUMERIC\020\002\022\013\n\007NUMERIC\020\003B\016\n\014o"
+          + "ne_order_by\"\217\001\n\rBetweenFilter\022?\n\nfrom_va"
+          + "lue\030\001 \001(\0132+.google.analytics.data.v1alph"
+          + "a.NumericValue\022=\n\010to_value\030\002 \001(\0132+.googl"
+          + "e.analytics.data.v1alpha.NumericValue\"\r\n"
+          + "\013EmptyFilter\"J\n\014NumericValue\022\025\n\013int64_va"
+          + "lue\030\001 \001(\003H\000\022\026\n\014double_value\030\002 \001(\001H\000B\013\n\to"
+          + "ne_value\"\335\001\n\nCohortSpec\0226\n\007cohorts\030\001 \003(\013"
+          + "2%.google.analytics.data.v1alpha.Cohort\022"
+          + "B\n\rcohorts_range\030\002 \001(\0132+.google.analytic"
+          + "s.data.v1alpha.CohortsRange\022S\n\026cohort_re"
+          + "port_settings\030\003 \001(\01323.google.analytics.d"
+          + "ata.v1alpha.CohortReportSettings\"g\n\006Coho"
+          + "rt\022\014\n\004name\030\001 \001(\t\022\021\n\tdimension\030\002 \001(\t\022<\n\nd"
+          + "ate_range\030\003 \001(\0132(.google.analytics.data."
+          + "v1alpha.DateRange\"\326\001\n\014CohortsRange\022L\n\013gr"
+          + "anularity\030\001 \001(\01627.google.analytics.data."
+          + "v1alpha.CohortsRange.Granularity\022\024\n\014star"
+          + "t_offset\030\002 \001(\005\022\022\n\nend_offset\030\003 \001(\005\"N\n\013Gr"
+          + "anularity\022\033\n\027GRANULARITY_UNSPECIFIED\020\000\022\t"
+          + "\n\005DAILY\020\001\022\n\n\006WEEKLY\020\002\022\013\n\007MONTHLY\020\003\"*\n\024Co"
+          + "hortReportSettings\022\022\n\naccumulate\030\001 \001(\010\"\232"
+          + "\006\n\020ResponseMetaData\022 \n\030data_loss_from_ot"
+          + "her_row\030\003 \001(\010\022s\n\033schema_restriction_resp"
+          + "onse\030\004 \001(\0132I.google.analytics.data.v1alp"
+          + "ha.ResponseMetaData.SchemaRestrictionRes"
+          + "ponseH\000\210\001\001\022\032\n\rcurrency_code\030\005 \001(\tH\001\210\001\001\022\026"
+          + "\n\ttime_zone\030\006 \001(\tH\002\210\001\001\022\031\n\014empty_reason\030\007"
+          + " \001(\tH\003\210\001\001\022$\n\027subject_to_thresholding\030\010 \001"
+          + "(\010H\004\210\001\001\022K\n\022sampling_metadatas\030\t \003(\0132/.go"
+          + "ogle.analytics.data.v1alpha.SamplingMeta"
+          + "data\032\277\002\n\031SchemaRestrictionResponse\022\205\001\n\032a"
           + "ctive_metric_restrictions\030\001 \003(\0132a.google"
           + ".analytics.data.v1alpha.ResponseMetaData"
           + ".SchemaRestrictionResponse.ActiveMetricR"
@@ -771,6 +779,7 @@ public final class ReportingApiProto {
               "InListFilter",
               "NumericFilter",
               "BetweenFilter",
+              "EmptyFilter",
               "OneFilter",
             });
     internal_static_google_analytics_data_v1alpha_StringFilter_descriptor =
@@ -829,8 +838,14 @@ public final class ReportingApiProto {
             new java.lang.String[] {
               "FromValue", "ToValue",
             });
-    internal_static_google_analytics_data_v1alpha_NumericValue_descriptor =
+    internal_static_google_analytics_data_v1alpha_EmptyFilter_descriptor =
         getDescriptor().getMessageTypes().get(12);
+    internal_static_google_analytics_data_v1alpha_EmptyFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_data_v1alpha_EmptyFilter_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_analytics_data_v1alpha_NumericValue_descriptor =
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_analytics_data_v1alpha_NumericValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_NumericValue_descriptor,
@@ -838,7 +853,7 @@ public final class ReportingApiProto {
               "Int64Value", "DoubleValue", "OneValue",
             });
     internal_static_google_analytics_data_v1alpha_CohortSpec_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_analytics_data_v1alpha_CohortSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_CohortSpec_descriptor,
@@ -846,7 +861,7 @@ public final class ReportingApiProto {
               "Cohorts", "CohortsRange", "CohortReportSettings",
             });
     internal_static_google_analytics_data_v1alpha_Cohort_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_analytics_data_v1alpha_Cohort_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_Cohort_descriptor,
@@ -854,7 +869,7 @@ public final class ReportingApiProto {
               "Name", "Dimension", "DateRange",
             });
     internal_static_google_analytics_data_v1alpha_CohortsRange_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_analytics_data_v1alpha_CohortsRange_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_CohortsRange_descriptor,
@@ -862,7 +877,7 @@ public final class ReportingApiProto {
               "Granularity", "StartOffset", "EndOffset",
             });
     internal_static_google_analytics_data_v1alpha_CohortReportSettings_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_analytics_data_v1alpha_CohortReportSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_CohortReportSettings_descriptor,
@@ -870,7 +885,7 @@ public final class ReportingApiProto {
               "Accumulate",
             });
     internal_static_google_analytics_data_v1alpha_ResponseMetaData_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_analytics_data_v1alpha_ResponseMetaData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_ResponseMetaData_descriptor,
@@ -881,6 +896,7 @@ public final class ReportingApiProto {
               "TimeZone",
               "EmptyReason",
               "SubjectToThresholding",
+              "SamplingMetadatas",
             });
     internal_static_google_analytics_data_v1alpha_ResponseMetaData_SchemaRestrictionResponse_descriptor =
         internal_static_google_analytics_data_v1alpha_ResponseMetaData_descriptor
@@ -903,7 +919,7 @@ public final class ReportingApiProto {
               "MetricName", "RestrictedMetricTypes",
             });
     internal_static_google_analytics_data_v1alpha_DimensionHeader_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_analytics_data_v1alpha_DimensionHeader_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_DimensionHeader_descriptor,
@@ -911,7 +927,7 @@ public final class ReportingApiProto {
               "Name",
             });
     internal_static_google_analytics_data_v1alpha_MetricHeader_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_analytics_data_v1alpha_MetricHeader_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_MetricHeader_descriptor,
@@ -919,7 +935,7 @@ public final class ReportingApiProto {
               "Name", "Type",
             });
     internal_static_google_analytics_data_v1alpha_Row_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_analytics_data_v1alpha_Row_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_Row_descriptor,
@@ -927,7 +943,7 @@ public final class ReportingApiProto {
               "DimensionValues", "MetricValues",
             });
     internal_static_google_analytics_data_v1alpha_DimensionValue_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_analytics_data_v1alpha_DimensionValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_DimensionValue_descriptor,
@@ -935,7 +951,7 @@ public final class ReportingApiProto {
               "Value", "OneValue",
             });
     internal_static_google_analytics_data_v1alpha_MetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_analytics_data_v1alpha_MetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_MetricValue_descriptor,
@@ -943,7 +959,7 @@ public final class ReportingApiProto {
               "Value", "OneValue",
             });
     internal_static_google_analytics_data_v1alpha_PropertyQuota_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_analytics_data_v1alpha_PropertyQuota_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_PropertyQuota_descriptor,
@@ -956,7 +972,7 @@ public final class ReportingApiProto {
               "TokensPerProjectPerHour",
             });
     internal_static_google_analytics_data_v1alpha_QuotaStatus_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_analytics_data_v1alpha_QuotaStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_QuotaStatus_descriptor,
@@ -964,7 +980,7 @@ public final class ReportingApiProto {
               "Consumed", "Remaining",
             });
     internal_static_google_analytics_data_v1alpha_FunnelBreakdown_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_analytics_data_v1alpha_FunnelBreakdown_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelBreakdown_descriptor,
@@ -972,7 +988,7 @@ public final class ReportingApiProto {
               "BreakdownDimension", "Limit",
             });
     internal_static_google_analytics_data_v1alpha_FunnelNextAction_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_analytics_data_v1alpha_FunnelNextAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelNextAction_descriptor,
@@ -980,7 +996,7 @@ public final class ReportingApiProto {
               "NextActionDimension", "Limit",
             });
     internal_static_google_analytics_data_v1alpha_Funnel_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_analytics_data_v1alpha_Funnel_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_Funnel_descriptor,
@@ -988,7 +1004,7 @@ public final class ReportingApiProto {
               "IsOpenFunnel", "Steps",
             });
     internal_static_google_analytics_data_v1alpha_FunnelStep_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_analytics_data_v1alpha_FunnelStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelStep_descriptor,
@@ -996,7 +1012,7 @@ public final class ReportingApiProto {
               "Name", "IsDirectlyFollowedBy", "WithinDurationFromPriorStep", "FilterExpression",
             });
     internal_static_google_analytics_data_v1alpha_FunnelSubReport_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_analytics_data_v1alpha_FunnelSubReport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelSubReport_descriptor,
@@ -1004,7 +1020,7 @@ public final class ReportingApiProto {
               "DimensionHeaders", "MetricHeaders", "Rows", "Metadata",
             });
     internal_static_google_analytics_data_v1alpha_UserSegment_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_analytics_data_v1alpha_UserSegment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_UserSegment_descriptor,
@@ -1012,7 +1028,7 @@ public final class ReportingApiProto {
               "UserInclusionCriteria", "Exclusion",
             });
     internal_static_google_analytics_data_v1alpha_UserSegmentCriteria_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_analytics_data_v1alpha_UserSegmentCriteria_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_UserSegmentCriteria_descriptor,
@@ -1020,7 +1036,7 @@ public final class ReportingApiProto {
               "AndConditionGroups", "AndSequenceGroups",
             });
     internal_static_google_analytics_data_v1alpha_UserSegmentConditionGroup_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_analytics_data_v1alpha_UserSegmentConditionGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_UserSegmentConditionGroup_descriptor,
@@ -1028,7 +1044,7 @@ public final class ReportingApiProto {
               "ConditionScoping", "SegmentFilterExpression",
             });
     internal_static_google_analytics_data_v1alpha_UserSegmentSequenceGroup_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_analytics_data_v1alpha_UserSegmentSequenceGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_UserSegmentSequenceGroup_descriptor,
@@ -1036,7 +1052,7 @@ public final class ReportingApiProto {
               "SequenceScoping", "SequenceMaximumDuration", "UserSequenceSteps",
             });
     internal_static_google_analytics_data_v1alpha_UserSequenceStep_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_analytics_data_v1alpha_UserSequenceStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_UserSequenceStep_descriptor,
@@ -1044,7 +1060,7 @@ public final class ReportingApiProto {
               "IsDirectlyFollowedBy", "StepScoping", "SegmentFilterExpression",
             });
     internal_static_google_analytics_data_v1alpha_UserSegmentExclusion_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_analytics_data_v1alpha_UserSegmentExclusion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_UserSegmentExclusion_descriptor,
@@ -1052,7 +1068,7 @@ public final class ReportingApiProto {
               "UserExclusionDuration", "UserExclusionCriteria",
             });
     internal_static_google_analytics_data_v1alpha_SessionSegment_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_analytics_data_v1alpha_SessionSegment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SessionSegment_descriptor,
@@ -1060,7 +1076,7 @@ public final class ReportingApiProto {
               "SessionInclusionCriteria", "Exclusion",
             });
     internal_static_google_analytics_data_v1alpha_SessionSegmentCriteria_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_analytics_data_v1alpha_SessionSegmentCriteria_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SessionSegmentCriteria_descriptor,
@@ -1068,7 +1084,7 @@ public final class ReportingApiProto {
               "AndConditionGroups",
             });
     internal_static_google_analytics_data_v1alpha_SessionSegmentConditionGroup_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_analytics_data_v1alpha_SessionSegmentConditionGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SessionSegmentConditionGroup_descriptor,
@@ -1076,7 +1092,7 @@ public final class ReportingApiProto {
               "ConditionScoping", "SegmentFilterExpression",
             });
     internal_static_google_analytics_data_v1alpha_SessionSegmentExclusion_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_analytics_data_v1alpha_SessionSegmentExclusion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SessionSegmentExclusion_descriptor,
@@ -1084,7 +1100,7 @@ public final class ReportingApiProto {
               "SessionExclusionDuration", "SessionExclusionCriteria",
             });
     internal_static_google_analytics_data_v1alpha_EventSegment_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_analytics_data_v1alpha_EventSegment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_EventSegment_descriptor,
@@ -1092,7 +1108,7 @@ public final class ReportingApiProto {
               "EventInclusionCriteria", "Exclusion",
             });
     internal_static_google_analytics_data_v1alpha_EventSegmentCriteria_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_analytics_data_v1alpha_EventSegmentCriteria_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_EventSegmentCriteria_descriptor,
@@ -1100,7 +1116,7 @@ public final class ReportingApiProto {
               "AndConditionGroups",
             });
     internal_static_google_analytics_data_v1alpha_EventSegmentConditionGroup_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_analytics_data_v1alpha_EventSegmentConditionGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_EventSegmentConditionGroup_descriptor,
@@ -1108,7 +1124,7 @@ public final class ReportingApiProto {
               "ConditionScoping", "SegmentFilterExpression",
             });
     internal_static_google_analytics_data_v1alpha_EventSegmentExclusion_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_analytics_data_v1alpha_EventSegmentExclusion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_EventSegmentExclusion_descriptor,
@@ -1116,7 +1132,7 @@ public final class ReportingApiProto {
               "EventExclusionDuration", "EventExclusionCriteria",
             });
     internal_static_google_analytics_data_v1alpha_Segment_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_analytics_data_v1alpha_Segment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_Segment_descriptor,
@@ -1124,7 +1140,7 @@ public final class ReportingApiProto {
               "Name", "UserSegment", "SessionSegment", "EventSegment", "OneSegmentScope",
             });
     internal_static_google_analytics_data_v1alpha_SegmentFilterExpression_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_analytics_data_v1alpha_SegmentFilterExpression_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentFilterExpression_descriptor,
@@ -1132,7 +1148,7 @@ public final class ReportingApiProto {
               "AndGroup", "OrGroup", "NotExpression", "SegmentFilter", "SegmentEventFilter", "Expr",
             });
     internal_static_google_analytics_data_v1alpha_SegmentFilterExpressionList_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_analytics_data_v1alpha_SegmentFilterExpressionList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentFilterExpressionList_descriptor,
@@ -1140,7 +1156,7 @@ public final class ReportingApiProto {
               "Expressions",
             });
     internal_static_google_analytics_data_v1alpha_SegmentFilter_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_analytics_data_v1alpha_SegmentFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentFilter_descriptor,
@@ -1154,7 +1170,7 @@ public final class ReportingApiProto {
               "OneFilter",
             });
     internal_static_google_analytics_data_v1alpha_SegmentFilterScoping_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_analytics_data_v1alpha_SegmentFilterScoping_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentFilterScoping_descriptor,
@@ -1162,7 +1178,7 @@ public final class ReportingApiProto {
               "AtAnyPointInTime",
             });
     internal_static_google_analytics_data_v1alpha_SegmentEventFilter_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_analytics_data_v1alpha_SegmentEventFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentEventFilter_descriptor,
@@ -1170,7 +1186,7 @@ public final class ReportingApiProto {
               "EventName", "SegmentParameterFilterExpression",
             });
     internal_static_google_analytics_data_v1alpha_SegmentParameterFilterExpression_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_analytics_data_v1alpha_SegmentParameterFilterExpression_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentParameterFilterExpression_descriptor,
@@ -1178,7 +1194,7 @@ public final class ReportingApiProto {
               "AndGroup", "OrGroup", "NotExpression", "SegmentParameterFilter", "Expr",
             });
     internal_static_google_analytics_data_v1alpha_SegmentParameterFilterExpressionList_descriptor =
-        getDescriptor().getMessageTypes().get(51);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_analytics_data_v1alpha_SegmentParameterFilterExpressionList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentParameterFilterExpressionList_descriptor,
@@ -1186,7 +1202,7 @@ public final class ReportingApiProto {
               "Expressions",
             });
     internal_static_google_analytics_data_v1alpha_SegmentParameterFilter_descriptor =
-        getDescriptor().getMessageTypes().get(52);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_analytics_data_v1alpha_SegmentParameterFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentParameterFilter_descriptor,
@@ -1202,7 +1218,7 @@ public final class ReportingApiProto {
               "OneFilter",
             });
     internal_static_google_analytics_data_v1alpha_SegmentParameterFilterScoping_descriptor =
-        getDescriptor().getMessageTypes().get(53);
+        getDescriptor().getMessageTypes().get(54);
     internal_static_google_analytics_data_v1alpha_SegmentParameterFilterScoping_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SegmentParameterFilterScoping_descriptor,
@@ -1210,7 +1226,7 @@ public final class ReportingApiProto {
               "InAnyNDayPeriod",
             });
     internal_static_google_analytics_data_v1alpha_FunnelFilterExpression_descriptor =
-        getDescriptor().getMessageTypes().get(54);
+        getDescriptor().getMessageTypes().get(55);
     internal_static_google_analytics_data_v1alpha_FunnelFilterExpression_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelFilterExpression_descriptor,
@@ -1223,7 +1239,7 @@ public final class ReportingApiProto {
               "Expr",
             });
     internal_static_google_analytics_data_v1alpha_FunnelFilterExpressionList_descriptor =
-        getDescriptor().getMessageTypes().get(55);
+        getDescriptor().getMessageTypes().get(56);
     internal_static_google_analytics_data_v1alpha_FunnelFilterExpressionList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelFilterExpressionList_descriptor,
@@ -1231,7 +1247,7 @@ public final class ReportingApiProto {
               "Expressions",
             });
     internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor =
-        getDescriptor().getMessageTypes().get(56);
+        getDescriptor().getMessageTypes().get(57);
     internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor,
@@ -1244,7 +1260,7 @@ public final class ReportingApiProto {
               "OneFilter",
             });
     internal_static_google_analytics_data_v1alpha_FunnelEventFilter_descriptor =
-        getDescriptor().getMessageTypes().get(57);
+        getDescriptor().getMessageTypes().get(58);
     internal_static_google_analytics_data_v1alpha_FunnelEventFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelEventFilter_descriptor,
@@ -1252,7 +1268,7 @@ public final class ReportingApiProto {
               "EventName", "FunnelParameterFilterExpression",
             });
     internal_static_google_analytics_data_v1alpha_FunnelParameterFilterExpression_descriptor =
-        getDescriptor().getMessageTypes().get(58);
+        getDescriptor().getMessageTypes().get(59);
     internal_static_google_analytics_data_v1alpha_FunnelParameterFilterExpression_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelParameterFilterExpression_descriptor,
@@ -1260,7 +1276,7 @@ public final class ReportingApiProto {
               "AndGroup", "OrGroup", "NotExpression", "FunnelParameterFilter", "Expr",
             });
     internal_static_google_analytics_data_v1alpha_FunnelParameterFilterExpressionList_descriptor =
-        getDescriptor().getMessageTypes().get(59);
+        getDescriptor().getMessageTypes().get(60);
     internal_static_google_analytics_data_v1alpha_FunnelParameterFilterExpressionList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelParameterFilterExpressionList_descriptor,
@@ -1268,7 +1284,7 @@ public final class ReportingApiProto {
               "Expressions",
             });
     internal_static_google_analytics_data_v1alpha_FunnelParameterFilter_descriptor =
-        getDescriptor().getMessageTypes().get(60);
+        getDescriptor().getMessageTypes().get(61);
     internal_static_google_analytics_data_v1alpha_FunnelParameterFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelParameterFilter_descriptor,
@@ -1283,7 +1299,7 @@ public final class ReportingApiProto {
               "OneFilter",
             });
     internal_static_google_analytics_data_v1alpha_FunnelResponseMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(61);
+        getDescriptor().getMessageTypes().get(62);
     internal_static_google_analytics_data_v1alpha_FunnelResponseMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelResponseMetadata_descriptor,
@@ -1291,7 +1307,7 @@ public final class ReportingApiProto {
               "SamplingMetadatas",
             });
     internal_static_google_analytics_data_v1alpha_SamplingMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(62);
+        getDescriptor().getMessageTypes().get(63);
     internal_static_google_analytics_data_v1alpha_SamplingMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_SamplingMetadata_descriptor,

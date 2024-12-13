@@ -28,12 +28,12 @@ public interface ThreadOrBuilder
    *
    *
    * <pre>
-   * Resource name of the thread.
+   * Identifier. Resource name of the thread.
    *
    * Example: `spaces/{space}/threads/{thread}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface ThreadOrBuilder
    *
    *
    * <pre>
-   * Resource name of the thread.
+   * Identifier. Resource name of the thread.
    *
    * Example: `spaces/{space}/threads/{thread}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

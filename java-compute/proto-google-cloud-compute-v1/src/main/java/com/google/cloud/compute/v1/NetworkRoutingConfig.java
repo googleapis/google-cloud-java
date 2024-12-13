@@ -39,6 +39,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   }
 
   private NetworkRoutingConfig() {
+    bgpBestPathSelectionMode_ = "";
+    bgpInterRegionCost_ = "";
     routingMode_ = "";
   }
 
@@ -61,6 +63,262 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.NetworkRoutingConfig.class,
             com.google.cloud.compute.v1.NetworkRoutingConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NetworkRoutingConfig.BgpBestPathSelectionMode}
+   */
+  public enum BgpBestPathSelectionMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_BGP_BEST_PATH_SELECTION_MODE = 0;</code>
+     */
+    UNDEFINED_BGP_BEST_PATH_SELECTION_MODE(0),
+    /** <code>LEGACY = 94234569;</code> */
+    LEGACY(94234569),
+    /** <code>STANDARD = 484642493;</code> */
+    STANDARD(484642493),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_BGP_BEST_PATH_SELECTION_MODE = 0;</code>
+     */
+    public static final int UNDEFINED_BGP_BEST_PATH_SELECTION_MODE_VALUE = 0;
+    /** <code>LEGACY = 94234569;</code> */
+    public static final int LEGACY_VALUE = 94234569;
+    /** <code>STANDARD = 484642493;</code> */
+    public static final int STANDARD_VALUE = 484642493;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BgpBestPathSelectionMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BgpBestPathSelectionMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_BGP_BEST_PATH_SELECTION_MODE;
+        case 94234569:
+          return LEGACY;
+        case 484642493:
+          return STANDARD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BgpBestPathSelectionMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BgpBestPathSelectionMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BgpBestPathSelectionMode>() {
+              public BgpBestPathSelectionMode findValueByNumber(int number) {
+                return BgpBestPathSelectionMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NetworkRoutingConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final BgpBestPathSelectionMode[] VALUES = values();
+
+    public static BgpBestPathSelectionMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BgpBestPathSelectionMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkRoutingConfig.BgpBestPathSelectionMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NetworkRoutingConfig.BgpInterRegionCost}
+   */
+  public enum BgpInterRegionCost implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_BGP_INTER_REGION_COST = 0;</code>
+     */
+    UNDEFINED_BGP_INTER_REGION_COST(0),
+    /** <code>ADD_COST_TO_MED = 490583004;</code> */
+    ADD_COST_TO_MED(490583004),
+    /** <code>DEFAULT = 115302945;</code> */
+    DEFAULT(115302945),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_BGP_INTER_REGION_COST = 0;</code>
+     */
+    public static final int UNDEFINED_BGP_INTER_REGION_COST_VALUE = 0;
+    /** <code>ADD_COST_TO_MED = 490583004;</code> */
+    public static final int ADD_COST_TO_MED_VALUE = 490583004;
+    /** <code>DEFAULT = 115302945;</code> */
+    public static final int DEFAULT_VALUE = 115302945;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BgpInterRegionCost valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BgpInterRegionCost forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_BGP_INTER_REGION_COST;
+        case 490583004:
+          return ADD_COST_TO_MED;
+        case 115302945:
+          return DEFAULT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BgpInterRegionCost>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BgpInterRegionCost>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BgpInterRegionCost>() {
+              public BgpInterRegionCost findValueByNumber(int number) {
+                return BgpInterRegionCost.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NetworkRoutingConfig.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final BgpInterRegionCost[] VALUES = values();
+
+    public static BgpInterRegionCost valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BgpInterRegionCost(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkRoutingConfig.BgpInterRegionCost)
   }
 
   /**
@@ -164,7 +422,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.NetworkRoutingConfig.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.NetworkRoutingConfig.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final RoutingMode[] VALUES = values();
@@ -189,6 +447,177 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   }
 
   private int bitField0_;
+  public static final int BGP_ALWAYS_COMPARE_MED_FIELD_NUMBER = 213102902;
+  private boolean bgpAlwaysCompareMed_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+   * </pre>
+   *
+   * <code>optional bool bgp_always_compare_med = 213102902;</code>
+   *
+   * @return Whether the bgpAlwaysCompareMed field is set.
+   */
+  @java.lang.Override
+  public boolean hasBgpAlwaysCompareMed() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+   * </pre>
+   *
+   * <code>optional bool bgp_always_compare_med = 213102902;</code>
+   *
+   * @return The bgpAlwaysCompareMed.
+   */
+  @java.lang.Override
+  public boolean getBgpAlwaysCompareMed() {
+    return bgpAlwaysCompareMed_;
+  }
+
+  public static final int BGP_BEST_PATH_SELECTION_MODE_FIELD_NUMBER = 317816297;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bgpBestPathSelectionMode_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return Whether the bgpBestPathSelectionMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasBgpBestPathSelectionMode() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return The bgpBestPathSelectionMode.
+   */
+  @java.lang.Override
+  public java.lang.String getBgpBestPathSelectionMode() {
+    java.lang.Object ref = bgpBestPathSelectionMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bgpBestPathSelectionMode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return The bytes for bgpBestPathSelectionMode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBgpBestPathSelectionModeBytes() {
+    java.lang.Object ref = bgpBestPathSelectionMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      bgpBestPathSelectionMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BGP_INTER_REGION_COST_FIELD_NUMBER = 462142689;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bgpInterRegionCost_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return Whether the bgpInterRegionCost field is set.
+   */
+  @java.lang.Override
+  public boolean hasBgpInterRegionCost() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return The bgpInterRegionCost.
+   */
+  @java.lang.Override
+  public java.lang.String getBgpInterRegionCost() {
+    java.lang.Object ref = bgpInterRegionCost_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bgpInterRegionCost_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return The bytes for bgpInterRegionCost.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBgpInterRegionCostBytes() {
+    java.lang.Object ref = bgpInterRegionCost_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      bgpInterRegionCost_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ROUTING_MODE_FIELD_NUMBER = 475143548;
 
   @SuppressWarnings("serial")
@@ -207,7 +636,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasRoutingMode() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -273,6 +702,16 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(213102902, bgpAlwaysCompareMed_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 317816297, bgpBestPathSelectionMode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 462142689, bgpInterRegionCost_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 475143548, routingMode_);
     }
     getUnknownFields().writeTo(output);
@@ -285,6 +724,19 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(213102902, bgpAlwaysCompareMed_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              317816297, bgpBestPathSelectionMode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(462142689, bgpInterRegionCost_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(475143548, routingMode_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -303,6 +755,18 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     com.google.cloud.compute.v1.NetworkRoutingConfig other =
         (com.google.cloud.compute.v1.NetworkRoutingConfig) obj;
 
+    if (hasBgpAlwaysCompareMed() != other.hasBgpAlwaysCompareMed()) return false;
+    if (hasBgpAlwaysCompareMed()) {
+      if (getBgpAlwaysCompareMed() != other.getBgpAlwaysCompareMed()) return false;
+    }
+    if (hasBgpBestPathSelectionMode() != other.hasBgpBestPathSelectionMode()) return false;
+    if (hasBgpBestPathSelectionMode()) {
+      if (!getBgpBestPathSelectionMode().equals(other.getBgpBestPathSelectionMode())) return false;
+    }
+    if (hasBgpInterRegionCost() != other.hasBgpInterRegionCost()) return false;
+    if (hasBgpInterRegionCost()) {
+      if (!getBgpInterRegionCost().equals(other.getBgpInterRegionCost())) return false;
+    }
     if (hasRoutingMode() != other.hasRoutingMode()) return false;
     if (hasRoutingMode()) {
       if (!getRoutingMode().equals(other.getRoutingMode())) return false;
@@ -318,6 +782,18 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasBgpAlwaysCompareMed()) {
+      hash = (37 * hash) + BGP_ALWAYS_COMPARE_MED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBgpAlwaysCompareMed());
+    }
+    if (hasBgpBestPathSelectionMode()) {
+      hash = (37 * hash) + BGP_BEST_PATH_SELECTION_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getBgpBestPathSelectionMode().hashCode();
+    }
+    if (hasBgpInterRegionCost()) {
+      hash = (37 * hash) + BGP_INTER_REGION_COST_FIELD_NUMBER;
+      hash = (53 * hash) + getBgpInterRegionCost().hashCode();
+    }
     if (hasRoutingMode()) {
       hash = (37 * hash) + ROUTING_MODE_FIELD_NUMBER;
       hash = (53 * hash) + getRoutingMode().hashCode();
@@ -461,6 +937,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bgpAlwaysCompareMed_ = false;
+      bgpBestPathSelectionMode_ = "";
+      bgpInterRegionCost_ = "";
       routingMode_ = "";
       return this;
     }
@@ -500,8 +979,20 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.routingMode_ = routingMode_;
+        result.bgpAlwaysCompareMed_ = bgpAlwaysCompareMed_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.bgpBestPathSelectionMode_ = bgpBestPathSelectionMode_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bgpInterRegionCost_ = bgpInterRegionCost_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.routingMode_ = routingMode_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -552,9 +1043,22 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeFrom(com.google.cloud.compute.v1.NetworkRoutingConfig other) {
       if (other == com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance())
         return this;
+      if (other.hasBgpAlwaysCompareMed()) {
+        setBgpAlwaysCompareMed(other.getBgpAlwaysCompareMed());
+      }
+      if (other.hasBgpBestPathSelectionMode()) {
+        bgpBestPathSelectionMode_ = other.bgpBestPathSelectionMode_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasBgpInterRegionCost()) {
+        bgpInterRegionCost_ = other.bgpInterRegionCost_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasRoutingMode()) {
         routingMode_ = other.routingMode_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -583,10 +1087,28 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
             case 0:
               done = true;
               break;
+            case 1704823216:
+              {
+                bgpAlwaysCompareMed_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 1704823216
+            case -1752436918:
+              {
+                bgpBestPathSelectionMode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1752436918
+            case -597825782:
+              {
+                bgpInterRegionCost_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -597825782
             case -493818910:
               {
                 routingMode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -493818910
             default:
@@ -608,6 +1130,326 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
+    private boolean bgpAlwaysCompareMed_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+     * </pre>
+     *
+     * <code>optional bool bgp_always_compare_med = 213102902;</code>
+     *
+     * @return Whether the bgpAlwaysCompareMed field is set.
+     */
+    @java.lang.Override
+    public boolean hasBgpAlwaysCompareMed() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+     * </pre>
+     *
+     * <code>optional bool bgp_always_compare_med = 213102902;</code>
+     *
+     * @return The bgpAlwaysCompareMed.
+     */
+    @java.lang.Override
+    public boolean getBgpAlwaysCompareMed() {
+      return bgpAlwaysCompareMed_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+     * </pre>
+     *
+     * <code>optional bool bgp_always_compare_med = 213102902;</code>
+     *
+     * @param value The bgpAlwaysCompareMed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBgpAlwaysCompareMed(boolean value) {
+
+      bgpAlwaysCompareMed_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+     * </pre>
+     *
+     * <code>optional bool bgp_always_compare_med = 213102902;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBgpAlwaysCompareMed() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      bgpAlwaysCompareMed_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object bgpBestPathSelectionMode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * Check the BgpBestPathSelectionMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+     *
+     * @return Whether the bgpBestPathSelectionMode field is set.
+     */
+    public boolean hasBgpBestPathSelectionMode() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * Check the BgpBestPathSelectionMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+     *
+     * @return The bgpBestPathSelectionMode.
+     */
+    public java.lang.String getBgpBestPathSelectionMode() {
+      java.lang.Object ref = bgpBestPathSelectionMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bgpBestPathSelectionMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * Check the BgpBestPathSelectionMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+     *
+     * @return The bytes for bgpBestPathSelectionMode.
+     */
+    public com.google.protobuf.ByteString getBgpBestPathSelectionModeBytes() {
+      java.lang.Object ref = bgpBestPathSelectionMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bgpBestPathSelectionMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * Check the BgpBestPathSelectionMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+     *
+     * @param value The bgpBestPathSelectionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBgpBestPathSelectionMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bgpBestPathSelectionMode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * Check the BgpBestPathSelectionMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBgpBestPathSelectionMode() {
+      bgpBestPathSelectionMode_ = getDefaultInstance().getBgpBestPathSelectionMode();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * Check the BgpBestPathSelectionMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+     *
+     * @param value The bytes for bgpBestPathSelectionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBgpBestPathSelectionModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bgpBestPathSelectionMode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object bgpInterRegionCost_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Check the BgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_inter_region_cost = 462142689;</code>
+     *
+     * @return Whether the bgpInterRegionCost field is set.
+     */
+    public boolean hasBgpInterRegionCost() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Check the BgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_inter_region_cost = 462142689;</code>
+     *
+     * @return The bgpInterRegionCost.
+     */
+    public java.lang.String getBgpInterRegionCost() {
+      java.lang.Object ref = bgpInterRegionCost_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bgpInterRegionCost_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Check the BgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_inter_region_cost = 462142689;</code>
+     *
+     * @return The bytes for bgpInterRegionCost.
+     */
+    public com.google.protobuf.ByteString getBgpInterRegionCostBytes() {
+      java.lang.Object ref = bgpInterRegionCost_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bgpInterRegionCost_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Check the BgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_inter_region_cost = 462142689;</code>
+     *
+     * @param value The bgpInterRegionCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBgpInterRegionCost(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bgpInterRegionCost_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Check the BgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_inter_region_cost = 462142689;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBgpInterRegionCost() {
+      bgpInterRegionCost_ = getDefaultInstance().getBgpInterRegionCost();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Check the BgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bgp_inter_region_cost = 462142689;</code>
+     *
+     * @param value The bytes for bgpInterRegionCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBgpInterRegionCostBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bgpInterRegionCost_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object routingMode_ = "";
     /**
      *
@@ -622,7 +1464,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the routingMode field is set.
      */
     public boolean hasRoutingMode() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -688,7 +1530,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       routingMode_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -706,7 +1548,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder clearRoutingMode() {
       routingMode_ = getDefaultInstance().getRoutingMode();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -729,7 +1571,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       routingMode_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

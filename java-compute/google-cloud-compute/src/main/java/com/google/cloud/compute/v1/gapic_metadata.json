@@ -733,11 +733,23 @@
             "Resize": {
               "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
+            "ResumeInstances": {
+              "methods": ["resumeInstancesAsync", "resumeInstancesAsync", "resumeInstancesOperationCallable", "resumeInstancesCallable"]
+            },
             "SetInstanceTemplate": {
               "methods": ["setInstanceTemplateAsync", "setInstanceTemplateAsync", "setInstanceTemplateOperationCallable", "setInstanceTemplateCallable"]
             },
             "SetTargetPools": {
               "methods": ["setTargetPoolsAsync", "setTargetPoolsAsync", "setTargetPoolsOperationCallable", "setTargetPoolsCallable"]
+            },
+            "StartInstances": {
+              "methods": ["startInstancesAsync", "startInstancesAsync", "startInstancesOperationCallable", "startInstancesCallable"]
+            },
+            "StopInstances": {
+              "methods": ["stopInstancesAsync", "stopInstancesAsync", "stopInstancesOperationCallable", "stopInstancesCallable"]
+            },
+            "SuspendInstances": {
+              "methods": ["suspendInstancesAsync", "suspendInstancesAsync", "suspendInstancesOperationCallable", "suspendInstancesCallable"]
             },
             "UpdatePerInstanceConfigs": {
               "methods": ["updatePerInstanceConfigsAsync", "updatePerInstanceConfigsAsync", "updatePerInstanceConfigsOperationCallable", "updatePerInstanceConfigsCallable"]
@@ -1358,6 +1370,21 @@
         }
       }
     },
+    "NetworkProfiles": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NetworkProfilesClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "Networks": {
       "clients": {
         "grpc": {
@@ -1924,11 +1951,23 @@
             "Resize": {
               "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
+            "ResumeInstances": {
+              "methods": ["resumeInstancesAsync", "resumeInstancesAsync", "resumeInstancesOperationCallable", "resumeInstancesCallable"]
+            },
             "SetInstanceTemplate": {
               "methods": ["setInstanceTemplateAsync", "setInstanceTemplateAsync", "setInstanceTemplateOperationCallable", "setInstanceTemplateCallable"]
             },
             "SetTargetPools": {
               "methods": ["setTargetPoolsAsync", "setTargetPoolsAsync", "setTargetPoolsOperationCallable", "setTargetPoolsCallable"]
+            },
+            "StartInstances": {
+              "methods": ["startInstancesAsync", "startInstancesAsync", "startInstancesOperationCallable", "startInstancesCallable"]
+            },
+            "StopInstances": {
+              "methods": ["stopInstancesAsync", "stopInstancesAsync", "stopInstancesOperationCallable", "stopInstancesCallable"]
+            },
+            "SuspendInstances": {
+              "methods": ["suspendInstancesAsync", "suspendInstancesAsync", "suspendInstancesOperationCallable", "suspendInstancesCallable"]
             },
             "UpdatePerInstanceConfigs": {
               "methods": ["updatePerInstanceConfigsAsync", "updatePerInstanceConfigsAsync", "updatePerInstanceConfigsOperationCallable", "updatePerInstanceConfigsCallable"]
@@ -2187,6 +2226,9 @@
             },
             "RemoveRule": {
               "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
           }
         }

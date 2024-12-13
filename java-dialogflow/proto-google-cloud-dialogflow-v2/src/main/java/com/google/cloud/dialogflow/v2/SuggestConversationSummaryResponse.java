@@ -1715,9 +1715,11 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
    *
    * <pre>
    * Number of messages prior to and including
-   * [last_conversation_message][] used to compile the suggestion. It may be
-   * smaller than the [SuggestSummaryRequest.context_size][] field in the
-   * request if there weren't that many messages in the conversation.
+   * [latest_message][google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.latest_message]
+   * used to compile the suggestion. It may be smaller than the
+   * [SuggestConversationSummaryRequest.context_size][google.cloud.dialogflow.v2.SuggestConversationSummaryRequest.context_size]
+   * field in the request if there weren't that many messages in the
+   * conversation.
    * </pre>
    *
    * <code>int32 context_size = 3;</code>
@@ -2480,9 +2482,11 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      *
      * <pre>
      * Number of messages prior to and including
-     * [last_conversation_message][] used to compile the suggestion. It may be
-     * smaller than the [SuggestSummaryRequest.context_size][] field in the
-     * request if there weren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.latest_message]
+     * used to compile the suggestion. It may be smaller than the
+     * [SuggestConversationSummaryRequest.context_size][google.cloud.dialogflow.v2.SuggestConversationSummaryRequest.context_size]
+     * field in the request if there weren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -2498,9 +2502,11 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      *
      * <pre>
      * Number of messages prior to and including
-     * [last_conversation_message][] used to compile the suggestion. It may be
-     * smaller than the [SuggestSummaryRequest.context_size][] field in the
-     * request if there weren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.latest_message]
+     * used to compile the suggestion. It may be smaller than the
+     * [SuggestConversationSummaryRequest.context_size][google.cloud.dialogflow.v2.SuggestConversationSummaryRequest.context_size]
+     * field in the request if there weren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -2520,9 +2526,11 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      *
      * <pre>
      * Number of messages prior to and including
-     * [last_conversation_message][] used to compile the suggestion. It may be
-     * smaller than the [SuggestSummaryRequest.context_size][] field in the
-     * request if there weren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.latest_message]
+     * used to compile the suggestion. It may be smaller than the
+     * [SuggestConversationSummaryRequest.context_size][google.cloud.dialogflow.v2.SuggestConversationSummaryRequest.context_size]
+     * field in the request if there weren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>

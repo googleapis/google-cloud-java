@@ -197,6 +197,17 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
     return ((RegionSecurityPoliciesStubSettings) getStubSettings()).removeRuleOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation> setLabelsSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   public static final RegionSecurityPoliciesSettings create(RegionSecurityPoliciesStubSettings stub)
       throws IOException {
     return new RegionSecurityPoliciesSettings.Builder(stub.toBuilder()).build();
@@ -383,6 +394,18 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
             RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
         removeRuleOperationSettings() {
       return getStubSettingsBuilder().removeRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsRegionSecurityPolicyRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

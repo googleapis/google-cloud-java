@@ -28,7 +28,7 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Resource name of the message.
+   * Identifier. Resource name of the message.
    *
    * Format: `spaces/{space}/messages/{message}`
    *
@@ -45,7 +45,7 @@ public interface MessageOrBuilder
    * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -54,7 +54,7 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Resource name of the message.
+   * Identifier. Resource name of the message.
    *
    * Format: `spaces/{space}/messages/{message}`
    *
@@ -71,7 +71,7 @@ public interface MessageOrBuilder
    * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -275,10 +275,10 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Plain-text body of the message. The first link to an image, video, or web
-   * page generates a
-   * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-   * You can also [&#64;mention a Google Chat
+   * Optional. Plain-text body of the message. The first link to an image,
+   * video, or web page generates a [preview
+   * chip](https://developers.google.com/workspace/chat/preview-links). You can
+   * also [&#64;mention a Google Chat
    * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
    * or everyone in the space.
    *
@@ -286,7 +286,7 @@ public interface MessageOrBuilder
    * message](https://developers.google.com/workspace/chat/create-messages).
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The text.
    */
@@ -295,10 +295,10 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Plain-text body of the message. The first link to an image, video, or web
-   * page generates a
-   * [preview chip](https://developers.google.com/workspace/chat/preview-links).
-   * You can also [&#64;mention a Google Chat
+   * Optional. Plain-text body of the message. The first link to an image,
+   * video, or web page generates a [preview
+   * chip](https://developers.google.com/workspace/chat/preview-links). You can
+   * also [&#64;mention a Google Chat
    * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
    * or everyone in the space.
    *
@@ -306,7 +306,7 @@ public interface MessageOrBuilder
    * message](https://developers.google.com/workspace/chat/create-messages).
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for text.
    */
@@ -467,7 +467,7 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -480,14 +480,16 @@ public interface MessageOrBuilder
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.chat.v1.CardWithId> getCardsV2List();
   /**
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -500,14 +502,16 @@ public interface MessageOrBuilder
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.chat.v1.CardWithId getCardsV2(int index);
   /**
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -520,14 +524,16 @@ public interface MessageOrBuilder
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getCardsV2Count();
   /**
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -540,14 +546,16 @@ public interface MessageOrBuilder
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.chat.v1.CardWithIdOrBuilder> getCardsV2OrBuilderList();
   /**
    *
    *
    * <pre>
-   * An array of
+   * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
@@ -560,7 +568,9 @@ public interface MessageOrBuilder
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
    *
-   * <code>repeated .google.chat.v1.CardWithId cards_v2 = 22;</code>
+   * <code>
+   * repeated .google.chat.v1.CardWithId cards_v2 = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.chat.v1.CardWithIdOrBuilder getCardsV2OrBuilder(int index);
 
@@ -670,14 +680,14 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * If your Chat app [authenticates as a
+   * Output only. If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
-   * <code>.google.chat.v1.Space space = 12;</code>
+   * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the space field is set.
    */
@@ -686,14 +696,14 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * If your Chat app [authenticates as a
+   * Output only. If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
-   * <code>.google.chat.v1.Space space = 12;</code>
+   * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The space.
    */
@@ -702,14 +712,14 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * If your Chat app [authenticates as a
+   * Output only. If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
-   * <code>.google.chat.v1.Space space = 12;</code>
+   * <code>.google.chat.v1.Space space = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.chat.v1.SpaceOrBuilder getSpaceOrBuilder();
 
@@ -717,11 +727,11 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * A plain-text description of the message's cards, used when the actual cards
-   * can't be displayed—for example, mobile notifications.
+   * Optional. A plain-text description of the message's cards, used when the
+   * actual cards can't be displayed—for example, mobile notifications.
    * </pre>
    *
-   * <code>string fallback_text = 13;</code>
+   * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The fallbackText.
    */
@@ -730,11 +740,11 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * A plain-text description of the message's cards, used when the actual cards
-   * can't be displayed—for example, mobile notifications.
+   * Optional. A plain-text description of the message's cards, used when the
+   * actual cards can't be displayed—for example, mobile notifications.
    * </pre>
    *
-   * <code>string fallback_text = 13;</code>
+   * <code>string fallback_text = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for fallbackText.
    */
@@ -856,50 +866,60 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.chat.v1.Attachment> getAttachmentList();
   /**
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.chat.v1.Attachment getAttachment(int index);
   /**
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAttachmentCount();
   /**
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.chat.v1.AttachmentOrBuilder> getAttachmentOrBuilderList();
   /**
    *
    *
    * <pre>
-   * User-uploaded attachment.
+   * Optional. User-uploaded attachment.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Attachment attachment = 18;</code>
+   * <code>
+   * repeated .google.chat.v1.Attachment attachment = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.chat.v1.AttachmentOrBuilder getAttachmentOrBuilder(int index);
 
@@ -977,7 +997,7 @@ public interface MessageOrBuilder
    * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
-   * <code>string client_assigned_message_id = 32;</code>
+   * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The clientAssignedMessageId.
    */
@@ -994,7 +1014,7 @@ public interface MessageOrBuilder
    * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
-   * <code>string client_assigned_message_id = 32;</code>
+   * <code>string client_assigned_message_id = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for clientAssignedMessageId.
    */
@@ -1066,10 +1086,10 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Immutable. Input for creating a message, otherwise output only. The user
-   * that can view the message. When set, the message is private and only
-   * visible to the specified user and the Chat app. To include this field in
-   * your request, you must call the Chat API using [app
+   * Optional. Immutable. Input for creating a message, otherwise output only.
+   * The user that can view the message. When set, the message is private and
+   * only visible to the specified user and the Chat app. To include this field
+   * in your request, you must call the Chat API using [app
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
    * and omit the following:
    *
@@ -1082,7 +1102,7 @@ public interface MessageOrBuilder
    * </pre>
    *
    * <code>
-   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the privateMessageViewer field is set.
@@ -1092,10 +1112,10 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Immutable. Input for creating a message, otherwise output only. The user
-   * that can view the message. When set, the message is private and only
-   * visible to the specified user and the Chat app. To include this field in
-   * your request, you must call the Chat API using [app
+   * Optional. Immutable. Input for creating a message, otherwise output only.
+   * The user that can view the message. When set, the message is private and
+   * only visible to the specified user and the Chat app. To include this field
+   * in your request, you must call the Chat API using [app
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
    * and omit the following:
    *
@@ -1108,7 +1128,7 @@ public interface MessageOrBuilder
    * </pre>
    *
    * <code>
-   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The privateMessageViewer.
@@ -1118,10 +1138,10 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Immutable. Input for creating a message, otherwise output only. The user
-   * that can view the message. When set, the message is private and only
-   * visible to the specified user and the Chat app. To include this field in
-   * your request, you must call the Chat API using [app
+   * Optional. Immutable. Input for creating a message, otherwise output only.
+   * The user that can view the message. When set, the message is private and
+   * only visible to the specified user and the Chat app. To include this field
+   * in your request, you must call the Chat API using [app
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
    * and omit the following:
    *
@@ -1134,7 +1154,7 @@ public interface MessageOrBuilder
    * </pre>
    *
    * <code>
-   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.chat.v1.User private_message_viewer = 36 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.chat.v1.UserOrBuilder getPrivateMessageViewerOrBuilder();
@@ -1292,10 +1312,10 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1303,17 +1323,19 @@ public interface MessageOrBuilder
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.chat.v1.AccessoryWidget> getAccessoryWidgetsList();
   /**
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1321,17 +1343,19 @@ public interface MessageOrBuilder
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.chat.v1.AccessoryWidget getAccessoryWidgets(int index);
   /**
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1339,17 +1363,19 @@ public interface MessageOrBuilder
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAccessoryWidgetsCount();
   /**
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1357,7 +1383,9 @@ public interface MessageOrBuilder
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.chat.v1.AccessoryWidgetOrBuilder>
       getAccessoryWidgetsOrBuilderList();
@@ -1365,10 +1393,10 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * One or more interactive widgets that appear at the bottom of a message.
-   * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs. For
-   * details, see [Add interactive widgets at the bottom of a
+   * Optional. One or more interactive widgets that appear at the bottom of a
+   * message. You can add accessory widgets to messages that contain text,
+   * cards, or both text and cards. Not supported for messages that contain
+   * dialogs. For details, see [Add interactive widgets at the bottom of a
    * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
@@ -1376,7 +1404,9 @@ public interface MessageOrBuilder
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   * <code>
+   * repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.chat.v1.AccessoryWidgetOrBuilder getAccessoryWidgetsOrBuilder(int index);
 }

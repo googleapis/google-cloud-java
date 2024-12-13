@@ -163,6 +163,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
    * pairs, which can contain sensitive values such as a password, a token, or a
    * key. The values for all keys have to be base64-encoded strings. For details
    * see: https://kubernetes.io/docs/concepts/configuration/secret/
+   *
+   * Example:
+   *
+   * {
+   *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+   *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+   * }
    * </pre>
    *
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -188,6 +195,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
    * pairs, which can contain sensitive values such as a password, a token, or a
    * key. The values for all keys have to be base64-encoded strings. For details
    * see: https://kubernetes.io/docs/concepts/configuration/secret/
+   *
+   * Example:
+   *
+   * {
+   *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+   *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+   * }
    * </pre>
    *
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -204,6 +218,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
    * pairs, which can contain sensitive values such as a password, a token, or a
    * key. The values for all keys have to be base64-encoded strings. For details
    * see: https://kubernetes.io/docs/concepts/configuration/secret/
+   *
+   * Example:
+   *
+   * {
+   *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+   *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+   * }
    * </pre>
    *
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -227,6 +248,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
    * pairs, which can contain sensitive values such as a password, a token, or a
    * key. The values for all keys have to be base64-encoded strings. For details
    * see: https://kubernetes.io/docs/concepts/configuration/secret/
+   *
+   * Example:
+   *
+   * {
+   *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+   *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+   * }
    * </pre>
    *
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -794,6 +822,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
      * pairs, which can contain sensitive values such as a password, a token, or a
      * key. The values for all keys have to be base64-encoded strings. For details
      * see: https://kubernetes.io/docs/concepts/configuration/secret/
+     *
+     * Example:
+     *
+     * {
+     *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+     *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -819,6 +854,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
      * pairs, which can contain sensitive values such as a password, a token, or a
      * key. The values for all keys have to be base64-encoded strings. For details
      * see: https://kubernetes.io/docs/concepts/configuration/secret/
+     *
+     * Example:
+     *
+     * {
+     *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+     *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -835,6 +877,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
      * pairs, which can contain sensitive values such as a password, a token, or a
      * key. The values for all keys have to be base64-encoded strings. For details
      * see: https://kubernetes.io/docs/concepts/configuration/secret/
+     *
+     * Example:
+     *
+     * {
+     *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+     *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -858,6 +907,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
      * pairs, which can contain sensitive values such as a password, a token, or a
      * key. The values for all keys have to be base64-encoded strings. For details
      * see: https://kubernetes.io/docs/concepts/configuration/secret/
+     *
+     * Example:
+     *
+     * {
+     *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+     *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -887,6 +943,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
      * pairs, which can contain sensitive values such as a password, a token, or a
      * key. The values for all keys have to be base64-encoded strings. For details
      * see: https://kubernetes.io/docs/concepts/configuration/secret/
+     *
+     * Example:
+     *
+     * {
+     *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+     *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -912,6 +975,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
      * pairs, which can contain sensitive values such as a password, a token, or a
      * key. The values for all keys have to be base64-encoded strings. For details
      * see: https://kubernetes.io/docs/concepts/configuration/secret/
+     *
+     * Example:
+     *
+     * {
+     *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+     *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -935,6 +1005,13 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
      * pairs, which can contain sensitive values such as a password, a token, or a
      * key. The values for all keys have to be base64-encoded strings. For details
      * see: https://kubernetes.io/docs/concepts/configuration/secret/
+     *
+     * Example:
+     *
+     * {
+     *   "example": "ZXhhbXBsZV92YWx1ZQ==",
+     *   "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1622,6 +1622,7 @@ public class ConfigClientTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1685,6 +1686,7 @@ public class ConfigClientTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1748,6 +1750,7 @@ public class ConfigClientTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1800,6 +1803,7 @@ public class ConfigClientTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1940,6 +1944,7 @@ public class ConfigClientTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2000,6 +2005,7 @@ public class ConfigClientTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -72,11 +72,11 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The resource name of the attachment data. This field is used with the media
-   * API to download the attachment data.
+   * Optional. The resource name of the attachment data. This field is used with
+   * the media API to download the attachment data.
    * </pre>
    *
-   * <code>string resource_name = 1;</code>
+   * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The resourceName.
    */
@@ -96,11 +96,11 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The resource name of the attachment data. This field is used with the media
-   * API to download the attachment data.
+   * Optional. The resource name of the attachment data. This field is used with
+   * the media API to download the attachment data.
    * </pre>
    *
-   * <code>string resource_name = 1;</code>
+   * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for resourceName.
    */
@@ -125,12 +125,12 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Opaque token containing a reference to an uploaded attachment. Treated by
-   * clients as an opaque string and used to create or update Chat messages with
-   * attachments.
+   * Optional. Opaque token containing a reference to an uploaded attachment.
+   * Treated by clients as an opaque string and used to create or update Chat
+   * messages with attachments.
    * </pre>
    *
-   * <code>string attachment_upload_token = 2;</code>
+   * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The attachmentUploadToken.
    */
@@ -150,12 +150,12 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Opaque token containing a reference to an uploaded attachment. Treated by
-   * clients as an opaque string and used to create or update Chat messages with
-   * attachments.
+   * Optional. Opaque token containing a reference to an uploaded attachment.
+   * Treated by clients as an opaque string and used to create or update Chat
+   * messages with attachments.
    * </pre>
    *
-   * <code>string attachment_upload_token = 2;</code>
+   * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for attachmentUploadToken.
    */
@@ -539,11 +539,11 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the attachment data. This field is used with the media
-     * API to download the attachment data.
+     * Optional. The resource name of the attachment data. This field is used with
+     * the media API to download the attachment data.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The resourceName.
      */
@@ -562,11 +562,11 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the attachment data. This field is used with the media
-     * API to download the attachment data.
+     * Optional. The resource name of the attachment data. This field is used with
+     * the media API to download the attachment data.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for resourceName.
      */
@@ -585,11 +585,11 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the attachment data. This field is used with the media
-     * API to download the attachment data.
+     * Optional. The resource name of the attachment data. This field is used with
+     * the media API to download the attachment data.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The resourceName to set.
      * @return This builder for chaining.
@@ -607,11 +607,11 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the attachment data. This field is used with the media
-     * API to download the attachment data.
+     * Optional. The resource name of the attachment data. This field is used with
+     * the media API to download the attachment data.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -625,11 +625,11 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the attachment data. This field is used with the media
-     * API to download the attachment data.
+     * Optional. The resource name of the attachment data. This field is used with
+     * the media API to download the attachment data.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for resourceName to set.
      * @return This builder for chaining.
@@ -650,12 +650,12 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Opaque token containing a reference to an uploaded attachment. Treated by
-     * clients as an opaque string and used to create or update Chat messages with
-     * attachments.
+     * Optional. Opaque token containing a reference to an uploaded attachment.
+     * Treated by clients as an opaque string and used to create or update Chat
+     * messages with attachments.
      * </pre>
      *
-     * <code>string attachment_upload_token = 2;</code>
+     * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The attachmentUploadToken.
      */
@@ -674,12 +674,12 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Opaque token containing a reference to an uploaded attachment. Treated by
-     * clients as an opaque string and used to create or update Chat messages with
-     * attachments.
+     * Optional. Opaque token containing a reference to an uploaded attachment.
+     * Treated by clients as an opaque string and used to create or update Chat
+     * messages with attachments.
      * </pre>
      *
-     * <code>string attachment_upload_token = 2;</code>
+     * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for attachmentUploadToken.
      */
@@ -698,12 +698,12 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Opaque token containing a reference to an uploaded attachment. Treated by
-     * clients as an opaque string and used to create or update Chat messages with
-     * attachments.
+     * Optional. Opaque token containing a reference to an uploaded attachment.
+     * Treated by clients as an opaque string and used to create or update Chat
+     * messages with attachments.
      * </pre>
      *
-     * <code>string attachment_upload_token = 2;</code>
+     * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The attachmentUploadToken to set.
      * @return This builder for chaining.
@@ -721,12 +721,12 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Opaque token containing a reference to an uploaded attachment. Treated by
-     * clients as an opaque string and used to create or update Chat messages with
-     * attachments.
+     * Optional. Opaque token containing a reference to an uploaded attachment.
+     * Treated by clients as an opaque string and used to create or update Chat
+     * messages with attachments.
      * </pre>
      *
-     * <code>string attachment_upload_token = 2;</code>
+     * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -740,12 +740,12 @@ public final class AttachmentDataRef extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Opaque token containing a reference to an uploaded attachment. Treated by
-     * clients as an opaque string and used to create or update Chat messages with
-     * attachments.
+     * Optional. Opaque token containing a reference to an uploaded attachment.
+     * Treated by clients as an opaque string and used to create or update Chat
+     * messages with attachments.
      * </pre>
      *
-     * <code>string attachment_upload_token = 2;</code>
+     * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for attachmentUploadToken to set.
      * @return This builder for chaining.

@@ -86,31 +86,32 @@ public final class VendorSettingsProto {
           + "stance_count\030\001 \001(\005B\003\340A\001\022\037\n\022max_instance_"
           + "count\030\002 \001(\005B\003\340A\001\"E\n\013ServiceMesh\0226\n\004mesh\030"
           + "\001 \001(\tB(\372A%\n#networkservices.googleapis.c"
-          + "om/Mesh\"\305\001\n\016ServiceScaling\022\037\n\022min_instan"
+          + "om/Mesh\"\210\002\n\016ServiceScaling\022\037\n\022min_instan"
           + "ce_count\030\001 \001(\005B\003\340A\001\022J\n\014scaling_mode\030\003 \001("
           + "\0162/.google.cloud.run.v2.ServiceScaling.S"
-          + "calingModeB\003\340A\001\"F\n\013ScalingMode\022\034\n\030SCALIN"
-          + "G_MODE_UNSPECIFIED\020\000\022\r\n\tAUTOMATIC\020\001\022\n\n\006M"
-          + "ANUAL\020\002\"(\n\014NodeSelector\022\030\n\013accelerator\030\001"
-          + " \001(\tB\003\340A\002*\263\001\n\016IngressTraffic\022\037\n\033INGRESS_"
-          + "TRAFFIC_UNSPECIFIED\020\000\022\027\n\023INGRESS_TRAFFIC"
-          + "_ALL\020\001\022!\n\035INGRESS_TRAFFIC_INTERNAL_ONLY\020"
-          + "\002\022*\n&INGRESS_TRAFFIC_INTERNAL_LOAD_BALAN"
-          + "CER\020\003\022\030\n\024INGRESS_TRAFFIC_NONE\020\004*}\n\024Execu"
-          + "tionEnvironment\022%\n!EXECUTION_ENVIRONMENT"
-          + "_UNSPECIFIED\020\000\022\036\n\032EXECUTION_ENVIRONMENT_"
-          + "GEN1\020\001\022\036\n\032EXECUTION_ENVIRONMENT_GEN2\020\002*p"
-          + "\n\035EncryptionKeyRevocationAction\0220\n,ENCRY"
-          + "PTION_KEY_REVOCATION_ACTION_UNSPECIFIED\020"
-          + "\000\022\017\n\013PREVENT_NEW\020\001\022\014\n\010SHUTDOWN\020\002B\240\002\n\027com"
-          + ".google.cloud.run.v2B\023VendorSettingsProt"
-          + "oP\001Z)cloud.google.com/go/run/apiv2/runpb"
-          + ";runpb\352Ac\n)binaryauthorization.googleapi"
-          + "s.com/Policy\022\031projects/{project}/policy\022"
-          + "\033locations/{location}/policy\352A\\\n#network"
-          + "services.googleapis.com/Mesh\0225projects/{"
-          + "project}/locations/{location}/meshes/{me"
-          + "sh}b\006proto3"
+          + "calingModeB\003\340A\001\022\'\n\025manual_instance_count"
+          + "\030\006 \001(\005B\003\340A\001H\000\210\001\001\"F\n\013ScalingMode\022\034\n\030SCALI"
+          + "NG_MODE_UNSPECIFIED\020\000\022\r\n\tAUTOMATIC\020\001\022\n\n\006"
+          + "MANUAL\020\002B\030\n\026_manual_instance_count\"(\n\014No"
+          + "deSelector\022\030\n\013accelerator\030\001 \001(\tB\003\340A\002*\263\001\n"
+          + "\016IngressTraffic\022\037\n\033INGRESS_TRAFFIC_UNSPE"
+          + "CIFIED\020\000\022\027\n\023INGRESS_TRAFFIC_ALL\020\001\022!\n\035ING"
+          + "RESS_TRAFFIC_INTERNAL_ONLY\020\002\022*\n&INGRESS_"
+          + "TRAFFIC_INTERNAL_LOAD_BALANCER\020\003\022\030\n\024INGR"
+          + "ESS_TRAFFIC_NONE\020\004*}\n\024ExecutionEnvironme"
+          + "nt\022%\n!EXECUTION_ENVIRONMENT_UNSPECIFIED\020"
+          + "\000\022\036\n\032EXECUTION_ENVIRONMENT_GEN1\020\001\022\036\n\032EXE"
+          + "CUTION_ENVIRONMENT_GEN2\020\002*p\n\035EncryptionK"
+          + "eyRevocationAction\0220\n,ENCRYPTION_KEY_REV"
+          + "OCATION_ACTION_UNSPECIFIED\020\000\022\017\n\013PREVENT_"
+          + "NEW\020\001\022\014\n\010SHUTDOWN\020\002B\240\002\n\027com.google.cloud"
+          + ".run.v2B\023VendorSettingsProtoP\001Z)cloud.go"
+          + "ogle.com/go/run/apiv2/runpb;runpb\352Ac\n)bi"
+          + "naryauthorization.googleapis.com/Policy\022"
+          + "\031projects/{project}/policy\022\033locations/{l"
+          + "ocation}/policy\352A\\\n#networkservices.goog"
+          + "leapis.com/Mesh\0225projects/{project}/loca"
+          + "tions/{location}/meshes/{mesh}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -165,7 +166,7 @@ public final class VendorSettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_ServiceScaling_descriptor,
             new java.lang.String[] {
-              "MinInstanceCount", "ScalingMode",
+              "MinInstanceCount", "ScalingMode", "ManualInstanceCount",
             });
     internal_static_google_cloud_run_v2_NodeSelector_descriptor =
         getDescriptor().getMessageTypes().get(5);

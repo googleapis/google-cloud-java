@@ -42,6 +42,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     currencyCode_ = "";
     timeZone_ = "";
     emptyReason_ = "";
+    samplingMetadatas_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -2964,6 +2965,114 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     return subjectToThresholding_;
   }
 
+  public static final int SAMPLING_METADATAS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata> samplingMetadatas_;
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata>
+      getSamplingMetadatasList() {
+    return samplingMetadatas_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder>
+      getSamplingMetadatasOrBuilderList() {
+    return samplingMetadatas_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  @java.lang.Override
+  public int getSamplingMetadatasCount() {
+    return samplingMetadatas_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1alpha.SamplingMetadata getSamplingMetadatas(int index) {
+    return samplingMetadatas_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If this report's results are
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
+   * describes the percentage of events used in this report. One
+   * `samplingMetadatas` is populated for each date range. Each
+   * `samplingMetadatas` corresponds to a date range in the order that date
+   * ranges were specified in the request.
+   *
+   * However if the results are not sampled, this field will not be defined.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder getSamplingMetadatasOrBuilder(
+      int index) {
+    return samplingMetadatas_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2996,6 +3105,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(8, subjectToThresholding_);
     }
+    for (int i = 0; i < samplingMetadatas_.size(); i++) {
+      output.writeMessage(9, samplingMetadatas_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3024,6 +3136,10 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, subjectToThresholding_);
+    }
+    for (int i = 0; i < samplingMetadatas_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(9, samplingMetadatas_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3063,6 +3179,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     if (hasSubjectToThresholding()) {
       if (getSubjectToThresholding() != other.getSubjectToThresholding()) return false;
     }
+    if (!getSamplingMetadatasList().equals(other.getSamplingMetadatasList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3095,6 +3212,10 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     if (hasSubjectToThresholding()) {
       hash = (37 * hash) + SUBJECT_TO_THRESHOLDING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSubjectToThresholding());
+    }
+    if (getSamplingMetadatasCount() > 0) {
+      hash = (37 * hash) + SAMPLING_METADATAS_FIELD_NUMBER;
+      hash = (53 * hash) + getSamplingMetadatasList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3237,6 +3358,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSchemaRestrictionResponseFieldBuilder();
+        getSamplingMetadatasFieldBuilder();
       }
     }
 
@@ -3254,6 +3376,13 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       timeZone_ = "";
       emptyReason_ = "";
       subjectToThresholding_ = false;
+      if (samplingMetadatasBuilder_ == null) {
+        samplingMetadatas_ = java.util.Collections.emptyList();
+      } else {
+        samplingMetadatas_ = null;
+        samplingMetadatasBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -3281,11 +3410,25 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     public com.google.analytics.data.v1alpha.ResponseMetaData buildPartial() {
       com.google.analytics.data.v1alpha.ResponseMetaData result =
           new com.google.analytics.data.v1alpha.ResponseMetaData(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1alpha.ResponseMetaData result) {
+      if (samplingMetadatasBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          samplingMetadatas_ = java.util.Collections.unmodifiableList(samplingMetadatas_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.samplingMetadatas_ = samplingMetadatas_;
+      } else {
+        result.samplingMetadatas_ = samplingMetadatasBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.analytics.data.v1alpha.ResponseMetaData result) {
@@ -3390,6 +3533,33 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       if (other.hasSubjectToThresholding()) {
         setSubjectToThresholding(other.getSubjectToThresholding());
       }
+      if (samplingMetadatasBuilder_ == null) {
+        if (!other.samplingMetadatas_.isEmpty()) {
+          if (samplingMetadatas_.isEmpty()) {
+            samplingMetadatas_ = other.samplingMetadatas_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureSamplingMetadatasIsMutable();
+            samplingMetadatas_.addAll(other.samplingMetadatas_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.samplingMetadatas_.isEmpty()) {
+          if (samplingMetadatasBuilder_.isEmpty()) {
+            samplingMetadatasBuilder_.dispose();
+            samplingMetadatasBuilder_ = null;
+            samplingMetadatas_ = other.samplingMetadatas_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            samplingMetadatasBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSamplingMetadatasFieldBuilder()
+                    : null;
+          } else {
+            samplingMetadatasBuilder_.addAllMessages(other.samplingMetadatas_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3453,6 +3623,20 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 64
+            case 74:
+              {
+                com.google.analytics.data.v1alpha.SamplingMetadata m =
+                    input.readMessage(
+                        com.google.analytics.data.v1alpha.SamplingMetadata.parser(),
+                        extensionRegistry);
+                if (samplingMetadatasBuilder_ == null) {
+                  ensureSamplingMetadatasIsMutable();
+                  samplingMetadatas_.add(m);
+                } else {
+                  samplingMetadatasBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4325,6 +4509,495 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       subjectToThresholding_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata> samplingMetadatas_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSamplingMetadatasIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        samplingMetadatas_ =
+            new java.util.ArrayList<com.google.analytics.data.v1alpha.SamplingMetadata>(
+                samplingMetadatas_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.analytics.data.v1alpha.SamplingMetadata,
+            com.google.analytics.data.v1alpha.SamplingMetadata.Builder,
+            com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder>
+        samplingMetadatasBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata>
+        getSamplingMetadatasList() {
+      if (samplingMetadatasBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(samplingMetadatas_);
+      } else {
+        return samplingMetadatasBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public int getSamplingMetadatasCount() {
+      if (samplingMetadatasBuilder_ == null) {
+        return samplingMetadatas_.size();
+      } else {
+        return samplingMetadatasBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public com.google.analytics.data.v1alpha.SamplingMetadata getSamplingMetadatas(int index) {
+      if (samplingMetadatasBuilder_ == null) {
+        return samplingMetadatas_.get(index);
+      } else {
+        return samplingMetadatasBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder setSamplingMetadatas(
+        int index, com.google.analytics.data.v1alpha.SamplingMetadata value) {
+      if (samplingMetadatasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSamplingMetadatasIsMutable();
+        samplingMetadatas_.set(index, value);
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder setSamplingMetadatas(
+        int index, com.google.analytics.data.v1alpha.SamplingMetadata.Builder builderForValue) {
+      if (samplingMetadatasBuilder_ == null) {
+        ensureSamplingMetadatasIsMutable();
+        samplingMetadatas_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder addSamplingMetadatas(com.google.analytics.data.v1alpha.SamplingMetadata value) {
+      if (samplingMetadatasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSamplingMetadatasIsMutable();
+        samplingMetadatas_.add(value);
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder addSamplingMetadatas(
+        int index, com.google.analytics.data.v1alpha.SamplingMetadata value) {
+      if (samplingMetadatasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSamplingMetadatasIsMutable();
+        samplingMetadatas_.add(index, value);
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder addSamplingMetadatas(
+        com.google.analytics.data.v1alpha.SamplingMetadata.Builder builderForValue) {
+      if (samplingMetadatasBuilder_ == null) {
+        ensureSamplingMetadatasIsMutable();
+        samplingMetadatas_.add(builderForValue.build());
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder addSamplingMetadatas(
+        int index, com.google.analytics.data.v1alpha.SamplingMetadata.Builder builderForValue) {
+      if (samplingMetadatasBuilder_ == null) {
+        ensureSamplingMetadatasIsMutable();
+        samplingMetadatas_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder addAllSamplingMetadatas(
+        java.lang.Iterable<? extends com.google.analytics.data.v1alpha.SamplingMetadata> values) {
+      if (samplingMetadatasBuilder_ == null) {
+        ensureSamplingMetadatasIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, samplingMetadatas_);
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder clearSamplingMetadatas() {
+      if (samplingMetadatasBuilder_ == null) {
+        samplingMetadatas_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public Builder removeSamplingMetadatas(int index) {
+      if (samplingMetadatasBuilder_ == null) {
+        ensureSamplingMetadatasIsMutable();
+        samplingMetadatas_.remove(index);
+        onChanged();
+      } else {
+        samplingMetadatasBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public com.google.analytics.data.v1alpha.SamplingMetadata.Builder getSamplingMetadatasBuilder(
+        int index) {
+      return getSamplingMetadatasFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder
+        getSamplingMetadatasOrBuilder(int index) {
+      if (samplingMetadatasBuilder_ == null) {
+        return samplingMetadatas_.get(index);
+      } else {
+        return samplingMetadatasBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public java.util.List<? extends com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder>
+        getSamplingMetadatasOrBuilderList() {
+      if (samplingMetadatasBuilder_ != null) {
+        return samplingMetadatasBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(samplingMetadatas_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public com.google.analytics.data.v1alpha.SamplingMetadata.Builder
+        addSamplingMetadatasBuilder() {
+      return getSamplingMetadatasFieldBuilder()
+          .addBuilder(com.google.analytics.data.v1alpha.SamplingMetadata.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public com.google.analytics.data.v1alpha.SamplingMetadata.Builder addSamplingMetadatasBuilder(
+        int index) {
+      return getSamplingMetadatasFieldBuilder()
+          .addBuilder(
+              index, com.google.analytics.data.v1alpha.SamplingMetadata.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this report's results are
+     * [sampled](https://support.google.com/analytics/answer/13331292), this
+     * describes the percentage of events used in this report. One
+     * `samplingMetadatas` is populated for each date range. Each
+     * `samplingMetadatas` corresponds to a date range in the order that date
+     * ranges were specified in the request.
+     *
+     * However if the results are not sampled, this field will not be defined.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
+     */
+    public java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata.Builder>
+        getSamplingMetadatasBuilderList() {
+      return getSamplingMetadatasFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.analytics.data.v1alpha.SamplingMetadata,
+            com.google.analytics.data.v1alpha.SamplingMetadata.Builder,
+            com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder>
+        getSamplingMetadatasFieldBuilder() {
+      if (samplingMetadatasBuilder_ == null) {
+        samplingMetadatasBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.analytics.data.v1alpha.SamplingMetadata,
+                com.google.analytics.data.v1alpha.SamplingMetadata.Builder,
+                com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder>(
+                samplingMetadatas_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        samplingMetadatas_ = null;
+      }
+      return samplingMetadatasBuilder_;
     }
 
     @java.lang.Override

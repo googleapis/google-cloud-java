@@ -199,5 +199,40 @@ public interface FilterOrBuilder
    */
   com.google.analytics.data.v1beta.Filter.BetweenFilterOrBuilder getBetweenFilterOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.Filter.EmptyFilter empty_filter = 8;</code>
+   *
+   * @return Whether the emptyFilter field is set.
+   */
+  boolean hasEmptyFilter();
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.Filter.EmptyFilter empty_filter = 8;</code>
+   *
+   * @return The emptyFilter.
+   */
+  com.google.analytics.data.v1beta.Filter.EmptyFilter getEmptyFilter();
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1beta.Filter.EmptyFilter empty_filter = 8;</code>
+   */
+  com.google.analytics.data.v1beta.Filter.EmptyFilterOrBuilder getEmptyFilterOrBuilder();
+
   com.google.analytics.data.v1beta.Filter.OneFilterCase getOneFilterCase();
 }

@@ -28,7 +28,7 @@ public interface ListResourcesResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -38,7 +38,7 @@ public interface ListResourcesResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -48,7 +48,7 @@ public interface ListResourcesResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -58,7 +58,7 @@ public interface ListResourcesResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -69,7 +69,7 @@ public interface ListResourcesResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>

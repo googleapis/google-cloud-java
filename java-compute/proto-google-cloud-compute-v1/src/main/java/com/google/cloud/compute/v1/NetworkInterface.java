@@ -283,6 +283,26 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * IRDMA
+     * </pre>
+     *
+     * <code>IRDMA = 69927695;</code>
+     */
+    IRDMA(69927695),
+    /**
+     *
+     *
+     * <pre>
+     * MRDMA
+     * </pre>
+     *
+     * <code>MRDMA = 73621779;</code>
+     */
+    MRDMA(73621779),
+    /**
+     *
+     *
+     * <pre>
      * No type specified.
      * </pre>
      *
@@ -336,6 +356,26 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * IRDMA
+     * </pre>
+     *
+     * <code>IRDMA = 69927695;</code>
+     */
+    public static final int IRDMA_VALUE = 69927695;
+    /**
+     *
+     *
+     * <pre>
+     * MRDMA
+     * </pre>
+     *
+     * <code>MRDMA = 73621779;</code>
+     */
+    public static final int MRDMA_VALUE = 73621779;
+    /**
+     *
+     *
+     * <pre>
      * No type specified.
      * </pre>
      *
@@ -383,6 +423,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           return GVNIC;
         case 2242641:
           return IDPF;
+        case 69927695:
+          return IRDMA;
+        case 73621779:
+          return MRDMA;
         case 67411801:
           return UNSPECIFIED_NIC_TYPE;
         case 452123481:

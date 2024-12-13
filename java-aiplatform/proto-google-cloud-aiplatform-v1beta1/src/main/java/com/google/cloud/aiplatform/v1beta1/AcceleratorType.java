@@ -135,6 +135,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia H100 Mega 80Gb GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_H100_MEGA_80GB = 14;</code>
+   */
+  NVIDIA_H100_MEGA_80GB(14),
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -279,6 +289,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia H100 Mega 80Gb GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_H100_MEGA_80GB = 14;</code>
+   */
+  public static final int NVIDIA_H100_MEGA_80GB_VALUE = 14;
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -360,6 +380,8 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
         return NVIDIA_L4;
       case 13:
         return NVIDIA_H100_80GB;
+      case 14:
+        return NVIDIA_H100_MEGA_80GB;
       case 6:
         return TPU_V2;
       case 7:

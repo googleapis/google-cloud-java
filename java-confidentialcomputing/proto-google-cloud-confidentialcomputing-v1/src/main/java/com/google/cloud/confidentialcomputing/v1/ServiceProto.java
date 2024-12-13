@@ -61,6 +61,18 @@ public final class ServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_fieldAccessorTable;
@@ -136,58 +148,72 @@ public final class ServiceProto {
           + "\022\036\n\021oidc_claims_token\030\002 \001(\tB\003\340A\003\022/\n\016part"
           + "ial_errors\030\003 \003(\0132\022.google.rpc.StatusB\003\340A"
           + "\003\"3\n\016GcpCredentials\022!\n\031service_account_i"
-          + "d_tokens\030\002 \003(\t\"\204\001\n\014TokenOptions\022\025\n\010audie"
+          + "d_tokens\030\002 \003(\t\"\246\005\n\014TokenOptions\022v\n\032aws_p"
+          + "rincipal_tags_options\030\004 \001(\0132K.google.clo"
+          + "ud.confidentialcomputing.v1.TokenOptions"
+          + ".AwsPrincipalTagsOptionsB\003\340A\001H\000\022\025\n\010audie"
           + "nce\030\001 \001(\tB\003\340A\001\022\022\n\005nonce\030\002 \003(\tB\003\340A\001\022I\n\nto"
           + "ken_type\030\003 \001(\01620.google.cloud.confidenti"
-          + "alcomputing.v1.TokenTypeB\003\340A\001\"\217\003\n\016TpmAtt"
-          + "estation\022K\n\006quotes\030\001 \003(\0132;.google.cloud."
-          + "confidentialcomputing.v1.TpmAttestation."
-          + "Quote\022\025\n\rtcg_event_log\030\002 \001(\014\022\033\n\023canonica"
-          + "l_event_log\030\003 \001(\014\022\017\n\007ak_cert\030\004 \001(\014\022\022\n\nce"
-          + "rt_chain\030\005 \003(\014\032\326\001\n\005Quote\022\021\n\thash_algo\030\001 "
-          + "\001(\005\022^\n\npcr_values\030\002 \003(\0132J.google.cloud.c"
-          + "onfidentialcomputing.v1.TpmAttestation.Q"
-          + "uote.PcrValuesEntry\022\021\n\traw_quote\030\003 \001(\014\022\025"
-          + "\n\rraw_signature\030\004 \001(\014\0320\n\016PcrValuesEntry\022"
-          + "\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\014:\0028\001\"j\n\025Confi"
-          + "dentialSpaceInfo\022Q\n\017signed_entities\030\001 \003("
-          + "\01323.google.cloud.confidentialcomputing.v"
-          + "1.SignedEntityB\003\340A\001\"w\n\014SignedEntity\022g\n\032c"
-          + "ontainer_image_signatures\030\001 \003(\0132>.google"
-          + ".cloud.confidentialcomputing.v1.Containe"
-          + "rImageSignatureB\003\340A\001\"\257\001\n\027ContainerImageS"
-          + "ignature\022\024\n\007payload\030\001 \001(\014B\003\340A\001\022\026\n\tsignat"
-          + "ure\030\002 \001(\014B\003\340A\001\022\027\n\npublic_key\030\003 \001(\014B\003\340A\001\022"
-          + "M\n\007sig_alg\030\004 \001(\01627.google.cloud.confiden"
-          + "tialcomputing.v1.SigningAlgorithmB\003\340A\001*\177"
-          + "\n\020SigningAlgorithm\022!\n\035SIGNING_ALGORITHM_"
-          + "UNSPECIFIED\020\000\022\025\n\021RSASSA_PSS_SHA256\020\001\022\032\n\026"
-          + "RSASSA_PKCS1V15_SHA256\020\002\022\025\n\021ECDSA_P256_S"
-          + "HA256\020\003*l\n\tTokenType\022\032\n\026TOKEN_TYPE_UNSPE"
-          + "CIFIED\020\000\022\023\n\017TOKEN_TYPE_OIDC\020\001\022\022\n\016TOKEN_T"
-          + "YPE_PKI\020\002\022\032\n\026TOKEN_TYPE_LIMITED_AWS\020\0032\267\004"
-          + "\n\025ConfidentialComputing\022\330\001\n\017CreateChalle"
-          + "nge\022=.google.cloud.confidentialcomputing"
-          + ".v1.CreateChallengeRequest\0320.google.clou"
-          + "d.confidentialcomputing.v1.Challenge\"T\332A"
-          + "\020parent,challenge\202\323\344\223\002;\"./v1/{parent=pro"
-          + "jects/*/locations/*}/challenges:\tchallen"
-          + "ge\022\350\001\n\021VerifyAttestation\022?.google.cloud."
-          + "confidentialcomputing.v1.VerifyAttestati"
-          + "onRequest\032@.google.cloud.confidentialcom"
-          + "puting.v1.VerifyAttestationResponse\"P\202\323\344"
-          + "\223\002J\"E/v1/{challenge=projects/*/locations"
-          + "/*/challenges/*}:verifyAttestation:\001*\032X\312"
-          + "A$confidentialcomputing.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\227\002\n)com.google.cloud.confidentia"
-          + "lcomputing.v1B\014ServiceProtoP\001Z_cloud.goo"
-          + "gle.com/go/confidentialcomputing/apiv1/c"
-          + "onfidentialcomputingpb;confidentialcompu"
-          + "tingpb\252\002%Google.Cloud.ConfidentialComput"
-          + "ing.V1\312\002%Google\\Cloud\\ConfidentialComput"
-          + "ing\\V1\352\002(Google::Cloud::ConfidentialComp"
-          + "uting::V1b\006proto3"
+          + "alcomputing.v1.TokenTypeB\003\340A\001\032\221\003\n\027AwsPri"
+          + "ncipalTagsOptions\022\205\001\n\026allowed_principal_"
+          + "tags\030\001 \001(\0132`.google.cloud.confidentialco"
+          + "mputing.v1.TokenOptions.AwsPrincipalTags"
+          + "Options.AllowedPrincipalTagsB\003\340A\001\032\355\001\n\024Al"
+          + "lowedPrincipalTags\022\242\001\n\032container_image_s"
+          + "ignatures\030\001 \001(\0132y.google.cloud.confident"
+          + "ialcomputing.v1.TokenOptions.AwsPrincipa"
+          + "lTagsOptions.AllowedPrincipalTags.Contai"
+          + "nerImageSignaturesB\003\340A\001\0320\n\030ContainerImag"
+          + "eSignatures\022\024\n\007key_ids\030\001 \003(\tB\003\340A\001B\024\n\022tok"
+          + "en_type_options\"\217\003\n\016TpmAttestation\022K\n\006qu"
+          + "otes\030\001 \003(\0132;.google.cloud.confidentialco"
+          + "mputing.v1.TpmAttestation.Quote\022\025\n\rtcg_e"
+          + "vent_log\030\002 \001(\014\022\033\n\023canonical_event_log\030\003 "
+          + "\001(\014\022\017\n\007ak_cert\030\004 \001(\014\022\022\n\ncert_chain\030\005 \003(\014"
+          + "\032\326\001\n\005Quote\022\021\n\thash_algo\030\001 \001(\005\022^\n\npcr_val"
+          + "ues\030\002 \003(\0132J.google.cloud.confidentialcom"
+          + "puting.v1.TpmAttestation.Quote.PcrValues"
+          + "Entry\022\021\n\traw_quote\030\003 \001(\014\022\025\n\rraw_signatur"
+          + "e\030\004 \001(\014\0320\n\016PcrValuesEntry\022\013\n\003key\030\001 \001(\005\022\r"
+          + "\n\005value\030\002 \001(\014:\0028\001\"j\n\025ConfidentialSpaceIn"
+          + "fo\022Q\n\017signed_entities\030\001 \003(\01323.google.clo"
+          + "ud.confidentialcomputing.v1.SignedEntity"
+          + "B\003\340A\001\"w\n\014SignedEntity\022g\n\032container_image"
+          + "_signatures\030\001 \003(\0132>.google.cloud.confide"
+          + "ntialcomputing.v1.ContainerImageSignatur"
+          + "eB\003\340A\001\"\257\001\n\027ContainerImageSignature\022\024\n\007pa"
+          + "yload\030\001 \001(\014B\003\340A\001\022\026\n\tsignature\030\002 \001(\014B\003\340A\001"
+          + "\022\027\n\npublic_key\030\003 \001(\014B\003\340A\001\022M\n\007sig_alg\030\004 \001"
+          + "(\01627.google.cloud.confidentialcomputing."
+          + "v1.SigningAlgorithmB\003\340A\001*\177\n\020SigningAlgor"
+          + "ithm\022!\n\035SIGNING_ALGORITHM_UNSPECIFIED\020\000\022"
+          + "\025\n\021RSASSA_PSS_SHA256\020\001\022\032\n\026RSASSA_PKCS1V1"
+          + "5_SHA256\020\002\022\025\n\021ECDSA_P256_SHA256\020\003*\216\001\n\tTo"
+          + "kenType\022\032\n\026TOKEN_TYPE_UNSPECIFIED\020\000\022\023\n\017T"
+          + "OKEN_TYPE_OIDC\020\001\022\022\n\016TOKEN_TYPE_PKI\020\002\022\032\n\026"
+          + "TOKEN_TYPE_LIMITED_AWS\020\003\022 \n\034TOKEN_TYPE_A"
+          + "WS_PRINCIPALTAGS\020\0042\267\004\n\025ConfidentialCompu"
+          + "ting\022\330\001\n\017CreateChallenge\022=.google.cloud."
+          + "confidentialcomputing.v1.CreateChallenge"
+          + "Request\0320.google.cloud.confidentialcompu"
+          + "ting.v1.Challenge\"T\332A\020parent,challenge\202\323"
+          + "\344\223\002;\"./v1/{parent=projects/*/locations/*"
+          + "}/challenges:\tchallenge\022\350\001\n\021VerifyAttest"
+          + "ation\022?.google.cloud.confidentialcomputi"
+          + "ng.v1.VerifyAttestationRequest\032@.google."
+          + "cloud.confidentialcomputing.v1.VerifyAtt"
+          + "estationResponse\"P\202\323\344\223\002J\"E/v1/{challenge"
+          + "=projects/*/locations/*/challenges/*}:ve"
+          + "rifyAttestation:\001*\032X\312A$confidentialcompu"
+          + "ting.googleapis.com\322A.https://www.google"
+          + "apis.com/auth/cloud-platformB\227\002\n)com.goo"
+          + "gle.cloud.confidentialcomputing.v1B\014Serv"
+          + "iceProtoP\001Z_cloud.google.com/go/confiden"
+          + "tialcomputing/apiv1/confidentialcomputin"
+          + "gpb;confidentialcomputingpb\252\002%Google.Clo"
+          + "ud.ConfidentialComputing.V1\312\002%Google\\Clo"
+          + "ud\\ConfidentialComputing\\V1\352\002(Google::Cl"
+          + "oud::ConfidentialComputing::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -269,7 +295,37 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_descriptor,
             new java.lang.String[] {
-              "Audience", "Nonce", "TokenType",
+              "AwsPrincipalTagsOptions", "Audience", "Nonce", "TokenType", "TokenTypeOptions",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_descriptor,
+            new java.lang.String[] {
+              "AllowedPrincipalTags",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_descriptor,
+            new java.lang.String[] {
+              "ContainerImageSignatures",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_descriptor,
+            new java.lang.String[] {
+              "KeyIds",
             });
     internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_descriptor =
         getDescriptor().getMessageTypes().get(8);

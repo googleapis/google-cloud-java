@@ -23,7 +23,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Metadata for [ConversationDatasets][DeleteConversationDataset].
+ * Metadata for [DeleteConversationDataset][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata}
@@ -221,7 +221,7 @@ public final class DeleteConversationDatasetOperationMetadata
    *
    *
    * <pre>
-   * Metadata for [ConversationDatasets][DeleteConversationDataset].
+   * Metadata for [DeleteConversationDataset][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata}

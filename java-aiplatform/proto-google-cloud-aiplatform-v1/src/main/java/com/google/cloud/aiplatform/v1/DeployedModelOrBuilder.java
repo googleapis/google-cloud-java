@@ -577,6 +577,47 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.cloud.aiplatform.v1.DeployedModel.Status getStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.DeployedModel.StatusOrBuilder getStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * System labels to apply to Model Garden deployments.
    * System labels are managed by Google for internal use only.
    * </pre>

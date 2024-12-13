@@ -171,6 +171,9 @@
             },
             "UpdateEndpoint": {
               "methods": ["updateEndpoint", "updateEndpoint", "updateEndpointCallable"]
+            },
+            "UpdateEndpointLongRunning": {
+              "methods": ["updateEndpointLongRunningAsync", "updateEndpointLongRunningAsync", "updateEndpointLongRunningOperationCallable", "updateEndpointLongRunningCallable"]
             }
           }
         }
@@ -1479,6 +1482,93 @@
             },
             "WriteTensorboardRunData": {
               "methods": ["writeTensorboardRunData", "writeTensorboardRunData", "writeTensorboardRunData", "writeTensorboardRunDataCallable"]
+            }
+          }
+        }
+      }
+    },
+    "VertexRagDataService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VertexRagDataServiceClient",
+          "rpcs": {
+            "CreateRagCorpus": {
+              "methods": ["createRagCorpusAsync", "createRagCorpusAsync", "createRagCorpusAsync", "createRagCorpusOperationCallable", "createRagCorpusCallable"]
+            },
+            "DeleteRagCorpus": {
+              "methods": ["deleteRagCorpusAsync", "deleteRagCorpusAsync", "deleteRagCorpusAsync", "deleteRagCorpusOperationCallable", "deleteRagCorpusCallable"]
+            },
+            "DeleteRagFile": {
+              "methods": ["deleteRagFileAsync", "deleteRagFileAsync", "deleteRagFileAsync", "deleteRagFileOperationCallable", "deleteRagFileCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRagCorpus": {
+              "methods": ["getRagCorpus", "getRagCorpus", "getRagCorpus", "getRagCorpusCallable"]
+            },
+            "GetRagFile": {
+              "methods": ["getRagFile", "getRagFile", "getRagFile", "getRagFileCallable"]
+            },
+            "ImportRagFiles": {
+              "methods": ["importRagFilesAsync", "importRagFilesAsync", "importRagFilesAsync", "importRagFilesOperationCallable", "importRagFilesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRagCorpora": {
+              "methods": ["listRagCorpora", "listRagCorpora", "listRagCorpora", "listRagCorporaPagedCallable", "listRagCorporaCallable"]
+            },
+            "ListRagFiles": {
+              "methods": ["listRagFiles", "listRagFiles", "listRagFiles", "listRagFilesPagedCallable", "listRagFilesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateRagCorpus": {
+              "methods": ["updateRagCorpusAsync", "updateRagCorpusAsync", "updateRagCorpusOperationCallable", "updateRagCorpusCallable"]
+            },
+            "UploadRagFile": {
+              "methods": ["uploadRagFile", "uploadRagFile", "uploadRagFile", "uploadRagFileCallable"]
+            }
+          }
+        }
+      }
+    },
+    "VertexRagService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VertexRagServiceClient",
+          "rpcs": {
+            "AugmentPrompt": {
+              "methods": ["augmentPrompt", "augmentPrompt", "augmentPrompt", "augmentPromptCallable"]
+            },
+            "CorroborateContent": {
+              "methods": ["corroborateContent", "corroborateContent", "corroborateContent", "corroborateContentCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RetrieveContexts": {
+              "methods": ["retrieveContexts", "retrieveContexts", "retrieveContexts", "retrieveContextsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

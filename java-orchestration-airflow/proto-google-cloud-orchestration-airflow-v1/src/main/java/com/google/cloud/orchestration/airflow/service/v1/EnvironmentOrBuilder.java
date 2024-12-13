@@ -28,14 +28,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * The resource name of the environment, in the form:
+   * Identifier. The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,14 +44,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * The resource name of the environment, in the form:
+   * Identifier. The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -61,10 +61,12 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -73,10 +75,12 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The config.
    */
@@ -85,10 +89,12 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfigOrBuilder getConfigOrBuilder();
 
@@ -228,7 +234,7 @@ public interface EnvironmentOrBuilder
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -245,7 +251,7 @@ public interface EnvironmentOrBuilder
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -265,7 +271,7 @@ public interface EnvironmentOrBuilder
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -282,7 +288,7 @@ public interface EnvironmentOrBuilder
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -303,7 +309,7 @@ public interface EnvironmentOrBuilder
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 

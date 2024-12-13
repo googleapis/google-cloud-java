@@ -949,6 +949,258 @@ public interface EvaluateInstancesResponseOrBuilder
   com.google.cloud.aiplatform.v1beta1.ToolParameterKVMatchResultsOrBuilder
       getToolParameterKvMatchResultsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchResults trajectory_exact_match_results = 31;
+   * </code>
+   *
+   * @return Whether the trajectoryExactMatchResults field is set.
+   */
+  boolean hasTrajectoryExactMatchResults();
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchResults trajectory_exact_match_results = 31;
+   * </code>
+   *
+   * @return The trajectoryExactMatchResults.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchResults getTrajectoryExactMatchResults();
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchResults trajectory_exact_match_results = 31;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchResultsOrBuilder
+      getTrajectoryExactMatchResultsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchResults trajectory_in_order_match_results = 32;
+   * </code>
+   *
+   * @return Whether the trajectoryInOrderMatchResults field is set.
+   */
+  boolean hasTrajectoryInOrderMatchResults();
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchResults trajectory_in_order_match_results = 32;
+   * </code>
+   *
+   * @return The trajectoryInOrderMatchResults.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchResults
+      getTrajectoryInOrderMatchResults();
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchResults trajectory_in_order_match_results = 32;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchResultsOrBuilder
+      getTrajectoryInOrderMatchResultsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory any order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchResults trajectory_any_order_match_results = 33;
+   * </code>
+   *
+   * @return Whether the trajectoryAnyOrderMatchResults field is set.
+   */
+  boolean hasTrajectoryAnyOrderMatchResults();
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory any order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchResults trajectory_any_order_match_results = 33;
+   * </code>
+   *
+   * @return The trajectoryAnyOrderMatchResults.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchResults
+      getTrajectoryAnyOrderMatchResults();
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory any order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchResults trajectory_any_order_match_results = 33;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchResultsOrBuilder
+      getTrajectoryAnyOrderMatchResultsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionResults trajectory_precision_results = 35;
+   * </code>
+   *
+   * @return Whether the trajectoryPrecisionResults field is set.
+   */
+  boolean hasTrajectoryPrecisionResults();
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionResults trajectory_precision_results = 35;
+   * </code>
+   *
+   * @return The trajectoryPrecisionResults.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionResults getTrajectoryPrecisionResults();
+  /**
+   *
+   *
+   * <pre>
+   * Result for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionResults trajectory_precision_results = 35;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionResultsOrBuilder
+      getTrajectoryPrecisionResultsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Results for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallResults trajectory_recall_results = 36;
+   * </code>
+   *
+   * @return Whether the trajectoryRecallResults field is set.
+   */
+  boolean hasTrajectoryRecallResults();
+  /**
+   *
+   *
+   * <pre>
+   * Results for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallResults trajectory_recall_results = 36;
+   * </code>
+   *
+   * @return The trajectoryRecallResults.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryRecallResults getTrajectoryRecallResults();
+  /**
+   *
+   *
+   * <pre>
+   * Results for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallResults trajectory_recall_results = 36;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectoryRecallResultsOrBuilder
+      getTrajectoryRecallResultsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Results for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResults trajectory_single_tool_use_results = 37;
+   * </code>
+   *
+   * @return Whether the trajectorySingleToolUseResults field is set.
+   */
+  boolean hasTrajectorySingleToolUseResults();
+  /**
+   *
+   *
+   * <pre>
+   * Results for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResults trajectory_single_tool_use_results = 37;
+   * </code>
+   *
+   * @return The trajectorySingleToolUseResults.
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResults
+      getTrajectorySingleToolUseResults();
+  /**
+   *
+   *
+   * <pre>
+   * Results for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResults trajectory_single_tool_use_results = 37;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResultsOrBuilder
+      getTrajectorySingleToolUseResultsOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse.EvaluationResultsCase
       getEvaluationResultsCase();
 }

@@ -577,6 +577,7 @@ public class DatastreamClientTest {
     Assert.assertEquals(request.getOracleRdbms(), actualRequest.getOracleRdbms());
     Assert.assertEquals(request.getMysqlRdbms(), actualRequest.getMysqlRdbms());
     Assert.assertEquals(request.getPostgresqlRdbms(), actualRequest.getPostgresqlRdbms());
+    Assert.assertEquals(request.getSqlServerRdbms(), actualRequest.getSqlServerRdbms());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -701,6 +702,7 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -747,6 +749,7 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -793,6 +796,7 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -853,6 +857,7 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -913,6 +918,7 @@ public class DatastreamClientTest {
             .setDestinationConfig(DestinationConfig.newBuilder().build())
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1033,6 +1039,73 @@ public class DatastreamClientTest {
     try {
       String name = "name3373707";
       client.deleteStreamAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void runStreamTest() throws Exception {
+    Stream expectedResponse =
+        Stream.newBuilder()
+            .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .setDestinationConfig(DestinationConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<Error>())
+            .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
+            .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runStreamTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatastream.addResponse(resultOperation);
+
+    RunStreamRequest request =
+        RunStreamRequest.newBuilder()
+            .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+            .setCdcStrategy(CdcStrategy.newBuilder().build())
+            .setForce(true)
+            .build();
+
+    Stream actualResponse = client.runStreamAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatastream.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunStreamRequest actualRequest = ((RunStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCdcStrategy(), actualRequest.getCdcStrategy());
+    Assert.assertEquals(request.getForce(), actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatastream.addException(exception);
+
+    try {
+      RunStreamRequest request =
+          RunStreamRequest.newBuilder()
+              .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+              .setCdcStrategy(CdcStrategy.newBuilder().build())
+              .setForce(true)
+              .build();
+      client.runStreamAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

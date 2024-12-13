@@ -23,7 +23,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Input configuration for [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData] action.
+ * Input configuration for
+ * [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData] action.
  *
  * The format of input depends on dataset_metadata the Dataset into which
  * the import is happening has. As input source the
@@ -39,10 +40,10 @@ package com.google.cloud.automl.v1;
  * The formats are represented in EBNF with commas being literal and with
  * non-terminal symbols defined near the end of this comment. The formats are:
  *
- * &lt;h4&gt;AutoML Vision&lt;/h4&gt;
+ * #### AutoML Vision
  *
  *
- * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ * ##### Classification
  *
  * See [Preparing your training
  * data](https://cloud.google.com/vision/automl/docs/prepare) for more
@@ -79,7 +80,7 @@ package com.google.cloud.automl.v1;
  *     UNASSIGNED,gs://folder/image4.jpg
  *
  *
- * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Detection&lt;/h5&gt;
+ * ##### Object Detection
  * See [Preparing your training
  * data](https://cloud.google.com/vision/automl/object-detection/docs/prepare)
  * for more information.
@@ -121,10 +122,10 @@ package com.google.cloud.automl.v1;
  * &lt;/div&gt;
  *
  *
- * &lt;h4&gt;AutoML Video Intelligence&lt;/h4&gt;
+ * #### AutoML Video Intelligence
  *
  *
- * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ * ##### Classification
  *
  * See [Preparing your training
  * data](https://cloud.google.com/video-intelligence/automl/docs/prepare) for
@@ -167,7 +168,7 @@ package com.google.cloud.automl.v1;
  *
  *
  *
- * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Tracking&lt;/h5&gt;
+ * ##### Object Tracking
  *
  * See [Preparing your training
  * data](/video-intelligence/automl/object-tracking/docs/prepare) for more
@@ -218,14 +219,12 @@ package com.google.cloud.automl.v1;
  *      gs://folder/video1.avi,bike,,12.50,.45,.45,,,.55,.55,,
  *      gs://folder/video2.avi,car,1,0,.1,.9,,,.9,.1,,
  *      gs://folder/video2.avi,,,,,,,,,,,
- *   &lt;/section&gt;
- * &lt;/div&gt;
  *
  *
- * &lt;h4&gt;AutoML Natural Language&lt;/h4&gt;
+ * #### AutoML Natural Language
  *
  *
- * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Entity Extraction&lt;/h5&gt;
+ * ##### Entity Extraction
  *
  * See [Preparing your training
  * data](/natural-language/automl/entity-analysis/docs/prepare) for more
@@ -408,7 +407,7 @@ package com.google.cloud.automl.v1;
  *
  *
  *
- * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ * ##### Classification
  *
  * See [Preparing your training
  * data](https://cloud.google.com/natural-language/automl/docs/prepare) for more
@@ -455,7 +454,7 @@ package com.google.cloud.automl.v1;
  *
  *
  *
- * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Sentiment Analysis&lt;/h5&gt;
+ * ##### Sentiment Analysis
  *
  * See [Preparing your training
  * data](https://cloud.google.com/natural-language/automl/docs/prepare) for more
@@ -512,13 +511,10 @@ package com.google.cloud.automl.v1;
  *     gs://folder/content.txt,3
  *     TEST,gs://folder/document.pdf
  *     VALIDATE,gs://folder/text_files.zip,2
- *   &lt;/section&gt;
- * &lt;/div&gt;
  *
  *
  *
- * &lt;h4&gt;AutoML Tables&lt;/h4&gt;&lt;div class="ui-datasection-main"&gt;&lt;section
- * class="selected"&gt;
+ * #### AutoML Tables
  *
  * See [Preparing your training
  * data](https://cloud.google.com/automl-tables/docs/prepare) for more
@@ -557,8 +553,6 @@ package com.google.cloud.automl.v1;
  * and between 1000 and 100,000,000 rows, inclusive. There are at most 5
  * import data running in parallel.
  *
- *   &lt;/section&gt;
- * &lt;/div&gt;
  *
  *
  * **Input field definitions:**
@@ -735,8 +729,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
-   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-   * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+   * `gcs_source` points to a CSV file with a structure described in
+   * [InputConfig][google.cloud.automl.v1.InputConfig].
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -752,8 +747,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
-   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-   * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+   * `gcs_source` points to a CSV file with a structure described in
+   * [InputConfig][google.cloud.automl.v1.InputConfig].
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -772,8 +768,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Cloud Storage location for the input content.
-   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-   * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+   * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+   * `gcs_source` points to a CSV file with a structure described in
+   * [InputConfig][google.cloud.automl.v1.InputConfig].
    * </pre>
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -820,7 +817,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * imported data, any string must be up to 25000
    * characters long.
    *
-   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * #### AutoML Tables
    *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
@@ -852,7 +849,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * imported data, any string must be up to 25000
    * characters long.
    *
-   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * #### AutoML Tables
    *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
@@ -875,7 +872,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * imported data, any string must be up to 25000
    * characters long.
    *
-   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * #### AutoML Tables
    *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
@@ -905,7 +902,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * imported data, any string must be up to 25000
    * characters long.
    *
-   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   * #### AutoML Tables
    *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
@@ -1122,7 +1119,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input configuration for [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData] action.
+   * Input configuration for
+   * [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData] action.
    *
    * The format of input depends on dataset_metadata the Dataset into which
    * the import is happening has. As input source the
@@ -1138,10 +1136,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * The formats are represented in EBNF with commas being literal and with
    * non-terminal symbols defined near the end of this comment. The formats are:
    *
-   * &lt;h4&gt;AutoML Vision&lt;/h4&gt;
+   * #### AutoML Vision
    *
    *
-   * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   * ##### Classification
    *
    * See [Preparing your training
    * data](https://cloud.google.com/vision/automl/docs/prepare) for more
@@ -1178,7 +1176,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     UNASSIGNED,gs://folder/image4.jpg
    *
    *
-   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Detection&lt;/h5&gt;
+   * ##### Object Detection
    * See [Preparing your training
    * data](https://cloud.google.com/vision/automl/object-detection/docs/prepare)
    * for more information.
@@ -1220,10 +1218,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * &lt;/div&gt;
    *
    *
-   * &lt;h4&gt;AutoML Video Intelligence&lt;/h4&gt;
+   * #### AutoML Video Intelligence
    *
    *
-   * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   * ##### Classification
    *
    * See [Preparing your training
    * data](https://cloud.google.com/video-intelligence/automl/docs/prepare) for
@@ -1266,7 +1264,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    *
-   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Tracking&lt;/h5&gt;
+   * ##### Object Tracking
    *
    * See [Preparing your training
    * data](/video-intelligence/automl/object-tracking/docs/prepare) for more
@@ -1317,14 +1315,12 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *      gs://folder/video1.avi,bike,,12.50,.45,.45,,,.55,.55,,
    *      gs://folder/video2.avi,car,1,0,.1,.9,,,.9,.1,,
    *      gs://folder/video2.avi,,,,,,,,,,,
-   *   &lt;/section&gt;
-   * &lt;/div&gt;
    *
    *
-   * &lt;h4&gt;AutoML Natural Language&lt;/h4&gt;
+   * #### AutoML Natural Language
    *
    *
-   * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Entity Extraction&lt;/h5&gt;
+   * ##### Entity Extraction
    *
    * See [Preparing your training
    * data](/natural-language/automl/entity-analysis/docs/prepare) for more
@@ -1507,7 +1503,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    *
-   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   * ##### Classification
    *
    * See [Preparing your training
    * data](https://cloud.google.com/natural-language/automl/docs/prepare) for more
@@ -1554,7 +1550,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    *
-   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Sentiment Analysis&lt;/h5&gt;
+   * ##### Sentiment Analysis
    *
    * See [Preparing your training
    * data](https://cloud.google.com/natural-language/automl/docs/prepare) for more
@@ -1611,13 +1607,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     gs://folder/content.txt,3
    *     TEST,gs://folder/document.pdf
    *     VALIDATE,gs://folder/text_files.zip,2
-   *   &lt;/section&gt;
-   * &lt;/div&gt;
    *
    *
    *
-   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;&lt;div class="ui-datasection-main"&gt;&lt;section
-   * class="selected"&gt;
+   * #### AutoML Tables
    *
    * See [Preparing your training
    * data](https://cloud.google.com/automl-tables/docs/prepare) for more
@@ -1656,8 +1649,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * and between 1000 and 100,000,000 rows, inclusive. There are at most 5
    * import data running in parallel.
    *
-   *   &lt;/section&gt;
-   * &lt;/div&gt;
    *
    *
    * **Input field definitions:**
@@ -1991,8 +1982,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2008,8 +2000,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2035,8 +2028,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2059,8 +2053,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2080,8 +2075,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2114,8 +2110,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2141,8 +2138,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2155,8 +2153,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2177,8 +2176,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Cloud Storage location for the input content.
-     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData], `gcs_source` points to a CSV file with
-     * a structure described in [InputConfig][google.cloud.automl.v1.InputConfig].
+     * For [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData],
+     * `gcs_source` points to a CSV file with a structure described in
+     * [InputConfig][google.cloud.automl.v1.InputConfig].
      * </pre>
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
@@ -2238,7 +2238,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * imported data, any string must be up to 25000
      * characters long.
      *
-     * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     * #### AutoML Tables
      *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
@@ -2270,7 +2270,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * imported data, any string must be up to 25000
      * characters long.
      *
-     * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     * #### AutoML Tables
      *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
@@ -2293,7 +2293,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * imported data, any string must be up to 25000
      * characters long.
      *
-     * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     * #### AutoML Tables
      *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
@@ -2323,7 +2323,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * imported data, any string must be up to 25000
      * characters long.
      *
-     * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     * #### AutoML Tables
      *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
@@ -2359,7 +2359,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * imported data, any string must be up to 25000
      * characters long.
      *
-     * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     * #### AutoML Tables
      *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
@@ -2391,7 +2391,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * imported data, any string must be up to 25000
      * characters long.
      *
-     * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     * #### AutoML Tables
      *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
@@ -2421,7 +2421,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * imported data, any string must be up to 25000
      * characters long.
      *
-     * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     * #### AutoML Tables
      *
      * `schema_inference_version`
      * : (integer) This value must be supplied.

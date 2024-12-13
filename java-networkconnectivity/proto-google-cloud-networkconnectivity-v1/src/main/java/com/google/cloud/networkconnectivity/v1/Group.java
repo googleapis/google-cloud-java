@@ -43,6 +43,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     uid_ = "";
     state_ = 0;
+    routeTable_ = "";
   }
 
   @java.lang.Override
@@ -489,6 +490,117 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.networkconnectivity.v1.State.UNRECOGNIZED : result;
   }
 
+  public static final int AUTO_ACCEPT_FIELD_NUMBER = 8;
+  private com.google.cloud.networkconnectivity.v1.AutoAccept autoAccept_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The auto-accept setting for this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoAccept field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoAccept() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The auto-accept setting for this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoAccept.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.AutoAccept getAutoAccept() {
+    return autoAccept_ == null
+        ? com.google.cloud.networkconnectivity.v1.AutoAccept.getDefaultInstance()
+        : autoAccept_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The auto-accept setting for this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.AutoAcceptOrBuilder getAutoAcceptOrBuilder() {
+    return autoAccept_ == null
+        ? com.google.cloud.networkconnectivity.v1.AutoAccept.getDefaultInstance()
+        : autoAccept_;
+  }
+
+  public static final int ROUTE_TABLE_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object routeTable_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the route table that corresponds to this group.
+   * They use the following form:
+   * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   * </pre>
+   *
+   * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The routeTable.
+   */
+  @java.lang.Override
+  public java.lang.String getRouteTable() {
+    java.lang.Object ref = routeTable_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      routeTable_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the route table that corresponds to this group.
+   * They use the following form:
+   * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   * </pre>
+   *
+   * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for routeTable.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRouteTableBytes() {
+    java.lang.Object ref = routeTable_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      routeTable_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -522,6 +634,12 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     }
     if (state_ != com.google.cloud.networkconnectivity.v1.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(7, state_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(8, getAutoAccept());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeTable_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, routeTable_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -560,6 +678,12 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.networkconnectivity.v1.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, state_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getAutoAccept());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeTable_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, routeTable_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -589,6 +713,11 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getUid().equals(other.getUid())) return false;
     if (state_ != other.state_) return false;
+    if (hasAutoAccept() != other.hasAutoAccept()) return false;
+    if (hasAutoAccept()) {
+      if (!getAutoAccept().equals(other.getAutoAccept())) return false;
+    }
+    if (!getRouteTable().equals(other.getRouteTable())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -620,6 +749,12 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getUid().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasAutoAccept()) {
+      hash = (37 * hash) + AUTO_ACCEPT_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoAccept().hashCode();
+    }
+    hash = (37 * hash) + ROUTE_TABLE_FIELD_NUMBER;
+    hash = (53 * hash) + getRouteTable().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -784,6 +919,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getAutoAcceptFieldBuilder();
       }
     }
 
@@ -806,6 +942,12 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       description_ = "";
       uid_ = "";
       state_ = 0;
+      autoAccept_ = null;
+      if (autoAcceptBuilder_ != null) {
+        autoAcceptBuilder_.dispose();
+        autoAcceptBuilder_ = null;
+      }
+      routeTable_ = "";
       return this;
     }
 
@@ -866,6 +1008,13 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.autoAccept_ = autoAcceptBuilder_ == null ? autoAccept_ : autoAcceptBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.routeTable_ = routeTable_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -941,6 +1090,14 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (other.hasAutoAccept()) {
+        mergeAutoAccept(other.getAutoAccept());
+      }
+      if (!other.getRouteTable().isEmpty()) {
+        routeTable_ = other.routeTable_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1015,6 +1172,18 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
+            case 66:
+              {
+                input.readMessage(getAutoAcceptFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                routeTable_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2056,6 +2225,327 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     public Builder clearState() {
       bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.networkconnectivity.v1.AutoAccept autoAccept_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.AutoAccept,
+            com.google.cloud.networkconnectivity.v1.AutoAccept.Builder,
+            com.google.cloud.networkconnectivity.v1.AutoAcceptOrBuilder>
+        autoAcceptBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoAccept field is set.
+     */
+    public boolean hasAutoAccept() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoAccept.
+     */
+    public com.google.cloud.networkconnectivity.v1.AutoAccept getAutoAccept() {
+      if (autoAcceptBuilder_ == null) {
+        return autoAccept_ == null
+            ? com.google.cloud.networkconnectivity.v1.AutoAccept.getDefaultInstance()
+            : autoAccept_;
+      } else {
+        return autoAcceptBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoAccept(com.google.cloud.networkconnectivity.v1.AutoAccept value) {
+      if (autoAcceptBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autoAccept_ = value;
+      } else {
+        autoAcceptBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoAccept(
+        com.google.cloud.networkconnectivity.v1.AutoAccept.Builder builderForValue) {
+      if (autoAcceptBuilder_ == null) {
+        autoAccept_ = builderForValue.build();
+      } else {
+        autoAcceptBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutoAccept(com.google.cloud.networkconnectivity.v1.AutoAccept value) {
+      if (autoAcceptBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && autoAccept_ != null
+            && autoAccept_
+                != com.google.cloud.networkconnectivity.v1.AutoAccept.getDefaultInstance()) {
+          getAutoAcceptBuilder().mergeFrom(value);
+        } else {
+          autoAccept_ = value;
+        }
+      } else {
+        autoAcceptBuilder_.mergeFrom(value);
+      }
+      if (autoAccept_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutoAccept() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      autoAccept_ = null;
+      if (autoAcceptBuilder_ != null) {
+        autoAcceptBuilder_.dispose();
+        autoAcceptBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.AutoAccept.Builder getAutoAcceptBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getAutoAcceptFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.AutoAcceptOrBuilder getAutoAcceptOrBuilder() {
+      if (autoAcceptBuilder_ != null) {
+        return autoAcceptBuilder_.getMessageOrBuilder();
+      } else {
+        return autoAccept_ == null
+            ? com.google.cloud.networkconnectivity.v1.AutoAccept.getDefaultInstance()
+            : autoAccept_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The auto-accept setting for this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.AutoAccept,
+            com.google.cloud.networkconnectivity.v1.AutoAccept.Builder,
+            com.google.cloud.networkconnectivity.v1.AutoAcceptOrBuilder>
+        getAutoAcceptFieldBuilder() {
+      if (autoAcceptBuilder_ == null) {
+        autoAcceptBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkconnectivity.v1.AutoAccept,
+                com.google.cloud.networkconnectivity.v1.AutoAccept.Builder,
+                com.google.cloud.networkconnectivity.v1.AutoAcceptOrBuilder>(
+                getAutoAccept(), getParentForChildren(), isClean());
+        autoAccept_ = null;
+      }
+      return autoAcceptBuilder_;
+    }
+
+    private java.lang.Object routeTable_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the route table that corresponds to this group.
+     * They use the following form:
+     * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     * </pre>
+     *
+     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The routeTable.
+     */
+    public java.lang.String getRouteTable() {
+      java.lang.Object ref = routeTable_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeTable_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the route table that corresponds to this group.
+     * They use the following form:
+     * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     * </pre>
+     *
+     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for routeTable.
+     */
+    public com.google.protobuf.ByteString getRouteTableBytes() {
+      java.lang.Object ref = routeTable_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        routeTable_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the route table that corresponds to this group.
+     * They use the following form:
+     * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     * </pre>
+     *
+     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The routeTable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteTable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      routeTable_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the route table that corresponds to this group.
+     * They use the following form:
+     * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     * </pre>
+     *
+     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRouteTable() {
+      routeTable_ = getDefaultInstance().getRouteTable();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the route table that corresponds to this group.
+     * They use the following form:
+     * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     * </pre>
+     *
+     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for routeTable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteTableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      routeTable_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

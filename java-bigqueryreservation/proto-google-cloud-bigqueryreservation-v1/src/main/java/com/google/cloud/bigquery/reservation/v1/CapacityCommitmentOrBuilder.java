@@ -129,7 +129,9 @@ public interface CapacityCommitmentOrBuilder
    *
    * <pre>
    * Output only. The start of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * only for ACTIVE capacity commitments. Note after the commitment is renewed,
+   * commitment_start_time won't be changed. It refers to the start time of the
+   * original commitment.
    * </pre>
    *
    * <code>
@@ -144,7 +146,9 @@ public interface CapacityCommitmentOrBuilder
    *
    * <pre>
    * Output only. The start of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * only for ACTIVE capacity commitments. Note after the commitment is renewed,
+   * commitment_start_time won't be changed. It refers to the start time of the
+   * original commitment.
    * </pre>
    *
    * <code>
@@ -159,7 +163,9 @@ public interface CapacityCommitmentOrBuilder
    *
    * <pre>
    * Output only. The start of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * only for ACTIVE capacity commitments. Note after the commitment is renewed,
+   * commitment_start_time won't be changed. It refers to the start time of the
+   * original commitment.
    * </pre>
    *
    * <code>
@@ -173,7 +179,10 @@ public interface CapacityCommitmentOrBuilder
    *
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * only for ACTIVE capacity commitments. Note after renewal,
+   * commitment_end_time is the time the renewed commitment expires. So it would
+   * be at a time after commitment_start_time + committed period, because we
+   * don't change commitment_start_time ,
    * </pre>
    *
    * <code>
@@ -188,7 +197,10 @@ public interface CapacityCommitmentOrBuilder
    *
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * only for ACTIVE capacity commitments. Note after renewal,
+   * commitment_end_time is the time the renewed commitment expires. So it would
+   * be at a time after commitment_start_time + committed period, because we
+   * don't change commitment_start_time ,
    * </pre>
    *
    * <code>
@@ -203,7 +215,10 @@ public interface CapacityCommitmentOrBuilder
    *
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * only for ACTIVE capacity commitments. Note after renewal,
+   * commitment_end_time is the time the renewed commitment expires. So it would
+   * be at a time after commitment_start_time + committed period, because we
+   * don't change commitment_start_time ,
    * </pre>
    *
    * <code>
@@ -326,4 +341,18 @@ public interface CapacityCommitmentOrBuilder
    * @return The edition.
    */
   com.google.cloud.bigquery.reservation.v1.Edition getEdition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If true, the commitment is a flat-rate commitment, otherwise,
+   * it's an edition commitment.
+   * </pre>
+   *
+   * <code>bool is_flat_rate = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The isFlatRate.
+   */
+  boolean getIsFlatRate();
 }

@@ -63,6 +63,119 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Configuration for connections to an instance of GitHub Enterprise.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitHubEnterpriseConfig github_enterprise_config = 13;
+   * </code>
+   *
+   * @return Whether the githubEnterpriseConfig field is set.
+   */
+  boolean hasGithubEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of GitHub Enterprise.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitHubEnterpriseConfig github_enterprise_config = 13;
+   * </code>
+   *
+   * @return The githubEnterpriseConfig.
+   */
+  com.google.cloud.developerconnect.v1.GitHubEnterpriseConfig getGithubEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of GitHub Enterprise.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitHubEnterpriseConfig github_enterprise_config = 13;
+   * </code>
+   */
+  com.google.cloud.developerconnect.v1.GitHubEnterpriseConfigOrBuilder
+      getGithubEnterpriseConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitLabConfig gitlab_config = 14;</code>
+   *
+   * @return Whether the gitlabConfig field is set.
+   */
+  boolean hasGitlabConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitLabConfig gitlab_config = 14;</code>
+   *
+   * @return The gitlabConfig.
+   */
+  com.google.cloud.developerconnect.v1.GitLabConfig getGitlabConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitLabConfig gitlab_config = 14;</code>
+   */
+  com.google.cloud.developerconnect.v1.GitLabConfigOrBuilder getGitlabConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of GitLab Enterprise.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitLabEnterpriseConfig gitlab_enterprise_config = 16;
+   * </code>
+   *
+   * @return Whether the gitlabEnterpriseConfig field is set.
+   */
+  boolean hasGitlabEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of GitLab Enterprise.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitLabEnterpriseConfig gitlab_enterprise_config = 16;
+   * </code>
+   *
+   * @return The gitlabEnterpriseConfig.
+   */
+  com.google.cloud.developerconnect.v1.GitLabEnterpriseConfig getGitlabEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of GitLab Enterprise.
+   * </pre>
+   *
+   * <code>.google.cloud.developerconnect.v1.GitLabEnterpriseConfig gitlab_enterprise_config = 16;
+   * </code>
+   */
+  com.google.cloud.developerconnect.v1.GitLabEnterpriseConfigOrBuilder
+      getGitlabEnterpriseConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The resource name of the connection, in the format
    * `projects/{project}/locations/{location}/connections/{connection_id}`.
    * </pre>
@@ -450,6 +563,50 @@ public interface ConnectionOrBuilder
    * @return The bytes for uid.
    */
   com.google.protobuf.ByteString getUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The crypto key configuration. This field is used by the
+   * Customer-Managed Encryption Keys (CMEK) feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.CryptoKeyConfig crypto_key_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cryptoKeyConfig field is set.
+   */
+  boolean hasCryptoKeyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The crypto key configuration. This field is used by the
+   * Customer-Managed Encryption Keys (CMEK) feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.CryptoKeyConfig crypto_key_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cryptoKeyConfig.
+   */
+  com.google.cloud.developerconnect.v1.CryptoKeyConfig getCryptoKeyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The crypto key configuration. This field is used by the
+   * Customer-Managed Encryption Keys (CMEK) feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.CryptoKeyConfig crypto_key_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.developerconnect.v1.CryptoKeyConfigOrBuilder getCryptoKeyConfigOrBuilder();
 
   com.google.cloud.developerconnect.v1.Connection.ConnectionConfigCase getConnectionConfigCase();
 }

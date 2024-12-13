@@ -1262,8 +1262,11 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a message in a Google Chat space. For an example, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
-     * The `create()` method requires either user or app authentication. Chat
-     * attributes the message sender differently depending on the type of
+     * The `create()` method requires either [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or [app
+     * authentication](https://developers.google.com/workspace/chat/authorize-import).
+     * Chat attributes the message sender differently depending on the type of
      * authentication that you use in your request.
      * The following image shows how Chat attributes a message when you use app
      * authentication. Chat displays the Chat app as the message
@@ -1278,6 +1281,11 @@ public final class ChatServiceGrpc {
      * ![Message sent with user
      * authentication](https://developers.google.com/workspace/chat/images/message-user-auth.svg)
      * The maximum message size, including the message contents, is 32,000 bytes.
+     * For
+     * [webhook](https://developers.google.com/workspace/chat/quickstart/webhooks)
+     * requests, the response doesn't contain the full message. The response only
+     * populates the `name` and `thread.name` fields in addition to the
+     * information that was in the request.
      * </pre>
      */
     default void createMessage(
@@ -1324,13 +1332,14 @@ public final class ChatServiceGrpc {
      * [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * lists memberships in spaces that the authenticated user has access to.
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     default void listMemberships(
@@ -1347,13 +1356,14 @@ public final class ChatServiceGrpc {
      * Returns details about a membership. For an example, see
      * [Get details about a user's or Google Chat app's
      * membership](https://developers.google.com/workspace/chat/get-members).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     default void getMembership(
@@ -1370,13 +1380,12 @@ public final class ChatServiceGrpc {
      * Returns details about a message.
      * For an example, see [Get details about a
      * message](https://developers.google.com/workspace/chat/get-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
@@ -1396,13 +1405,12 @@ public final class ChatServiceGrpc {
      * request. We recommend using the `patch` method. For an example, see
      * [Update a
      * message](https://developers.google.com/workspace/chat/update-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * When using app authentication, requests can only update messages
      * created by the calling Chat app.
      * </pre>
@@ -1421,13 +1429,12 @@ public final class ChatServiceGrpc {
      * Deletes a message.
      * For an example, see [Delete a
      * message](https://developers.google.com/workspace/chat/delete-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * When using app authentication, requests can only delete messages
      * created by the calling Chat app.
      * </pre>
@@ -1489,15 +1496,12 @@ public final class ChatServiceGrpc {
      * until the first message is sent. For an example, see
      * [List
      * spaces](https://developers.google.com/workspace/chat/list-spaces).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
-     * Lists spaces visible to the caller or authenticated user. Group chats
-     * and DMs aren't listed until the first message is sent.
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * To list all named spaces by Google Workspace organization, use the
      * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
      * method using Workspace administrator privileges instead.
@@ -1514,7 +1518,8 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. Requires [user
+     * administrator's search.
+     * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
      * In the request, set `use_admin_access` to `true`.
@@ -1534,13 +1539,14 @@ public final class ChatServiceGrpc {
      * Returns details about a space. For an example, see
      * [Get details about a
      * space](https://developers.google.com/workspace/chat/get-spaces).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     default void getSpace(
@@ -1553,18 +1559,22 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a space with no members. Can be used to create a named space.
-     * Spaces grouped by topics aren't supported. For an example, see
-     * [Create a
+     * Creates a space with no members. Can be used to create a named space, or a
+     * group chat in `Import mode`. For an example, see [Create a
      * space](https://developers.google.com/workspace/chat/create-spaces).
      *  If you receive the error message `ALREADY_EXISTS` when creating
      *  a space, try a different `displayName`. An existing space within
      *  the Google Workspace organization might already use this display name.
-     * If you're a member of the [Developer Preview
-     * program](https://developers.google.com/workspace/preview), you can create a
-     * group chat in import mode using `spaceType.GROUP_CHAT`.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * When authenticating as an app, the `space.customer` field must be set in
+     * the request.
      * </pre>
      */
     default void createSpace(
@@ -1640,8 +1650,16 @@ public final class ChatServiceGrpc {
      * If you're updating the `displayName` field and receive the error message
      * `ALREADY_EXISTS`, try a different display name.. An existing space within
      * the Google Workspace organization might already use this display name.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     default void updateSpace(
@@ -1660,9 +1678,16 @@ public final class ChatServiceGrpc {
      * memberships in the space—are also deleted. For an example, see
      * [Delete a
      * space](https://developers.google.com/workspace/chat/delete-spaces).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * from a user who has permission to delete the space.
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     default void deleteSpace(
@@ -1679,8 +1704,10 @@ public final class ChatServiceGrpc {
      * Completes the
      * [import process](https://developers.google.com/workspace/chat/import-data)
      * for the specified space and makes it visible to users.
-     * Requires app authentication and domain-wide delegation. For more
-     * information, see [Authorize Google Chat apps to import
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and domain-wide delegation. For more information, see [Authorize Google
+     * Chat apps to import
      * data](https://developers.google.com/workspace/chat/authorize-import).
      * </pre>
      */
@@ -1700,18 +1727,20 @@ public final class ChatServiceGrpc {
      * message space is found, returns a `404 NOT_FOUND` error. For an example,
      * see
      * [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
-     * With [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * returns the direct message space between the specified user and the
-     * authenticated user.
      * With [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
      * returns the direct message space between the specified user and the calling
      * Chat app.
-     * Requires [user
+     * With [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * returns the direct message space between the specified user and the
+     * authenticated user.
+     * // Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * or [app
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     default void findDirectMessage(
@@ -1731,8 +1760,16 @@ public final class ChatServiceGrpc {
      * policy turned off, then they're invited, and must accept the space
      * invitation before joining. Otherwise, creating a membership adds the member
      * directly to the specified space.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * For example usage, see:
      * - [Invite or add a user to a
      * space](https://developers.google.com/workspace/chat/create-members#create-user-membership).
@@ -1755,8 +1792,16 @@ public final class ChatServiceGrpc {
      * <pre>
      * Updates a membership. For an example, see [Update a user's membership in
      * a space](https://developers.google.com/workspace/chat/update-members).
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     default void updateMembership(
@@ -1773,8 +1818,16 @@ public final class ChatServiceGrpc {
      * Deletes a membership. For an example, see
      * [Remove a user or a Google Chat app from a
      * space](https://developers.google.com/workspace/chat/delete-members).
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     default void deleteMembership(
@@ -1991,8 +2044,11 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a message in a Google Chat space. For an example, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
-     * The `create()` method requires either user or app authentication. Chat
-     * attributes the message sender differently depending on the type of
+     * The `create()` method requires either [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or [app
+     * authentication](https://developers.google.com/workspace/chat/authorize-import).
+     * Chat attributes the message sender differently depending on the type of
      * authentication that you use in your request.
      * The following image shows how Chat attributes a message when you use app
      * authentication. Chat displays the Chat app as the message
@@ -2007,6 +2063,11 @@ public final class ChatServiceGrpc {
      * ![Message sent with user
      * authentication](https://developers.google.com/workspace/chat/images/message-user-auth.svg)
      * The maximum message size, including the message contents, is 32,000 bytes.
+     * For
+     * [webhook](https://developers.google.com/workspace/chat/quickstart/webhooks)
+     * requests, the response doesn't contain the full message. The response only
+     * populates the `name` and `thread.name` fields in addition to the
+     * information that was in the request.
      * </pre>
      */
     public void createMessage(
@@ -2057,13 +2118,14 @@ public final class ChatServiceGrpc {
      * [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * lists memberships in spaces that the authenticated user has access to.
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public void listMemberships(
@@ -2082,13 +2144,14 @@ public final class ChatServiceGrpc {
      * Returns details about a membership. For an example, see
      * [Get details about a user's or Google Chat app's
      * membership](https://developers.google.com/workspace/chat/get-members).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public void getMembership(
@@ -2107,13 +2170,12 @@ public final class ChatServiceGrpc {
      * Returns details about a message.
      * For an example, see [Get details about a
      * message](https://developers.google.com/workspace/chat/get-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
@@ -2134,13 +2196,12 @@ public final class ChatServiceGrpc {
      * request. We recommend using the `patch` method. For an example, see
      * [Update a
      * message](https://developers.google.com/workspace/chat/update-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * When using app authentication, requests can only update messages
      * created by the calling Chat app.
      * </pre>
@@ -2161,13 +2222,12 @@ public final class ChatServiceGrpc {
      * Deletes a message.
      * For an example, see [Delete a
      * message](https://developers.google.com/workspace/chat/delete-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * When using app authentication, requests can only delete messages
      * created by the calling Chat app.
      * </pre>
@@ -2235,15 +2295,12 @@ public final class ChatServiceGrpc {
      * until the first message is sent. For an example, see
      * [List
      * spaces](https://developers.google.com/workspace/chat/list-spaces).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
-     * Lists spaces visible to the caller or authenticated user. Group chats
-     * and DMs aren't listed until the first message is sent.
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * To list all named spaces by Google Workspace organization, use the
      * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
      * method using Workspace administrator privileges instead.
@@ -2261,7 +2318,8 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. Requires [user
+     * administrator's search.
+     * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
      * In the request, set `use_admin_access` to `true`.
@@ -2283,13 +2341,14 @@ public final class ChatServiceGrpc {
      * Returns details about a space. For an example, see
      * [Get details about a
      * space](https://developers.google.com/workspace/chat/get-spaces).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public void getSpace(
@@ -2303,18 +2362,22 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a space with no members. Can be used to create a named space.
-     * Spaces grouped by topics aren't supported. For an example, see
-     * [Create a
+     * Creates a space with no members. Can be used to create a named space, or a
+     * group chat in `Import mode`. For an example, see [Create a
      * space](https://developers.google.com/workspace/chat/create-spaces).
      *  If you receive the error message `ALREADY_EXISTS` when creating
      *  a space, try a different `displayName`. An existing space within
      *  the Google Workspace organization might already use this display name.
-     * If you're a member of the [Developer Preview
-     * program](https://developers.google.com/workspace/preview), you can create a
-     * group chat in import mode using `spaceType.GROUP_CHAT`.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * When authenticating as an app, the `space.customer` field must be set in
+     * the request.
      * </pre>
      */
     public void createSpace(
@@ -2393,8 +2456,16 @@ public final class ChatServiceGrpc {
      * If you're updating the `displayName` field and receive the error message
      * `ALREADY_EXISTS`, try a different display name.. An existing space within
      * the Google Workspace organization might already use this display name.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public void updateSpace(
@@ -2415,9 +2486,16 @@ public final class ChatServiceGrpc {
      * memberships in the space—are also deleted. For an example, see
      * [Delete a
      * space](https://developers.google.com/workspace/chat/delete-spaces).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * from a user who has permission to delete the space.
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public void deleteSpace(
@@ -2436,8 +2514,10 @@ public final class ChatServiceGrpc {
      * Completes the
      * [import process](https://developers.google.com/workspace/chat/import-data)
      * for the specified space and makes it visible to users.
-     * Requires app authentication and domain-wide delegation. For more
-     * information, see [Authorize Google Chat apps to import
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and domain-wide delegation. For more information, see [Authorize Google
+     * Chat apps to import
      * data](https://developers.google.com/workspace/chat/authorize-import).
      * </pre>
      */
@@ -2459,18 +2539,20 @@ public final class ChatServiceGrpc {
      * message space is found, returns a `404 NOT_FOUND` error. For an example,
      * see
      * [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
-     * With [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * returns the direct message space between the specified user and the
-     * authenticated user.
      * With [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
      * returns the direct message space between the specified user and the calling
      * Chat app.
-     * Requires [user
+     * With [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * returns the direct message space between the specified user and the
+     * authenticated user.
+     * // Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * or [app
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public void findDirectMessage(
@@ -2492,8 +2574,16 @@ public final class ChatServiceGrpc {
      * policy turned off, then they're invited, and must accept the space
      * invitation before joining. Otherwise, creating a membership adds the member
      * directly to the specified space.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * For example usage, see:
      * - [Invite or add a user to a
      * space](https://developers.google.com/workspace/chat/create-members#create-user-membership).
@@ -2518,8 +2608,16 @@ public final class ChatServiceGrpc {
      * <pre>
      * Updates a membership. For an example, see [Update a user's membership in
      * a space](https://developers.google.com/workspace/chat/update-members).
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public void updateMembership(
@@ -2538,8 +2636,16 @@ public final class ChatServiceGrpc {
      * Deletes a membership. For an example, see
      * [Remove a user or a Google Chat app from a
      * space](https://developers.google.com/workspace/chat/delete-members).
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public void deleteMembership(
@@ -2758,8 +2864,11 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a message in a Google Chat space. For an example, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
-     * The `create()` method requires either user or app authentication. Chat
-     * attributes the message sender differently depending on the type of
+     * The `create()` method requires either [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or [app
+     * authentication](https://developers.google.com/workspace/chat/authorize-import).
+     * Chat attributes the message sender differently depending on the type of
      * authentication that you use in your request.
      * The following image shows how Chat attributes a message when you use app
      * authentication. Chat displays the Chat app as the message
@@ -2774,6 +2883,11 @@ public final class ChatServiceGrpc {
      * ![Message sent with user
      * authentication](https://developers.google.com/workspace/chat/images/message-user-auth.svg)
      * The maximum message size, including the message contents, is 32,000 bytes.
+     * For
+     * [webhook](https://developers.google.com/workspace/chat/quickstart/webhooks)
+     * requests, the response doesn't contain the full message. The response only
+     * populates the `name` and `thread.name` fields in addition to the
+     * information that was in the request.
      * </pre>
      */
     public com.google.chat.v1.Message createMessage(
@@ -2818,13 +2932,14 @@ public final class ChatServiceGrpc {
      * [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * lists memberships in spaces that the authenticated user has access to.
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.chat.v1.ListMembershipsResponse listMemberships(
@@ -2840,13 +2955,14 @@ public final class ChatServiceGrpc {
      * Returns details about a membership. For an example, see
      * [Get details about a user's or Google Chat app's
      * membership](https://developers.google.com/workspace/chat/get-members).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.chat.v1.Membership getMembership(
@@ -2862,13 +2978,12 @@ public final class ChatServiceGrpc {
      * Returns details about a message.
      * For an example, see [Get details about a
      * message](https://developers.google.com/workspace/chat/get-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
@@ -2887,13 +3002,12 @@ public final class ChatServiceGrpc {
      * request. We recommend using the `patch` method. For an example, see
      * [Update a
      * message](https://developers.google.com/workspace/chat/update-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * When using app authentication, requests can only update messages
      * created by the calling Chat app.
      * </pre>
@@ -2911,13 +3025,12 @@ public final class ChatServiceGrpc {
      * Deletes a message.
      * For an example, see [Delete a
      * message](https://developers.google.com/workspace/chat/delete-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * When using app authentication, requests can only delete messages
      * created by the calling Chat app.
      * </pre>
@@ -2976,15 +3089,12 @@ public final class ChatServiceGrpc {
      * until the first message is sent. For an example, see
      * [List
      * spaces](https://developers.google.com/workspace/chat/list-spaces).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
-     * Lists spaces visible to the caller or authenticated user. Group chats
-     * and DMs aren't listed until the first message is sent.
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * To list all named spaces by Google Workspace organization, use the
      * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
      * method using Workspace administrator privileges instead.
@@ -3001,7 +3111,8 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. Requires [user
+     * administrator's search.
+     * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
      * In the request, set `use_admin_access` to `true`.
@@ -3020,13 +3131,14 @@ public final class ChatServiceGrpc {
      * Returns details about a space. For an example, see
      * [Get details about a
      * space](https://developers.google.com/workspace/chat/get-spaces).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.chat.v1.Space getSpace(com.google.chat.v1.GetSpaceRequest request) {
@@ -3038,18 +3150,22 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a space with no members. Can be used to create a named space.
-     * Spaces grouped by topics aren't supported. For an example, see
-     * [Create a
+     * Creates a space with no members. Can be used to create a named space, or a
+     * group chat in `Import mode`. For an example, see [Create a
      * space](https://developers.google.com/workspace/chat/create-spaces).
      *  If you receive the error message `ALREADY_EXISTS` when creating
      *  a space, try a different `displayName`. An existing space within
      *  the Google Workspace organization might already use this display name.
-     * If you're a member of the [Developer Preview
-     * program](https://developers.google.com/workspace/preview), you can create a
-     * group chat in import mode using `spaceType.GROUP_CHAT`.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * When authenticating as an app, the `space.customer` field must be set in
+     * the request.
      * </pre>
      */
     public com.google.chat.v1.Space createSpace(com.google.chat.v1.CreateSpaceRequest request) {
@@ -3122,8 +3238,16 @@ public final class ChatServiceGrpc {
      * If you're updating the `displayName` field and receive the error message
      * `ALREADY_EXISTS`, try a different display name.. An existing space within
      * the Google Workspace organization might already use this display name.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.chat.v1.Space updateSpace(com.google.chat.v1.UpdateSpaceRequest request) {
@@ -3140,9 +3264,16 @@ public final class ChatServiceGrpc {
      * memberships in the space—are also deleted. For an example, see
      * [Delete a
      * space](https://developers.google.com/workspace/chat/delete-spaces).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * from a user who has permission to delete the space.
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.protobuf.Empty deleteSpace(com.google.chat.v1.DeleteSpaceRequest request) {
@@ -3157,8 +3288,10 @@ public final class ChatServiceGrpc {
      * Completes the
      * [import process](https://developers.google.com/workspace/chat/import-data)
      * for the specified space and makes it visible to users.
-     * Requires app authentication and domain-wide delegation. For more
-     * information, see [Authorize Google Chat apps to import
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and domain-wide delegation. For more information, see [Authorize Google
+     * Chat apps to import
      * data](https://developers.google.com/workspace/chat/authorize-import).
      * </pre>
      */
@@ -3176,18 +3309,20 @@ public final class ChatServiceGrpc {
      * message space is found, returns a `404 NOT_FOUND` error. For an example,
      * see
      * [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
-     * With [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * returns the direct message space between the specified user and the
-     * authenticated user.
      * With [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
      * returns the direct message space between the specified user and the calling
      * Chat app.
-     * Requires [user
+     * With [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * returns the direct message space between the specified user and the
+     * authenticated user.
+     * // Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * or [app
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public com.google.chat.v1.Space findDirectMessage(
@@ -3206,8 +3341,16 @@ public final class ChatServiceGrpc {
      * policy turned off, then they're invited, and must accept the space
      * invitation before joining. Otherwise, creating a membership adds the member
      * directly to the specified space.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * For example usage, see:
      * - [Invite or add a user to a
      * space](https://developers.google.com/workspace/chat/create-members#create-user-membership).
@@ -3229,8 +3372,16 @@ public final class ChatServiceGrpc {
      * <pre>
      * Updates a membership. For an example, see [Update a user's membership in
      * a space](https://developers.google.com/workspace/chat/update-members).
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.chat.v1.Membership updateMembership(
@@ -3246,8 +3397,16 @@ public final class ChatServiceGrpc {
      * Deletes a membership. For an example, see
      * [Remove a user or a Google Chat app from a
      * space](https://developers.google.com/workspace/chat/delete-members).
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.chat.v1.Membership deleteMembership(
@@ -3439,8 +3598,11 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a message in a Google Chat space. For an example, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
-     * The `create()` method requires either user or app authentication. Chat
-     * attributes the message sender differently depending on the type of
+     * The `create()` method requires either [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or [app
+     * authentication](https://developers.google.com/workspace/chat/authorize-import).
+     * Chat attributes the message sender differently depending on the type of
      * authentication that you use in your request.
      * The following image shows how Chat attributes a message when you use app
      * authentication. Chat displays the Chat app as the message
@@ -3455,6 +3617,11 @@ public final class ChatServiceGrpc {
      * ![Message sent with user
      * authentication](https://developers.google.com/workspace/chat/images/message-user-auth.svg)
      * The maximum message size, including the message contents, is 32,000 bytes.
+     * For
+     * [webhook](https://developers.google.com/workspace/chat/quickstart/webhooks)
+     * requests, the response doesn't contain the full message. The response only
+     * populates the `name` and `thread.name` fields in addition to the
+     * information that was in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Message>
@@ -3500,13 +3667,14 @@ public final class ChatServiceGrpc {
      * [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * lists memberships in spaces that the authenticated user has access to.
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3523,13 +3691,14 @@ public final class ChatServiceGrpc {
      * Returns details about a membership. For an example, see
      * [Get details about a user's or Google Chat app's
      * membership](https://developers.google.com/workspace/chat/get-members).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Membership>
@@ -3545,13 +3714,12 @@ public final class ChatServiceGrpc {
      * Returns details about a message.
      * For an example, see [Get details about a
      * message](https://developers.google.com/workspace/chat/get-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
@@ -3571,13 +3739,12 @@ public final class ChatServiceGrpc {
      * request. We recommend using the `patch` method. For an example, see
      * [Update a
      * message](https://developers.google.com/workspace/chat/update-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * When using app authentication, requests can only update messages
      * created by the calling Chat app.
      * </pre>
@@ -3595,13 +3762,12 @@ public final class ChatServiceGrpc {
      * Deletes a message.
      * For an example, see [Delete a
      * message](https://developers.google.com/workspace/chat/delete-messages).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * When using app authentication, requests can only delete messages
      * created by the calling Chat app.
      * </pre>
@@ -3661,15 +3827,12 @@ public final class ChatServiceGrpc {
      * until the first message is sent. For an example, see
      * [List
      * spaces](https://developers.google.com/workspace/chat/list-spaces).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
-     * Lists spaces visible to the caller or authenticated user. Group chats
-     * and DMs aren't listed until the first message is sent.
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * To list all named spaces by Google Workspace organization, use the
      * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
      * method using Workspace administrator privileges instead.
@@ -3686,7 +3849,8 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. Requires [user
+     * administrator's search.
+     * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges).
      * In the request, set `use_admin_access` to `true`.
@@ -3706,13 +3870,14 @@ public final class ChatServiceGrpc {
      * Returns details about a space. For an example, see
      * [Get details about a
      * space](https://developers.google.com/workspace/chat/get-spaces).
-     * Requires
-     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
-     * Supports
-     * [app
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * and [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space> getSpace(
@@ -3725,18 +3890,22 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a space with no members. Can be used to create a named space.
-     * Spaces grouped by topics aren't supported. For an example, see
-     * [Create a
+     * Creates a space with no members. Can be used to create a named space, or a
+     * group chat in `Import mode`. For an example, see [Create a
      * space](https://developers.google.com/workspace/chat/create-spaces).
      *  If you receive the error message `ALREADY_EXISTS` when creating
      *  a space, try a different `displayName`. An existing space within
      *  the Google Workspace organization might already use this display name.
-     * If you're a member of the [Developer Preview
-     * program](https://developers.google.com/workspace/preview), you can create a
-     * group chat in import mode using `spaceType.GROUP_CHAT`.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * When authenticating as an app, the `space.customer` field must be set in
+     * the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space> createSpace(
@@ -3811,8 +3980,16 @@ public final class ChatServiceGrpc {
      * If you're updating the `displayName` field and receive the error message
      * `ALREADY_EXISTS`, try a different display name.. An existing space within
      * the Google Workspace organization might already use this display name.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space> updateSpace(
@@ -3830,9 +4007,16 @@ public final class ChatServiceGrpc {
      * memberships in the space—are also deleted. For an example, see
      * [Delete a
      * space](https://developers.google.com/workspace/chat/delete-spaces).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * from a user who has permission to delete the space.
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3848,8 +4032,10 @@ public final class ChatServiceGrpc {
      * Completes the
      * [import process](https://developers.google.com/workspace/chat/import-data)
      * for the specified space and makes it visible to users.
-     * Requires app authentication and domain-wide delegation. For more
-     * information, see [Authorize Google Chat apps to import
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and domain-wide delegation. For more information, see [Authorize Google
+     * Chat apps to import
      * data](https://developers.google.com/workspace/chat/authorize-import).
      * </pre>
      */
@@ -3868,18 +4054,20 @@ public final class ChatServiceGrpc {
      * message space is found, returns a `404 NOT_FOUND` error. For an example,
      * see
      * [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
-     * With [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * returns the direct message space between the specified user and the
-     * authenticated user.
      * With [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
      * returns the direct message space between the specified user and the calling
      * Chat app.
-     * Requires [user
+     * With [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * returns the direct message space between the specified user and the
+     * authenticated user.
+     * // Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * or [app
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space>
@@ -3898,8 +4086,16 @@ public final class ChatServiceGrpc {
      * policy turned off, then they're invited, and must accept the space
      * invitation before joining. Otherwise, creating a membership adds the member
      * directly to the specified space.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * For example usage, see:
      * - [Invite or add a user to a
      * space](https://developers.google.com/workspace/chat/create-members#create-user-membership).
@@ -3921,8 +4117,16 @@ public final class ChatServiceGrpc {
      * <pre>
      * Updates a membership. For an example, see [Update a user's membership in
      * a space](https://developers.google.com/workspace/chat/update-members).
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Membership>
@@ -3938,8 +4142,16 @@ public final class ChatServiceGrpc {
      * Deletes a membership. For an example, see
      * [Remove a user or a Google Chat app from a
      * space](https://developers.google.com/workspace/chat/delete-members).
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator approval](https://support.google.com/a?p=chat-app-auth)
+     * in [Developer Preview](https://developers.google.com/workspace/preview)
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * You can authenticate and authorize this method with administrator
+     * privileges by setting the `use_admin_access` field in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Membership>
