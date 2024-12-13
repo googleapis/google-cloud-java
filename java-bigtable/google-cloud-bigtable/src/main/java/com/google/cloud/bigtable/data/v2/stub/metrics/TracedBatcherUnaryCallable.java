@@ -21,7 +21,6 @@ import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracer;
-import org.threeten.bp.Duration;
 
 /**
  * This callable will extract total throttled time from {@link ApiCallContext} and add it to {@link
@@ -44,7 +43,8 @@ public final class TracedBatcherUnaryCallable<RequestT, ResponseT>
       if (tracer instanceof BigtableTracer) {
         ((BigtableTracer) tracer)
             .batchRequestThrottled(
-                Duration.ofMillis(context.getOption(Batcher.THROTTLED_TIME_KEY)).toNanos());
+                java.time.Duration.ofMillis(context.getOption(Batcher.THROTTLED_TIME_KEY))
+                    .toNanos());
       }
     }
     return innerCallable.futureCall(request, context);

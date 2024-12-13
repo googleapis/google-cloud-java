@@ -44,6 +44,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
@@ -52,7 +53,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class ExecuteQueryCallableTest {
@@ -158,8 +158,8 @@ public class ExecuteQueryCallableTest {
         .executeQuerySettings()
         .setRetrySettings(
             RetrySettings.newBuilder()
-                .setInitialRpcTimeout(Duration.ofMillis(10))
-                .setMaxRpcTimeout(Duration.ofMillis(10))
+                .setInitialRpcTimeoutDuration(Duration.ofMillis(10))
+                .setMaxRpcTimeoutDuration(Duration.ofMillis(10))
                 .build());
 
     try (EnhancedBigtableStub overrideDeadline =

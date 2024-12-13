@@ -39,7 +39,6 @@ import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * Settings class to configure an instance of {@link BigtableDataClient}.
@@ -134,9 +133,11 @@ public final class BigtableDataSettings {
                 .setMaxInboundMessageSize(256 * 1024 * 1024)
                 .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
                 .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-                .setKeepAliveTime(Duration.ofSeconds(61)) // sends ping in this interval
-                .setKeepAliveTimeout(
-                    Duration.ofSeconds(10)) // wait this long before considering the connection dead
+                .setKeepAliveTimeDuration(
+                    java.time.Duration.ofSeconds(61)) // sends ping in this interval
+                .setKeepAliveTimeoutDuration(
+                    java.time.Duration.ofSeconds(
+                        10)) // wait this long before considering the connection dead
                 .build());
 
     LOGGER.info("Connecting to the Bigtable emulator at " + hostname + ":" + port);

@@ -24,7 +24,6 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.Callable;
-import org.threeten.bp.Duration;
 
 // TODO: remove this once ApiResultRetryAlgorithm is added to gax.
 /**
@@ -59,9 +58,9 @@ public class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT>
 
     try {
       // Set the RPC timeout if the caller did not provide their own.
-      Duration rpcTimeout = externalFuture.getAttemptSettings().getRpcTimeout();
+      java.time.Duration rpcTimeout = externalFuture.getAttemptSettings().getRpcTimeoutDuration();
       if (!rpcTimeout.isZero() && callContext.getTimeout() == null) {
-        callContext = callContext.withTimeout(rpcTimeout);
+        callContext = callContext.withTimeoutDuration(rpcTimeout);
       }
 
       externalFuture.setAttemptFuture(new NonCancellableFuture<ResponseT>());

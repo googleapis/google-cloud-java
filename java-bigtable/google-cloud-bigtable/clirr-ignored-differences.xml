@@ -275,4 +275,37 @@
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/DefaultMetricsProvider</className>
         <method>*</method>
     </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/internal/*</className>
+        <method>*getTimestamp(*)</method>
+        <to>java.time.Instant</to>
+    </difference>
+    <difference>
+        <!-- BetaApi was updated -->
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/StructReader</className>
+        <method>*getTimestamp(*)</method>
+        <to>java.time.Instant</to>
+    </difference>
+    <difference>
+        <!-- BetaApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/Statement$Builder</className>
+        <method>*setTimestampParam(java.lang.String, org.threeten.bp.Instant)</method>
+        <to>*setTimestampParam(java.lang.String, java.time.Instant)</to>
+    </difference>
+    <difference>
+        <!-- ChangeStream api is internal, only used by apache/beam-->
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/ChangeStreamMutation</className>
+        <method>*get*Time()</method>
+    </difference>
+    <difference>
+        <!-- Heartbeat is part of the ChangeStream api, which is internal and only used by apache/beam-->
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/Heartbeat</className>
+        <method>*getEstimatedLowWatermarkTime()</method>
+    </difference>
 </differences>

@@ -23,8 +23,8 @@ import com.google.cloud.bigtable.common.Type.SchemalessStruct;
 import com.google.cloud.bigtable.common.Type.StructWithSchema;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.List;
-import org.threeten.bp.Instant;
 
 /**
  * Represents a data type in a SQL query.

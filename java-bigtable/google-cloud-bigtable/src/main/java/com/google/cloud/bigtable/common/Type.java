@@ -23,8 +23,8 @@ import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
 import java.util.List;
-import org.threeten.bp.Instant;
 
 /**
  * Shared type implementations. Right now this is only used by SqlType but this will become a shared

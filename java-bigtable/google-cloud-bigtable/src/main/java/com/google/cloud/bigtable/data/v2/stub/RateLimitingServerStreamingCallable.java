@@ -30,13 +30,13 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import com.google.common.util.concurrent.RateLimiter;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
 
 class RateLimitingServerStreamingCallable
     extends ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> {

@@ -15,6 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
+
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.api.gax.tracing.SpanName;
@@ -32,7 +35,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 class MetricsTracer extends BigtableTracer {
 
@@ -152,8 +154,18 @@ class MetricsTracer extends BigtableTracer {
     recordAttemptCompletion(new CancellationException());
   }
 
+  /**
+   * This method is obsolete. Use {@link #attemptFailedDuration(Throwable, java.time.Duration)}
+   * instead.
+   */
+  @ObsoleteApi("Use attemptFailedDuration(Throwable, java.time.Duration) instead")
   @Override
-  public void attemptFailed(Throwable throwable, Duration duration) {
+  public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
+    attemptFailedDuration(error, toJavaTimeDuration(delay));
+  }
+
+  @Override
+  public void attemptFailedDuration(Throwable throwable, java.time.Duration duration) {
     recordAttemptCompletion(throwable);
   }
 

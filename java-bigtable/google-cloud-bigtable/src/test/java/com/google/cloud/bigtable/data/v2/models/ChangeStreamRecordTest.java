@@ -30,6 +30,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.Instant;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -37,7 +38,6 @@ import org.junit.function.ThrowingRunnable;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class ChangeStreamRecordTest {
@@ -129,7 +129,7 @@ public class ChangeStreamRecordTest {
             .build();
     Heartbeat actualHeartbeat = Heartbeat.fromProto(heartbeatProto);
 
-    assertThat(actualHeartbeat.getEstimatedLowWatermark())
+    assertThat(actualHeartbeat.getEstimatedLowWatermarkTime())
         .isEqualTo(Instant.ofEpochSecond(lowWatermark.getSeconds(), lowWatermark.getNanos()));
     assertThat(actualHeartbeat.getChangeStreamContinuationToken().getPartition())
         .isEqualTo(ByteStringRange.create(rowRange.getStartKeyClosed(), rowRange.getEndKeyOpen()));

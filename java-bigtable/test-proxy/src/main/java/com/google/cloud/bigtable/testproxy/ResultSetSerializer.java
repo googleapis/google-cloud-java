@@ -33,9 +33,9 @@ import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.StructReader;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import org.threeten.bp.Instant;
 
 public class ResultSetSerializer {
   public static ExecuteQueryResult toExecuteQueryResult(ResultSet resultSet)

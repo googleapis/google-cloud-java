@@ -57,6 +57,7 @@ import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.Struct;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -71,7 +72,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
-import org.threeten.bp.Instant;
 
 @RunWith(Enclosed.class)
 public class AbstractProtoStructReaderTest {

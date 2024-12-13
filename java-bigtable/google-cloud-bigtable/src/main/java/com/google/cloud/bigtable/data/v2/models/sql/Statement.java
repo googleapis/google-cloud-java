@@ -27,11 +27,11 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
-import org.threeten.bp.Instant;
 
 /**
  * A SQL statement that can be executed by calling {@link

@@ -368,6 +368,8 @@ public class BigtableTableAdminClientTests {
     assertThat(actualResult.getId()).isEqualTo(TABLE_ID);
     assertThat(actualResult.getChangeStreamRetention())
         .isEqualTo(org.threeten.bp.Duration.ofHours(24));
+    assertThat(actualResult.getChangeStreamRetention().toMillis())
+        .isEqualTo(actualResult.getChangeStreamRetention().toMillis());
   }
 
   @Test
@@ -1015,6 +1017,7 @@ public class BigtableTableAdminClientTests {
     String srcTableId = "src-table";
     String srcClusterId = "src-cluster";
     String srcBackupId = "src-backup";
+
     Instant expireTime = Instant.now().plus(org.threeten.bp.Duration.ofDays(15));
     long sizeBytes = 123456789;
 

@@ -15,12 +15,14 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
+
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * Combines multiple {@link ApiTracer}s and {@link BigtableTracer}s into a single {@link ApiTracer}.
@@ -124,9 +126,20 @@ class CompositeTracer extends BigtableTracer {
     }
   }
 
-  public void attemptFailed(Throwable error, Duration delay) {
+  /**
+   * This method is obsolete. Use {@link #attemptFailedDuration(Throwable, java.time.Duration)}
+   * instead.
+   */
+  @ObsoleteApi("Use attemptFailedDuration(Throwable, java.time.Duration) instead")
+  @Override
+  public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
+    attemptFailedDuration(error, toJavaTimeDuration(delay));
+  }
+
+  @Override
+  public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
     for (ApiTracer child : children) {
-      child.attemptFailed(error, delay);
+      child.attemptFailedDuration(error, delay);
     }
   }
 

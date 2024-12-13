@@ -36,12 +36,12 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
+import java.time.Instant;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
-import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class RateLimitingCallableTest {
@@ -72,7 +72,7 @@ public class RateLimitingCallableTest {
     callableToTest.call(request, responseObserver, context);
     callableToTest.setLimiterEnabled(true);
 
-    Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
+    Instant earlier = Instant.now().minus(java.time.Duration.ofHours(1));
 
     // Make sure rate will be updated.
     callableToTest.getNextRateUpdateTime().set(earlier);
@@ -105,7 +105,7 @@ public class RateLimitingCallableTest {
     callableToTest.call(request, responseObserver, context);
     callableToTest.setLimiterEnabled(true);
 
-    Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
+    Instant earlier = Instant.now().minus(java.time.Duration.ofHours(1));
 
     // Make sure rate will be updated.
     callableToTest.getNextRateUpdateTime().set(earlier);
@@ -131,7 +131,7 @@ public class RateLimitingCallableTest {
     callableToTest.call(request, responseObserver, context);
     callableToTest.setLimiterEnabled(true);
 
-    Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
+    Instant earlier = Instant.now().minus(java.time.Duration.ofHours(1));
 
     // make sure QPS will be updated
     callableToTest.getNextRateUpdateTime().set(earlier);
@@ -166,7 +166,7 @@ public class RateLimitingCallableTest {
     callableToTest.call(request, responseObserver, context);
     callableToTest.setLimiterEnabled(true);
 
-    Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
+    Instant earlier = Instant.now().minus(java.time.Duration.ofHours(1));
 
     // Make sure rate can be updated.
     callableToTest.getNextRateUpdateTime().set(earlier);
@@ -199,7 +199,7 @@ public class RateLimitingCallableTest {
     callableToTest.call(request, responseObserver, context);
     callableToTest.setLimiterEnabled(true);
 
-    Instant later = Instant.now().plus(org.threeten.bp.Duration.ofHours(1));
+    Instant later = Instant.now().plus(java.time.Duration.ofHours(1));
     // Make sure rate will not be updated.
     callableToTest.getNextRateUpdateTime().set(later);
     double oldQps = callableToTest.getCurrentRate();
@@ -232,7 +232,7 @@ public class RateLimitingCallableTest {
     callableToTest.call(request, responseObserver, context);
     callableToTest.setLimiterEnabled(true);
 
-    Instant later = Instant.now().plus(org.threeten.bp.Duration.ofHours(1));
+    Instant later = Instant.now().plus(java.time.Duration.ofHours(1));
     // Make sure limiter will not be disabled.
     callableToTest.getNextRateUpdateTime().set(later);
     double oldQps = callableToTest.getCurrentRate();
@@ -257,7 +257,7 @@ public class RateLimitingCallableTest {
     callableToTest.call(request, responseObserver, context);
     callableToTest.setRate(1.5);
 
-    Instant later = Instant.now().plus(org.threeten.bp.Duration.ofHours(1));
+    Instant later = Instant.now().plus(java.time.Duration.ofHours(1));
     // Even though the rate update time is far in the future, enable is always allowed.
     callableToTest.getNextRateUpdateTime().set(later);
     double oldQps = callableToTest.getCurrentRate();
@@ -289,7 +289,7 @@ public class RateLimitingCallableTest {
   public void testErrorInfoLowerQPS() throws Exception {
     callableToTest.call(request, responseObserver, context);
 
-    Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
+    Instant earlier = Instant.now().minus(java.time.Duration.ofHours(1));
 
     // make sure QPS will be updated
     callableToTest.getNextRateUpdateTime().set(earlier);

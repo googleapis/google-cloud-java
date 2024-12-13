@@ -18,9 +18,9 @@ package com.google.cloud.bigtable.data.v2.models.sql;
 import com.google.api.core.BetaApi;
 import com.google.cloud.Date;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
-import org.threeten.bp.Instant;
 
 /**
  * An interface for reading the columns of a {@code Struct} or {@code

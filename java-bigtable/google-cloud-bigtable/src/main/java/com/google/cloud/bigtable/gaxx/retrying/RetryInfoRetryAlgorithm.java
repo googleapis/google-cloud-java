@@ -22,8 +22,7 @@ import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
-import org.checkerframework.checker.nullness.qual.Nullable;
-import org.threeten.bp.Duration;
+import javax.annotation.Nullable;
 
 // TODO move this algorithm to gax
 /**
@@ -36,11 +35,11 @@ public class RetryInfoRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorith
   @Override
   public TimedAttemptSettings createNextAttempt(
       Throwable prevThrowable, ResponseT prevResponse, TimedAttemptSettings prevSettings) {
-    Duration retryDelay = extractRetryDelay(prevThrowable);
+    java.time.Duration retryDelay = extractRetryDelay(prevThrowable);
     if (retryDelay != null) {
       return prevSettings
           .toBuilder()
-          .setRandomizedRetryDelay(retryDelay)
+          .setRandomizedRetryDelayDuration(retryDelay)
           .setAttemptCount(prevSettings.getAttemptCount() + 1)
           .setOverallAttemptCount(prevSettings.getAttemptCount() + 1)
           .build();
@@ -81,8 +80,7 @@ public class RetryInfoRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorith
         && ((ApiException) previousThrowable).isRetryable();
   }
 
-  @Nullable
-  static Duration extractRetryDelay(@Nullable Throwable throwable) {
+  static java.time.Duration extractRetryDelay(@Nullable Throwable throwable) {
     if (throwable == null) {
       return null;
     }
@@ -97,6 +95,6 @@ public class RetryInfoRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorith
       return null;
     }
     RetryInfo retryInfo = exception.getErrorDetails().getRetryInfo();
-    return Duration.ofMillis(Durations.toMillis(retryInfo.getRetryDelay()));
+    return java.time.Duration.ofMillis(Durations.toMillis(retryInfo.getRetryDelay()));
   }
 }

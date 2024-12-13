@@ -41,6 +41,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.rpc.Status;
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Callable;
@@ -49,7 +50,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class MutateRowsAttemptCallableTest {
@@ -140,7 +140,7 @@ public class MutateRowsAttemptCallableTest {
   @Test
   public void testNoRpcTimeout() {
     parentFuture.timedAttemptSettings =
-        parentFuture.timedAttemptSettings.toBuilder().setRpcTimeout(Duration.ZERO).build();
+        parentFuture.timedAttemptSettings.toBuilder().setRpcTimeoutDuration(Duration.ZERO).build();
 
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder().addEntries(Entry.getDefaultInstance()).build();
@@ -405,12 +405,13 @@ public class MutateRowsAttemptCallableTest {
     MockRetryingFuture(Duration totalTimeout) {
       this.timedAttemptSettings =
           TimedAttemptSettings.newBuilder()
-              .setRpcTimeout(Duration.ofSeconds(1))
-              .setRetryDelay(Duration.ZERO)
-              .setRandomizedRetryDelay(Duration.ZERO)
+              .setRpcTimeoutDuration(Duration.ofSeconds(1))
+              .setRetryDelayDuration(Duration.ZERO)
+              .setRandomizedRetryDelayDuration(Duration.ZERO)
               .setAttemptCount(0)
               .setFirstAttemptStartTimeNanos(0)
-              .setGlobalSettings(RetrySettings.newBuilder().setTotalTimeout(totalTimeout).build())
+              .setGlobalSettings(
+                  RetrySettings.newBuilder().setTotalTimeoutDuration(totalTimeout).build())
               .build();
     }
 

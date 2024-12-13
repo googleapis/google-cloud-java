@@ -41,12 +41,12 @@ import com.google.bigtable.v2.Value;
 import com.google.cloud.Date;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collections;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class StatementTest {

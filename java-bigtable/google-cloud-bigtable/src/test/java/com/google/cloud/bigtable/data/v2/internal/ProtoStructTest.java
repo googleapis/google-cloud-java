@@ -47,13 +47,13 @@ import com.google.bigtable.v2.Value;
 import com.google.cloud.Date;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class ProtoStructTest {

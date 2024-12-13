@@ -28,10 +28,10 @@ import com.google.cloud.bigtable.data.v2.models.sql.StructReader;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import org.threeten.bp.Instant;
 
 /**
  * The primary implementation of a ResultSet.

@@ -15,13 +15,13 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
+import java.time.Instant;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
-import org.threeten.bp.Instant;
 
 public class PrefixGenerator implements TestRule {
   private static final Logger LOGGER = Logger.getLogger(TestEnvRule.class.getName());

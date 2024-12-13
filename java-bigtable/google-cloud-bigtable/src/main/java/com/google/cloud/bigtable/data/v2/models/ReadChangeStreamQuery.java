@@ -15,7 +15,11 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeInstant;
+
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.StreamContinuationTokens;
@@ -36,7 +40,6 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Instant;
 
 /** A simple wrapper to construct a query for the ReadChangeStream RPC. */
 @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
@@ -143,8 +146,14 @@ public final class ReadChangeStreamQuery implements Serializable, Cloneable {
     return streamPartition(rangeBuilder.build());
   }
 
+  /** This method is obsolete. Use {@link #startTime(java.time.Instant)} instead. */
+  @ObsoleteApi("Use startTime(java.time.Instant) instead")
+  public ReadChangeStreamQuery startTime(org.threeten.bp.Instant value) {
+    return startTime(toJavaTimeInstant(value));
+  }
+
   /** Sets the startTime to read the change stream. */
-  public ReadChangeStreamQuery startTime(Instant value) {
+  public ReadChangeStreamQuery startTime(java.time.Instant value) {
     Preconditions.checkState(
         !builder.hasContinuationTokens(),
         "startTime and continuationTokens can't be specified together");
@@ -156,8 +165,14 @@ public final class ReadChangeStreamQuery implements Serializable, Cloneable {
     return this;
   }
 
+  /** This method is obsolete. Use {@link #endTime(java.time.Instant)} instead. */
+  @ObsoleteApi("Use endTime(java.time.Instant) instead")
+  public ReadChangeStreamQuery endTime(org.threeten.bp.Instant value) {
+    return endTime(toJavaTimeInstant(value));
+  }
+
   /** Sets the endTime to read the change stream. */
-  public ReadChangeStreamQuery endTime(Instant value) {
+  public ReadChangeStreamQuery endTime(java.time.Instant value) {
     builder.setEndTime(
         Timestamp.newBuilder()
             .setSeconds(value.getEpochSecond())
@@ -181,8 +196,14 @@ public final class ReadChangeStreamQuery implements Serializable, Cloneable {
     return this;
   }
 
-  /** Sets the heartbeat duration for the change stream. */
+  /** This method is obsolete. Use {@link #heartbeatDuration(java.time.Duration)} instead. */
+  @ObsoleteApi("Use heartbeatDuration(java.time.Duration) instead")
   public ReadChangeStreamQuery heartbeatDuration(org.threeten.bp.Duration duration) {
+    return heartbeatDuration(toJavaTimeDuration(duration));
+  }
+
+  /** Sets the heartbeat duration for the change stream. */
+  public ReadChangeStreamQuery heartbeatDuration(java.time.Duration duration) {
     builder.setHeartbeatDuration(
         Duration.newBuilder()
             .setSeconds(duration.getSeconds())

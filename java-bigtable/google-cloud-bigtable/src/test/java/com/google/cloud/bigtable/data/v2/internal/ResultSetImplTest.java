@@ -54,6 +54,7 @@ import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStreamImpl;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,7 +63,6 @@ import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class ResultSetImplTest {

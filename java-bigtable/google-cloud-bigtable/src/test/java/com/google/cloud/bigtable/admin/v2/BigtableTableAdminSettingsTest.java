@@ -31,7 +31,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class BigtableTableAdminSettingsTest {
@@ -165,7 +164,9 @@ public class BigtableTableAdminSettingsTest {
     stubSettings
         .getBackupSettings()
         .setRetrySettings(
-            RetrySettings.newBuilder().setTotalTimeout(Duration.ofMinutes(812)).build());
+            RetrySettings.newBuilder()
+                .setTotalTimeout(org.threeten.bp.Duration.ofMinutes(812))
+                .build());
 
     BigtableTableAdminSettings settings = builder.build();
     checkToString(settings);
