@@ -2122,6 +2122,20 @@ libraries:
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center Accounts.
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-reviews
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/reviews/v1beta
+  requires_billing: true
+  library_name: shopping-merchant-reviews
+
+- api_shortname: merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
