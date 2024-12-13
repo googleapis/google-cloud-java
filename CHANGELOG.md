@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [0.132.0-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.131.17-alpha...v0.132.0-alpha) (2024-12-13)
+
+
+### Features
+
+* Introduce `java.time` ([#1410](https://github.com/googleapis/java-logging-logback/issues/1410)) ([05b12ae](https://github.com/googleapis/java-logging-logback/commit/05b12ae67795a842dcc39394592c274e5bef1b9d))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.21.0 ([#1409](https://github.com/googleapis/java-logging-logback/issues/1409)) ([16bf603](https://github.com/googleapis/java-logging-logback/commit/16bf603d27bd66f0af97aa3292cf6034a0bd6de3))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#1414](https://github.com/googleapis/java-logging-logback/issues/1414)) ([1ded46c](https://github.com/googleapis/java-logging-logback/commit/1ded46cc30a8795b3de87449accc4beec869875d))
+
 ## [0.131.17-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.131.16-alpha...v0.131.17-alpha) (2024-11-18)
 
 
