@@ -28,6 +28,111 @@ public interface NetworkRoutingConfigOrBuilder
    *
    *
    * <pre>
+   * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+   * </pre>
+   *
+   * <code>optional bool bgp_always_compare_med = 213102902;</code>
+   *
+   * @return Whether the bgpAlwaysCompareMed field is set.
+   */
+  boolean hasBgpAlwaysCompareMed();
+  /**
+   *
+   *
+   * <pre>
+   * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+   * </pre>
+   *
+   * <code>optional bool bgp_always_compare_med = 213102902;</code>
+   *
+   * @return The bgpAlwaysCompareMed.
+   */
+  boolean getBgpAlwaysCompareMed();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return Whether the bgpBestPathSelectionMode field is set.
+   */
+  boolean hasBgpBestPathSelectionMode();
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return The bgpBestPathSelectionMode.
+   */
+  java.lang.String getBgpBestPathSelectionMode();
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return The bytes for bgpBestPathSelectionMode.
+   */
+  com.google.protobuf.ByteString getBgpBestPathSelectionModeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return Whether the bgpInterRegionCost field is set.
+   */
+  boolean hasBgpInterRegionCost();
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return The bgpInterRegionCost.
+   */
+  java.lang.String getBgpInterRegionCost();
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return The bytes for bgpInterRegionCost.
+   */
+  com.google.protobuf.ByteString getBgpInterRegionCostBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
    * Check the RoutingMode enum for the list of possible values.
    * </pre>

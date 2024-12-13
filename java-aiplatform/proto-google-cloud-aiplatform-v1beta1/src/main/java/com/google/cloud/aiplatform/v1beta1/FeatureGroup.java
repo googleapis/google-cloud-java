@@ -42,6 +42,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     etag_ = "";
     description_ = "";
+    serviceAgentType_ = 0;
+    serviceAccountEmail_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +77,173 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1beta1.FeatureGroup.class,
             com.google.cloud.aiplatform.v1beta1.FeatureGroup.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Service agent type used during jobs under a FeatureGroup.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType}
+   */
+  public enum ServiceAgentType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * By default, the project-level Vertex AI Service Agent is enabled.
+     * </pre>
+     *
+     * <code>SERVICE_AGENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    SERVICE_AGENT_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the project-level Vertex AI Service Agent
+     * (https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents).
+     * </pre>
+     *
+     * <code>SERVICE_AGENT_TYPE_PROJECT = 1;</code>
+     */
+    SERVICE_AGENT_TYPE_PROJECT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Enable a FeatureGroup service account to be created by Vertex AI and
+     * output in the field `service_account_email`. This service account will
+     * be used to read from the source BigQuery table during jobs under a
+     * FeatureGroup.
+     * </pre>
+     *
+     * <code>SERVICE_AGENT_TYPE_FEATURE_GROUP = 2;</code>
+     */
+    SERVICE_AGENT_TYPE_FEATURE_GROUP(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * By default, the project-level Vertex AI Service Agent is enabled.
+     * </pre>
+     *
+     * <code>SERVICE_AGENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SERVICE_AGENT_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the project-level Vertex AI Service Agent
+     * (https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents).
+     * </pre>
+     *
+     * <code>SERVICE_AGENT_TYPE_PROJECT = 1;</code>
+     */
+    public static final int SERVICE_AGENT_TYPE_PROJECT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Enable a FeatureGroup service account to be created by Vertex AI and
+     * output in the field `service_account_email`. This service account will
+     * be used to read from the source BigQuery table during jobs under a
+     * FeatureGroup.
+     * </pre>
+     *
+     * <code>SERVICE_AGENT_TYPE_FEATURE_GROUP = 2;</code>
+     */
+    public static final int SERVICE_AGENT_TYPE_FEATURE_GROUP_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ServiceAgentType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ServiceAgentType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SERVICE_AGENT_TYPE_UNSPECIFIED;
+        case 1:
+          return SERVICE_AGENT_TYPE_PROJECT;
+        case 2:
+          return SERVICE_AGENT_TYPE_FEATURE_GROUP;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ServiceAgentType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ServiceAgentType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ServiceAgentType>() {
+              public ServiceAgentType findValueByNumber(int number) {
+                return ServiceAgentType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureGroup.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ServiceAgentType[] VALUES = values();
+
+    public static ServiceAgentType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ServiceAgentType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType)
   }
 
   public interface BigQueryOrBuilder
@@ -3075,6 +3244,115 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SERVICE_AGENT_TYPE_FIELD_NUMBER = 8;
+  private int serviceAgentType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service agent type used during jobs under a FeatureGroup. By
+   * default, the Vertex AI Service Agent is used. When using an IAM Policy to
+   * isolate this FeatureGroup within a project, a separate service account
+   * should be provisioned by setting this field to
+   * `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service
+   * account to access the BigQuery source table.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType service_agent_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for serviceAgentType.
+   */
+  @java.lang.Override
+  public int getServiceAgentTypeValue() {
+    return serviceAgentType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service agent type used during jobs under a FeatureGroup. By
+   * default, the Vertex AI Service Agent is used. When using an IAM Policy to
+   * isolate this FeatureGroup within a project, a separate service account
+   * should be provisioned by setting this field to
+   * `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service
+   * account to access the BigQuery source table.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType service_agent_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceAgentType.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType getServiceAgentType() {
+    com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType result =
+        com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType.forNumber(
+            serviceAgentType_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A Service Account unique to this FeatureGroup. The role
+   * bigquery.dataViewer should be granted to this service account to allow
+   * Vertex AI Feature Store to access source data while running jobs under this
+   * FeatureGroup.
+   * </pre>
+   *
+   * <code>string service_account_email = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAccountEmail.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccountEmail() {
+    java.lang.Object ref = serviceAccountEmail_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccountEmail_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A Service Account unique to this FeatureGroup. The role
+   * bigquery.dataViewer should be granted to this service account to allow
+   * Vertex AI Feature Store to access source data while running jobs under this
+   * FeatureGroup.
+   * </pre>
+   *
+   * <code>string service_account_email = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAccountEmail.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
+    java.lang.Object ref = serviceAccountEmail_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccountEmail_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3108,6 +3386,15 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (sourceCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.aiplatform.v1beta1.FeatureGroup.BigQuery) source_);
+    }
+    if (serviceAgentType_
+        != com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType
+            .SERVICE_AGENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, serviceAgentType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, serviceAccountEmail_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3148,6 +3435,15 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.aiplatform.v1beta1.FeatureGroup.BigQuery) source_);
     }
+    if (serviceAgentType_
+        != com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType
+            .SERVICE_AGENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, serviceAgentType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, serviceAccountEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3176,6 +3472,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (serviceAgentType_ != other.serviceAgentType_) return false;
+    if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 7:
@@ -3213,6 +3511,10 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + SERVICE_AGENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + serviceAgentType_;
+    hash = (37 * hash) + SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccountEmail().hashCode();
     switch (sourceCase_) {
       case 7:
         hash = (37 * hash) + BIG_QUERY_FIELD_NUMBER;
@@ -3409,6 +3711,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       etag_ = "";
       internalGetMutableLabels().clear();
       description_ = "";
+      serviceAgentType_ = 0;
+      serviceAccountEmail_ = "";
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -3469,6 +3773,12 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.serviceAgentType_ = serviceAgentType_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3548,6 +3858,14 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.serviceAgentType_ != 0) {
+        setServiceAgentTypeValue(other.getServiceAgentTypeValue());
+      }
+      if (!other.getServiceAccountEmail().isEmpty()) {
+        serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -3635,6 +3953,18 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
                 sourceCase_ = 7;
                 break;
               } // case 58
+            case 64:
+              {
+                serviceAgentType_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 74:
+              {
+                serviceAccountEmail_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4869,6 +5199,256 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       description_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private int serviceAgentType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service agent type used during jobs under a FeatureGroup. By
+     * default, the Vertex AI Service Agent is used. When using an IAM Policy to
+     * isolate this FeatureGroup within a project, a separate service account
+     * should be provisioned by setting this field to
+     * `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service
+     * account to access the BigQuery source table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType service_agent_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for serviceAgentType.
+     */
+    @java.lang.Override
+    public int getServiceAgentTypeValue() {
+      return serviceAgentType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service agent type used during jobs under a FeatureGroup. By
+     * default, the Vertex AI Service Agent is used. When using an IAM Policy to
+     * isolate this FeatureGroup within a project, a separate service account
+     * should be provisioned by setting this field to
+     * `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service
+     * account to access the BigQuery source table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType service_agent_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for serviceAgentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAgentTypeValue(int value) {
+      serviceAgentType_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service agent type used during jobs under a FeatureGroup. By
+     * default, the Vertex AI Service Agent is used. When using an IAM Policy to
+     * isolate this FeatureGroup within a project, a separate service account
+     * should be provisioned by setting this field to
+     * `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service
+     * account to access the BigQuery source table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType service_agent_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceAgentType.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType getServiceAgentType() {
+      com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType result =
+          com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType.forNumber(
+              serviceAgentType_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service agent type used during jobs under a FeatureGroup. By
+     * default, the Vertex AI Service Agent is used. When using an IAM Policy to
+     * isolate this FeatureGroup within a project, a separate service account
+     * should be provisioned by setting this field to
+     * `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service
+     * account to access the BigQuery source table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType service_agent_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The serviceAgentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAgentType(
+        com.google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      serviceAgentType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service agent type used during jobs under a FeatureGroup. By
+     * default, the Vertex AI Service Agent is used. When using an IAM Policy to
+     * isolate this FeatureGroup within a project, a separate service account
+     * should be provisioned by setting this field to
+     * `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service
+     * account to access the BigQuery source table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureGroup.ServiceAgentType service_agent_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAgentType() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      serviceAgentType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccountEmail_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A Service Account unique to this FeatureGroup. The role
+     * bigquery.dataViewer should be granted to this service account to allow
+     * Vertex AI Feature Store to access source data while running jobs under this
+     * FeatureGroup.
+     * </pre>
+     *
+     * <code>string service_account_email = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAccountEmail.
+     */
+    public java.lang.String getServiceAccountEmail() {
+      java.lang.Object ref = serviceAccountEmail_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccountEmail_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A Service Account unique to this FeatureGroup. The role
+     * bigquery.dataViewer should be granted to this service account to allow
+     * Vertex AI Feature Store to access source data while running jobs under this
+     * FeatureGroup.
+     * </pre>
+     *
+     * <code>string service_account_email = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAccountEmail.
+     */
+    public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
+      java.lang.Object ref = serviceAccountEmail_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccountEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A Service Account unique to this FeatureGroup. The role
+     * bigquery.dataViewer should be granted to this service account to allow
+     * Vertex AI Feature Store to access source data while running jobs under this
+     * FeatureGroup.
+     * </pre>
+     *
+     * <code>string service_account_email = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The serviceAccountEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountEmail(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A Service Account unique to this FeatureGroup. The role
+     * bigquery.dataViewer should be granted to this service account to allow
+     * Vertex AI Feature Store to access source data while running jobs under this
+     * FeatureGroup.
+     * </pre>
+     *
+     * <code>string service_account_email = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccountEmail() {
+      serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A Service Account unique to this FeatureGroup. The role
+     * bigquery.dataViewer should be granted to this service account to allow
+     * Vertex AI Feature Store to access source data while running jobs under this
+     * FeatureGroup.
+     * </pre>
+     *
+     * <code>string service_account_email = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for serviceAccountEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

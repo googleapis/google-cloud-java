@@ -464,6 +464,43 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
+   * A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name}
+   * </pre>
+   *
+   * <code>optional string network_profile = 173112472;</code>
+   *
+   * @return Whether the networkProfile field is set.
+   */
+  boolean hasNetworkProfile();
+  /**
+   *
+   *
+   * <pre>
+   * A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name}
+   * </pre>
+   *
+   * <code>optional string network_profile = 173112472;</code>
+   *
+   * @return The networkProfile.
+   */
+  java.lang.String getNetworkProfile();
+  /**
+   *
+   *
+   * <pre>
+   * A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name}
+   * </pre>
+   *
+   * <code>optional string network_profile = 173112472;</code>
+   *
+   * @return The bytes for networkProfile.
+   */
+  com.google.protobuf.ByteString getNetworkProfileBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] A list of network peerings for the resource.
    * </pre>
    *

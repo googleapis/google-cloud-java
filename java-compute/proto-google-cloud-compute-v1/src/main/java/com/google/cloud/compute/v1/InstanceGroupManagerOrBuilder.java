@@ -839,6 +839,48 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
+   * Standby policy for stopped and suspended instances.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStandbyPolicy standby_policy = 499352324;
+   * </code>
+   *
+   * @return Whether the standbyPolicy field is set.
+   */
+  boolean hasStandbyPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Standby policy for stopped and suspended instances.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStandbyPolicy standby_policy = 499352324;
+   * </code>
+   *
+   * @return The standbyPolicy.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStandbyPolicy getStandbyPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Standby policy for stopped and suspended instances.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStandbyPolicy standby_policy = 499352324;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStandbyPolicyOrBuilder
+      getStandbyPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Stateful configuration for this Instanced Group Manager
    * </pre>
    *
@@ -980,6 +1022,56 @@ public interface InstanceGroupManagerOrBuilder
    * @return The targetSize.
    */
   int getTargetSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
+   * </pre>
+   *
+   * <code>optional int32 target_stopped_size = 2419489;</code>
+   *
+   * @return Whether the targetStoppedSize field is set.
+   */
+  boolean hasTargetStoppedSize();
+  /**
+   *
+   *
+   * <pre>
+   * The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
+   * </pre>
+   *
+   * <code>optional int32 target_stopped_size = 2419489;</code>
+   *
+   * @return The targetStoppedSize.
+   */
+  int getTargetStoppedSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
+   * </pre>
+   *
+   * <code>optional int32 target_suspended_size = 308085843;</code>
+   *
+   * @return Whether the targetSuspendedSize field is set.
+   */
+  boolean hasTargetSuspendedSize();
+  /**
+   *
+   *
+   * <pre>
+   * The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
+   * </pre>
+   *
+   * <code>optional int32 target_suspended_size = 308085843;</code>
+   *
+   * @return The targetSuspendedSize.
+   */
+  int getTargetSuspendedSize();
 
   /**
    *

@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Target HTTPS Proxy resource. Google Compute Engine has two Target HTTPS Proxy resources: * [Global](/compute/docs/reference/rest/v1/targetHttpsProxies) * [Regional](/compute/docs/reference/rest/v1/regionTargetHttpsProxies) A target HTTPS proxy is a component of GCP HTTPS load balancers. * targetHttpProxies are used by global external Application Load Balancers, classic Application Load Balancers, cross-region internal Application Load Balancers, and Traffic Director. * regionTargetHttpProxies are used by regional internal Application Load Balancers and regional external Application Load Balancers. Forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and Forwarding rule concepts.
+ * Represents a Target HTTPS Proxy resource. Google Compute Engine has two Target HTTPS Proxy resources: * [Global](/compute/docs/reference/rest/v1/targetHttpsProxies) * [Regional](/compute/docs/reference/rest/v1/regionTargetHttpsProxies) A target HTTPS proxy is a component of Google Cloud HTTPS load balancers. * targetHttpProxies are used by global external Application Load Balancers, classic Application Load Balancers, cross-region internal Application Load Balancers, and Traffic Director. * regionTargetHttpProxies are used by regional internal Application Load Balancers and regional external Application Load Balancers. Forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and Forwarding rule concepts.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.TargetHttpsProxy}
@@ -306,6 +306,16 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * <code>STRICT = 308826825;</code>
      */
     STRICT(308826825),
+    /**
+     *
+     *
+     * <pre>
+     * This enables TLS 1.3 Early Data for requests with any HTTP method including non-idempotent methods list POST. This mode does not enforce any other limitations. This may be valuable for gRPC use cases. However, we do not recommend this method unless you have evaluated your security stance and mitigated the risk of replay attacks using other mechanisms.
+     * </pre>
+     *
+     * <code>UNRESTRICTED = 457266100;</code>
+     */
+    UNRESTRICTED(457266100),
     UNRECOGNIZED(-1),
     ;
 
@@ -349,6 +359,16 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * <code>STRICT = 308826825;</code>
      */
     public static final int STRICT_VALUE = 308826825;
+    /**
+     *
+     *
+     * <pre>
+     * This enables TLS 1.3 Early Data for requests with any HTTP method including non-idempotent methods list POST. This mode does not enforce any other limitations. This may be valuable for gRPC use cases. However, we do not recommend this method unless you have evaluated your security stance and mitigated the risk of replay attacks using other mechanisms.
+     * </pre>
+     *
+     * <code>UNRESTRICTED = 457266100;</code>
+     */
+    public static final int UNRESTRICTED_VALUE = 457266100;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -382,6 +402,8 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
           return PERMISSIVE;
         case 308826825:
           return STRICT;
+        case 457266100:
+          return UNRESTRICTED;
         default:
           return null;
       }
@@ -1942,7 +1964,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Represents a Target HTTPS Proxy resource. Google Compute Engine has two Target HTTPS Proxy resources: * [Global](/compute/docs/reference/rest/v1/targetHttpsProxies) * [Regional](/compute/docs/reference/rest/v1/regionTargetHttpsProxies) A target HTTPS proxy is a component of GCP HTTPS load balancers. * targetHttpProxies are used by global external Application Load Balancers, classic Application Load Balancers, cross-region internal Application Load Balancers, and Traffic Director. * regionTargetHttpProxies are used by regional internal Application Load Balancers and regional external Application Load Balancers. Forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and Forwarding rule concepts.
+   * Represents a Target HTTPS Proxy resource. Google Compute Engine has two Target HTTPS Proxy resources: * [Global](/compute/docs/reference/rest/v1/targetHttpsProxies) * [Regional](/compute/docs/reference/rest/v1/regionTargetHttpsProxies) A target HTTPS proxy is a component of Google Cloud HTTPS load balancers. * targetHttpProxies are used by global external Application Load Balancers, classic Application Load Balancers, cross-region internal Application Load Balancers, and Traffic Director. * regionTargetHttpProxies are used by regional internal Application Load Balancers and regional external Application Load Balancers. Forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and Forwarding rule concepts.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.TargetHttpsProxy}

@@ -30,7 +30,10 @@ public interface ProductOrBuilder
    * <pre>
    * The name of the product.
    * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"`
+   * `"{product.name=accounts/{account}/products/{product}}"` where the last
+   * section `product` consists of 4 parts:
+   * channel~content_language~feed_label~offer_id
+   * example for product name is "accounts/123/products/online~en~US~sku123"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -44,7 +47,10 @@ public interface ProductOrBuilder
    * <pre>
    * The name of the product.
    * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"`
+   * `"{product.name=accounts/{account}/products/{product}}"` where the last
+   * section `product` consists of 4 parts:
+   * channel~content_language~feed_label~offer_id
+   * example for product name is "accounts/123/products/online~en~US~sku123"
    * </pre>
    *
    * <code>string name = 1;</code>

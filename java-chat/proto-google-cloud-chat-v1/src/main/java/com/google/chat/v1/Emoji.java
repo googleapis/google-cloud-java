@@ -112,10 +112,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A basic emoji represented by a unicode string.
+   * Optional. A basic emoji represented by a unicode string.
    * </pre>
    *
-   * <code>string unicode = 1;</code>
+   * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the unicode field is set.
    */
@@ -126,10 +126,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A basic emoji represented by a unicode string.
+   * Optional. A basic emoji represented by a unicode string.
    * </pre>
    *
-   * <code>string unicode = 1;</code>
+   * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The unicode.
    */
@@ -153,10 +153,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A basic emoji represented by a unicode string.
+   * Optional. A basic emoji represented by a unicode string.
    * </pre>
    *
-   * <code>string unicode = 1;</code>
+   * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for unicode.
    */
@@ -645,10 +645,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A basic emoji represented by a unicode string.
+     * Optional. A basic emoji represented by a unicode string.
      * </pre>
      *
-     * <code>string unicode = 1;</code>
+     * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the unicode field is set.
      */
@@ -660,10 +660,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A basic emoji represented by a unicode string.
+     * Optional. A basic emoji represented by a unicode string.
      * </pre>
      *
-     * <code>string unicode = 1;</code>
+     * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The unicode.
      */
@@ -688,10 +688,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A basic emoji represented by a unicode string.
+     * Optional. A basic emoji represented by a unicode string.
      * </pre>
      *
-     * <code>string unicode = 1;</code>
+     * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for unicode.
      */
@@ -716,10 +716,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A basic emoji represented by a unicode string.
+     * Optional. A basic emoji represented by a unicode string.
      * </pre>
      *
-     * <code>string unicode = 1;</code>
+     * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The unicode to set.
      * @return This builder for chaining.
@@ -737,10 +737,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A basic emoji represented by a unicode string.
+     * Optional. A basic emoji represented by a unicode string.
      * </pre>
      *
-     * <code>string unicode = 1;</code>
+     * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -756,10 +756,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A basic emoji represented by a unicode string.
+     * Optional. A basic emoji represented by a unicode string.
      * </pre>
      *
-     * <code>string unicode = 1;</code>
+     * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for unicode to set.
      * @return This builder for chaining.

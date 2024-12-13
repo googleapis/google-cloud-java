@@ -132,7 +132,8 @@ public interface UpdateSpaceRequestOrBuilder
    * - `permission_settings.replyMessages`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -204,7 +205,8 @@ public interface UpdateSpaceRequestOrBuilder
    * - `permission_settings.replyMessages`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -276,7 +278,8 @@ public interface UpdateSpaceRequestOrBuilder
    * - `permission_settings.replyMessages`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -284,7 +287,7 @@ public interface UpdateSpaceRequestOrBuilder
    *
    *
    * <pre>
-   * When `true`, the method runs using the user's Google Workspace
+   * Optional. When `true`, the method runs using the user's Google Workspace
    * administrator privileges.
    *
    * The calling user must be a Google Workspace administrator with the
@@ -298,7 +301,7 @@ public interface UpdateSpaceRequestOrBuilder
    * see the description of `update_mask`.
    * </pre>
    *
-   * <code>bool use_admin_access = 3;</code>
+   * <code>bool use_admin_access = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useAdminAccess.
    */

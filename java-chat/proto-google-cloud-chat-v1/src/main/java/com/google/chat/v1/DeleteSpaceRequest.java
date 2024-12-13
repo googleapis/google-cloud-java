@@ -128,7 +128,7 @@ public final class DeleteSpaceRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * When `true`, the method runs using the user's Google Workspace
+   * Optional. When `true`, the method runs using the user's Google Workspace
    * administrator privileges.
    *
    * The calling user must be a Google Workspace administrator with the
@@ -139,7 +139,7 @@ public final class DeleteSpaceRequest extends com.google.protobuf.GeneratedMessa
    * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
    * </pre>
    *
-   * <code>bool use_admin_access = 2;</code>
+   * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useAdminAccess.
    */
@@ -640,7 +640,7 @@ public final class DeleteSpaceRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -651,7 +651,7 @@ public final class DeleteSpaceRequest extends com.google.protobuf.GeneratedMessa
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
      * </pre>
      *
-     * <code>bool use_admin_access = 2;</code>
+     * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The useAdminAccess.
      */
@@ -663,7 +663,7 @@ public final class DeleteSpaceRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -674,7 +674,7 @@ public final class DeleteSpaceRequest extends com.google.protobuf.GeneratedMessa
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
      * </pre>
      *
-     * <code>bool use_admin_access = 2;</code>
+     * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The useAdminAccess to set.
      * @return This builder for chaining.
@@ -690,7 +690,7 @@ public final class DeleteSpaceRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -701,7 +701,7 @@ public final class DeleteSpaceRequest extends com.google.protobuf.GeneratedMessa
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
      * </pre>
      *
-     * <code>bool use_admin_access = 2;</code>
+     * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

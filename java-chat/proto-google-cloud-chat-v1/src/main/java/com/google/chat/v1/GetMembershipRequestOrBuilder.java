@@ -36,9 +36,7 @@ public interface GetMembershipRequestOrBuilder
    *
    * Format: `spaces/{space}/members/{member}` or `spaces/{space}/members/app`
    *
-   * When [authenticated as a
-   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * you can use the user's email as an alias for `{member}`. For example,
+   * You can use the user's email as an alias for `{member}`. For example,
    * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
    * email of the Google Chat user.
    * </pre>
@@ -62,9 +60,7 @@ public interface GetMembershipRequestOrBuilder
    *
    * Format: `spaces/{space}/members/{member}` or `spaces/{space}/members/app`
    *
-   * When [authenticated as a
-   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * you can use the user's email as an alias for `{member}`. For example,
+   * You can use the user's email as an alias for `{member}`. For example,
    * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
    * email of the Google Chat user.
    * </pre>
@@ -81,7 +77,7 @@ public interface GetMembershipRequestOrBuilder
    *
    *
    * <pre>
-   * When `true`, the method runs using the user's Google Workspace
+   * Optional. When `true`, the method runs using the user's Google Workspace
    * administrator privileges.
    *
    * The calling user must be a Google Workspace administrator with the
@@ -95,7 +91,7 @@ public interface GetMembershipRequestOrBuilder
    * Getting app memberships in a space isn't supported when using admin access.
    * </pre>
    *
-   * <code>bool use_admin_access = 3;</code>
+   * <code>bool use_admin_access = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useAdminAccess.
    */

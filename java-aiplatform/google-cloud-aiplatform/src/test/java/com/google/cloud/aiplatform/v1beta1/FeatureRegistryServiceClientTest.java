@@ -121,6 +121,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -179,6 +180,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -237,6 +239,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockFeatureRegistryService.addResponse(expectedResponse);
 
@@ -280,6 +283,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockFeatureRegistryService.addResponse(expectedResponse);
 
@@ -411,6 +415,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

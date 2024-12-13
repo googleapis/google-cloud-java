@@ -46,8 +46,12 @@ import com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstanceConfigsResp;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
 import com.google.cloud.compute.v1.ResizeRegionInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.ResumeInstancesRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.StartInstancesRegionInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.StopInstancesRegionInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.SuspendInstancesRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest;
 import javax.annotation.Generated;
 
@@ -227,6 +231,16 @@ public abstract class RegionInstanceGroupManagersStub implements BackgroundResou
     throw new UnsupportedOperationException("Not implemented: resizeCallable()");
   }
 
+  public OperationCallable<ResumeInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeInstancesOperationCallable()");
+  }
+
+  public UnaryCallable<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+      resumeInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeInstancesCallable()");
+  }
+
   public OperationCallable<
           SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation, Operation>
       setInstanceTemplateOperationCallable() {
@@ -247,6 +261,36 @@ public abstract class RegionInstanceGroupManagersStub implements BackgroundResou
   public UnaryCallable<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable() {
     throw new UnsupportedOperationException("Not implemented: setTargetPoolsCallable()");
+  }
+
+  public OperationCallable<StartInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startInstancesOperationCallable()");
+  }
+
+  public UnaryCallable<StartInstancesRegionInstanceGroupManagerRequest, Operation>
+      startInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: startInstancesCallable()");
+  }
+
+  public OperationCallable<StopInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopInstancesOperationCallable()");
+  }
+
+  public UnaryCallable<StopInstancesRegionInstanceGroupManagerRequest, Operation>
+      stopInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopInstancesCallable()");
+  }
+
+  public OperationCallable<SuspendInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: suspendInstancesOperationCallable()");
+  }
+
+  public UnaryCallable<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+      suspendInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: suspendInstancesCallable()");
   }
 
   public OperationCallable<

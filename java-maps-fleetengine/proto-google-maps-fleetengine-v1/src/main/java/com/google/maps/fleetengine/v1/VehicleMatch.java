@@ -833,7 +833,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The order requested for sorting vehicle matches.
+   * The order requested for sorting vehicle matches. Equivalent to
+   * `ordered_by`.
    * </pre>
    *
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;
@@ -849,7 +850,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The order requested for sorting vehicle matches.
+   * The order requested for sorting vehicle matches. Equivalent to
+   * `ordered_by`.
    * </pre>
    *
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;
@@ -874,10 +876,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actual order that was used for this vehicle. Normally this
-   * will match the 'order_by' field from the request; however, in certain
-   * circumstances such as an internal server error, a different method
-   * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
+   * The order requested for sorting vehicle matches. Equivalent to
+   * `requested_ordered_by`.
    * </pre>
    *
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
@@ -892,10 +892,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actual order that was used for this vehicle. Normally this
-   * will match the 'order_by' field from the request; however, in certain
-   * circumstances such as an internal server error, a different method
-   * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
+   * The order requested for sorting vehicle matches. Equivalent to
+   * `requested_ordered_by`.
    * </pre>
    *
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
@@ -3622,7 +3620,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order requested for sorting vehicle matches.
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;
@@ -3638,7 +3637,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order requested for sorting vehicle matches.
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;
@@ -3657,7 +3657,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order requested for sorting vehicle matches.
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;
@@ -3679,7 +3680,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order requested for sorting vehicle matches.
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;
@@ -3702,7 +3704,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The order requested for sorting vehicle matches.
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;
@@ -3722,10 +3725,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual order that was used for this vehicle. Normally this
-     * will match the 'order_by' field from the request; however, in certain
-     * circumstances such as an internal server error, a different method
-     * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `requested_ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
@@ -3740,10 +3741,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual order that was used for this vehicle. Normally this
-     * will match the 'order_by' field from the request; however, in certain
-     * circumstances such as an internal server error, a different method
-     * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `requested_ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
@@ -3761,10 +3760,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual order that was used for this vehicle. Normally this
-     * will match the 'order_by' field from the request; however, in certain
-     * circumstances such as an internal server error, a different method
-     * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `requested_ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
@@ -3784,10 +3781,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual order that was used for this vehicle. Normally this
-     * will match the 'order_by' field from the request; however, in certain
-     * circumstances such as an internal server error, a different method
-     * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `requested_ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
@@ -3809,10 +3804,8 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual order that was used for this vehicle. Normally this
-     * will match the 'order_by' field from the request; however, in certain
-     * circumstances such as an internal server error, a different method
-     * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
+     * The order requested for sorting vehicle matches. Equivalent to
+     * `requested_ordered_by`.
      * </pre>
      *
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>

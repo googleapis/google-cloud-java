@@ -319,6 +319,34 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <code>HTML_FORMATTED_NAVIGATION_INSTRUCTIONS = 4;</code>
      */
     HTML_FORMATTED_NAVIGATION_INSTRUCTIONS(4),
+    /**
+     *
+     *
+     * <pre>
+     * Flyover information for the route(s). The
+     * `routes.polyline_details.flyover_info` fieldmask must be specified to
+     * return this information. This data will only currently be populated for
+     * certain metros in India. This feature is experimental, and the
+     * SKU/charge is subject to change.
+     * </pre>
+     *
+     * <code>FLYOVER_INFO_ON_POLYLINE = 7;</code>
+     */
+    FLYOVER_INFO_ON_POLYLINE(7),
+    /**
+     *
+     *
+     * <pre>
+     * Narrow road information for the route(s). The
+     * `routes.polyline_details.narrow_road_info` fieldmask must be specified
+     * to return this information. This data will only currently be populated
+     * for certain metros in India. This feature is experimental, and the
+     * SKU/charge is subject to change.
+     * </pre>
+     *
+     * <code>NARROW_ROAD_INFO_ON_POLYLINE = 8;</code>
+     */
+    NARROW_ROAD_INFO_ON_POLYLINE(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -375,6 +403,34 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <code>HTML_FORMATTED_NAVIGATION_INSTRUCTIONS = 4;</code>
      */
     public static final int HTML_FORMATTED_NAVIGATION_INSTRUCTIONS_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Flyover information for the route(s). The
+     * `routes.polyline_details.flyover_info` fieldmask must be specified to
+     * return this information. This data will only currently be populated for
+     * certain metros in India. This feature is experimental, and the
+     * SKU/charge is subject to change.
+     * </pre>
+     *
+     * <code>FLYOVER_INFO_ON_POLYLINE = 7;</code>
+     */
+    public static final int FLYOVER_INFO_ON_POLYLINE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Narrow road information for the route(s). The
+     * `routes.polyline_details.narrow_road_info` fieldmask must be specified
+     * to return this information. This data will only currently be populated
+     * for certain metros in India. This feature is experimental, and the
+     * SKU/charge is subject to change.
+     * </pre>
+     *
+     * <code>NARROW_ROAD_INFO_ON_POLYLINE = 8;</code>
+     */
+    public static final int NARROW_ROAD_INFO_ON_POLYLINE_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -410,6 +466,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
           return TRAFFIC_ON_POLYLINE;
         case 4:
           return HTML_FORMATTED_NAVIGATION_INSTRUCTIONS;
+        case 7:
+          return FLYOVER_INFO_ON_POLYLINE;
+        case 8:
+          return NARROW_ROAD_INFO_ON_POLYLINE;
         default:
           return null;
       }

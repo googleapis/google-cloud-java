@@ -1379,8 +1379,8 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response of the updated widget.
-   * Used to provide autocomplete options for a widget.
+   * For `selectionInput` widgets, returns autocomplete suggestions for a
+   * multiselect menu.
    * </pre>
    *
    * Protobuf type {@code google.chat.v1.ActionResponse.UpdatedWidget}
@@ -1758,8 +1758,8 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response of the updated widget.
-     * Used to provide autocomplete options for a widget.
+     * For `selectionInput` widgets, returns autocomplete suggestions for a
+     * multiselect menu.
      * </pre>
      *
      * Protobuf type {@code google.chat.v1.ActionResponse.UpdatedWidget}

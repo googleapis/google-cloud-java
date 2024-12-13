@@ -102,7 +102,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -115,7 +115,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -128,7 +128,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -142,7 +142,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *

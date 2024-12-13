@@ -28,7 +28,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An opaque ID of the host on which the VM is running.
+   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>
@@ -40,7 +40,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An opaque ID of the host on which the VM is running.
+   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>
@@ -52,7 +52,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An opaque ID of the host on which the VM is running.
+   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>

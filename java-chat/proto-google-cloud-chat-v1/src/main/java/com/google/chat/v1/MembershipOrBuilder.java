@@ -28,12 +28,12 @@ public interface MembershipOrBuilder
    *
    *
    * <pre>
-   * Resource name of the membership, assigned by the server.
+   * Identifier. Resource name of the membership, assigned by the server.
    *
    * Format: `spaces/{space}/members/{member}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface MembershipOrBuilder
    *
    *
    * <pre>
-   * Resource name of the membership, assigned by the server.
+   * Identifier. Resource name of the membership, assigned by the server.
    *
    * Format: `spaces/{space}/members/{member}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -121,7 +121,7 @@ public interface MembershipOrBuilder
    *
    *
    * <pre>
-   * The Google Chat user or app the membership corresponds to.
+   * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
    * the output populates the
@@ -129,7 +129,7 @@ public interface MembershipOrBuilder
    * `name` and `type`.
    * </pre>
    *
-   * <code>.google.chat.v1.User member = 3;</code>
+   * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the member field is set.
    */
@@ -138,7 +138,7 @@ public interface MembershipOrBuilder
    *
    *
    * <pre>
-   * The Google Chat user or app the membership corresponds to.
+   * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
    * the output populates the
@@ -146,7 +146,7 @@ public interface MembershipOrBuilder
    * `name` and `type`.
    * </pre>
    *
-   * <code>.google.chat.v1.User member = 3;</code>
+   * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The member.
    */
@@ -155,7 +155,7 @@ public interface MembershipOrBuilder
    *
    *
    * <pre>
-   * The Google Chat user or app the membership corresponds to.
+   * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
    * the output populates the
@@ -163,7 +163,7 @@ public interface MembershipOrBuilder
    * `name` and `type`.
    * </pre>
    *
-   * <code>.google.chat.v1.User member = 3;</code>
+   * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.chat.v1.UserOrBuilder getMemberOrBuilder();
 
@@ -171,10 +171,13 @@ public interface MembershipOrBuilder
    *
    *
    * <pre>
-   * The Google Group the membership corresponds to.
+   * Optional. The Google Group the membership corresponds to.
+   *
+   * Reading or mutating memberships for Google Groups requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
-   * <code>.google.chat.v1.Group group_member = 5;</code>
+   * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the groupMember field is set.
    */
@@ -183,10 +186,13 @@ public interface MembershipOrBuilder
    *
    *
    * <pre>
-   * The Google Group the membership corresponds to.
+   * Optional. The Google Group the membership corresponds to.
+   *
+   * Reading or mutating memberships for Google Groups requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
-   * <code>.google.chat.v1.Group group_member = 5;</code>
+   * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The groupMember.
    */
@@ -195,10 +201,13 @@ public interface MembershipOrBuilder
    *
    *
    * <pre>
-   * The Google Group the membership corresponds to.
+   * Optional. The Google Group the membership corresponds to.
+   *
+   * Reading or mutating memberships for Google Groups requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
-   * <code>.google.chat.v1.Group group_member = 5;</code>
+   * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.chat.v1.GroupOrBuilder getGroupMemberOrBuilder();
 

@@ -44,6 +44,7 @@ public class SyncListPublisherModels {
               .setView(PublisherModelView.forNumber(0))
               .setOrderBy("orderBy-1207110587")
               .setLanguageCode("languageCode-2092349083")
+              .setListAllVersions(true)
               .build();
       for (PublisherModel element :
           modelGardenServiceClient.listPublisherModels(request).iterateAll()) {

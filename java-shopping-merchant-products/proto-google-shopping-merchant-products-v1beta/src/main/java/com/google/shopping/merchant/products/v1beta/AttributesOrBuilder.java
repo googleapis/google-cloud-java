@@ -788,44 +788,64 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Global Trade Item Number
+   * Global Trade Item Numbers
    * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
    * item.
+   * You can provide up to 10 GTINs.
    * </pre>
    *
-   * <code>optional string gtin = 26;</code>
+   * <code>repeated string gtin = 26;</code>
    *
-   * @return Whether the gtin field is set.
+   * @return A list containing the gtin.
    */
-  boolean hasGtin();
+  java.util.List<java.lang.String> getGtinList();
   /**
    *
    *
    * <pre>
-   * Global Trade Item Number
+   * Global Trade Item Numbers
    * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
    * item.
+   * You can provide up to 10 GTINs.
    * </pre>
    *
-   * <code>optional string gtin = 26;</code>
+   * <code>repeated string gtin = 26;</code>
    *
-   * @return The gtin.
+   * @return The count of gtin.
    */
-  java.lang.String getGtin();
+  int getGtinCount();
   /**
    *
    *
    * <pre>
-   * Global Trade Item Number
+   * Global Trade Item Numbers
    * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
    * item.
+   * You can provide up to 10 GTINs.
    * </pre>
    *
-   * <code>optional string gtin = 26;</code>
+   * <code>repeated string gtin = 26;</code>
    *
-   * @return The bytes for gtin.
+   * @param index The index of the element to return.
+   * @return The gtin at the given index.
    */
-  com.google.protobuf.ByteString getGtinBytes();
+  java.lang.String getGtin(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Global Trade Item Numbers
+   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * item.
+   * You can provide up to 10 GTINs.
+   * </pre>
+   *
+   * <code>repeated string gtin = 26;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the gtin at the given index.
+   */
+  com.google.protobuf.ByteString getGtinBytes(int index);
 
   /**
    *
@@ -2095,8 +2115,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * The tax category of the product, used to configure detailed tax nexus
-   * in account-level tax settings.
+   * The tax category of the product.
    * </pre>
    *
    * <code>optional string tax_category = 52;</code>
@@ -2108,8 +2127,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * The tax category of the product, used to configure detailed tax nexus
-   * in account-level tax settings.
+   * The tax category of the product.
    * </pre>
    *
    * <code>optional string tax_category = 52;</code>
@@ -2121,8 +2139,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * The tax category of the product, used to configure detailed tax nexus
-   * in account-level tax settings.
+   * The tax category of the product.
    * </pre>
    *
    * <code>optional string tax_category = 52;</code>

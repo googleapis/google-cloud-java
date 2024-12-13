@@ -138,8 +138,8 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * When `true`, deleting a message also deletes its threaded replies. When
-   * `false`, if a message has threaded replies, deletion fails.
+   * Optional. When `true`, deleting a message also deletes its threaded
+   * replies. When `false`, if a message has threaded replies, deletion fails.
    *
    * Only applies when [authenticating as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
@@ -147,7 +147,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
@@ -674,8 +674,8 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * When `true`, deleting a message also deletes its threaded replies. When
-     * `false`, if a message has threaded replies, deletion fails.
+     * Optional. When `true`, deleting a message also deletes its threaded
+     * replies. When `false`, if a message has threaded replies, deletion fails.
      *
      * Only applies when [authenticating as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
@@ -683,7 +683,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The force.
      */
@@ -695,8 +695,8 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * When `true`, deleting a message also deletes its threaded replies. When
-     * `false`, if a message has threaded replies, deletion fails.
+     * Optional. When `true`, deleting a message also deletes its threaded
+     * replies. When `false`, if a message has threaded replies, deletion fails.
      *
      * Only applies when [authenticating as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
@@ -704,7 +704,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The force to set.
      * @return This builder for chaining.
@@ -720,8 +720,8 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * When `true`, deleting a message also deletes its threaded replies. When
-     * `false`, if a message has threaded replies, deletion fails.
+     * Optional. When `true`, deleting a message also deletes its threaded
+     * replies. When `false`, if a message has threaded replies, deletion fails.
      *
      * Only applies when [authenticating as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
@@ -729,7 +729,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

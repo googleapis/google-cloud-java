@@ -131,8 +131,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The maximum number of messages returned. The service might return fewer
-   * messages than this value.
+   * Optional. The maximum number of messages returned. The service might return
+   * fewer messages than this value.
    *
    * If unspecified, at most 25 are returned.
    *
@@ -142,7 +142,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    * Negative values return an `INVALID_ARGUMENT` error.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -159,17 +159,15 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional, if resuming from a previous query.
-   *
-   * A page token received from a previous list messages call. Provide this
-   * parameter to retrieve the subsequent page.
+   * Optional. A page token received from a previous list messages call. Provide
+   * this parameter to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided should match the call that
    * provided the page token. Passing different values to the other parameters
    * might lead to unexpected results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -189,17 +187,15 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional, if resuming from a previous query.
-   *
-   * A page token received from a previous list messages call. Provide this
-   * parameter to retrieve the subsequent page.
+   * Optional. A page token received from a previous list messages call. Provide
+   * this parameter to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided should match the call that
    * provided the page token. Passing different values to the other parameters
    * might lead to unexpected results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -224,7 +220,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A query filter.
+   * Optional. A query filter.
    *
    * You can filter messages by date (`create_time`) and thread (`thread.name`).
    *
@@ -263,7 +259,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    * error.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -283,7 +279,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A query filter.
+   * Optional. A query filter.
    *
    * You can filter messages by date (`create_time`) and thread (`thread.name`).
    *
@@ -322,7 +318,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    * error.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -347,10 +343,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional, if resuming from a previous query.
-   *
-   * How the list of messages is ordered. Specify a value to order by an
-   * ordering operation. Valid ordering operation values are as follows:
+   * Optional. How the list of messages is ordered. Specify a value to order by
+   * an ordering operation. Valid ordering operation values are as follows:
    *
    * - `ASC` for ascending.
    *
@@ -359,7 +353,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    * The default ordering is `create_time ASC`.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -379,10 +373,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional, if resuming from a previous query.
-   *
-   * How the list of messages is ordered. Specify a value to order by an
-   * ordering operation. Valid ordering operation values are as follows:
+   * Optional. How the list of messages is ordered. Specify a value to order by
+   * an ordering operation. Valid ordering operation values are as follows:
    *
    * - `ASC` for ascending.
    *
@@ -391,7 +383,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    * The default ordering is `create_time ASC`.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -414,11 +406,12 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether to include deleted messages. Deleted messages include deleted time
-   * and metadata about their deletion, but message content is unavailable.
+   * Optional. Whether to include deleted messages. Deleted messages include
+   * deleted time and metadata about their deletion, but message content is
+   * unavailable.
    * </pre>
    *
-   * <code>bool show_deleted = 6;</code>
+   * <code>bool show_deleted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The showDeleted.
    */
@@ -1014,8 +1007,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The maximum number of messages returned. The service might return fewer
-     * messages than this value.
+     * Optional. The maximum number of messages returned. The service might return
+     * fewer messages than this value.
      *
      * If unspecified, at most 25 are returned.
      *
@@ -1025,7 +1018,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -1037,8 +1030,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The maximum number of messages returned. The service might return fewer
-     * messages than this value.
+     * Optional. The maximum number of messages returned. The service might return
+     * fewer messages than this value.
      *
      * If unspecified, at most 25 are returned.
      *
@@ -1048,7 +1041,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -1064,8 +1057,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The maximum number of messages returned. The service might return fewer
-     * messages than this value.
+     * Optional. The maximum number of messages returned. The service might return
+     * fewer messages than this value.
      *
      * If unspecified, at most 25 are returned.
      *
@@ -1075,7 +1068,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1091,17 +1084,15 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * A page token received from a previous list messages call. Provide this
-     * parameter to retrieve the subsequent page.
+     * Optional. A page token received from a previous list messages call. Provide
+     * this parameter to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided should match the call that
      * provided the page token. Passing different values to the other parameters
      * might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -1120,17 +1111,15 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * A page token received from a previous list messages call. Provide this
-     * parameter to retrieve the subsequent page.
+     * Optional. A page token received from a previous list messages call. Provide
+     * this parameter to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided should match the call that
      * provided the page token. Passing different values to the other parameters
      * might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1149,17 +1138,15 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * A page token received from a previous list messages call. Provide this
-     * parameter to retrieve the subsequent page.
+     * Optional. A page token received from a previous list messages call. Provide
+     * this parameter to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided should match the call that
      * provided the page token. Passing different values to the other parameters
      * might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1177,17 +1164,15 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * A page token received from a previous list messages call. Provide this
-     * parameter to retrieve the subsequent page.
+     * Optional. A page token received from a previous list messages call. Provide
+     * this parameter to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided should match the call that
      * provided the page token. Passing different values to the other parameters
      * might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1201,17 +1186,15 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * A page token received from a previous list messages call. Provide this
-     * parameter to retrieve the subsequent page.
+     * Optional. A page token received from a previous list messages call. Provide
+     * this parameter to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided should match the call that
      * provided the page token. Passing different values to the other parameters
      * might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
@@ -1232,7 +1215,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A query filter.
+     * Optional. A query filter.
      *
      * You can filter messages by date (`create_time`) and thread (`thread.name`).
      *
@@ -1271,7 +1254,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * error.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -1290,7 +1273,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A query filter.
+     * Optional. A query filter.
      *
      * You can filter messages by date (`create_time`) and thread (`thread.name`).
      *
@@ -1329,7 +1312,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * error.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -1348,7 +1331,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A query filter.
+     * Optional. A query filter.
      *
      * You can filter messages by date (`create_time`) and thread (`thread.name`).
      *
@@ -1387,7 +1370,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * error.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1405,7 +1388,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A query filter.
+     * Optional. A query filter.
      *
      * You can filter messages by date (`create_time`) and thread (`thread.name`).
      *
@@ -1444,7 +1427,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * error.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1458,7 +1441,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A query filter.
+     * Optional. A query filter.
      *
      * You can filter messages by date (`create_time`) and thread (`thread.name`).
      *
@@ -1497,7 +1480,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * error.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1518,10 +1501,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * How the list of messages is ordered. Specify a value to order by an
-     * ordering operation. Valid ordering operation values are as follows:
+     * Optional. How the list of messages is ordered. Specify a value to order by
+     * an ordering operation. Valid ordering operation values are as follows:
      *
      * - `ASC` for ascending.
      *
@@ -1530,7 +1511,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * The default ordering is `create_time ASC`.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The orderBy.
      */
@@ -1549,10 +1530,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * How the list of messages is ordered. Specify a value to order by an
-     * ordering operation. Valid ordering operation values are as follows:
+     * Optional. How the list of messages is ordered. Specify a value to order by
+     * an ordering operation. Valid ordering operation values are as follows:
      *
      * - `ASC` for ascending.
      *
@@ -1561,7 +1540,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * The default ordering is `create_time ASC`.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for orderBy.
      */
@@ -1580,10 +1559,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * How the list of messages is ordered. Specify a value to order by an
-     * ordering operation. Valid ordering operation values are as follows:
+     * Optional. How the list of messages is ordered. Specify a value to order by
+     * an ordering operation. Valid ordering operation values are as follows:
      *
      * - `ASC` for ascending.
      *
@@ -1592,7 +1569,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * The default ordering is `create_time ASC`.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1610,10 +1587,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * How the list of messages is ordered. Specify a value to order by an
-     * ordering operation. Valid ordering operation values are as follows:
+     * Optional. How the list of messages is ordered. Specify a value to order by
+     * an ordering operation. Valid ordering operation values are as follows:
      *
      * - `ASC` for ascending.
      *
@@ -1622,7 +1597,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * The default ordering is `create_time ASC`.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1636,10 +1611,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional, if resuming from a previous query.
-     *
-     * How the list of messages is ordered. Specify a value to order by an
-     * ordering operation. Valid ordering operation values are as follows:
+     * Optional. How the list of messages is ordered. Specify a value to order by
+     * an ordering operation. Valid ordering operation values are as follows:
      *
      * - `ASC` for ascending.
      *
@@ -1648,7 +1621,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * The default ordering is `create_time ASC`.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.
@@ -1669,11 +1642,12 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to include deleted messages. Deleted messages include deleted time
-     * and metadata about their deletion, but message content is unavailable.
+     * Optional. Whether to include deleted messages. Deleted messages include
+     * deleted time and metadata about their deletion, but message content is
+     * unavailable.
      * </pre>
      *
-     * <code>bool show_deleted = 6;</code>
+     * <code>bool show_deleted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The showDeleted.
      */
@@ -1685,11 +1659,12 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to include deleted messages. Deleted messages include deleted time
-     * and metadata about their deletion, but message content is unavailable.
+     * Optional. Whether to include deleted messages. Deleted messages include
+     * deleted time and metadata about their deletion, but message content is
+     * unavailable.
      * </pre>
      *
-     * <code>bool show_deleted = 6;</code>
+     * <code>bool show_deleted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The showDeleted to set.
      * @return This builder for chaining.
@@ -1705,11 +1680,12 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to include deleted messages. Deleted messages include deleted time
-     * and metadata about their deletion, but message content is unavailable.
+     * Optional. Whether to include deleted messages. Deleted messages include
+     * deleted time and metadata about their deletion, but message content is
+     * unavailable.
      * </pre>
      *
-     * <code>bool show_deleted = 6;</code>
+     * <code>bool show_deleted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

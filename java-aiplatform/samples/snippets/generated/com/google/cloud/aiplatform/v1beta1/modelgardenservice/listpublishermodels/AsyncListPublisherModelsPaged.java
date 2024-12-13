@@ -46,6 +46,7 @@ public class AsyncListPublisherModelsPaged {
               .setView(PublisherModelView.forNumber(0))
               .setOrderBy("orderBy-1207110587")
               .setLanguageCode("languageCode-2092349083")
+              .setListAllVersions(true)
               .build();
       while (true) {
         ListPublisherModelsResponse response =

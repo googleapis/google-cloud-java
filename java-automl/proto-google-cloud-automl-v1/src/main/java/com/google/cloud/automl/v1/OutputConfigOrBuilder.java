@@ -28,9 +28,10 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location where the output is to be written to.
-   * For Image Object Detection, Text Extraction, Video Classification and
-   * Tables, in the given directory a new directory will be created with name:
+   * Required. The Google Cloud Storage location where the output is to be
+   * written to. For Image Object Detection, Text Extraction, Video
+   * Classification and Tables, in the given directory a new directory will be
+   * created with name:
    * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
    * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
    * output will be written into that directory.
@@ -47,9 +48,10 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location where the output is to be written to.
-   * For Image Object Detection, Text Extraction, Video Classification and
-   * Tables, in the given directory a new directory will be created with name:
+   * Required. The Google Cloud Storage location where the output is to be
+   * written to. For Image Object Detection, Text Extraction, Video
+   * Classification and Tables, in the given directory a new directory will be
+   * created with name:
    * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
    * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
    * output will be written into that directory.
@@ -66,9 +68,10 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location where the output is to be written to.
-   * For Image Object Detection, Text Extraction, Video Classification and
-   * Tables, in the given directory a new directory will be created with name:
+   * Required. The Google Cloud Storage location where the output is to be
+   * written to. For Image Object Detection, Text Extraction, Video
+   * Classification and Tables, in the given directory a new directory will be
+   * created with name:
    * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt; where
    * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
    * output will be written into that directory.

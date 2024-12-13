@@ -254,7 +254,7 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * Restricted features enabled for use on this project.
+   * An optional list of restricted features enabled for use on this project.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -266,7 +266,7 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * Restricted features enabled for use on this project.
+   * An optional list of restricted features enabled for use on this project.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -278,7 +278,7 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * Restricted features enabled for use on this project.
+   * An optional list of restricted features enabled for use on this project.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -291,7 +291,7 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * Restricted features enabled for use on this project.
+   * An optional list of restricted features enabled for use on this project.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -492,7 +492,7 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+   * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
@@ -505,7 +505,7 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+   * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
@@ -518,7 +518,7 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+   * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;

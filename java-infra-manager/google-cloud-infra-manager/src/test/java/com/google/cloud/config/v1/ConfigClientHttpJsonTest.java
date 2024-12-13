@@ -1795,6 +1795,7 @@ public class ConfigClientHttpJsonTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1860,6 +1861,7 @@ public class ConfigClientHttpJsonTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1925,6 +1927,7 @@ public class ConfigClientHttpJsonTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1983,6 +1986,7 @@ public class ConfigClientHttpJsonTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2141,6 +2145,7 @@ public class ConfigClientHttpJsonTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2204,6 +2209,7 @@ public class ConfigClientHttpJsonTest {
             .setLogs("logs3327407")
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

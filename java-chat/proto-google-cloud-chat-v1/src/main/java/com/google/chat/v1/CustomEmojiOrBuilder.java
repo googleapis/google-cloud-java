@@ -31,7 +31,9 @@ public interface CustomEmojiOrBuilder
    * Output only. Unique key for the custom emoji resource.
    * </pre>
    *
-   * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -43,7 +45,9 @@ public interface CustomEmojiOrBuilder
    * Output only. Unique key for the custom emoji resource.
    * </pre>
    *
-   * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */

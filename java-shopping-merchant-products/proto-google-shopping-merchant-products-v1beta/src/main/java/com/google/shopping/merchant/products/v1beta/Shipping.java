@@ -412,11 +412,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
    * Minimum handling time (inclusive) between when the order is received and
    * shipped in business days. 0 means that the order is shipped on the same
    * day as it is received if it happens before the cut-off time.
-   * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+   * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
    * can only be present together with
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time];
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time];
    * but it is not required if
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
    * is present.
    * </pre>
    *
@@ -435,11 +435,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
    * Minimum handling time (inclusive) between when the order is received and
    * shipped in business days. 0 means that the order is shipped on the same
    * day as it is received if it happens before the cut-off time.
-   * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+   * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
    * can only be present together with
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time];
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time];
    * but it is not required if
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
    * is present.
    * </pre>
    *
@@ -461,13 +461,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
    * Maximum handling time (inclusive) between when the order is received and
    * shipped in business days. 0 means that the order is shipped on the same
    * day as it is received if it happens before the cut-off time. Both
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
    * and
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
    * are required if providing shipping speeds.
-   * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+   * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
    * is optional if
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
    * is present.
    * </pre>
    *
@@ -486,13 +486,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
    * Maximum handling time (inclusive) between when the order is received and
    * shipped in business days. 0 means that the order is shipped on the same
    * day as it is received if it happens before the cut-off time. Both
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
    * and
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
    * are required if providing shipping speeds.
-   * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+   * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
    * is optional if
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
    * is present.
    * </pre>
    *
@@ -514,11 +514,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
    * Minimum transit time (inclusive) between when the order has shipped and
    * when it is delivered in business days. 0 means that the order is
    * delivered on the same day as it ships.
-   * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+   * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
    * can only be present together with
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time];
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time];
    * but it is not required if
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
    * is present.
    * </pre>
    *
@@ -537,11 +537,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
    * Minimum transit time (inclusive) between when the order has shipped and
    * when it is delivered in business days. 0 means that the order is
    * delivered on the same day as it ships.
-   * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+   * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
    * can only be present together with
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time];
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time];
    * but it is not required if
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
    * is present.
    * </pre>
    *
@@ -563,13 +563,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
    * Maximum transit time (inclusive) between when the order has shipped and
    * when it is delivered in business days. 0 means that the order is
    * delivered on the same day as it ships. Both
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
    * and
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
    * are required if providing shipping speeds.
-   * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+   * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
    * is optional if
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
    * is present.
    * </pre>
    *
@@ -588,13 +588,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
    * Maximum transit time (inclusive) between when the order has shipped and
    * when it is delivered in business days. 0 means that the order is
    * delivered on the same day as it ships. Both
-   * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+   * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
    * and
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
    * are required if providing shipping speeds.
-   * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+   * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
    * is optional if
-   * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+   * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
    * is present.
    * </pre>
    *
@@ -2036,11 +2036,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Minimum handling time (inclusive) between when the order is received and
      * shipped in business days. 0 means that the order is shipped on the same
      * day as it is received if it happens before the cut-off time.
-     * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+     * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
      * can only be present together with
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time];
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time];
      * but it is not required if
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * is present.
      * </pre>
      *
@@ -2059,11 +2059,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Minimum handling time (inclusive) between when the order is received and
      * shipped in business days. 0 means that the order is shipped on the same
      * day as it is received if it happens before the cut-off time.
-     * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+     * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
      * can only be present together with
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time];
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time];
      * but it is not required if
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * is present.
      * </pre>
      *
@@ -2082,11 +2082,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Minimum handling time (inclusive) between when the order is received and
      * shipped in business days. 0 means that the order is shipped on the same
      * day as it is received if it happens before the cut-off time.
-     * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+     * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
      * can only be present together with
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time];
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time];
      * but it is not required if
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * is present.
      * </pre>
      *
@@ -2109,11 +2109,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Minimum handling time (inclusive) between when the order is received and
      * shipped in business days. 0 means that the order is shipped on the same
      * day as it is received if it happens before the cut-off time.
-     * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+     * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
      * can only be present together with
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time];
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time];
      * but it is not required if
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * is present.
      * </pre>
      *
@@ -2136,13 +2136,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Maximum handling time (inclusive) between when the order is received and
      * shipped in business days. 0 means that the order is shipped on the same
      * day as it is received if it happens before the cut-off time. Both
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * and
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * are required if providing shipping speeds.
-     * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+     * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
      * is optional if
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * is present.
      * </pre>
      *
@@ -2161,13 +2161,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Maximum handling time (inclusive) between when the order is received and
      * shipped in business days. 0 means that the order is shipped on the same
      * day as it is received if it happens before the cut-off time. Both
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * and
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * are required if providing shipping speeds.
-     * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+     * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
      * is optional if
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * is present.
      * </pre>
      *
@@ -2186,13 +2186,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Maximum handling time (inclusive) between when the order is received and
      * shipped in business days. 0 means that the order is shipped on the same
      * day as it is received if it happens before the cut-off time. Both
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * and
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * are required if providing shipping speeds.
-     * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+     * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
      * is optional if
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * is present.
      * </pre>
      *
@@ -2215,13 +2215,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Maximum handling time (inclusive) between when the order is received and
      * shipped in business days. 0 means that the order is shipped on the same
      * day as it is received if it happens before the cut-off time. Both
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * and
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * are required if providing shipping speeds.
-     * [minHandlingTime][google.shopping.content.bundles.Products.Shipping.min_handling_time]
+     * [minHandlingTime][google.shopping.merchant.products.v1beta.Shipping.min_handling_time]
      * is optional if
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * is present.
      * </pre>
      *
@@ -2244,11 +2244,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Minimum transit time (inclusive) between when the order has shipped and
      * when it is delivered in business days. 0 means that the order is
      * delivered on the same day as it ships.
-     * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+     * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
      * can only be present together with
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time];
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time];
      * but it is not required if
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * is present.
      * </pre>
      *
@@ -2267,11 +2267,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Minimum transit time (inclusive) between when the order has shipped and
      * when it is delivered in business days. 0 means that the order is
      * delivered on the same day as it ships.
-     * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+     * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
      * can only be present together with
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time];
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time];
      * but it is not required if
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * is present.
      * </pre>
      *
@@ -2290,11 +2290,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Minimum transit time (inclusive) between when the order has shipped and
      * when it is delivered in business days. 0 means that the order is
      * delivered on the same day as it ships.
-     * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+     * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
      * can only be present together with
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time];
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time];
      * but it is not required if
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * is present.
      * </pre>
      *
@@ -2317,11 +2317,11 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Minimum transit time (inclusive) between when the order has shipped and
      * when it is delivered in business days. 0 means that the order is
      * delivered on the same day as it ships.
-     * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+     * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
      * can only be present together with
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time];
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time];
      * but it is not required if
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * is present.
      * </pre>
      *
@@ -2344,13 +2344,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Maximum transit time (inclusive) between when the order has shipped and
      * when it is delivered in business days. 0 means that the order is
      * delivered on the same day as it ships. Both
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * and
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * are required if providing shipping speeds.
-     * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+     * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
      * is optional if
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * is present.
      * </pre>
      *
@@ -2369,13 +2369,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Maximum transit time (inclusive) between when the order has shipped and
      * when it is delivered in business days. 0 means that the order is
      * delivered on the same day as it ships. Both
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * and
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * are required if providing shipping speeds.
-     * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+     * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
      * is optional if
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * is present.
      * </pre>
      *
@@ -2394,13 +2394,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Maximum transit time (inclusive) between when the order has shipped and
      * when it is delivered in business days. 0 means that the order is
      * delivered on the same day as it ships. Both
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * and
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * are required if providing shipping speeds.
-     * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+     * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
      * is optional if
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * is present.
      * </pre>
      *
@@ -2423,13 +2423,13 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
      * Maximum transit time (inclusive) between when the order has shipped and
      * when it is delivered in business days. 0 means that the order is
      * delivered on the same day as it ships. Both
-     * [maxHandlingTime][google.shopping.content.bundles.Products.Shipping.max_handling_time]
+     * [maxHandlingTime][google.shopping.merchant.products.v1beta.Shipping.max_handling_time]
      * and
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * are required if providing shipping speeds.
-     * [minTransitTime][google.shopping.content.bundles.Products.Shipping.min_transit_time]
+     * [minTransitTime][google.shopping.merchant.products.v1beta.Shipping.min_transit_time]
      * is optional if
-     * [maxTransitTime][google.shopping.content.bundles.Products.Shipping.max_transit_time]
+     * [maxTransitTime][google.shopping.merchant.products.v1beta.Shipping.max_transit_time]
      * is present.
      * </pre>
      *

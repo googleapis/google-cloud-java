@@ -28,7 +28,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
@@ -38,7 +38,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
@@ -48,7 +48,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
@@ -58,7 +58,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
@@ -68,7 +68,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>

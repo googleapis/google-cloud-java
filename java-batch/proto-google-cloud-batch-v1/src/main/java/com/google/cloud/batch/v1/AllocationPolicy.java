@@ -4463,7 +4463,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=370
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=378
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4634,7 +4634,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=370
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=378
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -5296,7 +5296,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=370
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=378
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -5314,7 +5314,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=370
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=378
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -5336,7 +5336,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=370
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=378
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -8480,7 +8480,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Named the field as 'instance_template' instead of 'template' to avoid
      * C++ keyword conflict.
      *
-     * Batch only supports global instance templates.
+     * Batch only supports global instance templates from the same project as
+     * the job.
      * You can specify the global instance template as a full or partial URL.
      * </pre>
      *
@@ -8497,7 +8498,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Named the field as 'instance_template' instead of 'template' to avoid
      * C++ keyword conflict.
      *
-     * Batch only supports global instance templates.
+     * Batch only supports global instance templates from the same project as
+     * the job.
      * You can specify the global instance template as a full or partial URL.
      * </pre>
      *
@@ -8514,7 +8516,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Named the field as 'instance_template' instead of 'template' to avoid
      * C++ keyword conflict.
      *
-     * Batch only supports global instance templates.
+     * Batch only supports global instance templates from the same project as
+     * the job.
      * You can specify the global instance template as a full or partial URL.
      * </pre>
      *
@@ -8746,7 +8749,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Named the field as 'instance_template' instead of 'template' to avoid
      * C++ keyword conflict.
      *
-     * Batch only supports global instance templates.
+     * Batch only supports global instance templates from the same project as
+     * the job.
      * You can specify the global instance template as a full or partial URL.
      * </pre>
      *
@@ -8765,7 +8769,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Named the field as 'instance_template' instead of 'template' to avoid
      * C++ keyword conflict.
      *
-     * Batch only supports global instance templates.
+     * Batch only supports global instance templates from the same project as
+     * the job.
      * You can specify the global instance template as a full or partial URL.
      * </pre>
      *
@@ -8797,7 +8802,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Named the field as 'instance_template' instead of 'template' to avoid
      * C++ keyword conflict.
      *
-     * Batch only supports global instance templates.
+     * Batch only supports global instance templates from the same project as
+     * the job.
      * You can specify the global instance template as a full or partial URL.
      * </pre>
      *
@@ -9621,7 +9627,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Named the field as 'instance_template' instead of 'template' to avoid
        * C++ keyword conflict.
        *
-       * Batch only supports global instance templates.
+       * Batch only supports global instance templates from the same project as
+       * the job.
        * You can specify the global instance template as a full or partial URL.
        * </pre>
        *
@@ -9641,7 +9648,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Named the field as 'instance_template' instead of 'template' to avoid
        * C++ keyword conflict.
        *
-       * Batch only supports global instance templates.
+       * Batch only supports global instance templates from the same project as
+       * the job.
        * You can specify the global instance template as a full or partial URL.
        * </pre>
        *
@@ -9674,7 +9682,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Named the field as 'instance_template' instead of 'template' to avoid
        * C++ keyword conflict.
        *
-       * Batch only supports global instance templates.
+       * Batch only supports global instance templates from the same project as
+       * the job.
        * You can specify the global instance template as a full or partial URL.
        * </pre>
        *
@@ -9707,7 +9716,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Named the field as 'instance_template' instead of 'template' to avoid
        * C++ keyword conflict.
        *
-       * Batch only supports global instance templates.
+       * Batch only supports global instance templates from the same project as
+       * the job.
        * You can specify the global instance template as a full or partial URL.
        * </pre>
        *
@@ -9733,7 +9743,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Named the field as 'instance_template' instead of 'template' to avoid
        * C++ keyword conflict.
        *
-       * Batch only supports global instance templates.
+       * Batch only supports global instance templates from the same project as
+       * the job.
        * You can specify the global instance template as a full or partial URL.
        * </pre>
        *
@@ -9757,7 +9768,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Named the field as 'instance_template' instead of 'template' to avoid
        * C++ keyword conflict.
        *
-       * Batch only supports global instance templates.
+       * Batch only supports global instance templates from the same project as
+       * the job.
        * You can specify the global instance template as a full or partial URL.
        * </pre>
        *

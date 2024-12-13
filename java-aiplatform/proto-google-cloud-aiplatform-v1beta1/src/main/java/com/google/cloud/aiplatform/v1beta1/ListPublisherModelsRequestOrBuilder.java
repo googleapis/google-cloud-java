@@ -208,4 +208,17 @@ public interface ListPublisherModelsRequestOrBuilder
    * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List all publisher model versions if the flag is set to true.
+   * </pre>
+   *
+   * <code>bool list_all_versions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The listAllVersions.
+   */
+  boolean getListAllVersions();
 }

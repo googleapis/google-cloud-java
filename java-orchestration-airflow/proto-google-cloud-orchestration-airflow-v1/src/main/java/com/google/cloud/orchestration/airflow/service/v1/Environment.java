@@ -313,14 +313,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the environment, in the form:
+   * Identifier. The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -340,14 +340,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the environment, in the form:
+   * Identifier. The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -370,10 +370,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -385,10 +387,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The config.
    */
@@ -402,10 +406,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfigOrBuilder
@@ -637,7 +643,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -666,7 +672,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -686,7 +692,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -713,7 +719,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * size.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7;</code>
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1466,14 +1472,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1492,14 +1498,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1518,14 +1524,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1543,14 +1549,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1564,14 +1570,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1597,10 +1603,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the config field is set.
      */
@@ -1611,10 +1619,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The config.
      */
@@ -1632,10 +1642,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setConfig(
         com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig value) {
@@ -1655,10 +1667,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setConfig(
         com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.Builder
@@ -1676,10 +1690,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeConfig(
         com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig value) {
@@ -1706,10 +1722,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearConfig() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1725,10 +1743,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.Builder
         getConfigBuilder() {
@@ -1740,10 +1760,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfigOrBuilder
         getConfigOrBuilder() {
@@ -1760,10 +1782,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2;</code>
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig,
@@ -2395,7 +2419,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * size.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7;</code>
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2424,7 +2448,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * size.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7;</code>
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2444,7 +2468,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * size.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7;</code>
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -2471,7 +2495,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * size.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7;</code>
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2504,7 +2528,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * size.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7;</code>
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2533,7 +2557,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * size.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7;</code>
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2560,7 +2584,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * size.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7;</code>
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);

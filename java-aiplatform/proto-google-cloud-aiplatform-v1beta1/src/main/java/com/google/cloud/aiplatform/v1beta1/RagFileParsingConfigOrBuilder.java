@@ -106,13 +106,49 @@ public interface RagFileParsingConfigOrBuilder
    *
    *
    * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   *
+   * @return Whether the llmParser field is set.
+   */
+  boolean hasLlmParser();
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   *
+   * @return The llmParser.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser getLlmParser();
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParserOrBuilder
+      getLlmParserOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether to use advanced PDF parsing.
    * </pre>
    *
    * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=452
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=473
    * @return The useAdvancedPdfParsing.
    */
   @java.lang.Deprecated

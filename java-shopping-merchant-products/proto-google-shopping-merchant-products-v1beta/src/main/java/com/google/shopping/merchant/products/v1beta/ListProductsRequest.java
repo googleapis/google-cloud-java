@@ -129,7 +129,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The maximum number of products to return. The service may return fewer than
    * this value.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * The maximum value is 250; values above 250 will be coerced to 250.
    * If unspecified, the maximum number of products will be returned.
    * </pre>
    *
@@ -722,7 +722,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The maximum number of products to return. The service may return fewer than
      * this value.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * The maximum value is 250; values above 250 will be coerced to 250.
      * If unspecified, the maximum number of products will be returned.
      * </pre>
      *
@@ -740,7 +740,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The maximum number of products to return. The service may return fewer than
      * this value.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * The maximum value is 250; values above 250 will be coerced to 250.
      * If unspecified, the maximum number of products will be returned.
      * </pre>
      *
@@ -762,7 +762,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The maximum number of products to return. The service may return fewer than
      * this value.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * The maximum value is 250; values above 250 will be coerced to 250.
      * If unspecified, the maximum number of products will be returned.
      * </pre>
      *

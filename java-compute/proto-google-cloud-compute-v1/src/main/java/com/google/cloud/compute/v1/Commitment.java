@@ -560,6 +560,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     MEMORY_OPTIMIZED(281753417),
     /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
     MEMORY_OPTIMIZED_M3(276301372),
+    /** <code>MEMORY_OPTIMIZED_X4_16TB = 183089120;</code> */
+    MEMORY_OPTIMIZED_X4_16TB(183089120),
+    /** <code>MEMORY_OPTIMIZED_X4_24TB = 183116989;</code> */
+    MEMORY_OPTIMIZED_X4_24TB(183116989),
+    /** <code>MEMORY_OPTIMIZED_X4_32TB = 183144858;</code> */
+    MEMORY_OPTIMIZED_X4_32TB(183144858),
     /** <code>STORAGE_OPTIMIZED_Z3 = 316796085;</code> */
     STORAGE_OPTIMIZED_Z3(316796085),
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
@@ -615,6 +621,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
     /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
     public static final int MEMORY_OPTIMIZED_M3_VALUE = 276301372;
+    /** <code>MEMORY_OPTIMIZED_X4_16TB = 183089120;</code> */
+    public static final int MEMORY_OPTIMIZED_X4_16TB_VALUE = 183089120;
+    /** <code>MEMORY_OPTIMIZED_X4_24TB = 183116989;</code> */
+    public static final int MEMORY_OPTIMIZED_X4_24TB_VALUE = 183116989;
+    /** <code>MEMORY_OPTIMIZED_X4_32TB = 183144858;</code> */
+    public static final int MEMORY_OPTIMIZED_X4_32TB_VALUE = 183144858;
     /** <code>STORAGE_OPTIMIZED_Z3 = 316796085;</code> */
     public static final int STORAGE_OPTIMIZED_Z3_VALUE = 316796085;
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
@@ -684,6 +696,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return MEMORY_OPTIMIZED;
         case 276301372:
           return MEMORY_OPTIMIZED_M3;
+        case 183089120:
+          return MEMORY_OPTIMIZED_X4_16TB;
+        case 183116989:
+          return MEMORY_OPTIMIZED_X4_24TB;
+        case 183144858:
+          return MEMORY_OPTIMIZED_X4_32TB;
         case 316796085:
           return STORAGE_OPTIMIZED_Z3;
         case 437714322:

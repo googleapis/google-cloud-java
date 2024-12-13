@@ -68,7 +68,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Who deleted the message and how it was deleted.
+   * Who deleted the message and how it was deleted. More values may be added in
+   * the future.
    * </pre>
    *
    * Protobuf enum {@code google.chat.v1.DeletionMetadata.DeletionType}

@@ -1448,6 +1448,1011 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public interface LlmParserOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of a LLM model used for parsing.
+     * Format: `gemini-1.5-pro-002`
+     * </pre>
+     *
+     * <code>string model_name = 1;</code>
+     *
+     * @return The modelName.
+     */
+    java.lang.String getModelName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of a LLM model used for parsing.
+     * Format: `gemini-1.5-pro-002`
+     * </pre>
+     *
+     * <code>string model_name = 1;</code>
+     *
+     * @return The bytes for modelName.
+     */
+    com.google.protobuf.ByteString getModelNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of requests the job is allowed to make to the
+     * LLM model per minute. Consult
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+     * and your document size to set an appropriate value here. If unspecified,
+     * a default value of 5000 QPM would be used.
+     * </pre>
+     *
+     * <code>int32 max_parsing_requests_per_min = 2;</code>
+     *
+     * @return The maxParsingRequestsPerMin.
+     */
+    int getMaxParsingRequestsPerMin();
+
+    /**
+     *
+     *
+     * <pre>
+     * The prompt to use for parsing. If not specified, a default prompt will
+     * be used.
+     * </pre>
+     *
+     * <code>string custom_parsing_prompt = 3;</code>
+     *
+     * @return The customParsingPrompt.
+     */
+    java.lang.String getCustomParsingPrompt();
+    /**
+     *
+     *
+     * <pre>
+     * The prompt to use for parsing. If not specified, a default prompt will
+     * be used.
+     * </pre>
+     *
+     * <code>string custom_parsing_prompt = 3;</code>
+     *
+     * @return The bytes for customParsingPrompt.
+     */
+    com.google.protobuf.ByteString getCustomParsingPromptBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the advanced parsing for RagFiles.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser}
+   */
+  public static final class LlmParser extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser)
+      LlmParserOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use LlmParser.newBuilder() to construct.
+    private LlmParser(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private LlmParser() {
+      modelName_ = "";
+      customParsingPrompt_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LlmParser();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_LlmParser_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_LlmParser_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.class,
+              com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.Builder.class);
+    }
+
+    public static final int MODEL_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of a LLM model used for parsing.
+     * Format: `gemini-1.5-pro-002`
+     * </pre>
+     *
+     * <code>string model_name = 1;</code>
+     *
+     * @return The modelName.
+     */
+    @java.lang.Override
+    public java.lang.String getModelName() {
+      java.lang.Object ref = modelName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of a LLM model used for parsing.
+     * Format: `gemini-1.5-pro-002`
+     * </pre>
+     *
+     * <code>string model_name = 1;</code>
+     *
+     * @return The bytes for modelName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModelNameBytes() {
+      java.lang.Object ref = modelName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER = 2;
+    private int maxParsingRequestsPerMin_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of requests the job is allowed to make to the
+     * LLM model per minute. Consult
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+     * and your document size to set an appropriate value here. If unspecified,
+     * a default value of 5000 QPM would be used.
+     * </pre>
+     *
+     * <code>int32 max_parsing_requests_per_min = 2;</code>
+     *
+     * @return The maxParsingRequestsPerMin.
+     */
+    @java.lang.Override
+    public int getMaxParsingRequestsPerMin() {
+      return maxParsingRequestsPerMin_;
+    }
+
+    public static final int CUSTOM_PARSING_PROMPT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object customParsingPrompt_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The prompt to use for parsing. If not specified, a default prompt will
+     * be used.
+     * </pre>
+     *
+     * <code>string custom_parsing_prompt = 3;</code>
+     *
+     * @return The customParsingPrompt.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomParsingPrompt() {
+      java.lang.Object ref = customParsingPrompt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customParsingPrompt_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prompt to use for parsing. If not specified, a default prompt will
+     * be used.
+     * </pre>
+     *
+     * <code>string custom_parsing_prompt = 3;</code>
+     *
+     * @return The bytes for customParsingPrompt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCustomParsingPromptBytes() {
+      java.lang.Object ref = customParsingPrompt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customParsingPrompt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelName_);
+      }
+      if (maxParsingRequestsPerMin_ != 0) {
+        output.writeInt32(2, maxParsingRequestsPerMin_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customParsingPrompt_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, customParsingPrompt_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelName_);
+      }
+      if (maxParsingRequestsPerMin_ != 0) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxParsingRequestsPerMin_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customParsingPrompt_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, customParsingPrompt_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser other =
+          (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) obj;
+
+      if (!getModelName().equals(other.getModelName())) return false;
+      if (getMaxParsingRequestsPerMin() != other.getMaxParsingRequestsPerMin()) return false;
+      if (!getCustomParsingPrompt().equals(other.getCustomParsingPrompt())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODEL_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getModelName().hashCode();
+      hash = (37 * hash) + MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxParsingRequestsPerMin();
+      hash = (37 * hash) + CUSTOM_PARSING_PROMPT_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomParsingPrompt().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the advanced parsing for RagFiles.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser)
+        com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParserOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_LlmParser_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_LlmParser_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.class,
+                com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        modelName_ = "";
+        maxParsingRequestsPerMin_ = 0;
+        customParsingPrompt_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_LlmParser_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser build() {
+        com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser result =
+            new com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.modelName_ = modelName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxParsingRequestsPerMin_ = maxParsingRequestsPerMin_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.customParsingPrompt_ = customParsingPrompt_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+                .getDefaultInstance()) return this;
+        if (!other.getModelName().isEmpty()) {
+          modelName_ = other.modelName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getMaxParsingRequestsPerMin() != 0) {
+          setMaxParsingRequestsPerMin(other.getMaxParsingRequestsPerMin());
+        }
+        if (!other.getCustomParsingPrompt().isEmpty()) {
+          customParsingPrompt_ = other.customParsingPrompt_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  modelName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  maxParsingRequestsPerMin_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  customParsingPrompt_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object modelName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of a LLM model used for parsing.
+       * Format: `gemini-1.5-pro-002`
+       * </pre>
+       *
+       * <code>string model_name = 1;</code>
+       *
+       * @return The modelName.
+       */
+      public java.lang.String getModelName() {
+        java.lang.Object ref = modelName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of a LLM model used for parsing.
+       * Format: `gemini-1.5-pro-002`
+       * </pre>
+       *
+       * <code>string model_name = 1;</code>
+       *
+       * @return The bytes for modelName.
+       */
+      public com.google.protobuf.ByteString getModelNameBytes() {
+        java.lang.Object ref = modelName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of a LLM model used for parsing.
+       * Format: `gemini-1.5-pro-002`
+       * </pre>
+       *
+       * <code>string model_name = 1;</code>
+       *
+       * @param value The modelName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of a LLM model used for parsing.
+       * Format: `gemini-1.5-pro-002`
+       * </pre>
+       *
+       * <code>string model_name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModelName() {
+        modelName_ = getDefaultInstance().getModelName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of a LLM model used for parsing.
+       * Format: `gemini-1.5-pro-002`
+       * </pre>
+       *
+       * <code>string model_name = 1;</code>
+       *
+       * @param value The bytes for modelName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int maxParsingRequestsPerMin_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the
+       * LLM model per minute. Consult
+       * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+       * and your document size to set an appropriate value here. If unspecified,
+       * a default value of 5000 QPM would be used.
+       * </pre>
+       *
+       * <code>int32 max_parsing_requests_per_min = 2;</code>
+       *
+       * @return The maxParsingRequestsPerMin.
+       */
+      @java.lang.Override
+      public int getMaxParsingRequestsPerMin() {
+        return maxParsingRequestsPerMin_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the
+       * LLM model per minute. Consult
+       * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+       * and your document size to set an appropriate value here. If unspecified,
+       * a default value of 5000 QPM would be used.
+       * </pre>
+       *
+       * <code>int32 max_parsing_requests_per_min = 2;</code>
+       *
+       * @param value The maxParsingRequestsPerMin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxParsingRequestsPerMin(int value) {
+
+        maxParsingRequestsPerMin_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the
+       * LLM model per minute. Consult
+       * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+       * and your document size to set an appropriate value here. If unspecified,
+       * a default value of 5000 QPM would be used.
+       * </pre>
+       *
+       * <code>int32 max_parsing_requests_per_min = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxParsingRequestsPerMin() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxParsingRequestsPerMin_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object customParsingPrompt_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The prompt to use for parsing. If not specified, a default prompt will
+       * be used.
+       * </pre>
+       *
+       * <code>string custom_parsing_prompt = 3;</code>
+       *
+       * @return The customParsingPrompt.
+       */
+      public java.lang.String getCustomParsingPrompt() {
+        java.lang.Object ref = customParsingPrompt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customParsingPrompt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The prompt to use for parsing. If not specified, a default prompt will
+       * be used.
+       * </pre>
+       *
+       * <code>string custom_parsing_prompt = 3;</code>
+       *
+       * @return The bytes for customParsingPrompt.
+       */
+      public com.google.protobuf.ByteString getCustomParsingPromptBytes() {
+        java.lang.Object ref = customParsingPrompt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          customParsingPrompt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The prompt to use for parsing. If not specified, a default prompt will
+       * be used.
+       * </pre>
+       *
+       * <code>string custom_parsing_prompt = 3;</code>
+       *
+       * @param value The customParsingPrompt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomParsingPrompt(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customParsingPrompt_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The prompt to use for parsing. If not specified, a default prompt will
+       * be used.
+       * </pre>
+       *
+       * <code>string custom_parsing_prompt = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomParsingPrompt() {
+        customParsingPrompt_ = getDefaultInstance().getCustomParsingPrompt();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The prompt to use for parsing. If not specified, a default prompt will
+       * be used.
+       * </pre>
+       *
+       * <code>string custom_parsing_prompt = 3;</code>
+       *
+       * @param value The bytes for customParsingPrompt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomParsingPromptBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        customParsingPrompt_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser)
+    private static final com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LlmParser> PARSER =
+        new com.google.protobuf.AbstractParser<LlmParser>() {
+          @java.lang.Override
+          public LlmParser parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<LlmParser> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LlmParser> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int parserCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1459,6 +2464,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ADVANCED_PARSER(3),
     LAYOUT_PARSER(4),
+    LLM_PARSER(5),
     PARSER_NOT_SET(0);
     private final int value;
 
@@ -1481,6 +2487,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
           return ADVANCED_PARSER;
         case 4:
           return LAYOUT_PARSER;
+        case 5:
+          return LLM_PARSER;
         case 0:
           return PARSER_NOT_SET;
         default:
@@ -1612,6 +2620,58 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         .getDefaultInstance();
   }
 
+  public static final int LLM_PARSER_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   *
+   * @return Whether the llmParser field is set.
+   */
+  @java.lang.Override
+  public boolean hasLlmParser() {
+    return parserCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   *
+   * @return The llmParser.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser getLlmParser() {
+    if (parserCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) parser_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParserOrBuilder
+      getLlmParserOrBuilder() {
+    if (parserCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) parser_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.getDefaultInstance();
+  }
+
   public static final int USE_ADVANCED_PDF_PARSING_FIELD_NUMBER = 2;
   private boolean useAdvancedPdfParsing_ = false;
   /**
@@ -1624,7 +2684,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
    * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=452
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=473
    * @return The useAdvancedPdfParsing.
    */
   @java.lang.Override
@@ -1658,6 +2718,10 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       output.writeMessage(
           4, (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser) parser_);
     }
+    if (parserCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) parser_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1679,6 +2743,11 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser) parser_);
+    }
+    if (parserCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) parser_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1705,6 +2774,9 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       case 4:
         if (!getLayoutParser().equals(other.getLayoutParser())) return false;
         break;
+      case 5:
+        if (!getLlmParser().equals(other.getLlmParser())) return false;
+        break;
       case 0:
       default:
     }
@@ -1729,6 +2801,10 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       case 4:
         hash = (37 * hash) + LAYOUT_PARSER_FIELD_NUMBER;
         hash = (53 * hash) + getLayoutParser().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + LLM_PARSER_FIELD_NUMBER;
+        hash = (53 * hash) + getLlmParser().hashCode();
         break;
       case 0:
       default:
@@ -1879,6 +2955,9 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       if (layoutParserBuilder_ != null) {
         layoutParserBuilder_.clear();
       }
+      if (llmParserBuilder_ != null) {
+        llmParserBuilder_.clear();
+      }
       useAdvancedPdfParsing_ = false;
       parserCase_ = 0;
       parser_ = null;
@@ -1919,7 +2998,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.useAdvancedPdfParsing_ = useAdvancedPdfParsing_;
       }
     }
@@ -1933,6 +3012,9 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       }
       if (parserCase_ == 4 && layoutParserBuilder_ != null) {
         result.parser_ = layoutParserBuilder_.build();
+      }
+      if (parserCase_ == 5 && llmParserBuilder_ != null) {
+        result.parser_ = llmParserBuilder_.build();
       }
     }
 
@@ -1996,6 +3078,11 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
             mergeLayoutParser(other.getLayoutParser());
             break;
           }
+        case LLM_PARSER:
+          {
+            mergeLlmParser(other.getLlmParser());
+            break;
+          }
         case PARSER_NOT_SET:
           {
             break;
@@ -2030,7 +3117,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
             case 16:
               {
                 useAdvancedPdfParsing_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 16
             case 26:
@@ -2045,6 +3132,12 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
                 parserCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getLlmParserFieldBuilder().getBuilder(), extensionRegistry);
+                parserCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2550,6 +3643,227 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       return layoutParserBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser,
+            com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParserOrBuilder>
+        llmParserBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     *
+     * @return Whether the llmParser field is set.
+     */
+    @java.lang.Override
+    public boolean hasLlmParser() {
+      return parserCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     *
+     * @return The llmParser.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser getLlmParser() {
+      if (llmParserBuilder_ == null) {
+        if (parserCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) parser_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+            .getDefaultInstance();
+      } else {
+        if (parserCase_ == 5) {
+          return llmParserBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     */
+    public Builder setLlmParser(
+        com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser value) {
+      if (llmParserBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parser_ = value;
+        onChanged();
+      } else {
+        llmParserBuilder_.setMessage(value);
+      }
+      parserCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     */
+    public Builder setLlmParser(
+        com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.Builder
+            builderForValue) {
+      if (llmParserBuilder_ == null) {
+        parser_ = builderForValue.build();
+        onChanged();
+      } else {
+        llmParserBuilder_.setMessage(builderForValue.build());
+      }
+      parserCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     */
+    public Builder mergeLlmParser(
+        com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser value) {
+      if (llmParserBuilder_ == null) {
+        if (parserCase_ == 5
+            && parser_
+                != com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+                    .getDefaultInstance()) {
+          parser_ =
+              com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) parser_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          parser_ = value;
+        }
+        onChanged();
+      } else {
+        if (parserCase_ == 5) {
+          llmParserBuilder_.mergeFrom(value);
+        } else {
+          llmParserBuilder_.setMessage(value);
+        }
+      }
+      parserCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     */
+    public Builder clearLlmParser() {
+      if (llmParserBuilder_ == null) {
+        if (parserCase_ == 5) {
+          parserCase_ = 0;
+          parser_ = null;
+          onChanged();
+        }
+      } else {
+        if (parserCase_ == 5) {
+          parserCase_ = 0;
+          parser_ = null;
+        }
+        llmParserBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.Builder
+        getLlmParserBuilder() {
+      return getLlmParserFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParserOrBuilder
+        getLlmParserOrBuilder() {
+      if ((parserCase_ == 5) && (llmParserBuilder_ != null)) {
+        return llmParserBuilder_.getMessageOrBuilder();
+      } else {
+        if (parserCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) parser_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The LLM Parser to use for RagFiles.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser,
+            com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParserOrBuilder>
+        getLlmParserFieldBuilder() {
+      if (llmParserBuilder_ == null) {
+        if (!(parserCase_ == 5)) {
+          parser_ =
+              com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser
+                  .getDefaultInstance();
+        }
+        llmParserBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser,
+                com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParserOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser) parser_,
+                getParentForChildren(),
+                isClean());
+        parser_ = null;
+      }
+      parserCase_ = 5;
+      onChanged();
+      return llmParserBuilder_;
+    }
+
     private boolean useAdvancedPdfParsing_;
     /**
      *
@@ -2561,7 +3875,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=452
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=473
      * @return The useAdvancedPdfParsing.
      */
     @java.lang.Override
@@ -2579,7 +3893,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=452
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=473
      * @param value The useAdvancedPdfParsing to set.
      * @return This builder for chaining.
      */
@@ -2587,7 +3901,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     public Builder setUseAdvancedPdfParsing(boolean value) {
 
       useAdvancedPdfParsing_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2601,12 +3915,12 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=452
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=473
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearUseAdvancedPdfParsing() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       useAdvancedPdfParsing_ = false;
       onChanged();
       return this;

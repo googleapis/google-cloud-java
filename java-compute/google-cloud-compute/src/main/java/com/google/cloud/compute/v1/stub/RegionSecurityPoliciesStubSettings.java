@@ -57,6 +57,7 @@ import com.google.cloud.compute.v1.RemoveRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
+import com.google.cloud.compute.v1.SetLabelsRegionSecurityPolicyRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -179,6 +180,10 @@ public class RegionSecurityPoliciesStubSettings
       removeRuleSettings;
   private final OperationCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
       removeRuleOperationSettings;
+  private final UnaryCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation>
+      setLabelsSettings;
+  private final OperationCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationSettings;
 
   private static final PagedListDescriptor<
           ListRegionSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
@@ -322,6 +327,17 @@ public class RegionSecurityPoliciesStubSettings
     return removeRuleOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation> setLabelsSettings() {
+    return setLabelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
+  }
+
   public RegionSecurityPoliciesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -419,6 +435,8 @@ public class RegionSecurityPoliciesStubSettings
     patchRuleOperationSettings = settingsBuilder.patchRuleOperationSettings().build();
     removeRuleSettings = settingsBuilder.removeRuleSettings().build();
     removeRuleOperationSettings = settingsBuilder.removeRuleOperationSettings().build();
+    setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
   }
 
   /** Builder for RegionSecurityPoliciesStubSettings. */
@@ -462,6 +480,11 @@ public class RegionSecurityPoliciesStubSettings
     private final OperationCallSettings.Builder<
             RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
         removeRuleOperationSettings;
+    private final UnaryCallSettings.Builder<SetLabelsRegionSecurityPolicyRequest, Operation>
+        setLabelsSettings;
+    private final OperationCallSettings.Builder<
+            SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -527,6 +550,8 @@ public class RegionSecurityPoliciesStubSettings
       patchRuleOperationSettings = OperationCallSettings.newBuilder();
       removeRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeRuleOperationSettings = OperationCallSettings.newBuilder();
+      setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -538,7 +563,8 @@ public class RegionSecurityPoliciesStubSettings
               listSettings,
               patchSettings,
               patchRuleSettings,
-              removeRuleSettings);
+              removeRuleSettings,
+              setLabelsSettings);
       initDefaults(this);
     }
 
@@ -560,6 +586,8 @@ public class RegionSecurityPoliciesStubSettings
       patchRuleOperationSettings = settings.patchRuleOperationSettings.toBuilder();
       removeRuleSettings = settings.removeRuleSettings.toBuilder();
       removeRuleOperationSettings = settings.removeRuleOperationSettings.toBuilder();
+      setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -571,7 +599,8 @@ public class RegionSecurityPoliciesStubSettings
               listSettings,
               patchSettings,
               patchRuleSettings,
-              removeRuleSettings);
+              removeRuleSettings,
+              setLabelsSettings);
     }
 
     private static Builder createDefault() {
@@ -629,6 +658,11 @@ public class RegionSecurityPoliciesStubSettings
 
       builder
           .removeRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setLabelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -782,6 +816,31 @@ public class RegionSecurityPoliciesStubSettings
                       .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsRegionSecurityPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -888,6 +947,18 @@ public class RegionSecurityPoliciesStubSettings
             RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
         removeRuleOperationSettings() {
       return removeRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsRegionSecurityPolicyRequest, Operation>
+        setLabelsSettings() {
+      return setLabelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
     }
 
     @Override

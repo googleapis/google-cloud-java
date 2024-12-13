@@ -596,4 +596,39 @@ public interface RouteOrBuilder
    * @return The bytes for routeToken.
    */
   com.google.protobuf.ByteString getRouteTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   *
+   * @return Whether the polylineDetails field is set.
+   */
+  boolean hasPolylineDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   *
+   * @return The polylineDetails.
+   */
+  com.google.maps.routing.v2.PolylineDetails getPolylineDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   */
+  com.google.maps.routing.v2.PolylineDetailsOrBuilder getPolylineDetailsOrBuilder();
 }

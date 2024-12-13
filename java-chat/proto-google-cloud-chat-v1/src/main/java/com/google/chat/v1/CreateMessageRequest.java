@@ -373,7 +373,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=504
+   *     google/chat/v1/message.proto;l=510
    * @return The threadKey.
    */
   @java.lang.Override
@@ -406,7 +406,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=504
+   *     google/chat/v1/message.proto;l=510
    * @return The bytes for threadKey.
    */
   @java.lang.Override
@@ -486,6 +486,12 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies whether a message starts a thread or replies to one.
    * Only supported in named spaces.
+   *
+   * When [responding to user
+   * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+   * this field is ignored. For interactions within a thread, the reply is
+   * created in the same thread. Otherwise, the reply is created as a new
+   * thread.
    * </pre>
    *
    * <code>
@@ -504,6 +510,12 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies whether a message starts a thread or replies to one.
    * Only supported in named spaces.
+   *
+   * When [responding to user
+   * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+   * this field is ignored. For interactions within a thread, the reply is
+   * created in the same thread. Otherwise, the reply is created as a new
+   * thread.
    * </pre>
    *
    * <code>
@@ -1408,7 +1420,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=504
+     *     google/chat/v1/message.proto;l=510
      * @return The threadKey.
      */
     @java.lang.Deprecated
@@ -1440,7 +1452,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=504
+     *     google/chat/v1/message.proto;l=510
      * @return The bytes for threadKey.
      */
     @java.lang.Deprecated
@@ -1472,7 +1484,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=504
+     *     google/chat/v1/message.proto;l=510
      * @param value The threadKey to set.
      * @return This builder for chaining.
      */
@@ -1503,7 +1515,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=504
+     *     google/chat/v1/message.proto;l=510
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1530,7 +1542,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=504
+     *     google/chat/v1/message.proto;l=510
      * @param value The bytes for threadKey to set.
      * @return This builder for chaining.
      */
@@ -1669,6 +1681,12 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies whether a message starts a thread or replies to one.
      * Only supported in named spaces.
+     *
+     * When [responding to user
+     * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+     * this field is ignored. For interactions within a thread, the reply is
+     * created in the same thread. Otherwise, the reply is created as a new
+     * thread.
      * </pre>
      *
      * <code>
@@ -1687,6 +1705,12 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies whether a message starts a thread or replies to one.
      * Only supported in named spaces.
+     *
+     * When [responding to user
+     * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+     * this field is ignored. For interactions within a thread, the reply is
+     * created in the same thread. Otherwise, the reply is created as a new
+     * thread.
      * </pre>
      *
      * <code>
@@ -1708,6 +1732,12 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies whether a message starts a thread or replies to one.
      * Only supported in named spaces.
+     *
+     * When [responding to user
+     * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+     * this field is ignored. For interactions within a thread, the reply is
+     * created in the same thread. Otherwise, the reply is created as a new
+     * thread.
      * </pre>
      *
      * <code>
@@ -1730,6 +1760,12 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies whether a message starts a thread or replies to one.
      * Only supported in named spaces.
+     *
+     * When [responding to user
+     * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+     * this field is ignored. For interactions within a thread, the reply is
+     * created in the same thread. Otherwise, the reply is created as a new
+     * thread.
      * </pre>
      *
      * <code>
@@ -1755,6 +1791,12 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies whether a message starts a thread or replies to one.
      * Only supported in named spaces.
+     *
+     * When [responding to user
+     * interactions](https://developers.google.com/workspace/chat/receive-respond-interactions),
+     * this field is ignored. For interactions within a thread, the reply is
+     * created in the same thread. Otherwise, the reply is created as a new
+     * thread.
      * </pre>
      *
      * <code>
