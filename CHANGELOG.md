@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.11.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.10.3...v3.11.0) (2024-12-12)
+
+
+### Features
+
+* Add support for byte and short ([#2789](https://github.com/googleapis/java-bigquerystorage/issues/2789)) ([98a714f](https://github.com/googleapis/java-bigquerystorage/commit/98a714fbdd409632c000e01c2ada9565e483eecc))
+* Introduce `java.time` methods and variables ([#2780](https://github.com/googleapis/java-bigquerystorage/issues/2780)) ([8dd66d5](https://github.com/googleapis/java-bigquerystorage/commit/8dd66d56ae9a0cb25171e466dcd8dc1e78660872))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.0 ([4936ac9](https://github.com/googleapis/java-bigquerystorage/commit/4936ac952e76c08239c0aad28cc38c3212591dcd))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.44.0 ([#2778](https://github.com/googleapis/java-bigquerystorage/issues/2778)) ([91be63a](https://github.com/googleapis/java-bigquerystorage/commit/91be63a273441ee50610545c4acce9ae2b86639c))
+* Update dependency com.google.http-client:google-http-client to v1.45.3 ([#2790](https://github.com/googleapis/java-bigquerystorage/issues/2790)) ([cd0e62e](https://github.com/googleapis/java-bigquerystorage/commit/cd0e62e8fa4de42cc2fc4e9e38650eea69fc7035))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.45.0 ([#2792](https://github.com/googleapis/java-bigquerystorage/issues/2792)) ([e6cfc49](https://github.com/googleapis/java-bigquerystorage/commit/e6cfc49039c2d9f1bd49ec4d423c9cb0192680c5))
+* Update dependency io.opentelemetry:opentelemetry-exporter-logging to v1.45.0 ([#2793](https://github.com/googleapis/java-bigquerystorage/issues/2793)) ([eea1d82](https://github.com/googleapis/java-bigquerystorage/commit/eea1d82aaae379c98f35b6da067cb84e28522655))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.4 ([#2787](https://github.com/googleapis/java-bigquerystorage/issues/2787)) ([b85f01d](https://github.com/googleapis/java-bigquerystorage/commit/b85f01d809aa3e9e84c81ab4af8cf8c0eba98c0b))
+* Update sdk-platform-java dependencies ([#2798](https://github.com/googleapis/java-bigquerystorage/issues/2798)) ([1f2eaa0](https://github.com/googleapis/java-bigquerystorage/commit/1f2eaa08d49c1bca88164bcc149cfd75a7146686))
+
 ## [3.10.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.10.2...v3.10.3) (2024-11-17)
 
 
