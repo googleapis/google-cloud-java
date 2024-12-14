@@ -151,5 +151,47 @@ public interface ConversationEventOrBuilder
    */
   com.google.cloud.dialogflow.v2.MessageOrBuilder getNewMessagePayloadOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   *
+   * @return Whether the newRecognitionResultPayload field is set.
+   */
+  boolean hasNewRecognitionResultPayload();
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   *
+   * @return The newRecognitionResultPayload.
+   */
+  com.google.cloud.dialogflow.v2.StreamingRecognitionResult getNewRecognitionResultPayload();
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.StreamingRecognitionResultOrBuilder
+      getNewRecognitionResultPayloadOrBuilder();
+
   com.google.cloud.dialogflow.v2.ConversationEvent.PayloadCase getPayloadCase();
 }

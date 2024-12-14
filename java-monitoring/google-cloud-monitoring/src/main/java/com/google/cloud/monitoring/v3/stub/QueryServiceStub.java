@@ -33,11 +33,13 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class QueryServiceStub implements BackgroundResource {
 
+  @Deprecated
   public UnaryCallable<QueryTimeSeriesRequest, QueryTimeSeriesPagedResponse>
       queryTimeSeriesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: queryTimeSeriesPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<QueryTimeSeriesRequest, QueryTimeSeriesResponse> queryTimeSeriesCallable() {
     throw new UnsupportedOperationException("Not implemented: queryTimeSeriesCallable()");
   }

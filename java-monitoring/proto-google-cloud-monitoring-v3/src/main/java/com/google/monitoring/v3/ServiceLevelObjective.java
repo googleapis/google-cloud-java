@@ -470,7 +470,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The fraction of service that must be good in order for this objective to be
-   * met. `0 &lt; goal &lt;= 0.999`.
+   * met. `0 &lt; goal &lt;= 0.9999`.
    * </pre>
    *
    * <code>double goal = 4;</code>
@@ -1748,7 +1748,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The fraction of service that must be good in order for this objective to be
-     * met. `0 &lt; goal &lt;= 0.999`.
+     * met. `0 &lt; goal &lt;= 0.9999`.
      * </pre>
      *
      * <code>double goal = 4;</code>
@@ -1764,7 +1764,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The fraction of service that must be good in order for this objective to be
-     * met. `0 &lt; goal &lt;= 0.999`.
+     * met. `0 &lt; goal &lt;= 0.9999`.
      * </pre>
      *
      * <code>double goal = 4;</code>
@@ -1784,7 +1784,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The fraction of service that must be good in order for this objective to be
-     * met. `0 &lt; goal &lt;= 0.999`.
+     * met. `0 &lt; goal &lt;= 0.9999`.
      * </pre>
      *
      * <code>double goal = 4;</code>

@@ -392,6 +392,72 @@ public interface ConversationProfileOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for publishing transcription intermediate results.
+   * Event will be sent in format of
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+   * configured, the following information will be populated as
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+   * message attributes:
+   * - "participant_id"
+   * - "participant_role"
+   * - "message_id"
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the newRecognitionResultNotificationConfig field is set.
+   */
+  boolean hasNewRecognitionResultNotificationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for publishing transcription intermediate results.
+   * Event will be sent in format of
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+   * configured, the following information will be populated as
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+   * message attributes:
+   * - "participant_id"
+   * - "participant_role"
+   * - "message_id"
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The newRecognitionResultNotificationConfig.
+   */
+  com.google.cloud.dialogflow.v2.NotificationConfig getNewRecognitionResultNotificationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for publishing transcription intermediate results.
+   * Event will be sent in format of
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+   * configured, the following information will be populated as
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+   * message attributes:
+   * - "participant_id"
+   * - "participant_role"
+   * - "message_id"
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.NotificationConfigOrBuilder
+      getNewRecognitionResultNotificationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Settings for speech transcription.
    * </pre>
    *

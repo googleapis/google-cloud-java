@@ -185,7 +185,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListUptimeCheckIps</td>
- *      <td><p> Returns the list of IP addresses that checkers run from</td>
+ *      <td><p> Returns the list of IP addresses that checkers run from.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1105,7 +1105,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of IP addresses that checkers run from
+   * Returns the list of IP addresses that checkers run from.
    *
    * <p>Sample code:
    *
@@ -1138,7 +1138,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of IP addresses that checkers run from
+   * Returns the list of IP addresses that checkers run from.
    *
    * <p>Sample code:
    *
@@ -1170,7 +1170,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of IP addresses that checkers run from
+   * Returns the list of IP addresses that checkers run from.
    *
    * <p>Sample code:
    *

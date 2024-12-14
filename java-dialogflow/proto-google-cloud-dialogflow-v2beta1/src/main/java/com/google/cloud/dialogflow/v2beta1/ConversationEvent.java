@@ -134,6 +134,19 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * An existing conversation has received a new speech recognition result.
+     * This is mainly for delivering intermediate transcripts. The notification
+     * is configured in
+     * [ConversationProfile.new_recognition_event_notification_config][].
+     * </pre>
+     *
+     * <code>NEW_RECOGNITION_RESULT = 7;</code>
+     */
+    NEW_RECOGNITION_RESULT(7),
+    /**
+     *
+     *
+     * <pre>
      * Unrecoverable error during a telephone call.
      *
      * In general non-recoverable errors only occur if something was
@@ -211,6 +224,19 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * An existing conversation has received a new speech recognition result.
+     * This is mainly for delivering intermediate transcripts. The notification
+     * is configured in
+     * [ConversationProfile.new_recognition_event_notification_config][].
+     * </pre>
+     *
+     * <code>NEW_RECOGNITION_RESULT = 7;</code>
+     */
+    public static final int NEW_RECOGNITION_RESULT_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
      * Unrecoverable error during a telephone call.
      *
      * In general non-recoverable errors only occur if something was
@@ -261,6 +287,8 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
           return HUMAN_INTERVENTION_NEEDED;
         case 5:
           return NEW_MESSAGE;
+        case 7:
+          return NEW_RECOGNITION_RESULT;
         case 4:
           return UNRECOVERABLE_ERROR;
         default:
@@ -329,6 +357,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     NEW_MESSAGE_PAYLOAD(4),
+    NEW_RECOGNITION_RESULT_PAYLOAD(5),
     PAYLOAD_NOT_SET(0);
     private final int value;
 
@@ -349,6 +378,8 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 4:
           return NEW_MESSAGE_PAYLOAD;
+        case 5:
+          return NEW_RECOGNITION_RESULT_PAYLOAD;
         case 0:
           return PAYLOAD_NOT_SET;
         default:
@@ -557,6 +588,65 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.dialogflow.v2beta1.Message.getDefaultInstance();
   }
 
+  public static final int NEW_RECOGNITION_RESULT_PAYLOAD_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   *
+   * @return Whether the newRecognitionResultPayload field is set.
+   */
+  @java.lang.Override
+  public boolean hasNewRecognitionResultPayload() {
+    return payloadCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   *
+   * @return The newRecognitionResultPayload.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult
+      getNewRecognitionResultPayload() {
+    if (payloadCase_ == 5) {
+      return (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) payload_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder
+      getNewRecognitionResultPayloadOrBuilder() {
+    if (payloadCase_ == 5) {
+      return (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) payload_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -585,6 +675,10 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     if (payloadCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.dialogflow.v2beta1.Message) payload_);
     }
+    if (payloadCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) payload_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -609,6 +703,11 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.dialogflow.v2beta1.Message) payload_);
+    }
+    if (payloadCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) payload_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -637,6 +736,10 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       case 4:
         if (!getNewMessagePayload().equals(other.getNewMessagePayload())) return false;
         break;
+      case 5:
+        if (!getNewRecognitionResultPayload().equals(other.getNewRecognitionResultPayload()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -663,6 +766,10 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       case 4:
         hash = (37 * hash) + NEW_MESSAGE_PAYLOAD_FIELD_NUMBER;
         hash = (53 * hash) + getNewMessagePayload().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + NEW_RECOGNITION_RESULT_PAYLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getNewRecognitionResultPayload().hashCode();
         break;
       case 0:
       default:
@@ -827,6 +934,9 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       if (newMessagePayloadBuilder_ != null) {
         newMessagePayloadBuilder_.clear();
       }
+      if (newRecognitionResultPayloadBuilder_ != null) {
+        newRecognitionResultPayloadBuilder_.clear();
+      }
       payloadCase_ = 0;
       payload_ = null;
       return this;
@@ -886,6 +996,9 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       result.payload_ = this.payload_;
       if (payloadCase_ == 4 && newMessagePayloadBuilder_ != null) {
         result.payload_ = newMessagePayloadBuilder_.build();
+      }
+      if (payloadCase_ == 5 && newRecognitionResultPayloadBuilder_ != null) {
+        result.payload_ = newRecognitionResultPayloadBuilder_.build();
       }
     }
 
@@ -952,6 +1065,11 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
             mergeNewMessagePayload(other.getNewMessagePayload());
             break;
           }
+        case NEW_RECOGNITION_RESULT_PAYLOAD:
+          {
+            mergeNewRecognitionResultPayload(other.getNewRecognitionResultPayload());
+            break;
+          }
         case PAYLOAD_NOT_SET:
           {
             break;
@@ -1008,6 +1126,13 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
                 payloadCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getNewRecognitionResultPayloadFieldBuilder().getBuilder(), extensionRegistry);
+                payloadCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1642,6 +1767,241 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       payloadCase_ = 4;
       onChanged();
       return newMessagePayloadBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult,
+            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder,
+            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder>
+        newRecognitionResultPayloadBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     *
+     * @return Whether the newRecognitionResultPayload field is set.
+     */
+    @java.lang.Override
+    public boolean hasNewRecognitionResultPayload() {
+      return payloadCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     *
+     * @return The newRecognitionResultPayload.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult
+        getNewRecognitionResultPayload() {
+      if (newRecognitionResultPayloadBuilder_ == null) {
+        if (payloadCase_ == 5) {
+          return (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) payload_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 5) {
+          return newRecognitionResultPayloadBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     */
+    public Builder setNewRecognitionResultPayload(
+        com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult value) {
+      if (newRecognitionResultPayloadBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        newRecognitionResultPayloadBuilder_.setMessage(value);
+      }
+      payloadCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     */
+    public Builder setNewRecognitionResultPayload(
+        com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder builderForValue) {
+      if (newRecognitionResultPayloadBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        newRecognitionResultPayloadBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     */
+    public Builder mergeNewRecognitionResultPayload(
+        com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult value) {
+      if (newRecognitionResultPayloadBuilder_ == null) {
+        if (payloadCase_ == 5
+            && payload_
+                != com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult
+                    .getDefaultInstance()) {
+          payload_ =
+              com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) payload_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 5) {
+          newRecognitionResultPayloadBuilder_.mergeFrom(value);
+        } else {
+          newRecognitionResultPayloadBuilder_.setMessage(value);
+        }
+      }
+      payloadCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     */
+    public Builder clearNewRecognitionResultPayload() {
+      if (newRecognitionResultPayloadBuilder_ == null) {
+        if (payloadCase_ == 5) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 5) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        newRecognitionResultPayloadBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder
+        getNewRecognitionResultPayloadBuilder() {
+      return getNewRecognitionResultPayloadFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder
+        getNewRecognitionResultPayloadOrBuilder() {
+      if ((payloadCase_ == 5) && (newRecognitionResultPayloadBuilder_ != null)) {
+        return newRecognitionResultPayloadBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 5) {
+          return (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) payload_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Payload of NEW_RECOGNITION_RESULT event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult new_recognition_result_payload = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult,
+            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder,
+            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder>
+        getNewRecognitionResultPayloadFieldBuilder() {
+      if (newRecognitionResultPayloadBuilder_ == null) {
+        if (!(payloadCase_ == 5)) {
+          payload_ =
+              com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance();
+        }
+        newRecognitionResultPayloadBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult,
+                com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder,
+                com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 5;
+      onChanged();
+      return newRecognitionResultPayloadBuilder_;
     }
 
     @java.lang.Override

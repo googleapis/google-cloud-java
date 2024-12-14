@@ -136,7 +136,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * If this field is empty, all custom and
+   * Optional. If this field is empty, all custom and
    * system-defined metric descriptors are returned.
    * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
    * specifies which metric descriptors are to be
@@ -146,7 +146,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *     metric.type = starts_with("custom.googleapis.com/")
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -166,7 +166,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * If this field is empty, all custom and
+   * Optional. If this field is empty, all custom and
    * system-defined metric descriptors are returned.
    * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
    * specifies which metric descriptors are to be
@@ -176,7 +176,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *     metric.type = starts_with("custom.googleapis.com/")
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -199,12 +199,12 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A positive number that is the maximum number of results to return. The
-   * default and maximum value is 10,000. If a page_size &lt;= 0 or &gt; 10,000 is
-   * submitted, will instead return a maximum of 10,000 results.
+   * Optional. A positive number that is the maximum number of results to
+   * return. The default and maximum value is 10,000. If a page_size &lt;= 0 or &gt;
+   * 10,000 is submitted, will instead return a maximum of 10,000 results.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -221,12 +221,13 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
-   * returned by a previous call to this method.  Using this field causes the
-   * method to return additional results from the previous method call.
+   * Optional. If this field is not empty then it must contain the
+   * `nextPageToken` value returned by a previous call to this method.  Using
+   * this field causes the method to return additional results from the previous
+   * method call.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -246,12 +247,13 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
-   * returned by a previous call to this method.  Using this field causes the
-   * method to return additional results from the previous method call.
+   * Optional. If this field is not empty then it must contain the
+   * `nextPageToken` value returned by a previous call to this method.  Using
+   * this field causes the method to return additional results from the previous
+   * method call.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -822,7 +824,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is empty, all custom and
+     * Optional. If this field is empty, all custom and
      * system-defined metric descriptors are returned.
      * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
@@ -832,7 +834,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -851,7 +853,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is empty, all custom and
+     * Optional. If this field is empty, all custom and
      * system-defined metric descriptors are returned.
      * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
@@ -861,7 +863,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -880,7 +882,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is empty, all custom and
+     * Optional. If this field is empty, all custom and
      * system-defined metric descriptors are returned.
      * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
@@ -890,7 +892,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -908,7 +910,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is empty, all custom and
+     * Optional. If this field is empty, all custom and
      * system-defined metric descriptors are returned.
      * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
@@ -918,7 +920,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -932,7 +934,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is empty, all custom and
+     * Optional. If this field is empty, all custom and
      * system-defined metric descriptors are returned.
      * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
@@ -942,7 +944,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -963,12 +965,12 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A positive number that is the maximum number of results to return. The
-     * default and maximum value is 10,000. If a page_size &lt;= 0 or &gt; 10,000 is
-     * submitted, will instead return a maximum of 10,000 results.
+     * Optional. A positive number that is the maximum number of results to
+     * return. The default and maximum value is 10,000. If a page_size &lt;= 0 or &gt;
+     * 10,000 is submitted, will instead return a maximum of 10,000 results.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -980,12 +982,12 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A positive number that is the maximum number of results to return. The
-     * default and maximum value is 10,000. If a page_size &lt;= 0 or &gt; 10,000 is
-     * submitted, will instead return a maximum of 10,000 results.
+     * Optional. A positive number that is the maximum number of results to
+     * return. The default and maximum value is 10,000. If a page_size &lt;= 0 or &gt;
+     * 10,000 is submitted, will instead return a maximum of 10,000 results.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -1001,12 +1003,12 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A positive number that is the maximum number of results to return. The
-     * default and maximum value is 10,000. If a page_size &lt;= 0 or &gt; 10,000 is
-     * submitted, will instead return a maximum of 10,000 results.
+     * Optional. A positive number that is the maximum number of results to
+     * return. The default and maximum value is 10,000. If a page_size &lt;= 0 or &gt;
+     * 10,000 is submitted, will instead return a maximum of 10,000 results.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1022,12 +1024,13 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return additional results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return additional results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -1046,12 +1049,13 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return additional results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return additional results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1070,12 +1074,13 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return additional results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return additional results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1093,12 +1098,13 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return additional results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return additional results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1112,12 +1118,13 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return additional results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return additional results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

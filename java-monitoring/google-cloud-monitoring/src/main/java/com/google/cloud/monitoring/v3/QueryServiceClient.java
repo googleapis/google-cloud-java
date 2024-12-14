@@ -76,7 +76,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> QueryTimeSeries</td>
- *      <td><p> Queries time series using Monitoring Query Language.</td>
+ *      <td><p> Queries time series by using Monitoring Query Language (MQL). We recommend using PromQL instead of MQL. For more information about the status of MQL, see the [MQL deprecation notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -181,7 +181,9 @@ public class QueryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries time series using Monitoring Query Language.
+   * Queries time series by using Monitoring Query Language (MQL). We recommend using PromQL instead
+   * of MQL. For more information about the status of MQL, see the [MQL deprecation
+   * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
    *
    * <p>Sample code:
    *
@@ -207,14 +209,18 @@ public class QueryServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final QueryTimeSeriesPagedResponse queryTimeSeries(QueryTimeSeriesRequest request) {
     return queryTimeSeriesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries time series using Monitoring Query Language.
+   * Queries time series by using Monitoring Query Language (MQL). We recommend using PromQL instead
+   * of MQL. For more information about the status of MQL, see the [MQL deprecation
+   * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
    *
    * <p>Sample code:
    *
@@ -240,7 +246,10 @@ public class QueryServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<QueryTimeSeriesRequest, QueryTimeSeriesPagedResponse>
       queryTimeSeriesPagedCallable() {
     return stub.queryTimeSeriesPagedCallable();
@@ -248,7 +257,9 @@ public class QueryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries time series using Monitoring Query Language.
+   * Queries time series by using Monitoring Query Language (MQL). We recommend using PromQL instead
+   * of MQL. For more information about the status of MQL, see the [MQL deprecation
+   * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
    *
    * <p>Sample code:
    *
@@ -281,7 +292,10 @@ public class QueryServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<QueryTimeSeriesRequest, QueryTimeSeriesResponse>
       queryTimeSeriesCallable() {
     return stub.queryTimeSeriesCallable();

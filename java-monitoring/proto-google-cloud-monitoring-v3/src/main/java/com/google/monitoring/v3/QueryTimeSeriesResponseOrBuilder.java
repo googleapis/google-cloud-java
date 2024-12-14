@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.5
 package com.google.monitoring.v3;
 
+@java.lang.Deprecated
 public interface QueryTimeSeriesResponseOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.QueryTimeSeriesResponse)
