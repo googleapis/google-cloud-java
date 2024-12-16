@@ -820,3 +820,6 @@ grpc-google-maps-fleetengine-delivery-v1:0.1.0:0.2.0-SNAPSHOT
 google-shopping-merchant-reviews:0.0.0:0.0.1-SNAPSHOT
 proto-google-shopping-merchant-reviews-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-shopping-merchant-reviews-v1beta:0.0.0:0.0.1-SNAPSHOT
+google-cloud-valkey:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-valkey-v1:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-valkey-v1beta:0.0.0:0.0.1-SNAPSHOT

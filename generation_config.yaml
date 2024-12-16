@@ -1434,6 +1434,24 @@ libraries:
   - proto_path: google/cloud/memcache/v1
   - proto_path: google/cloud/memcache/v1beta2
 
+- api_shortname: memorystore
+  name_pretty: Memorystore API
+  product_documentation: https://cloud.google.com/memorystore/docs/valkey
+  api_description: Memorystore for Valkey is a fully managed Valkey Cluster service
+    for Google Cloud.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-memorystore/latest/overview
+  release_level: stable
+  api_id: memorystore.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  library_name: valkey
+  GAPICs:
+  - proto_path: google/cloud/memorystore/v1
+  - proto_path: google/cloud/memorystore/v1beta
+  requires_billing: true
+  rest_documentation: https://cloud.google.com/memorystore/docs/valkey/reference/rest
 - api_shortname: migrationcenter
   name_pretty: Migration Center API
   product_documentation: https://cloud.google.com/migration-center/docs/migration-center-overview
@@ -2122,22 +2140,6 @@ libraries:
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
-  api_description: Programmatically manage your Merchant Center Accounts.
-  client_documentation:
-    https://cloud.google.com/java/docs/reference/google-shopping-merchant-reviews/latest/overview
-  release_level: preview
-  distribution_name: com.google.shopping:google-shopping-merchant-reviews
-  library_type: GAPIC_AUTO
-  group_id: com.google.shopping
-  cloud_api: false
-  GAPICs:
-  - proto_path: google/shopping/merchant/reviews/v1beta
-  requires_billing: true
-  library_name: shopping-merchant-reviews
-
-- api_shortname: merchantapi
-  name_pretty: Merchant API
-  product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
@@ -2191,6 +2193,22 @@ libraries:
   distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
   - proto_path: google/shopping/merchant/reports/v1beta
+
+- api_shortname: merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center Accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-reviews/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-reviews
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/reviews/v1beta
+  requires_billing: true
+  library_name: shopping-merchant-reviews
 
 - api_shortname: speech
   name_pretty: Cloud Speech
