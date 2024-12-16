@@ -132,6 +132,7 @@
     <module>java-mediatranslation</module>
     <module>java-meet</module>
     <module>java-memcache</module>
+    <module>java-memorystore</module>
     <module>java-migrationcenter</module>
     <module>java-monitoring</module>
     <module>java-monitoring-dashboards</module>
