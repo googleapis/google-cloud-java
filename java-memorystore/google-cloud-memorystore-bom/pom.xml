@@ -33,6 +33,11 @@
         <artifactId>proto-google-cloud-memorystore-v1beta</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-memorystore-v1beta:current} -->
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-memorystore-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-memorystore-v1:current} -->
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>
