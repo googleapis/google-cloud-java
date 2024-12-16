@@ -37,6 +37,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStub;
+import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
@@ -95,7 +96,7 @@ public class BigtableCloudMonitoringExporterTest {
 
     exporter =
         new BigtableCloudMonitoringExporter(
-            fakeMetricServiceClient, /* applicationResource= */ null, taskId);
+            fakeMetricServiceClient, /* applicationResource= */ Suppliers.ofInstance(null), taskId);
 
     attributes =
         Attributes.builder()
@@ -308,11 +309,12 @@ public class BigtableCloudMonitoringExporterTest {
     BigtableCloudMonitoringExporter exporter =
         new BigtableCloudMonitoringExporter(
             fakeMetricServiceClient,
-            MonitoredResource.newBuilder()
-                .setType("gce-instance")
-                .putLabels("some-gce-key", "some-gce-value")
-                .putLabels("project_id", gceProjectId)
-                .build(),
+            Suppliers.ofInstance(
+                MonitoredResource.newBuilder()
+                    .setType("gce-instance")
+                    .putLabels("some-gce-key", "some-gce-value")
+                    .putLabels("project_id", gceProjectId)
+                    .build()),
             taskId);
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);

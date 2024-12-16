@@ -156,7 +156,20 @@ class BigtableExporterUtils {
   }
 
   @Nullable
-  static MonitoredResource detectResource() {
+  static MonitoredResource detectResourceSafe() {
+    try {
+      return detectResource();
+    } catch (Exception e) {
+      logger.log(
+          Level.WARNING,
+          "Failed to detect resource, will skip exporting application level metrics ",
+          e);
+      return null;
+    }
+  }
+
+  @Nullable
+  private static MonitoredResource detectResource() {
     GCPPlatformDetector detector = GCPPlatformDetector.DEFAULT_INSTANCE;
     DetectedPlatform detectedPlatform = detector.detectPlatform();
     MonitoredResource monitoredResource = null;
