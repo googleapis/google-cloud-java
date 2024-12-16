@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/memorystore/docs/valkey",
   "api_description": "Memorystore for Valkey is a fully managed Valkey Cluster service for Google Cloud.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-memorystore/latest/overview",
-  "release_level": "preview",
+  "release_level": "stable",
   "transport": "http",
   "language": "java",
   "repo": "googleapis/google-cloud-java",

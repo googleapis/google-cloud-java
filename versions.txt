@@ -822,3 +822,4 @@ proto-google-shopping-merchant-reviews-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-shopping-merchant-reviews-v1beta:0.0.0:0.0.1-SNAPSHOT
 google-cloud-memorystore:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-memorystore-v1beta:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-memorystore-v1:0.0.0:0.0.1-SNAPSHOT
