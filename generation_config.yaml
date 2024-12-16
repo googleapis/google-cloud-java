@@ -1442,11 +1442,11 @@ libraries:
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-cloud-memorystore/latest/overview
   release_level: stable
-  distribution_name: com.google.cloud:google-cloud-memorystore
   api_id: memorystore.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.cloud
   cloud_api: true
+  library_name: valkey
   GAPICs:
   - proto_path: google/cloud/memorystore/v1
   - proto_path: google/cloud/memorystore/v1beta
