@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.56.0 (2024-12-13)
+
+### Features
+
+* Added support for notification prompts in AlertPolicy ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#11349](https://github.com/googleapis/google-cloud-java/issues/11349)) ([9bb6334](https://github.com/googleapis/google-cloud-java/commit/9bb6334458fdec53ba9fdec501de534d6516f102))
+
+
 ## 3.55.0 (2024-11-18)
 
 * No change
