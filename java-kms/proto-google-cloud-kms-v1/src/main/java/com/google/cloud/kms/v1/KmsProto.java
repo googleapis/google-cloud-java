@@ -563,11 +563,11 @@ public final class KmsProto {
           + "ions/*}:generateRandomBytes:\001*\032t\312A\027cloud"
           + "kms.googleapis.com\322AWhttps://www.googlea"
           + "pis.com/auth/cloud-platform,https://www."
-          + "googleapis.com/auth/cloudkmsB\177\n\027com.goog"
+          + "googleapis.com/auth/cloudkmsB|\n\027com.goog"
           + "le.cloud.kms.v1B\010KmsProtoP\001Z)cloud.googl"
-          + "e.com/go/kms/apiv1/kmspb;kmspb\370\001\001\252\002\023Goog"
-          + "le.Cloud.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006p"
-          + "roto3"
+          + "e.com/go/kms/apiv1/kmspb;kmspb\252\002\023Google."
+          + "Cloud.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -28,7 +28,7 @@ package com.google.cloud.kms.v1;
  * [CryptoKeys][google.cloud.kms.v1.CryptoKey] and
  * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] with a
  * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
- * [EXTERNAL_VPC][CryptoKeyVersion.ProtectionLevel.EXTERNAL_VPC] in a given
+ * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC] in a given
  * project and location.
  * </pre>
  *
@@ -359,7 +359,7 @@ public final class EkmConfig extends com.google.protobuf.GeneratedMessageV3
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey] and
    * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] with a
    * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
-   * [EXTERNAL_VPC][CryptoKeyVersion.ProtectionLevel.EXTERNAL_VPC] in a given
+   * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC] in a given
    * project and location.
    * </pre>
    *
