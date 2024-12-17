@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.51.0](https://github.com/googleapis/java-bigtable/compare/v2.50.0...v2.51.0) (2024-12-17)
+
+
+### Features
+
+* Introduce `java.time` ([#2415](https://github.com/googleapis/java-bigtable/issues/2415)) ([bb96c3e](https://github.com/googleapis/java-bigtable/commit/bb96c3e395793ba324cf658bb4c985d4315cf781))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.0 ([a5444a5](https://github.com/googleapis/java-bigtable/commit/a5444a545ec61a1520716dfafb6f62b7e39df1c7))
+* Move resource detection to the first export to avoid slow start ([#2450](https://github.com/googleapis/java-bigtable/issues/2450)) ([cec010a](https://github.com/googleapis/java-bigtable/commit/cec010aa64f2b190f8e742915be41baae2ad2083))
+
+
+### Dependencies
+
+* Update sdk-platform-java dependencies ([#2448](https://github.com/googleapis/java-bigtable/issues/2448)) ([825e717](https://github.com/googleapis/java-bigtable/commit/825e717e9d8ae3853d7509d0849b58f2c47c9803))
+
 ## [2.50.0](https://github.com/googleapis/java-bigtable/compare/v2.49.0...v2.50.0) (2024-12-06)
 
 
