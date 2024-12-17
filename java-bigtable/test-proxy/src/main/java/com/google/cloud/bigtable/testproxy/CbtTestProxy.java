@@ -328,7 +328,13 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                     .build());
       }
       responseObserver.onNext(
-          resultBuilder.setStatus(com.google.rpc.Status.getDefaultInstance()).build());
+          resultBuilder
+              .setStatus(
+                  com.google.rpc.Status.newBuilder()
+                      .setCode(e.getStatusCode().getCode().ordinal())
+                      .setMessage(e.getMessage())
+                      .build())
+              .build());
       responseObserver.onCompleted();
       return;
     } catch (ApiException e) {
