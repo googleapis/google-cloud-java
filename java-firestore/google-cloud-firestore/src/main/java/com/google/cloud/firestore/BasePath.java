@@ -114,7 +114,11 @@ public abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
   }
 
   /**
-   * Compare the current path lexicographically against another Path object.
+   * Compare the current path against another Path object.
+   *
+   * <p>Compare the current path against another Path object. Paths are compared segment by segment,
+   * prioritizing numeric IDs (e.g., "__id123__") in numeric ascending order, followed by string
+   * segments in lexicographical order.
    *
    * @param other The path to compare to.
    * @return -1 if current is less than other, 1 if current greater than other, 0 if equal
@@ -123,14 +127,39 @@ public abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
   public int compareTo(@Nonnull B other) {
     List<String> thisSegments = this.getSegments();
     List<String> otherSegments = other.getSegments();
+
     int length = Math.min(thisSegments.size(), otherSegments.size());
     for (int i = 0; i < length; i++) {
-      int cmp = thisSegments.get(i).compareTo(otherSegments.get(i));
+      int cmp = compareSegments(thisSegments.get(i), otherSegments.get(i));
       if (cmp != 0) {
         return cmp;
       }
     }
     return Integer.compare(thisSegments.size(), otherSegments.size());
+  }
+
+  private int compareSegments(String lhs, String rhs) {
+    boolean isLhsNumeric = isNumericId(lhs);
+    boolean isRhsNumeric = isNumericId(rhs);
+
+    if (isLhsNumeric && !isRhsNumeric) { // Only lhs is numeric
+      return -1;
+    } else if (!isLhsNumeric && isRhsNumeric) { // Only rhs is numeric
+      return 1;
+    } else if (isLhsNumeric && isRhsNumeric) { // both numeric
+      return Long.compare(extractNumericId(lhs), extractNumericId(rhs));
+    } else { // both string
+      return lhs.compareTo(rhs);
+    }
+  }
+
+  /** Checks if a segment is a numeric ID (starts with "__id" and ends with "__"). */
+  private boolean isNumericId(String segment) {
+    return segment.startsWith("__id") && segment.endsWith("__");
+  }
+
+  private long extractNumericId(String segment) {
+    return Long.parseLong(segment.substring(4, segment.length() - 2));
   }
 
   abstract String[] splitChildPath(String path);

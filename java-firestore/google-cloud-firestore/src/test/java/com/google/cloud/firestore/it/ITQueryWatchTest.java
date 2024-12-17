@@ -24,17 +24,20 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentChange;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.EventListener;
+import com.google.cloud.firestore.FieldPath;
 import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.FirestoreException;
 import com.google.cloud.firestore.ListenerRegistration;
 import com.google.cloud.firestore.LocalFirestoreHelper;
 import com.google.cloud.firestore.Query;
+import com.google.cloud.firestore.Query.Direction;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.it.ITQueryWatchTest.QuerySnapshotEventListener.ListenerAssertions;
@@ -642,6 +645,118 @@ public final class ITQueryWatchTest extends ITBaseTest {
 
     ListenerAssertions listenerAssertions = listener.assertions();
     listenerAssertions.hasError();
+  }
+
+  @Test
+  public void snapshotListenerSortsQueryByDocumentIdInTheSameOrderAsServer() throws Exception {
+    CollectionReference col = randomColl;
+
+    firestore
+        .batch()
+        .set(col.document("A"), Collections.singletonMap("a", 1))
+        .set(col.document("a"), Collections.singletonMap("a", 1))
+        .set(col.document("Aa"), Collections.singletonMap("a", 1))
+        .set(col.document("7"), Collections.singletonMap("a", 1))
+        .set(col.document("12"), Collections.singletonMap("a", 1))
+        .set(col.document("__id7__"), Collections.singletonMap("a", 1))
+        .set(col.document("__id12__"), Collections.singletonMap("a", 1))
+        .set(col.document("__id-2__"), Collections.singletonMap("a", 1))
+        .set(col.document("_id1__"), Collections.singletonMap("a", 1))
+        .set(col.document("__id1_"), Collections.singletonMap("a", 1))
+        .set(col.document("__id"), Collections.singletonMap("a", 1))
+        .commit()
+        .get();
+
+    Query query = col.orderBy("__name__", Direction.ASCENDING);
+    List<String> expectedOrder =
+        Arrays.asList(
+            "__id-2__",
+            "__id7__",
+            "__id12__",
+            "12",
+            "7",
+            "A",
+            "Aa",
+            "__id",
+            "__id1_",
+            "_id1__",
+            "a");
+
+    QuerySnapshot snapshot = query.get().get();
+    List<String> queryOrder =
+        snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
+    assertEquals(expectedOrder, queryOrder); // Assert order from backend
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<String> listenerOrder = new ArrayList<>();
+
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              listenerOrder.addAll(
+                  value.getDocuments().stream()
+                      .map(doc -> doc.getId())
+                      .collect(Collectors.toList()));
+
+              latch.countDown();
+            });
+
+    latch.await();
+    registration.remove();
+
+    assertEquals(expectedOrder, listenerOrder); // Assert order in the SDK
+  }
+
+  @Test
+  public void snapshotListenerSortsFilteredQueryByDocumentIdInTheSameOrderAsServer()
+      throws Exception {
+    CollectionReference col = randomColl;
+
+    firestore
+        .batch()
+        .set(col.document("A"), Collections.singletonMap("a", 1))
+        .set(col.document("a"), Collections.singletonMap("a", 1))
+        .set(col.document("Aa"), Collections.singletonMap("a", 1))
+        .set(col.document("7"), Collections.singletonMap("a", 1))
+        .set(col.document("12"), Collections.singletonMap("a", 1))
+        .set(col.document("__id7__"), Collections.singletonMap("a", 1))
+        .set(col.document("__id12__"), Collections.singletonMap("a", 1))
+        .set(col.document("__id-2__"), Collections.singletonMap("a", 1))
+        .set(col.document("_id1__"), Collections.singletonMap("a", 1))
+        .set(col.document("__id1_"), Collections.singletonMap("a", 1))
+        .set(col.document("__id"), Collections.singletonMap("a", 1))
+        .commit()
+        .get();
+
+    Query query =
+        col.whereGreaterThan(FieldPath.documentId(), "__id7__")
+            .whereLessThanOrEqualTo(FieldPath.documentId(), "A")
+            .orderBy("__name__", Direction.ASCENDING);
+    List<String> expectedOrder = Arrays.asList("__id12__", "12", "7", "A");
+
+    QuerySnapshot snapshot = query.get().get();
+    List<String> queryOrder =
+        snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
+    assertEquals(expectedOrder, queryOrder); // Assert order from backend
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<String> listenerOrder = new ArrayList<>();
+
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              listenerOrder.addAll(
+                  value.getDocuments().stream()
+                      .map(doc -> doc.getId())
+                      .collect(Collectors.toList()));
+
+              latch.countDown();
+            });
+
+    latch.await();
+    registration.remove();
+
+    assertEquals(expectedOrder, listenerOrder); // Assert order in the SDK
   }
 
   /**
