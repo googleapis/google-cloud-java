@@ -39,7 +39,9 @@ public class SyncCreateAnalysis {
       CreateAnalysisRequest request =
           CreateAnalysisRequest.newBuilder()
               .setParent(
-                  ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setAnalysis(Analysis.newBuilder().build())
               .build();
       Analysis response = contactCenterInsightsClient.createAnalysisAsync(request).get();

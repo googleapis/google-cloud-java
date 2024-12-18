@@ -39,7 +39,8 @@ public class SyncGetAnalysis {
       GetAnalysisRequest request =
           GetAnalysisRequest.newBuilder()
               .setName(
-                  AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                  AnalysisName.ofProjectLocationConversationAnalysisName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                       .toString())
               .build();
       Analysis response = contactCenterInsightsClient.getAnalysis(request);

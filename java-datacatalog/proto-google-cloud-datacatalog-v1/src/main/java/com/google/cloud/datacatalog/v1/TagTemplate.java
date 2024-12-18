@@ -380,7 +380,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Indicates whether tags created with this template are public. Public tags
    * do not require tag template access to appear in
-   * [ListTags][google.cloud.datacatalog.v1.ListTags] API response.
+   * [ListTags][google.cloud.datacatalog.v1.DataCatalog.ListTags] API response.
    *
    * Additionally, you can search for a public tag by value with a
    * simple search query in addition to using a ``tag:`` predicate.
@@ -1338,7 +1338,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether tags created with this template are public. Public tags
      * do not require tag template access to appear in
-     * [ListTags][google.cloud.datacatalog.v1.ListTags] API response.
+     * [ListTags][google.cloud.datacatalog.v1.DataCatalog.ListTags] API response.
      *
      * Additionally, you can search for a public tag by value with a
      * simple search query in addition to using a ``tag:`` predicate.
@@ -1358,7 +1358,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether tags created with this template are public. Public tags
      * do not require tag template access to appear in
-     * [ListTags][google.cloud.datacatalog.v1.ListTags] API response.
+     * [ListTags][google.cloud.datacatalog.v1.DataCatalog.ListTags] API response.
      *
      * Additionally, you can search for a public tag by value with a
      * simple search query in addition to using a ``tag:`` predicate.
@@ -1382,7 +1382,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether tags created with this template are public. Public tags
      * do not require tag template access to appear in
-     * [ListTags][google.cloud.datacatalog.v1.ListTags] API response.
+     * [ListTags][google.cloud.datacatalog.v1.DataCatalog.ListTags] API response.
      *
      * Additionally, you can search for a public tag by value with a
      * simple search query in addition to using a ``tag:`` predicate.

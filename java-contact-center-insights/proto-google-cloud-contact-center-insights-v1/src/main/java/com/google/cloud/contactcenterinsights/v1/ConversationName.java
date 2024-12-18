@@ -17,6 +17,7 @@
 package com.google.cloud.contactcenterinsights.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,22 +33,45 @@ public class ConversationName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CONVERSATION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/conversations/{conversation}");
+  private static final PathTemplate
+      PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION =
+          PathTemplate.createWithoutUrlEncoding(
+              "projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}/authorizedViews/{authorized_view}/conversations/{conversation}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String conversation;
+  private final String authorizedViewSet;
+  private final String authorizedView;
 
   @Deprecated
   protected ConversationName() {
     project = null;
     location = null;
     conversation = null;
+    authorizedViewSet = null;
+    authorizedView = null;
   }
 
   private ConversationName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     conversation = Preconditions.checkNotNull(builder.getConversation());
+    authorizedViewSet = null;
+    authorizedView = null;
+    pathTemplate = PROJECT_LOCATION_CONVERSATION;
+  }
+
+  private ConversationName(
+      ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    authorizedViewSet = Preconditions.checkNotNull(builder.getAuthorizedViewSet());
+    authorizedView = Preconditions.checkNotNull(builder.getAuthorizedView());
+    conversation = Preconditions.checkNotNull(builder.getConversation());
+    pathTemplate = PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION;
   }
 
   public String getProject() {
@@ -62,8 +86,25 @@ public class ConversationName implements ResourceName {
     return conversation;
   }
 
+  public String getAuthorizedViewSet() {
+    return authorizedViewSet;
+  }
+
+  public String getAuthorizedView() {
+    return authorizedView;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationConversationBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder
+      newProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder() {
+    return new ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder();
   }
 
   public Builder toBuilder() {
@@ -78,6 +119,30 @@ public class ConversationName implements ResourceName {
         .build();
   }
 
+  public static ConversationName ofProjectLocationConversationName(
+      String project, String location, String conversation) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConversation(conversation)
+        .build();
+  }
+
+  public static ConversationName ofProjectLocationAuthorizedViewSetAuthorizedViewConversationName(
+      String project,
+      String location,
+      String authorizedViewSet,
+      String authorizedView,
+      String conversation) {
+    return newProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAuthorizedViewSet(authorizedViewSet)
+        .setAuthorizedView(authorizedView)
+        .setConversation(conversation)
+        .build();
+  }
+
   public static String format(String project, String location, String conversation) {
     return newBuilder()
         .setProject(project)
@@ -87,14 +152,52 @@ public class ConversationName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationConversationName(
+      String project, String location, String conversation) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConversation(conversation)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationAuthorizedViewSetAuthorizedViewConversationName(
+      String project,
+      String location,
+      String authorizedViewSet,
+      String authorizedView,
+      String conversation) {
+    return newProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAuthorizedViewSet(authorizedViewSet)
+        .setAuthorizedView(authorizedView)
+        .setConversation(conversation)
+        .build()
+        .toString();
+  }
+
   public static ConversationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_CONVERSATION.validatedMatch(
-            formattedString, "ConversationName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("conversation"));
+    if (PROJECT_LOCATION_CONVERSATION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_CONVERSATION.match(formattedString);
+      return ofProjectLocationConversationName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("conversation"));
+    } else if (PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION.matches(
+        formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION.match(formattedString);
+      return ofProjectLocationAuthorizedViewSetAuthorizedViewConversationName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("authorized_view_set"),
+          matchMap.get("authorized_view"),
+          matchMap.get("conversation"));
+    }
+    throw new ValidationException("ConversationName.parse: formattedString not in valid format");
   }
 
   public static List<ConversationName> parseList(List<String> formattedStrings) {
@@ -118,7 +221,9 @@ public class ConversationName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_CONVERSATION.matches(formattedString);
+    return PROJECT_LOCATION_CONVERSATION.matches(formattedString)
+        || PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION.matches(
+            formattedString);
   }
 
   @Override
@@ -136,6 +241,12 @@ public class ConversationName implements ResourceName {
           if (conversation != null) {
             fieldMapBuilder.put("conversation", conversation);
           }
+          if (authorizedViewSet != null) {
+            fieldMapBuilder.put("authorized_view_set", authorizedViewSet);
+          }
+          if (authorizedView != null) {
+            fieldMapBuilder.put("authorized_view", authorizedView);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,8 +260,7 @@ public class ConversationName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_CONVERSATION.instantiate(
-        "project", project, "location", location, "conversation", conversation);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -162,7 +272,9 @@ public class ConversationName implements ResourceName {
       ConversationName that = ((ConversationName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.conversation, that.conversation);
+          && Objects.equals(this.conversation, that.conversation)
+          && Objects.equals(this.authorizedViewSet, that.authorizedViewSet)
+          && Objects.equals(this.authorizedView, that.authorizedView);
     }
     return false;
   }
@@ -171,11 +283,17 @@ public class ConversationName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
     h ^= Objects.hashCode(conversation);
+    h *= 1000003;
+    h ^= Objects.hashCode(authorizedViewSet);
+    h *= 1000003;
+    h ^= Objects.hashCode(authorizedView);
     return h;
   }
 
@@ -215,9 +333,80 @@ public class ConversationName implements ResourceName {
     }
 
     private Builder(ConversationName conversationName) {
+      Preconditions.checkArgument(
+          Objects.equals(conversationName.pathTemplate, PROJECT_LOCATION_CONVERSATION),
+          "toBuilder is only supported when ConversationName has the pattern of projects/{project}/locations/{location}/conversations/{conversation}");
       this.project = conversationName.project;
       this.location = conversationName.location;
       this.conversation = conversationName.conversation;
+    }
+
+    public ConversationName build() {
+      return new ConversationName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}/authorizedViews/{authorized_view}/conversations/{conversation}.
+   */
+  public static class ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder {
+    private String project;
+    private String location;
+    private String authorizedViewSet;
+    private String authorizedView;
+    private String conversation;
+
+    protected ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getAuthorizedViewSet() {
+      return authorizedViewSet;
+    }
+
+    public String getAuthorizedView() {
+      return authorizedView;
+    }
+
+    public String getConversation() {
+      return conversation;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder setProject(
+        String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder setLocation(
+        String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder setAuthorizedViewSet(
+        String authorizedViewSet) {
+      this.authorizedViewSet = authorizedViewSet;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder setAuthorizedView(
+        String authorizedView) {
+      this.authorizedView = authorizedView;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationBuilder setConversation(
+        String conversation) {
+      this.conversation = conversation;
+      return this;
     }
 
     public ConversationName build() {

@@ -1511,6 +1511,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                             serializer.putPathParam(fields, "location", request.getLocation());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{location=projects/*/locations/*/authorizedViewSet/*/authorizedView/*}:calculateStats")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2063,6 +2065,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                             serializer.putPathParam(fields, "location", request.getLocation());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{location=projects/*/locations/*/authorizedViewSet/*/authorizedView/*}:queryMetrics")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

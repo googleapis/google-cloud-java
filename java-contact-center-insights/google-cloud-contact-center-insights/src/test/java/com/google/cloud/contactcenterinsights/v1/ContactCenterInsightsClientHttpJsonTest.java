@@ -97,7 +97,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void createConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -162,7 +165,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void createConversationTest2() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -227,7 +233,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void uploadConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -307,7 +316,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void updateConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -330,7 +342,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
 
     Conversation conversation =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -379,7 +394,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
     try {
       Conversation conversation =
           Conversation.newBuilder()
-              .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+              .setName(
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setDataSource(ConversationDataSource.newBuilder().build())
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
@@ -410,7 +428,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void getConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -431,7 +452,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName name =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     Conversation actualResponse = client.getConversation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -459,7 +482,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName name =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.getConversation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -471,7 +496,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void getConversationTest2() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -633,7 +661,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName name =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     client.deleteConversation(name);
 
@@ -660,7 +690,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName name =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.deleteConversation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -713,7 +745,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -728,7 +761,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(resultOperation);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
     Analysis analysis = Analysis.newBuilder().build();
 
     Analysis actualResponse = client.createAnalysisAsync(parent, analysis).get();
@@ -757,7 +792,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       Analysis analysis = Analysis.newBuilder().build();
       client.createAnalysisAsync(parent, analysis).get();
       Assert.fail("No exception raised");
@@ -770,7 +807,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -828,7 +866,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -837,7 +876,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    AnalysisName name = AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+    AnalysisName name =
+        AnalysisName.ofProjectLocationConversationAnalysisName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
 
     Analysis actualResponse = client.getAnalysis(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -866,7 +907,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
 
     try {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       client.getAnalysis(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -879,7 +921,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -936,7 +979,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     ListAnalysesPagedResponse pagedListResponse = client.listAnalyses(parent);
 
@@ -968,7 +1013,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.listAnalyses(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1032,7 +1079,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    AnalysisName name = AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+    AnalysisName name =
+        AnalysisName.ofProjectLocationConversationAnalysisName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
 
     client.deleteAnalysis(name);
 
@@ -1060,7 +1109,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
 
     try {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       client.deleteAnalysis(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6236,7 +6286,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -6245,7 +6295,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
     FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
     String feedbackLabelId = "feedbackLabelId-1251198998";
 
@@ -6276,7 +6328,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
       String feedbackLabelId = "feedbackLabelId-1251198998";
       client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
@@ -6291,7 +6345,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -6352,7 +6406,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     ListFeedbackLabelsPagedResponse pagedListResponse = client.listFeedbackLabels(parent);
 
@@ -6384,7 +6440,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.listFeedbackLabels(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6448,7 +6506,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -6458,7 +6516,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     FeedbackLabelName name =
-        FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+        FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
 
     FeedbackLabel actualResponse = client.getFeedbackLabel(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -6487,7 +6546,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
 
     try {
       FeedbackLabelName name =
-          FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+          FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
       client.getFeedbackLabel(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6500,7 +6560,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -6552,7 +6612,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -6564,7 +6624,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
     FeedbackLabel feedbackLabel =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -6602,7 +6662,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
       FeedbackLabel feedbackLabel =
           FeedbackLabel.newBuilder()
               .setName(
-                  FeedbackLabelName.of(
+                  FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                       .toString())
               .setLabeledResource("labeledResource-527465535")
@@ -6623,7 +6683,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     FeedbackLabelName name =
-        FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+        FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
 
     client.deleteFeedbackLabel(name);
 
@@ -6651,7 +6712,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
 
     try {
       FeedbackLabelName name =
-          FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+          FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
       client.deleteFeedbackLabel(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

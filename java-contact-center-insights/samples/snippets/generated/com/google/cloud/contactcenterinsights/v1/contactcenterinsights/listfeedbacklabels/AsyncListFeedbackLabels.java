@@ -40,7 +40,9 @@ public class AsyncListFeedbackLabels {
       ListFeedbackLabelsRequest request =
           ListFeedbackLabelsRequest.newBuilder()
               .setParent(
-                  ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

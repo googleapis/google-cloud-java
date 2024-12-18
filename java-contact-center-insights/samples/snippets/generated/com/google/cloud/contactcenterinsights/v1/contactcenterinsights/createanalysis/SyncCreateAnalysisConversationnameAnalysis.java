@@ -35,7 +35,9 @@ public class SyncCreateAnalysisConversationnameAnalysis {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       Analysis analysis = Analysis.newBuilder().build();
       Analysis response = contactCenterInsightsClient.createAnalysisAsync(parent, analysis).get();
     }

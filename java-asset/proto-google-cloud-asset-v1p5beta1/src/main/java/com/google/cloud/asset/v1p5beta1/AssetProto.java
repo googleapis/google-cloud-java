@@ -72,11 +72,11 @@ public final class AssetProto {
           + "y_document_uri\030\002 \001(\t\022\026\n\016discovery_name\030\003"
           + " \001(\t\022\024\n\014resource_url\030\004 \001(\t\022\016\n\006parent\030\005 \001"
           + "(\t\022%\n\004data\030\006 \001(\0132\027.google.protobuf.Struc"
-          + "tB\251\001\n com.google.cloud.asset.v1p5beta1B\n"
+          + "tB\246\001\n com.google.cloud.asset.v1p5beta1B\n"
           + "AssetProtoP\001Z6cloud.google.com/go/asset/"
-          + "apiv1p5beta1/assetpb;assetpb\370\001\001\252\002\034Google"
-          + ".Cloud.Asset.V1p5Beta1\312\002\034Google\\Cloud\\As"
-          + "set\\V1p5beta1b\006proto3"
+          + "apiv1p5beta1/assetpb;assetpb\252\002\034Google.Cl"
+          + "oud.Asset.V1p5Beta1\312\002\034Google\\Cloud\\Asset"
+          + "\\V1p5beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

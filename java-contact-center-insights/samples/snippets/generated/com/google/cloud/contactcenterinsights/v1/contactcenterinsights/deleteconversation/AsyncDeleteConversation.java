@@ -39,7 +39,10 @@ public class AsyncDeleteConversation {
         ContactCenterInsightsClient.create()) {
       DeleteConversationRequest request =
           DeleteConversationRequest.newBuilder()
-              .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+              .setName(
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setForce(true)
               .build();
       ApiFuture<Empty> future =

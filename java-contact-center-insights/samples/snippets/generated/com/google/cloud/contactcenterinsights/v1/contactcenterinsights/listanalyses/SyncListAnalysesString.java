@@ -35,7 +35,10 @@ public class SyncListAnalysesString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
-      String parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+      String parent =
+          ConversationName.ofProjectLocationConversationName(
+                  "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+              .toString();
       for (Analysis element : contactCenterInsightsClient.listAnalyses(parent).iterateAll()) {
         // doThingsWith(element);
       }

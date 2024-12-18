@@ -1196,6 +1196,33 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for dispositionCode.
        */
       com.google.protobuf.ByteString getDispositionCodeBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent type, e.g. HUMAN_AGENT.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for agentType.
+       */
+      int getAgentTypeValue();
+      /**
+       *
+       *
+       * <pre>
+       * The agent type, e.g. HUMAN_AGENT.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+       * </code>
+       *
+       * @return The agentType.
+       */
+      com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getAgentType();
     }
     /**
      *
@@ -1222,6 +1249,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         displayName_ = "";
         team_ = "";
         dispositionCode_ = "";
+        agentType_ = 0;
       }
 
       @java.lang.Override
@@ -1453,6 +1481,46 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int AGENT_TYPE_FIELD_NUMBER = 5;
+      private int agentType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The agent type, e.g. HUMAN_AGENT.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for agentType.
+       */
+      @java.lang.Override
+      public int getAgentTypeValue() {
+        return agentType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The agent type, e.g. HUMAN_AGENT.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+       * </code>
+       *
+       * @return The agentType.
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getAgentType() {
+        com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role result =
+            com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.forNumber(
+                agentType_);
+        return result == null
+            ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED
+            : result;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1479,6 +1547,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dispositionCode_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, dispositionCode_);
         }
+        if (agentType_
+            != com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role
+                .ROLE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(5, agentType_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1499,6 +1573,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dispositionCode_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, dispositionCode_);
+        }
+        if (agentType_
+            != com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role
+                .ROLE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, agentType_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -1522,6 +1602,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (!getDisplayName().equals(other.getDisplayName())) return false;
         if (!getTeam().equals(other.getTeam())) return false;
         if (!getDispositionCode().equals(other.getDispositionCode())) return false;
+        if (agentType_ != other.agentType_) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1541,6 +1622,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getTeam().hashCode();
         hash = (37 * hash) + DISPOSITION_CODE_FIELD_NUMBER;
         hash = (53 * hash) + getDispositionCode().hashCode();
+        hash = (37 * hash) + AGENT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + agentType_;
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1701,6 +1784,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           displayName_ = "";
           team_ = "";
           dispositionCode_ = "";
+          agentType_ = 0;
           return this;
         }
 
@@ -1756,6 +1840,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.dispositionCode_ = dispositionCode_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.agentType_ = agentType_;
           }
         }
 
@@ -1834,6 +1921,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000008;
             onChanged();
           }
+          if (other.agentType_ != 0) {
+            setAgentTypeValue(other.getAgentTypeValue());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -1884,6 +1974,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 34
+                case 40:
+                  {
+                    agentType_ = input.readEnum();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 40
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2328,6 +2424,106 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           dispositionCode_ = value;
           bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private int agentType_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The agent type, e.g. HUMAN_AGENT.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for agentType.
+         */
+        @java.lang.Override
+        public int getAgentTypeValue() {
+          return agentType_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The agent type, e.g. HUMAN_AGENT.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for agentType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAgentTypeValue(int value) {
+          agentType_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The agent type, e.g. HUMAN_AGENT.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+         * </code>
+         *
+         * @return The agentType.
+         */
+        @java.lang.Override
+        public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role
+            getAgentType() {
+          com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role result =
+              com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.forNumber(
+                  agentType_);
+          return result == null
+              ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The agent type, e.g. HUMAN_AGENT.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+         * </code>
+         *
+         * @param value The agentType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAgentType(
+            com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000010;
+          agentType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The agent type, e.g. HUMAN_AGENT.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role agent_type = 5;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAgentType() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          agentType_ = 0;
           onChanged();
           return this;
         }

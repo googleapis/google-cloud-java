@@ -39,7 +39,8 @@ public class SyncDeleteAnalysis {
       DeleteAnalysisRequest request =
           DeleteAnalysisRequest.newBuilder()
               .setName(
-                  AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                  AnalysisName.ofProjectLocationConversationAnalysisName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                       .toString())
               .build();
       contactCenterInsightsClient.deleteAnalysis(request);

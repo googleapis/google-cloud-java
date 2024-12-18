@@ -36,7 +36,8 @@ public class SyncGetAnalysisAnalysisname {
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       Analysis response = contactCenterInsightsClient.getAnalysis(name);
     }
   }
