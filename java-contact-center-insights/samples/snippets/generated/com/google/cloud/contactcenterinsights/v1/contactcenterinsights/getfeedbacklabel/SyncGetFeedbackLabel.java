@@ -39,7 +39,7 @@ public class SyncGetFeedbackLabel {
       GetFeedbackLabelRequest request =
           GetFeedbackLabelRequest.newBuilder()
               .setName(
-                  FeedbackLabelName.of(
+                  FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                       .toString())
               .build();

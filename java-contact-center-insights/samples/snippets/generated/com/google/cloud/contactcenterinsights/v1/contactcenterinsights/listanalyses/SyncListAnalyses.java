@@ -39,7 +39,9 @@ public class SyncListAnalyses {
       ListAnalysesRequest request =
           ListAnalysesRequest.newBuilder()
               .setParent(
-                  ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

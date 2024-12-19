@@ -41,7 +41,9 @@ public class AsyncCreateAnalysisLRO {
       CreateAnalysisRequest request =
           CreateAnalysisRequest.newBuilder()
               .setParent(
-                  ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setAnalysis(Analysis.newBuilder().build())
               .build();
       OperationFuture<Analysis, CreateAnalysisOperationMetadata> future =

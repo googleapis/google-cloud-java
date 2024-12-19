@@ -81,6 +81,30 @@ public final class AlertProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_AlertPolicy_Condition_PrometheusQueryLanguageCondition_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_fieldAccessorTable;
@@ -112,132 +136,157 @@ public final class AlertProto {
           + "monitoring/v3/mutation_record.proto\032\036goo"
           + "gle/protobuf/duration.proto\032\036google/prot"
           + "obuf/wrappers.proto\032\027google/rpc/status.p"
-          + "roto\"\306%\n\013AlertPolicy\022\021\n\004name\030\001 \001(\tB\003\340A\010\022"
-          + "\024\n\014display_name\030\002 \001(\t\022F\n\rdocumentation\030\r"
-          + " \001(\0132/.google.monitoring.v3.AlertPolicy."
-          + "Documentation\022F\n\013user_labels\030\020 \003(\01321.goo"
-          + "gle.monitoring.v3.AlertPolicy.UserLabels"
-          + "Entry\022?\n\nconditions\030\014 \003(\0132+.google.monit"
-          + "oring.v3.AlertPolicy.Condition\022I\n\010combin"
-          + "er\030\006 \001(\01627.google.monitoring.v3.AlertPol"
-          + "icy.ConditionCombinerType\022+\n\007enabled\030\021 \001"
-          + "(\0132\032.google.protobuf.BoolValue\022$\n\010validi"
-          + "ty\030\022 \001(\0132\022.google.rpc.Status\022\035\n\025notifica"
-          + "tion_channels\030\016 \003(\t\022=\n\017creation_record\030\n"
-          + " \001(\0132$.google.monitoring.v3.MutationReco"
-          + "rd\022=\n\017mutation_record\030\013 \001(\0132$.google.mon"
-          + "itoring.v3.MutationRecord\022G\n\016alert_strat"
-          + "egy\030\025 \001(\0132/.google.monitoring.v3.AlertPo"
-          + "licy.AlertStrategy\022A\n\010severity\030\026 \001(\0162*.g"
-          + "oogle.monitoring.v3.AlertPolicy.Severity"
-          + "B\003\340A\001\032\276\001\n\rDocumentation\022\017\n\007content\030\001 \001(\t"
-          + "\022\021\n\tmime_type\030\002 \001(\t\022\024\n\007subject\030\003 \001(\tB\003\340A"
-          + "\001\022H\n\005links\030\004 \003(\01324.google.monitoring.v3."
-          + "AlertPolicy.Documentation.LinkB\003\340A\001\032)\n\004L"
-          + "ink\022\024\n\014display_name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\032\367"
-          + "\025\n\tCondition\022\014\n\004name\030\014 \001(\t\022\024\n\014display_na"
-          + "me\030\006 \001(\t\022Z\n\023condition_threshold\030\001 \001(\0132;."
+          + "roto\032\033google/type/timeofday.proto\"\225-\n\013Al"
+          + "ertPolicy\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\024\n\014display_"
+          + "name\030\002 \001(\t\022F\n\rdocumentation\030\r \001(\0132/.goog"
+          + "le.monitoring.v3.AlertPolicy.Documentati"
+          + "on\022F\n\013user_labels\030\020 \003(\01321.google.monitor"
+          + "ing.v3.AlertPolicy.UserLabelsEntry\022?\n\nco"
+          + "nditions\030\014 \003(\0132+.google.monitoring.v3.Al"
+          + "ertPolicy.Condition\022I\n\010combiner\030\006 \001(\01627."
           + "google.monitoring.v3.AlertPolicy.Conditi"
-          + "on.MetricThresholdH\000\022U\n\020condition_absent"
-          + "\030\002 \001(\01329.google.monitoring.v3.AlertPolic"
-          + "y.Condition.MetricAbsenceH\000\022U\n\025condition"
-          + "_matched_log\030\024 \001(\01324.google.monitoring.v"
-          + "3.AlertPolicy.Condition.LogMatchH\000\022{\n#co"
-          + "ndition_monitoring_query_language\030\023 \001(\0132"
-          + "L.google.monitoring.v3.AlertPolicy.Condi"
-          + "tion.MonitoringQueryLanguageConditionH\000\022"
-          + "{\n#condition_prometheus_query_language\030\025"
-          + " \001(\0132L.google.monitoring.v3.AlertPolicy."
-          + "Condition.PrometheusQueryLanguageConditi"
-          + "onH\000\0325\n\007Trigger\022\017\n\005count\030\001 \001(\005H\000\022\021\n\007perc"
-          + "ent\030\002 \001(\001H\000B\006\n\004type\032\236\005\n\017MetricThreshold\022"
-          + "\023\n\006filter\030\002 \001(\tB\003\340A\002\0227\n\014aggregations\030\010 \003"
-          + "(\0132!.google.monitoring.v3.Aggregation\022\032\n"
-          + "\022denominator_filter\030\t \001(\t\022C\n\030denominator"
-          + "_aggregations\030\n \003(\0132!.google.monitoring."
-          + "v3.Aggregation\022e\n\020forecast_options\030\014 \001(\013"
-          + "2K.google.monitoring.v3.AlertPolicy.Cond"
-          + "ition.MetricThreshold.ForecastOptions\0228\n"
-          + "\ncomparison\030\004 \001(\0162$.google.monitoring.v3"
-          + ".ComparisonType\022\027\n\017threshold_value\030\005 \001(\001"
-          + "\022+\n\010duration\030\006 \001(\0132\031.google.protobuf.Dur"
-          + "ation\022D\n\007trigger\030\007 \001(\01323.google.monitori"
-          + "ng.v3.AlertPolicy.Condition.Trigger\022b\n\027e"
-          + "valuation_missing_data\030\013 \001(\0162A.google.mo"
-          + "nitoring.v3.AlertPolicy.Condition.Evalua"
-          + "tionMissingData\032K\n\017ForecastOptions\0228\n\020fo"
-          + "recast_horizon\030\001 \001(\0132\031.google.protobuf.D"
-          + "urationB\003\340A\002\032\320\001\n\rMetricAbsence\022\023\n\006filter"
-          + "\030\001 \001(\tB\003\340A\002\0227\n\014aggregations\030\005 \003(\0132!.goog"
-          + "le.monitoring.v3.Aggregation\022+\n\010duration"
-          + "\030\002 \001(\0132\031.google.protobuf.Duration\022D\n\007tri"
-          + "gger\030\003 \001(\01323.google.monitoring.v3.AlertP"
-          + "olicy.Condition.Trigger\032\274\001\n\010LogMatch\022\023\n\006"
-          + "filter\030\001 \001(\tB\003\340A\002\022c\n\020label_extractors\030\002 "
-          + "\003(\0132I.google.monitoring.v3.AlertPolicy.C"
-          + "ondition.LogMatch.LabelExtractorsEntry\0326"
-          + "\n\024LabelExtractorsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001\032\210\002\n MonitoringQueryLangua"
-          + "geCondition\022\r\n\005query\030\001 \001(\t\022+\n\010duration\030\002"
-          + " \001(\0132\031.google.protobuf.Duration\022D\n\007trigg"
-          + "er\030\003 \001(\01323.google.monitoring.v3.AlertPol"
-          + "icy.Condition.Trigger\022b\n\027evaluation_miss"
-          + "ing_data\030\004 \001(\0162A.google.monitoring.v3.Al"
-          + "ertPolicy.Condition.EvaluationMissingDat"
-          + "a\032\365\002\n PrometheusQueryLanguageCondition\022\022"
-          + "\n\005query\030\001 \001(\tB\003\340A\002\0220\n\010duration\030\002 \001(\0132\031.g"
-          + "oogle.protobuf.DurationB\003\340A\001\022;\n\023evaluati"
-          + "on_interval\030\003 \001(\0132\031.google.protobuf.Dura"
-          + "tionB\003\340A\001\022m\n\006labels\030\004 \003(\0132X.google.monit"
-          + "oring.v3.AlertPolicy.Condition.Prometheu"
-          + "sQueryLanguageCondition.LabelsEntryB\003\340A\001"
-          + "\022\027\n\nrule_group\030\005 \001(\tB\003\340A\001\022\027\n\nalert_rule\030"
-          + "\006 \001(\tB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
-          + "\n\005value\030\002 \001(\t:\0028\001\"\255\001\n\025EvaluationMissingD"
-          + "ata\022\'\n#EVALUATION_MISSING_DATA_UNSPECIFI"
-          + "ED\020\000\022$\n EVALUATION_MISSING_DATA_INACTIVE"
-          + "\020\001\022\"\n\036EVALUATION_MISSING_DATA_ACTIVE\020\002\022!"
-          + "\n\035EVALUATION_MISSING_DATA_NO_OP\020\003:\227\002\352A\223\002"
-          + "\n.monitoring.googleapis.com/AlertPolicyC"
-          + "ondition\022Fprojects/{project}/alertPolici"
-          + "es/{alert_policy}/conditions/{condition}"
-          + "\022Porganizations/{organization}/alertPoli"
-          + "cies/{alert_policy}/conditions/{conditio"
-          + "n}\022Dfolders/{folder}/alertPolicies/{aler"
-          + "t_policy}/conditions/{condition}\022\001*B\013\n\tc"
-          + "ondition\032\214\005\n\rAlertStrategy\022f\n\027notificati"
-          + "on_rate_limit\030\001 \001(\0132E.google.monitoring."
-          + "v3.AlertPolicy.AlertStrategy.Notificatio"
-          + "nRateLimit\022`\n\024notification_prompts\030\002 \003(\016"
-          + "2B.google.monitoring.v3.AlertPolicy.Aler"
-          + "tStrategy.NotificationPrompt\022-\n\nauto_clo"
-          + "se\030\003 \001(\0132\031.google.protobuf.Duration\022r\n\035n"
-          + "otification_channel_strategy\030\004 \003(\0132K.goo"
-          + "gle.monitoring.v3.AlertPolicy.AlertStrat"
-          + "egy.NotificationChannelStrategy\032B\n\025Notif"
-          + "icationRateLimit\022)\n\006period\030\001 \001(\0132\031.googl"
-          + "e.protobuf.Duration\032w\n\033NotificationChann"
-          + "elStrategy\022\"\n\032notification_channel_names"
-          + "\030\001 \003(\t\0224\n\021renotify_interval\030\002 \001(\0132\031.goog"
-          + "le.protobuf.Duration\"Q\n\022NotificationProm"
-          + "pt\022#\n\037NOTIFICATION_PROMPT_UNSPECIFIED\020\000\022"
-          + "\n\n\006OPENED\020\001\022\n\n\006CLOSED\020\003\0321\n\017UserLabelsEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\025Co"
-          + "nditionCombinerType\022\027\n\023COMBINE_UNSPECIFI"
-          + "ED\020\000\022\007\n\003AND\020\001\022\006\n\002OR\020\002\022\036\n\032AND_WITH_MATCHI"
-          + "NG_RESOURCE\020\003\"J\n\010Severity\022\030\n\024SEVERITY_UN"
-          + "SPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\t\n\005ERROR\020\002\022\013\n\007"
-          + "WARNING\020\003:\311\001\352A\305\001\n%monitoring.googleapis."
-          + "com/AlertPolicy\022/projects/{project}/aler"
-          + "tPolicies/{alert_policy}\0229organizations/"
-          + "{organization}/alertPolicies/{alert_poli"
-          + "cy}\022-folders/{folder}/alertPolicies/{ale"
-          + "rt_policy}\022\001*B\305\001\n\030com.google.monitoring."
-          + "v3B\nAlertProtoP\001ZAcloud.google.com/go/mo"
-          + "nitoring/apiv3/v2/monitoringpb;monitorin"
-          + "gpb\252\002\032Google.Cloud.Monitoring.V3\312\002\032Googl"
-          + "e\\Cloud\\Monitoring\\V3\352\002\035Google::Cloud::M"
-          + "onitoring::V3b\006proto3"
+          + "onCombinerType\022+\n\007enabled\030\021 \001(\0132\032.google"
+          + ".protobuf.BoolValue\022$\n\010validity\030\022 \001(\0132\022."
+          + "google.rpc.Status\022\035\n\025notification_channe"
+          + "ls\030\016 \003(\t\022=\n\017creation_record\030\n \001(\0132$.goog"
+          + "le.monitoring.v3.MutationRecord\022=\n\017mutat"
+          + "ion_record\030\013 \001(\0132$.google.monitoring.v3."
+          + "MutationRecord\022G\n\016alert_strategy\030\025 \001(\0132/"
+          + ".google.monitoring.v3.AlertPolicy.AlertS"
+          + "trategy\022A\n\010severity\030\026 \001(\0162*.google.monit"
+          + "oring.v3.AlertPolicy.SeverityB\003\340A\001\032\276\001\n\rD"
+          + "ocumentation\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_ty"
+          + "pe\030\002 \001(\t\022\024\n\007subject\030\003 \001(\tB\003\340A\001\022H\n\005links\030"
+          + "\004 \003(\01324.google.monitoring.v3.AlertPolicy"
+          + ".Documentation.LinkB\003\340A\001\032)\n\004Link\022\024\n\014disp"
+          + "lay_name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\032\306\035\n\tConditio"
+          + "n\022\014\n\004name\030\014 \001(\t\022\024\n\014display_name\030\006 \001(\t\022Z\n"
+          + "\023condition_threshold\030\001 \001(\0132;.google.moni"
+          + "toring.v3.AlertPolicy.Condition.MetricTh"
+          + "resholdH\000\022U\n\020condition_absent\030\002 \001(\01329.go"
+          + "ogle.monitoring.v3.AlertPolicy.Condition"
+          + ".MetricAbsenceH\000\022U\n\025condition_matched_lo"
+          + "g\030\024 \001(\01324.google.monitoring.v3.AlertPoli"
+          + "cy.Condition.LogMatchH\000\022{\n#condition_mon"
+          + "itoring_query_language\030\023 \001(\0132L.google.mo"
+          + "nitoring.v3.AlertPolicy.Condition.Monito"
+          + "ringQueryLanguageConditionH\000\022{\n#conditio"
+          + "n_prometheus_query_language\030\025 \001(\0132L.goog"
+          + "le.monitoring.v3.AlertPolicy.Condition.P"
+          + "rometheusQueryLanguageConditionH\000\022Q\n\rcon"
+          + "dition_sql\030\026 \001(\01328.google.monitoring.v3."
+          + "AlertPolicy.Condition.SqlConditionH\000\0325\n\007"
+          + "Trigger\022\017\n\005count\030\001 \001(\005H\000\022\021\n\007percent\030\002 \001("
+          + "\001H\000B\006\n\004type\032\236\005\n\017MetricThreshold\022\023\n\006filte"
+          + "r\030\002 \001(\tB\003\340A\002\0227\n\014aggregations\030\010 \003(\0132!.goo"
+          + "gle.monitoring.v3.Aggregation\022\032\n\022denomin"
+          + "ator_filter\030\t \001(\t\022C\n\030denominator_aggrega"
+          + "tions\030\n \003(\0132!.google.monitoring.v3.Aggre"
+          + "gation\022e\n\020forecast_options\030\014 \001(\0132K.googl"
+          + "e.monitoring.v3.AlertPolicy.Condition.Me"
+          + "tricThreshold.ForecastOptions\0228\n\ncompari"
+          + "son\030\004 \001(\0162$.google.monitoring.v3.Compari"
+          + "sonType\022\027\n\017threshold_value\030\005 \001(\001\022+\n\010dura"
+          + "tion\030\006 \001(\0132\031.google.protobuf.Duration\022D\n"
+          + "\007trigger\030\007 \001(\01323.google.monitoring.v3.Al"
+          + "ertPolicy.Condition.Trigger\022b\n\027evaluatio"
+          + "n_missing_data\030\013 \001(\0162A.google.monitoring"
+          + ".v3.AlertPolicy.Condition.EvaluationMiss"
+          + "ingData\032K\n\017ForecastOptions\0228\n\020forecast_h"
+          + "orizon\030\001 \001(\0132\031.google.protobuf.DurationB"
+          + "\003\340A\002\032\320\001\n\rMetricAbsence\022\023\n\006filter\030\001 \001(\tB\003"
+          + "\340A\002\0227\n\014aggregations\030\005 \003(\0132!.google.monit"
+          + "oring.v3.Aggregation\022+\n\010duration\030\002 \001(\0132\031"
+          + ".google.protobuf.Duration\022D\n\007trigger\030\003 \001"
+          + "(\01323.google.monitoring.v3.AlertPolicy.Co"
+          + "ndition.Trigger\032\274\001\n\010LogMatch\022\023\n\006filter\030\001"
+          + " \001(\tB\003\340A\002\022c\n\020label_extractors\030\002 \003(\0132I.go"
+          + "ogle.monitoring.v3.AlertPolicy.Condition"
+          + ".LogMatch.LabelExtractorsEntry\0326\n\024LabelE"
+          + "xtractorsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001\032\210\002\n MonitoringQueryLanguageCondit"
+          + "ion\022\r\n\005query\030\001 \001(\t\022+\n\010duration\030\002 \001(\0132\031.g"
+          + "oogle.protobuf.Duration\022D\n\007trigger\030\003 \001(\013"
+          + "23.google.monitoring.v3.AlertPolicy.Cond"
+          + "ition.Trigger\022b\n\027evaluation_missing_data"
+          + "\030\004 \001(\0162A.google.monitoring.v3.AlertPolic"
+          + "y.Condition.EvaluationMissingData\032\235\003\n Pr"
+          + "ometheusQueryLanguageCondition\022\022\n\005query\030"
+          + "\001 \001(\tB\003\340A\002\0220\n\010duration\030\002 \001(\0132\031.google.pr"
+          + "otobuf.DurationB\003\340A\001\022;\n\023evaluation_inter"
+          + "val\030\003 \001(\0132\031.google.protobuf.DurationB\003\340A"
+          + "\001\022m\n\006labels\030\004 \003(\0132X.google.monitoring.v3"
+          + ".AlertPolicy.Condition.PrometheusQueryLa"
+          + "nguageCondition.LabelsEntryB\003\340A\001\022\027\n\nrule"
+          + "_group\030\005 \001(\tB\003\340A\001\022\027\n\nalert_rule\030\006 \001(\tB\003\340"
+          + "A\001\022&\n\031disable_metric_validation\030\007 \001(\010B\003\340"
+          + "A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001\032\321\006\n\014SqlCondition\022\022\n\005query\030\001 \001("
+          + "\tB\003\340A\002\022S\n\007minutes\030\002 \001(\0132@.google.monitor"
+          + "ing.v3.AlertPolicy.Condition.SqlConditio"
+          + "n.MinutesH\000\022Q\n\006hourly\030\003 \001(\0132?.google.mon"
+          + "itoring.v3.AlertPolicy.Condition.SqlCond"
+          + "ition.HourlyH\000\022O\n\005daily\030\004 \001(\0132>.google.m"
+          + "onitoring.v3.AlertPolicy.Condition.SqlCo"
+          + "ndition.DailyH\000\022_\n\016row_count_test\030\005 \001(\0132"
+          + "E.google.monitoring.v3.AlertPolicy.Condi"
+          + "tion.SqlCondition.RowCountTestH\001\022\\\n\014bool"
+          + "ean_test\030\006 \001(\0132D.google.monitoring.v3.Al"
+          + "ertPolicy.Condition.SqlCondition.Boolean"
+          + "TestH\001\032#\n\007Minutes\022\030\n\013periodicity\030\001 \001(\005B\003"
+          + "\340A\002\032U\n\006Hourly\022\030\n\013periodicity\030\001 \001(\005B\003\340A\002\022"
+          + "\037\n\rminute_offset\030\002 \001(\005B\003\340A\001H\000\210\001\001B\020\n\016_min"
+          + "ute_offset\032V\n\005Daily\022\030\n\013periodicity\030\001 \001(\005"
+          + "B\003\340A\002\0223\n\016execution_time\030\002 \001(\0132\026.google.t"
+          + "ype.TimeOfDayB\003\340A\001\032e\n\014RowCountTest\022=\n\nco"
+          + "mparison\030\001 \001(\0162$.google.monitoring.v3.Co"
+          + "mparisonTypeB\003\340A\002\022\026\n\tthreshold\030\002 \001(\003B\003\340A"
+          + "\002\032\"\n\013BooleanTest\022\023\n\006column\030\001 \001(\tB\003\340A\002B\n\n"
+          + "\010scheduleB\n\n\010evaluate\"\255\001\n\025EvaluationMiss"
+          + "ingData\022\'\n#EVALUATION_MISSING_DATA_UNSPE"
+          + "CIFIED\020\000\022$\n EVALUATION_MISSING_DATA_INAC"
+          + "TIVE\020\001\022\"\n\036EVALUATION_MISSING_DATA_ACTIVE"
+          + "\020\002\022!\n\035EVALUATION_MISSING_DATA_NO_OP\020\003:\227\002"
+          + "\352A\223\002\n.monitoring.googleapis.com/AlertPol"
+          + "icyCondition\022Fprojects/{project}/alertPo"
+          + "licies/{alert_policy}/conditions/{condit"
+          + "ion}\022Porganizations/{organization}/alert"
+          + "Policies/{alert_policy}/conditions/{cond"
+          + "ition}\022Dfolders/{folder}/alertPolicies/{"
+          + "alert_policy}/conditions/{condition}\022\001*B"
+          + "\013\n\tcondition\032\214\005\n\rAlertStrategy\022f\n\027notifi"
+          + "cation_rate_limit\030\001 \001(\0132E.google.monitor"
+          + "ing.v3.AlertPolicy.AlertStrategy.Notific"
+          + "ationRateLimit\022`\n\024notification_prompts\030\002"
+          + " \003(\0162B.google.monitoring.v3.AlertPolicy."
+          + "AlertStrategy.NotificationPrompt\022-\n\nauto"
+          + "_close\030\003 \001(\0132\031.google.protobuf.Duration\022"
+          + "r\n\035notification_channel_strategy\030\004 \003(\0132K"
+          + ".google.monitoring.v3.AlertPolicy.AlertS"
+          + "trategy.NotificationChannelStrategy\032B\n\025N"
+          + "otificationRateLimit\022)\n\006period\030\001 \001(\0132\031.g"
+          + "oogle.protobuf.Duration\032w\n\033NotificationC"
+          + "hannelStrategy\022\"\n\032notification_channel_n"
+          + "ames\030\001 \003(\t\0224\n\021renotify_interval\030\002 \001(\0132\031."
+          + "google.protobuf.Duration\"Q\n\022Notification"
+          + "Prompt\022#\n\037NOTIFICATION_PROMPT_UNSPECIFIE"
+          + "D\020\000\022\n\n\006OPENED\020\001\022\n\n\006CLOSED\020\003\0321\n\017UserLabel"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a"
+          + "\n\025ConditionCombinerType\022\027\n\023COMBINE_UNSPE"
+          + "CIFIED\020\000\022\007\n\003AND\020\001\022\006\n\002OR\020\002\022\036\n\032AND_WITH_MA"
+          + "TCHING_RESOURCE\020\003\"J\n\010Severity\022\030\n\024SEVERIT"
+          + "Y_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\t\n\005ERROR\020\002"
+          + "\022\013\n\007WARNING\020\003:\311\001\352A\305\001\n%monitoring.googlea"
+          + "pis.com/AlertPolicy\022/projects/{project}/"
+          + "alertPolicies/{alert_policy}\0229organizati"
+          + "ons/{organization}/alertPolicies/{alert_"
+          + "policy}\022-folders/{folder}/alertPolicies/"
+          + "{alert_policy}\022\001*B\305\001\n\030com.google.monitor"
+          + "ing.v3B\nAlertProtoP\001ZAcloud.google.com/g"
+          + "o/monitoring/apiv3/v2/monitoringpb;monit"
+          + "oringpb\252\002\032Google.Cloud.Monitoring.V3\312\002\032G"
+          + "oogle\\Cloud\\Monitoring\\V3\352\002\035Google::Clou"
+          + "d::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -250,6 +299,7 @@ public final class AlertProto {
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
+              com.google.type.TimeOfDayProto.getDescriptor(),
             });
     internal_static_google_monitoring_v3_AlertPolicy_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -302,6 +352,7 @@ public final class AlertProto {
               "ConditionMatchedLog",
               "ConditionMonitoringQueryLanguage",
               "ConditionPrometheusQueryLanguage",
+              "ConditionSql",
               "Condition",
             });
     internal_static_google_monitoring_v3_AlertPolicy_Condition_Trigger_descriptor =
@@ -391,7 +442,13 @@ public final class AlertProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_v3_AlertPolicy_Condition_PrometheusQueryLanguageCondition_descriptor,
             new java.lang.String[] {
-              "Query", "Duration", "EvaluationInterval", "Labels", "RuleGroup", "AlertRule",
+              "Query",
+              "Duration",
+              "EvaluationInterval",
+              "Labels",
+              "RuleGroup",
+              "AlertRule",
+              "DisableMetricValidation",
             });
     internal_static_google_monitoring_v3_AlertPolicy_Condition_PrometheusQueryLanguageCondition_LabelsEntry_descriptor =
         internal_static_google_monitoring_v3_AlertPolicy_Condition_PrometheusQueryLanguageCondition_descriptor
@@ -402,6 +459,73 @@ public final class AlertProto {
             internal_static_google_monitoring_v3_AlertPolicy_Condition_PrometheusQueryLanguageCondition_LabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_Condition_descriptor
+            .getNestedTypes()
+            .get(6);
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor,
+            new java.lang.String[] {
+              "Query",
+              "Minutes",
+              "Hourly",
+              "Daily",
+              "RowCountTest",
+              "BooleanTest",
+              "Schedule",
+              "Evaluate",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_descriptor,
+            new java.lang.String[] {
+              "Periodicity",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_descriptor,
+            new java.lang.String[] {
+              "Periodicity", "MinuteOffset",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_descriptor,
+            new java.lang.String[] {
+              "Periodicity", "ExecutionTime",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_descriptor,
+            new java.lang.String[] {
+              "Comparison", "Threshold",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor
+            .getNestedTypes()
+            .get(4);
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_descriptor,
+            new java.lang.String[] {
+              "Column",
             });
     internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor =
         internal_static_google_monitoring_v3_AlertPolicy_descriptor.getNestedTypes().get(2);
@@ -455,6 +579,7 @@ public final class AlertProto {
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
+    com.google.type.TimeOfDayProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

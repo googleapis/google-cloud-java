@@ -278,7 +278,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
    * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
    * will report an error if the checksum verification fails. If you receive a
    * checksum error, your client should verify that
-   * CRC32C([MacVerifyRequest.tag][]) is equal to
+   * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+   * equal to
    * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
    * and if so, perform a limited number of retries. A persistent mismatch may
    * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -309,7 +310,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
    * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
    * will report an error if the checksum verification fails. If you receive a
    * checksum error, your client should verify that
-   * CRC32C([MacVerifyRequest.tag][]) is equal to
+   * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+   * equal to
    * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
    * and if so, perform a limited number of retries. A persistent mismatch may
    * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -340,7 +342,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
    * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
    * will report an error if the checksum verification fails. If you receive a
    * checksum error, your client should verify that
-   * CRC32C([MacVerifyRequest.tag][]) is equal to
+   * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+   * equal to
    * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
    * and if so, perform a limited number of retries. A persistent mismatch may
    * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1426,7 +1429,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1456,7 +1460,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1492,7 +1497,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1530,7 +1536,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1565,7 +1572,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1608,7 +1616,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1643,7 +1652,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1673,7 +1683,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This
@@ -1707,7 +1718,8 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
      * checksum. [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
      * will report an error if the checksum verification fails. If you receive a
      * checksum error, your client should verify that
-     * CRC32C([MacVerifyRequest.tag][]) is equal to
+     * CRC32C([MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]) is
+     * equal to
      * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
      * and if so, perform a limited number of retries. A persistent mismatch may
      * indicate an issue in your computation of the CRC32C checksum. Note: This

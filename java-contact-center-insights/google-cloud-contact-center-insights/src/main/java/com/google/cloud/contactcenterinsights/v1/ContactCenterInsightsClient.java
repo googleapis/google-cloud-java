@@ -1984,7 +1984,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName name =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   Conversation response = contactCenterInsightsClient.getConversation(name);
    * }
    * }</pre>
@@ -2012,7 +2014,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String name =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   Conversation response = contactCenterInsightsClient.getConversation(name);
    * }
    * }</pre>
@@ -2041,7 +2046,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *     ContactCenterInsightsClient.create()) {
    *   GetConversationRequest request =
    *       GetConversationRequest.newBuilder()
-   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .setName(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setView(ConversationView.forNumber(0))
    *           .build();
    *   Conversation response = contactCenterInsightsClient.getConversation(request);
@@ -2071,7 +2079,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *     ContactCenterInsightsClient.create()) {
    *   GetConversationRequest request =
    *       GetConversationRequest.newBuilder()
-   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .setName(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setView(ConversationView.forNumber(0))
    *           .build();
    *   ApiFuture<Conversation> future =
@@ -2281,7 +2292,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName name =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   contactCenterInsightsClient.deleteConversation(name);
    * }
    * }</pre>
@@ -2311,7 +2324,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String name =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   contactCenterInsightsClient.deleteConversation(name);
    * }
    * }</pre>
@@ -2341,7 +2357,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *     ContactCenterInsightsClient.create()) {
    *   DeleteConversationRequest request =
    *       DeleteConversationRequest.newBuilder()
-   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .setName(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setForce(true)
    *           .build();
    *   contactCenterInsightsClient.deleteConversation(request);
@@ -2371,7 +2390,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *     ContactCenterInsightsClient.create()) {
    *   DeleteConversationRequest request =
    *       DeleteConversationRequest.newBuilder()
-   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .setName(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setForce(true)
    *           .build();
    *   ApiFuture<Empty> future =
@@ -2399,7 +2421,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   Analysis analysis = Analysis.newBuilder().build();
    *   Analysis response = contactCenterInsightsClient.createAnalysisAsync(parent, analysis).get();
    * }
@@ -2433,7 +2457,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   Analysis analysis = Analysis.newBuilder().build();
    *   Analysis response = contactCenterInsightsClient.createAnalysisAsync(parent, analysis).get();
    * }
@@ -2467,7 +2494,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   CreateAnalysisRequest request =
    *       CreateAnalysisRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setAnalysis(Analysis.newBuilder().build())
    *           .build();
    *   Analysis response = contactCenterInsightsClient.createAnalysisAsync(request).get();
@@ -2499,7 +2528,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   CreateAnalysisRequest request =
    *       CreateAnalysisRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setAnalysis(Analysis.newBuilder().build())
    *           .build();
    *   OperationFuture<Analysis, CreateAnalysisOperationMetadata> future =
@@ -2531,7 +2562,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   CreateAnalysisRequest request =
    *       CreateAnalysisRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setAnalysis(Analysis.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -2560,7 +2593,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   AnalysisName name =
-   *       AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+   *       AnalysisName.ofProjectLocationConversationAnalysisName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
    *   Analysis response = contactCenterInsightsClient.getAnalysis(name);
    * }
    * }</pre>
@@ -2589,7 +2623,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   String name =
-   *       AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]").toString();
+   *       AnalysisName.ofProjectLocationConversationAnalysisName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *           .toString();
    *   Analysis response = contactCenterInsightsClient.getAnalysis(name);
    * }
    * }</pre>
@@ -2619,7 +2655,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   GetAnalysisRequest request =
    *       GetAnalysisRequest.newBuilder()
    *           .setName(
-   *               AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *               AnalysisName.ofProjectLocationConversationAnalysisName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
    *                   .toString())
    *           .build();
    *   Analysis response = contactCenterInsightsClient.getAnalysis(request);
@@ -2650,7 +2687,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   GetAnalysisRequest request =
    *       GetAnalysisRequest.newBuilder()
    *           .setName(
-   *               AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *               AnalysisName.ofProjectLocationConversationAnalysisName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Analysis> future =
@@ -2678,7 +2716,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   for (Analysis element : contactCenterInsightsClient.listAnalyses(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2710,7 +2750,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   for (Analysis element : contactCenterInsightsClient.listAnalyses(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2742,7 +2785,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListAnalysesRequest request =
    *       ListAnalysesRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2777,7 +2822,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListAnalysesRequest request =
    *       ListAnalysesRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2813,7 +2860,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListAnalysesRequest request =
    *       ListAnalysesRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2853,7 +2902,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   AnalysisName name =
-   *       AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+   *       AnalysisName.ofProjectLocationConversationAnalysisName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
    *   contactCenterInsightsClient.deleteAnalysis(name);
    * }
    * }</pre>
@@ -2882,7 +2932,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   String name =
-   *       AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]").toString();
+   *       AnalysisName.ofProjectLocationConversationAnalysisName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *           .toString();
    *   contactCenterInsightsClient.deleteAnalysis(name);
    * }
    * }</pre>
@@ -2912,7 +2964,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   DeleteAnalysisRequest request =
    *       DeleteAnalysisRequest.newBuilder()
    *           .setName(
-   *               AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *               AnalysisName.ofProjectLocationConversationAnalysisName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
    *                   .toString())
    *           .build();
    *   contactCenterInsightsClient.deleteAnalysis(request);
@@ -2943,7 +2996,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   DeleteAnalysisRequest request =
    *       DeleteAnalysisRequest.newBuilder()
    *           .setName(
-   *               AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *               AnalysisName.ofProjectLocationConversationAnalysisName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future =
@@ -10281,7 +10335,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
    *   String feedbackLabelId = "feedbackLabelId-1251198998";
    *   FeedbackLabel response =
@@ -10320,7 +10376,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
    *   String feedbackLabelId = "feedbackLabelId-1251198998";
    *   FeedbackLabel response =
@@ -10362,7 +10421,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   CreateFeedbackLabelRequest request =
    *       CreateFeedbackLabelRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setFeedbackLabelId("feedbackLabelId-1251198998")
    *           .setFeedbackLabel(FeedbackLabel.newBuilder().build())
    *           .build();
@@ -10394,7 +10455,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   CreateFeedbackLabelRequest request =
    *       CreateFeedbackLabelRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setFeedbackLabelId("feedbackLabelId-1251198998")
    *           .setFeedbackLabel(FeedbackLabel.newBuilder().build())
    *           .build();
@@ -10424,7 +10487,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   for (FeedbackLabel element :
    *       contactCenterInsightsClient.listFeedbackLabels(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -10457,7 +10522,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   for (FeedbackLabel element :
    *       contactCenterInsightsClient.listFeedbackLabels(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -10491,7 +10559,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListFeedbackLabelsRequest request =
    *       ListFeedbackLabelsRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -10528,7 +10598,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListFeedbackLabelsRequest request =
    *       ListFeedbackLabelsRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -10564,7 +10636,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListFeedbackLabelsRequest request =
    *       ListFeedbackLabelsRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -10605,7 +10679,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   FeedbackLabelName name =
-   *       FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+   *       FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
    *   FeedbackLabel response = contactCenterInsightsClient.getFeedbackLabel(name);
    * }
    * }</pre>
@@ -10634,7 +10709,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   String name =
-   *       FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+   *       FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
    *           .toString();
    *   FeedbackLabel response = contactCenterInsightsClient.getFeedbackLabel(name);
    * }
@@ -10665,7 +10741,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   GetFeedbackLabelRequest request =
    *       GetFeedbackLabelRequest.newBuilder()
    *           .setName(
-   *               FeedbackLabelName.of(
+   *               FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
    *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
    *                   .toString())
    *           .build();
@@ -10697,7 +10773,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   GetFeedbackLabelRequest request =
    *       GetFeedbackLabelRequest.newBuilder()
    *           .setName(
-   *               FeedbackLabelName.of(
+   *               FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
    *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
    *                   .toString())
    *           .build();
@@ -10823,7 +10899,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   FeedbackLabelName name =
-   *       FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+   *       FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
    *   contactCenterInsightsClient.deleteFeedbackLabel(name);
    * }
    * }</pre>
@@ -10854,7 +10931,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   String name =
-   *       FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+   *       FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
    *           .toString();
    *   contactCenterInsightsClient.deleteFeedbackLabel(name);
    * }
@@ -10886,7 +10964,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   DeleteFeedbackLabelRequest request =
    *       DeleteFeedbackLabelRequest.newBuilder()
    *           .setName(
-   *               FeedbackLabelName.of(
+   *               FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
    *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
    *                   .toString())
    *           .build();
@@ -10918,7 +10996,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   DeleteFeedbackLabelRequest request =
    *       DeleteFeedbackLabelRequest.newBuilder()
    *           .setName(
-   *               FeedbackLabelName.of(
+   *               FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
    *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
    *                   .toString())
    *           .build();

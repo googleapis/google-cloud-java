@@ -172,7 +172,12 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
             }
           };
 
-  /** Returns the object with the settings used for calls to queryTimeSeries. */
+  /**
+   * Returns the object with the settings used for calls to queryTimeSeries.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
       queryTimeSeriesSettings() {
@@ -348,7 +353,12 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to queryTimeSeries. */
+    /**
+     * Returns the builder for the settings used for calls to queryTimeSeries.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
         queryTimeSeriesSettings() {

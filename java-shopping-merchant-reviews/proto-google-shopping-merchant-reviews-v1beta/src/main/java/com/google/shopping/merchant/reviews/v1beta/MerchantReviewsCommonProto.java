@@ -109,11 +109,14 @@ public final class MerchantReviewsCommonProto {
           + "scription\030\006 \001(\tB\003\340A\003\022\023\n\006detail\030\007 \001(\tB\003\340A"
           + "\003\022\032\n\rdocumentation\030\010 \001(\tB\003\340A\003\"G\n\010Severit"
           + "y\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\020\n\014NOT_IMPAC"
-          + "TED\020\001\022\017\n\013DISAPPROVED\020\002B\230\001\n+com.google.sh"
+          + "TED\020\001\022\017\n\013DISAPPROVED\020\002B\232\002\n+com.google.sh"
           + "opping.merchant.reviews.v1betaB\032Merchant"
           + "ReviewsCommonProtoP\001ZKcloud.google.com/g"
           + "o/shopping/merchant/reviews/apiv1beta/re"
-          + "viewspb;reviewspbb\006proto3"
+          + "viewspb;reviewspb\252\002\'Google.Shopping.Merc"
+          + "hant.Reviews.V1Beta\312\002\'Google\\Shopping\\Me"
+          + "rchant\\Reviews\\V1beta\352\002+Google::Shopping"
+          + "::Merchant::Reviews::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

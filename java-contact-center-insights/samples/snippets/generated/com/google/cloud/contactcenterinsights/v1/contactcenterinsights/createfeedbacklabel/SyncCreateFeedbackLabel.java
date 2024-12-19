@@ -39,7 +39,9 @@ public class SyncCreateFeedbackLabel {
       CreateFeedbackLabelRequest request =
           CreateFeedbackLabelRequest.newBuilder()
               .setParent(
-                  ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setFeedbackLabelId("feedbackLabelId-1251198998")
               .setFeedbackLabel(FeedbackLabel.newBuilder().build())
               .build();

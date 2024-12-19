@@ -36,7 +36,8 @@ public class SyncGetFeedbackLabelFeedbacklabelname {
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
       FeedbackLabelName name =
-          FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+          FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
       FeedbackLabel response = contactCenterInsightsClient.getFeedbackLabel(name);
     }
   }

@@ -126,11 +126,14 @@ public final class ProductReviewsCommonProto {
           + "\001(\tB\003\340A\003\022\023\n\006detail\030\007 \001(\tB\003\340A\003\022\032\n\rdocumen"
           + "tation\030\010 \001(\tB\003\340A\003\"G\n\010Severity\022\030\n\024SEVERIT"
           + "Y_UNSPECIFIED\020\000\022\020\n\014NOT_IMPACTED\020\001\022\017\n\013DIS"
-          + "APPROVED\020\002B\227\001\n+com.google.shopping.merch"
+          + "APPROVED\020\002B\231\002\n+com.google.shopping.merch"
           + "ant.reviews.v1betaB\031ProductReviewsCommon"
           + "ProtoP\001ZKcloud.google.com/go/shopping/me"
           + "rchant/reviews/apiv1beta/reviewspb;revie"
-          + "wspbb\006proto3"
+          + "wspb\252\002\'Google.Shopping.Merchant.Reviews."
+          + "V1Beta\312\002\'Google\\Shopping\\Merchant\\Review"
+          + "s\\V1beta\352\002+Google::Shopping::Merchant::R"
+          + "eviews::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

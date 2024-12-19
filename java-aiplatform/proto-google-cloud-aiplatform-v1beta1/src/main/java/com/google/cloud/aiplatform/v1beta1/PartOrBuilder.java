@@ -367,6 +367,19 @@ public interface PartOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.VideoMetadataOrBuilder getVideoMetadataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the part is thought from the model.
+   * </pre>
+   *
+   * <code>bool thought = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The thought.
+   */
+  boolean getThought();
+
   com.google.cloud.aiplatform.v1beta1.Part.DataCase getDataCase();
 
   com.google.cloud.aiplatform.v1beta1.Part.MetadataCase getMetadataCase();
