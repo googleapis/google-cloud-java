@@ -1,6 +1,6 @@
 gapic_generator_version: 2.51.0
-googleapis_commitish: 67495ab130490fec112841715649b86a7d335e6a
-libraries_bom_version: 26.51.0
+googleapis_commitish: 020c281c3fb4efb3623b060bdbc16535898fb573
+libraries_bom_version: 26.52.0
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
