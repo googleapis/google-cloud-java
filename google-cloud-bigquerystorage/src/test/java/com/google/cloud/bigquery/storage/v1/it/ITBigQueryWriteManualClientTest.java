@@ -1756,12 +1756,14 @@ public class ITBigQueryWriteManualClientTest {
     Iterator<FieldValueList> queryIter = queryResult.getValues().iterator();
     assertTrue(queryIter.hasNext());
     assertEquals(
-        "[FieldValue{attribute=REPEATED, value=[FieldValue{attribute=PRIMITIVE, value=aaa},"
-            + " FieldValue{attribute=PRIMITIVE, value=aaa}]}]",
+        "[FieldValue{attribute=REPEATED, value=[FieldValue{attribute=PRIMITIVE, value=aaa,"
+            + " useInt64Timestamps=false}, FieldValue{attribute=PRIMITIVE, value=aaa,"
+            + " useInt64Timestamps=false}], useInt64Timestamps=false}]",
         queryIter.next().get(1).getRepeatedValue().toString());
     assertEquals(
-        "[FieldValue{attribute=REPEATED, value=[FieldValue{attribute=PRIMITIVE, value=bbb},"
-            + " FieldValue{attribute=PRIMITIVE, value=bbb}]}]",
+        "[FieldValue{attribute=REPEATED, value=[FieldValue{attribute=PRIMITIVE, value=bbb,"
+            + " useInt64Timestamps=false}, FieldValue{attribute=PRIMITIVE, value=bbb,"
+            + " useInt64Timestamps=false}], useInt64Timestamps=false}]",
         queryIter.next().get(1).getRepeatedValue().toString());
     assertFalse(queryIter.hasNext());
   }
