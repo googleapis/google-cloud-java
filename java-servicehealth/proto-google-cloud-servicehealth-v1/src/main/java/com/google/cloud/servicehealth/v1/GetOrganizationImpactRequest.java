@@ -23,7 +23,7 @@ package com.google.cloud.servicehealth.v1;
  *
  *
  * <pre>
- * Message for getting an organization impact.
+ * Gets information about an event that affects a project under an organization.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicehealth.v1.GetOrganizationImpactRequest}
@@ -298,7 +298,7 @@ public final class GetOrganizationImpactRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Message for getting an organization impact.
+   * Gets information about an event that affects a project under an organization.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicehealth.v1.GetOrganizationImpactRequest}
