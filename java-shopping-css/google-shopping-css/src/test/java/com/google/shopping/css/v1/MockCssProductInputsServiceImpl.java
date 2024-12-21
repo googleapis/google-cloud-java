@@ -81,6 +81,27 @@ public class MockCssProductInputsServiceImpl extends CssProductInputsServiceImpl
   }
 
   @Override
+  public void updateCssProductInput(
+      UpdateCssProductInputRequest request, StreamObserver<CssProductInput> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CssProductInput) {
+      requests.add(request);
+      responseObserver.onNext(((CssProductInput) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCssProductInput, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CssProductInput.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteCssProductInput(
       DeleteCssProductInputRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();

@@ -476,7 +476,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IP addresses that checkers run from
+     * Returns the list of IP addresses that checkers run from.
      * </pre>
      */
     default void listUptimeCheckIps(
@@ -628,7 +628,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IP addresses that checkers run from
+     * Returns the list of IP addresses that checkers run from.
      * </pre>
      */
     public void listUptimeCheckIps(
@@ -744,7 +744,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IP addresses that checkers run from
+     * Returns the list of IP addresses that checkers run from.
      * </pre>
      */
     public com.google.monitoring.v3.ListUptimeCheckIpsResponse listUptimeCheckIps(
@@ -859,7 +859,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IP addresses that checkers run from
+     * Returns the list of IP addresses that checkers run from.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

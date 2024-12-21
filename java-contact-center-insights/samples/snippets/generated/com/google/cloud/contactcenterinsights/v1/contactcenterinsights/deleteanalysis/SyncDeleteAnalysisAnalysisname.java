@@ -36,7 +36,8 @@ public class SyncDeleteAnalysisAnalysisname {
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       contactCenterInsightsClient.deleteAnalysis(name);
     }
   }

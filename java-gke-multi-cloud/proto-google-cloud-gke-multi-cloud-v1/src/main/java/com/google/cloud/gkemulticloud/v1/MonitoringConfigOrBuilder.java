@@ -62,4 +62,43 @@ public interface MonitoringConfigOrBuilder
    */
   com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfigOrBuilder
       getManagedPrometheusConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   *
+   * @return Whether the cloudMonitoringConfig field is set.
+   */
+  boolean hasCloudMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   *
+   * @return The cloudMonitoringConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig getCloudMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   */
+  com.google.cloud.gkemulticloud.v1.CloudMonitoringConfigOrBuilder
+      getCloudMonitoringConfigOrBuilder();
 }

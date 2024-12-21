@@ -19,6 +19,7 @@ package com.google.shopping.css.v1;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.shopping.css.v1.stub.CssProductInputsServiceStub;
 import com.google.shopping.css.v1.stub.CssProductInputsServiceStubSettings;
 import java.io.IOException;
@@ -74,6 +75,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> insertCssProductInputCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCssProductInput</td>
+ *      <td><p> Updates the existing Css Product input in your CSS Center account.
+ * <p>  After inserting, updating, or deleting a CSS Product input, it may take several minutes before the processed Css Product can be retrieved.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCssProductInput(UpdateCssProductInputRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCssProductInput(CssProductInput cssProductInput, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCssProductInputCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -277,6 +297,121 @@ public class CssProductInputsServiceClient implements BackgroundResource {
   public final UnaryCallable<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputCallable() {
     return stub.insertCssProductInputCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the existing Css Product input in your CSS Center account.
+   *
+   * <p>After inserting, updating, or deleting a CSS Product input, it may take several minutes
+   * before the processed Css Product can be retrieved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CssProductInputsServiceClient cssProductInputsServiceClient =
+   *     CssProductInputsServiceClient.create()) {
+   *   CssProductInput cssProductInput = CssProductInput.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CssProductInput response =
+   *       cssProductInputsServiceClient.updateCssProductInput(cssProductInput, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param cssProductInput Required. The CSS product input resource to update. Information you
+   *     submit will be applied to the processed CSS product as well.
+   * @param updateMask The list of CSS product attributes to be updated.
+   *     <p>If the update mask is omitted, then it is treated as implied field mask equivalent to
+   *     all fields that are populated (have a non-empty value).
+   *     <p>Attributes specified in the update mask without a value specified in the body will be
+   *     deleted from the CSS product.
+   *     <p>Update mask can only be specified for top level fields in attributes and custom
+   *     attributes.
+   *     <p>To specify the update mask for custom attributes you need to add the `custom_attribute.`
+   *     prefix.
+   *     <p>Providing special "&#42;" value for full CSS product replacement is not supported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CssProductInput updateCssProductInput(
+      CssProductInput cssProductInput, FieldMask updateMask) {
+    UpdateCssProductInputRequest request =
+        UpdateCssProductInputRequest.newBuilder()
+            .setCssProductInput(cssProductInput)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCssProductInput(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the existing Css Product input in your CSS Center account.
+   *
+   * <p>After inserting, updating, or deleting a CSS Product input, it may take several minutes
+   * before the processed Css Product can be retrieved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CssProductInputsServiceClient cssProductInputsServiceClient =
+   *     CssProductInputsServiceClient.create()) {
+   *   UpdateCssProductInputRequest request =
+   *       UpdateCssProductInputRequest.newBuilder()
+   *           .setCssProductInput(CssProductInput.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CssProductInput response = cssProductInputsServiceClient.updateCssProductInput(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CssProductInput updateCssProductInput(UpdateCssProductInputRequest request) {
+    return updateCssProductInputCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the existing Css Product input in your CSS Center account.
+   *
+   * <p>After inserting, updating, or deleting a CSS Product input, it may take several minutes
+   * before the processed Css Product can be retrieved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CssProductInputsServiceClient cssProductInputsServiceClient =
+   *     CssProductInputsServiceClient.create()) {
+   *   UpdateCssProductInputRequest request =
+   *       UpdateCssProductInputRequest.newBuilder()
+   *           .setCssProductInput(CssProductInput.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CssProductInput> future =
+   *       cssProductInputsServiceClient.updateCssProductInputCallable().futureCall(request);
+   *   // Do something.
+   *   CssProductInput response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputCallable() {
+    return stub.updateCssProductInputCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -43,6 +43,7 @@ import com.google.protobuf.Empty;
 import com.google.shopping.css.v1.CssProductInput;
 import com.google.shopping.css.v1.DeleteCssProductInputRequest;
 import com.google.shopping.css.v1.InsertCssProductInputRequest;
+import com.google.shopping.css.v1.UpdateCssProductInputRequest;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -108,6 +109,8 @@ public class CssProductInputsServiceStubSettings
 
   private final UnaryCallSettings<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputSettings;
+  private final UnaryCallSettings<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputSettings;
   private final UnaryCallSettings<DeleteCssProductInputRequest, Empty>
       deleteCssProductInputSettings;
 
@@ -115,6 +118,12 @@ public class CssProductInputsServiceStubSettings
   public UnaryCallSettings<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputSettings() {
     return insertCssProductInputSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCssProductInput. */
+  public UnaryCallSettings<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputSettings() {
+    return updateCssProductInputSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteCssProductInput. */
@@ -234,6 +243,7 @@ public class CssProductInputsServiceStubSettings
     super(settingsBuilder);
 
     insertCssProductInputSettings = settingsBuilder.insertCssProductInputSettings().build();
+    updateCssProductInputSettings = settingsBuilder.updateCssProductInputSettings().build();
     deleteCssProductInputSettings = settingsBuilder.deleteCssProductInputSettings().build();
   }
 
@@ -243,6 +253,8 @@ public class CssProductInputsServiceStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<InsertCssProductInputRequest, CssProductInput>
         insertCssProductInputSettings;
+    private final UnaryCallSettings.Builder<UpdateCssProductInputRequest, CssProductInput>
+        updateCssProductInputSettings;
     private final UnaryCallSettings.Builder<DeleteCssProductInputRequest, Empty>
         deleteCssProductInputSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -280,11 +292,14 @@ public class CssProductInputsServiceStubSettings
       super(clientContext);
 
       insertCssProductInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCssProductInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCssProductInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              insertCssProductInputSettings, deleteCssProductInputSettings);
+              insertCssProductInputSettings,
+              updateCssProductInputSettings,
+              deleteCssProductInputSettings);
       initDefaults(this);
     }
 
@@ -292,11 +307,14 @@ public class CssProductInputsServiceStubSettings
       super(settings);
 
       insertCssProductInputSettings = settings.insertCssProductInputSettings.toBuilder();
+      updateCssProductInputSettings = settings.updateCssProductInputSettings.toBuilder();
       deleteCssProductInputSettings = settings.deleteCssProductInputSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              insertCssProductInputSettings, deleteCssProductInputSettings);
+              insertCssProductInputSettings,
+              updateCssProductInputSettings,
+              deleteCssProductInputSettings);
     }
 
     private static Builder createDefault() {
@@ -330,6 +348,11 @@ public class CssProductInputsServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateCssProductInputSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteCssProductInputSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -356,6 +379,12 @@ public class CssProductInputsServiceStubSettings
     public UnaryCallSettings.Builder<InsertCssProductInputRequest, CssProductInput>
         insertCssProductInputSettings() {
       return insertCssProductInputSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCssProductInput. */
+    public UnaryCallSettings.Builder<UpdateCssProductInputRequest, CssProductInput>
+        updateCssProductInputSettings() {
+      return updateCssProductInputSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteCssProductInput. */

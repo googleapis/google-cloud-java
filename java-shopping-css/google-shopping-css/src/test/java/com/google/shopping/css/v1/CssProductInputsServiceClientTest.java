@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.shopping.type.CustomAttribute;
 import io.grpc.StatusRuntimeException;
@@ -132,6 +133,55 @@ public class CssProductInputsServiceClientTest {
               .setFeedId(-976011428)
               .build();
       client.insertCssProductInput(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCssProductInputTest() throws Exception {
+    CssProductInput expectedResponse =
+        CssProductInput.newBuilder()
+            .setName(CssProductInputName.of("[ACCOUNT]", "[CSS_PRODUCT_INPUT]").toString())
+            .setFinalName("finalName355075361")
+            .setRawProvidedId("rawProvidedId-637295450")
+            .setContentLanguage("contentLanguage810066673")
+            .setFeedLabel("feedLabel-1661895690")
+            .setFreshnessTime(Timestamp.newBuilder().build())
+            .setAttributes(Attributes.newBuilder().build())
+            .addAllCustomAttributes(new ArrayList<CustomAttribute>())
+            .build();
+    mockCssProductInputsService.addResponse(expectedResponse);
+
+    CssProductInput cssProductInput = CssProductInput.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CssProductInput actualResponse = client.updateCssProductInput(cssProductInput, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCssProductInputsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCssProductInputRequest actualRequest =
+        ((UpdateCssProductInputRequest) actualRequests.get(0));
+
+    Assert.assertEquals(cssProductInput, actualRequest.getCssProductInput());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCssProductInputExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCssProductInputsService.addException(exception);
+
+    try {
+      CssProductInput cssProductInput = CssProductInput.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCssProductInput(cssProductInput, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

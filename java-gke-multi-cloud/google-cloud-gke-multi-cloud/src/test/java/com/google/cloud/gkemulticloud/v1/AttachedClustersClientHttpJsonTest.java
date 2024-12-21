@@ -110,6 +110,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -186,6 +187,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -262,6 +264,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -296,6 +299,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -352,6 +356,7 @@ public class AttachedClustersClientHttpJsonTest {
               .setProxyConfig(AttachedProxyConfig.newBuilder().build())
               .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
               .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAttachedClusterAsync(attachedCluster, updateMask).get();
@@ -387,6 +392,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -461,6 +467,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -535,6 +542,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -603,6 +611,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setProxyConfig(AttachedProxyConfig.newBuilder().build())
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 

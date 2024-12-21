@@ -1081,6 +1081,9 @@
         "grpc": {
           "libraryClient": "ModelGardenServiceClient",
           "rpcs": {
+            "DeployPublisherModel": {
+              "methods": ["deployPublisherModelAsync", "deployPublisherModelOperationCallable", "deployPublisherModelCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },

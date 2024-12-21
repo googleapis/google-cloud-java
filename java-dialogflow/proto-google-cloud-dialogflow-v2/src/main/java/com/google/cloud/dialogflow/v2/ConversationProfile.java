@@ -598,6 +598,88 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         : newMessageEventNotificationConfig_;
   }
 
+  public static final int NEW_RECOGNITION_RESULT_NOTIFICATION_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.dialogflow.v2.NotificationConfig newRecognitionResultNotificationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for publishing transcription intermediate results.
+   * Event will be sent in format of
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+   * configured, the following information will be populated as
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+   * message attributes:
+   * - "participant_id"
+   * - "participant_role"
+   * - "message_id"
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the newRecognitionResultNotificationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNewRecognitionResultNotificationConfig() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for publishing transcription intermediate results.
+   * Event will be sent in format of
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+   * configured, the following information will be populated as
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+   * message attributes:
+   * - "participant_id"
+   * - "participant_role"
+   * - "message_id"
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The newRecognitionResultNotificationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.NotificationConfig
+      getNewRecognitionResultNotificationConfig() {
+    return newRecognitionResultNotificationConfig_ == null
+        ? com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()
+        : newRecognitionResultNotificationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for publishing transcription intermediate results.
+   * Event will be sent in format of
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+   * configured, the following information will be populated as
+   * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+   * message attributes:
+   * - "participant_id"
+   * - "participant_role"
+   * - "message_id"
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.NotificationConfigOrBuilder
+      getNewRecognitionResultNotificationConfigOrBuilder() {
+    return newRecognitionResultNotificationConfig_ == null
+        ? com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()
+        : newRecognitionResultNotificationConfig_;
+  }
+
   public static final int STT_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.dialogflow.v2.SpeechToTextConfig sttConfig_;
   /**
@@ -613,7 +695,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasSttConfig() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -835,7 +917,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasTtsConfig() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -914,7 +996,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(8, getNewMessageEventNotificationConfig());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(9, getSttConfig());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
@@ -932,8 +1014,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, timeZone_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(18, getTtsConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(21, getNewRecognitionResultNotificationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -974,7 +1059,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getNewMessageEventNotificationConfig());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSttConfig());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
@@ -992,8 +1077,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, timeZone_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getTtsConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, getNewRecognitionResultNotificationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1047,6 +1137,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (hasNewMessageEventNotificationConfig()) {
       if (!getNewMessageEventNotificationConfig()
           .equals(other.getNewMessageEventNotificationConfig())) return false;
+    }
+    if (hasNewRecognitionResultNotificationConfig()
+        != other.hasNewRecognitionResultNotificationConfig()) return false;
+    if (hasNewRecognitionResultNotificationConfig()) {
+      if (!getNewRecognitionResultNotificationConfig()
+          .equals(other.getNewRecognitionResultNotificationConfig())) return false;
     }
     if (hasSttConfig() != other.hasSttConfig()) return false;
     if (hasSttConfig()) {
@@ -1105,6 +1201,10 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (hasNewMessageEventNotificationConfig()) {
       hash = (37 * hash) + NEW_MESSAGE_EVENT_NOTIFICATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNewMessageEventNotificationConfig().hashCode();
+    }
+    if (hasNewRecognitionResultNotificationConfig()) {
+      hash = (37 * hash) + NEW_RECOGNITION_RESULT_NOTIFICATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNewRecognitionResultNotificationConfig().hashCode();
     }
     if (hasSttConfig()) {
       hash = (37 * hash) + STT_CONFIG_FIELD_NUMBER;
@@ -1268,6 +1368,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         getNotificationConfigFieldBuilder();
         getLoggingConfigFieldBuilder();
         getNewMessageEventNotificationConfigFieldBuilder();
+        getNewRecognitionResultNotificationConfigFieldBuilder();
         getSttConfigFieldBuilder();
         getTtsConfigFieldBuilder();
       }
@@ -1318,6 +1419,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       if (newMessageEventNotificationConfigBuilder_ != null) {
         newMessageEventNotificationConfigBuilder_.dispose();
         newMessageEventNotificationConfigBuilder_ = null;
+      }
+      newRecognitionResultNotificationConfig_ = null;
+      if (newRecognitionResultNotificationConfigBuilder_ != null) {
+        newRecognitionResultNotificationConfigBuilder_.dispose();
+        newRecognitionResultNotificationConfigBuilder_ = null;
       }
       sttConfig_ = null;
       if (sttConfigBuilder_ != null) {
@@ -1424,21 +1530,28 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.sttConfig_ = sttConfigBuilder_ == null ? sttConfig_ : sttConfigBuilder_.build();
+        result.newRecognitionResultNotificationConfig_ =
+            newRecognitionResultNotificationConfigBuilder_ == null
+                ? newRecognitionResultNotificationConfig_
+                : newRecognitionResultNotificationConfigBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.languageCode_ = languageCode_;
+        result.sttConfig_ = sttConfigBuilder_ == null ? sttConfig_ : sttConfigBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.timeZone_ = timeZone_;
+        result.languageCode_ = languageCode_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.securitySettings_ = securitySettings_;
+        result.timeZone_ = timeZone_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.securitySettings_ = securitySettings_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.ttsConfig_ = ttsConfigBuilder_ == null ? ttsConfig_ : ttsConfigBuilder_.build();
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1523,22 +1636,26 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       if (other.hasNewMessageEventNotificationConfig()) {
         mergeNewMessageEventNotificationConfig(other.getNewMessageEventNotificationConfig());
       }
+      if (other.hasNewRecognitionResultNotificationConfig()) {
+        mergeNewRecognitionResultNotificationConfig(
+            other.getNewRecognitionResultNotificationConfig());
+      }
       if (other.hasSttConfig()) {
         mergeSttConfig(other.getSttConfig());
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getSecuritySettings().isEmpty()) {
         securitySettings_ = other.securitySettings_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasTtsConfig()) {
@@ -1627,13 +1744,13 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
             case 74:
               {
                 input.readMessage(getSttConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 74
             case 82:
               {
                 languageCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 82
             case 90:
@@ -1651,21 +1768,29 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
             case 106:
               {
                 securitySettings_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 106
             case 114:
               {
                 timeZone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 146:
               {
                 input.readMessage(getTtsConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 146
+            case 170:
+              {
+                input.readMessage(
+                    getNewRecognitionResultNotificationConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3527,6 +3652,289 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       return newMessageEventNotificationConfigBuilder_;
     }
 
+    private com.google.cloud.dialogflow.v2.NotificationConfig
+        newRecognitionResultNotificationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.NotificationConfig,
+            com.google.cloud.dialogflow.v2.NotificationConfig.Builder,
+            com.google.cloud.dialogflow.v2.NotificationConfigOrBuilder>
+        newRecognitionResultNotificationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the newRecognitionResultNotificationConfig field is set.
+     */
+    public boolean hasNewRecognitionResultNotificationConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The newRecognitionResultNotificationConfig.
+     */
+    public com.google.cloud.dialogflow.v2.NotificationConfig
+        getNewRecognitionResultNotificationConfig() {
+      if (newRecognitionResultNotificationConfigBuilder_ == null) {
+        return newRecognitionResultNotificationConfig_ == null
+            ? com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()
+            : newRecognitionResultNotificationConfig_;
+      } else {
+        return newRecognitionResultNotificationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNewRecognitionResultNotificationConfig(
+        com.google.cloud.dialogflow.v2.NotificationConfig value) {
+      if (newRecognitionResultNotificationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        newRecognitionResultNotificationConfig_ = value;
+      } else {
+        newRecognitionResultNotificationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNewRecognitionResultNotificationConfig(
+        com.google.cloud.dialogflow.v2.NotificationConfig.Builder builderForValue) {
+      if (newRecognitionResultNotificationConfigBuilder_ == null) {
+        newRecognitionResultNotificationConfig_ = builderForValue.build();
+      } else {
+        newRecognitionResultNotificationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNewRecognitionResultNotificationConfig(
+        com.google.cloud.dialogflow.v2.NotificationConfig value) {
+      if (newRecognitionResultNotificationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && newRecognitionResultNotificationConfig_ != null
+            && newRecognitionResultNotificationConfig_
+                != com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()) {
+          getNewRecognitionResultNotificationConfigBuilder().mergeFrom(value);
+        } else {
+          newRecognitionResultNotificationConfig_ = value;
+        }
+      } else {
+        newRecognitionResultNotificationConfigBuilder_.mergeFrom(value);
+      }
+      if (newRecognitionResultNotificationConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNewRecognitionResultNotificationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      newRecognitionResultNotificationConfig_ = null;
+      if (newRecognitionResultNotificationConfigBuilder_ != null) {
+        newRecognitionResultNotificationConfigBuilder_.dispose();
+        newRecognitionResultNotificationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.NotificationConfig.Builder
+        getNewRecognitionResultNotificationConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getNewRecognitionResultNotificationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.NotificationConfigOrBuilder
+        getNewRecognitionResultNotificationConfigOrBuilder() {
+      if (newRecognitionResultNotificationConfigBuilder_ != null) {
+        return newRecognitionResultNotificationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return newRecognitionResultNotificationConfig_ == null
+            ? com.google.cloud.dialogflow.v2.NotificationConfig.getDefaultInstance()
+            : newRecognitionResultNotificationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for publishing transcription intermediate results.
+     * Event will be sent in format of
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent]. If
+     * configured, the following information will be populated as
+     * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] Pub/Sub
+     * message attributes:
+     * - "participant_id"
+     * - "participant_role"
+     * - "message_id"
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.NotificationConfig new_recognition_result_notification_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.NotificationConfig,
+            com.google.cloud.dialogflow.v2.NotificationConfig.Builder,
+            com.google.cloud.dialogflow.v2.NotificationConfigOrBuilder>
+        getNewRecognitionResultNotificationConfigFieldBuilder() {
+      if (newRecognitionResultNotificationConfigBuilder_ == null) {
+        newRecognitionResultNotificationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.NotificationConfig,
+                com.google.cloud.dialogflow.v2.NotificationConfig.Builder,
+                com.google.cloud.dialogflow.v2.NotificationConfigOrBuilder>(
+                getNewRecognitionResultNotificationConfig(), getParentForChildren(), isClean());
+        newRecognitionResultNotificationConfig_ = null;
+      }
+      return newRecognitionResultNotificationConfigBuilder_;
+    }
+
     private com.google.cloud.dialogflow.v2.SpeechToTextConfig sttConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.SpeechToTextConfig,
@@ -3545,7 +3953,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the sttConfig field is set.
      */
     public boolean hasSttConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3585,7 +3993,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       } else {
         sttConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3605,7 +4013,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       } else {
         sttConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3620,7 +4028,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSttConfig(com.google.cloud.dialogflow.v2.SpeechToTextConfig value) {
       if (sttConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && sttConfig_ != null
             && sttConfig_
                 != com.google.cloud.dialogflow.v2.SpeechToTextConfig.getDefaultInstance()) {
@@ -3632,7 +4040,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         sttConfigBuilder_.mergeFrom(value);
       }
       if (sttConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3647,7 +4055,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.SpeechToTextConfig stt_config = 9;</code>
      */
     public Builder clearSttConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       sttConfig_ = null;
       if (sttConfigBuilder_ != null) {
         sttConfigBuilder_.dispose();
@@ -3666,7 +4074,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.SpeechToTextConfig stt_config = 9;</code>
      */
     public com.google.cloud.dialogflow.v2.SpeechToTextConfig.Builder getSttConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getSttConfigFieldBuilder().getBuilder();
     }
@@ -3788,7 +4196,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       languageCode_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3809,7 +4217,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder clearLanguageCode() {
       languageCode_ = getDefaultInstance().getLanguageCode();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3835,7 +4243,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       languageCode_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3908,7 +4316,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       timeZone_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3927,7 +4335,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder clearTimeZone() {
       timeZone_ = getDefaultInstance().getTimeZone();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3951,7 +4359,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       timeZone_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4024,7 +4432,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       securitySettings_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4043,7 +4451,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder clearSecuritySettings() {
       securitySettings_ = getDefaultInstance().getSecuritySettings();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4067,7 +4475,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       securitySettings_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4093,7 +4501,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the ttsConfig field is set.
      */
     public boolean hasTtsConfig() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4139,7 +4547,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       } else {
         ttsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4162,7 +4570,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       } else {
         ttsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4180,7 +4588,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeTtsConfig(com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig value) {
       if (ttsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && ttsConfig_ != null
             && ttsConfig_
                 != com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig.getDefaultInstance()) {
@@ -4192,7 +4600,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         ttsConfigBuilder_.mergeFrom(value);
       }
       if (ttsConfig_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -4210,7 +4618,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig tts_config = 18;</code>
      */
     public Builder clearTtsConfig() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       ttsConfig_ = null;
       if (ttsConfigBuilder_ != null) {
         ttsConfigBuilder_.dispose();
@@ -4232,7 +4640,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig tts_config = 18;</code>
      */
     public com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig.Builder getTtsConfigBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getTtsConfigFieldBuilder().getBuilder();
     }

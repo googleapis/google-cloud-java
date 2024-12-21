@@ -23,7 +23,7 @@ package com.google.cloud.servicehealth.v1;
  *
  *
  * <pre>
- * Message for requesting list of events.
+ * Requests list of events.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicehealth.v1.ListEventsRequest}
@@ -533,7 +533,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Message for requesting list of events.
+   * Requests list of events.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicehealth.v1.ListEventsRequest}

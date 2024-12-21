@@ -35,7 +35,9 @@ public class SyncGetConversationConversationname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
-      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName name =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       Conversation response = contactCenterInsightsClient.getConversation(name);
     }
   }

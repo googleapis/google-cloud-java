@@ -23,11 +23,14 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * The `QueryTimeSeries` response.
+ * The `QueryTimeSeries` response. For information about the status of
+ * Monitoring Query Language (MQL), see the [MQL deprecation
+ * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.QueryTimeSeriesResponse}
  */
+@java.lang.Deprecated
 public final class QueryTimeSeriesResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.QueryTimeSeriesResponse)
@@ -522,7 +525,9 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The `QueryTimeSeries` response.
+   * The `QueryTimeSeries` response. For information about the status of
+   * Monitoring Query Language (MQL), see the [MQL deprecation
+   * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.QueryTimeSeriesResponse}

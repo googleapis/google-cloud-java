@@ -306,7 +306,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Low Price of the aggregate offer.
+   * Low Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -321,7 +321,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Low Price of the aggregate offer.
+   * Low Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -336,7 +336,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Low Price of the aggregate offer.
+   * Low Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -352,7 +352,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * High Price of the aggregate offer.
+   * High Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -367,7 +367,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * High Price of the aggregate offer.
+   * High Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -382,7 +382,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * High Price of the aggregate offer.
+   * High Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -398,7 +398,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The number of aggregate offers.
+   * The number of CSS Products.
    * </pre>
    *
    * <code>optional int64 number_of_offers = 5;</code>
@@ -413,7 +413,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The number of aggregate offers.
+   * The number of CSS Products.
    * </pre>
    *
    * <code>optional int64 number_of_offers = 5;</code>
@@ -497,7 +497,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -512,7 +512,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -529,7 +529,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -679,7 +679,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -694,7 +694,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -711,7 +711,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -5594,7 +5594,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5608,7 +5608,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5626,7 +5626,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5648,7 +5648,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5667,7 +5667,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5694,7 +5694,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5713,7 +5713,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5727,7 +5727,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5743,7 +5743,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Low Price of the aggregate offer.
+     * Low Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -5775,7 +5775,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5789,7 +5789,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5809,7 +5809,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5831,7 +5831,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5850,7 +5850,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5877,7 +5877,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5896,7 +5896,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5910,7 +5910,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5928,7 +5928,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High Price of the aggregate offer.
+     * High Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -5955,7 +5955,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of aggregate offers.
+     * The number of CSS Products.
      * </pre>
      *
      * <code>optional int64 number_of_offers = 5;</code>
@@ -5970,7 +5970,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of aggregate offers.
+     * The number of CSS Products.
      * </pre>
      *
      * <code>optional int64 number_of_offers = 5;</code>
@@ -5985,7 +5985,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of aggregate offers.
+     * The number of CSS Products.
      * </pre>
      *
      * <code>optional int64 number_of_offers = 5;</code>
@@ -6004,7 +6004,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of aggregate offers.
+     * The number of CSS Products.
      * </pre>
      *
      * <code>optional int64 number_of_offers = 5;</code>
@@ -6148,7 +6148,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6162,7 +6162,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6182,7 +6182,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6204,7 +6204,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6223,7 +6223,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6250,7 +6250,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6269,7 +6269,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6283,7 +6283,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6301,7 +6301,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -6573,7 +6573,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -6587,7 +6587,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -6607,7 +6607,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -6629,7 +6629,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -6649,7 +6649,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -6676,7 +6676,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -6695,7 +6695,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -6709,7 +6709,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -6727,7 +6727,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headline Price of the aggregate offer.
+     * Headline Price of the CSS Product.
      * </pre>
      *
      * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>

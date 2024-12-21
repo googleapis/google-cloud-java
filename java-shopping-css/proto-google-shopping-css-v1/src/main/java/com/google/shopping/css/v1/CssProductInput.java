@@ -362,6 +362,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
+   * DEPRECATED. Use expiration_date instead.
    * Represents the existing version (freshness) of the CSS Product, which
    * can be used to preserve the right order when multiple updates are done at
    * the same time.
@@ -381,11 +382,14 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    * thrown.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+   * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    *
+   * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
+   *     google/shopping/css/v1/css_product_inputs.proto;l=139
    * @return Whether the freshnessTime field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasFreshnessTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -393,6 +397,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
+   * DEPRECATED. Use expiration_date instead.
    * Represents the existing version (freshness) of the CSS Product, which
    * can be used to preserve the right order when multiple updates are done at
    * the same time.
@@ -412,11 +417,14 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    * thrown.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+   * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    *
+   * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
+   *     google/shopping/css/v1/css_product_inputs.proto;l=139
    * @return The freshnessTime.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.Timestamp getFreshnessTime() {
     return freshnessTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -426,6 +434,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
+   * DEPRECATED. Use expiration_date instead.
    * Represents the existing version (freshness) of the CSS Product, which
    * can be used to preserve the right order when multiple updates are done at
    * the same time.
@@ -445,9 +454,10 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    * thrown.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+   * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.TimestampOrBuilder getFreshnessTimeOrBuilder() {
     return freshnessTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1803,6 +1813,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -1822,10 +1833,13 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      *
+     * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
+     *     google/shopping/css/v1/css_product_inputs.proto;l=139
      * @return Whether the freshnessTime field is set.
      */
+    @java.lang.Deprecated
     public boolean hasFreshnessTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
@@ -1833,6 +1847,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -1852,10 +1867,13 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      *
+     * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
+     *     google/shopping/css/v1/css_product_inputs.proto;l=139
      * @return The freshnessTime.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Timestamp getFreshnessTime() {
       if (freshnessTimeBuilder_ == null) {
         return freshnessTime_ == null
@@ -1869,6 +1887,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -1888,8 +1907,9 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setFreshnessTime(com.google.protobuf.Timestamp value) {
       if (freshnessTimeBuilder_ == null) {
         if (value == null) {
@@ -1907,6 +1927,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -1926,8 +1947,9 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setFreshnessTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (freshnessTimeBuilder_ == null) {
         freshnessTime_ = builderForValue.build();
@@ -1942,6 +1964,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -1961,8 +1984,9 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeFreshnessTime(com.google.protobuf.Timestamp value) {
       if (freshnessTimeBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)
@@ -1985,6 +2009,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -2004,8 +2029,9 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearFreshnessTime() {
       bitField0_ = (bitField0_ & ~0x00000020);
       freshnessTime_ = null;
@@ -2020,6 +2046,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -2039,8 +2066,9 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Timestamp.Builder getFreshnessTimeBuilder() {
       bitField0_ |= 0x00000020;
       onChanged();
@@ -2050,6 +2078,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -2069,8 +2098,9 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.TimestampOrBuilder getFreshnessTimeOrBuilder() {
       if (freshnessTimeBuilder_ != null) {
         return freshnessTimeBuilder_.getMessageOrBuilder();
@@ -2084,6 +2114,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * DEPRECATED. Use expiration_date instead.
      * Represents the existing version (freshness) of the CSS Product, which
      * can be used to preserve the right order when multiple updates are done at
      * the same time.
@@ -2103,7 +2134,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+     * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

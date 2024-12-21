@@ -39,7 +39,7 @@ public class SyncDeleteFeedbackLabel {
       DeleteFeedbackLabelRequest request =
           DeleteFeedbackLabelRequest.newBuilder()
               .setName(
-                  FeedbackLabelName.of(
+                  FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                       .toString())
               .build();

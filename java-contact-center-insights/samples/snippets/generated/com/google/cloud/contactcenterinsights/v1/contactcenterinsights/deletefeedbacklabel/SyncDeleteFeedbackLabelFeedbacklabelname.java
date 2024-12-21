@@ -36,7 +36,8 @@ public class SyncDeleteFeedbackLabelFeedbacklabelname {
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
       FeedbackLabelName name =
-          FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+          FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
       contactCenterInsightsClient.deleteFeedbackLabel(name);
     }
   }

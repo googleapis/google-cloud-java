@@ -35,7 +35,9 @@ public class SyncCreateFeedbackLabelConversationnameFeedbacklabelString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
       String feedbackLabelId = "feedbackLabelId-1251198998";
       FeedbackLabel response =

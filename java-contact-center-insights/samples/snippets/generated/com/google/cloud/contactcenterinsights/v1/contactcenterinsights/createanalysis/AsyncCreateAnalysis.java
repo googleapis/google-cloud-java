@@ -41,7 +41,9 @@ public class AsyncCreateAnalysis {
       CreateAnalysisRequest request =
           CreateAnalysisRequest.newBuilder()
               .setParent(
-                  ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setAnalysis(Analysis.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

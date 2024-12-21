@@ -23,7 +23,7 @@ package com.google.cloud.servicehealth.v1;
  *
  *
  * <pre>
- * Message for requesting list of organization events.
+ * Requests list of events that affect an organization.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationEventsRequest}
@@ -552,7 +552,7 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Message for requesting list of organization events.
+   * Requests list of events that affect an organization.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationEventsRequest}

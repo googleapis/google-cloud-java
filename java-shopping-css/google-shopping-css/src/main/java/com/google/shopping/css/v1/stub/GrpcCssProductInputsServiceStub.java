@@ -28,6 +28,7 @@ import com.google.protobuf.Empty;
 import com.google.shopping.css.v1.CssProductInput;
 import com.google.shopping.css.v1.DeleteCssProductInputRequest;
 import com.google.shopping.css.v1.InsertCssProductInputRequest;
+import com.google.shopping.css.v1.UpdateCssProductInputRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -53,6 +54,17 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
               .setResponseMarshaller(ProtoUtils.marshaller(CssProductInput.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputMethodDescriptor =
+          MethodDescriptor.<UpdateCssProductInputRequest, CssProductInput>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.css.v1.CssProductInputsService/UpdateCssProductInput")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCssProductInputRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CssProductInput.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteCssProductInputRequest, Empty>
       deleteCssProductInputMethodDescriptor =
           MethodDescriptor.<DeleteCssProductInputRequest, Empty>newBuilder()
@@ -66,6 +78,8 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
 
   private final UnaryCallable<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputCallable;
+  private final UnaryCallable<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputCallable;
   private final UnaryCallable<DeleteCssProductInputRequest, Empty> deleteCssProductInputCallable;
 
   private final BackgroundResource backgroundResources;
@@ -124,6 +138,19 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<UpdateCssProductInputRequest, CssProductInput>
+        updateCssProductInputTransportSettings =
+            GrpcCallSettings.<UpdateCssProductInputRequest, CssProductInput>newBuilder()
+                .setMethodDescriptor(updateCssProductInputMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "css_product_input.name",
+                          String.valueOf(request.getCssProductInput().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteCssProductInputRequest, Empty> deleteCssProductInputTransportSettings =
         GrpcCallSettings.<DeleteCssProductInputRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteCssProductInputMethodDescriptor)
@@ -139,6 +166,11 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
         callableFactory.createUnaryCallable(
             insertCssProductInputTransportSettings,
             settings.insertCssProductInputSettings(),
+            clientContext);
+    this.updateCssProductInputCallable =
+        callableFactory.createUnaryCallable(
+            updateCssProductInputTransportSettings,
+            settings.updateCssProductInputSettings(),
             clientContext);
     this.deleteCssProductInputCallable =
         callableFactory.createUnaryCallable(
@@ -158,6 +190,12 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
   public UnaryCallable<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputCallable() {
     return insertCssProductInputCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputCallable() {
+    return updateCssProductInputCallable;
   }
 
   @Override

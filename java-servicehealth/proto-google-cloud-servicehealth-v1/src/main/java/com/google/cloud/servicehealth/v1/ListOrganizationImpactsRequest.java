@@ -23,7 +23,7 @@ package com.google.cloud.servicehealth.v1;
  *
  *
  * <pre>
- * Message for requesting list of organization impacts.
+ * Requests list of projects under an organization affected by an event.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationImpactsRequest}
@@ -493,7 +493,7 @@ public final class ListOrganizationImpactsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Message for requesting list of organization impacts.
+   * Requests list of projects under an organization affected by an event.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationImpactsRequest}

@@ -28,7 +28,7 @@ package com.google.cloud.kms.v1;
  * [CryptoKeys][google.cloud.kms.v1.CryptoKey] and
  * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] with a
  * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
- * [EXTERNAL_VPC][CryptoKeyVersion.ProtectionLevel.EXTERNAL_VPC], as well as
+ * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], as well as
  * performing cryptographic operations using keys created within the
  * [EkmConnection][google.cloud.kms.v1.EkmConnection].
  * </pre>
@@ -125,6 +125,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * All [CryptoKeys][google.cloud.kms.v1.CryptoKey] created with this
      * [EkmConnection][google.cloud.kms.v1.EkmConnection] use EKM-side key
      * management operations initiated from Cloud KMS. This means that:
+     *
      * * When a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
      * associated with this [EkmConnection][google.cloud.kms.v1.EkmConnection]
      * is
@@ -133,7 +134,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *   external key material.
      * * Destruction of external key material associated with this
      *   [EkmConnection][google.cloud.kms.v1.EkmConnection] can be requested by
-     *   calling [DestroyCryptoKeyVersion][EkmService.DestroyCryptoKeyVersion].
+     *   calling
+     *   [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
      * * Automatic rotation of key material is supported.
      * </pre>
      *
@@ -182,6 +184,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * All [CryptoKeys][google.cloud.kms.v1.CryptoKey] created with this
      * [EkmConnection][google.cloud.kms.v1.EkmConnection] use EKM-side key
      * management operations initiated from Cloud KMS. This means that:
+     *
      * * When a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
      * associated with this [EkmConnection][google.cloud.kms.v1.EkmConnection]
      * is
@@ -190,7 +193,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *   external key material.
      * * Destruction of external key material associated with this
      *   [EkmConnection][google.cloud.kms.v1.EkmConnection] can be requested by
-     *   calling [DestroyCryptoKeyVersion][EkmService.DestroyCryptoKeyVersion].
+     *   calling
+     *   [DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
      * * Automatic rotation of key material is supported.
      * </pre>
      *
@@ -2685,7 +2689,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey] and
    * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] with a
    * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
-   * [EXTERNAL_VPC][CryptoKeyVersion.ProtectionLevel.EXTERNAL_VPC], as well as
+   * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], as well as
    * performing cryptographic operations using keys created within the
    * [EkmConnection][google.cloud.kms.v1.EkmConnection].
    * </pre>

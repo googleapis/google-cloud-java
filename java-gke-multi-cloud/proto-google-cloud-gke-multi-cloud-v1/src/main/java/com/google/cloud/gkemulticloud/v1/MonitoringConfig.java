@@ -116,6 +116,60 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         : managedPrometheusConfig_;
   }
 
+  public static final int CLOUD_MONITORING_CONFIG_FIELD_NUMBER = 4;
+  private com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloudMonitoringConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   *
+   * @return Whether the cloudMonitoringConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudMonitoringConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   *
+   * @return The cloudMonitoringConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig getCloudMonitoringConfig() {
+    return cloudMonitoringConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.getDefaultInstance()
+        : cloudMonitoringConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.CloudMonitoringConfigOrBuilder
+      getCloudMonitoringConfigOrBuilder() {
+    return cloudMonitoringConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.getDefaultInstance()
+        : cloudMonitoringConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -133,6 +187,9 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getManagedPrometheusConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getCloudMonitoringConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -145,6 +202,10 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getManagedPrometheusConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCloudMonitoringConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,6 +227,10 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (hasManagedPrometheusConfig()) {
       if (!getManagedPrometheusConfig().equals(other.getManagedPrometheusConfig())) return false;
     }
+    if (hasCloudMonitoringConfig() != other.hasCloudMonitoringConfig()) return false;
+    if (hasCloudMonitoringConfig()) {
+      if (!getCloudMonitoringConfig().equals(other.getCloudMonitoringConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -180,6 +245,10 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (hasManagedPrometheusConfig()) {
       hash = (37 * hash) + MANAGED_PROMETHEUS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getManagedPrometheusConfig().hashCode();
+    }
+    if (hasCloudMonitoringConfig()) {
+      hash = (37 * hash) + CLOUD_MONITORING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudMonitoringConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -322,6 +391,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getManagedPrometheusConfigFieldBuilder();
+        getCloudMonitoringConfigFieldBuilder();
       }
     }
 
@@ -333,6 +403,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       if (managedPrometheusConfigBuilder_ != null) {
         managedPrometheusConfigBuilder_.dispose();
         managedPrometheusConfigBuilder_ = null;
+      }
+      cloudMonitoringConfig_ = null;
+      if (cloudMonitoringConfigBuilder_ != null) {
+        cloudMonitoringConfigBuilder_.dispose();
+        cloudMonitoringConfigBuilder_ = null;
       }
       return this;
     }
@@ -377,6 +452,13 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
                 ? managedPrometheusConfig_
                 : managedPrometheusConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cloudMonitoringConfig_ =
+            cloudMonitoringConfigBuilder_ == null
+                ? cloudMonitoringConfig_
+                : cloudMonitoringConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -430,6 +512,9 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasManagedPrometheusConfig()) {
         mergeManagedPrometheusConfig(other.getManagedPrometheusConfig());
       }
+      if (other.hasCloudMonitoringConfig()) {
+        mergeCloudMonitoringConfig(other.getCloudMonitoringConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -463,6 +548,13 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 18
+            case 34:
+              {
+                input.readMessage(
+                    getCloudMonitoringConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -680,6 +772,215 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         managedPrometheusConfig_ = null;
       }
       return managedPrometheusConfigBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloudMonitoringConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig,
+            com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.CloudMonitoringConfigOrBuilder>
+        cloudMonitoringConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     *
+     * @return Whether the cloudMonitoringConfig field is set.
+     */
+    public boolean hasCloudMonitoringConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     *
+     * @return The cloudMonitoringConfig.
+     */
+    public com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig getCloudMonitoringConfig() {
+      if (cloudMonitoringConfigBuilder_ == null) {
+        return cloudMonitoringConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.getDefaultInstance()
+            : cloudMonitoringConfig_;
+      } else {
+        return cloudMonitoringConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     */
+    public Builder setCloudMonitoringConfig(
+        com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig value) {
+      if (cloudMonitoringConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudMonitoringConfig_ = value;
+      } else {
+        cloudMonitoringConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     */
+    public Builder setCloudMonitoringConfig(
+        com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.Builder builderForValue) {
+      if (cloudMonitoringConfigBuilder_ == null) {
+        cloudMonitoringConfig_ = builderForValue.build();
+      } else {
+        cloudMonitoringConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     */
+    public Builder mergeCloudMonitoringConfig(
+        com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig value) {
+      if (cloudMonitoringConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && cloudMonitoringConfig_ != null
+            && cloudMonitoringConfig_
+                != com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.getDefaultInstance()) {
+          getCloudMonitoringConfigBuilder().mergeFrom(value);
+        } else {
+          cloudMonitoringConfig_ = value;
+        }
+      } else {
+        cloudMonitoringConfigBuilder_.mergeFrom(value);
+      }
+      if (cloudMonitoringConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     */
+    public Builder clearCloudMonitoringConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cloudMonitoringConfig_ = null;
+      if (cloudMonitoringConfigBuilder_ != null) {
+        cloudMonitoringConfigBuilder_.dispose();
+        cloudMonitoringConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.Builder
+        getCloudMonitoringConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getCloudMonitoringConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.CloudMonitoringConfigOrBuilder
+        getCloudMonitoringConfigOrBuilder() {
+      if (cloudMonitoringConfigBuilder_ != null) {
+        return cloudMonitoringConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudMonitoringConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.getDefaultInstance()
+            : cloudMonitoringConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optionally enable GKE metrics.
+     * Only for Attached Clusters.
+     * </pre>
+     *
+     * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig,
+            com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.CloudMonitoringConfigOrBuilder>
+        getCloudMonitoringConfigFieldBuilder() {
+      if (cloudMonitoringConfigBuilder_ == null) {
+        cloudMonitoringConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig,
+                com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.Builder,
+                com.google.cloud.gkemulticloud.v1.CloudMonitoringConfigOrBuilder>(
+                getCloudMonitoringConfig(), getParentForChildren(), isClean());
+        cloudMonitoringConfig_ = null;
+      }
+      return cloudMonitoringConfigBuilder_;
     }
 
     @java.lang.Override

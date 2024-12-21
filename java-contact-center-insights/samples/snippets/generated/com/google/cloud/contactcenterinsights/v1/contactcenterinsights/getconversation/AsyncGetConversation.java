@@ -40,7 +40,10 @@ public class AsyncGetConversation {
         ContactCenterInsightsClient.create()) {
       GetConversationRequest request =
           GetConversationRequest.newBuilder()
-              .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+              .setName(
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setView(ConversationView.forNumber(0))
               .build();
       ApiFuture<Conversation> future =

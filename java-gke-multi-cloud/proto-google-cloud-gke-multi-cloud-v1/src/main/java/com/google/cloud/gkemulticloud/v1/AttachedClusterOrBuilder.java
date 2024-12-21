@@ -915,4 +915,127 @@ public interface AttachedClusterOrBuilder
    */
   com.google.cloud.gkemulticloud.v1.SecurityPostureConfigOrBuilder
       getSecurityPostureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }

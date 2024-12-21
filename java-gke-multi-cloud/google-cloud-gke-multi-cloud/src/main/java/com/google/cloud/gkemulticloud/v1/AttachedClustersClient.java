@@ -627,7 +627,8 @@ public class AttachedClustersClient implements BackgroundResource {
    *     `description`. &#42; `logging_config.component_config.enable_components`. &#42;
    *     `monitoring_config.managed_prometheus_config.enabled`. &#42; `platform_version`. &#42;
    *     `proxy_config.kubernetes_secret.name`. &#42; `proxy_config.kubernetes_secret.namespace`.
-   *     &#42; `security_posture_config.vulnerability_mode`
+   *     &#42; `security_posture_config.vulnerability_mode` &#42;
+   *     `monitoring_config.cloud_monitoring_config.enabled`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AttachedCluster, OperationMetadata> updateAttachedClusterAsync(
