@@ -21,7 +21,11 @@ import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListP
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
@@ -35,6 +39,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -46,6 +52,10 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ModelGardenServiceStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
 
   public UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable() {
     throw new UnsupportedOperationException("Not implemented: getPublisherModelCallable()");
@@ -59,6 +69,19 @@ public abstract class ModelGardenServiceStub implements BackgroundResource {
   public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
       listPublisherModelsCallable() {
     throw new UnsupportedOperationException("Not implemented: listPublisherModelsCallable()");
+  }
+
+  public OperationCallable<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deployPublisherModelOperationCallable()");
+  }
+
+  public UnaryCallable<DeployPublisherModelRequest, Operation> deployPublisherModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployPublisherModelCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

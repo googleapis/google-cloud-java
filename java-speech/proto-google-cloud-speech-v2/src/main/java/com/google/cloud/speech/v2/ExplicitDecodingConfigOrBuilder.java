@@ -57,20 +57,15 @@ public interface ExplicitDecodingConfigOrBuilder
    *
    *
    * <pre>
-   * Sample rate in Hertz of the audio data sent for recognition. Valid
-   * values are: 8000-48000. 16000 is optimal. For best results, set the
+   * Optional. Sample rate in Hertz of the audio data sent for recognition.
+   * Valid values are: 8000-48000. 16000 is optimal. For best results, set the
    * sampling rate of the audio source to 16000 Hz. If that's not possible, use
    * the native sample rate of the audio source (instead of re-sampling).
-   * Supported for the following encodings:
-   *
-   * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-   *
-   * * MULAW: Headerless 8-bit companded mulaw samples.
-   *
-   * * ALAW: Headerless 8-bit companded alaw samples.
+   * Note that this field is marked as OPTIONAL for backward compatibility
+   * reasons. It is (and has always been) effectively REQUIRED.
    * </pre>
    *
-   * <code>int32 sample_rate_hertz = 2;</code>
+   * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sampleRateHertz.
    */
@@ -80,19 +75,14 @@ public interface ExplicitDecodingConfigOrBuilder
    *
    *
    * <pre>
-   * Number of channels present in the audio data sent for recognition.
-   * Supported for the following encodings:
-   *
-   * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-   *
-   * * MULAW: Headerless 8-bit companded mulaw samples.
-   *
-   * * ALAW: Headerless 8-bit companded alaw samples.
+   * Optional. Number of channels present in the audio data sent for
+   * recognition. Note that this field is marked as OPTIONAL for backward
+   * compatibility reasons. It is (and has always been) effectively REQUIRED.
    *
    * The maximum allowed value is 8.
    * </pre>
    *
-   * <code>int32 audio_channel_count = 3;</code>
+   * <code>int32 audio_channel_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The audioChannelCount.
    */

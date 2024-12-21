@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -40,6 +41,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -94,6 +96,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deployPublisherModel:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ModelGardenServiceSettings.Builder modelGardenServiceSettingsBuilder =
+ *     ModelGardenServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * modelGardenServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -109,6 +137,21 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
           ListPublisherModelsRequest, ListPublisherModelsResponse, ListPublisherModelsPagedResponse>
       listPublisherModelsSettings() {
     return ((ModelGardenServiceStubSettings) getStubSettings()).listPublisherModelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployPublisherModel. */
+  public UnaryCallSettings<DeployPublisherModelRequest, Operation> deployPublisherModelSettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings()).deployPublisherModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployPublisherModel. */
+  public OperationCallSettings<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationSettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings())
+        .deployPublisherModelOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -247,6 +290,21 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
             ListPublisherModelsPagedResponse>
         listPublisherModelsSettings() {
       return getStubSettingsBuilder().listPublisherModelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployPublisherModel. */
+    public UnaryCallSettings.Builder<DeployPublisherModelRequest, Operation>
+        deployPublisherModelSettings() {
+      return getStubSettingsBuilder().deployPublisherModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployPublisherModel. */
+    public OperationCallSettings.Builder<
+            DeployPublisherModelRequest,
+            DeployPublisherModelResponse,
+            DeployPublisherModelOperationMetadata>
+        deployPublisherModelOperationSettings() {
+      return getStubSettingsBuilder().deployPublisherModelOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -99,7 +99,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * approved.
      * </pre>
      *
@@ -112,7 +112,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * approved.
      * </pre>
      *
@@ -125,7 +125,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * approved.
      * </pre>
      *
@@ -139,7 +139,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * approved.
      * </pre>
      *
@@ -154,7 +154,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * pending approval.
      * </pre>
      *
@@ -167,7 +167,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * pending approval.
      * </pre>
      *
@@ -180,7 +180,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * pending approval.
      * </pre>
      *
@@ -194,7 +194,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * pending approval.
      * </pre>
      *
@@ -209,7 +209,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * disapproved.
      * </pre>
      *
@@ -222,7 +222,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * disapproved.
      * </pre>
      *
@@ -235,7 +235,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * disapproved.
      * </pre>
      *
@@ -249,7 +249,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * disapproved.
      * </pre>
      *
@@ -367,7 +367,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * approved.
      * </pre>
      *
@@ -382,7 +382,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * approved.
      * </pre>
      *
@@ -397,7 +397,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * approved.
      * </pre>
      *
@@ -413,7 +413,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * approved.
      * </pre>
      *
@@ -435,7 +435,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * pending approval.
      * </pre>
      *
@@ -450,7 +450,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * pending approval.
      * </pre>
      *
@@ -465,7 +465,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * pending approval.
      * </pre>
      *
@@ -481,7 +481,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * pending approval.
      * </pre>
      *
@@ -503,7 +503,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * disapproved.
      * </pre>
      *
@@ -518,7 +518,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * disapproved.
      * </pre>
      *
@@ -533,7 +533,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * disapproved.
      * </pre>
      *
@@ -549,7 +549,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+     * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
      * disapproved.
      * </pre>
      *
@@ -1147,7 +1147,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1163,7 +1163,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1178,7 +1178,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1194,7 +1194,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1210,7 +1210,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1234,7 +1234,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1257,7 +1257,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1277,7 +1277,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1296,7 +1296,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * approved.
        * </pre>
        *
@@ -1330,7 +1330,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1346,7 +1346,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1361,7 +1361,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1377,7 +1377,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1393,7 +1393,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1417,7 +1417,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1440,7 +1440,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1460,7 +1460,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1479,7 +1479,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * pending approval.
        * </pre>
        *
@@ -1514,7 +1514,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1530,7 +1530,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1545,7 +1545,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1561,7 +1561,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1577,7 +1577,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1601,7 +1601,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1624,7 +1624,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1644,7 +1644,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1663,7 +1663,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is
+       * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
        * disapproved.
        * </pre>
        *
@@ -1785,7 +1785,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * How this issue affects serving of the aggregate offer.
+     * How this issue affects serving of the CSS Product.
      * </pre>
      *
      * <code>string servability = 2;</code>
@@ -1797,7 +1797,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * How this issue affects serving of the aggregate offer.
+     * How this issue affects serving of the CSS Product.
      * </pre>
      *
      * <code>string servability = 2;</code>
@@ -1961,7 +1961,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-     * aggregate offer.
+     * CSS Product.
      * </pre>
      *
      * <code>repeated string applicable_countries = 9;</code>
@@ -1974,7 +1974,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-     * aggregate offer.
+     * CSS Product.
      * </pre>
      *
      * <code>repeated string applicable_countries = 9;</code>
@@ -1987,7 +1987,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-     * aggregate offer.
+     * CSS Product.
      * </pre>
      *
      * <code>repeated string applicable_countries = 9;</code>
@@ -2001,7 +2001,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-     * aggregate offer.
+     * CSS Product.
      * </pre>
      *
      * <code>repeated string applicable_countries = 9;</code>
@@ -2122,7 +2122,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * How this issue affects serving of the aggregate offer.
+     * How this issue affects serving of the CSS Product.
      * </pre>
      *
      * <code>string servability = 2;</code>
@@ -2145,7 +2145,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * How this issue affects serving of the aggregate offer.
+     * How this issue affects serving of the CSS Product.
      * </pre>
      *
      * <code>string servability = 2;</code>
@@ -2481,7 +2481,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-     * aggregate offer.
+     * CSS Product.
      * </pre>
      *
      * <code>repeated string applicable_countries = 9;</code>
@@ -2496,7 +2496,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-     * aggregate offer.
+     * CSS Product.
      * </pre>
      *
      * <code>repeated string applicable_countries = 9;</code>
@@ -2511,7 +2511,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-     * aggregate offer.
+     * CSS Product.
      * </pre>
      *
      * <code>repeated string applicable_countries = 9;</code>
@@ -2527,7 +2527,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-     * aggregate offer.
+     * CSS Product.
      * </pre>
      *
      * <code>repeated string applicable_countries = 9;</code>
@@ -3207,7 +3207,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * How this issue affects serving of the aggregate offer.
+       * How this issue affects serving of the CSS Product.
        * </pre>
        *
        * <code>string servability = 2;</code>
@@ -3229,7 +3229,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * How this issue affects serving of the aggregate offer.
+       * How this issue affects serving of the CSS Product.
        * </pre>
        *
        * <code>string servability = 2;</code>
@@ -3251,7 +3251,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * How this issue affects serving of the aggregate offer.
+       * How this issue affects serving of the CSS Product.
        * </pre>
        *
        * <code>string servability = 2;</code>
@@ -3272,7 +3272,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * How this issue affects serving of the aggregate offer.
+       * How this issue affects serving of the CSS Product.
        * </pre>
        *
        * <code>string servability = 2;</code>
@@ -3289,7 +3289,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * How this issue affects serving of the aggregate offer.
+       * How this issue affects serving of the CSS Product.
        * </pre>
        *
        * <code>string servability = 2;</code>
@@ -3958,7 +3958,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>
@@ -3974,7 +3974,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>
@@ -3989,7 +3989,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>
@@ -4005,7 +4005,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>
@@ -4021,7 +4021,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>
@@ -4045,7 +4045,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>
@@ -4068,7 +4068,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>
@@ -4088,7 +4088,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>
@@ -4107,7 +4107,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * List of country codes (ISO 3166-1 alpha-2) where issue applies to the
-       * aggregate offer.
+       * CSS Product.
        * </pre>
        *
        * <code>repeated string applicable_countries = 9;</code>

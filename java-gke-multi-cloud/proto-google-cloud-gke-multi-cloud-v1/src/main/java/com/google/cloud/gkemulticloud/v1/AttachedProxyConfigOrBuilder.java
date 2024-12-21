@@ -31,6 +31,10 @@ public interface AttachedProxyConfigOrBuilder
    * The Kubernetes Secret resource that contains the HTTP(S) proxy
    * configuration. The secret must be a JSON encoded proxy configuration
    * as described in
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+   * for EKS clusters and
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+   * for AKS clusters.
    * </pre>
    *
    * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -45,6 +49,10 @@ public interface AttachedProxyConfigOrBuilder
    * The Kubernetes Secret resource that contains the HTTP(S) proxy
    * configuration. The secret must be a JSON encoded proxy configuration
    * as described in
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+   * for EKS clusters and
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+   * for AKS clusters.
    * </pre>
    *
    * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -59,6 +67,10 @@ public interface AttachedProxyConfigOrBuilder
    * The Kubernetes Secret resource that contains the HTTP(S) proxy
    * configuration. The secret must be a JSON encoded proxy configuration
    * as described in
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+   * for EKS clusters and
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+   * for AKS clusters.
    * </pre>
    *
    * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>

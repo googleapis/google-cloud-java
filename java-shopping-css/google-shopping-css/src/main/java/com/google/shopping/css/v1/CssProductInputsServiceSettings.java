@@ -95,6 +95,13 @@ public class CssProductInputsServiceSettings
         .insertCssProductInputSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateCssProductInput. */
+  public UnaryCallSettings<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputSettings() {
+    return ((CssProductInputsServiceStubSettings) getStubSettings())
+        .updateCssProductInputSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteCssProductInput. */
   public UnaryCallSettings<DeleteCssProductInputRequest, Empty> deleteCssProductInputSettings() {
     return ((CssProductInputsServiceStubSettings) getStubSettings())
@@ -218,6 +225,12 @@ public class CssProductInputsServiceSettings
     public UnaryCallSettings.Builder<InsertCssProductInputRequest, CssProductInput>
         insertCssProductInputSettings() {
       return getStubSettingsBuilder().insertCssProductInputSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCssProductInput. */
+    public UnaryCallSettings.Builder<UpdateCssProductInputRequest, CssProductInput>
+        updateCssProductInputSettings() {
+      return getStubSettingsBuilder().updateCssProductInputSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteCssProductInput. */
