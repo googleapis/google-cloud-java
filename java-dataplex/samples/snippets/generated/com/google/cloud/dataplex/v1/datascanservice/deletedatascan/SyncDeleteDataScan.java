@@ -38,6 +38,7 @@ public class SyncDeleteDataScan {
       DeleteDataScanRequest request =
           DeleteDataScanRequest.newBuilder()
               .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+              .setForce(true)
               .build();
       dataScanServiceClient.deleteDataScanAsync(request).get();
     }

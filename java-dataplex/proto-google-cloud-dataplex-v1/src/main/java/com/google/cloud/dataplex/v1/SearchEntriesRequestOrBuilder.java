@@ -60,6 +60,8 @@ public interface SearchEntriesRequestOrBuilder
    *
    * <pre>
    * Required. The query against which entries in scope should be matched.
+   * The query syntax is defined in [Search syntax for Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,6 +74,8 @@ public interface SearchEntriesRequestOrBuilder
    *
    * <pre>
    * Required. The query against which entries in scope should be matched.
+   * The query syntax is defined in [Search syntax for Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,6 +131,10 @@ public interface SearchEntriesRequestOrBuilder
    *
    * <pre>
    * Optional. Specifies the ordering of results.
+   * Supported values are:
+   * * `relevance` (default)
+   * * `last_modified_timestamp`
+   * * `last_modified_timestamp asc`
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -139,6 +147,10 @@ public interface SearchEntriesRequestOrBuilder
    *
    * <pre>
    * Optional. Specifies the ordering of results.
+   * Supported values are:
+   * * `relevance` (default)
+   * * `last_modified_timestamp`
+   * * `last_modified_timestamp asc`
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -39,6 +39,7 @@ public class AsyncDeleteDataScan {
       DeleteDataScanRequest request =
           DeleteDataScanRequest.newBuilder()
               .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+              .setForce(true)
               .build();
       ApiFuture<Operation> future =
           dataScanServiceClient.deleteDataScanCallable().futureCall(request);

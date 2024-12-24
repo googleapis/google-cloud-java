@@ -231,7 +231,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    * specified path. For example, to attach an aspect to a field that is
    * specified by the `schema` aspect, the path should have the format
    * `Schema.&lt;field_name&gt;`.
-   * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+   * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
    * paths.
    * * `*&#64;path` - matches aspects of all types on the given path.
    *
@@ -262,7 +262,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    * specified path. For example, to attach an aspect to a field that is
    * specified by the `schema` aspect, the path should have the format
    * `Schema.&lt;field_name&gt;`.
-   * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+   * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
    * paths.
    * * `*&#64;path` - matches aspects of all types on the given path.
    *
@@ -293,7 +293,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    * specified path. For example, to attach an aspect to a field that is
    * specified by the `schema` aspect, the path should have the format
    * `Schema.&lt;field_name&gt;`.
-   * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+   * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
    * paths.
    * * `*&#64;path` - matches aspects of all types on the given path.
    *
@@ -325,7 +325,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    * specified path. For example, to attach an aspect to a field that is
    * specified by the `schema` aspect, the path should have the format
    * `Schema.&lt;field_name&gt;`.
-   * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+   * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
    * paths.
    * * `*&#64;path` - matches aspects of all types on the given path.
    *
@@ -1378,7 +1378,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *
@@ -1410,7 +1410,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *
@@ -1441,7 +1441,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *
@@ -1473,7 +1473,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *
@@ -1505,7 +1505,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *
@@ -1545,7 +1545,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *
@@ -1584,7 +1584,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *
@@ -1620,7 +1620,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *
@@ -1655,7 +1655,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * specified path. For example, to attach an aspect to a field that is
      * specified by the `schema` aspect, the path should have the format
      * `Schema.&lt;field_name&gt;`.
-     * * `&lt;aspect_type_reference&gt;*` - matches aspects of the given type for all
+     * * `&lt;aspect_type_reference&gt;&#64;*` - matches aspects of the given type for all
      * paths.
      * * `*&#64;path` - matches aspects of all types on the given path.
      *

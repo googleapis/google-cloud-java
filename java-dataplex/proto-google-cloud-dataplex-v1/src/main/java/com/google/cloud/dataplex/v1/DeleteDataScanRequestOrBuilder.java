@@ -58,4 +58,19 @@ public interface DeleteDataScanRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, any child resources of this data scan will also
+   * be deleted. (Otherwise, the request will only work if the data scan has no
+   * child resources.)
+   * </pre>
+   *
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

@@ -40,6 +40,7 @@ public class AsyncDeleteDataScanLRO {
       DeleteDataScanRequest request =
           DeleteDataScanRequest.newBuilder()
               .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+              .setForce(true)
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           dataScanServiceClient.deleteDataScanOperationCallable().futureCall(request);

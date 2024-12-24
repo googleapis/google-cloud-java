@@ -229,9 +229,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * aspect type and are attached directly to the entry.
    * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
    * specified aspect type and path.
-   * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-   * aspect type for all paths.
-   *
+   * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+   * paths.
+   * * `*&#64;path` : matches aspects of all types on the given path.
    * Replace `{aspect_type_reference}` with a reference to the aspect type, in
    * the format
    * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -260,9 +260,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * aspect type and are attached directly to the entry.
    * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
    * specified aspect type and path.
-   * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-   * aspect type for all paths.
-   *
+   * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+   * paths.
+   * * `*&#64;path` : matches aspects of all types on the given path.
    * Replace `{aspect_type_reference}` with a reference to the aspect type, in
    * the format
    * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -291,9 +291,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * aspect type and are attached directly to the entry.
    * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
    * specified aspect type and path.
-   * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-   * aspect type for all paths.
-   *
+   * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+   * paths.
+   * * `*&#64;path` : matches aspects of all types on the given path.
    * Replace `{aspect_type_reference}` with a reference to the aspect type, in
    * the format
    * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -323,9 +323,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * aspect type and are attached directly to the entry.
    * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
    * specified aspect type and path.
-   * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-   * aspect type for all paths.
-   *
+   * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+   * paths.
+   * * `*&#64;path` : matches aspects of all types on the given path.
    * Replace `{aspect_type_reference}` with a reference to the aspect type, in
    * the format
    * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1321,9 +1321,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1353,9 +1353,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1384,9 +1384,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1416,9 +1416,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1448,9 +1448,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1488,9 +1488,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1527,9 +1527,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1563,9 +1563,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
@@ -1598,9 +1598,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * aspect type and are attached directly to the entry.
      * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
      * specified aspect type and path.
-     * * `{aspect_type_reference}&#64;*`: matches aspects that belong to the specified
-     * aspect type for all paths.
-     *
+     * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+     * paths.
+     * * `*&#64;path` : matches aspects of all types on the given path.
      * Replace `{aspect_type_reference}` with a reference to the aspect type, in
      * the format
      * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
