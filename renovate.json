@@ -54,6 +54,7 @@
       "fileMatch": [
         "java-dns/README.md",
         "java-notification/README.md",
+        "java-samples/native-image-sample/pom.xml",
         "java-vertexai/README.md"
       ],
       "matchStrings": [
