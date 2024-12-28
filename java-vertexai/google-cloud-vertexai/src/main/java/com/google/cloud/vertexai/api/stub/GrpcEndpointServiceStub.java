@@ -16,9 +16,6 @@
 
 package com.google.cloud.vertexai.api.stub;
 
-import static com.google.cloud.vertexai.api.EndpointServiceClient.ListEndpointsPagedResponse;
-import static com.google.cloud.vertexai.api.EndpointServiceClient.ListLocationsPagedResponse;
-
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -39,6 +36,8 @@ import com.google.cloud.vertexai.api.DeployModelOperationMetadata;
 import com.google.cloud.vertexai.api.DeployModelRequest;
 import com.google.cloud.vertexai.api.DeployModelResponse;
 import com.google.cloud.vertexai.api.Endpoint;
+import com.google.cloud.vertexai.api.EndpointServiceClient.ListEndpointsPagedResponse;
+import com.google.cloud.vertexai.api.EndpointServiceClient.ListLocationsPagedResponse;
 import com.google.cloud.vertexai.api.GetEndpointRequest;
 import com.google.cloud.vertexai.api.ListEndpointsRequest;
 import com.google.cloud.vertexai.api.ListEndpointsResponse;
