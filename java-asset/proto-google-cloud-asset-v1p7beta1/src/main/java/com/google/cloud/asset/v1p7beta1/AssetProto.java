@@ -98,11 +98,11 @@ public final class AssetProto {
           + "ction\030\003 \001(\t\"j\n\014RelatedAsset\0223\n\005asset\030\001 \001"
           + "(\tB$\372A!\n\037cloudasset.googleapis.com/Asset"
           + "\022\022\n\nasset_type\030\002 \001(\t\022\021\n\tancestors\030\003 \003(\tB"
-          + "\251\001\n com.google.cloud.asset.v1p7beta1B\nAs"
+          + "\246\001\n com.google.cloud.asset.v1p7beta1B\nAs"
           + "setProtoP\001Z6cloud.google.com/go/asset/ap"
-          + "iv1p7beta1/assetpb;assetpb\370\001\001\252\002\034Google.C"
-          + "loud.Asset.V1P7Beta1\312\002\034Google\\Cloud\\Asse"
-          + "t\\V1p7beta1b\006proto3"
+          + "iv1p7beta1/assetpb;assetpb\252\002\034Google.Clou"
+          + "d.Asset.V1P7Beta1\312\002\034Google\\Cloud\\Asset\\V"
+          + "1p7beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
