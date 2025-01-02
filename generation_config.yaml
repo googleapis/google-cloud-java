@@ -1,6 +1,6 @@
 gapic_generator_version: 2.51.0
-googleapis_commitish: f4eff5440fd07389f820d22d2a55690c6390dc6d
-libraries_bom_version: 26.51.0
+googleapis_commitish: 52e410823122cf44d265c3beecb86c773db248a2
+libraries_bom_version: 26.52.0
 libraries:
   - api_shortname: datastore
     name_pretty: Cloud Datastore
