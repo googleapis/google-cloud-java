@@ -41,6 +41,8 @@ import com.google.cloud.Role;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.Acl.DatasetAclEntity;
+import com.google.cloud.bigquery.Acl.Expr;
+import com.google.cloud.bigquery.Acl.User;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
@@ -1220,6 +1222,48 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testGetDatasetWithAccessPolicyVersion() throws IOException {
+    String accessPolicyDataset = RemoteBigQueryHelper.generateDatasetName();
+    ServiceAccountCredentials credentials =
+        (ServiceAccountCredentials) GoogleCredentials.getApplicationDefault();
+    User user = new User(credentials.getClientEmail());
+    Acl.Role role = Acl.Role.WRITER;
+    Acl.Expr condition =
+        new Expr(
+            "request.time > timestamp('2024-01-01T00:00:00Z')",
+            "test condition",
+            "requests after the year 2024",
+            "location");
+    Acl acl = Acl.of(user, role, condition);
+    DatasetOption datasetOption = DatasetOption.accessPolicyVersion(3);
+
+    Dataset dataset =
+        bigquery.create(
+            DatasetInfo.newBuilder(accessPolicyDataset)
+                .setDescription("Some Description")
+                .setAcl(ImmutableList.of(acl))
+                .build(),
+            datasetOption);
+    assertThat(dataset).isNotNull();
+
+    Dataset remoteDataset = bigquery.getDataset(accessPolicyDataset, datasetOption);
+    assertNotNull(remoteDataset);
+    assertEquals(dataset.getDescription(), remoteDataset.getDescription());
+    assertNotNull(remoteDataset.getCreationTime());
+
+    Acl remoteAclWithCond = null;
+    for (Acl remoteAcl : remoteDataset.getAcl()) {
+      if (remoteAcl.getCondition() != null) {
+        remoteAclWithCond = remoteAcl;
+      }
+    }
+    assertNotNull(remoteAclWithCond);
+    assertEquals(remoteAclWithCond.getCondition(), condition);
+
+    RemoteBigQueryHelper.forceDelete(bigquery, accessPolicyDataset);
+  }
+
+  @Test
   public void testUpdateDataset() {
     Dataset dataset =
         bigquery.create(
@@ -1283,6 +1327,58 @@ public class ITBigQueryTest {
     assertNull(updatedDataset.getStorageBillingModel());
     assertNull(updatedDataset.getMaxTimeTravelHours());
     assertTrue(dataset.delete());
+  }
+
+  @Test
+  public void testUpdateDatabaseWithAccessPolicyVersion() throws IOException {
+    String accessPolicyDataset = RemoteBigQueryHelper.generateDatasetName();
+    ServiceAccountCredentials credentials =
+        (ServiceAccountCredentials) GoogleCredentials.getApplicationDefault();
+    Dataset dataset =
+        bigquery.create(
+            DatasetInfo.newBuilder(accessPolicyDataset)
+                .setDescription("Some Description")
+                .setLabels(Collections.singletonMap("a", "b"))
+                .build());
+    assertThat(dataset).isNotNull();
+
+    User user = new User(credentials.getClientEmail());
+    Acl.Role role = Acl.Role.WRITER;
+    Acl.Expr condition =
+        new Expr(
+            "request.time > timestamp('2024-01-01T00:00:00Z')",
+            "test condition",
+            "requests after the year 2024",
+            "location");
+    Acl acl = Acl.of(user, role, condition);
+    List<Acl> acls = new ArrayList<>();
+    acls.addAll(dataset.getAcl());
+    acls.add(acl);
+
+    DatasetOption datasetOption = DatasetOption.accessPolicyVersion(3);
+    Dataset updatedDataset =
+        bigquery.update(
+            dataset
+                .toBuilder()
+                .setDescription("Updated Description")
+                .setLabels(null)
+                .setAcl(acls)
+                .build(),
+            datasetOption);
+    assertNotNull(updatedDataset);
+    assertEquals(updatedDataset.getDescription(), "Updated Description");
+    assertThat(updatedDataset.getLabels().isEmpty());
+
+    Acl updatedAclWithCond = null;
+    for (Acl updatedAcl : updatedDataset.getAcl()) {
+      if (updatedAcl.getCondition() != null) {
+        updatedAclWithCond = updatedAcl;
+      }
+    }
+    assertNotNull(updatedAclWithCond);
+    assertEquals(updatedAclWithCond.getCondition(), condition);
+
+    RemoteBigQueryHelper.forceDelete(bigquery, accessPolicyDataset);
   }
 
   @Test
@@ -1686,6 +1782,70 @@ public class ITBigQueryTest {
     assertEquals("und:ci", dataset.getDefaultCollation());
 
     RemoteBigQueryHelper.forceDelete(bigquery, collationDataset);
+  }
+
+  @Test
+  public void testCreateDatasetWithAccessPolicyVersion() throws IOException {
+    String accessPolicyDataset = RemoteBigQueryHelper.generateDatasetName();
+    ServiceAccountCredentials credentials =
+        (ServiceAccountCredentials) GoogleCredentials.getApplicationDefault();
+    User user = new User(credentials.getClientEmail());
+    Acl.Role role = Acl.Role.OWNER;
+    Acl.Expr condition =
+        new Expr(
+            "request.time > timestamp('2024-01-01T00:00:00Z')",
+            "test condition",
+            "requests after the year 2024",
+            "location");
+    Acl acl = Acl.of(user, role, condition);
+    DatasetInfo info =
+        DatasetInfo.newBuilder(accessPolicyDataset)
+            .setDescription(DESCRIPTION)
+            .setLabels(LABELS)
+            .setAcl(ImmutableList.of(acl))
+            .build();
+    DatasetOption datasetOption = DatasetOption.accessPolicyVersion(3);
+    Dataset dataset = bigquery.create(info, datasetOption);
+    assertNotNull(dataset);
+    assertEquals(dataset.getDescription(), DESCRIPTION);
+
+    Acl remoteAclWithCond = null;
+    for (Acl remoteAcl : dataset.getAcl()) {
+      if (remoteAcl.getCondition() != null) {
+        remoteAclWithCond = remoteAcl;
+      }
+    }
+    assertNotNull(remoteAclWithCond);
+    assertEquals(remoteAclWithCond.getCondition(), condition);
+
+    RemoteBigQueryHelper.forceDelete(bigquery, accessPolicyDataset);
+  }
+
+  @Test(expected = BigQueryException.class)
+  public void testCreateDatabaseWithInvalidAccessPolicyVersion() throws IOException {
+    String accessPolicyDataset = RemoteBigQueryHelper.generateDatasetName();
+    ServiceAccountCredentials credentials =
+        (ServiceAccountCredentials) GoogleCredentials.getApplicationDefault();
+    User user = new User(credentials.getClientEmail());
+    Acl.Role role = Acl.Role.READER;
+    Acl.Expr condition =
+        new Expr(
+            "request.time > timestamp('2024-01-01T00:00:00Z')",
+            "test condition",
+            "requests after the year 2024",
+            "location");
+    Acl acl = Acl.of(user, role, condition);
+    DatasetInfo info =
+        DatasetInfo.newBuilder(accessPolicyDataset)
+            .setDescription(DESCRIPTION)
+            .setLabels(LABELS)
+            .setAcl(ImmutableList.of(acl))
+            .build();
+    DatasetOption datasetOption = DatasetOption.accessPolicyVersion(4);
+    Dataset dataset = bigquery.create(info, datasetOption);
+    assertNotNull(dataset);
+
+    RemoteBigQueryHelper.forceDelete(bigquery, accessPolicyDataset);
   }
 
   @Test

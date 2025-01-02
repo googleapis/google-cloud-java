@@ -289,6 +289,24 @@ public interface BigQuery extends Service<BigQueryOptions> {
       return new DatasetOption(
           BigQueryRpc.Option.FIELDS, Helper.selector(DatasetField.REQUIRED_FIELDS, fields));
     }
+
+    /**
+     * Returns an option to specify the dataset's access policy version for conditional access. If
+     * this option is not provided the field remains unset and conditional access cannot be used.
+     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests
+     * for conditional access policy binding in datasets must specify version 3. Datasets with no
+     * conditional role bindings in access policy may specify any valid value or leave the field
+     * unset. This field will be mapped to <a
+     * href="https://cloud.google.com/iam/docs/policies#versions">IAM Policy version</a> and will be
+     * used to fetch the policy from IAM. If unset or if 0 or 1 the value is used for a dataset with
+     * conditional bindings, access entry with condition will have role string appended by
+     * 'withcond' string followed by a hash value. Please refer to <a
+     * href="https://cloud.google.com/iam/docs/troubleshooting-withcond">Troubleshooting
+     * withcond</a> for more details.
+     */
+    public static DatasetOption accessPolicyVersion(Integer accessPolicyVersion) {
+      return new DatasetOption(BigQueryRpc.Option.ACCESS_POLICY_VERSION, accessPolicyVersion);
+    }
   }
 
   /** Class for specifying dataset delete options. */

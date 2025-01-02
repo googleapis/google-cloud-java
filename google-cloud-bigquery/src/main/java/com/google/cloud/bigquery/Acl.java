@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.Dataset.Access;
 import com.google.api.services.bigquery.model.DatasetAccessEntry;
+import com.google.api.services.bigquery.model.Expr;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import java.io.Serializable;
@@ -41,6 +42,7 @@ public final class Acl implements Serializable {
 
   private final Entity entity;
   private final Role role;
+  private final Expr condition;
 
   /**
    * Dataset roles supported by BigQuery.
@@ -568,9 +570,147 @@ public final class Acl implements Serializable {
     }
   }
 
+  /** Expr represents the conditional information related to dataset access policies. */
+  public static final class Expr implements Serializable {
+    // Textual representation of an expression in Common Expression Language syntax.
+    private final String expression;
+    /**
+     * Optional. Title for the expression, i.e. a short string describing its purpose. This can be
+     * used e.g. in UIs which allow to enter the expression.
+     */
+    private final String title;
+    /**
+     * Optional. Description of the expression. This is a longer text which describes the
+     * expression, e.g. when hovered over it in a UI.
+     */
+    private final String description;
+    /**
+     * Optional. String indicating the location of the expression for error reporting, e.g. a file
+     * name and a position in the file.
+     */
+    private final String location;
+
+    private static final long serialVersionUID = 7358264726377291156L;
+
+    static final class Builder {
+      private String expression;
+      private String title;
+      private String description;
+      private String location;
+
+      Builder() {}
+
+      Builder(Expr expr) {
+        this.expression = expr.expression;
+        this.title = expr.title;
+        this.description = expr.description;
+        this.location = expr.location;
+      }
+
+      Builder(com.google.api.services.bigquery.model.Expr bqExpr) {
+        this.expression = bqExpr.getExpression();
+        if (bqExpr.getTitle() != null) {
+          this.title = bqExpr.getTitle();
+        }
+        if (bqExpr.getDescription() != null) {
+          this.description = bqExpr.getDescription();
+        }
+        if (bqExpr.getLocation() != null) {
+          this.location = bqExpr.getLocation();
+        }
+      }
+
+      public Builder setExpression(String expression) {
+        this.expression = expression;
+        return this;
+      }
+
+      public Builder setTitle(String title) {
+        this.title = title;
+        return this;
+      }
+
+      public Builder setDescription(String description) {
+        this.description = description;
+        return this;
+      }
+
+      public Builder setLocation(String location) {
+        this.location = location;
+        return this;
+      }
+
+      public Expr build() {
+        return new Expr(this);
+      }
+    }
+
+    public Expr(Builder builder) {
+      this.expression = builder.expression;
+      this.title = builder.title;
+      this.description = builder.description;
+      this.location = builder.location;
+    }
+
+    public Expr(String expression, String title, String description, String location) {
+      this.expression = expression;
+      this.title = title;
+      this.description = description;
+      this.location = location;
+    }
+
+    com.google.api.services.bigquery.model.Expr toPb() {
+      com.google.api.services.bigquery.model.Expr bqExpr =
+          new com.google.api.services.bigquery.model.Expr();
+      bqExpr.setExpression(this.expression);
+      bqExpr.setTitle(this.title);
+      bqExpr.setDescription(this.description);
+      bqExpr.setLocation(this.location);
+      return bqExpr;
+    }
+
+    static Expr fromPb(com.google.api.services.bigquery.model.Expr bqExpr) {
+      return new Builder(bqExpr).build();
+    }
+
+    public Builder toBuilder() {
+      return new Builder(this);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(expression, title, description, location);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null || getClass() != obj.getClass()) {
+        return false;
+      }
+      final Expr other = (Expr) obj;
+      return Objects.equals(this.expression, other.expression)
+          && Objects.equals(this.title, other.title)
+          && Objects.equals(this.description, other.description)
+          && Objects.equals(this.location, other.location);
+    }
+
+    @Override
+    public String toString() {
+      return toPb().toString();
+    }
+  }
+
   private Acl(Entity entity, Role role) {
+    this(entity, role, null);
+  }
+
+  private Acl(Entity entity, Role role, Expr condition) {
     this.entity = checkNotNull(entity);
     this.role = role;
+    this.condition = condition;
   }
 
   /** @return Returns the entity for this ACL. */
@@ -582,6 +722,10 @@ public final class Acl implements Serializable {
   public Role getRole() {
     return role;
   }
+  /** @return Returns the condition specified by this ACL. */
+  public Expr getCondition() {
+    return condition;
+  }
 
   /**
    * @return Returns an Acl object.
@@ -590,6 +734,10 @@ public final class Acl implements Serializable {
    */
   public static Acl of(Entity entity, Role role) {
     return new Acl(entity, role);
+  }
+
+  public static Acl of(Entity entity, Role role, Expr condition) {
+    return new Acl(entity, role, condition);
   }
 
   /**
@@ -618,7 +766,7 @@ public final class Acl implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(entity, role);
+    return Objects.hash(entity, role, condition);
   }
 
   @Override
@@ -635,7 +783,9 @@ public final class Acl implements Serializable {
       return false;
     }
     final Acl other = (Acl) obj;
-    return Objects.equals(this.entity, other.entity) && Objects.equals(this.role, other.role);
+    return Objects.equals(this.entity, other.entity)
+        && Objects.equals(this.role, other.role)
+        && Objects.equals(this.condition, other.condition);
   }
 
   Access toPb() {
@@ -643,11 +793,16 @@ public final class Acl implements Serializable {
     if (role != null) {
       accessPb.setRole(role.name());
     }
+    if (condition != null) {
+      accessPb.setCondition(condition.toPb());
+    }
     return accessPb;
   }
 
   static Acl fromPb(Access access) {
     return Acl.of(
-        Entity.fromPb(access), access.getRole() != null ? Role.valueOf(access.getRole()) : null);
+        Entity.fromPb(access),
+        access.getRole() != null ? Role.valueOf(access.getRole()) : null,
+        access.getCondition() != null ? Expr.fromPb(access.getCondition()) : null);
   }
 }

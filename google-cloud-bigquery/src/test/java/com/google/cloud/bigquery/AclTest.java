@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.Acl.DatasetAclEntity;
 import com.google.cloud.bigquery.Acl.Domain;
 import com.google.cloud.bigquery.Acl.Entity;
 import com.google.cloud.bigquery.Acl.Entity.Type;
+import com.google.cloud.bigquery.Acl.Expr;
 import com.google.cloud.bigquery.Acl.Group;
 import com.google.cloud.bigquery.Acl.IamMember;
 import com.google.cloud.bigquery.Acl.Role;
@@ -135,5 +136,14 @@ public class AclTest {
     acl = Acl.of(routine);
     assertEquals(routine, acl.getEntity());
     assertEquals(null, acl.getRole());
+  }
+
+  @Test
+  public void testOfWithCondition() {
+    Expr expr = new Expr("expression", "title", "description", "location");
+    Acl acl = Acl.of(Group.ofAllAuthenticatedUsers(), Role.READER, expr);
+    Dataset.Access pb = acl.toPb();
+    assertEquals(acl, Acl.fromPb(pb));
+    assertEquals(acl.getCondition(), expr);
   }
 }

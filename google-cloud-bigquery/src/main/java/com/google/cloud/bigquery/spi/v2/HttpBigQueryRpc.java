@@ -130,12 +130,19 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Dataset getDataset(String projectId, String datasetId, Map<Option, ?> options) {
     try {
       validateRPC();
-      return bigquery
-          .datasets()
-          .get(projectId, datasetId)
-          .setFields(Option.FIELDS.getString(options))
-          .setPrettyPrint(false)
-          .execute();
+
+      Bigquery.Datasets.Get bqGetRequest =
+          bigquery
+              .datasets()
+              .get(projectId, datasetId)
+              .setFields(Option.FIELDS.getString(options))
+              .setPrettyPrint(false);
+      for (Map.Entry<Option, ?> entry : options.entrySet()) {
+        if (entry.getKey() == Option.ACCESS_POLICY_VERSION && entry.getValue() != null) {
+          bqGetRequest.setAccessPolicyVersion((Integer) entry.getValue());
+        }
+      }
+      return bqGetRequest.execute();
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
@@ -174,12 +181,18 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Dataset create(Dataset dataset, Map<Option, ?> options) {
     try {
       validateRPC();
-      return bigquery
-          .datasets()
-          .insert(dataset.getDatasetReference().getProjectId(), dataset)
-          .setPrettyPrint(false)
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      Bigquery.Datasets.Insert bqCreateRequest =
+          bigquery
+              .datasets()
+              .insert(dataset.getDatasetReference().getProjectId(), dataset)
+              .setPrettyPrint(false)
+              .setFields(Option.FIELDS.getString(options));
+      for (Map.Entry<Option, ?> entry : options.entrySet()) {
+        if (entry.getKey() == Option.ACCESS_POLICY_VERSION && entry.getValue() != null) {
+          bqCreateRequest.setAccessPolicyVersion((Integer) entry.getValue());
+        }
+      }
+      return bqCreateRequest.execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -277,12 +290,18 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     try {
       validateRPC();
       DatasetReference reference = dataset.getDatasetReference();
-      return bigquery
-          .datasets()
-          .patch(reference.getProjectId(), reference.getDatasetId(), dataset)
-          .setPrettyPrint(false)
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      Bigquery.Datasets.Patch bqPatchRequest =
+          bigquery
+              .datasets()
+              .patch(reference.getProjectId(), reference.getDatasetId(), dataset)
+              .setPrettyPrint(false)
+              .setFields(Option.FIELDS.getString(options));
+      for (Map.Entry<Option, ?> entry : options.entrySet()) {
+        if (entry.getKey() == Option.ACCESS_POLICY_VERSION && entry.getValue() != null) {
+          bqPatchRequest.setAccessPolicyVersion((Integer) entry.getValue());
+        }
+      }
+      return bqPatchRequest.execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

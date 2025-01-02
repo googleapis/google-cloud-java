@@ -30,6 +30,7 @@ import com.google.cloud.Policy;
 import com.google.cloud.RetryOption;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
@@ -570,6 +571,20 @@ public class BigQueryImplTest {
     assertEquals(
         new Dataset(bigquery, new DatasetInfo.BuilderImpl(DATASET_INFO_WITH_PROJECT)), dataset);
     verify(bigqueryRpcMock).create(eq(DATASET_INFO_WITH_PROJECT.toPb()), capturedOptions.capture());
+  }
+
+  @Test
+  public void testCreateDatasetWithAccessPolicy() {
+    DatasetInfo datasetInfo = DATASET_INFO.setProjectId(OTHER_PROJECT);
+    DatasetOption datasetOption = DatasetOption.accessPolicyVersion(3);
+    when(bigqueryRpcMock.create(datasetInfo.toPb(), optionMap(datasetOption)))
+        .thenReturn(datasetInfo.toPb());
+    BigQueryOptions bigQueryOptions =
+        createBigQueryOptionsForProject(OTHER_PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    Dataset dataset = bigquery.create(datasetInfo, datasetOption);
+    assertEquals(new Dataset(bigquery, new DatasetInfo.BuilderImpl(datasetInfo)), dataset);
+    verify(bigqueryRpcMock).create(datasetInfo.toPb(), optionMap(datasetOption));
   }
 
   @Test
