@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -570,10 +570,10 @@ public interface CloudVmClusterPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. Operating system version of the image.
+   * Optional. Operating system version of the image.
    * </pre>
    *
-   * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The systemVersion.
    */
@@ -582,10 +582,10 @@ public interface CloudVmClusterPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. Operating system version of the image.
+   * Optional. Operating system version of the image.
    * </pre>
    *
-   * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for systemVersion.
    */

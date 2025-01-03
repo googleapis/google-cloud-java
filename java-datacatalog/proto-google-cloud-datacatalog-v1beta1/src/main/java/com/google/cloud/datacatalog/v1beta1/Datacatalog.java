@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -488,18 +488,18 @@ public final class Datacatalog {
           + "source=projects/*/locations/*/entryGroup"
           + "s/*/entries/*}:testIamPermissions:\001*\032N\312A"
           + "\032datacatalog.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\243\003\n"
+          + "w.googleapis.com/auth/cloud-platformB\240\003\n"
           + "$com.google.cloud.datacatalog.v1beta1P\001Z"
           + "Fcloud.google.com/go/datacatalog/apiv1be"
-          + "ta1/datacatalogpb;datacatalogpb\370\001\001\252\002 Goo"
-          + "gle.Cloud.DataCatalog.V1Beta1\312\002 Google\\C"
-          + "loud\\DataCatalog\\V1beta1\352\002#Google::Cloud"
-          + "::DataCatalog::V1beta1\352A\300\001\n4datacatalog."
-          + "googleapis.com/TagTemplateFieldEnumValue"
-          + "\022\207\001projects/{project}/locations/{locatio"
-          + "n}/tagTemplates/{tag_template}/fields/{t"
-          + "ag_template_field_id}/enumValues/{enum_v"
-          + "alue_display_name}b\006proto3"
+          + "ta1/datacatalogpb;datacatalogpb\252\002 Google"
+          + ".Cloud.DataCatalog.V1Beta1\312\002 Google\\Clou"
+          + "d\\DataCatalog\\V1beta1\352\002#Google::Cloud::D"
+          + "ataCatalog::V1beta1\352A\300\001\n4datacatalog.goo"
+          + "gleapis.com/TagTemplateFieldEnumValue\022\207\001"
+          + "projects/{project}/locations/{location}/"
+          + "tagTemplates/{tag_template}/fields/{tag_"
+          + "template_field_id}/enumValues/{enum_valu"
+          + "e_display_name}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
