@@ -163,15 +163,15 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     if (!builder.storeOnDisk) {
       gcloudCommand.add("--no-store-on-disk");
     }
+    if (builder.dataDir != null) {
+      gcloudCommand.add("--data-dir=" + getGcdPath());
+    }
     GcloudEmulatorRunner gcloudRunner =
         new GcloudEmulatorRunner(gcloudCommand, VERSION_PREFIX, MIN_VERSION);
     List<String> binCommand = new ArrayList<>(Arrays.asList(binName, "start"));
     binCommand.add("--testing");
     binCommand.add(BIN_CMD_PORT_FLAG + getPort());
     binCommand.add(CONSISTENCY_FLAG + getConsistency());
-    if (builder.dataDir != null) {
-      gcloudCommand.add("--data-dir=" + getGcdPath());
-    }
     DownloadableEmulatorRunner downloadRunner =
         new DownloadableEmulatorRunner(binCommand, EMULATOR_URL, MD5_CHECKSUM, ACCESS_TOKEN);
     this.emulatorRunners = ImmutableList.of(gcloudRunner, downloadRunner);
