@@ -76,7 +76,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the target catalog, in the format of
-   * `catalogs/{catalog}'.
+   * `catalogs/{catalog}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -100,7 +100,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the target catalog, in the format of
-   * `catalogs/{catalog}'.
+   * `catalogs/{catalog}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -793,7 +793,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the target catalog, in the format of
-     * `catalogs/{catalog}'.
+     * `catalogs/{catalog}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -816,7 +816,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the target catalog, in the format of
-     * `catalogs/{catalog}'.
+     * `catalogs/{catalog}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -839,7 +839,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the target catalog, in the format of
-     * `catalogs/{catalog}'.
+     * `catalogs/{catalog}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -861,7 +861,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the target catalog, in the format of
-     * `catalogs/{catalog}'.
+     * `catalogs/{catalog}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -879,7 +879,7 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the target catalog, in the format of
-     * `catalogs/{catalog}'.
+     * `catalogs/{catalog}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

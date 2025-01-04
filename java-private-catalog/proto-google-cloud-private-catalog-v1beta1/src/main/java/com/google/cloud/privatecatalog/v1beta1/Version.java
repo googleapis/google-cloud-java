@@ -75,7 +75,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the version, in the format
-   * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+   * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]`.
    *
    * A unique identifier for the version under a product.
    * </pre>
@@ -101,7 +101,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the version, in the format
-   * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+   * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]`.
    *
    * A unique identifier for the version under a product.
    * </pre>
@@ -808,7 +808,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the version, in the format
-     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]`.
      *
      * A unique identifier for the version under a product.
      * </pre>
@@ -833,7 +833,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the version, in the format
-     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]`.
      *
      * A unique identifier for the version under a product.
      * </pre>
@@ -858,7 +858,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the version, in the format
-     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]`.
      *
      * A unique identifier for the version under a product.
      * </pre>
@@ -882,7 +882,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the version, in the format
-     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]`.
      *
      * A unique identifier for the version under a product.
      * </pre>
@@ -902,7 +902,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the version, in the format
-     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+     * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]`.
      *
      * A unique identifier for the version under a product.
      * </pre>
