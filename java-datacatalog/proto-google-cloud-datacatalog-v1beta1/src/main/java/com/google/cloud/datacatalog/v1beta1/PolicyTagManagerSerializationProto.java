@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,13 +112,13 @@ public final class PolicyTagManagerSerializationProto {
           + "rojects/*/locations/*}/taxonomies:export"
           + "\032N\312A\032datacatalog.googleapis.com\322A.https:"
           + "//www.googleapis.com/auth/cloud-platform"
-          + "B\203\002\n$com.google.cloud.datacatalog.v1beta"
+          + "B\200\002\n$com.google.cloud.datacatalog.v1beta"
           + "1B\"PolicyTagManagerSerializationProtoP\001Z"
           + "Fcloud.google.com/go/datacatalog/apiv1be"
-          + "ta1/datacatalogpb;datacatalogpb\370\001\001\252\002 Goo"
-          + "gle.Cloud.DataCatalog.V1Beta1\312\002 Google\\C"
-          + "loud\\DataCatalog\\V1beta1\352\002#Google::Cloud"
-          + "::DataCatalog::V1beta1b\006proto3"
+          + "ta1/datacatalogpb;datacatalogpb\252\002 Google"
+          + ".Cloud.DataCatalog.V1Beta1\312\002 Google\\Clou"
+          + "d\\DataCatalog\\V1beta1\352\002#Google::Cloud::D"
+          + "ataCatalog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

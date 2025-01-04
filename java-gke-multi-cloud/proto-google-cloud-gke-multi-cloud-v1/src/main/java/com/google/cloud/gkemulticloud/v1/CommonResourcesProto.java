@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,10 @@ public final class CommonResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_ManagedPrometheusConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_CloudMonitoringConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_CloudMonitoringConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_fieldAccessorTable;
@@ -127,29 +131,32 @@ public final class CommonResourcesProto {
           + "\0162?.google.cloud.gkemulticloud.v1.Loggin"
           + "gComponentConfig.Component\"L\n\tComponent\022"
           + "\031\n\025COMPONENT_UNSPECIFIED\020\000\022\025\n\021SYSTEM_COM"
-          + "PONENTS\020\001\022\r\n\tWORKLOADS\020\002\"m\n\020MonitoringCo"
-          + "nfig\022Y\n\031managed_prometheus_config\030\002 \001(\0132"
-          + "6.google.cloud.gkemulticloud.v1.ManagedP"
-          + "rometheusConfig\"*\n\027ManagedPrometheusConf"
-          + "ig\022\017\n\007enabled\030\001 \001(\010\"\330\001\n\023BinaryAuthorizat"
-          + "ion\022Z\n\017evaluation_mode\030\001 \001(\0162A.google.cl"
-          + "oud.gkemulticloud.v1.BinaryAuthorization"
-          + ".EvaluationMode\"e\n\016EvaluationMode\022\037\n\033EVA"
-          + "LUATION_MODE_UNSPECIFIED\020\000\022\014\n\010DISABLED\020\001"
-          + "\022$\n PROJECT_SINGLETON_POLICY_ENFORCE\020\002\"\356"
-          + "\001\n\025SecurityPostureConfig\022b\n\022vulnerabilit"
-          + "y_mode\030\001 \001(\0162F.google.cloud.gkemulticlou"
-          + "d.v1.SecurityPostureConfig.Vulnerability"
-          + "Mode\"q\n\021VulnerabilityMode\022\"\n\036VULNERABILI"
-          + "TY_MODE_UNSPECIFIED\020\000\022\032\n\026VULNERABILITY_D"
-          + "ISABLED\020\001\022\034\n\030VULNERABILITY_ENTERPRISE\020\002B"
-          + "\347\001\n!com.google.cloud.gkemulticloud.v1B\024C"
-          + "ommonResourcesProtoP\001ZGcloud.google.com/"
-          + "go/gkemulticloud/apiv1/gkemulticloudpb;g"
-          + "kemulticloudpb\252\002\035Google.Cloud.GkeMultiCl"
-          + "oud.V1\312\002\035Google\\Cloud\\GkeMultiCloud\\V1\352\002"
-          + " Google::Cloud::GkeMultiCloud::V1b\006proto"
-          + "3"
+          + "PONENTS\020\001\022\r\n\tWORKLOADS\020\002\"\304\001\n\020MonitoringC"
+          + "onfig\022Y\n\031managed_prometheus_config\030\002 \001(\013"
+          + "26.google.cloud.gkemulticloud.v1.Managed"
+          + "PrometheusConfig\022U\n\027cloud_monitoring_con"
+          + "fig\030\004 \001(\01324.google.cloud.gkemulticloud.v"
+          + "1.CloudMonitoringConfig\"*\n\027ManagedPromet"
+          + "heusConfig\022\017\n\007enabled\030\001 \001(\010\"9\n\025CloudMoni"
+          + "toringConfig\022\024\n\007enabled\030\001 \001(\010H\000\210\001\001B\n\n\010_e"
+          + "nabled\"\330\001\n\023BinaryAuthorization\022Z\n\017evalua"
+          + "tion_mode\030\001 \001(\0162A.google.cloud.gkemultic"
+          + "loud.v1.BinaryAuthorization.EvaluationMo"
+          + "de\"e\n\016EvaluationMode\022\037\n\033EVALUATION_MODE_"
+          + "UNSPECIFIED\020\000\022\014\n\010DISABLED\020\001\022$\n PROJECT_S"
+          + "INGLETON_POLICY_ENFORCE\020\002\"\356\001\n\025SecurityPo"
+          + "stureConfig\022b\n\022vulnerability_mode\030\001 \001(\0162"
+          + "F.google.cloud.gkemulticloud.v1.Security"
+          + "PostureConfig.VulnerabilityMode\"q\n\021Vulne"
+          + "rabilityMode\022\"\n\036VULNERABILITY_MODE_UNSPE"
+          + "CIFIED\020\000\022\032\n\026VULNERABILITY_DISABLED\020\001\022\034\n\030"
+          + "VULNERABILITY_ENTERPRISE\020\002B\347\001\n!com.googl"
+          + "e.cloud.gkemulticloud.v1B\024CommonResource"
+          + "sProtoP\001ZGcloud.google.com/go/gkemulticl"
+          + "oud/apiv1/gkemulticloudpb;gkemulticloudp"
+          + "b\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035Goog"
+          + "le\\Cloud\\GkeMultiCloud\\V1\352\002 Google::Clou"
+          + "d::GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -246,7 +253,7 @@ public final class CommonResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_MonitoringConfig_descriptor,
             new java.lang.String[] {
-              "ManagedPrometheusConfig",
+              "ManagedPrometheusConfig", "CloudMonitoringConfig",
             });
     internal_static_google_cloud_gkemulticloud_v1_ManagedPrometheusConfig_descriptor =
         getDescriptor().getMessageTypes().get(10);
@@ -256,8 +263,16 @@ public final class CommonResourcesProto {
             new java.lang.String[] {
               "Enabled",
             });
-    internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_descriptor =
+    internal_static_google_cloud_gkemulticloud_v1_CloudMonitoringConfig_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_gkemulticloud_v1_CloudMonitoringConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_CloudMonitoringConfig_descriptor,
+            new java.lang.String[] {
+              "Enabled",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_descriptor =
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_descriptor,
@@ -265,7 +280,7 @@ public final class CommonResourcesProto {
               "EvaluationMode",
             });
     internal_static_google_cloud_gkemulticloud_v1_SecurityPostureConfig_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_gkemulticloud_v1_SecurityPostureConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_SecurityPostureConfig_descriptor,

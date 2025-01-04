@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,13 +54,12 @@ public final class SchemaOuterClass {
           + "\030\001 \001(\tB\003\340A\002\022\030\n\013description\030\002 \001(\tB\003\340A\001\022\021\n"
           + "\004mode\030\003 \001(\tB\003\340A\001\022G\n\nsubcolumns\030\007 \003(\0132..g"
           + "oogle.cloud.datacatalog.v1beta1.ColumnSc"
-          + "hemaB\003\340A\001B\337\001\n$com.google.cloud.datacatal"
+          + "hemaB\003\340A\001B\334\001\n$com.google.cloud.datacatal"
           + "og.v1beta1P\001ZFcloud.google.com/go/dataca"
           + "talog/apiv1beta1/datacatalogpb;datacatal"
-          + "ogpb\370\001\001\252\002 Google.Cloud.DataCatalog.V1Bet"
-          + "a1\312\002 Google\\Cloud\\DataCatalog\\V1beta1\352\002#"
-          + "Google::Cloud::DataCatalog::V1beta1b\006pro"
-          + "to3"
+          + "ogpb\252\002 Google.Cloud.DataCatalog.V1Beta1\312"
+          + "\002 Google\\Cloud\\DataCatalog\\V1beta1\352\002#Goo"
+          + "gle::Cloud::DataCatalog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

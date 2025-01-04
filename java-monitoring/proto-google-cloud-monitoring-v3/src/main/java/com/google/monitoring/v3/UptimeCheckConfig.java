@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -4690,10 +4690,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Contains information needed for generating an
+     * Contains information needed for generating either an
      * [OpenID Connect
-     * token](https://developers.google.com/identity/protocols/OpenIDConnect).
-     * The OIDC token will be generated for the Monitoring service agent service
+     * token](https://developers.google.com/identity/protocols/OpenIDConnect) or
+     * [OAuth token](https://developers.google.com/identity/protocols/oauth2).
+     * The token will be generated for the Monitoring service agent service
      * account.
      * </pre>
      *
@@ -5113,10 +5114,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Contains information needed for generating an
+       * Contains information needed for generating either an
        * [OpenID Connect
-       * token](https://developers.google.com/identity/protocols/OpenIDConnect).
-       * The OIDC token will be generated for the Monitoring service agent service
+       * token](https://developers.google.com/identity/protocols/OpenIDConnect) or
+       * [OAuth token](https://developers.google.com/identity/protocols/oauth2).
+       * The token will be generated for the Monitoring service agent service
        * account.
        * </pre>
        *
@@ -13808,7 +13810,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * <code>bool is_internal = 15 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-   *     google/monitoring/v3/uptime.proto;l=545
+   *     google/monitoring/v3/uptime.proto;l=547
    * @return The isInternal.
    */
   @java.lang.Override
@@ -17685,7 +17687,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=545
+     *     google/monitoring/v3/uptime.proto;l=547
      * @return The isInternal.
      */
     @java.lang.Override
@@ -17706,7 +17708,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=545
+     *     google/monitoring/v3/uptime.proto;l=547
      * @param value The isInternal to set.
      * @return This builder for chaining.
      */
@@ -17731,7 +17733,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=545
+     *     google/monitoring/v3/uptime.proto;l=547
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

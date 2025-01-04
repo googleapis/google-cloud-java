@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,6 +150,48 @@ public interface ConversationEventOrBuilder
    * <code>.google.cloud.dialogflow.v2.Message new_message_payload = 4;</code>
    */
   com.google.cloud.dialogflow.v2.MessageOrBuilder getNewMessagePayloadOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   *
+   * @return Whether the newRecognitionResultPayload field is set.
+   */
+  boolean hasNewRecognitionResultPayload();
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   *
+   * @return The newRecognitionResultPayload.
+   */
+  com.google.cloud.dialogflow.v2.StreamingRecognitionResult getNewRecognitionResultPayload();
+  /**
+   *
+   *
+   * <pre>
+   * Payload of NEW_RECOGNITION_RESULT event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingRecognitionResult new_recognition_result_payload = 5;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.StreamingRecognitionResultOrBuilder
+      getNewRecognitionResultPayloadOrBuilder();
 
   com.google.cloud.dialogflow.v2.ConversationEvent.PayloadCase getPayloadCase();
 }

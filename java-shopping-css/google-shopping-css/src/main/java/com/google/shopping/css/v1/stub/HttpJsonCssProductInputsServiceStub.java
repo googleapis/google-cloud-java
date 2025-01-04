@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.protobuf.TypeRegistry;
 import com.google.shopping.css.v1.CssProductInput;
 import com.google.shopping.css.v1.DeleteCssProductInputRequest;
 import com.google.shopping.css.v1.InsertCssProductInputRequest;
+import com.google.shopping.css.v1.UpdateCssProductInputRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -90,6 +91,48 @@ public class HttpJsonCssProductInputsServiceStub extends CssProductInputsService
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCssProductInputRequest, CssProductInput>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.css.v1.CssProductInputsService/UpdateCssProductInput")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCssProductInputRequest>newBuilder()
+                      .setPath(
+                          "/v1/{cssProductInput.name=accounts/*/cssProductInputs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCssProductInputRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "cssProductInput.name",
+                                request.getCssProductInput().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCssProductInputRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("cssProductInput", request.getCssProductInput(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CssProductInput>newBuilder()
+                      .setDefaultInstance(CssProductInput.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteCssProductInputRequest, Empty>
       deleteCssProductInputMethodDescriptor =
           ApiMethodDescriptor.<DeleteCssProductInputRequest, Empty>newBuilder()
@@ -131,6 +174,8 @@ public class HttpJsonCssProductInputsServiceStub extends CssProductInputsService
 
   private final UnaryCallable<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputCallable;
+  private final UnaryCallable<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputCallable;
   private final UnaryCallable<DeleteCssProductInputRequest, Empty> deleteCssProductInputCallable;
 
   private final BackgroundResource backgroundResources;
@@ -190,6 +235,20 @@ public class HttpJsonCssProductInputsServiceStub extends CssProductInputsService
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<UpdateCssProductInputRequest, CssProductInput>
+        updateCssProductInputTransportSettings =
+            HttpJsonCallSettings.<UpdateCssProductInputRequest, CssProductInput>newBuilder()
+                .setMethodDescriptor(updateCssProductInputMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "css_product_input.name",
+                          String.valueOf(request.getCssProductInput().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteCssProductInputRequest, Empty>
         deleteCssProductInputTransportSettings =
             HttpJsonCallSettings.<DeleteCssProductInputRequest, Empty>newBuilder()
@@ -208,6 +267,11 @@ public class HttpJsonCssProductInputsServiceStub extends CssProductInputsService
             insertCssProductInputTransportSettings,
             settings.insertCssProductInputSettings(),
             clientContext);
+    this.updateCssProductInputCallable =
+        callableFactory.createUnaryCallable(
+            updateCssProductInputTransportSettings,
+            settings.updateCssProductInputSettings(),
+            clientContext);
     this.deleteCssProductInputCallable =
         callableFactory.createUnaryCallable(
             deleteCssProductInputTransportSettings,
@@ -222,6 +286,7 @@ public class HttpJsonCssProductInputsServiceStub extends CssProductInputsService
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(insertCssProductInputMethodDescriptor);
+    methodDescriptors.add(updateCssProductInputMethodDescriptor);
     methodDescriptors.add(deleteCssProductInputMethodDescriptor);
     return methodDescriptors;
   }
@@ -230,6 +295,12 @@ public class HttpJsonCssProductInputsServiceStub extends CssProductInputsService
   public UnaryCallable<InsertCssProductInputRequest, CssProductInput>
       insertCssProductInputCallable() {
     return insertCssProductInputCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputCallable() {
+    return updateCssProductInputCallable;
   }
 
   @Override

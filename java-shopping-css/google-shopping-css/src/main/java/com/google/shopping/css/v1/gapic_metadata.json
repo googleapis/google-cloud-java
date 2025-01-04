@@ -54,6 +54,9 @@
             },
             "InsertCssProductInput": {
               "methods": ["insertCssProductInput", "insertCssProductInputCallable"]
+            },
+            "UpdateCssProductInput": {
+              "methods": ["updateCssProductInput", "updateCssProductInput", "updateCssProductInputCallable"]
             }
           }
         }

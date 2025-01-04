@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,6 +141,7 @@ public class StorageTransferServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setProjectId("projectId-894832108")
             .setTransferSpec(TransferTypes.TransferSpec.newBuilder().build())
+            .setReplicationSpec(TransferTypes.ReplicationSpec.newBuilder().build())
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
             .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())
@@ -202,6 +203,7 @@ public class StorageTransferServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setProjectId("projectId-894832108")
             .setTransferSpec(TransferTypes.TransferSpec.newBuilder().build())
+            .setReplicationSpec(TransferTypes.ReplicationSpec.newBuilder().build())
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
             .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())
@@ -269,6 +271,7 @@ public class StorageTransferServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setProjectId("projectId-894832108")
             .setTransferSpec(TransferTypes.TransferSpec.newBuilder().build())
+            .setReplicationSpec(TransferTypes.ReplicationSpec.newBuilder().build())
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
             .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -3942,9 +3942,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param parent Required. The name of the resource to attach this tag to. Tags can be attached to
    *     Entries. Example:
-   *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   *     </ul>
+   *     <p>&#42;
+   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *     <p>Note that this Tag and its child resources may not actually be stored in the location in
    *     this name.
    * @param tag Required. The tag to create.
@@ -3986,9 +3985,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param parent Required. The name of the resource to attach this tag to. Tags can be attached to
    *     Entries. Example:
-   *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   *     </ul>
+   *     <p>&#42;
+   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *     <p>Note that this Tag and its child resources may not actually be stored in the location in
    *     this name.
    * @param tag Required. The tag to create.

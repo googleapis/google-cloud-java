@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,10 @@ public final class CssProductInputsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_css_v1_InsertCssProductInputRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_css_v1_UpdateCssProductInputRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_css_v1_UpdateCssProductInputRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_css_v1_DeleteCssProductInputRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_css_v1_DeleteCssProductInputRequest_fieldAccessorTable;
@@ -54,45 +58,56 @@ public final class CssProductInputsProto {
           + "e/api/annotations.proto\032\027google/api/clie"
           + "nt.proto\032\037google/api/field_behavior.prot"
           + "o\032\031google/api/resource.proto\032\033google/pro"
-          + "tobuf/empty.proto\032\037google/protobuf/times"
-          + "tamp.proto\032/google/shopping/css/v1/css_p"
-          + "roduct_common.proto\032 google/shopping/typ"
-          + "e/types.proto\"\236\003\n\017CssProductInput\022\014\n\004nam"
-          + "e\030\001 \001(\t\022\027\n\nfinal_name\030\002 \001(\tB\003\340A\003\022\034\n\017raw_"
-          + "provided_id\030\003 \001(\tB\003\340A\002\022\035\n\020content_langua"
-          + "ge\030\004 \001(\tB\003\340A\002\022\027\n\nfeed_label\030\005 \001(\tB\003\340A\002\0222"
-          + "\n\016freshness_time\030\006 \001(\0132\032.google.protobuf"
-          + ".Timestamp\0226\n\nattributes\030\007 \001(\0132\".google."
-          + "shopping.css.v1.Attributes\022@\n\021custom_att"
-          + "ributes\030\010 \003(\0132%.google.shopping.type.Cus"
-          + "tomAttribute:`\352A]\n\"css.googleapis.com/Cs"
-          + "sProductInput\0227accounts/{account}/cssPro"
-          + "ductInputs/{css_product_input}\"\271\001\n\034Inser"
-          + "tCssProductInputRequest\022:\n\006parent\030\001 \001(\tB"
-          + "*\340A\002\372A$\022\"css.googleapis.com/CssProductIn"
-          + "put\022G\n\021css_product_input\030\002 \001(\0132\'.google."
-          + "shopping.css.v1.CssProductInputB\003\340A\002\022\024\n\007"
-          + "feed_id\030\003 \001(\003B\003\340A\002\"\224\001\n\034DeleteCssProductI"
-          + "nputRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"css.g"
-          + "oogleapis.com/CssProductInput\022!\n\024supplem"
-          + "ental_feed_id\030\002 \001(\003H\000\210\001\001B\027\n\025_supplementa"
-          + "l_feed_id2\300\003\n\027CssProductInputsService\022\302\001"
-          + "\n\025InsertCssProductInput\0224.google.shoppin"
-          + "g.css.v1.InsertCssProductInputRequest\032\'."
-          + "google.shopping.css.v1.CssProductInput\"J"
-          + "\202\323\344\223\002D\"//v1/{parent=accounts/*}/cssProdu"
-          + "ctInputs:insert:\021css_product_input\022\236\001\n\025D"
-          + "eleteCssProductInput\0224.google.shopping.c"
-          + "ss.v1.DeleteCssProductInputRequest\032\026.goo"
-          + "gle.protobuf.Empty\"7\332A\004name\202\323\344\223\002**(/v1/{"
-          + "name=accounts/*/cssProductInputs/*}\032?\312A\022"
-          + "css.googleapis.com\322A\'https://www.googlea"
-          + "pis.com/auth/contentB\267\001\n\032com.google.shop"
-          + "ping.css.v1B\025CssProductInputsProtoP\001Z2cl"
-          + "oud.google.com/go/shopping/css/apiv1/css"
-          + "pb;csspb\252\002\026Google.Shopping.Css.V1\312\002\026Goog"
-          + "le\\Shopping\\Css\\V1\352\002\031Google::Shopping::C"
-          + "ss::V1b\006proto3"
+          + "tobuf/empty.proto\032 google/protobuf/field"
+          + "_mask.proto\032\037google/protobuf/timestamp.p"
+          + "roto\032/google/shopping/css/v1/css_product"
+          + "_common.proto\032 google/shopping/type/type"
+          + "s.proto\"\242\003\n\017CssProductInput\022\014\n\004name\030\001 \001("
+          + "\t\022\027\n\nfinal_name\030\002 \001(\tB\003\340A\003\022\034\n\017raw_provid"
+          + "ed_id\030\003 \001(\tB\003\340A\002\022\035\n\020content_language\030\004 \001"
+          + "(\tB\003\340A\002\022\027\n\nfeed_label\030\005 \001(\tB\003\340A\002\0226\n\016fres"
+          + "hness_time\030\006 \001(\0132\032.google.protobuf.Times"
+          + "tampB\002\030\001\0226\n\nattributes\030\007 \001(\0132\".google.sh"
+          + "opping.css.v1.Attributes\022@\n\021custom_attri"
+          + "butes\030\010 \003(\0132%.google.shopping.type.Custo"
+          + "mAttribute:`\352A]\n\"css.googleapis.com/CssP"
+          + "roductInput\0227accounts/{account}/cssProdu"
+          + "ctInputs/{css_product_input}\"\273\001\n\034InsertC"
+          + "ssProductInputRequest\022:\n\006parent\030\001 \001(\tB*\340"
+          + "A\002\372A$\022\"css.googleapis.com/CssProductInpu"
+          + "t\022G\n\021css_product_input\030\002 \001(\0132\'.google.sh"
+          + "opping.css.v1.CssProductInputB\003\340A\002\022\026\n\007fe"
+          + "ed_id\030\003 \001(\003B\005\030\001\340A\001\"\230\001\n\034UpdateCssProductI"
+          + "nputRequest\022G\n\021css_product_input\030\001 \001(\0132\'"
+          + ".google.shopping.css.v1.CssProductInputB"
+          + "\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.proto"
+          + "buf.FieldMask\"\224\001\n\034DeleteCssProductInputR"
+          + "equest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"css.google"
+          + "apis.com/CssProductInput\022!\n\024supplemental"
+          + "_feed_id\030\002 \001(\003H\000\210\001\001B\027\n\025_supplemental_fee"
+          + "d_id2\260\005\n\027CssProductInputsService\022\302\001\n\025Ins"
+          + "ertCssProductInput\0224.google.shopping.css"
+          + ".v1.InsertCssProductInputRequest\032\'.googl"
+          + "e.shopping.css.v1.CssProductInput\"J\202\323\344\223\002"
+          + "D\"//v1/{parent=accounts/*}/cssProductInp"
+          + "uts:insert:\021css_product_input\022\355\001\n\025Update"
+          + "CssProductInput\0224.google.shopping.css.v1"
+          + ".UpdateCssProductInputRequest\032\'.google.s"
+          + "hopping.css.v1.CssProductInput\"u\332A\035css_p"
+          + "roduct_input,update_mask\202\323\344\223\002O2:/v1/{css"
+          + "_product_input.name=accounts/*/cssProduc"
+          + "tInputs/*}:\021css_product_input\022\236\001\n\025Delete"
+          + "CssProductInput\0224.google.shopping.css.v1"
+          + ".DeleteCssProductInputRequest\032\026.google.p"
+          + "rotobuf.Empty\"7\332A\004name\202\323\344\223\002**(/v1/{name="
+          + "accounts/*/cssProductInputs/*}\032?\312A\022css.g"
+          + "oogleapis.com\322A\'https://www.googleapis.c"
+          + "om/auth/contentB\267\001\n\032com.google.shopping."
+          + "css.v1B\025CssProductInputsProtoP\001Z2cloud.g"
+          + "oogle.com/go/shopping/css/apiv1/csspb;cs"
+          + "spb\252\002\026Google.Shopping.Css.V1\312\002\026Google\\Sh"
+          + "opping\\Css\\V1\352\002\031Google::Shopping::Css::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -103,6 +118,7 @@ public final class CssProductInputsProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.shopping.css.v1.CssProductCommonProto.getDescriptor(),
               com.google.shopping.type.TypesProto.getDescriptor(),
@@ -130,8 +146,16 @@ public final class CssProductInputsProto {
             new java.lang.String[] {
               "Parent", "CssProductInput", "FeedId",
             });
-    internal_static_google_shopping_css_v1_DeleteCssProductInputRequest_descriptor =
+    internal_static_google_shopping_css_v1_UpdateCssProductInputRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_shopping_css_v1_UpdateCssProductInputRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_css_v1_UpdateCssProductInputRequest_descriptor,
+            new java.lang.String[] {
+              "CssProductInput", "UpdateMask",
+            });
+    internal_static_google_shopping_css_v1_DeleteCssProductInputRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_shopping_css_v1_DeleteCssProductInputRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_css_v1_DeleteCssProductInputRequest_descriptor,
@@ -154,6 +178,7 @@ public final class CssProductInputsProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.shopping.css.v1.CssProductCommonProto.getDescriptor();
     com.google.shopping.type.TypesProto.getDescriptor();

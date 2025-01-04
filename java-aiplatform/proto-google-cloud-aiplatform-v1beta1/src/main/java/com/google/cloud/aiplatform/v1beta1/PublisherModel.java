@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -4639,6 +4639,52 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder
         getDeployOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multiple setups to deploy the PublisherModel to Vertex
+     * Endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the multiDeployVertex field is set.
+     */
+    boolean hasMultiDeployVertex();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multiple setups to deploy the PublisherModel to Vertex
+     * Endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multiDeployVertex.
+     */
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+        getMultiDeployVertex();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multiple setups to deploy the PublisherModel to Vertex
+     * Endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertexOrBuilder
+        getMultiDeployVertexOrBuilder();
 
     /**
      *
@@ -10601,6 +10647,1128 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface DeployVertexOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.List<com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy>
+          getMultiDeployVertexList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy getMultiDeployVertex(
+          int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      int getMultiDeployVertexCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder>
+          getMultiDeployVertexOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder
+          getMultiDeployVertexOrBuilder(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Multiple setups to deploy the PublisherModel.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex}
+     */
+    public static final class DeployVertex extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex)
+        DeployVertexOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use DeployVertex.newBuilder() to construct.
+      private DeployVertex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DeployVertex() {
+        multiDeployVertex_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DeployVertex();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployVertex_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployVertex_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex.class,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex.Builder
+                    .class);
+      }
+
+      public static final int MULTI_DEPLOY_VERTEX_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy>
+          multiDeployVertex_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy>
+          getMultiDeployVertexList() {
+        return multiDeployVertex_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder>
+          getMultiDeployVertexOrBuilderList() {
+        return multiDeployVertex_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public int getMultiDeployVertexCount() {
+        return multiDeployVertex_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy
+          getMultiDeployVertex(int index) {
+        return multiDeployVertex_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. One click deployment configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder
+          getMultiDeployVertexOrBuilder(int index) {
+        return multiDeployVertex_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < multiDeployVertex_.size(); i++) {
+          output.writeMessage(1, multiDeployVertex_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < multiDeployVertex_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, multiDeployVertex_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex other =
+            (com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex) obj;
+
+        if (!getMultiDeployVertexList().equals(other.getMultiDeployVertexList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getMultiDeployVertexCount() > 0) {
+          hash = (37 * hash) + MULTI_DEPLOY_VERTEX_FIELD_NUMBER;
+          hash = (53 * hash) + getMultiDeployVertexList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Multiple setups to deploy the PublisherModel.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex)
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertexOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployVertex_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployVertex_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+                      .class,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (multiDeployVertexBuilder_ == null) {
+            multiDeployVertex_ = java.util.Collections.emptyList();
+          } else {
+            multiDeployVertex_ = null;
+            multiDeployVertexBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModelProto
+              .internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployVertex_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+            build() {
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex result =
+              new com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex(
+                  this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex result) {
+          if (multiDeployVertexBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              multiDeployVertex_ = java.util.Collections.unmodifiableList(multiDeployVertex_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.multiDeployVertex_ = multiDeployVertex_;
+          } else {
+            result.multiDeployVertex_ = multiDeployVertexBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+                  .getDefaultInstance()) return this;
+          if (multiDeployVertexBuilder_ == null) {
+            if (!other.multiDeployVertex_.isEmpty()) {
+              if (multiDeployVertex_.isEmpty()) {
+                multiDeployVertex_ = other.multiDeployVertex_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureMultiDeployVertexIsMutable();
+                multiDeployVertex_.addAll(other.multiDeployVertex_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.multiDeployVertex_.isEmpty()) {
+              if (multiDeployVertexBuilder_.isEmpty()) {
+                multiDeployVertexBuilder_.dispose();
+                multiDeployVertexBuilder_ = null;
+                multiDeployVertex_ = other.multiDeployVertex_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                multiDeployVertexBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getMultiDeployVertexFieldBuilder()
+                        : null;
+              } else {
+                multiDeployVertexBuilder_.addAllMessages(other.multiDeployVertex_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy m =
+                        input.readMessage(
+                            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy
+                                .parser(),
+                            extensionRegistry);
+                    if (multiDeployVertexBuilder_ == null) {
+                      ensureMultiDeployVertexIsMutable();
+                      multiDeployVertex_.add(m);
+                    } else {
+                      multiDeployVertexBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy>
+            multiDeployVertex_ = java.util.Collections.emptyList();
+
+        private void ensureMultiDeployVertexIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            multiDeployVertex_ =
+                new java.util.ArrayList<
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy>(
+                    multiDeployVertex_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder>
+            multiDeployVertexBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy>
+            getMultiDeployVertexList() {
+          if (multiDeployVertexBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(multiDeployVertex_);
+          } else {
+            return multiDeployVertexBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public int getMultiDeployVertexCount() {
+          if (multiDeployVertexBuilder_ == null) {
+            return multiDeployVertex_.size();
+          } else {
+            return multiDeployVertexBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy
+            getMultiDeployVertex(int index) {
+          if (multiDeployVertexBuilder_ == null) {
+            return multiDeployVertex_.get(index);
+          } else {
+            return multiDeployVertexBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setMultiDeployVertex(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy value) {
+          if (multiDeployVertexBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureMultiDeployVertexIsMutable();
+            multiDeployVertex_.set(index, value);
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setMultiDeployVertex(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder
+                builderForValue) {
+          if (multiDeployVertexBuilder_ == null) {
+            ensureMultiDeployVertexIsMutable();
+            multiDeployVertex_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addMultiDeployVertex(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy value) {
+          if (multiDeployVertexBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureMultiDeployVertexIsMutable();
+            multiDeployVertex_.add(value);
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addMultiDeployVertex(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy value) {
+          if (multiDeployVertexBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureMultiDeployVertexIsMutable();
+            multiDeployVertex_.add(index, value);
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addMultiDeployVertex(
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder
+                builderForValue) {
+          if (multiDeployVertexBuilder_ == null) {
+            ensureMultiDeployVertexIsMutable();
+            multiDeployVertex_.add(builderForValue.build());
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addMultiDeployVertex(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder
+                builderForValue) {
+          if (multiDeployVertexBuilder_ == null) {
+            ensureMultiDeployVertexIsMutable();
+            multiDeployVertex_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addAllMultiDeployVertex(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy>
+                values) {
+          if (multiDeployVertexBuilder_ == null) {
+            ensureMultiDeployVertexIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, multiDeployVertex_);
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearMultiDeployVertex() {
+          if (multiDeployVertexBuilder_ == null) {
+            multiDeployVertex_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder removeMultiDeployVertex(int index) {
+          if (multiDeployVertexBuilder_ == null) {
+            ensureMultiDeployVertexIsMutable();
+            multiDeployVertex_.remove(index);
+            onChanged();
+          } else {
+            multiDeployVertexBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder
+            getMultiDeployVertexBuilder(int index) {
+          return getMultiDeployVertexFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder
+            getMultiDeployVertexOrBuilder(int index) {
+          if (multiDeployVertexBuilder_ == null) {
+            return multiDeployVertex_.get(index);
+          } else {
+            return multiDeployVertexBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder>
+            getMultiDeployVertexOrBuilderList() {
+          if (multiDeployVertexBuilder_ != null) {
+            return multiDeployVertexBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(multiDeployVertex_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder
+            addMultiDeployVertexBuilder() {
+          return getMultiDeployVertexFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder
+            addMultiDeployVertexBuilder(int index) {
+          return getMultiDeployVertexFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. One click deployment configurations.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy multi_deploy_vertex = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder>
+            getMultiDeployVertexBuilderList() {
+          return getMultiDeployVertexFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder,
+                com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployOrBuilder>
+            getMultiDeployVertexFieldBuilder() {
+          if (multiDeployVertexBuilder_ == null) {
+            multiDeployVertexBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy,
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.Builder,
+                    com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                        .DeployOrBuilder>(
+                    multiDeployVertex_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            multiDeployVertex_ = null;
+          }
+          return multiDeployVertexBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex)
+      private static final com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+              .DeployVertex
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DeployVertex> PARSER =
+          new com.google.protobuf.AbstractParser<DeployVertex>() {
+            @java.lang.Override
+            public DeployVertex parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DeployVertex> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DeployVertex> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public interface DeployOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy)
@@ -11068,8 +12236,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11080,8 +12248,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11095,8 +12263,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11107,8 +12275,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11123,8 +12291,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11251,8 +12419,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11275,8 +12443,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11290,8 +12458,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11312,8 +12480,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Labels for the deployment. For managing deployment config
-         * like verifying, source of deployment config, etc.
+         * Optional. Labels for the deployment config. For managing deployment
+         * config like verifying, source of deployment config, etc.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11876,8 +13044,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Labels for the deployment. For managing deployment config
-           * like verifying, source of deployment config, etc.
+           * Optional. Labels for the deployment config. For managing deployment
+           * config like verifying, source of deployment config, etc.
            * </pre>
            *
            * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11900,8 +13068,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Labels for the deployment. For managing deployment config
-           * like verifying, source of deployment config, etc.
+           * Optional. Labels for the deployment config. For managing deployment
+           * config like verifying, source of deployment config, etc.
            * </pre>
            *
            * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11915,8 +13083,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Labels for the deployment. For managing deployment config
-           * like verifying, source of deployment config, etc.
+           * Optional. Labels for the deployment config. For managing deployment
+           * config like verifying, source of deployment config, etc.
            * </pre>
            *
            * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11937,8 +13105,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Labels for the deployment. For managing deployment config
-           * like verifying, source of deployment config, etc.
+           * Optional. Labels for the deployment config. For managing deployment
+           * config like verifying, source of deployment config, etc.
            * </pre>
            *
            * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11965,8 +13133,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Labels for the deployment. For managing deployment config
-           * like verifying, source of deployment config, etc.
+           * Optional. Labels for the deployment config. For managing deployment
+           * config like verifying, source of deployment config, etc.
            * </pre>
            *
            * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -11989,8 +13157,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Labels for the deployment. For managing deployment config
-           * like verifying, source of deployment config, etc.
+           * Optional. Labels for the deployment config. For managing deployment
+           * config like verifying, source of deployment config, etc.
            * </pre>
            *
            * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -12011,8 +13179,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Labels for the deployment. For managing deployment config
-           * like verifying, source of deployment config, etc.
+           * Optional. Labels for the deployment config. For managing deployment
+           * config like verifying, source of deployment config, etc.
            * </pre>
            *
            * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -16893,6 +18061,70 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           : deploy_;
     }
 
+    public static final int MULTI_DEPLOY_VERTEX_FIELD_NUMBER = 16;
+    private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+        multiDeployVertex_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multiple setups to deploy the PublisherModel to Vertex
+     * Endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the multiDeployVertex field is set.
+     */
+    @java.lang.Override
+    public boolean hasMultiDeployVertex() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multiple setups to deploy the PublisherModel to Vertex
+     * Endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multiDeployVertex.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+        getMultiDeployVertex() {
+      return multiDeployVertex_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+              .getDefaultInstance()
+          : multiDeployVertex_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multiple setups to deploy the PublisherModel to Vertex
+     * Endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertexOrBuilder
+        getMultiDeployVertexOrBuilder() {
+      return multiDeployVertex_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+              .getDefaultInstance()
+          : multiDeployVertex_;
+    }
+
     public static final int DEPLOY_GKE_FIELD_NUMBER = 14;
     private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deployGke_;
     /**
@@ -16910,7 +18142,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDeployGke() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -16972,7 +18204,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasOpenGenerationAiStudio() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -17036,7 +18268,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRequestAccess() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -17100,7 +18332,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasOpenEvaluationPipeline() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -17180,13 +18412,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000100) != 0)) {
         output.writeMessage(7, getDeploy());
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         output.writeMessage(8, getOpenGenerationAiStudio());
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         output.writeMessage(9, getRequestAccess());
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         output.writeMessage(11, getOpenEvaluationPipeline());
       }
       if (((bitField0_ & 0x00000004) != 0)) {
@@ -17195,8 +18427,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000020) != 0)) {
         output.writeMessage(13, getOpenFineTuningPipelines());
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         output.writeMessage(14, getDeployGke());
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeMessage(16, getMultiDeployVertex());
       }
       getUnknownFields().writeTo(output);
     }
@@ -17232,15 +18467,15 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDeploy());
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 8, getOpenGenerationAiStudio());
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getRequestAccess());
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 11, getOpenEvaluationPipeline());
@@ -17253,8 +18488,12 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 13, getOpenFineTuningPipelines());
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getDeployGke());
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(16, getMultiDeployVertex());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -17308,6 +18547,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasDeploy() != other.hasDeploy()) return false;
       if (hasDeploy()) {
         if (!getDeploy().equals(other.getDeploy())) return false;
+      }
+      if (hasMultiDeployVertex() != other.hasMultiDeployVertex()) return false;
+      if (hasMultiDeployVertex()) {
+        if (!getMultiDeployVertex().equals(other.getMultiDeployVertex())) return false;
       }
       if (hasDeployGke() != other.hasDeployGke()) return false;
       if (hasDeployGke()) {
@@ -17371,6 +18614,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasDeploy()) {
         hash = (37 * hash) + DEPLOY_FIELD_NUMBER;
         hash = (53 * hash) + getDeploy().hashCode();
+      }
+      if (hasMultiDeployVertex()) {
+        hash = (37 * hash) + MULTI_DEPLOY_VERTEX_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiDeployVertex().hashCode();
       }
       if (hasDeployGke()) {
         hash = (37 * hash) + DEPLOY_GKE_FIELD_NUMBER;
@@ -17542,6 +18789,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           getOpenPromptTuningPipelineFieldBuilder();
           getOpenGenieFieldBuilder();
           getDeployFieldBuilder();
+          getMultiDeployVertexFieldBuilder();
           getDeployGkeFieldBuilder();
           getOpenGenerationAiStudioFieldBuilder();
           getRequestAccessFieldBuilder();
@@ -17597,6 +18845,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (deployBuilder_ != null) {
           deployBuilder_.dispose();
           deployBuilder_ = null;
+        }
+        multiDeployVertex_ = null;
+        if (multiDeployVertexBuilder_ != null) {
+          multiDeployVertexBuilder_.dispose();
+          multiDeployVertexBuilder_ = null;
         }
         deployGke_ = null;
         if (deployGkeBuilder_ != null) {
@@ -17709,27 +18962,34 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           to_bitField0_ |= 0x00000100;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.deployGke_ = deployGkeBuilder_ == null ? deployGke_ : deployGkeBuilder_.build();
+          result.multiDeployVertex_ =
+              multiDeployVertexBuilder_ == null
+                  ? multiDeployVertex_
+                  : multiDeployVertexBuilder_.build();
           to_bitField0_ |= 0x00000200;
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.deployGke_ = deployGkeBuilder_ == null ? deployGke_ : deployGkeBuilder_.build();
+          to_bitField0_ |= 0x00000400;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           result.openGenerationAiStudio_ =
               openGenerationAiStudioBuilder_ == null
                   ? openGenerationAiStudio_
                   : openGenerationAiStudioBuilder_.build();
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.requestAccess_ =
-              requestAccessBuilder_ == null ? requestAccess_ : requestAccessBuilder_.build();
           to_bitField0_ |= 0x00000800;
         }
         if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.requestAccess_ =
+              requestAccessBuilder_ == null ? requestAccess_ : requestAccessBuilder_.build();
+          to_bitField0_ |= 0x00001000;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           result.openEvaluationPipeline_ =
               openEvaluationPipelineBuilder_ == null
                   ? openEvaluationPipeline_
                   : openEvaluationPipelineBuilder_.build();
-          to_bitField0_ |= 0x00001000;
+          to_bitField0_ |= 0x00002000;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -17810,6 +19070,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.hasDeploy()) {
           mergeDeploy(other.getDeploy());
+        }
+        if (other.hasMultiDeployVertex()) {
+          mergeMultiDeployVertex(other.getMultiDeployVertex());
         }
         if (other.hasDeployGke()) {
           mergeDeployGke(other.getDeployGke());
@@ -17898,20 +19161,20 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getOpenGenerationAiStudioFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000400;
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 66
               case 74:
                 {
                   input.readMessage(getRequestAccessFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000800;
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 74
               case 90:
                 {
                   input.readMessage(
                       getOpenEvaluationPipelineFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00001000;
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 90
               case 98:
@@ -17930,9 +19193,16 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               case 114:
                 {
                   input.readMessage(getDeployGkeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 114
+              case 130:
+                {
+                  input.readMessage(
+                      getMultiDeployVertexFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 130
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -19985,6 +21255,232 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         return deployBuilder_;
       }
 
+      private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          multiDeployVertex_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex.Builder,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertexOrBuilder>
+          multiDeployVertexBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the multiDeployVertex field is set.
+       */
+      public boolean hasMultiDeployVertex() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The multiDeployVertex.
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+          getMultiDeployVertex() {
+        if (multiDeployVertexBuilder_ == null) {
+          return multiDeployVertex_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+                  .getDefaultInstance()
+              : multiDeployVertex_;
+        } else {
+          return multiDeployVertexBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMultiDeployVertex(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex value) {
+        if (multiDeployVertexBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          multiDeployVertex_ = value;
+        } else {
+          multiDeployVertexBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMultiDeployVertex(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex.Builder
+              builderForValue) {
+        if (multiDeployVertexBuilder_ == null) {
+          multiDeployVertex_ = builderForValue.build();
+        } else {
+          multiDeployVertexBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMultiDeployVertex(
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex value) {
+        if (multiDeployVertexBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) != 0)
+              && multiDeployVertex_ != null
+              && multiDeployVertex_
+                  != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+                      .getDefaultInstance()) {
+            getMultiDeployVertexBuilder().mergeFrom(value);
+          } else {
+            multiDeployVertex_ = value;
+          }
+        } else {
+          multiDeployVertexBuilder_.mergeFrom(value);
+        }
+        if (multiDeployVertex_ != null) {
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMultiDeployVertex() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        multiDeployVertex_ = null;
+        if (multiDeployVertexBuilder_ != null) {
+          multiDeployVertexBuilder_.dispose();
+          multiDeployVertexBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex.Builder
+          getMultiDeployVertexBuilder() {
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return getMultiDeployVertexFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertexOrBuilder
+          getMultiDeployVertexOrBuilder() {
+        if (multiDeployVertexBuilder_ != null) {
+          return multiDeployVertexBuilder_.getMessageOrBuilder();
+        } else {
+          return multiDeployVertex_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+                  .getDefaultInstance()
+              : multiDeployVertex_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Multiple setups to deploy the PublisherModel to Vertex
+       * Endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex multi_deploy_vertex = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex.Builder,
+              com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertexOrBuilder>
+          getMultiDeployVertexFieldBuilder() {
+        if (multiDeployVertexBuilder_ == null) {
+          multiDeployVertexBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployVertex
+                      .Builder,
+                  com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
+                      .DeployVertexOrBuilder>(
+                  getMultiDeployVertex(), getParentForChildren(), isClean());
+          multiDeployVertex_ = null;
+        }
+        return multiDeployVertexBuilder_;
+      }
+
       private com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke deployGke_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke,
@@ -20005,7 +21501,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the deployGke field is set.
        */
       public boolean hasDeployGke() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        *
@@ -20052,7 +21548,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           deployGkeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -20075,7 +21571,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           deployGkeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -20093,7 +21589,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeDeployGke(
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke value) {
         if (deployGkeBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0)
+          if (((bitField0_ & 0x00000400) != 0)
               && deployGke_ != null
               && deployGke_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke
@@ -20106,7 +21602,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           deployGkeBuilder_.mergeFrom(value);
         }
         if (deployGke_ != null) {
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         return this;
@@ -20123,7 +21619,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearDeployGke() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         deployGke_ = null;
         if (deployGkeBuilder_ != null) {
           deployGkeBuilder_.dispose();
@@ -20145,7 +21641,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.DeployGke.Builder
           getDeployGkeBuilder() {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return getDeployGkeFieldBuilder().getBuilder();
       }
@@ -20224,7 +21720,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the openGenerationAiStudio field is set.
        */
       public boolean hasOpenGenerationAiStudio() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        *
@@ -20273,7 +21769,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openGenerationAiStudioBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -20297,7 +21793,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openGenerationAiStudioBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -20316,7 +21812,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (openGenerationAiStudioBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0)
+          if (((bitField0_ & 0x00000800) != 0)
               && openGenerationAiStudio_ != null
               && openGenerationAiStudio_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -20329,7 +21825,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           openGenerationAiStudioBuilder_.mergeFrom(value);
         }
         if (openGenerationAiStudio_ != null) {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         return this;
@@ -20346,7 +21842,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearOpenGenerationAiStudio() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         openGenerationAiStudio_ = null;
         if (openGenerationAiStudioBuilder_ != null) {
           openGenerationAiStudioBuilder_.dispose();
@@ -20369,7 +21865,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getOpenGenerationAiStudioBuilder() {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return getOpenGenerationAiStudioFieldBuilder().getBuilder();
       }
@@ -20455,7 +21951,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the requestAccess field is set.
        */
       public boolean hasRequestAccess() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        *
@@ -20504,7 +22000,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           requestAccessBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -20528,7 +22024,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           requestAccessBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -20547,7 +22043,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (requestAccessBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) != 0)
+          if (((bitField0_ & 0x00001000) != 0)
               && requestAccess_ != null
               && requestAccess_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -20560,7 +22056,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           requestAccessBuilder_.mergeFrom(value);
         }
         if (requestAccess_ != null) {
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         return this;
@@ -20577,7 +22073,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearRequestAccess() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         requestAccess_ = null;
         if (requestAccessBuilder_ != null) {
           requestAccessBuilder_.dispose();
@@ -20600,7 +22096,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getRequestAccessBuilder() {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return getRequestAccessFieldBuilder().getBuilder();
       }
@@ -20686,7 +22182,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the openEvaluationPipeline field is set.
        */
       public boolean hasOpenEvaluationPipeline() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00002000) != 0);
       }
       /**
        *
@@ -20735,7 +22231,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openEvaluationPipelineBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -20759,7 +22255,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         } else {
           openEvaluationPipelineBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -20778,7 +22274,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.RegionalResourceReferences
               value) {
         if (openEvaluationPipelineBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) != 0)
+          if (((bitField0_ & 0x00002000) != 0)
               && openEvaluationPipeline_ != null
               && openEvaluationPipeline_
                   != com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
@@ -20791,7 +22287,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           openEvaluationPipelineBuilder_.mergeFrom(value);
         }
         if (openEvaluationPipeline_ != null) {
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
           onChanged();
         }
         return this;
@@ -20808,7 +22304,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearOpenEvaluationPipeline() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         openEvaluationPipeline_ = null;
         if (openEvaluationPipelineBuilder_ != null) {
           openEvaluationPipelineBuilder_.dispose();
@@ -20831,7 +22327,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction
               .RegionalResourceReferences.Builder
           getOpenEvaluationPipelineBuilder() {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return getOpenEvaluationPipelineFieldBuilder().getBuilder();
       }

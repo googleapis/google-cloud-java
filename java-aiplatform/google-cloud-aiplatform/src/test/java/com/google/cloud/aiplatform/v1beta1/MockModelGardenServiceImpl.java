@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.aiplatform.v1beta1.ModelGardenServiceGrpc.ModelGardenServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -97,6 +98,27 @@ public class MockModelGardenServiceImpl extends ModelGardenServiceImplBase {
                   "Unrecognized response type %s for method ListPublisherModels, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPublisherModelsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deployPublisherModel(
+      DeployPublisherModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeployPublisherModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

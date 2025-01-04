@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,10 @@ public final class AttachedResourcesProto {
       internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_AnnotationsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_TagsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkemulticloud_v1_AttachedClustersAuthorization_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -86,7 +90,7 @@ public final class AttachedResourcesProto {
           + "loud.v1\032\037google/api/field_behavior.proto"
           + "\032\031google/api/resource.proto\0324google/clou"
           + "d/gkemulticloud/v1/common_resources.prot"
-          + "o\032\037google/protobuf/timestamp.proto\"\316\014\n\017A"
+          + "o\032\037google/protobuf/timestamp.proto\"\313\r\n\017A"
           + "ttachedCluster\022\014\n\004name\030\001 \001(\t\022\030\n\013descript"
           + "ion\030\002 \001(\tB\003\340A\001\022K\n\013oidc_config\030\003 \001(\01321.go"
           + "ogle.cloud.gkemulticloud.v1.AttachedOidc"
@@ -119,41 +123,45 @@ public final class AttachedResourcesProto {
           + "\001(\01322.google.cloud.gkemulticloud.v1.Bina"
           + "ryAuthorizationB\003\340A\001\022Z\n\027security_posture"
           + "_config\030\032 \001(\01324.google.cloud.gkemulticlo"
-          + "ud.v1.SecurityPostureConfigB\003\340A\001\0322\n\020Anno"
+          + "ud.v1.SecurityPostureConfigB\003\340A\001\022N\n\004tags"
+          + "\030\033 \003(\01328.google.cloud.gkemulticloud.v1.A"
+          + "ttachedCluster.TagsEntryB\006\340A\001\340A\004\0322\n\020Anno"
           + "tationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
-          + ":\0028\001\"u\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014"
-          + "PROVISIONING\020\001\022\013\n\007RUNNING\020\002\022\017\n\013RECONCILI"
-          + "NG\020\003\022\014\n\010STOPPING\020\004\022\t\n\005ERROR\020\005\022\014\n\010DEGRADE"
-          + "D\020\006:~\352A{\n,gkemulticloud.googleapis.com/A"
-          + "ttachedCluster\022Kprojects/{project}/locat"
-          + "ions/{location}/attachedClusters/{attach"
-          + "ed_cluster}\"\275\001\n\035AttachedClustersAuthoriz"
-          + "ation\022L\n\013admin_users\030\001 \003(\01322.google.clou"
-          + "d.gkemulticloud.v1.AttachedClusterUserB\003"
-          + "\340A\001\022N\n\014admin_groups\030\002 \003(\01323.google.cloud"
-          + ".gkemulticloud.v1.AttachedClusterGroupB\003"
-          + "\340A\001\",\n\023AttachedClusterUser\022\025\n\010username\030\001"
-          + " \001(\tB\003\340A\002\"*\n\024AttachedClusterGroup\022\022\n\005gro"
-          + "up\030\001 \001(\tB\003\340A\002\";\n\022AttachedOidcConfig\022\022\n\ni"
-          + "ssuer_url\030\001 \001(\t\022\021\n\004jwks\030\002 \001(\014B\003\340A\001\"\356\001\n\024A"
-          + "ttachedServerConfig\022\014\n\004name\030\001 \001(\t\022R\n\016val"
-          + "id_versions\030\002 \003(\0132:.google.cloud.gkemult"
-          + "icloud.v1.AttachedPlatformVersionInfo:t\352"
-          + "Aq\n1gkemulticloud.googleapis.com/Attache"
-          + "dServerConfig\022<projects/{project}/locati"
-          + "ons/{location}/attachedServerConfig\".\n\033A"
-          + "ttachedPlatformVersionInfo\022\017\n\007version\030\001 "
-          + "\001(\t\"\'\n\024AttachedClusterError\022\017\n\007message\030\001"
-          + " \001(\t\"a\n\023AttachedProxyConfig\022J\n\021kubernete"
-          + "s_secret\030\001 \001(\0132/.google.cloud.gkemulticl"
-          + "oud.v1.KubernetesSecret\"3\n\020KubernetesSec"
-          + "ret\022\014\n\004name\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\tB\351\001\n"
-          + "!com.google.cloud.gkemulticloud.v1B\026Atta"
-          + "chedResourcesProtoP\001ZGcloud.google.com/g"
-          + "o/gkemulticloud/apiv1/gkemulticloudpb;gk"
-          + "emulticloudpb\252\002\035Google.Cloud.GkeMultiClo"
-          + "ud.V1\312\002\035Google\\Cloud\\GkeMultiCloud\\V1\352\002 "
-          + "Google::Cloud::GkeMultiCloud::V1b\006proto3"
+          + ":\0028\001\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001\"u\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
+          + "\000\022\020\n\014PROVISIONING\020\001\022\013\n\007RUNNING\020\002\022\017\n\013RECO"
+          + "NCILING\020\003\022\014\n\010STOPPING\020\004\022\t\n\005ERROR\020\005\022\014\n\010DE"
+          + "GRADED\020\006:~\352A{\n,gkemulticloud.googleapis."
+          + "com/AttachedCluster\022Kprojects/{project}/"
+          + "locations/{location}/attachedClusters/{a"
+          + "ttached_cluster}\"\275\001\n\035AttachedClustersAut"
+          + "horization\022L\n\013admin_users\030\001 \003(\01322.google"
+          + ".cloud.gkemulticloud.v1.AttachedClusterU"
+          + "serB\003\340A\001\022N\n\014admin_groups\030\002 \003(\01323.google."
+          + "cloud.gkemulticloud.v1.AttachedClusterGr"
+          + "oupB\003\340A\001\",\n\023AttachedClusterUser\022\025\n\010usern"
+          + "ame\030\001 \001(\tB\003\340A\002\"*\n\024AttachedClusterGroup\022\022"
+          + "\n\005group\030\001 \001(\tB\003\340A\002\";\n\022AttachedOidcConfig"
+          + "\022\022\n\nissuer_url\030\001 \001(\t\022\021\n\004jwks\030\002 \001(\014B\003\340A\001\""
+          + "\356\001\n\024AttachedServerConfig\022\014\n\004name\030\001 \001(\t\022R"
+          + "\n\016valid_versions\030\002 \003(\0132:.google.cloud.gk"
+          + "emulticloud.v1.AttachedPlatformVersionIn"
+          + "fo:t\352Aq\n1gkemulticloud.googleapis.com/At"
+          + "tachedServerConfig\022<projects/{project}/l"
+          + "ocations/{location}/attachedServerConfig"
+          + "\".\n\033AttachedPlatformVersionInfo\022\017\n\007versi"
+          + "on\030\001 \001(\t\"\'\n\024AttachedClusterError\022\017\n\007mess"
+          + "age\030\001 \001(\t\"a\n\023AttachedProxyConfig\022J\n\021kube"
+          + "rnetes_secret\030\001 \001(\0132/.google.cloud.gkemu"
+          + "lticloud.v1.KubernetesSecret\"3\n\020Kubernet"
+          + "esSecret\022\014\n\004name\030\001 \001(\t\022\021\n\tnamespace\030\002 \001("
+          + "\tB\351\001\n!com.google.cloud.gkemulticloud.v1B"
+          + "\026AttachedResourcesProtoP\001ZGcloud.google."
+          + "com/go/gkemulticloud/apiv1/gkemulticloud"
+          + "pb;gkemulticloudpb\252\002\035Google.Cloud.GkeMul"
+          + "tiCloud.V1\312\002\035Google\\Cloud\\GkeMultiCloud\\"
+          + "V1\352\002 Google::Cloud::GkeMultiCloud::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -193,6 +201,7 @@ public final class AttachedResourcesProto {
               "ProxyConfig",
               "BinaryAuthorization",
               "SecurityPostureConfig",
+              "Tags",
             });
     internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_AnnotationsEntry_descriptor =
         internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_descriptor
@@ -201,6 +210,16 @@ public final class AttachedResourcesProto {
     internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_AnnotationsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_AnnotationsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_TagsEntry_descriptor =
+        internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_TagsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

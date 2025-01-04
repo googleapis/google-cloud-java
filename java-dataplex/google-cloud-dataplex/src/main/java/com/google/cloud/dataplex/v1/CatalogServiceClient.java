@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -3679,7 +3679,9 @@ public class CatalogServiceClient implements BackgroundResource {
    *
    * @param name Required. The project to which the request should be attributed in the following
    *     form: `projects/{project}/locations/{location}`.
-   * @param query Required. The query against which entries in scope should be matched.
+   * @param query Required. The query against which entries in scope should be matched. The query
+   *     syntax is defined in [Search syntax for Dataplex
+   *     Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchEntriesPagedResponse searchEntries(LocationName name, String query) {
@@ -3715,7 +3717,9 @@ public class CatalogServiceClient implements BackgroundResource {
    *
    * @param name Required. The project to which the request should be attributed in the following
    *     form: `projects/{project}/locations/{location}`.
-   * @param query Required. The query against which entries in scope should be matched.
+   * @param query Required. The query against which entries in scope should be matched. The query
+   *     syntax is defined in [Search syntax for Dataplex
+   *     Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchEntriesPagedResponse searchEntries(String name, String query) {

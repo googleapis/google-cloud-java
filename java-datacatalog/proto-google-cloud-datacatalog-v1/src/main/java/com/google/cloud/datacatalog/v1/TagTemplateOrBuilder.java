@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,7 +94,7 @@ public interface TagTemplateOrBuilder
    * <pre>
    * Indicates whether tags created with this template are public. Public tags
    * do not require tag template access to appear in
-   * [ListTags][google.cloud.datacatalog.v1.ListTags] API response.
+   * [ListTags][google.cloud.datacatalog.v1.DataCatalog.ListTags] API response.
    *
    * Additionally, you can search for a public tag by value with a
    * simple search query in addition to using a ``tag:`` predicate.

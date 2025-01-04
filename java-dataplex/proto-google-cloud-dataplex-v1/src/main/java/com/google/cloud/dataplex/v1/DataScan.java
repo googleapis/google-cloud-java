@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1310,10 +1310,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob started.
+     * Optional. The time when the latest DataScanJob started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the latestJobStartTime field is set.
      */
@@ -1322,10 +1324,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob started.
+     * Optional. The time when the latest DataScanJob started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The latestJobStartTime.
      */
@@ -1334,10 +1338,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob started.
+     * Optional. The time when the latest DataScanJob started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.protobuf.TimestampOrBuilder getLatestJobStartTimeOrBuilder();
 
@@ -1345,10 +1351,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob ended.
+     * Optional. The time when the latest DataScanJob ended.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the latestJobEndTime field is set.
      */
@@ -1357,10 +1365,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob ended.
+     * Optional. The time when the latest DataScanJob ended.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The latestJobEndTime.
      */
@@ -1369,10 +1379,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob ended.
+     * Optional. The time when the latest DataScanJob ended.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.protobuf.TimestampOrBuilder getLatestJobEndTimeOrBuilder();
 
@@ -1466,10 +1478,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob started.
+     * Optional. The time when the latest DataScanJob started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the latestJobStartTime field is set.
      */
@@ -1481,10 +1495,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob started.
+     * Optional. The time when the latest DataScanJob started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The latestJobStartTime.
      */
@@ -1498,10 +1514,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob started.
+     * Optional. The time when the latest DataScanJob started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLatestJobStartTimeOrBuilder() {
@@ -1516,10 +1534,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob ended.
+     * Optional. The time when the latest DataScanJob ended.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the latestJobEndTime field is set.
      */
@@ -1531,10 +1551,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob ended.
+     * Optional. The time when the latest DataScanJob ended.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The latestJobEndTime.
      */
@@ -1548,10 +1570,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the latest DataScanJob ended.
+     * Optional. The time when the latest DataScanJob ended.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLatestJobEndTimeOrBuilder() {
@@ -2072,10 +2096,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the latestJobStartTime field is set.
        */
@@ -2086,10 +2112,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The latestJobStartTime.
        */
@@ -2106,10 +2134,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setLatestJobStartTime(com.google.protobuf.Timestamp value) {
         if (latestJobStartTimeBuilder_ == null) {
@@ -2128,10 +2158,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setLatestJobStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (latestJobStartTimeBuilder_ == null) {
@@ -2147,10 +2179,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeLatestJobStartTime(com.google.protobuf.Timestamp value) {
         if (latestJobStartTimeBuilder_ == null) {
@@ -2174,10 +2208,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearLatestJobStartTime() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2193,10 +2229,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.protobuf.Timestamp.Builder getLatestJobStartTimeBuilder() {
         bitField0_ |= 0x00000001;
@@ -2207,10 +2245,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.protobuf.TimestampOrBuilder getLatestJobStartTimeOrBuilder() {
         if (latestJobStartTimeBuilder_ != null) {
@@ -2225,10 +2265,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob started.
+       * Optional. The time when the latest DataScanJob started.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_start_time = 4;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_start_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -2257,10 +2299,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the latestJobEndTime field is set.
        */
@@ -2271,10 +2315,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The latestJobEndTime.
        */
@@ -2291,10 +2337,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setLatestJobEndTime(com.google.protobuf.Timestamp value) {
         if (latestJobEndTimeBuilder_ == null) {
@@ -2313,10 +2361,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setLatestJobEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (latestJobEndTimeBuilder_ == null) {
@@ -2332,10 +2382,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeLatestJobEndTime(com.google.protobuf.Timestamp value) {
         if (latestJobEndTimeBuilder_ == null) {
@@ -2359,10 +2411,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearLatestJobEndTime() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2378,10 +2432,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.protobuf.Timestamp.Builder getLatestJobEndTimeBuilder() {
         bitField0_ |= 0x00000002;
@@ -2392,10 +2448,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.protobuf.TimestampOrBuilder getLatestJobEndTimeOrBuilder() {
         if (latestJobEndTimeBuilder_ != null) {
@@ -2410,10 +2468,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time when the latest DataScanJob ended.
+       * Optional. The time when the latest DataScanJob ended.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
+       * <code>
+       * .google.protobuf.Timestamp latest_job_end_time = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -2812,13 +2872,15 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The relative resource name of the scan, of the form:
-   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+   * Output only. Identifier. The relative resource name of the scan, of the
+   * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -2838,13 +2900,15 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The relative resource name of the scan, of the form:
-   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+   * Output only. Identifier. The relative resource name of the scan, of the
+   * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -2873,7 +2937,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    * be different if the scan is deleted and re-created with the same name.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -2897,7 +2963,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    * be different if the scan is deleted and re-created with the same name.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -4763,13 +4831,15 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the scan, of the form:
-     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * Output only. Identifier. The relative resource name of the scan, of the
+     * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -4788,13 +4858,15 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the scan, of the form:
-     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * Output only. Identifier. The relative resource name of the scan, of the
+     * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -4813,13 +4885,15 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the scan, of the form:
-     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * Output only. Identifier. The relative resource name of the scan, of the
+     * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4837,13 +4911,15 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the scan, of the form:
-     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * Output only. Identifier. The relative resource name of the scan, of the
+     * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -4857,13 +4933,15 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the scan, of the form:
-     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * Output only. Identifier. The relative resource name of the scan, of the
+     * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4888,7 +4966,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * be different if the scan is deleted and re-created with the same name.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The uid.
      */
@@ -4911,7 +4991,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * be different if the scan is deleted and re-created with the same name.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for uid.
      */
@@ -4934,7 +5016,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * be different if the scan is deleted and re-created with the same name.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The uid to set.
      * @return This builder for chaining.
@@ -4956,7 +5040,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * be different if the scan is deleted and re-created with the same name.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -4974,7 +5060,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * be different if the scan is deleted and re-created with the same name.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.servicehealth.v1;
  *
  *
  * <pre>
- * Message for getting an organization event.
+ * Gets information about a specific event affecting an organization.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicehealth.v1.GetOrganizationEventRequest}
@@ -298,7 +298,7 @@ public final class GetOrganizationEventRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Message for getting an organization event.
+   * Gets information about a specific event affecting an organization.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicehealth.v1.GetOrganizationEventRequest}

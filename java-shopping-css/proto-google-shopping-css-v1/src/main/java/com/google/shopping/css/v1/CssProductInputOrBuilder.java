@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,6 +183,7 @@ public interface CssProductInputOrBuilder
    *
    *
    * <pre>
+   * DEPRECATED. Use expiration_date instead.
    * Represents the existing version (freshness) of the CSS Product, which
    * can be used to preserve the right order when multiple updates are done at
    * the same time.
@@ -202,15 +203,19 @@ public interface CssProductInputOrBuilder
    * thrown.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+   * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    *
+   * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
+   *     google/shopping/css/v1/css_product_inputs.proto;l=139
    * @return Whether the freshnessTime field is set.
    */
+  @java.lang.Deprecated
   boolean hasFreshnessTime();
   /**
    *
    *
    * <pre>
+   * DEPRECATED. Use expiration_date instead.
    * Represents the existing version (freshness) of the CSS Product, which
    * can be used to preserve the right order when multiple updates are done at
    * the same time.
@@ -230,15 +235,19 @@ public interface CssProductInputOrBuilder
    * thrown.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+   * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    *
+   * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
+   *     google/shopping/css/v1/css_product_inputs.proto;l=139
    * @return The freshnessTime.
    */
+  @java.lang.Deprecated
   com.google.protobuf.Timestamp getFreshnessTime();
   /**
    *
    *
    * <pre>
+   * DEPRECATED. Use expiration_date instead.
    * Represents the existing version (freshness) of the CSS Product, which
    * can be used to preserve the right order when multiple updates are done at
    * the same time.
@@ -258,8 +267,9 @@ public interface CssProductInputOrBuilder
    * thrown.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp freshness_time = 6;</code>
+   * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.protobuf.TimestampOrBuilder getFreshnessTimeOrBuilder();
 
   /**

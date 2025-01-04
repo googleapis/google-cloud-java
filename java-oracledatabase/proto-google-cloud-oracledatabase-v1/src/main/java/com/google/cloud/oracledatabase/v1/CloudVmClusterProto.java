@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,7 @@ public final class CloudVmClusterProto {
           + "ssl\030\026 \001(\005B\003\340A\003\022\023\n\006domain\030\027 \001(\tB\003\340A\003\022\025\n\010s"
           + "can_dns\030\030 \001(\tB\003\340A\003\022\025\n\010hostname\030\031 \001(\tB\003\340A"
           + "\003\022\033\n\016cpu_core_count\030\032 \001(\005B\003\340A\002\022\033\n\016system"
-          + "_version\030\033 \001(\tB\003\340A\003\022\030\n\013scan_ip_ids\030\034 \003(\t"
+          + "_version\030\033 \001(\tB\003\340A\001\022\030\n\013scan_ip_ids\030\034 \003(\t"
           + "B\003\340A\003\022\037\n\022scan_dns_record_id\030\035 \001(\tB\003\340A\003\022\024"
           + "\n\007oci_url\030\036 \001(\tB\003\340A\003\022\034\n\017db_server_ocids\030"
           + "\037 \003(\tB\003\340A\001\022\033\n\016compartment_id\030  \001(\tB\003\340A\003\022"

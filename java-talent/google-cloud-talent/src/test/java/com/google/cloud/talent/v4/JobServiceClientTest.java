@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -928,6 +928,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(request.getCustomRankingInfo(), actualRequest.getCustomRankingInfo());
     Assert.assertEquals(request.getDisableKeywordMatch(), actualRequest.getDisableKeywordMatch());
     Assert.assertEquals(request.getKeywordMatchMode(), actualRequest.getKeywordMatchMode());
+    Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1015,6 +1016,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(request.getCustomRankingInfo(), actualRequest.getCustomRankingInfo());
     Assert.assertEquals(request.getDisableKeywordMatch(), actualRequest.getDisableKeywordMatch());
     Assert.assertEquals(request.getKeywordMatchMode(), actualRequest.getKeywordMatchMode());
+    Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

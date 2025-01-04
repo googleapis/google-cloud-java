@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.contactcenterinsights.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,11 +33,19 @@ public class FeedbackLabelName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/conversations/{conversation}/feedbackLabels/{feedback_label}");
+  private static final PathTemplate
+      PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_FEEDBACK_LABEL =
+          PathTemplate.createWithoutUrlEncoding(
+              "projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}/authorizedViews/{authorized_view}/conversations/{conversation}/feedbackLabels/{feedback_label}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String conversation;
   private final String feedbackLabel;
+  private final String authorizedViewSet;
+  private final String authorizedView;
 
   @Deprecated
   protected FeedbackLabelName() {
@@ -44,6 +53,8 @@ public class FeedbackLabelName implements ResourceName {
     location = null;
     conversation = null;
     feedbackLabel = null;
+    authorizedViewSet = null;
+    authorizedView = null;
   }
 
   private FeedbackLabelName(Builder builder) {
@@ -51,6 +62,20 @@ public class FeedbackLabelName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     conversation = Preconditions.checkNotNull(builder.getConversation());
     feedbackLabel = Preconditions.checkNotNull(builder.getFeedbackLabel());
+    authorizedViewSet = null;
+    authorizedView = null;
+    pathTemplate = PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL;
+  }
+
+  private FeedbackLabelName(
+      ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    authorizedViewSet = Preconditions.checkNotNull(builder.getAuthorizedViewSet());
+    authorizedView = Preconditions.checkNotNull(builder.getAuthorizedView());
+    conversation = Preconditions.checkNotNull(builder.getConversation());
+    feedbackLabel = Preconditions.checkNotNull(builder.getFeedbackLabel());
+    pathTemplate = PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_FEEDBACK_LABEL;
   }
 
   public String getProject() {
@@ -69,8 +94,25 @@ public class FeedbackLabelName implements ResourceName {
     return feedbackLabel;
   }
 
+  public String getAuthorizedViewSet() {
+    return authorizedViewSet;
+  }
+
+  public String getAuthorizedView() {
+    return authorizedView;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationConversationFeedbackLabelBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder
+      newProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder() {
+    return new ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder();
   }
 
   public Builder toBuilder() {
@@ -87,6 +129,34 @@ public class FeedbackLabelName implements ResourceName {
         .build();
   }
 
+  public static FeedbackLabelName ofProjectLocationConversationFeedbackLabelName(
+      String project, String location, String conversation, String feedbackLabel) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConversation(conversation)
+        .setFeedbackLabel(feedbackLabel)
+        .build();
+  }
+
+  public static FeedbackLabelName
+      ofProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelName(
+          String project,
+          String location,
+          String authorizedViewSet,
+          String authorizedView,
+          String conversation,
+          String feedbackLabel) {
+    return newProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAuthorizedViewSet(authorizedViewSet)
+        .setAuthorizedView(authorizedView)
+        .setConversation(conversation)
+        .setFeedbackLabel(feedbackLabel)
+        .build();
+  }
+
   public static String format(
       String project, String location, String conversation, String feedbackLabel) {
     return newBuilder()
@@ -98,18 +168,62 @@ public class FeedbackLabelName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationConversationFeedbackLabelName(
+      String project, String location, String conversation, String feedbackLabel) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConversation(conversation)
+        .setFeedbackLabel(feedbackLabel)
+        .build()
+        .toString();
+  }
+
+  public static String
+      formatProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelName(
+          String project,
+          String location,
+          String authorizedViewSet,
+          String authorizedView,
+          String conversation,
+          String feedbackLabel) {
+    return newProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAuthorizedViewSet(authorizedViewSet)
+        .setAuthorizedView(authorizedView)
+        .setConversation(conversation)
+        .setFeedbackLabel(feedbackLabel)
+        .build()
+        .toString();
+  }
+
   public static FeedbackLabelName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL.validatedMatch(
-            formattedString, "FeedbackLabelName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("conversation"),
-        matchMap.get("feedback_label"));
+    if (PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL.match(formattedString);
+      return ofProjectLocationConversationFeedbackLabelName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("conversation"),
+          matchMap.get("feedback_label"));
+    } else if (PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_FEEDBACK_LABEL
+        .matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_FEEDBACK_LABEL.match(
+              formattedString);
+      return ofProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("authorized_view_set"),
+          matchMap.get("authorized_view"),
+          matchMap.get("conversation"),
+          matchMap.get("feedback_label"));
+    }
+    throw new ValidationException("FeedbackLabelName.parse: formattedString not in valid format");
   }
 
   public static List<FeedbackLabelName> parseList(List<String> formattedStrings) {
@@ -133,7 +247,9 @@ public class FeedbackLabelName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL.matches(formattedString);
+    return PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL.matches(formattedString)
+        || PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_FEEDBACK_LABEL.matches(
+            formattedString);
   }
 
   @Override
@@ -154,6 +270,12 @@ public class FeedbackLabelName implements ResourceName {
           if (feedbackLabel != null) {
             fieldMapBuilder.put("feedback_label", feedbackLabel);
           }
+          if (authorizedViewSet != null) {
+            fieldMapBuilder.put("authorized_view_set", authorizedViewSet);
+          }
+          if (authorizedView != null) {
+            fieldMapBuilder.put("authorized_view", authorizedView);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -167,15 +289,7 @@ public class FeedbackLabelName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "conversation",
-        conversation,
-        "feedback_label",
-        feedbackLabel);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -188,7 +302,9 @@ public class FeedbackLabelName implements ResourceName {
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.conversation, that.conversation)
-          && Objects.equals(this.feedbackLabel, that.feedbackLabel);
+          && Objects.equals(this.feedbackLabel, that.feedbackLabel)
+          && Objects.equals(this.authorizedViewSet, that.authorizedViewSet)
+          && Objects.equals(this.authorizedView, that.authorizedView);
     }
     return false;
   }
@@ -197,6 +313,8 @@ public class FeedbackLabelName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
@@ -204,6 +322,10 @@ public class FeedbackLabelName implements ResourceName {
     h ^= Objects.hashCode(conversation);
     h *= 1000003;
     h ^= Objects.hashCode(feedbackLabel);
+    h *= 1000003;
+    h ^= Objects.hashCode(authorizedViewSet);
+    h *= 1000003;
+    h ^= Objects.hashCode(authorizedView);
     return h;
   }
 
@@ -256,10 +378,94 @@ public class FeedbackLabelName implements ResourceName {
     }
 
     private Builder(FeedbackLabelName feedbackLabelName) {
+      Preconditions.checkArgument(
+          Objects.equals(
+              feedbackLabelName.pathTemplate, PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL),
+          "toBuilder is only supported when FeedbackLabelName has the pattern of projects/{project}/locations/{location}/conversations/{conversation}/feedbackLabels/{feedback_label}");
       this.project = feedbackLabelName.project;
       this.location = feedbackLabelName.location;
       this.conversation = feedbackLabelName.conversation;
       this.feedbackLabel = feedbackLabelName.feedbackLabel;
+    }
+
+    public FeedbackLabelName build() {
+      return new FeedbackLabelName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}/authorizedViews/{authorized_view}/conversations/{conversation}/feedbackLabels/{feedback_label}.
+   */
+  public static
+  class ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder {
+    private String project;
+    private String location;
+    private String authorizedViewSet;
+    private String authorizedView;
+    private String conversation;
+    private String feedbackLabel;
+
+    protected ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getAuthorizedViewSet() {
+      return authorizedViewSet;
+    }
+
+    public String getAuthorizedView() {
+      return authorizedView;
+    }
+
+    public String getConversation() {
+      return conversation;
+    }
+
+    public String getFeedbackLabel() {
+      return feedbackLabel;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder
+        setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder
+        setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder
+        setAuthorizedViewSet(String authorizedViewSet) {
+      this.authorizedViewSet = authorizedViewSet;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder
+        setAuthorizedView(String authorizedView) {
+      this.authorizedView = authorizedView;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder
+        setConversation(String conversation) {
+      this.conversation = conversation;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationFeedbackLabelBuilder
+        setFeedbackLabel(String feedbackLabel) {
+      this.feedbackLabel = feedbackLabel;
+      return this;
     }
 
     public FeedbackLabelName build() {

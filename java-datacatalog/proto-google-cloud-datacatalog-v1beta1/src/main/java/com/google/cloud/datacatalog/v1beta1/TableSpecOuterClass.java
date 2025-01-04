@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,13 +72,13 @@ public final class TableSpecOuterClass {
           + "\003 \001(\003B\003\340A\003*{\n\017TableSourceType\022!\n\035TABLE_S"
           + "OURCE_TYPE_UNSPECIFIED\020\000\022\021\n\rBIGQUERY_VIE"
           + "W\020\002\022\022\n\016BIGQUERY_TABLE\020\005\022\036\n\032BIGQUERY_MATE"
-          + "RIALIZED_VIEW\020\007B\337\001\n$com.google.cloud.dat"
+          + "RIALIZED_VIEW\020\007B\334\001\n$com.google.cloud.dat"
           + "acatalog.v1beta1P\001ZFcloud.google.com/go/"
           + "datacatalog/apiv1beta1/datacatalogpb;dat"
-          + "acatalogpb\370\001\001\252\002 Google.Cloud.DataCatalog"
-          + ".V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1be"
-          + "ta1\352\002#Google::Cloud::DataCatalog::V1beta"
-          + "1b\006proto3"
+          + "acatalogpb\252\002 Google.Cloud.DataCatalog.V1"
+          + "Beta1\312\002 Google\\Cloud\\DataCatalog\\V1beta1"
+          + "\352\002#Google::Cloud::DataCatalog::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

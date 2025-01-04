@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -588,7 +588,7 @@ public interface UptimeCheckConfigOrBuilder
    * <code>bool is_internal = 15 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-   *     google/monitoring/v3/uptime.proto;l=545
+   *     google/monitoring/v3/uptime.proto;l=547
    * @return The isInternal.
    */
   @java.lang.Deprecated

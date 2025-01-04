@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,13 +131,13 @@ public final class Tags {
           + "\031\n\014display_name\030\001 \001(\tB\003\340A\002\"`\n\rPrimitiveT"
           + "ype\022\036\n\032PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006D"
           + "OUBLE\020\001\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTA"
-          + "MP\020\004B\013\n\ttype_declB\337\001\n$com.google.cloud.d"
+          + "MP\020\004B\013\n\ttype_declB\334\001\n$com.google.cloud.d"
           + "atacatalog.v1beta1P\001ZFcloud.google.com/g"
           + "o/datacatalog/apiv1beta1/datacatalogpb;d"
-          + "atacatalogpb\370\001\001\252\002 Google.Cloud.DataCatal"
-          + "og.V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1"
-          + "beta1\352\002#Google::Cloud::DataCatalog::V1be"
-          + "ta1b\006proto3"
+          + "atacatalogpb\252\002 Google.Cloud.DataCatalog."
+          + "V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1bet"
+          + "a1\352\002#Google::Cloud::DataCatalog::V1beta1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
