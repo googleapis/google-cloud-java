@@ -29,6 +29,7 @@ import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
+import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
@@ -106,7 +107,7 @@ public class SampleRowsIT {
   }
 
   private static AuthorizedView createPreSplitTableAndAuthorizedView() {
-    String tableId = UUID.randomUUID().toString();
+    String tableId = PrefixGenerator.newPrefix("SampleRowsIT#AuthorizedView");
     String authorizedViewId = UUID.randomUUID().toString();
 
     testEnvRule
