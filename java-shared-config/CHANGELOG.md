@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.12.3](https://github.com/googleapis/java-shared-config/compare/v1.12.2...v1.12.3) (2025-01-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud.artifactregistry:artifactregistry-maven-wagon to v2.2.4 ([#945](https://github.com/googleapis/java-shared-config/issues/945)) ([279bff2](https://github.com/googleapis/java-shared-config/commit/279bff267c8e1ce899a0c00cee72b3cd44c85f91))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.21.1 ([#953](https://github.com/googleapis/java-shared-config/issues/953)) ([10c198d](https://github.com/googleapis/java-shared-config/commit/10c198dc1c0976a29997569bbd2add64564c0579))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.11.4 ([#954](https://github.com/googleapis/java-shared-config/issues/954)) ([c4e0159](https://github.com/googleapis/java-shared-config/commit/c4e0159d4bf7cf2d561b8bda9ef335c59966bec8))
+
 ## [1.12.2](https://github.com/googleapis/java-shared-config/compare/v1.12.1...v1.12.2) (2024-12-10)
 
 
