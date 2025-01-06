@@ -108,7 +108,7 @@
         -->
         <groupId>com.google.cloud.artifactregistry</groupId>
         <artifactId>artifactregistry-maven-wagon</artifactId>
-        <version>2.2.3</version>
+        <version>2.2.4</version>
       </extension>
     </extensions>
   </build>
