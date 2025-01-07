@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.13.0](https://github.com/googleapis/java-shared-config/compare/v1.12.3...v1.13.0) (2025-01-07)
+
+
+### Features
+
+* Ability to avoid CLIRR dependency resolution ([#959](https://github.com/googleapis/java-shared-config/issues/959)) ([50198dd](https://github.com/googleapis/java-shared-config/commit/50198dd2f809752f1e483650a134f4439840f7c7))
+
+
+### Dependencies
+
+* Declare Maven clean and install plugins versions ([#960](https://github.com/googleapis/java-shared-config/issues/960)) ([22c5fa5](https://github.com/googleapis/java-shared-config/commit/22c5fa5740d4a077121d33bfeb556949fcb4a7e6))
+
 ## [1.12.3](https://github.com/googleapis/java-shared-config/compare/v1.12.2...v1.12.3) (2025-01-06)
 
 
