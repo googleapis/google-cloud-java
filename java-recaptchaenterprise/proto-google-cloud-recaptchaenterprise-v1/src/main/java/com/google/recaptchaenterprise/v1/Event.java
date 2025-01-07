@@ -86,10 +86,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default, unspecified setting. If opted in for automatic detection,
-     * `fraud_prevention_assessment` is returned based on the request.
-     * Otherwise, `fraud_prevention_assessment` is returned if
-     * `transaction_data` is present in the `Event` and Fraud Prevention is
+     * Default, unspecified setting. `fraud_prevention_assessment` is returned
+     * if `transaction_data` is present in `Event` and Fraud Prevention is
      * enabled in the Google Cloud console.
      * </pre>
      *
@@ -111,8 +109,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disable Fraud Prevention for this assessment, regardless of opt-in
-     * status or Google Cloud console settings.
+     * Disable Fraud Prevention for this assessment, regardless of Google Cloud
+     * console settings.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -125,10 +123,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default, unspecified setting. If opted in for automatic detection,
-     * `fraud_prevention_assessment` is returned based on the request.
-     * Otherwise, `fraud_prevention_assessment` is returned if
-     * `transaction_data` is present in the `Event` and Fraud Prevention is
+     * Default, unspecified setting. `fraud_prevention_assessment` is returned
+     * if `transaction_data` is present in `Event` and Fraud Prevention is
      * enabled in the Google Cloud console.
      * </pre>
      *
@@ -150,8 +146,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disable Fraud Prevention for this assessment, regardless of opt-in
-     * status or Google Cloud console settings.
+     * Disable Fraud Prevention for this assessment, regardless of Google Cloud
+     * console settings.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -530,7 +526,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=747
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
    * @return The hashedAccountId.
    */
   @java.lang.Override
@@ -2230,7 +2226,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=747
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
      * @return The hashedAccountId.
      */
     @java.lang.Override
@@ -2252,7 +2248,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=747
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
      * @param value The hashedAccountId to set.
      * @return This builder for chaining.
      */
@@ -2280,7 +2276,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=747
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
