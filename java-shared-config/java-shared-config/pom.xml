@@ -347,21 +347,6 @@
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
-        <artifactId>clirr-maven-plugin</artifactId>
-        <configuration>
-          <ignoredDifferencesFile>clirr-ignored-differences.xml</ignoredDifferencesFile>
-          <logResults>true</logResults>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
         <version>1.24</version>
         <executions>
@@ -688,6 +673,39 @@
           </snapshots>
         </repository>
       </repositories>
+    </profile>
+    <profile>
+      <id>clirr-compatibility-check</id>
+      <!--
+          CLIRR Maven plugin's dependencies are quite old and not available
+          in some build environment (Airlock).
+          https://github.com/googleapis/java-shared-config/issues/956
+          Extracting this plugin declaration as a profile enables us to disable
+          the CLIRR dependency resolution by `mvn -P=-clirr-compatibility-check ...`
+      -->
+      <activation>
+        <!-- The compatibility check runs by default in CIs -->
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>clirr-maven-plugin</artifactId>
+            <configuration>
+              <ignoredDifferencesFile>clirr-ignored-differences.xml</ignoredDifferencesFile>
+              <logResults>true</logResults>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
 </project>
