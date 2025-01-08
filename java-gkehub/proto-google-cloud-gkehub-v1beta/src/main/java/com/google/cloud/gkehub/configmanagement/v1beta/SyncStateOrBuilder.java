@@ -111,7 +111,7 @@ public interface SyncStateOrBuilder
    * <code>string last_sync = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated. See
-   *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
+   *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=537
    * @return The lastSync.
    */
   @java.lang.Deprecated
@@ -128,7 +128,7 @@ public interface SyncStateOrBuilder
    * <code>string last_sync = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated. See
-   *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
+   *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=537
    * @return The bytes for lastSync.
    */
   @java.lang.Deprecated

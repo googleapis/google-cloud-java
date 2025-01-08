@@ -172,4 +172,96 @@ public interface PolicyControllerOrBuilder
    * @return The logDeniesEnabled.
    */
   boolean getLogDeniesEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable mutation in policy controller.
+   * If true, mutation CRDs, webhook and controller deployment
+   * will be deployed to the cluster.
+   * </pre>
+   *
+   * <code>bool mutation_enabled = 7;</code>
+   *
+   * @return The mutationEnabled.
+   */
+  boolean getMutationEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring specifies the configuration of monitoring.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+   * </code>
+   *
+   * @return Whether the monitoring field is set.
+   */
+  boolean hasMonitoring();
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring specifies the configuration of monitoring.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+   * </code>
+   *
+   * @return The monitoring.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring getMonitoring();
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring specifies the configuration of monitoring.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+   * </code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoringOrBuilder
+      getMonitoringOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last time this membership spec was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last time this membership spec was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last time this membership spec was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

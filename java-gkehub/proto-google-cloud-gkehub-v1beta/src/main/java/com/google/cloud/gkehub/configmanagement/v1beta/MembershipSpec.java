@@ -41,6 +41,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
 
   private MembershipSpec() {
     version_ = "";
+    cluster_ = "";
+    management_ = 0;
   }
 
   @java.lang.Override
@@ -64,6 +66,165 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Whether to automatically manage the Feature.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management}
+   */
+  public enum Management implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified
+     * </pre>
+     *
+     * <code>MANAGEMENT_UNSPECIFIED = 0;</code>
+     */
+    MANAGEMENT_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Google will manage the Feature for the cluster.
+     * </pre>
+     *
+     * <code>MANAGEMENT_AUTOMATIC = 1;</code>
+     */
+    MANAGEMENT_AUTOMATIC(1),
+    /**
+     *
+     *
+     * <pre>
+     * User will manually manage the Feature for the cluster.
+     * </pre>
+     *
+     * <code>MANAGEMENT_MANUAL = 2;</code>
+     */
+    MANAGEMENT_MANUAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified
+     * </pre>
+     *
+     * <code>MANAGEMENT_UNSPECIFIED = 0;</code>
+     */
+    public static final int MANAGEMENT_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Google will manage the Feature for the cluster.
+     * </pre>
+     *
+     * <code>MANAGEMENT_AUTOMATIC = 1;</code>
+     */
+    public static final int MANAGEMENT_AUTOMATIC_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * User will manually manage the Feature for the cluster.
+     * </pre>
+     *
+     * <code>MANAGEMENT_MANUAL = 2;</code>
+     */
+    public static final int MANAGEMENT_MANUAL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Management valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Management forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MANAGEMENT_UNSPECIFIED;
+        case 1:
+          return MANAGEMENT_AUTOMATIC;
+        case 2:
+          return MANAGEMENT_MANUAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Management> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Management> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Management>() {
+          public Management findValueByNumber(int number) {
+            return Management.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Management[] VALUES = values();
+
+    public static Management valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Management(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management)
+  }
+
   private int bitField0_;
   public static final int CONFIG_SYNC_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync configSync_;
@@ -71,10 +232,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Config Sync configuration for the cluster.
+   * Optional. Config Sync configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the configSync field is set.
    */
@@ -86,10 +249,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Config Sync configuration for the cluster.
+   * Optional. Config Sync configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The configSync.
    */
@@ -103,10 +268,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Config Sync configuration for the cluster.
+   * Optional. Config Sync configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncOrBuilder
@@ -122,15 +289,21 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policy Controller configuration for the cluster.
+   * Optional. Policy Controller configuration for the cluster.
+   * Deprecated: Configuring Policy Controller through the configmanagement
+   * feature is no longer recommended. Use the policycontroller feature instead.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
    * @return Whether the policyController field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasPolicyController() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -138,15 +311,21 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policy Controller configuration for the cluster.
+   * Optional. Policy Controller configuration for the cluster.
+   * Deprecated: Configuring Policy Controller through the configmanagement
+   * feature is no longer recommended. Use the policycontroller feature instead.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
    * @return The policyController.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.gkehub.configmanagement.v1beta.PolicyController getPolicyController() {
     return policyController_ == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyController.getDefaultInstance()
@@ -156,13 +335,17 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policy Controller configuration for the cluster.
+   * Optional. Policy Controller configuration for the cluster.
+   * Deprecated: Configuring Policy Controller through the configmanagement
+   * feature is no longer recommended. Use the policycontroller feature instead.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerOrBuilder
       getPolicyControllerOrBuilder() {
     return policyController_ == null
@@ -176,14 +359,20 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Binauthz conifguration for the cluster.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is deprecated.
+   *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
    * @return Whether the binauthz field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasBinauthz() {
     return ((bitField0_ & 0x00000004) != 0);
   }
@@ -191,14 +380,20 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Binauthz conifguration for the cluster.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is deprecated.
+   *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
    * @return The binauthz.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig getBinauthz() {
     return binauthz_ == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig.getDefaultInstance()
@@ -208,12 +403,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Binauthz conifguration for the cluster.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfigOrBuilder
       getBinauthzOrBuilder() {
     return binauthz_ == null
@@ -228,16 +427,22 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Hierarchy Controller configuration for the cluster.
+   * Optional. Hierarchy Controller configuration for the cluster.
+   * Deprecated: Configuring Hierarchy Controller through the configmanagement
+   * feature is no longer recommended. Use
+   * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller is
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
    * @return Whether the hierarchyController field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasHierarchyController() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -245,16 +450,22 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Hierarchy Controller configuration for the cluster.
+   * Optional. Hierarchy Controller configuration for the cluster.
+   * Deprecated: Configuring Hierarchy Controller through the configmanagement
+   * feature is no longer recommended. Use
+   * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller is
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
    * @return The hierarchyController.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig
       getHierarchyController() {
     return hierarchyController_ == null
@@ -266,14 +477,18 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Hierarchy Controller configuration for the cluster.
+   * Optional. Hierarchy Controller configuration for the cluster.
+   * Deprecated: Configuring Hierarchy Controller through the configmanagement
+   * feature is no longer recommended. Use
+   * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfigOrBuilder
       getHierarchyControllerOrBuilder() {
     return hierarchyController_ == null
@@ -290,10 +505,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Version of ACM installed.
+   * Optional. Version of ACM installed.
    * </pre>
    *
-   * <code>string version = 10;</code>
+   * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The version.
    */
@@ -313,10 +528,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Version of ACM installed.
+   * Optional. Version of ACM installed.
    * </pre>
    *
-   * <code>string version = 10;</code>
+   * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for version.
    */
@@ -331,6 +546,111 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CLUSTER_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cluster_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified cluster name used by Config Sync
+   * cluster-name-selector annotation or ClusterSelector, for applying configs
+   * to only a subset of clusters. Omit this field if the cluster's fleet
+   * membership name is used by Config Sync cluster-name-selector annotation or
+   * ClusterSelector. Set this field if a name different from the cluster's
+   * fleet membership name is used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector.
+   * </pre>
+   *
+   * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cluster.
+   */
+  @java.lang.Override
+  public java.lang.String getCluster() {
+    java.lang.Object ref = cluster_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cluster_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified cluster name used by Config Sync
+   * cluster-name-selector annotation or ClusterSelector, for applying configs
+   * to only a subset of clusters. Omit this field if the cluster's fleet
+   * membership name is used by Config Sync cluster-name-selector annotation or
+   * ClusterSelector. Set this field if a name different from the cluster's
+   * fleet membership name is used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector.
+   * </pre>
+   *
+   * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for cluster.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClusterBytes() {
+    java.lang.Object ref = cluster_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cluster_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MANAGEMENT_FIELD_NUMBER = 12;
+  private int management_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables automatic Feature management.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for management.
+   */
+  @java.lang.Override
+  public int getManagementValue() {
+    return management_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables automatic Feature management.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The management.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management getManagement() {
+    com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management result =
+        com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management.forNumber(
+            management_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -362,6 +682,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cluster_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, cluster_);
+    }
+    if (management_
+        != com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management
+            .MANAGEMENT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, management_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -385,6 +714,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cluster_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, cluster_);
+    }
+    if (management_
+        != com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management
+            .MANAGEMENT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, management_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -419,6 +757,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       if (!getHierarchyController().equals(other.getHierarchyController())) return false;
     }
     if (!getVersion().equals(other.getVersion())) return false;
+    if (!getCluster().equals(other.getCluster())) return false;
+    if (management_ != other.management_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -448,6 +788,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
+    hash = (37 * hash) + CLUSTER_FIELD_NUMBER;
+    hash = (53 * hash) + getCluster().hashCode();
+    hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
+    hash = (53 * hash) + management_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -622,6 +966,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         hierarchyControllerBuilder_ = null;
       }
       version_ = "";
+      cluster_ = "";
+      management_ = 0;
       return this;
     }
 
@@ -683,6 +1029,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cluster_ = cluster_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.management_ = management_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -751,6 +1103,14 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getCluster().isEmpty()) {
+        cluster_ = other.cluster_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.management_ != 0) {
+        setManagementValue(other.getManagementValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -809,6 +1169,18 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 82
+            case 90:
+              {
+                cluster_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 90
+            case 96:
+              {
+                management_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -838,10 +1210,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the configSync field is set.
      */
@@ -852,10 +1226,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The configSync.
      */
@@ -872,10 +1248,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setConfigSync(com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync value) {
       if (configSyncBuilder_ == null) {
@@ -894,10 +1272,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setConfigSync(
         com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync.Builder builderForValue) {
@@ -914,10 +1294,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeConfigSync(
         com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync value) {
@@ -944,10 +1326,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearConfigSync() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -963,10 +1347,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync.Builder
         getConfigSyncBuilder() {
@@ -978,10 +1364,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncOrBuilder
         getConfigSyncOrBuilder() {
@@ -997,10 +1385,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Config Sync configuration for the cluster.
+     * Optional. Config Sync configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync,
@@ -1029,14 +1419,20 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
+     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
      * @return Whether the policyController field is set.
      */
+    @java.lang.Deprecated
     public boolean hasPolicyController() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1044,14 +1440,20 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
+     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
      * @return The policyController.
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.PolicyController getPolicyController() {
       if (policyControllerBuilder_ == null) {
         return policyController_ == null
@@ -1065,12 +1467,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPolicyController(
         com.google.cloud.gkehub.configmanagement.v1beta.PolicyController value) {
       if (policyControllerBuilder_ == null) {
@@ -1089,12 +1495,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPolicyController(
         com.google.cloud.gkehub.configmanagement.v1beta.PolicyController.Builder builderForValue) {
       if (policyControllerBuilder_ == null) {
@@ -1110,12 +1520,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergePolicyController(
         com.google.cloud.gkehub.configmanagement.v1beta.PolicyController value) {
       if (policyControllerBuilder_ == null) {
@@ -1141,12 +1555,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearPolicyController() {
       bitField0_ = (bitField0_ & ~0x00000002);
       policyController_ = null;
@@ -1161,12 +1579,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.PolicyController.Builder
         getPolicyControllerBuilder() {
       bitField0_ |= 0x00000002;
@@ -1177,12 +1599,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerOrBuilder
         getPolicyControllerOrBuilder() {
       if (policyControllerBuilder_ != null) {
@@ -1197,10 +1623,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policy Controller configuration for the cluster.
+     * Optional. Policy Controller configuration for the cluster.
+     * Deprecated: Configuring Policy Controller through the configmanagement
+     * feature is no longer recommended. Use the policycontroller feature instead.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1230,13 +1659,19 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is
+     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
      * @return Whether the binauthz field is set.
      */
+    @java.lang.Deprecated
     public boolean hasBinauthz() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1244,13 +1679,19 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is
+     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
      * @return The binauthz.
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig getBinauthz() {
       if (binauthzBuilder_ == null) {
         return binauthz_ == null
@@ -1264,11 +1705,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setBinauthz(
         com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig value) {
       if (binauthzBuilder_ == null) {
@@ -1287,11 +1732,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setBinauthz(
         com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig.Builder builderForValue) {
       if (binauthzBuilder_ == null) {
@@ -1307,11 +1756,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeBinauthz(
         com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig value) {
       if (binauthzBuilder_ == null) {
@@ -1337,11 +1790,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearBinauthz() {
       bitField0_ = (bitField0_ & ~0x00000004);
       binauthz_ = null;
@@ -1356,11 +1813,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig.Builder
         getBinauthzBuilder() {
       bitField0_ |= 0x00000004;
@@ -1371,11 +1832,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfigOrBuilder
         getBinauthzOrBuilder() {
       if (binauthzBuilder_ != null) {
@@ -1390,10 +1855,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Binauthz conifguration for the cluster.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig,
@@ -1423,15 +1891,22 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller
+     *     is deprecated. See
+     *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
      * @return Whether the hierarchyController field is set.
      */
+    @java.lang.Deprecated
     public boolean hasHierarchyController() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1439,15 +1914,22 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller
+     *     is deprecated. See
+     *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
      * @return The hierarchyController.
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig
         getHierarchyController() {
       if (hierarchyControllerBuilder_ == null) {
@@ -1463,13 +1945,17 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setHierarchyController(
         com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig value) {
       if (hierarchyControllerBuilder_ == null) {
@@ -1488,13 +1974,17 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setHierarchyController(
         com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig.Builder
             builderForValue) {
@@ -1511,13 +2001,17 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeHierarchyController(
         com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig value) {
       if (hierarchyControllerBuilder_ == null) {
@@ -1543,13 +2037,17 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearHierarchyController() {
       bitField0_ = (bitField0_ & ~0x00000008);
       hierarchyController_ = null;
@@ -1564,13 +2062,17 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig.Builder
         getHierarchyControllerBuilder() {
       bitField0_ |= 0x00000008;
@@ -1581,13 +2083,17 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfigOrBuilder
         getHierarchyControllerOrBuilder() {
       if (hierarchyControllerBuilder_ != null) {
@@ -1603,11 +2109,14 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Hierarchy Controller configuration for the cluster.
+     * Optional. Hierarchy Controller configuration for the cluster.
+     * Deprecated: Configuring Hierarchy Controller through the configmanagement
+     * feature is no longer recommended. Use
+     * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1632,10 +2141,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of ACM installed.
+     * Optional. Version of ACM installed.
      * </pre>
      *
-     * <code>string version = 10;</code>
+     * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The version.
      */
@@ -1654,10 +2163,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of ACM installed.
+     * Optional. Version of ACM installed.
      * </pre>
      *
-     * <code>string version = 10;</code>
+     * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for version.
      */
@@ -1676,10 +2185,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of ACM installed.
+     * Optional. Version of ACM installed.
      * </pre>
      *
-     * <code>string version = 10;</code>
+     * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The version to set.
      * @return This builder for chaining.
@@ -1697,10 +2206,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of ACM installed.
+     * Optional. Version of ACM installed.
      * </pre>
      *
-     * <code>string version = 10;</code>
+     * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1714,10 +2223,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of ACM installed.
+     * Optional. Version of ACM installed.
      * </pre>
      *
-     * <code>string version = 10;</code>
+     * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for version to set.
      * @return This builder for chaining.
@@ -1729,6 +2238,247 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       version_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cluster_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The cluster.
+     */
+    public java.lang.String getCluster() {
+      java.lang.Object ref = cluster_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cluster_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for cluster.
+     */
+    public com.google.protobuf.ByteString getClusterBytes() {
+      java.lang.Object ref = cluster_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cluster_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The cluster to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCluster(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cluster_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCluster() {
+      cluster_ = getDefaultInstance().getCluster();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for cluster to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cluster_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private int management_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for management.
+     */
+    @java.lang.Override
+    public int getManagementValue() {
+      return management_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for management to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagementValue(int value) {
+      management_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The management.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management
+        getManagement() {
+      com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management result =
+          com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management.forNumber(
+              management_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The management to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagement(
+        com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      management_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearManagement() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      management_ = 0;
       onChanged();
       return this;
     }

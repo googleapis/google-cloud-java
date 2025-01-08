@@ -28,10 +28,12 @@ public interface ConfigSyncOrBuilder
    *
    *
    * <pre>
-   * Git repo configuration for the cluster.
+   * Optional. Git repo configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the git field is set.
    */
@@ -40,10 +42,12 @@ public interface ConfigSyncOrBuilder
    *
    *
    * <pre>
-   * Git repo configuration for the cluster.
+   * Optional. Git repo configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The git.
    */
@@ -52,10 +56,12 @@ public interface ConfigSyncOrBuilder
    *
    *
    * <pre>
-   * Git repo configuration for the cluster.
+   * Optional. Git repo configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.GitConfigOrBuilder getGitOrBuilder();
 
@@ -63,11 +69,11 @@ public interface ConfigSyncOrBuilder
    *
    *
    * <pre>
-   * Specifies whether the Config Sync Repo is
-   * in “hierarchical” or “unstructured” mode.
+   * Optional. Specifies whether the Config Sync Repo is
+   * in "hierarchical" or "unstructured" mode.
    * </pre>
    *
-   * <code>string source_format = 8;</code>
+   * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sourceFormat.
    */
@@ -76,13 +82,120 @@ public interface ConfigSyncOrBuilder
    *
    *
    * <pre>
-   * Specifies whether the Config Sync Repo is
-   * in “hierarchical” or “unstructured” mode.
+   * Optional. Specifies whether the Config Sync Repo is
+   * in "hierarchical" or "unstructured" mode.
    * </pre>
    *
-   * <code>string source_format = 8;</code>
+   * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for sourceFormat.
    */
   com.google.protobuf.ByteString getSourceFormatBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables the installation of ConfigSync.
+   * If set to true, ConfigSync resources will be created and the other
+   * ConfigSync fields will be applied if exist.
+   * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+   * resources will be deleted.
+   * If omitted, ConfigSync resources will be managed depends on the presence
+   * of the git or oci field.
+   * </pre>
+   *
+   * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the enabled field is set.
+   */
+  boolean hasEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables the installation of ConfigSync.
+   * If set to true, ConfigSync resources will be created and the other
+   * ConfigSync fields will be applied if exist.
+   * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+   * resources will be deleted.
+   * If omitted, ConfigSync resources will be managed depends on the presence
+   * of the git or oci field.
+   * </pre>
+   *
+   * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enabled.
+   */
+  boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set to true to enable the Config Sync admission webhook to
+   * prevent drifts. If set to `false`, disables the Config Sync admission
+   * webhook and does not prevent drifts.
+   * </pre>
+   *
+   * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The preventDrift.
+   */
+  boolean getPreventDrift();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the oci field is set.
+   */
+  boolean hasOci();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The oci.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.OciConfig getOci();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.OciConfigOrBuilder getOciOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set to true to stop syncing configs for a single cluster.
+   * Default to false.
+   * </pre>
+   *
+   * <code>bool stop_syncing = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The stopSyncing.
+   */
+  boolean getStopSyncing();
 }

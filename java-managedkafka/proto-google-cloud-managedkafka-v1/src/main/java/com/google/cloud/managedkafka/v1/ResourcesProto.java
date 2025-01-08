@@ -168,7 +168,7 @@ public final class ResourcesProto {
           + "\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_"
           + "message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cancella"
           + "tion\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A"
-          + "\003B\325\002\n com.google.cloud.managedkafka.v1B\016"
+          + "\003B\303\003\n com.google.cloud.managedkafka.v1B\016"
           + "ResourcesProtoP\001ZDcloud.google.com/go/ma"
           + "nagedkafka/apiv1/managedkafkapb;managedk"
           + "afkapb\252\002\034Google.Cloud.ManagedKafka.V1\312\002\034"
@@ -176,7 +176,10 @@ public final class ResourcesProto {
           + "loud::ManagedKafka::V1\352Ax\n!cloudkms.goog"
           + "leapis.com/CryptoKey\022Sprojects/{project}"
           + "/locations/{location}/keyRings/{key_ring"
-          + "}/cryptoKeys/{crypto_key}b\006proto3"
+          + "}/cryptoKeys/{crypto_key}\352Ak\n*secretmana"
+          + "ger.googleapis.com/SecretVersion\022=projec"
+          + "ts/{project}/secrets/{secret}/versions/{"
+          + "secret_version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

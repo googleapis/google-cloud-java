@@ -72,14 +72,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The user-defined name for the cluster used by ClusterSelectors to group
-   * clusters together. This should match Membership's membership_name,
-   * unless the user installed ACM on the cluster manually prior to enabling
-   * the ACM hub feature.
-   * Unique within a Anthos Config Management installation.
+   * Output only. This field is set to the `cluster_name` field of the
+   * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+   * fleet membership name.
    * </pre>
    *
-   * <code>string cluster_name = 1;</code>
+   * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The clusterName.
    */
@@ -99,14 +97,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The user-defined name for the cluster used by ClusterSelectors to group
-   * clusters together. This should match Membership's membership_name,
-   * unless the user installed ACM on the cluster manually prior to enabling
-   * the ACM hub feature.
-   * Unique within a Anthos Config Management installation.
+   * Output only. This field is set to the `cluster_name` field of the
+   * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+   * fleet membership name.
    * </pre>
    *
-   * <code>string cluster_name = 1;</code>
+   * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for clusterName.
    */
@@ -129,12 +125,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Membership configuration in the cluster. This represents the actual state
-   * in the cluster, while the MembershipSpec in the FeatureSpec represents
-   * the intended state
+   * Output only. Membership configuration in the cluster. This represents the
+   * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+   * represents the intended state
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the membershipSpec field is set.
    */
@@ -146,12 +144,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Membership configuration in the cluster. This represents the actual state
-   * in the cluster, while the MembershipSpec in the FeatureSpec represents
-   * the intended state
+   * Output only. Membership configuration in the cluster. This represents the
+   * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+   * represents the intended state
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The membershipSpec.
    */
@@ -165,12 +165,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Membership configuration in the cluster. This represents the actual state
-   * in the cluster, while the MembershipSpec in the FeatureSpec represents
-   * the intended state
+   * Output only. Membership configuration in the cluster. This represents the
+   * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+   * represents the intended state
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpecOrBuilder
@@ -186,10 +188,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Current install status of ACM's Operator
+   * Output only. Current install status of ACM's Operator
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the operatorState field is set.
    */
@@ -201,10 +205,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Current install status of ACM's Operator
+   * Output only. Current install status of ACM's Operator
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The operatorState.
    */
@@ -218,10 +224,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Current install status of ACM's Operator
+   * Output only. Current install status of ACM's Operator
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.OperatorStateOrBuilder
@@ -237,10 +245,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Current sync status
+   * Output only. Current sync status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the configSyncState field is set.
@@ -253,10 +262,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Current sync status
+   * Output only. Current sync status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The configSyncState.
@@ -271,10 +281,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Current sync status
+   * Output only. Current sync status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -292,11 +303,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * PolicyController status
+   * Output only. PolicyController status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the policyControllerState field is set.
@@ -309,11 +320,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * PolicyController status
+   * Output only. PolicyController status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The policyControllerState.
@@ -329,11 +340,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * PolicyController status
+   * Output only. PolicyController status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -350,10 +361,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Binauthz status
+   * Output only. Binauthz status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the binauthzState field is set.
    */
@@ -365,10 +378,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Binauthz status
+   * Output only. Binauthz status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The binauthzState.
    */
@@ -382,10 +397,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Binauthz status
+   * Output only. Binauthz status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzStateOrBuilder
@@ -402,11 +419,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Hierarchy Controller status
+   * Output only. Hierarchy Controller status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the hierarchyControllerState field is set.
@@ -419,11 +436,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Hierarchy Controller status
+   * Output only. Hierarchy Controller status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The hierarchyControllerState.
@@ -440,11 +457,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Hierarchy Controller status
+   * Output only. Hierarchy Controller status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -1031,14 +1048,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The user-defined name for the cluster used by ClusterSelectors to group
-     * clusters together. This should match Membership's membership_name,
-     * unless the user installed ACM on the cluster manually prior to enabling
-     * the ACM hub feature.
-     * Unique within a Anthos Config Management installation.
+     * Output only. This field is set to the `cluster_name` field of the
+     * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+     * fleet membership name.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The clusterName.
      */
@@ -1057,14 +1072,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The user-defined name for the cluster used by ClusterSelectors to group
-     * clusters together. This should match Membership's membership_name,
-     * unless the user installed ACM on the cluster manually prior to enabling
-     * the ACM hub feature.
-     * Unique within a Anthos Config Management installation.
+     * Output only. This field is set to the `cluster_name` field of the
+     * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+     * fleet membership name.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for clusterName.
      */
@@ -1083,14 +1096,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The user-defined name for the cluster used by ClusterSelectors to group
-     * clusters together. This should match Membership's membership_name,
-     * unless the user installed ACM on the cluster manually prior to enabling
-     * the ACM hub feature.
-     * Unique within a Anthos Config Management installation.
+     * Output only. This field is set to the `cluster_name` field of the
+     * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+     * fleet membership name.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The clusterName to set.
      * @return This builder for chaining.
@@ -1108,14 +1119,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The user-defined name for the cluster used by ClusterSelectors to group
-     * clusters together. This should match Membership's membership_name,
-     * unless the user installed ACM on the cluster manually prior to enabling
-     * the ACM hub feature.
-     * Unique within a Anthos Config Management installation.
+     * Output only. This field is set to the `cluster_name` field of the
+     * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+     * fleet membership name.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1129,14 +1138,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The user-defined name for the cluster used by ClusterSelectors to group
-     * clusters together. This should match Membership's membership_name,
-     * unless the user installed ACM on the cluster manually prior to enabling
-     * the ACM hub feature.
-     * Unique within a Anthos Config Management installation.
+     * Output only. This field is set to the `cluster_name` field of the
+     * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+     * fleet membership name.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for clusterName to set.
      * @return This builder for chaining.
@@ -1162,12 +1169,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the membershipSpec field is set.
      */
@@ -1178,12 +1187,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The membershipSpec.
      */
@@ -1200,12 +1211,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMembershipSpec(
         com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec value) {
@@ -1225,12 +1238,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMembershipSpec(
         com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Builder builderForValue) {
@@ -1247,12 +1262,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeMembershipSpec(
         com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec value) {
@@ -1279,12 +1296,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearMembershipSpec() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1300,12 +1319,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Builder
         getMembershipSpecBuilder() {
@@ -1317,12 +1338,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpecOrBuilder
         getMembershipSpecOrBuilder() {
@@ -1338,12 +1361,14 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Membership configuration in the cluster. This represents the actual state
-     * in the cluster, while the MembershipSpec in the FeatureSpec represents
-     * the intended state
+     * Output only. Membership configuration in the cluster. This represents the
+     * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+     * represents the intended state
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec,
@@ -1372,10 +1397,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the operatorState field is set.
      */
@@ -1386,10 +1413,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The operatorState.
      */
@@ -1406,10 +1435,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setOperatorState(
         com.google.cloud.gkehub.configmanagement.v1beta.OperatorState value) {
@@ -1429,10 +1460,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setOperatorState(
         com.google.cloud.gkehub.configmanagement.v1beta.OperatorState.Builder builderForValue) {
@@ -1449,10 +1482,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeOperatorState(
         com.google.cloud.gkehub.configmanagement.v1beta.OperatorState value) {
@@ -1479,10 +1514,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearOperatorState() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1498,10 +1535,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.OperatorState.Builder
         getOperatorStateBuilder() {
@@ -1513,10 +1552,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.OperatorStateOrBuilder
         getOperatorStateOrBuilder() {
@@ -1532,10 +1573,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current install status of ACM's Operator
+     * Output only. Current install status of ACM's Operator
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1beta.OperatorState,
@@ -1564,10 +1607,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the configSyncState field is set.
@@ -1579,10 +1623,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The configSyncState.
@@ -1600,10 +1645,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setConfigSyncState(
@@ -1624,10 +1670,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setConfigSyncState(
@@ -1645,10 +1692,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeConfigSyncState(
@@ -1676,10 +1724,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearConfigSyncState() {
@@ -1696,10 +1745,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.Builder
@@ -1712,10 +1762,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncStateOrBuilder
@@ -1732,10 +1783,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Current sync status
+     * Output only. Current sync status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1766,11 +1818,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the policyControllerState field is set.
@@ -1782,11 +1834,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The policyControllerState.
@@ -1806,11 +1858,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setPolicyControllerState(
@@ -1831,11 +1883,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setPolicyControllerState(
@@ -1854,11 +1906,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergePolicyControllerState(
@@ -1886,11 +1938,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearPolicyControllerState() {
@@ -1907,11 +1959,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState.Builder
@@ -1924,11 +1976,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerStateOrBuilder
@@ -1946,11 +1998,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PolicyController status
+     * Output only. PolicyController status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+     * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1980,10 +2032,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the binauthzState field is set.
      */
@@ -1994,10 +2048,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The binauthzState.
      */
@@ -2014,10 +2070,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setBinauthzState(
         com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState value) {
@@ -2037,10 +2095,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setBinauthzState(
         com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState.Builder builderForValue) {
@@ -2057,10 +2117,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeBinauthzState(
         com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState value) {
@@ -2087,10 +2149,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearBinauthzState() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -2106,10 +2170,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState.Builder
         getBinauthzStateBuilder() {
@@ -2121,10 +2187,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzStateOrBuilder
         getBinauthzStateOrBuilder() {
@@ -2140,10 +2208,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Binauthz status
+     * Output only. Binauthz status
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState,
@@ -2173,11 +2243,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the hierarchyControllerState field is set.
@@ -2189,11 +2259,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The hierarchyControllerState.
@@ -2213,11 +2283,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setHierarchyControllerState(
@@ -2238,11 +2308,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setHierarchyControllerState(
@@ -2261,11 +2331,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeHierarchyControllerState(
@@ -2293,11 +2363,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearHierarchyControllerState() {
@@ -2314,11 +2384,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState.Builder
@@ -2331,11 +2401,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerStateOrBuilder
@@ -2353,11 +2423,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Hierarchy Controller status
+     * Output only. Hierarchy Controller status
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+     * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

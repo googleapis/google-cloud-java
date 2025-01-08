@@ -45,6 +45,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     monitor_ = "";
     reconcilerManager_ = "";
     rootReconciler_ = "";
+    admissionWebhook_ = "";
+    resourceGroupControllerManager_ = "";
+    otelCollector_ = "";
   }
 
   @java.lang.Override
@@ -374,6 +377,159 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int ADMISSION_WEBHOOK_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object admissionWebhook_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed admission-webhook pod
+   * </pre>
+   *
+   * <code>string admission_webhook = 7;</code>
+   *
+   * @return The admissionWebhook.
+   */
+  @java.lang.Override
+  public java.lang.String getAdmissionWebhook() {
+    java.lang.Object ref = admissionWebhook_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      admissionWebhook_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed admission-webhook pod
+   * </pre>
+   *
+   * <code>string admission_webhook = 7;</code>
+   *
+   * @return The bytes for admissionWebhook.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdmissionWebhookBytes() {
+    java.lang.Object ref = admissionWebhook_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      admissionWebhook_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RESOURCE_GROUP_CONTROLLER_MANAGER_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceGroupControllerManager_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed resource-group-controller-manager pod
+   * </pre>
+   *
+   * <code>string resource_group_controller_manager = 8;</code>
+   *
+   * @return The resourceGroupControllerManager.
+   */
+  @java.lang.Override
+  public java.lang.String getResourceGroupControllerManager() {
+    java.lang.Object ref = resourceGroupControllerManager_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceGroupControllerManager_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed resource-group-controller-manager pod
+   * </pre>
+   *
+   * <code>string resource_group_controller_manager = 8;</code>
+   *
+   * @return The bytes for resourceGroupControllerManager.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResourceGroupControllerManagerBytes() {
+    java.lang.Object ref = resourceGroupControllerManager_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resourceGroupControllerManager_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OTEL_COLLECTOR_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object otelCollector_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed otel-collector pod
+   * </pre>
+   *
+   * <code>string otel_collector = 9;</code>
+   *
+   * @return The otelCollector.
+   */
+  @java.lang.Override
+  public java.lang.String getOtelCollector() {
+    java.lang.Object ref = otelCollector_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      otelCollector_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed otel-collector pod
+   * </pre>
+   *
+   * <code>string otel_collector = 9;</code>
+   *
+   * @return The bytes for otelCollector.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOtelCollectorBytes() {
+    java.lang.Object ref = otelCollector_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      otelCollector_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -406,6 +562,16 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootReconciler_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, rootReconciler_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(admissionWebhook_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, admissionWebhook_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceGroupControllerManager_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 8, resourceGroupControllerManager_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(otelCollector_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, otelCollector_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -433,6 +599,17 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootReconciler_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, rootReconciler_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(admissionWebhook_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, admissionWebhook_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceGroupControllerManager_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              8, resourceGroupControllerManager_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(otelCollector_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, otelCollector_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -455,6 +632,10 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     if (!getMonitor().equals(other.getMonitor())) return false;
     if (!getReconcilerManager().equals(other.getReconcilerManager())) return false;
     if (!getRootReconciler().equals(other.getRootReconciler())) return false;
+    if (!getAdmissionWebhook().equals(other.getAdmissionWebhook())) return false;
+    if (!getResourceGroupControllerManager().equals(other.getResourceGroupControllerManager()))
+      return false;
+    if (!getOtelCollector().equals(other.getOtelCollector())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -478,6 +659,12 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getReconcilerManager().hashCode();
     hash = (37 * hash) + ROOT_RECONCILER_FIELD_NUMBER;
     hash = (53 * hash) + getRootReconciler().hashCode();
+    hash = (37 * hash) + ADMISSION_WEBHOOK_FIELD_NUMBER;
+    hash = (53 * hash) + getAdmissionWebhook().hashCode();
+    hash = (37 * hash) + RESOURCE_GROUP_CONTROLLER_MANAGER_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceGroupControllerManager().hashCode();
+    hash = (37 * hash) + OTEL_COLLECTOR_FIELD_NUMBER;
+    hash = (53 * hash) + getOtelCollector().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -626,6 +813,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       monitor_ = "";
       reconcilerManager_ = "";
       rootReconciler_ = "";
+      admissionWebhook_ = "";
+      resourceGroupControllerManager_ = "";
+      otelCollector_ = "";
       return this;
     }
 
@@ -681,6 +871,15 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.rootReconciler_ = rootReconciler_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.admissionWebhook_ = admissionWebhook_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.resourceGroupControllerManager_ = resourceGroupControllerManager_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.otelCollector_ = otelCollector_;
       }
     }
 
@@ -762,6 +961,21 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (!other.getAdmissionWebhook().isEmpty()) {
+        admissionWebhook_ = other.admissionWebhook_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getResourceGroupControllerManager().isEmpty()) {
+        resourceGroupControllerManager_ = other.resourceGroupControllerManager_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getOtelCollector().isEmpty()) {
+        otelCollector_ = other.otelCollector_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -824,6 +1038,24 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                admissionWebhook_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                resourceGroupControllerManager_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                otelCollector_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1475,6 +1707,324 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       rootReconciler_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object admissionWebhook_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission-webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @return The admissionWebhook.
+     */
+    public java.lang.String getAdmissionWebhook() {
+      java.lang.Object ref = admissionWebhook_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        admissionWebhook_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission-webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @return The bytes for admissionWebhook.
+     */
+    public com.google.protobuf.ByteString getAdmissionWebhookBytes() {
+      java.lang.Object ref = admissionWebhook_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        admissionWebhook_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission-webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @param value The admissionWebhook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdmissionWebhook(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      admissionWebhook_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission-webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdmissionWebhook() {
+      admissionWebhook_ = getDefaultInstance().getAdmissionWebhook();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission-webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @param value The bytes for admissionWebhook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdmissionWebhookBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      admissionWebhook_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resourceGroupControllerManager_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed resource-group-controller-manager pod
+     * </pre>
+     *
+     * <code>string resource_group_controller_manager = 8;</code>
+     *
+     * @return The resourceGroupControllerManager.
+     */
+    public java.lang.String getResourceGroupControllerManager() {
+      java.lang.Object ref = resourceGroupControllerManager_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceGroupControllerManager_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed resource-group-controller-manager pod
+     * </pre>
+     *
+     * <code>string resource_group_controller_manager = 8;</code>
+     *
+     * @return The bytes for resourceGroupControllerManager.
+     */
+    public com.google.protobuf.ByteString getResourceGroupControllerManagerBytes() {
+      java.lang.Object ref = resourceGroupControllerManager_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resourceGroupControllerManager_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed resource-group-controller-manager pod
+     * </pre>
+     *
+     * <code>string resource_group_controller_manager = 8;</code>
+     *
+     * @param value The resourceGroupControllerManager to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceGroupControllerManager(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      resourceGroupControllerManager_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed resource-group-controller-manager pod
+     * </pre>
+     *
+     * <code>string resource_group_controller_manager = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceGroupControllerManager() {
+      resourceGroupControllerManager_ = getDefaultInstance().getResourceGroupControllerManager();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed resource-group-controller-manager pod
+     * </pre>
+     *
+     * <code>string resource_group_controller_manager = 8;</code>
+     *
+     * @param value The bytes for resourceGroupControllerManager to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceGroupControllerManagerBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      resourceGroupControllerManager_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object otelCollector_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed otel-collector pod
+     * </pre>
+     *
+     * <code>string otel_collector = 9;</code>
+     *
+     * @return The otelCollector.
+     */
+    public java.lang.String getOtelCollector() {
+      java.lang.Object ref = otelCollector_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        otelCollector_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed otel-collector pod
+     * </pre>
+     *
+     * <code>string otel_collector = 9;</code>
+     *
+     * @return The bytes for otelCollector.
+     */
+    public com.google.protobuf.ByteString getOtelCollectorBytes() {
+      java.lang.Object ref = otelCollector_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        otelCollector_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed otel-collector pod
+     * </pre>
+     *
+     * <code>string otel_collector = 9;</code>
+     *
+     * @param value The otelCollector to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOtelCollector(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      otelCollector_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed otel-collector pod
+     * </pre>
+     *
+     * <code>string otel_collector = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOtelCollector() {
+      otelCollector_ = getDefaultInstance().getOtelCollector();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed otel-collector pod
+     * </pre>
+     *
+     * <code>string otel_collector = 9;</code>
+     *
+     * @param value The bytes for otelCollector to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOtelCollectorBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      otelCollector_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

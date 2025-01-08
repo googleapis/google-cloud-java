@@ -97,6 +97,18 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ALAW = 6;</code>
    */
   ALAW(6),
+  /**
+   *
+   *
+   * <pre>
+   * Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   * Note that as opposed to LINEAR16, audio will not be wrapped in a WAV (or
+   * any other) header.
+   * </pre>
+   *
+   * <code>PCM = 7;</code>
+   */
+  PCM(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -167,6 +179,18 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ALAW = 6;</code>
    */
   public static final int ALAW_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   * Note that as opposed to LINEAR16, audio will not be wrapped in a WAV (or
+   * any other) header.
+   * </pre>
+   *
+   * <code>PCM = 7;</code>
+   */
+  public static final int PCM_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -204,6 +228,8 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
         return MULAW;
       case 6:
         return ALAW;
+      case 7:
+        return PCM;
       default:
         return null;
     }

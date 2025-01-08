@@ -28,14 +28,12 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * The user-defined name for the cluster used by ClusterSelectors to group
-   * clusters together. This should match Membership's membership_name,
-   * unless the user installed ACM on the cluster manually prior to enabling
-   * the ACM hub feature.
-   * Unique within a Anthos Config Management installation.
+   * Output only. This field is set to the `cluster_name` field of the
+   * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+   * fleet membership name.
    * </pre>
    *
-   * <code>string cluster_name = 1;</code>
+   * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The clusterName.
    */
@@ -44,14 +42,12 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * The user-defined name for the cluster used by ClusterSelectors to group
-   * clusters together. This should match Membership's membership_name,
-   * unless the user installed ACM on the cluster manually prior to enabling
-   * the ACM hub feature.
-   * Unique within a Anthos Config Management installation.
+   * Output only. This field is set to the `cluster_name` field of the
+   * Membership Spec if it is not empty. Otherwise, it is set to the cluster's
+   * fleet membership name.
    * </pre>
    *
-   * <code>string cluster_name = 1;</code>
+   * <code>string cluster_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for clusterName.
    */
@@ -61,12 +57,14 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Membership configuration in the cluster. This represents the actual state
-   * in the cluster, while the MembershipSpec in the FeatureSpec represents
-   * the intended state
+   * Output only. Membership configuration in the cluster. This represents the
+   * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+   * represents the intended state
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the membershipSpec field is set.
    */
@@ -75,12 +73,14 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Membership configuration in the cluster. This represents the actual state
-   * in the cluster, while the MembershipSpec in the FeatureSpec represents
-   * the intended state
+   * Output only. Membership configuration in the cluster. This represents the
+   * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+   * represents the intended state
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The membershipSpec.
    */
@@ -89,12 +89,14 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Membership configuration in the cluster. This represents the actual state
-   * in the cluster, while the MembershipSpec in the FeatureSpec represents
-   * the intended state
+   * Output only. Membership configuration in the cluster. This represents the
+   * actual state in the cluster, while the MembershipSpec in the FeatureSpec
+   * represents the intended state
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec membership_spec = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpecOrBuilder
       getMembershipSpecOrBuilder();
@@ -103,10 +105,12 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Current install status of ACM's Operator
+   * Output only. Current install status of ACM's Operator
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the operatorState field is set.
    */
@@ -115,10 +119,12 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Current install status of ACM's Operator
+   * Output only. Current install status of ACM's Operator
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The operatorState.
    */
@@ -127,10 +133,12 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Current install status of ACM's Operator
+   * Output only. Current install status of ACM's Operator
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OperatorState operator_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.OperatorStateOrBuilder
       getOperatorStateOrBuilder();
@@ -139,10 +147,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Current sync status
+   * Output only. Current sync status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the configSyncState field is set.
@@ -152,10 +161,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Current sync status
+   * Output only. Current sync status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The configSyncState.
@@ -165,10 +175,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Current sync status
+   * Output only. Current sync status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState config_sync_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncStateOrBuilder
@@ -178,11 +189,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * PolicyController status
+   * Output only. PolicyController status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the policyControllerState field is set.
@@ -192,11 +203,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * PolicyController status
+   * Output only. PolicyController status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The policyControllerState.
@@ -206,11 +217,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * PolicyController status
+   * Output only. PolicyController status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5;
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState policy_controller_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerStateOrBuilder
@@ -220,10 +231,12 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Binauthz status
+   * Output only. Binauthz status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the binauthzState field is set.
    */
@@ -232,10 +245,12 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Binauthz status
+   * Output only. Binauthz status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The binauthzState.
    */
@@ -244,10 +259,12 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Binauthz status
+   * Output only. Binauthz status
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzState binauthz_state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.BinauthzStateOrBuilder
       getBinauthzStateOrBuilder();
@@ -256,11 +273,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Hierarchy Controller status
+   * Output only. Hierarchy Controller status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the hierarchyControllerState field is set.
@@ -270,11 +287,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Hierarchy Controller status
+   * Output only. Hierarchy Controller status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The hierarchyControllerState.
@@ -285,11 +302,11 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * Hierarchy Controller status
+   * Output only. Hierarchy Controller status
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerState hierarchy_controller_state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerStateOrBuilder

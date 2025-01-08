@@ -78,4 +78,31 @@ public interface GatekeeperDeploymentStateOrBuilder
    * @return The gatekeeperAudit.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGatekeeperAudit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Status of the pod serving the mutation webhook.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for gatekeeperMutation.
+   */
+  int getGatekeeperMutationValue();
+  /**
+   *
+   *
+   * <pre>
+   * Status of the pod serving the mutation webhook.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+   * </code>
+   *
+   * @return The gatekeeperMutation.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGatekeeperMutation();
 }

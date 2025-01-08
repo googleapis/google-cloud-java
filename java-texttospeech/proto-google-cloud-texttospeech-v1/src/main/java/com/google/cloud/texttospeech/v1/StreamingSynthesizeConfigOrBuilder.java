@@ -64,4 +64,45 @@ public interface StreamingSynthesizeConfigOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingAudioConfig field is set.
+   */
+  boolean hasStreamingAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingAudioConfig.
+   */
+  com.google.cloud.texttospeech.v1.StreamingAudioConfig getStreamingAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder getStreamingAudioConfigOrBuilder();
 }

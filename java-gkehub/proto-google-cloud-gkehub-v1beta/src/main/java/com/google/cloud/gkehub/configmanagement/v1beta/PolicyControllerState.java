@@ -176,6 +176,62 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
         : deploymentState_;
   }
 
+  public static final int MIGRATION_FIELD_NUMBER = 4;
+  private com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration_;
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   *
+   * @return Whether the migration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMigration() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   *
+   * @return The migration.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration getMigration() {
+    return migration_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration
+            .getDefaultInstance()
+        : migration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigrationOrBuilder
+      getMigrationOrBuilder() {
+    return migration_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration
+            .getDefaultInstance()
+        : migration_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -196,6 +252,9 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getDeploymentState());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(4, getMigration());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -210,6 +269,9 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDeploymentState());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMigration());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -235,6 +297,10 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     if (hasDeploymentState()) {
       if (!getDeploymentState().equals(other.getDeploymentState())) return false;
     }
+    if (hasMigration() != other.hasMigration()) return false;
+    if (hasMigration()) {
+      if (!getMigration().equals(other.getMigration())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -253,6 +319,10 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     if (hasDeploymentState()) {
       hash = (37 * hash) + DEPLOYMENT_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getDeploymentState().hashCode();
+    }
+    if (hasMigration()) {
+      hash = (37 * hash) + MIGRATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMigration().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -399,6 +469,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getVersionFieldBuilder();
         getDeploymentStateFieldBuilder();
+        getMigrationFieldBuilder();
       }
     }
 
@@ -415,6 +486,11 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       if (deploymentStateBuilder_ != null) {
         deploymentStateBuilder_.dispose();
         deploymentStateBuilder_ = null;
+      }
+      migration_ = null;
+      if (migrationBuilder_ != null) {
+        migrationBuilder_.dispose();
+        migrationBuilder_ = null;
       }
       return this;
     }
@@ -464,6 +540,10 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
         result.deploymentState_ =
             deploymentStateBuilder_ == null ? deploymentState_ : deploymentStateBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.migration_ = migrationBuilder_ == null ? migration_ : migrationBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -523,6 +603,9 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       if (other.hasDeploymentState()) {
         mergeDeploymentState(other.getDeploymentState());
       }
+      if (other.hasMigration()) {
+        mergeMigration(other.getMigration());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -561,6 +644,12 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 34:
+              {
+                input.readMessage(getMigrationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -997,6 +1086,211 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
         deploymentState_ = null;
       }
       return deploymentStateBuilder_;
+    }
+
+    private com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration,
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration.Builder,
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigrationOrBuilder>
+        migrationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     *
+     * @return Whether the migration field is set.
+     */
+    public boolean hasMigration() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     *
+     * @return The migration.
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration
+        getMigration() {
+      if (migrationBuilder_ == null) {
+        return migration_ == null
+            ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration
+                .getDefaultInstance()
+            : migration_;
+      } else {
+        return migrationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     */
+    public Builder setMigration(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration value) {
+      if (migrationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        migration_ = value;
+      } else {
+        migrationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     */
+    public Builder setMigration(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration.Builder
+            builderForValue) {
+      if (migrationBuilder_ == null) {
+        migration_ = builderForValue.build();
+      } else {
+        migrationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     */
+    public Builder mergeMigration(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration value) {
+      if (migrationBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && migration_ != null
+            && migration_
+                != com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration
+                    .getDefaultInstance()) {
+          getMigrationBuilder().mergeFrom(value);
+        } else {
+          migration_ = value;
+        }
+      } else {
+        migrationBuilder_.mergeFrom(value);
+      }
+      if (migration_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     */
+    public Builder clearMigration() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      migration_ = null;
+      if (migrationBuilder_ != null) {
+        migrationBuilder_.dispose();
+        migrationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration.Builder
+        getMigrationBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getMigrationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigrationOrBuilder
+        getMigrationOrBuilder() {
+      if (migrationBuilder_ != null) {
+        return migrationBuilder_.getMessageOrBuilder();
+      } else {
+        return migration_ == null
+            ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration
+                .getDefaultInstance()
+            : migration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record state of ACM -&gt; PoCo Hub migration for this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration,
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration.Builder,
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigrationOrBuilder>
+        getMigrationFieldBuilder() {
+      if (migrationBuilder_ == null) {
+        migrationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration,
+                com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration.Builder,
+                com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigrationOrBuilder>(
+                getMigration(), getParentForChildren(), isClean());
+        migration_ = null;
+      }
+      return migrationBuilder_;
     }
 
     @java.lang.Override

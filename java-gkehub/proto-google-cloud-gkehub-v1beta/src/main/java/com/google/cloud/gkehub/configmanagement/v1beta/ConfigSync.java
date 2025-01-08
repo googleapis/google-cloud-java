@@ -70,10 +70,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Git repo configuration for the cluster.
+   * Optional. Git repo configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the git field is set.
    */
@@ -85,10 +87,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Git repo configuration for the cluster.
+   * Optional. Git repo configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The git.
    */
@@ -102,10 +106,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Git repo configuration for the cluster.
+   * Optional. Git repo configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.GitConfigOrBuilder getGitOrBuilder() {
@@ -122,11 +128,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether the Config Sync Repo is
-   * in “hierarchical” or “unstructured” mode.
+   * Optional. Specifies whether the Config Sync Repo is
+   * in "hierarchical" or "unstructured" mode.
    * </pre>
    *
-   * <code>string source_format = 8;</code>
+   * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sourceFormat.
    */
@@ -146,11 +152,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether the Config Sync Repo is
-   * in “hierarchical” or “unstructured” mode.
+   * Optional. Specifies whether the Config Sync Repo is
+   * in "hierarchical" or "unstructured" mode.
    * </pre>
    *
-   * <code>string source_format = 8;</code>
+   * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for sourceFormat.
    */
@@ -165,6 +171,146 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ENABLED_FIELD_NUMBER = 10;
+  private boolean enabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables the installation of ConfigSync.
+   * If set to true, ConfigSync resources will be created and the other
+   * ConfigSync fields will be applied if exist.
+   * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+   * resources will be deleted.
+   * If omitted, ConfigSync resources will be managed depends on the presence
+   * of the git or oci field.
+   * </pre>
+   *
+   * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the enabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnabled() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables the installation of ConfigSync.
+   * If set to true, ConfigSync resources will be created and the other
+   * ConfigSync fields will be applied if exist.
+   * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+   * resources will be deleted.
+   * If omitted, ConfigSync resources will be managed depends on the presence
+   * of the git or oci field.
+   * </pre>
+   *
+   * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enabled.
+   */
+  @java.lang.Override
+  public boolean getEnabled() {
+    return enabled_;
+  }
+
+  public static final int PREVENT_DRIFT_FIELD_NUMBER = 11;
+  private boolean preventDrift_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set to true to enable the Config Sync admission webhook to
+   * prevent drifts. If set to `false`, disables the Config Sync admission
+   * webhook and does not prevent drifts.
+   * </pre>
+   *
+   * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The preventDrift.
+   */
+  @java.lang.Override
+  public boolean getPreventDrift() {
+    return preventDrift_;
+  }
+
+  public static final int OCI_FIELD_NUMBER = 12;
+  private com.google.cloud.gkehub.configmanagement.v1beta.OciConfig oci_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the oci field is set.
+   */
+  @java.lang.Override
+  public boolean hasOci() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The oci.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.OciConfig getOci() {
+    return oci_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.getDefaultInstance()
+        : oci_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.OciConfigOrBuilder getOciOrBuilder() {
+    return oci_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.getDefaultInstance()
+        : oci_;
+  }
+
+  public static final int STOP_SYNCING_FIELD_NUMBER = 16;
+  private boolean stopSyncing_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set to true to stop syncing configs for a single cluster.
+   * Default to false.
+   * </pre>
+   *
+   * <code>bool stop_syncing = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The stopSyncing.
+   */
+  @java.lang.Override
+  public boolean getStopSyncing() {
+    return stopSyncing_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -187,6 +333,18 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sourceFormat_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(10, enabled_);
+    }
+    if (preventDrift_ != false) {
+      output.writeBool(11, preventDrift_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(12, getOci());
+    }
+    if (stopSyncing_ != false) {
+      output.writeBool(16, stopSyncing_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -201,6 +359,18 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sourceFormat_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enabled_);
+    }
+    if (preventDrift_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, preventDrift_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getOci());
+    }
+    if (stopSyncing_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, stopSyncing_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -223,6 +393,16 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       if (!getGit().equals(other.getGit())) return false;
     }
     if (!getSourceFormat().equals(other.getSourceFormat())) return false;
+    if (hasEnabled() != other.hasEnabled()) return false;
+    if (hasEnabled()) {
+      if (getEnabled() != other.getEnabled()) return false;
+    }
+    if (getPreventDrift() != other.getPreventDrift()) return false;
+    if (hasOci() != other.hasOci()) return false;
+    if (hasOci()) {
+      if (!getOci().equals(other.getOci())) return false;
+    }
+    if (getStopSyncing() != other.getStopSyncing()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -240,6 +420,18 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SOURCE_FORMAT_FIELD_NUMBER;
     hash = (53 * hash) + getSourceFormat().hashCode();
+    if (hasEnabled()) {
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+    }
+    hash = (37 * hash) + PREVENT_DRIFT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreventDrift());
+    if (hasOci()) {
+      hash = (37 * hash) + OCI_FIELD_NUMBER;
+      hash = (53 * hash) + getOci().hashCode();
+    }
+    hash = (37 * hash) + STOP_SYNCING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStopSyncing());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -382,6 +574,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getGitFieldBuilder();
+        getOciFieldBuilder();
       }
     }
 
@@ -395,6 +588,14 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         gitBuilder_ = null;
       }
       sourceFormat_ = "";
+      enabled_ = false;
+      preventDrift_ = false;
+      oci_ = null;
+      if (ociBuilder_ != null) {
+        ociBuilder_.dispose();
+        ociBuilder_ = null;
+      }
+      stopSyncing_ = false;
       return this;
     }
 
@@ -438,6 +639,20 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.sourceFormat_ = sourceFormat_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enabled_ = enabled_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.preventDrift_ = preventDrift_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.oci_ = ociBuilder_ == null ? oci_ : ociBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.stopSyncing_ = stopSyncing_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -496,6 +711,18 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasEnabled()) {
+        setEnabled(other.getEnabled());
+      }
+      if (other.getPreventDrift() != false) {
+        setPreventDrift(other.getPreventDrift());
+      }
+      if (other.hasOci()) {
+        mergeOci(other.getOci());
+      }
+      if (other.getStopSyncing() != false) {
+        setStopSyncing(other.getStopSyncing());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -534,6 +761,30 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 66
+            case 80:
+              {
+                enabled_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+            case 88:
+              {
+                preventDrift_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 88
+            case 98:
+              {
+                input.readMessage(getOciFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 98
+            case 128:
+              {
+                stopSyncing_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -563,10 +814,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the git field is set.
      */
@@ -577,10 +830,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The git.
      */
@@ -597,10 +852,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGit(com.google.cloud.gkehub.configmanagement.v1beta.GitConfig value) {
       if (gitBuilder_ == null) {
@@ -619,10 +876,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGit(
         com.google.cloud.gkehub.configmanagement.v1beta.GitConfig.Builder builderForValue) {
@@ -639,10 +898,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeGit(com.google.cloud.gkehub.configmanagement.v1beta.GitConfig value) {
       if (gitBuilder_ == null) {
@@ -667,10 +928,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearGit() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -686,10 +949,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.GitConfig.Builder getGitBuilder() {
       bitField0_ |= 0x00000001;
@@ -700,10 +965,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.GitConfigOrBuilder getGitOrBuilder() {
       if (gitBuilder_ != null) {
@@ -718,10 +985,12 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git repo configuration for the cluster.
+     * Optional. Git repo configuration for the cluster.
      * </pre>
      *
-     * <code>.google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7;</code>
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.GitConfig git = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1beta.GitConfig,
@@ -745,11 +1014,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the Config Sync Repo is
-     * in “hierarchical” or “unstructured” mode.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
-     * <code>string source_format = 8;</code>
+     * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The sourceFormat.
      */
@@ -768,11 +1037,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the Config Sync Repo is
-     * in “hierarchical” or “unstructured” mode.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
-     * <code>string source_format = 8;</code>
+     * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for sourceFormat.
      */
@@ -791,11 +1060,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the Config Sync Repo is
-     * in “hierarchical” or “unstructured” mode.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
-     * <code>string source_format = 8;</code>
+     * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The sourceFormat to set.
      * @return This builder for chaining.
@@ -813,11 +1082,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the Config Sync Repo is
-     * in “hierarchical” or “unstructured” mode.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
-     * <code>string source_format = 8;</code>
+     * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -831,11 +1100,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the Config Sync Repo is
-     * in “hierarchical” or “unstructured” mode.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
-     * <code>string source_format = 8;</code>
+     * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for sourceFormat to set.
      * @return This builder for chaining.
@@ -847,6 +1116,418 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       sourceFormat_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean enabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables the installation of ConfigSync.
+     * If set to true, ConfigSync resources will be created and the other
+     * ConfigSync fields will be applied if exist.
+     * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+     * resources will be deleted.
+     * If omitted, ConfigSync resources will be managed depends on the presence
+     * of the git or oci field.
+     * </pre>
+     *
+     * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the enabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnabled() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables the installation of ConfigSync.
+     * If set to true, ConfigSync resources will be created and the other
+     * ConfigSync fields will be applied if exist.
+     * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+     * resources will be deleted.
+     * If omitted, ConfigSync resources will be managed depends on the presence
+     * of the git or oci field.
+     * </pre>
+     *
+     * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables the installation of ConfigSync.
+     * If set to true, ConfigSync resources will be created and the other
+     * ConfigSync fields will be applied if exist.
+     * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+     * resources will be deleted.
+     * If omitted, ConfigSync resources will be managed depends on the presence
+     * of the git or oci field.
+     * </pre>
+     *
+     * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnabled(boolean value) {
+
+      enabled_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables the installation of ConfigSync.
+     * If set to true, ConfigSync resources will be created and the other
+     * ConfigSync fields will be applied if exist.
+     * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+     * resources will be deleted.
+     * If omitted, ConfigSync resources will be managed depends on the presence
+     * of the git or oci field.
+     * </pre>
+     *
+     * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      enabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean preventDrift_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to enable the Config Sync admission webhook to
+     * prevent drifts. If set to `false`, disables the Config Sync admission
+     * webhook and does not prevent drifts.
+     * </pre>
+     *
+     * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The preventDrift.
+     */
+    @java.lang.Override
+    public boolean getPreventDrift() {
+      return preventDrift_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to enable the Config Sync admission webhook to
+     * prevent drifts. If set to `false`, disables the Config Sync admission
+     * webhook and does not prevent drifts.
+     * </pre>
+     *
+     * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The preventDrift to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreventDrift(boolean value) {
+
+      preventDrift_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to enable the Config Sync admission webhook to
+     * prevent drifts. If set to `false`, disables the Config Sync admission
+     * webhook and does not prevent drifts.
+     * </pre>
+     *
+     * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreventDrift() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      preventDrift_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.gkehub.configmanagement.v1beta.OciConfig oci_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.configmanagement.v1beta.OciConfig,
+            com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.Builder,
+            com.google.cloud.gkehub.configmanagement.v1beta.OciConfigOrBuilder>
+        ociBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the oci field is set.
+     */
+    public boolean hasOci() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The oci.
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.OciConfig getOci() {
+      if (ociBuilder_ == null) {
+        return oci_ == null
+            ? com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.getDefaultInstance()
+            : oci_;
+      } else {
+        return ociBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOci(com.google.cloud.gkehub.configmanagement.v1beta.OciConfig value) {
+      if (ociBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        oci_ = value;
+      } else {
+        ociBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOci(
+        com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.Builder builderForValue) {
+      if (ociBuilder_ == null) {
+        oci_ = builderForValue.build();
+      } else {
+        ociBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeOci(com.google.cloud.gkehub.configmanagement.v1beta.OciConfig value) {
+      if (ociBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && oci_ != null
+            && oci_
+                != com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.getDefaultInstance()) {
+          getOciBuilder().mergeFrom(value);
+        } else {
+          oci_ = value;
+        }
+      } else {
+        ociBuilder_.mergeFrom(value);
+      }
+      if (oci_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOci() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      oci_ = null;
+      if (ociBuilder_ != null) {
+        ociBuilder_.dispose();
+        ociBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.Builder getOciBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getOciFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.OciConfigOrBuilder getOciOrBuilder() {
+      if (ociBuilder_ != null) {
+        return ociBuilder_.getMessageOrBuilder();
+      } else {
+        return oci_ == null
+            ? com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.getDefaultInstance()
+            : oci_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OCI repo configuration for the cluster
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.OciConfig oci = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.configmanagement.v1beta.OciConfig,
+            com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.Builder,
+            com.google.cloud.gkehub.configmanagement.v1beta.OciConfigOrBuilder>
+        getOciFieldBuilder() {
+      if (ociBuilder_ == null) {
+        ociBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.configmanagement.v1beta.OciConfig,
+                com.google.cloud.gkehub.configmanagement.v1beta.OciConfig.Builder,
+                com.google.cloud.gkehub.configmanagement.v1beta.OciConfigOrBuilder>(
+                getOci(), getParentForChildren(), isClean());
+        oci_ = null;
+      }
+      return ociBuilder_;
+    }
+
+    private boolean stopSyncing_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to stop syncing configs for a single cluster.
+     * Default to false.
+     * </pre>
+     *
+     * <code>bool stop_syncing = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The stopSyncing.
+     */
+    @java.lang.Override
+    public boolean getStopSyncing() {
+      return stopSyncing_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to stop syncing configs for a single cluster.
+     * Default to false.
+     * </pre>
+     *
+     * <code>bool stop_syncing = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The stopSyncing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStopSyncing(boolean value) {
+
+      stopSyncing_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to stop syncing configs for a single cluster.
+     * Default to false.
+     * </pre>
+     *
+     * <code>bool stop_syncing = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStopSyncing() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      stopSyncing_ = false;
       onChanged();
       return this;
     }

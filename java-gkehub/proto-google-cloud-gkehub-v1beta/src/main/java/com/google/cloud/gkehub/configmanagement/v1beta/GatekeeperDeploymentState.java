@@ -41,6 +41,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
   private GatekeeperDeploymentState() {
     gatekeeperControllerManagerState_ = 0;
     gatekeeperAudit_ = 0;
+    gatekeeperMutation_ = 0;
   }
 
   @java.lang.Override
@@ -145,6 +146,46 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
         : result;
   }
 
+  public static final int GATEKEEPER_MUTATION_FIELD_NUMBER = 3;
+  private int gatekeeperMutation_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Status of the pod serving the mutation webhook.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for gatekeeperMutation.
+   */
+  @java.lang.Override
+  public int getGatekeeperMutationValue() {
+    return gatekeeperMutation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Status of the pod serving the mutation webhook.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+   * </code>
+   *
+   * @return The gatekeeperMutation.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGatekeeperMutation() {
+    com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+            gatekeeperMutation_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -171,6 +212,12 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
             .getNumber()) {
       output.writeEnum(2, gatekeeperAudit_);
     }
+    if (gatekeeperMutation_
+        != com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+            .DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, gatekeeperMutation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -194,6 +241,12 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, gatekeeperAudit_);
     }
+    if (gatekeeperMutation_
+        != com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+            .DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, gatekeeperMutation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -213,6 +266,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
 
     if (gatekeeperControllerManagerState_ != other.gatekeeperControllerManagerState_) return false;
     if (gatekeeperAudit_ != other.gatekeeperAudit_) return false;
+    if (gatekeeperMutation_ != other.gatekeeperMutation_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -228,6 +282,8 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     hash = (53 * hash) + gatekeeperControllerManagerState_;
     hash = (37 * hash) + GATEKEEPER_AUDIT_FIELD_NUMBER;
     hash = (53 * hash) + gatekeeperAudit_;
+    hash = (37 * hash) + GATEKEEPER_MUTATION_FIELD_NUMBER;
+    hash = (53 * hash) + gatekeeperMutation_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -373,6 +429,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       bitField0_ = 0;
       gatekeeperControllerManagerState_ = 0;
       gatekeeperAudit_ = 0;
+      gatekeeperMutation_ = 0;
       return this;
     }
 
@@ -419,6 +476,9 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.gatekeeperAudit_ = gatekeeperAudit_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gatekeeperMutation_ = gatekeeperMutation_;
       }
     }
 
@@ -478,6 +538,9 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       if (other.gatekeeperAudit_ != 0) {
         setGatekeeperAuditValue(other.getGatekeeperAuditValue());
       }
+      if (other.gatekeeperMutation_ != 0) {
+        setGatekeeperMutationValue(other.getGatekeeperMutationValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -516,6 +579,12 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                gatekeeperMutation_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -735,6 +804,105 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     public Builder clearGatekeeperAudit() {
       bitField0_ = (bitField0_ & ~0x00000002);
       gatekeeperAudit_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int gatekeeperMutation_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Status of the pod serving the mutation webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for gatekeeperMutation.
+     */
+    @java.lang.Override
+    public int getGatekeeperMutationValue() {
+      return gatekeeperMutation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of the pod serving the mutation webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for gatekeeperMutation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatekeeperMutationValue(int value) {
+      gatekeeperMutation_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of the pod serving the mutation webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+     * </code>
+     *
+     * @return The gatekeeperMutation.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGatekeeperMutation() {
+      com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+              gatekeeperMutation_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of the pod serving the mutation webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+     * </code>
+     *
+     * @param value The gatekeeperMutation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatekeeperMutation(
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      gatekeeperMutation_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of the pod serving the mutation webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGatekeeperMutation() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      gatekeeperMutation_ = 0;
       onChanged();
       return this;
     }

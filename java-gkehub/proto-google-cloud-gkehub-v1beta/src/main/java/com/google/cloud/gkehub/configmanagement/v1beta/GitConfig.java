@@ -77,10 +77,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the Git repository to use as the source of truth.
+   * Required. The URL of the Git repository to use as the source of truth.
    * </pre>
    *
-   * <code>string sync_repo = 1;</code>
+   * <code>string sync_repo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The syncRepo.
    */
@@ -100,10 +100,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the Git repository to use as the source of truth.
+   * Required. The URL of the Git repository to use as the source of truth.
    * </pre>
    *
-   * <code>string sync_repo = 1;</code>
+   * <code>string sync_repo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for syncRepo.
    */
@@ -128,10 +128,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The branch of the repository to sync from. Default: master.
+   * Optional. The branch of the repository to sync from. Default: master.
    * </pre>
    *
-   * <code>string sync_branch = 2;</code>
+   * <code>string sync_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The syncBranch.
    */
@@ -151,10 +151,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The branch of the repository to sync from. Default: master.
+   * Optional. The branch of the repository to sync from. Default: master.
    * </pre>
    *
-   * <code>string sync_branch = 2;</code>
+   * <code>string sync_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for syncBranch.
    */
@@ -179,11 +179,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The path within the Git repository that represents the top level of the
-   * repo to sync. Default: the root directory of the repository.
+   * Optional. The path within the Git repository that represents the top level
+   * of the repo to sync. Default: the root directory of the repository.
    * </pre>
    *
-   * <code>string policy_dir = 3;</code>
+   * <code>string policy_dir = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The policyDir.
    */
@@ -203,11 +203,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The path within the Git repository that represents the top level of the
-   * repo to sync. Default: the root directory of the repository.
+   * Optional. The path within the Git repository that represents the top level
+   * of the repo to sync. Default: the root directory of the repository.
    * </pre>
    *
-   * <code>string policy_dir = 3;</code>
+   * <code>string policy_dir = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for policyDir.
    */
@@ -230,10 +230,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Period in seconds between consecutive syncs. Default: 15.
+   * Optional. Period in seconds between consecutive syncs. Default: 15.
    * </pre>
    *
-   * <code>int64 sync_wait_secs = 4;</code>
+   * <code>int64 sync_wait_secs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The syncWaitSecs.
    */
@@ -250,10 +250,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Git revision (tag or hash) to check out. Default HEAD.
+   * Optional. Git revision (tag or hash) to check out. Default HEAD.
    * </pre>
    *
-   * <code>string sync_rev = 5;</code>
+   * <code>string sync_rev = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The syncRev.
    */
@@ -273,10 +273,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Git revision (tag or hash) to check out. Default HEAD.
+   * Optional. Git revision (tag or hash) to check out. Default HEAD.
    * </pre>
    *
-   * <code>string sync_rev = 5;</code>
+   * <code>string sync_rev = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for syncRev.
    */
@@ -301,10 +301,13 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of secret configured for access to the Git repo.
+   * Required. Type of secret configured for access to the Git repo.
+   * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
+   * githubapp or none.
+   * The validation of this is case-sensitive.
    * </pre>
    *
-   * <code>string secret_type = 6;</code>
+   * <code>string secret_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The secretType.
    */
@@ -324,10 +327,13 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of secret configured for access to the Git repo.
+   * Required. Type of secret configured for access to the Git repo.
+   * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
+   * githubapp or none.
+   * The validation of this is case-sensitive.
    * </pre>
    *
-   * <code>string secret_type = 6;</code>
+   * <code>string secret_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for secretType.
    */
@@ -352,10 +358,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL for the HTTPS proxy to be used when communicating with the Git repo.
+   * Optional. URL for the HTTPS proxy to be used when communicating with the
+   * Git repo.
    * </pre>
    *
-   * <code>string https_proxy = 7;</code>
+   * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The httpsProxy.
    */
@@ -375,10 +382,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL for the HTTPS proxy to be used when communicating with the Git repo.
+   * Optional. URL for the HTTPS proxy to be used when communicating with the
+   * Git repo.
    * </pre>
    *
-   * <code>string https_proxy = 7;</code>
+   * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for httpsProxy.
    */
@@ -403,11 +411,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCP Service Account Email used for auth when secret_type is
-   * gcpServiceAccount.
+   * Optional. The Google Cloud Service Account Email used for auth when
+   * secret_type is gcpServiceAccount.
    * </pre>
    *
-   * <code>string gcp_service_account_email = 8;</code>
+   * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The gcpServiceAccountEmail.
    */
@@ -427,11 +435,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCP Service Account Email used for auth when secret_type is
-   * gcpServiceAccount.
+   * Optional. The Google Cloud Service Account Email used for auth when
+   * secret_type is gcpServiceAccount.
    * </pre>
    *
-   * <code>string gcp_service_account_email = 8;</code>
+   * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for gcpServiceAccountEmail.
    */
@@ -962,10 +970,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the Git repository to use as the source of truth.
+     * Required. The URL of the Git repository to use as the source of truth.
      * </pre>
      *
-     * <code>string sync_repo = 1;</code>
+     * <code>string sync_repo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The syncRepo.
      */
@@ -984,10 +992,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the Git repository to use as the source of truth.
+     * Required. The URL of the Git repository to use as the source of truth.
      * </pre>
      *
-     * <code>string sync_repo = 1;</code>
+     * <code>string sync_repo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for syncRepo.
      */
@@ -1006,10 +1014,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the Git repository to use as the source of truth.
+     * Required. The URL of the Git repository to use as the source of truth.
      * </pre>
      *
-     * <code>string sync_repo = 1;</code>
+     * <code>string sync_repo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The syncRepo to set.
      * @return This builder for chaining.
@@ -1027,10 +1035,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the Git repository to use as the source of truth.
+     * Required. The URL of the Git repository to use as the source of truth.
      * </pre>
      *
-     * <code>string sync_repo = 1;</code>
+     * <code>string sync_repo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1044,10 +1052,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the Git repository to use as the source of truth.
+     * Required. The URL of the Git repository to use as the source of truth.
      * </pre>
      *
-     * <code>string sync_repo = 1;</code>
+     * <code>string sync_repo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for syncRepo to set.
      * @return This builder for chaining.
@@ -1068,10 +1076,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The branch of the repository to sync from. Default: master.
+     * Optional. The branch of the repository to sync from. Default: master.
      * </pre>
      *
-     * <code>string sync_branch = 2;</code>
+     * <code>string sync_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The syncBranch.
      */
@@ -1090,10 +1098,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The branch of the repository to sync from. Default: master.
+     * Optional. The branch of the repository to sync from. Default: master.
      * </pre>
      *
-     * <code>string sync_branch = 2;</code>
+     * <code>string sync_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for syncBranch.
      */
@@ -1112,10 +1120,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The branch of the repository to sync from. Default: master.
+     * Optional. The branch of the repository to sync from. Default: master.
      * </pre>
      *
-     * <code>string sync_branch = 2;</code>
+     * <code>string sync_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The syncBranch to set.
      * @return This builder for chaining.
@@ -1133,10 +1141,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The branch of the repository to sync from. Default: master.
+     * Optional. The branch of the repository to sync from. Default: master.
      * </pre>
      *
-     * <code>string sync_branch = 2;</code>
+     * <code>string sync_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1150,10 +1158,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The branch of the repository to sync from. Default: master.
+     * Optional. The branch of the repository to sync from. Default: master.
      * </pre>
      *
-     * <code>string sync_branch = 2;</code>
+     * <code>string sync_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for syncBranch to set.
      * @return This builder for chaining.
@@ -1174,11 +1182,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path within the Git repository that represents the top level of the
-     * repo to sync. Default: the root directory of the repository.
+     * Optional. The path within the Git repository that represents the top level
+     * of the repo to sync. Default: the root directory of the repository.
      * </pre>
      *
-     * <code>string policy_dir = 3;</code>
+     * <code>string policy_dir = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The policyDir.
      */
@@ -1197,11 +1205,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path within the Git repository that represents the top level of the
-     * repo to sync. Default: the root directory of the repository.
+     * Optional. The path within the Git repository that represents the top level
+     * of the repo to sync. Default: the root directory of the repository.
      * </pre>
      *
-     * <code>string policy_dir = 3;</code>
+     * <code>string policy_dir = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for policyDir.
      */
@@ -1220,11 +1228,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path within the Git repository that represents the top level of the
-     * repo to sync. Default: the root directory of the repository.
+     * Optional. The path within the Git repository that represents the top level
+     * of the repo to sync. Default: the root directory of the repository.
      * </pre>
      *
-     * <code>string policy_dir = 3;</code>
+     * <code>string policy_dir = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The policyDir to set.
      * @return This builder for chaining.
@@ -1242,11 +1250,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path within the Git repository that represents the top level of the
-     * repo to sync. Default: the root directory of the repository.
+     * Optional. The path within the Git repository that represents the top level
+     * of the repo to sync. Default: the root directory of the repository.
      * </pre>
      *
-     * <code>string policy_dir = 3;</code>
+     * <code>string policy_dir = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1260,11 +1268,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path within the Git repository that represents the top level of the
-     * repo to sync. Default: the root directory of the repository.
+     * Optional. The path within the Git repository that represents the top level
+     * of the repo to sync. Default: the root directory of the repository.
      * </pre>
      *
-     * <code>string policy_dir = 3;</code>
+     * <code>string policy_dir = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for policyDir to set.
      * @return This builder for chaining.
@@ -1285,10 +1293,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Period in seconds between consecutive syncs. Default: 15.
+     * Optional. Period in seconds between consecutive syncs. Default: 15.
      * </pre>
      *
-     * <code>int64 sync_wait_secs = 4;</code>
+     * <code>int64 sync_wait_secs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The syncWaitSecs.
      */
@@ -1300,10 +1308,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Period in seconds between consecutive syncs. Default: 15.
+     * Optional. Period in seconds between consecutive syncs. Default: 15.
      * </pre>
      *
-     * <code>int64 sync_wait_secs = 4;</code>
+     * <code>int64 sync_wait_secs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The syncWaitSecs to set.
      * @return This builder for chaining.
@@ -1319,10 +1327,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Period in seconds between consecutive syncs. Default: 15.
+     * Optional. Period in seconds between consecutive syncs. Default: 15.
      * </pre>
      *
-     * <code>int64 sync_wait_secs = 4;</code>
+     * <code>int64 sync_wait_secs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1338,10 +1346,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git revision (tag or hash) to check out. Default HEAD.
+     * Optional. Git revision (tag or hash) to check out. Default HEAD.
      * </pre>
      *
-     * <code>string sync_rev = 5;</code>
+     * <code>string sync_rev = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The syncRev.
      */
@@ -1360,10 +1368,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git revision (tag or hash) to check out. Default HEAD.
+     * Optional. Git revision (tag or hash) to check out. Default HEAD.
      * </pre>
      *
-     * <code>string sync_rev = 5;</code>
+     * <code>string sync_rev = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for syncRev.
      */
@@ -1382,10 +1390,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git revision (tag or hash) to check out. Default HEAD.
+     * Optional. Git revision (tag or hash) to check out. Default HEAD.
      * </pre>
      *
-     * <code>string sync_rev = 5;</code>
+     * <code>string sync_rev = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The syncRev to set.
      * @return This builder for chaining.
@@ -1403,10 +1411,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git revision (tag or hash) to check out. Default HEAD.
+     * Optional. Git revision (tag or hash) to check out. Default HEAD.
      * </pre>
      *
-     * <code>string sync_rev = 5;</code>
+     * <code>string sync_rev = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1420,10 +1428,10 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Git revision (tag or hash) to check out. Default HEAD.
+     * Optional. Git revision (tag or hash) to check out. Default HEAD.
      * </pre>
      *
-     * <code>string sync_rev = 5;</code>
+     * <code>string sync_rev = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for syncRev to set.
      * @return This builder for chaining.
@@ -1444,10 +1452,13 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of secret configured for access to the Git repo.
+     * Required. Type of secret configured for access to the Git repo.
+     * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
+     * githubapp or none.
+     * The validation of this is case-sensitive.
      * </pre>
      *
-     * <code>string secret_type = 6;</code>
+     * <code>string secret_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The secretType.
      */
@@ -1466,10 +1477,13 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of secret configured for access to the Git repo.
+     * Required. Type of secret configured for access to the Git repo.
+     * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
+     * githubapp or none.
+     * The validation of this is case-sensitive.
      * </pre>
      *
-     * <code>string secret_type = 6;</code>
+     * <code>string secret_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for secretType.
      */
@@ -1488,10 +1502,13 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of secret configured for access to the Git repo.
+     * Required. Type of secret configured for access to the Git repo.
+     * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
+     * githubapp or none.
+     * The validation of this is case-sensitive.
      * </pre>
      *
-     * <code>string secret_type = 6;</code>
+     * <code>string secret_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The secretType to set.
      * @return This builder for chaining.
@@ -1509,10 +1526,13 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of secret configured for access to the Git repo.
+     * Required. Type of secret configured for access to the Git repo.
+     * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
+     * githubapp or none.
+     * The validation of this is case-sensitive.
      * </pre>
      *
-     * <code>string secret_type = 6;</code>
+     * <code>string secret_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1526,10 +1546,13 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of secret configured for access to the Git repo.
+     * Required. Type of secret configured for access to the Git repo.
+     * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
+     * githubapp or none.
+     * The validation of this is case-sensitive.
      * </pre>
      *
-     * <code>string secret_type = 6;</code>
+     * <code>string secret_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for secretType to set.
      * @return This builder for chaining.
@@ -1550,10 +1573,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL for the HTTPS proxy to be used when communicating with the Git repo.
+     * Optional. URL for the HTTPS proxy to be used when communicating with the
+     * Git repo.
      * </pre>
      *
-     * <code>string https_proxy = 7;</code>
+     * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The httpsProxy.
      */
@@ -1572,10 +1596,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL for the HTTPS proxy to be used when communicating with the Git repo.
+     * Optional. URL for the HTTPS proxy to be used when communicating with the
+     * Git repo.
      * </pre>
      *
-     * <code>string https_proxy = 7;</code>
+     * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for httpsProxy.
      */
@@ -1594,10 +1619,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL for the HTTPS proxy to be used when communicating with the Git repo.
+     * Optional. URL for the HTTPS proxy to be used when communicating with the
+     * Git repo.
      * </pre>
      *
-     * <code>string https_proxy = 7;</code>
+     * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The httpsProxy to set.
      * @return This builder for chaining.
@@ -1615,10 +1641,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL for the HTTPS proxy to be used when communicating with the Git repo.
+     * Optional. URL for the HTTPS proxy to be used when communicating with the
+     * Git repo.
      * </pre>
      *
-     * <code>string https_proxy = 7;</code>
+     * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1632,10 +1659,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL for the HTTPS proxy to be used when communicating with the Git repo.
+     * Optional. URL for the HTTPS proxy to be used when communicating with the
+     * Git repo.
      * </pre>
      *
-     * <code>string https_proxy = 7;</code>
+     * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for httpsProxy to set.
      * @return This builder for chaining.
@@ -1656,11 +1684,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCP Service Account Email used for auth when secret_type is
-     * gcpServiceAccount.
+     * Optional. The Google Cloud Service Account Email used for auth when
+     * secret_type is gcpServiceAccount.
      * </pre>
      *
-     * <code>string gcp_service_account_email = 8;</code>
+     * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The gcpServiceAccountEmail.
      */
@@ -1679,11 +1707,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCP Service Account Email used for auth when secret_type is
-     * gcpServiceAccount.
+     * Optional. The Google Cloud Service Account Email used for auth when
+     * secret_type is gcpServiceAccount.
      * </pre>
      *
-     * <code>string gcp_service_account_email = 8;</code>
+     * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for gcpServiceAccountEmail.
      */
@@ -1702,11 +1730,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCP Service Account Email used for auth when secret_type is
-     * gcpServiceAccount.
+     * Optional. The Google Cloud Service Account Email used for auth when
+     * secret_type is gcpServiceAccount.
      * </pre>
      *
-     * <code>string gcp_service_account_email = 8;</code>
+     * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The gcpServiceAccountEmail to set.
      * @return This builder for chaining.
@@ -1724,11 +1752,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCP Service Account Email used for auth when secret_type is
-     * gcpServiceAccount.
+     * Optional. The Google Cloud Service Account Email used for auth when
+     * secret_type is gcpServiceAccount.
      * </pre>
      *
-     * <code>string gcp_service_account_email = 8;</code>
+     * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1742,11 +1770,11 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCP Service Account Email used for auth when secret_type is
-     * gcpServiceAccount.
+     * Optional. The Google Cloud Service Account Email used for auth when
+     * secret_type is gcpServiceAccount.
      * </pre>
      *
-     * <code>string gcp_service_account_email = 8;</code>
+     * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for gcpServiceAccountEmail to set.
      * @return This builder for chaining.

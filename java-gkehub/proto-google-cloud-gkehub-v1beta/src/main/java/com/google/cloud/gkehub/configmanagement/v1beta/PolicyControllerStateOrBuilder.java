@@ -101,4 +101,43 @@ public interface PolicyControllerStateOrBuilder
    */
   com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentStateOrBuilder
       getDeploymentStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   *
+   * @return Whether the migration field is set.
+   */
+  boolean hasMigration();
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   *
+   * @return The migration.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration getMigration();
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigrationOrBuilder
+      getMigrationOrBuilder();
 }
