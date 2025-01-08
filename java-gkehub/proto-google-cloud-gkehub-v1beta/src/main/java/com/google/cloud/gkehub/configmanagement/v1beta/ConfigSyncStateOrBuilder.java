@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,12 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * The version of ConfigSync deployed
+   * Output only. The version of ConfigSync deployed
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion version = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion version = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the version field is set.
    */
@@ -40,10 +42,12 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * The version of ConfigSync deployed
+   * Output only. The version of ConfigSync deployed
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion version = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion version = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The version.
    */
@@ -52,10 +56,12 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * The version of ConfigSync deployed
+   * Output only. The version of ConfigSync deployed
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion version = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion version = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersionOrBuilder getVersionOrBuilder();
 
@@ -63,12 +69,12 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * Information about the deployment of ConfigSync, including the version
-   * of the various Pods deployed
+   * Output only. Information about the deployment of ConfigSync, including the
+   * version of the various Pods deployed
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState deployment_state = 2;
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState deployment_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the deploymentState field is set.
@@ -78,12 +84,12 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * Information about the deployment of ConfigSync, including the version
-   * of the various Pods deployed
+   * Output only. Information about the deployment of ConfigSync, including the
+   * version of the various Pods deployed
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState deployment_state = 2;
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState deployment_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The deploymentState.
@@ -93,12 +99,12 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * Information about the deployment of ConfigSync, including the version
-   * of the various Pods deployed
+   * Output only. Information about the deployment of ConfigSync, including the
+   * version of the various Pods deployed
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState deployment_state = 2;
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState deployment_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentStateOrBuilder
@@ -108,10 +114,12 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * The state of ConfigSync's process to sync configs to a cluster
+   * Output only. The state of ConfigSync's process to sync configs to a cluster
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.SyncState sync_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.SyncState sync_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the syncState field is set.
    */
@@ -120,10 +128,12 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * The state of ConfigSync's process to sync configs to a cluster
+   * Output only. The state of ConfigSync's process to sync configs to a cluster
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.SyncState sync_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.SyncState sync_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The syncState.
    */
@@ -132,10 +142,209 @@ public interface ConfigSyncStateOrBuilder
    *
    *
    * <pre>
-   * The state of ConfigSync's process to sync configs to a cluster
+   * Output only. The state of ConfigSync's process to sync configs to a cluster
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.SyncState sync_state = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.SyncState sync_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.SyncStateOrBuilder getSyncStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncError errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncError> getErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncError errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncError getErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncError errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncError errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncErrorOrBuilder>
+      getErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncError errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncErrorOrBuilder getErrorsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the RootSync CRD
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.CRDState rootsync_crd = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for rootsyncCrd.
+   */
+  int getRootsyncCrdValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the RootSync CRD
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.CRDState rootsync_crd = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The rootsyncCrd.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.CRDState getRootsyncCrd();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Reposync CRD
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.CRDState reposync_crd = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reposyncCrd.
+   */
+  int getReposyncCrdValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Reposync CRD
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.CRDState reposync_crd = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The reposyncCrd.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.CRDState getReposyncCrd();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of CS
+   * This field summarizes the other fields in this message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of CS
+   * This field summarizes the other fields in this message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether syncing resources to the cluster is stopped at the
+   * cluster level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.StopSyncingState cluster_level_stop_syncing_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clusterLevelStopSyncingState.
+   */
+  int getClusterLevelStopSyncingStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether syncing resources to the cluster is stopped at the
+   * cluster level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.StopSyncingState cluster_level_stop_syncing_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clusterLevelStopSyncingState.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState.StopSyncingState
+      getClusterLevelStopSyncingState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of RootSync and RepoSync CRs in the cluster.
+   * </pre>
+   *
+   * <code>int32 cr_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The crCount.
+   */
+  int getCrCount();
 }

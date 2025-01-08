@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,10 @@ public final class StoragePoolProto {
       internal_static_google_cloud_netapp_v1_StoragePool_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_StoragePool_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_ValidateDirectoryServiceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_ValidateDirectoryServiceRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -131,11 +135,16 @@ public final class StoragePoolProto {
           + "ragePool\022Cprojects/{project}/locations/{"
           + "location}/storagePools/{storage_pool}*\014s"
           + "toragePools2\013storagePoolB\030\n\026_global_acce"
-          + "ss_allowedB\262\001\n\032com.google.cloud.netapp.v"
-          + "1B\020StoragePoolProtoP\001Z2cloud.google.com/"
-          + "go/netapp/apiv1/netapppb;netapppb\252\002\026Goog"
-          + "le.Cloud.NetApp.V1\312\002\026Google\\Cloud\\NetApp"
-          + "\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
+          + "ss_allowed\"\250\001\n\037ValidateDirectoryServiceR"
+          + "equest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!netapp.goo"
+          + "gleapis.com/StoragePool\022L\n\026directory_ser"
+          + "vice_type\030\002 \001(\0162,.google.cloud.netapp.v1"
+          + ".DirectoryServiceTypeB\262\001\n\032com.google.clo"
+          + "ud.netapp.v1B\020StoragePoolProtoP\001Z2cloud."
+          + "google.com/go/netapp/apiv1/netapppb;neta"
+          + "pppb\252\002\026Google.Cloud.NetApp.V1\312\002\026Google\\C"
+          + "loud\\NetApp\\V1\352\002\031Google::Cloud::NetApp::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -237,6 +246,14 @@ public final class StoragePoolProto {
             internal_static_google_cloud_netapp_v1_StoragePool_LabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_cloud_netapp_v1_ValidateDirectoryServiceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_netapp_v1_ValidateDirectoryServiceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_ValidateDirectoryServiceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "DirectoryServiceType",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

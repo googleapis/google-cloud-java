@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,13 @@ public class CssProductInputsServiceSettings
       insertCssProductInputSettings() {
     return ((CssProductInputsServiceStubSettings) getStubSettings())
         .insertCssProductInputSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCssProductInput. */
+  public UnaryCallSettings<UpdateCssProductInputRequest, CssProductInput>
+      updateCssProductInputSettings() {
+    return ((CssProductInputsServiceStubSettings) getStubSettings())
+        .updateCssProductInputSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteCssProductInput. */
@@ -218,6 +225,12 @@ public class CssProductInputsServiceSettings
     public UnaryCallSettings.Builder<InsertCssProductInputRequest, CssProductInput>
         insertCssProductInputSettings() {
       return getStubSettingsBuilder().insertCssProductInputSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCssProductInput. */
+    public UnaryCallSettings.Builder<UpdateCssProductInputRequest, CssProductInput>
+        updateCssProductInputSettings() {
+      return getStubSettingsBuilder().updateCssProductInputSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteCssProductInput. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     orderBy_ = "";
     diversificationLevel_ = 0;
     keywordMatchMode_ = 0;
+    relevanceThreshold_ = 0;
   }
 
   @java.lang.Override
@@ -739,6 +740,214 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The relevance threshold of the search results. The higher relevance
+   * threshold is, the higher relevant results are shown and the less number of
+   * results are returned.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold}
+   */
+  public enum RelevanceThreshold implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. In this case, server behavior defaults to Google defined
+     * threshold.
+     * </pre>
+     *
+     * <code>RELEVANCE_THRESHOLD_UNSPECIFIED = 0;</code>
+     */
+    RELEVANCE_THRESHOLD_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Lowest relevance threshold.
+     * </pre>
+     *
+     * <code>LOWEST = 1;</code>
+     */
+    LOWEST(1),
+    /**
+     *
+     *
+     * <pre>
+     * Low relevance threshold.
+     * </pre>
+     *
+     * <code>LOW = 2;</code>
+     */
+    LOW(2),
+    /**
+     *
+     *
+     * <pre>
+     * Medium relevance threshold.
+     * </pre>
+     *
+     * <code>MEDIUM = 3;</code>
+     */
+    MEDIUM(3),
+    /**
+     *
+     *
+     * <pre>
+     * High relevance threshold.
+     * </pre>
+     *
+     * <code>HIGH = 4;</code>
+     */
+    HIGH(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. In this case, server behavior defaults to Google defined
+     * threshold.
+     * </pre>
+     *
+     * <code>RELEVANCE_THRESHOLD_UNSPECIFIED = 0;</code>
+     */
+    public static final int RELEVANCE_THRESHOLD_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Lowest relevance threshold.
+     * </pre>
+     *
+     * <code>LOWEST = 1;</code>
+     */
+    public static final int LOWEST_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Low relevance threshold.
+     * </pre>
+     *
+     * <code>LOW = 2;</code>
+     */
+    public static final int LOW_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Medium relevance threshold.
+     * </pre>
+     *
+     * <code>MEDIUM = 3;</code>
+     */
+    public static final int MEDIUM_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * High relevance threshold.
+     * </pre>
+     *
+     * <code>HIGH = 4;</code>
+     */
+    public static final int HIGH_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RelevanceThreshold valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RelevanceThreshold forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RELEVANCE_THRESHOLD_UNSPECIFIED;
+        case 1:
+          return LOWEST;
+        case 2:
+          return LOW;
+        case 3:
+          return MEDIUM;
+        case 4:
+          return HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RelevanceThreshold>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RelevanceThreshold>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RelevanceThreshold>() {
+              public RelevanceThreshold findValueByNumber(int number) {
+                return RelevanceThreshold.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.talent.v4.SearchJobsRequest.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final RelevanceThreshold[] VALUES = values();
+
+    public static RelevanceThreshold valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RelevanceThreshold(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold)
   }
 
   public interface CustomRankingInfoOrBuilder
@@ -3434,7 +3643,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-   *     google/cloud/talent/v4/job_service.proto;l=804
+   *     google/cloud/talent/v4/job_service.proto;l=825
    * @return The disableKeywordMatch.
    */
   @java.lang.Override
@@ -3489,6 +3698,56 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.forNumber(keywordMatchMode_);
     return result == null
         ? com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int RELEVANCE_THRESHOLD_FIELD_NUMBER = 19;
+  private int relevanceThreshold_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for relevanceThreshold.
+   */
+  @java.lang.Override
+  public int getRelevanceThresholdValue() {
+    return relevanceThreshold_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The relevanceThreshold.
+   */
+  @java.lang.Override
+  public com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold getRelevanceThreshold() {
+    com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold result =
+        com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold.forNumber(
+            relevanceThreshold_);
+    return result == null
+        ? com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold.UNRECOGNIZED
         : result;
   }
 
@@ -3559,6 +3818,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(18, keywordMatchMode_);
     }
+    if (relevanceThreshold_
+        != com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold
+            .RELEVANCE_THRESHOLD_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(19, relevanceThreshold_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3621,6 +3886,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, keywordMatchMode_);
     }
+    if (relevanceThreshold_
+        != com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold
+            .RELEVANCE_THRESHOLD_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, relevanceThreshold_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3661,6 +3932,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
     if (getDisableKeywordMatch() != other.getDisableKeywordMatch()) return false;
     if (keywordMatchMode_ != other.keywordMatchMode_) return false;
+    if (relevanceThreshold_ != other.relevanceThreshold_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3710,6 +3982,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableKeywordMatch());
     hash = (37 * hash) + KEYWORD_MATCH_MODE_FIELD_NUMBER;
     hash = (53 * hash) + keywordMatchMode_;
+    hash = (37 * hash) + RELEVANCE_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + relevanceThreshold_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3894,6 +4168,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       disableKeywordMatch_ = false;
       keywordMatchMode_ = 0;
+      relevanceThreshold_ = 0;
       return this;
     }
 
@@ -3992,6 +4267,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.keywordMatchMode_ = keywordMatchMode_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.relevanceThreshold_ = relevanceThreshold_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4115,6 +4393,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.keywordMatchMode_ != 0) {
         setKeywordMatchModeValue(other.getKeywordMatchModeValue());
+      }
+      if (other.relevanceThreshold_ != 0) {
+        setRelevanceThresholdValue(other.getRelevanceThresholdValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4240,6 +4521,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00004000;
                 break;
               } // case 144
+            case 152:
+              {
+                relevanceThreshold_ = input.readEnum();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8445,7 +8732,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-     *     google/cloud/talent/v4/job_service.proto;l=804
+     *     google/cloud/talent/v4/job_service.proto;l=825
      * @return The disableKeywordMatch.
      */
     @java.lang.Override
@@ -8498,7 +8785,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-     *     google/cloud/talent/v4/job_service.proto;l=804
+     *     google/cloud/talent/v4/job_service.proto;l=825
      * @param value The disableKeywordMatch to set.
      * @return This builder for chaining.
      */
@@ -8555,7 +8842,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-     *     google/cloud/talent/v4/job_service.proto;l=804
+     *     google/cloud/talent/v4/job_service.proto;l=825
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8686,6 +8973,130 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public Builder clearKeywordMatchMode() {
       bitField0_ = (bitField0_ & ~0x00004000);
       keywordMatchMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int relevanceThreshold_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for relevanceThreshold.
+     */
+    @java.lang.Override
+    public int getRelevanceThresholdValue() {
+      return relevanceThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for relevanceThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelevanceThresholdValue(int value) {
+      relevanceThreshold_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The relevanceThreshold.
+     */
+    @java.lang.Override
+    public com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold getRelevanceThreshold() {
+      com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold result =
+          com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold.forNumber(
+              relevanceThreshold_);
+      return result == null
+          ? com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The relevanceThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelevanceThreshold(
+        com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00008000;
+      relevanceThreshold_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The relevance threshold of the search results.
+     *
+     * Default to Google defined threshold, leveraging a balance of
+     * precision and recall to deliver both highly accurate results and
+     * comprehensive coverage of relevant information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRelevanceThreshold() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      relevanceThreshold_ = 0;
       onChanged();
       return this;
     }

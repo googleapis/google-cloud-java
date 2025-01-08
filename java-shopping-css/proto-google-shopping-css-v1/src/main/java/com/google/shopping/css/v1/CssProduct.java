@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.shopping.css.v1;
  *
  *
  * <pre>
- * The processed CSS Product(a.k.a Aggregate Offer internally).
+ * The processed CSS Product.
  * </pre>
  *
  * Protobuf type {@code google.shopping.css.v1.CssProduct}
@@ -728,7 +728,7 @@ public final class CssProduct extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processed CSS Product(a.k.a Aggregate Offer internally).
+   * The processed CSS Product.
    * </pre>
    *
    * Protobuf type {@code google.shopping.css.v1.CssProduct}

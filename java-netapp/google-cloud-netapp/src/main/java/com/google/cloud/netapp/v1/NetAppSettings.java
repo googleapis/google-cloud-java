@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,6 +171,18 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
   public OperationCallSettings<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationSettings() {
     return ((NetAppStubSettings) getStubSettings()).deleteStoragePoolOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public UnaryCallSettings<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceSettings() {
+    return ((NetAppStubSettings) getStubSettings()).validateDirectoryServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public OperationCallSettings<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).validateDirectoryServiceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
@@ -800,6 +812,18 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings() {
       return getStubSettingsBuilder().deleteStoragePoolOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public UnaryCallSettings.Builder<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceSettings() {
+      return getStubSettingsBuilder().validateDirectoryServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public OperationCallSettings.Builder<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+        validateDirectoryServiceOperationSettings() {
+      return getStubSettingsBuilder().validateDirectoryServiceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */

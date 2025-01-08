@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,4 +175,86 @@ public interface ConfigSyncDeploymentStateOrBuilder
    * @return The rootReconciler.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getRootReconciler();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of admission-webhook
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for admissionWebhook.
+   */
+  int getAdmissionWebhookValue();
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of admission-webhook
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+   * </code>
+   *
+   * @return The admissionWebhook.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getAdmissionWebhook();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of resource-group-controller-manager
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resourceGroupControllerManager.
+   */
+  int getResourceGroupControllerManagerValue();
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of resource-group-controller-manager
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+   * </code>
+   *
+   * @return The resourceGroupControllerManager.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+      getResourceGroupControllerManager();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of otel-collector
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+   *
+   * @return The enum numeric value on the wire for otelCollector.
+   */
+  int getOtelCollectorValue();
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of otel-collector
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+   *
+   * @return The otelCollector.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getOtelCollector();
 }

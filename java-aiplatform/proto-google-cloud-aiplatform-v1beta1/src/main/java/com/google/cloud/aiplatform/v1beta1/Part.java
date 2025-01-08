@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -666,6 +666,24 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.VideoMetadata.getDefaultInstance();
   }
 
+  public static final int THOUGHT_FIELD_NUMBER = 10;
+  private boolean thought_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the part is thought from the model.
+   * </pre>
+   *
+   * <code>bool thought = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The thought.
+   */
+  @java.lang.Override
+  public boolean getThought() {
+    return thought_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -703,6 +721,9 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     }
     if (dataCase_ == 9) {
       output.writeMessage(9, (com.google.cloud.aiplatform.v1beta1.CodeExecutionResult) data_);
+    }
+    if (thought_ != false) {
+      output.writeBool(10, thought_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -751,6 +772,9 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.aiplatform.v1beta1.CodeExecutionResult) data_);
     }
+    if (thought_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, thought_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -766,6 +790,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.aiplatform.v1beta1.Part other = (com.google.cloud.aiplatform.v1beta1.Part) obj;
 
+    if (getThought() != other.getThought()) return false;
     if (!getDataCase().equals(other.getDataCase())) return false;
     switch (dataCase_) {
       case 1:
@@ -811,6 +836,8 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + THOUGHT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getThought());
     switch (dataCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -1017,6 +1044,7 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       if (videoMetadataBuilder_ != null) {
         videoMetadataBuilder_.clear();
       }
+      thought_ = false;
       dataCase_ = 0;
       data_ = null;
       metadataCase_ = 0;
@@ -1058,6 +1086,9 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Part result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.thought_ = thought_;
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.Part result) {
@@ -1133,6 +1164,9 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Part other) {
       if (other == com.google.cloud.aiplatform.v1beta1.Part.getDefaultInstance()) return this;
+      if (other.getThought() != false) {
+        setThought(other.getThought());
+      }
       switch (other.getDataCase()) {
         case TEXT:
           {
@@ -1264,6 +1298,12 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
                 dataCase_ = 9;
                 break;
               } // case 74
+            case 80:
+              {
+                thought_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3095,6 +3135,59 @@ public final class Part extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 4;
       onChanged();
       return videoMetadataBuilder_;
+    }
+
+    private boolean thought_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the part is thought from the model.
+     * </pre>
+     *
+     * <code>bool thought = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The thought.
+     */
+    @java.lang.Override
+    public boolean getThought() {
+      return thought_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the part is thought from the model.
+     * </pre>
+     *
+     * <code>bool thought = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The thought to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThought(boolean value) {
+
+      thought_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the part is thought from the model.
+     * </pre>
+     *
+     * <code>bool thought = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThought() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      thought_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

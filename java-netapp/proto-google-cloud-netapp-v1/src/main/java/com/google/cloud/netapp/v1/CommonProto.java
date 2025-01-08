@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,14 @@ public final class CommonProto {
           + "\n\007PREMIUM\020\001\022\013\n\007EXTREME\020\002\022\014\n\010STANDARD\020\003\022\010"
           + "\n\004FLEX\020\004*U\n\016EncryptionType\022\037\n\033ENCRYPTION"
           + "_TYPE_UNSPECIFIED\020\000\022\023\n\017SERVICE_MANAGED\020\001"
-          + "\022\r\n\tCLOUD_KMS\020\002B\255\001\n\032com.google.cloud.net"
-          + "app.v1B\013CommonProtoP\001Z2cloud.google.com/"
-          + "go/netapp/apiv1/netapppb;netapppb\252\002\026Goog"
-          + "le.Cloud.NetApp.V1\312\002\026Google\\Cloud\\NetApp"
-          + "\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
+          + "\022\r\n\tCLOUD_KMS\020\002*T\n\024DirectoryServiceType\022"
+          + "&\n\"DIRECTORY_SERVICE_TYPE_UNSPECIFIED\020\000\022"
+          + "\024\n\020ACTIVE_DIRECTORY\020\001B\255\001\n\032com.google.clo"
+          + "ud.netapp.v1B\013CommonProtoP\001Z2cloud.googl"
+          + "e.com/go/netapp/apiv1/netapppb;netapppb\252"
+          + "\002\026Google.Cloud.NetApp.V1\312\002\026Google\\Cloud\\"
+          + "NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

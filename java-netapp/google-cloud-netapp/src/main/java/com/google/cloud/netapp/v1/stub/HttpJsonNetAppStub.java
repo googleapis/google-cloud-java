@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,6 +118,7 @@ import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
 import com.google.cloud.netapp.v1.UpdateVolumeRequest;
+import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
@@ -346,6 +347,46 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteStoragePoolRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceMethodDescriptor =
+          ApiMethodDescriptor.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ValidateDirectoryService")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ValidateDirectoryServiceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/storagePools/*}:validateDirectoryService",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateDirectoryServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateDirectoryServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ValidateDirectoryServiceRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -2332,6 +2373,10 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable;
   private final OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable;
+  private final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable;
+  private final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable;
   private final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
       switchActiveReplicaZoneCallable;
   private final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
@@ -2602,6 +2647,18 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceTransportSettings =
+            HttpJsonCallSettings.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+                .setMethodDescriptor(validateDirectoryServiceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SwitchActiveReplicaZoneRequest, Operation>
         switchActiveReplicaZoneTransportSettings =
             HttpJsonCallSettings.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
@@ -3226,6 +3283,17 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.deleteStoragePoolOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.validateDirectoryServiceCallable =
+        callableFactory.createUnaryCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceSettings(),
+            clientContext);
+    this.validateDirectoryServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.switchActiveReplicaZoneCallable =
         callableFactory.createUnaryCallable(
             switchActiveReplicaZoneTransportSettings,
@@ -3651,6 +3719,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(getStoragePoolMethodDescriptor);
     methodDescriptors.add(updateStoragePoolMethodDescriptor);
     methodDescriptors.add(deleteStoragePoolMethodDescriptor);
+    methodDescriptors.add(validateDirectoryServiceMethodDescriptor);
     methodDescriptors.add(switchActiveReplicaZoneMethodDescriptor);
     methodDescriptors.add(listVolumesMethodDescriptor);
     methodDescriptors.add(getVolumeMethodDescriptor);
@@ -3757,6 +3826,18 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable() {
     return deleteStoragePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return validateDirectoryServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return validateDirectoryServiceOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,6 +69,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     switch (number) {
       case 13:
         return internalGetAnnotations();
+      case 27:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1668,6 +1670,160 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         : securityPostureConfig_;
   }
 
+  public static final int TAGS_FIELD_NUMBER = 27;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.gkemulticloud.v1.AttachedResourcesProto
+                .internal_static_google_cloud_gkemulticloud_v1_AttachedCluster_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Tag keys/values directly bound to this resource.
+   *
+   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * where the tag namespace is the ID of the organization or name of the
+   * project that the tag key is defined in.
+   * The short name of a tag key or value can have a maximum length of 256
+   * characters. The permitted character set for the short name includes UTF-8
+   * encoded Unicode characters except single quotes ('), double quotes ("),
+   * backslashes (&#92;), and forward slashes (/).
+   *
+   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * for more details on Google Cloud Platform tags.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1751,6 +1907,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(26, getSecurityPostureConfig());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 27);
     getUnknownFields().writeTo(output);
   }
 
@@ -1840,6 +1998,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(26, getSecurityPostureConfig());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, tags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1912,6 +2080,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (hasSecurityPostureConfig()) {
       if (!getSecurityPostureConfig().equals(other.getSecurityPostureConfig())) return false;
     }
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1994,6 +2163,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (hasSecurityPostureConfig()) {
       hash = (37 * hash) + SECURITY_POSTURE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityPostureConfig().hashCode();
+    }
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2119,6 +2292,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       switch (number) {
         case 13:
           return internalGetAnnotations();
+        case 27:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2130,6 +2305,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       switch (number) {
         case 13:
           return internalGetMutableAnnotations();
+        case 27:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2249,6 +2426,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         securityPostureConfigBuilder_.dispose();
         securityPostureConfigBuilder_ = null;
       }
+      internalGetMutableTags().clear();
       return this;
     }
 
@@ -2390,6 +2568,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
                 ? securityPostureConfig_
                 : securityPostureConfigBuilder_.build();
         to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2548,6 +2730,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (other.hasSecurityPostureConfig()) {
         mergeSecurityPostureConfig(other.getSecurityPostureConfig());
       }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00800000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2730,6 +2914,15 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00400000;
                 break;
               } // case 210
+            case 218:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6742,6 +6935,260 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         securityPostureConfig_ = null;
       }
       return securityPostureConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Tag keys/values directly bound to this resource.
+     *
+     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * where the tag namespace is the ID of the organization or name of the
+     * project that the tag key is defined in.
+     * The short name of a tag key or value can have a maximum length of 256
+     * characters. The permitted character set for the short name includes UTF-8
+     * encoded Unicode characters except single quotes ('), double quotes ("),
+     * backslashes (&#92;), and forward slashes (/).
+     *
+     * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+     * for more details on Google Cloud Platform tags.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Tag keys/values directly bound to this resource.
+     *
+     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * where the tag namespace is the ID of the organization or name of the
+     * project that the tag key is defined in.
+     * The short name of a tag key or value can have a maximum length of 256
+     * characters. The permitted character set for the short name includes UTF-8
+     * encoded Unicode characters except single quotes ('), double quotes ("),
+     * backslashes (&#92;), and forward slashes (/).
+     *
+     * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+     * for more details on Google Cloud Platform tags.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Tag keys/values directly bound to this resource.
+     *
+     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * where the tag namespace is the ID of the organization or name of the
+     * project that the tag key is defined in.
+     * The short name of a tag key or value can have a maximum length of 256
+     * characters. The permitted character set for the short name includes UTF-8
+     * encoded Unicode characters except single quotes ('), double quotes ("),
+     * backslashes (&#92;), and forward slashes (/).
+     *
+     * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+     * for more details on Google Cloud Platform tags.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Tag keys/values directly bound to this resource.
+     *
+     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * where the tag namespace is the ID of the organization or name of the
+     * project that the tag key is defined in.
+     * The short name of a tag key or value can have a maximum length of 256
+     * characters. The permitted character set for the short name includes UTF-8
+     * encoded Unicode characters except single quotes ('), double quotes ("),
+     * backslashes (&#92;), and forward slashes (/).
+     *
+     * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+     * for more details on Google Cloud Platform tags.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Tag keys/values directly bound to this resource.
+     *
+     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * where the tag namespace is the ID of the organization or name of the
+     * project that the tag key is defined in.
+     * The short name of a tag key or value can have a maximum length of 256
+     * characters. The permitted character set for the short name includes UTF-8
+     * encoded Unicode characters except single quotes ('), double quotes ("),
+     * backslashes (&#92;), and forward slashes (/).
+     *
+     * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+     * for more details on Google Cloud Platform tags.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00800000;
+      return internalGetMutableTags().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Tag keys/values directly bound to this resource.
+     *
+     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * where the tag namespace is the ID of the organization or name of the
+     * project that the tag key is defined in.
+     * The short name of a tag key or value can have a maximum length of 256
+     * characters. The permitted character set for the short name includes UTF-8
+     * encoded Unicode characters except single quotes ('), double quotes ("),
+     * backslashes (&#92;), and forward slashes (/).
+     *
+     * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+     * for more details on Google Cloud Platform tags.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00800000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Tag keys/values directly bound to this resource.
+     *
+     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * where the tag namespace is the ID of the organization or name of the
+     * project that the tag key is defined in.
+     * The short name of a tag key or value can have a maximum length of 256
+     * characters. The permitted character set for the short name includes UTF-8
+     * encoded Unicode characters except single quotes ('), double quotes ("),
+     * backslashes (&#92;), and forward slashes (/).
+     *
+     * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+     * for more details on Google Cloud Platform tags.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00800000;
+      return this;
     }
 
     @java.lang.Override

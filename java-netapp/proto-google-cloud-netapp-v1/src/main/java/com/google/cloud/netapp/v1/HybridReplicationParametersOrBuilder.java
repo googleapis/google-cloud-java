@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,7 @@ public interface HybridReplicationParametersOrBuilder
    *
    *
    * <pre>
-   * Required. Desired Identifier (name) of the replication which will be created for this volume.
-   * Format:
-   * `projects/{project_id}/locations/{location}/volumes/{volume_id}/replications/{replication_id}`
+   * Required. Desired name for the replication of this volume.
    * </pre>
    *
    * <code>
@@ -44,9 +42,7 @@ public interface HybridReplicationParametersOrBuilder
    *
    *
    * <pre>
-   * Required. Desired Identifier (name) of the replication which will be created for this volume.
-   * Format:
-   * `projects/{project_id}/locations/{location}/volumes/{volume_id}/replications/{replication_id}`
+   * Required. Desired name for the replication of this volume.
    * </pre>
    *
    * <code>

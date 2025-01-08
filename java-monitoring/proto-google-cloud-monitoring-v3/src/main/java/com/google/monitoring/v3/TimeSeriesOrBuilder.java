@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -315,7 +315,8 @@ public interface TimeSeriesOrBuilder
    * <pre>
    * The units in which the metric value is reported. It is only applicable
    * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-   * defines the representation of the stored metric values.
+   * defines the representation of the stored metric values. This field can only
+   * be changed through CreateTimeSeries when it is empty.
    * </pre>
    *
    * <code>string unit = 8;</code>
@@ -329,7 +330,8 @@ public interface TimeSeriesOrBuilder
    * <pre>
    * The units in which the metric value is reported. It is only applicable
    * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-   * defines the representation of the stored metric values.
+   * defines the representation of the stored metric values. This field can only
+   * be changed through CreateTimeSeries when it is empty.
    * </pre>
    *
    * <code>string unit = 8;</code>
@@ -337,4 +339,35 @@ public interface TimeSeriesOrBuilder
    * @return The bytes for unit.
    */
   com.google.protobuf.ByteString getUnitBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. A detailed description of the time series that will be
+   * associated with the
+   * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+   * Once set, this field cannot be changed through CreateTimeSeries.
+   * </pre>
+   *
+   * <code>string description = 9;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. A detailed description of the time series that will be
+   * associated with the
+   * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+   * Once set, this field cannot be changed through CreateTimeSeries.
+   * </pre>
+   *
+   * <code>string description = 9;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 }

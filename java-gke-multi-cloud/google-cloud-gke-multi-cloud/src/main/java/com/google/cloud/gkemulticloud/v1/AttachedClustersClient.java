@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -627,7 +627,8 @@ public class AttachedClustersClient implements BackgroundResource {
    *     `description`. &#42; `logging_config.component_config.enable_components`. &#42;
    *     `monitoring_config.managed_prometheus_config.enabled`. &#42; `platform_version`. &#42;
    *     `proxy_config.kubernetes_secret.name`. &#42; `proxy_config.kubernetes_secret.namespace`.
-   *     &#42; `security_posture_config.vulnerability_mode`
+   *     &#42; `security_posture_config.vulnerability_mode` &#42;
+   *     `monitoring_config.cloud_monitoring_config.enabled`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AttachedCluster, OperationMetadata> updateAttachedClusterAsync(

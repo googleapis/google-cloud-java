@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,6 +132,7 @@ import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
 import com.google.cloud.netapp.v1.UpdateVolumeRequest;
+import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
@@ -239,6 +240,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<DeleteStoragePoolRequest, Operation> deleteStoragePoolSettings;
   private final OperationCallSettings<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationSettings;
+  private final UnaryCallSettings<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceSettings;
+  private final OperationCallSettings<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationSettings;
   private final UnaryCallSettings<SwitchActiveReplicaZoneRequest, Operation>
       switchActiveReplicaZoneSettings;
   private final OperationCallSettings<
@@ -978,6 +983,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return deleteStoragePoolOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public UnaryCallSettings<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceSettings() {
+    return validateDirectoryServiceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public OperationCallSettings<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationSettings() {
+    return validateDirectoryServiceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
   public UnaryCallSettings<SwitchActiveReplicaZoneRequest, Operation>
       switchActiveReplicaZoneSettings() {
@@ -1568,6 +1585,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     deleteStoragePoolSettings = settingsBuilder.deleteStoragePoolSettings().build();
     deleteStoragePoolOperationSettings =
         settingsBuilder.deleteStoragePoolOperationSettings().build();
+    validateDirectoryServiceSettings = settingsBuilder.validateDirectoryServiceSettings().build();
+    validateDirectoryServiceOperationSettings =
+        settingsBuilder.validateDirectoryServiceOperationSettings().build();
     switchActiveReplicaZoneSettings = settingsBuilder.switchActiveReplicaZoneSettings().build();
     switchActiveReplicaZoneOperationSettings =
         settingsBuilder.switchActiveReplicaZoneOperationSettings().build();
@@ -1691,6 +1711,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         deleteStoragePoolSettings;
     private final OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings;
+    private final UnaryCallSettings.Builder<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceSettings;
+    private final OperationCallSettings.Builder<
+            ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+        validateDirectoryServiceOperationSettings;
     private final UnaryCallSettings.Builder<SwitchActiveReplicaZoneRequest, Operation>
         switchActiveReplicaZoneSettings;
     private final OperationCallSettings.Builder<
@@ -1932,6 +1957,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateStoragePoolOperationSettings = OperationCallSettings.newBuilder();
       deleteStoragePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteStoragePoolOperationSettings = OperationCallSettings.newBuilder();
+      validateDirectoryServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      validateDirectoryServiceOperationSettings = OperationCallSettings.newBuilder();
       switchActiveReplicaZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       switchActiveReplicaZoneOperationSettings = OperationCallSettings.newBuilder();
       listVolumesSettings = PagedCallSettings.newBuilder(LIST_VOLUMES_PAGE_STR_FACT);
@@ -2024,6 +2051,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               getStoragePoolSettings,
               updateStoragePoolSettings,
               deleteStoragePoolSettings,
+              validateDirectoryServiceSettings,
               switchActiveReplicaZoneSettings,
               listVolumesSettings,
               getVolumeSettings,
@@ -2089,6 +2117,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateStoragePoolOperationSettings = settings.updateStoragePoolOperationSettings.toBuilder();
       deleteStoragePoolSettings = settings.deleteStoragePoolSettings.toBuilder();
       deleteStoragePoolOperationSettings = settings.deleteStoragePoolOperationSettings.toBuilder();
+      validateDirectoryServiceSettings = settings.validateDirectoryServiceSettings.toBuilder();
+      validateDirectoryServiceOperationSettings =
+          settings.validateDirectoryServiceOperationSettings.toBuilder();
       switchActiveReplicaZoneSettings = settings.switchActiveReplicaZoneSettings.toBuilder();
       switchActiveReplicaZoneOperationSettings =
           settings.switchActiveReplicaZoneOperationSettings.toBuilder();
@@ -2189,6 +2220,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               getStoragePoolSettings,
               updateStoragePoolSettings,
               deleteStoragePoolSettings,
+              validateDirectoryServiceSettings,
               switchActiveReplicaZoneSettings,
               listVolumesSettings,
               getVolumeSettings,
@@ -2291,6 +2323,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .deleteStoragePoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .validateDirectoryServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .switchActiveReplicaZoneSettings()
@@ -2602,6 +2639,30 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                   .<DeleteStoragePoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .validateDirectoryServiceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ValidateDirectoryServiceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -3452,6 +3513,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     public OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings() {
       return deleteStoragePoolOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public UnaryCallSettings.Builder<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceSettings() {
+      return validateDirectoryServiceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public OperationCallSettings.Builder<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+        validateDirectoryServiceOperationSettings() {
+      return validateDirectoryServiceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */

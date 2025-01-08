@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     buildStepOutputs_ = emptyList(com.google.protobuf.ByteString.class);
     pythonPackages_ = java.util.Collections.emptyList();
     mavenArtifacts_ = java.util.Collections.emptyList();
+    goModules_ = java.util.Collections.emptyList();
     npmPackages_ = java.util.Collections.emptyList();
   }
 
@@ -539,6 +540,92 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     return mavenArtifacts_.get(index);
   }
 
+  public static final int GO_MODULES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloudbuild.v1.UploadedGoModule> goModules_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloudbuild.v1.UploadedGoModule> getGoModulesList() {
+    return goModules_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloudbuild.v1.UploadedGoModuleOrBuilder>
+      getGoModulesOrBuilderList() {
+    return goModules_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getGoModulesCount() {
+    return goModules_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.UploadedGoModule getGoModules(int index) {
+    return goModules_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.UploadedGoModuleOrBuilder getGoModulesOrBuilder(int index) {
+    return goModules_.get(index);
+  }
+
   public static final int NPM_PACKAGES_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
@@ -648,6 +735,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < mavenArtifacts_.size(); i++) {
       output.writeMessage(9, mavenArtifacts_.get(i));
     }
+    for (int i = 0; i < goModules_.size(); i++) {
+      output.writeMessage(10, goModules_.get(i));
+    }
     for (int i = 0; i < npmPackages_.size(); i++) {
       output.writeMessage(12, npmPackages_.get(i));
     }
@@ -695,6 +785,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < mavenArtifacts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, mavenArtifacts_.get(i));
     }
+    for (int i = 0; i < goModules_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, goModules_.get(i));
+    }
     for (int i = 0; i < npmPackages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, npmPackages_.get(i));
     }
@@ -724,6 +817,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getPythonPackagesList().equals(other.getPythonPackagesList())) return false;
     if (!getMavenArtifactsList().equals(other.getMavenArtifactsList())) return false;
+    if (!getGoModulesList().equals(other.getGoModulesList())) return false;
     if (!getNpmPackagesList().equals(other.getNpmPackagesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -763,6 +857,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     if (getMavenArtifactsCount() > 0) {
       hash = (37 * hash) + MAVEN_ARTIFACTS_FIELD_NUMBER;
       hash = (53 * hash) + getMavenArtifactsList().hashCode();
+    }
+    if (getGoModulesCount() > 0) {
+      hash = (37 * hash) + GO_MODULES_FIELD_NUMBER;
+      hash = (53 * hash) + getGoModulesList().hashCode();
     }
     if (getNpmPackagesCount() > 0) {
       hash = (37 * hash) + NPM_PACKAGES_FIELD_NUMBER;
@@ -911,6 +1009,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         getArtifactTimingFieldBuilder();
         getPythonPackagesFieldBuilder();
         getMavenArtifactsFieldBuilder();
+        getGoModulesFieldBuilder();
         getNpmPackagesFieldBuilder();
       }
     }
@@ -949,13 +1048,20 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         mavenArtifactsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
+      if (goModulesBuilder_ == null) {
+        goModules_ = java.util.Collections.emptyList();
+      } else {
+        goModules_ = null;
+        goModulesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (npmPackagesBuilder_ == null) {
         npmPackages_ = java.util.Collections.emptyList();
       } else {
         npmPackages_ = null;
         npmPackagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1018,10 +1124,19 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mavenArtifacts_ = mavenArtifactsBuilder_.build();
       }
-      if (npmPackagesBuilder_ == null) {
+      if (goModulesBuilder_ == null) {
         if (((bitField0_ & 0x00000100) != 0)) {
-          npmPackages_ = java.util.Collections.unmodifiableList(npmPackages_);
+          goModules_ = java.util.Collections.unmodifiableList(goModules_);
           bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.goModules_ = goModules_;
+      } else {
+        result.goModules_ = goModulesBuilder_.build();
+      }
+      if (npmPackagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          npmPackages_ = java.util.Collections.unmodifiableList(npmPackages_);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.npmPackages_ = npmPackages_;
       } else {
@@ -1212,11 +1327,38 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (goModulesBuilder_ == null) {
+        if (!other.goModules_.isEmpty()) {
+          if (goModules_.isEmpty()) {
+            goModules_ = other.goModules_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureGoModulesIsMutable();
+            goModules_.addAll(other.goModules_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.goModules_.isEmpty()) {
+          if (goModulesBuilder_.isEmpty()) {
+            goModulesBuilder_.dispose();
+            goModulesBuilder_ = null;
+            goModules_ = other.goModules_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            goModulesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGoModulesFieldBuilder()
+                    : null;
+          } else {
+            goModulesBuilder_.addAllMessages(other.goModules_);
+          }
+        }
+      }
       if (npmPackagesBuilder_ == null) {
         if (!other.npmPackages_.isEmpty()) {
           if (npmPackages_.isEmpty()) {
             npmPackages_ = other.npmPackages_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureNpmPackagesIsMutable();
             npmPackages_.addAll(other.npmPackages_);
@@ -1229,7 +1371,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
             npmPackagesBuilder_.dispose();
             npmPackagesBuilder_ = null;
             npmPackages_ = other.npmPackages_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             npmPackagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNpmPackagesFieldBuilder()
@@ -1336,6 +1478,19 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 74
+            case 82:
+              {
+                com.google.cloudbuild.v1.UploadedGoModule m =
+                    input.readMessage(
+                        com.google.cloudbuild.v1.UploadedGoModule.parser(), extensionRegistry);
+                if (goModulesBuilder_ == null) {
+                  ensureGoModulesIsMutable();
+                  goModules_.add(m);
+                } else {
+                  goModulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             case 98:
               {
                 com.google.cloudbuild.v1.UploadedNpmPackage m =
@@ -3178,14 +3333,417 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       return mavenArtifactsBuilder_;
     }
 
+    private java.util.List<com.google.cloudbuild.v1.UploadedGoModule> goModules_ =
+        java.util.Collections.emptyList();
+
+    private void ensureGoModulesIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        goModules_ = new java.util.ArrayList<com.google.cloudbuild.v1.UploadedGoModule>(goModules_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.UploadedGoModule,
+            com.google.cloudbuild.v1.UploadedGoModule.Builder,
+            com.google.cloudbuild.v1.UploadedGoModuleOrBuilder>
+        goModulesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.UploadedGoModule> getGoModulesList() {
+      if (goModulesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(goModules_);
+      } else {
+        return goModulesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getGoModulesCount() {
+      if (goModulesBuilder_ == null) {
+        return goModules_.size();
+      } else {
+        return goModulesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedGoModule getGoModules(int index) {
+      if (goModulesBuilder_ == null) {
+        return goModules_.get(index);
+      } else {
+        return goModulesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoModules(int index, com.google.cloudbuild.v1.UploadedGoModule value) {
+      if (goModulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGoModulesIsMutable();
+        goModules_.set(index, value);
+        onChanged();
+      } else {
+        goModulesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoModules(
+        int index, com.google.cloudbuild.v1.UploadedGoModule.Builder builderForValue) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        goModules_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        goModulesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGoModules(com.google.cloudbuild.v1.UploadedGoModule value) {
+      if (goModulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGoModulesIsMutable();
+        goModules_.add(value);
+        onChanged();
+      } else {
+        goModulesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGoModules(int index, com.google.cloudbuild.v1.UploadedGoModule value) {
+      if (goModulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGoModulesIsMutable();
+        goModules_.add(index, value);
+        onChanged();
+      } else {
+        goModulesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGoModules(com.google.cloudbuild.v1.UploadedGoModule.Builder builderForValue) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        goModules_.add(builderForValue.build());
+        onChanged();
+      } else {
+        goModulesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGoModules(
+        int index, com.google.cloudbuild.v1.UploadedGoModule.Builder builderForValue) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        goModules_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        goModulesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllGoModules(
+        java.lang.Iterable<? extends com.google.cloudbuild.v1.UploadedGoModule> values) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, goModules_);
+        onChanged();
+      } else {
+        goModulesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGoModules() {
+      if (goModulesBuilder_ == null) {
+        goModules_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        goModulesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeGoModules(int index) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        goModules_.remove(index);
+        onChanged();
+      } else {
+        goModulesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedGoModule.Builder getGoModulesBuilder(int index) {
+      return getGoModulesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedGoModuleOrBuilder getGoModulesOrBuilder(int index) {
+      if (goModulesBuilder_ == null) {
+        return goModules_.get(index);
+      } else {
+        return goModulesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloudbuild.v1.UploadedGoModuleOrBuilder>
+        getGoModulesOrBuilderList() {
+      if (goModulesBuilder_ != null) {
+        return goModulesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(goModules_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedGoModule.Builder addGoModulesBuilder() {
+      return getGoModulesFieldBuilder()
+          .addBuilder(com.google.cloudbuild.v1.UploadedGoModule.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedGoModule.Builder addGoModulesBuilder(int index) {
+      return getGoModulesFieldBuilder()
+          .addBuilder(index, com.google.cloudbuild.v1.UploadedGoModule.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+     * the build.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.UploadedGoModule.Builder>
+        getGoModulesBuilderList() {
+      return getGoModulesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.UploadedGoModule,
+            com.google.cloudbuild.v1.UploadedGoModule.Builder,
+            com.google.cloudbuild.v1.UploadedGoModuleOrBuilder>
+        getGoModulesFieldBuilder() {
+      if (goModulesBuilder_ == null) {
+        goModulesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloudbuild.v1.UploadedGoModule,
+                com.google.cloudbuild.v1.UploadedGoModule.Builder,
+                com.google.cloudbuild.v1.UploadedGoModuleOrBuilder>(
+                goModules_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+        goModules_ = null;
+      }
+      return goModulesBuilder_;
+    }
+
     private java.util.List<com.google.cloudbuild.v1.UploadedNpmPackage> npmPackages_ =
         java.util.Collections.emptyList();
 
     private void ensureNpmPackagesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         npmPackages_ =
             new java.util.ArrayList<com.google.cloudbuild.v1.UploadedNpmPackage>(npmPackages_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3401,7 +3959,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNpmPackages() {
       if (npmPackagesBuilder_ == null) {
         npmPackages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         npmPackagesBuilder_.clear();
@@ -3523,7 +4081,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.UploadedNpmPackage,
                 com.google.cloudbuild.v1.UploadedNpmPackage.Builder,
                 com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder>(
-                npmPackages_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                npmPackages_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         npmPackages_ = null;
       }
       return npmPackagesBuilder_;

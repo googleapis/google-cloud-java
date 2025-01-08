@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -164,6 +164,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    *  *   `proxy_config.kubernetes_secret.name`.
    *  *   `proxy_config.kubernetes_secret.namespace`.
    *  *   `security_posture_config.vulnerability_mode`
+   *  *   `monitoring_config.cloud_monitoring_config.enabled`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -195,6 +196,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    *  *   `proxy_config.kubernetes_secret.name`.
    *  *   `proxy_config.kubernetes_secret.namespace`.
    *  *   `security_posture_config.vulnerability_mode`
+   *  *   `monitoring_config.cloud_monitoring_config.enabled`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -226,6 +228,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    *  *   `proxy_config.kubernetes_secret.name`.
    *  *   `proxy_config.kubernetes_secret.namespace`.
    *  *   `security_posture_config.vulnerability_mode`
+   *  *   `monitoring_config.cloud_monitoring_config.enabled`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -960,6 +963,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -990,6 +994,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1026,6 +1031,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1064,6 +1070,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1099,6 +1106,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1142,6 +1150,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1177,6 +1186,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1207,6 +1217,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1241,6 +1252,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      *  *   `proxy_config.kubernetes_secret.name`.
      *  *   `proxy_config.kubernetes_secret.namespace`.
      *  *   `security_posture_config.vulnerability_mode`
+     *  *   `monitoring_config.cloud_monitoring_config.enabled`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];

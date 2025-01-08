@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
   private Artifacts() {
     images_ = com.google.protobuf.LazyStringArrayList.emptyList();
     mavenArtifacts_ = java.util.Collections.emptyList();
+    goModules_ = java.util.Collections.emptyList();
     pythonPackages_ = java.util.Collections.emptyList();
     npmPackages_ = java.util.Collections.emptyList();
   }
@@ -2998,6 +2999,1791 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface GoModuleOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.cloudbuild.v1.Artifacts.GoModule)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Artifact Registry repository name.
+     *
+     * Specified Go modules will be zipped and uploaded to Artifact Registry
+     * with this location as a prefix.
+     * e.g. my-go-repo
+     * </pre>
+     *
+     * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The repositoryName.
+     */
+    java.lang.String getRepositoryName();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Artifact Registry repository name.
+     *
+     * Specified Go modules will be zipped and uploaded to Artifact Registry
+     * with this location as a prefix.
+     * e.g. my-go-repo
+     * </pre>
+     *
+     * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for repositoryName.
+     */
+    com.google.protobuf.ByteString getRepositoryNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the Artifact Registry repository. i.e. us-east1
+     * Defaults to the build’s location.
+     * </pre>
+     *
+     * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The repositoryLocation.
+     */
+    java.lang.String getRepositoryLocation();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the Artifact Registry repository. i.e. us-east1
+     * Defaults to the build’s location.
+     * </pre>
+     *
+     * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for repositoryLocation.
+     */
+    com.google.protobuf.ByteString getRepositoryLocationBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Project ID of the Artifact Registry repository.
+     * Defaults to the build project.
+     * </pre>
+     *
+     * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The repositoryProjectId.
+     */
+    java.lang.String getRepositoryProjectId();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Project ID of the Artifact Registry repository.
+     * Defaults to the build project.
+     * </pre>
+     *
+     * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for repositoryProjectId.
+     */
+    com.google.protobuf.ByteString getRepositoryProjectIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Source path of the go.mod file in the build's workspace. If not
+     * specified, this will default to the current directory.
+     * e.g. ~/code/go/mypackage
+     * </pre>
+     *
+     * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourcePath.
+     */
+    java.lang.String getSourcePath();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Source path of the go.mod file in the build's workspace. If not
+     * specified, this will default to the current directory.
+     * e.g. ~/code/go/mypackage
+     * </pre>
+     *
+     * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourcePath.
+     */
+    com.google.protobuf.ByteString getSourcePathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Go module's "module path".
+     * e.g. example.com/foo/v2
+     * </pre>
+     *
+     * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modulePath.
+     */
+    java.lang.String getModulePath();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Go module's "module path".
+     * e.g. example.com/foo/v2
+     * </pre>
+     *
+     * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modulePath.
+     */
+    com.google.protobuf.ByteString getModulePathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+     * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+     * dot separated ASCII alphanumeric characters and hyphens.
+     * e.g. v0.2.3-alpha.x.12m.5
+     * </pre>
+     *
+     * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The moduleVersion.
+     */
+    java.lang.String getModuleVersion();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+     * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+     * dot separated ASCII alphanumeric characters and hyphens.
+     * e.g. v0.2.3-alpha.x.12m.5
+     * </pre>
+     *
+     * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for moduleVersion.
+     */
+    com.google.protobuf.ByteString getModuleVersionBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Go module to upload to Artifact Registry upon successful completion of all
+   * build steps. A module refers to all dependencies in a go.mod file.
+   * </pre>
+   *
+   * Protobuf type {@code google.devtools.cloudbuild.v1.Artifacts.GoModule}
+   */
+  public static final class GoModule extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Artifacts.GoModule)
+      GoModuleOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GoModule.newBuilder() to construct.
+    private GoModule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GoModule() {
+      repositoryName_ = "";
+      repositoryLocation_ = "";
+      repositoryProjectId_ = "";
+      sourcePath_ = "";
+      modulePath_ = "";
+      moduleVersion_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GoModule();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_Artifacts_GoModule_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_Artifacts_GoModule_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloudbuild.v1.Artifacts.GoModule.class,
+              com.google.cloudbuild.v1.Artifacts.GoModule.Builder.class);
+    }
+
+    public static final int REPOSITORY_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object repositoryName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Artifact Registry repository name.
+     *
+     * Specified Go modules will be zipped and uploaded to Artifact Registry
+     * with this location as a prefix.
+     * e.g. my-go-repo
+     * </pre>
+     *
+     * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The repositoryName.
+     */
+    @java.lang.Override
+    public java.lang.String getRepositoryName() {
+      java.lang.Object ref = repositoryName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        repositoryName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Artifact Registry repository name.
+     *
+     * Specified Go modules will be zipped and uploaded to Artifact Registry
+     * with this location as a prefix.
+     * e.g. my-go-repo
+     * </pre>
+     *
+     * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for repositoryName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRepositoryNameBytes() {
+      java.lang.Object ref = repositoryName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        repositoryName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REPOSITORY_LOCATION_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object repositoryLocation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the Artifact Registry repository. i.e. us-east1
+     * Defaults to the build’s location.
+     * </pre>
+     *
+     * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The repositoryLocation.
+     */
+    @java.lang.Override
+    public java.lang.String getRepositoryLocation() {
+      java.lang.Object ref = repositoryLocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        repositoryLocation_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the Artifact Registry repository. i.e. us-east1
+     * Defaults to the build’s location.
+     * </pre>
+     *
+     * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for repositoryLocation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRepositoryLocationBytes() {
+      java.lang.Object ref = repositoryLocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        repositoryLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REPOSITORY_PROJECT_ID_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object repositoryProjectId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Project ID of the Artifact Registry repository.
+     * Defaults to the build project.
+     * </pre>
+     *
+     * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The repositoryProjectId.
+     */
+    @java.lang.Override
+    public java.lang.String getRepositoryProjectId() {
+      java.lang.Object ref = repositoryProjectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        repositoryProjectId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Project ID of the Artifact Registry repository.
+     * Defaults to the build project.
+     * </pre>
+     *
+     * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for repositoryProjectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRepositoryProjectIdBytes() {
+      java.lang.Object ref = repositoryProjectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        repositoryProjectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_PATH_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourcePath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Source path of the go.mod file in the build's workspace. If not
+     * specified, this will default to the current directory.
+     * e.g. ~/code/go/mypackage
+     * </pre>
+     *
+     * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourcePath.
+     */
+    @java.lang.Override
+    public java.lang.String getSourcePath() {
+      java.lang.Object ref = sourcePath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourcePath_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Source path of the go.mod file in the build's workspace. If not
+     * specified, this will default to the current directory.
+     * e.g. ~/code/go/mypackage
+     * </pre>
+     *
+     * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourcePath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSourcePathBytes() {
+      java.lang.Object ref = sourcePath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourcePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODULE_PATH_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modulePath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Go module's "module path".
+     * e.g. example.com/foo/v2
+     * </pre>
+     *
+     * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modulePath.
+     */
+    @java.lang.Override
+    public java.lang.String getModulePath() {
+      java.lang.Object ref = modulePath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modulePath_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Go module's "module path".
+     * e.g. example.com/foo/v2
+     * </pre>
+     *
+     * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modulePath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModulePathBytes() {
+      java.lang.Object ref = modulePath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modulePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODULE_VERSION_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object moduleVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+     * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+     * dot separated ASCII alphanumeric characters and hyphens.
+     * e.g. v0.2.3-alpha.x.12m.5
+     * </pre>
+     *
+     * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The moduleVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getModuleVersion() {
+      java.lang.Object ref = moduleVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        moduleVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+     * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+     * dot separated ASCII alphanumeric characters and hyphens.
+     * e.g. v0.2.3-alpha.x.12m.5
+     * </pre>
+     *
+     * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for moduleVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModuleVersionBytes() {
+      java.lang.Object ref = moduleVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        moduleVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(repositoryName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, repositoryName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(repositoryLocation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, repositoryLocation_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(repositoryProjectId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, repositoryProjectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourcePath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sourcePath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modulePath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, modulePath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, moduleVersion_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(repositoryName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, repositoryName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(repositoryLocation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, repositoryLocation_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(repositoryProjectId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, repositoryProjectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourcePath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sourcePath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modulePath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, modulePath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, moduleVersion_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloudbuild.v1.Artifacts.GoModule)) {
+        return super.equals(obj);
+      }
+      com.google.cloudbuild.v1.Artifacts.GoModule other =
+          (com.google.cloudbuild.v1.Artifacts.GoModule) obj;
+
+      if (!getRepositoryName().equals(other.getRepositoryName())) return false;
+      if (!getRepositoryLocation().equals(other.getRepositoryLocation())) return false;
+      if (!getRepositoryProjectId().equals(other.getRepositoryProjectId())) return false;
+      if (!getSourcePath().equals(other.getSourcePath())) return false;
+      if (!getModulePath().equals(other.getModulePath())) return false;
+      if (!getModuleVersion().equals(other.getModuleVersion())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REPOSITORY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRepositoryName().hashCode();
+      hash = (37 * hash) + REPOSITORY_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getRepositoryLocation().hashCode();
+      hash = (37 * hash) + REPOSITORY_PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRepositoryProjectId().hashCode();
+      hash = (37 * hash) + SOURCE_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getSourcePath().hashCode();
+      hash = (37 * hash) + MODULE_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getModulePath().hashCode();
+      hash = (37 * hash) + MODULE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleVersion().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloudbuild.v1.Artifacts.GoModule prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Go module to upload to Artifact Registry upon successful completion of all
+     * build steps. A module refers to all dependencies in a go.mod file.
+     * </pre>
+     *
+     * Protobuf type {@code google.devtools.cloudbuild.v1.Artifacts.GoModule}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.Artifacts.GoModule)
+        com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Artifacts_GoModule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Artifacts_GoModule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloudbuild.v1.Artifacts.GoModule.class,
+                com.google.cloudbuild.v1.Artifacts.GoModule.Builder.class);
+      }
+
+      // Construct using com.google.cloudbuild.v1.Artifacts.GoModule.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        repositoryName_ = "";
+        repositoryLocation_ = "";
+        repositoryProjectId_ = "";
+        sourcePath_ = "";
+        modulePath_ = "";
+        moduleVersion_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Artifacts_GoModule_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Artifacts.GoModule getDefaultInstanceForType() {
+        return com.google.cloudbuild.v1.Artifacts.GoModule.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Artifacts.GoModule build() {
+        com.google.cloudbuild.v1.Artifacts.GoModule result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Artifacts.GoModule buildPartial() {
+        com.google.cloudbuild.v1.Artifacts.GoModule result =
+            new com.google.cloudbuild.v1.Artifacts.GoModule(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloudbuild.v1.Artifacts.GoModule result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.repositoryName_ = repositoryName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.repositoryLocation_ = repositoryLocation_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.repositoryProjectId_ = repositoryProjectId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sourcePath_ = sourcePath_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.modulePath_ = modulePath_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.moduleVersion_ = moduleVersion_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloudbuild.v1.Artifacts.GoModule) {
+          return mergeFrom((com.google.cloudbuild.v1.Artifacts.GoModule) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloudbuild.v1.Artifacts.GoModule other) {
+        if (other == com.google.cloudbuild.v1.Artifacts.GoModule.getDefaultInstance()) return this;
+        if (!other.getRepositoryName().isEmpty()) {
+          repositoryName_ = other.repositoryName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getRepositoryLocation().isEmpty()) {
+          repositoryLocation_ = other.repositoryLocation_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getRepositoryProjectId().isEmpty()) {
+          repositoryProjectId_ = other.repositoryProjectId_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getSourcePath().isEmpty()) {
+          sourcePath_ = other.sourcePath_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getModulePath().isEmpty()) {
+          modulePath_ = other.modulePath_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getModuleVersion().isEmpty()) {
+          moduleVersion_ = other.moduleVersion_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  repositoryName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  repositoryLocation_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  repositoryProjectId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  sourcePath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  modulePath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  moduleVersion_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object repositoryName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Artifact Registry repository name.
+       *
+       * Specified Go modules will be zipped and uploaded to Artifact Registry
+       * with this location as a prefix.
+       * e.g. my-go-repo
+       * </pre>
+       *
+       * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The repositoryName.
+       */
+      public java.lang.String getRepositoryName() {
+        java.lang.Object ref = repositoryName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          repositoryName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Artifact Registry repository name.
+       *
+       * Specified Go modules will be zipped and uploaded to Artifact Registry
+       * with this location as a prefix.
+       * e.g. my-go-repo
+       * </pre>
+       *
+       * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for repositoryName.
+       */
+      public com.google.protobuf.ByteString getRepositoryNameBytes() {
+        java.lang.Object ref = repositoryName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          repositoryName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Artifact Registry repository name.
+       *
+       * Specified Go modules will be zipped and uploaded to Artifact Registry
+       * with this location as a prefix.
+       * e.g. my-go-repo
+       * </pre>
+       *
+       * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The repositoryName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepositoryName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        repositoryName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Artifact Registry repository name.
+       *
+       * Specified Go modules will be zipped and uploaded to Artifact Registry
+       * with this location as a prefix.
+       * e.g. my-go-repo
+       * </pre>
+       *
+       * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRepositoryName() {
+        repositoryName_ = getDefaultInstance().getRepositoryName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Artifact Registry repository name.
+       *
+       * Specified Go modules will be zipped and uploaded to Artifact Registry
+       * with this location as a prefix.
+       * e.g. my-go-repo
+       * </pre>
+       *
+       * <code>string repository_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for repositoryName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepositoryNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        repositoryName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object repositoryLocation_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Location of the Artifact Registry repository. i.e. us-east1
+       * Defaults to the build’s location.
+       * </pre>
+       *
+       * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The repositoryLocation.
+       */
+      public java.lang.String getRepositoryLocation() {
+        java.lang.Object ref = repositoryLocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          repositoryLocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Location of the Artifact Registry repository. i.e. us-east1
+       * Defaults to the build’s location.
+       * </pre>
+       *
+       * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for repositoryLocation.
+       */
+      public com.google.protobuf.ByteString getRepositoryLocationBytes() {
+        java.lang.Object ref = repositoryLocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          repositoryLocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Location of the Artifact Registry repository. i.e. us-east1
+       * Defaults to the build’s location.
+       * </pre>
+       *
+       * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The repositoryLocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepositoryLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        repositoryLocation_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Location of the Artifact Registry repository. i.e. us-east1
+       * Defaults to the build’s location.
+       * </pre>
+       *
+       * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRepositoryLocation() {
+        repositoryLocation_ = getDefaultInstance().getRepositoryLocation();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Location of the Artifact Registry repository. i.e. us-east1
+       * Defaults to the build’s location.
+       * </pre>
+       *
+       * <code>string repository_location = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for repositoryLocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepositoryLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        repositoryLocation_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object repositoryProjectId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Project ID of the Artifact Registry repository.
+       * Defaults to the build project.
+       * </pre>
+       *
+       * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The repositoryProjectId.
+       */
+      public java.lang.String getRepositoryProjectId() {
+        java.lang.Object ref = repositoryProjectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          repositoryProjectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Project ID of the Artifact Registry repository.
+       * Defaults to the build project.
+       * </pre>
+       *
+       * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for repositoryProjectId.
+       */
+      public com.google.protobuf.ByteString getRepositoryProjectIdBytes() {
+        java.lang.Object ref = repositoryProjectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          repositoryProjectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Project ID of the Artifact Registry repository.
+       * Defaults to the build project.
+       * </pre>
+       *
+       * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The repositoryProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepositoryProjectId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        repositoryProjectId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Project ID of the Artifact Registry repository.
+       * Defaults to the build project.
+       * </pre>
+       *
+       * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRepositoryProjectId() {
+        repositoryProjectId_ = getDefaultInstance().getRepositoryProjectId();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Project ID of the Artifact Registry repository.
+       * Defaults to the build project.
+       * </pre>
+       *
+       * <code>string repository_project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for repositoryProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepositoryProjectIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        repositoryProjectId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sourcePath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Source path of the go.mod file in the build's workspace. If not
+       * specified, this will default to the current directory.
+       * e.g. ~/code/go/mypackage
+       * </pre>
+       *
+       * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The sourcePath.
+       */
+      public java.lang.String getSourcePath() {
+        java.lang.Object ref = sourcePath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourcePath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Source path of the go.mod file in the build's workspace. If not
+       * specified, this will default to the current directory.
+       * e.g. ~/code/go/mypackage
+       * </pre>
+       *
+       * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for sourcePath.
+       */
+      public com.google.protobuf.ByteString getSourcePathBytes() {
+        java.lang.Object ref = sourcePath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sourcePath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Source path of the go.mod file in the build's workspace. If not
+       * specified, this will default to the current directory.
+       * e.g. ~/code/go/mypackage
+       * </pre>
+       *
+       * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The sourcePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourcePath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourcePath_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Source path of the go.mod file in the build's workspace. If not
+       * specified, this will default to the current directory.
+       * e.g. ~/code/go/mypackage
+       * </pre>
+       *
+       * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSourcePath() {
+        sourcePath_ = getDefaultInstance().getSourcePath();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Source path of the go.mod file in the build's workspace. If not
+       * specified, this will default to the current directory.
+       * e.g. ~/code/go/mypackage
+       * </pre>
+       *
+       * <code>string source_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for sourcePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourcePathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sourcePath_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object modulePath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's "module path".
+       * e.g. example.com/foo/v2
+       * </pre>
+       *
+       * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The modulePath.
+       */
+      public java.lang.String getModulePath() {
+        java.lang.Object ref = modulePath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modulePath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's "module path".
+       * e.g. example.com/foo/v2
+       * </pre>
+       *
+       * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for modulePath.
+       */
+      public com.google.protobuf.ByteString getModulePathBytes() {
+        java.lang.Object ref = modulePath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modulePath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's "module path".
+       * e.g. example.com/foo/v2
+       * </pre>
+       *
+       * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The modulePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModulePath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modulePath_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's "module path".
+       * e.g. example.com/foo/v2
+       * </pre>
+       *
+       * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModulePath() {
+        modulePath_ = getDefaultInstance().getModulePath();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's "module path".
+       * e.g. example.com/foo/v2
+       * </pre>
+       *
+       * <code>string module_path = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for modulePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModulePathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modulePath_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object moduleVersion_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+       * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+       * dot separated ASCII alphanumeric characters and hyphens.
+       * e.g. v0.2.3-alpha.x.12m.5
+       * </pre>
+       *
+       * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The moduleVersion.
+       */
+      public java.lang.String getModuleVersion() {
+        java.lang.Object ref = moduleVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          moduleVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+       * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+       * dot separated ASCII alphanumeric characters and hyphens.
+       * e.g. v0.2.3-alpha.x.12m.5
+       * </pre>
+       *
+       * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for moduleVersion.
+       */
+      public com.google.protobuf.ByteString getModuleVersionBytes() {
+        java.lang.Object ref = moduleVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          moduleVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+       * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+       * dot separated ASCII alphanumeric characters and hyphens.
+       * e.g. v0.2.3-alpha.x.12m.5
+       * </pre>
+       *
+       * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The moduleVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModuleVersion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        moduleVersion_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+       * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+       * dot separated ASCII alphanumeric characters and hyphens.
+       * e.g. v0.2.3-alpha.x.12m.5
+       * </pre>
+       *
+       * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModuleVersion() {
+        moduleVersion_ = getDefaultInstance().getModuleVersion();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Go module's semantic version in the form vX.Y.Z. e.g.
+       * v0.1.1 Pre-release identifiers can also be added by appending a dash and
+       * dot separated ASCII alphanumeric characters and hyphens.
+       * e.g. v0.2.3-alpha.x.12m.5
+       * </pre>
+       *
+       * <code>string module_version = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for moduleVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModuleVersionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        moduleVersion_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.Artifacts.GoModule)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.Artifacts.GoModule)
+    private static final com.google.cloudbuild.v1.Artifacts.GoModule DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloudbuild.v1.Artifacts.GoModule();
+    }
+
+    public static com.google.cloudbuild.v1.Artifacts.GoModule getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GoModule> PARSER =
+        new com.google.protobuf.AbstractParser<GoModule>() {
+          @java.lang.Override
+          public GoModule parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GoModule> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GoModule> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloudbuild.v1.Artifacts.GoModule getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface PythonPackageOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.devtools.cloudbuild.v1.Artifacts.PythonPackage)
@@ -5225,6 +7011,102 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     return mavenArtifacts_.get(index);
   }
 
+  public static final int GO_MODULES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloudbuild.v1.Artifacts.GoModule> goModules_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloudbuild.v1.Artifacts.GoModule> getGoModulesList() {
+    return goModules_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder>
+      getGoModulesOrBuilderList() {
+    return goModules_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getGoModulesCount() {
+    return goModules_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.Artifacts.GoModule getGoModules(int index) {
+    return goModules_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder getGoModulesOrBuilder(int index) {
+    return goModules_.get(index);
+  }
+
   public static final int PYTHON_PACKAGES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -5456,6 +7338,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < mavenArtifacts_.size(); i++) {
       output.writeMessage(3, mavenArtifacts_.get(i));
     }
+    for (int i = 0; i < goModules_.size(); i++) {
+      output.writeMessage(4, goModules_.get(i));
+    }
     for (int i = 0; i < pythonPackages_.size(); i++) {
       output.writeMessage(5, pythonPackages_.get(i));
     }
@@ -5485,6 +7370,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < mavenArtifacts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, mavenArtifacts_.get(i));
     }
+    for (int i = 0; i < goModules_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, goModules_.get(i));
+    }
     for (int i = 0; i < pythonPackages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, pythonPackages_.get(i));
     }
@@ -5512,6 +7400,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       if (!getObjects().equals(other.getObjects())) return false;
     }
     if (!getMavenArtifactsList().equals(other.getMavenArtifactsList())) return false;
+    if (!getGoModulesList().equals(other.getGoModulesList())) return false;
     if (!getPythonPackagesList().equals(other.getPythonPackagesList())) return false;
     if (!getNpmPackagesList().equals(other.getNpmPackagesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -5536,6 +7425,10 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     if (getMavenArtifactsCount() > 0) {
       hash = (37 * hash) + MAVEN_ARTIFACTS_FIELD_NUMBER;
       hash = (53 * hash) + getMavenArtifactsList().hashCode();
+    }
+    if (getGoModulesCount() > 0) {
+      hash = (37 * hash) + GO_MODULES_FIELD_NUMBER;
+      hash = (53 * hash) + getGoModulesList().hashCode();
     }
     if (getPythonPackagesCount() > 0) {
       hash = (37 * hash) + PYTHON_PACKAGES_FIELD_NUMBER;
@@ -5687,6 +7580,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getObjectsFieldBuilder();
         getMavenArtifactsFieldBuilder();
+        getGoModulesFieldBuilder();
         getPythonPackagesFieldBuilder();
         getNpmPackagesFieldBuilder();
       }
@@ -5709,20 +7603,27 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         mavenArtifactsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      if (goModulesBuilder_ == null) {
+        goModules_ = java.util.Collections.emptyList();
+      } else {
+        goModules_ = null;
+        goModulesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (pythonPackagesBuilder_ == null) {
         pythonPackages_ = java.util.Collections.emptyList();
       } else {
         pythonPackages_ = null;
         pythonPackagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (npmPackagesBuilder_ == null) {
         npmPackages_ = java.util.Collections.emptyList();
       } else {
         npmPackages_ = null;
         npmPackagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -5767,19 +7668,28 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mavenArtifacts_ = mavenArtifactsBuilder_.build();
       }
-      if (pythonPackagesBuilder_ == null) {
+      if (goModulesBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
-          pythonPackages_ = java.util.Collections.unmodifiableList(pythonPackages_);
+          goModules_ = java.util.Collections.unmodifiableList(goModules_);
           bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.goModules_ = goModules_;
+      } else {
+        result.goModules_ = goModulesBuilder_.build();
+      }
+      if (pythonPackagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          pythonPackages_ = java.util.Collections.unmodifiableList(pythonPackages_);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.pythonPackages_ = pythonPackages_;
       } else {
         result.pythonPackages_ = pythonPackagesBuilder_.build();
       }
       if (npmPackagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           npmPackages_ = java.util.Collections.unmodifiableList(npmPackages_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.npmPackages_ = npmPackages_;
       } else {
@@ -5886,11 +7796,38 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (goModulesBuilder_ == null) {
+        if (!other.goModules_.isEmpty()) {
+          if (goModules_.isEmpty()) {
+            goModules_ = other.goModules_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureGoModulesIsMutable();
+            goModules_.addAll(other.goModules_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.goModules_.isEmpty()) {
+          if (goModulesBuilder_.isEmpty()) {
+            goModulesBuilder_.dispose();
+            goModulesBuilder_ = null;
+            goModules_ = other.goModules_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            goModulesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGoModulesFieldBuilder()
+                    : null;
+          } else {
+            goModulesBuilder_.addAllMessages(other.goModules_);
+          }
+        }
+      }
       if (pythonPackagesBuilder_ == null) {
         if (!other.pythonPackages_.isEmpty()) {
           if (pythonPackages_.isEmpty()) {
             pythonPackages_ = other.pythonPackages_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensurePythonPackagesIsMutable();
             pythonPackages_.addAll(other.pythonPackages_);
@@ -5903,7 +7840,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
             pythonPackagesBuilder_.dispose();
             pythonPackagesBuilder_ = null;
             pythonPackages_ = other.pythonPackages_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             pythonPackagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPythonPackagesFieldBuilder()
@@ -5917,7 +7854,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (!other.npmPackages_.isEmpty()) {
           if (npmPackages_.isEmpty()) {
             npmPackages_ = other.npmPackages_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureNpmPackagesIsMutable();
             npmPackages_.addAll(other.npmPackages_);
@@ -5930,7 +7867,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
             npmPackagesBuilder_.dispose();
             npmPackagesBuilder_ = null;
             npmPackages_ = other.npmPackages_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             npmPackagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNpmPackagesFieldBuilder()
@@ -5993,6 +7930,19 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.cloudbuild.v1.Artifacts.GoModule m =
+                    input.readMessage(
+                        com.google.cloudbuild.v1.Artifacts.GoModule.parser(), extensionRegistry);
+                if (goModulesBuilder_ == null) {
+                  ensureGoModulesIsMutable();
+                  goModules_.add(m);
+                } else {
+                  goModulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             case 42:
               {
                 com.google.cloudbuild.v1.Artifacts.PythonPackage m =
@@ -7067,15 +9017,456 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       return mavenArtifactsBuilder_;
     }
 
+    private java.util.List<com.google.cloudbuild.v1.Artifacts.GoModule> goModules_ =
+        java.util.Collections.emptyList();
+
+    private void ensureGoModulesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        goModules_ =
+            new java.util.ArrayList<com.google.cloudbuild.v1.Artifacts.GoModule>(goModules_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.Artifacts.GoModule,
+            com.google.cloudbuild.v1.Artifacts.GoModule.Builder,
+            com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder>
+        goModulesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.Artifacts.GoModule> getGoModulesList() {
+      if (goModulesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(goModules_);
+      } else {
+        return goModulesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getGoModulesCount() {
+      if (goModulesBuilder_ == null) {
+        return goModules_.size();
+      } else {
+        return goModulesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Artifacts.GoModule getGoModules(int index) {
+      if (goModulesBuilder_ == null) {
+        return goModules_.get(index);
+      } else {
+        return goModulesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoModules(int index, com.google.cloudbuild.v1.Artifacts.GoModule value) {
+      if (goModulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGoModulesIsMutable();
+        goModules_.set(index, value);
+        onChanged();
+      } else {
+        goModulesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoModules(
+        int index, com.google.cloudbuild.v1.Artifacts.GoModule.Builder builderForValue) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        goModules_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        goModulesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGoModules(com.google.cloudbuild.v1.Artifacts.GoModule value) {
+      if (goModulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGoModulesIsMutable();
+        goModules_.add(value);
+        onChanged();
+      } else {
+        goModulesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGoModules(int index, com.google.cloudbuild.v1.Artifacts.GoModule value) {
+      if (goModulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGoModulesIsMutable();
+        goModules_.add(index, value);
+        onChanged();
+      } else {
+        goModulesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGoModules(
+        com.google.cloudbuild.v1.Artifacts.GoModule.Builder builderForValue) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        goModules_.add(builderForValue.build());
+        onChanged();
+      } else {
+        goModulesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGoModules(
+        int index, com.google.cloudbuild.v1.Artifacts.GoModule.Builder builderForValue) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        goModules_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        goModulesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllGoModules(
+        java.lang.Iterable<? extends com.google.cloudbuild.v1.Artifacts.GoModule> values) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, goModules_);
+        onChanged();
+      } else {
+        goModulesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGoModules() {
+      if (goModulesBuilder_ == null) {
+        goModules_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        goModulesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeGoModules(int index) {
+      if (goModulesBuilder_ == null) {
+        ensureGoModulesIsMutable();
+        goModules_.remove(index);
+        onChanged();
+      } else {
+        goModulesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Artifacts.GoModule.Builder getGoModulesBuilder(int index) {
+      return getGoModulesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder getGoModulesOrBuilder(int index) {
+      if (goModulesBuilder_ == null) {
+        return goModules_.get(index);
+      } else {
+        return goModulesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder>
+        getGoModulesOrBuilderList() {
+      if (goModulesBuilder_ != null) {
+        return goModulesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(goModules_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Artifacts.GoModule.Builder addGoModulesBuilder() {
+      return getGoModulesFieldBuilder()
+          .addBuilder(com.google.cloudbuild.v1.Artifacts.GoModule.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Artifacts.GoModule.Builder addGoModulesBuilder(int index) {
+      return getGoModulesFieldBuilder()
+          .addBuilder(index, com.google.cloudbuild.v1.Artifacts.GoModule.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+     * successful completion of all build steps.
+     *
+     * If any objects fail to be pushed, the build is marked FAILURE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.Artifacts.GoModule.Builder>
+        getGoModulesBuilderList() {
+      return getGoModulesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.Artifacts.GoModule,
+            com.google.cloudbuild.v1.Artifacts.GoModule.Builder,
+            com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder>
+        getGoModulesFieldBuilder() {
+      if (goModulesBuilder_ == null) {
+        goModulesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloudbuild.v1.Artifacts.GoModule,
+                com.google.cloudbuild.v1.Artifacts.GoModule.Builder,
+                com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder>(
+                goModules_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        goModules_ = null;
+      }
+      return goModulesBuilder_;
+    }
+
     private java.util.List<com.google.cloudbuild.v1.Artifacts.PythonPackage> pythonPackages_ =
         java.util.Collections.emptyList();
 
     private void ensurePythonPackagesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         pythonPackages_ =
             new java.util.ArrayList<com.google.cloudbuild.v1.Artifacts.PythonPackage>(
                 pythonPackages_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -7360,7 +9751,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPythonPackages() {
       if (pythonPackagesBuilder_ == null) {
         pythonPackages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         pythonPackagesBuilder_.clear();
@@ -7528,7 +9919,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Artifacts.PythonPackage.Builder,
                 com.google.cloudbuild.v1.Artifacts.PythonPackageOrBuilder>(
                 pythonPackages_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         pythonPackages_ = null;
@@ -7540,10 +9931,10 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNpmPackagesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         npmPackages_ =
             new java.util.ArrayList<com.google.cloudbuild.v1.Artifacts.NpmPackage>(npmPackages_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -7836,7 +10227,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNpmPackages() {
       if (npmPackagesBuilder_ == null) {
         npmPackages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         npmPackagesBuilder_.clear();
@@ -8008,7 +10399,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Artifacts.NpmPackage,
                 com.google.cloudbuild.v1.Artifacts.NpmPackage.Builder,
                 com.google.cloudbuild.v1.Artifacts.NpmPackageOrBuilder>(
-                npmPackages_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                npmPackages_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         npmPackages_ = null;
       }
       return npmPackagesBuilder_;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.5
 package com.google.monitoring.v3;
 
+@java.lang.Deprecated
 public interface QueryTimeSeriesRequestOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.QueryTimeSeriesRequest)

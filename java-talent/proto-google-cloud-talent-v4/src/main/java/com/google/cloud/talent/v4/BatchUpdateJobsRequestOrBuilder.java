@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,7 +136,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    *
    * If [update_mask][google.cloud.talent.v4.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4.Job] inside
-   * [JobResult][JobOperationResult.JobResult]
+   * [JobResult][google.cloud.talent.v4.JobResult]
    * will only contains fields that is updated, plus the Id of the Job.
    * Otherwise,  [Job][google.cloud.talent.v4.Job] will include all fields,
    * which can yield a very large response.
@@ -163,7 +163,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    *
    * If [update_mask][google.cloud.talent.v4.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4.Job] inside
-   * [JobResult][JobOperationResult.JobResult]
+   * [JobResult][google.cloud.talent.v4.JobResult]
    * will only contains fields that is updated, plus the Id of the Job.
    * Otherwise,  [Job][google.cloud.talent.v4.Job] will include all fields,
    * which can yield a very large response.
@@ -190,7 +190,7 @@ public interface BatchUpdateJobsRequestOrBuilder
    *
    * If [update_mask][google.cloud.talent.v4.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4.Job] inside
-   * [JobResult][JobOperationResult.JobResult]
+   * [JobResult][google.cloud.talent.v4.JobResult]
    * will only contains fields that is updated, plus the Id of the Job.
    * Otherwise,  [Job][google.cloud.talent.v4.Job] will include all fields,
    * which can yield a very large response.

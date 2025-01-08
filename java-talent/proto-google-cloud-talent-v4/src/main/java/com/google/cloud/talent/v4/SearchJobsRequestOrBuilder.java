@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1154,7 +1154,7 @@ public interface SearchJobsRequestOrBuilder
    * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-   *     google/cloud/talent/v4/job_service.proto;l=804
+   *     google/cloud/talent/v4/job_service.proto;l=825
    * @return The disableKeywordMatch.
    */
   @java.lang.Deprecated
@@ -1196,4 +1196,41 @@ public interface SearchJobsRequestOrBuilder
    * @return The keywordMatchMode.
    */
   com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode getKeywordMatchMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for relevanceThreshold.
+   */
+  int getRelevanceThresholdValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold relevance_threshold = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The relevanceThreshold.
+   */
+  com.google.cloud.talent.v4.SearchJobsRequest.RelevanceThreshold getRelevanceThreshold();
 }
