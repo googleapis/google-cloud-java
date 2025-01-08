@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1536,10 +1536,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. Operating system version of the image.
+   * Optional. Operating system version of the image.
    * </pre>
    *
-   * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The systemVersion.
    */
@@ -1559,10 +1559,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. Operating system version of the image.
+   * Optional. Operating system version of the image.
    * </pre>
    *
-   * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for systemVersion.
    */
@@ -5353,10 +5353,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Operating system version of the image.
+     * Optional. Operating system version of the image.
      * </pre>
      *
-     * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The systemVersion.
      */
@@ -5375,10 +5375,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Operating system version of the image.
+     * Optional. Operating system version of the image.
      * </pre>
      *
-     * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for systemVersion.
      */
@@ -5397,10 +5397,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Operating system version of the image.
+     * Optional. Operating system version of the image.
      * </pre>
      *
-     * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The systemVersion to set.
      * @return This builder for chaining.
@@ -5418,10 +5418,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Operating system version of the image.
+     * Optional. Operating system version of the image.
      * </pre>
      *
-     * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5435,10 +5435,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Operating system version of the image.
+     * Optional. Operating system version of the image.
      * </pre>
      *
-     * <code>string system_version = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string system_version = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for systemVersion to set.
      * @return This builder for chaining.

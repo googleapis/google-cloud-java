@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     valueType_ = 0;
     points_ = java.util.Collections.emptyList();
     unit_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
@@ -442,7 +443,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The units in which the metric value is reported. It is only applicable
    * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-   * defines the representation of the stored metric values.
+   * defines the representation of the stored metric values. This field can only
+   * be changed through CreateTimeSeries when it is empty.
    * </pre>
    *
    * <code>string unit = 8;</code>
@@ -467,7 +469,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The units in which the metric value is reported. It is only applicable
    * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-   * defines the representation of the stored metric values.
+   * defines the representation of the stored metric values. This field can only
+   * be changed through CreateTimeSeries when it is empty.
    * </pre>
    *
    * <code>string unit = 8;</code>
@@ -481,6 +484,63 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       unit_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Input only. A detailed description of the time series that will be
+   * associated with the
+   * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+   * Once set, this field cannot be changed through CreateTimeSeries.
+   * </pre>
+   *
+   * <code>string description = 9;</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. A detailed description of the time series that will be
+   * associated with the
+   * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+   * Once set, this field cannot be changed through CreateTimeSeries.
+   * </pre>
+   *
+   * <code>string description = 9;</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -524,6 +584,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, unit_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, description_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -556,6 +619,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, unit_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, description_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -587,6 +653,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     if (valueType_ != other.valueType_) return false;
     if (!getPointsList().equals(other.getPointsList())) return false;
     if (!getUnit().equals(other.getUnit())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -620,6 +687,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + UNIT_FIELD_NUMBER;
     hash = (53 * hash) + getUnit().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -798,6 +867,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000020);
       unit_ = "";
+      description_ = "";
       return this;
     }
 
@@ -867,6 +937,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.unit_ = unit_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.description_ = description_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -963,6 +1036,11 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1037,6 +1115,12 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 74:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2380,7 +2464,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The units in which the metric value is reported. It is only applicable
      * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-     * defines the representation of the stored metric values.
+     * defines the representation of the stored metric values. This field can only
+     * be changed through CreateTimeSeries when it is empty.
      * </pre>
      *
      * <code>string unit = 8;</code>
@@ -2404,7 +2489,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The units in which the metric value is reported. It is only applicable
      * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-     * defines the representation of the stored metric values.
+     * defines the representation of the stored metric values. This field can only
+     * be changed through CreateTimeSeries when it is empty.
      * </pre>
      *
      * <code>string unit = 8;</code>
@@ -2428,7 +2514,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The units in which the metric value is reported. It is only applicable
      * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-     * defines the representation of the stored metric values.
+     * defines the representation of the stored metric values. This field can only
+     * be changed through CreateTimeSeries when it is empty.
      * </pre>
      *
      * <code>string unit = 8;</code>
@@ -2451,7 +2538,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The units in which the metric value is reported. It is only applicable
      * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-     * defines the representation of the stored metric values.
+     * defines the representation of the stored metric values. This field can only
+     * be changed through CreateTimeSeries when it is empty.
      * </pre>
      *
      * <code>string unit = 8;</code>
@@ -2470,7 +2558,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The units in which the metric value is reported. It is only applicable
      * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
-     * defines the representation of the stored metric values.
+     * defines the representation of the stored metric values. This field can only
+     * be changed through CreateTimeSeries when it is empty.
      * </pre>
      *
      * <code>string unit = 8;</code>
@@ -2485,6 +2574,127 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       unit_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Input only. A detailed description of the time series that will be
+     * associated with the
+     * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+     * Once set, this field cannot be changed through CreateTimeSeries.
+     * </pre>
+     *
+     * <code>string description = 9;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. A detailed description of the time series that will be
+     * associated with the
+     * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+     * Once set, this field cannot be changed through CreateTimeSeries.
+     * </pre>
+     *
+     * <code>string description = 9;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. A detailed description of the time series that will be
+     * associated with the
+     * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+     * Once set, this field cannot be changed through CreateTimeSeries.
+     * </pre>
+     *
+     * <code>string description = 9;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      description_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. A detailed description of the time series that will be
+     * associated with the
+     * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+     * Once set, this field cannot be changed through CreateTimeSeries.
+     * </pre>
+     *
+     * <code>string description = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. A detailed description of the time series that will be
+     * associated with the
+     * [google.api.MetricDescriptor][google.api.MetricDescriptor] for the metric.
+     * Once set, this field cannot be changed through CreateTimeSeries.
+     * </pre>
+     *
+     * <code>string description = 9;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      description_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

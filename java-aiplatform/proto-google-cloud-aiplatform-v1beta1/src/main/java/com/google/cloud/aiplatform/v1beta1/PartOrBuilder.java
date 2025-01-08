@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -366,6 +366,19 @@ public interface PartOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.VideoMetadataOrBuilder getVideoMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the part is thought from the model.
+   * </pre>
+   *
+   * <code>bool thought = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The thought.
+   */
+  boolean getThought();
 
   com.google.cloud.aiplatform.v1beta1.Part.DataCase getDataCase();
 

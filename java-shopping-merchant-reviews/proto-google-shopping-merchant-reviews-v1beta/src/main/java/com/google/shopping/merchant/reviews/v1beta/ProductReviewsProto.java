@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,11 +121,14 @@ public final class ProductReviewsProto {
           + "\332A\004name\202\323\344\223\0024*2/reviews/v1beta/{name=acc"
           + "ounts/*/productReviews/*}\032G\312A\032merchantap"
           + "i.googleapis.com\322A\'https://www.googleapi"
-          + "s.com/auth/contentB\221\001\n+com.google.shoppi"
+          + "s.com/auth/contentB\223\002\n+com.google.shoppi"
           + "ng.merchant.reviews.v1betaB\023ProductRevie"
           + "wsProtoP\001ZKcloud.google.com/go/shopping/"
           + "merchant/reviews/apiv1beta/reviewspb;rev"
-          + "iewspbb\006proto3"
+          + "iewspb\252\002\'Google.Shopping.Merchant.Review"
+          + "s.V1Beta\312\002\'Google\\Shopping\\Merchant\\Revi"
+          + "ews\\V1beta\352\002+Google::Shopping::Merchant:"
+          + ":Reviews::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class QueryServiceSettings extends ClientSettings<QueryServiceSettings> {
 
-  /** Returns the object with the settings used for calls to queryTimeSeries. */
+  /**
+   * Returns the object with the settings used for calls to queryTimeSeries.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
       queryTimeSeriesSettings() {
@@ -190,7 +195,12 @@ public class QueryServiceSettings extends ClientSettings<QueryServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to queryTimeSeries. */
+    /**
+     * Returns the builder for the settings used for calls to queryTimeSeries.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
         queryTimeSeriesSettings() {

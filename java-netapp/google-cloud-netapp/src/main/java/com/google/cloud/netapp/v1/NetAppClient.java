@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,6 +167,21 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteStoragePoolOperationCallable()
  *           <li><p> deleteStoragePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ValidateDirectoryService</td>
+ *      <td><p> ValidateDirectoryService does a connectivity check for a directory service policy attached to the storage pool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> validateDirectoryServiceAsync(ValidateDirectoryServiceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> validateDirectoryServiceOperationCallable()
+ *           <li><p> validateDirectoryServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1953,6 +1968,99 @@ public class NetAppClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable() {
     return stub.deleteStoragePoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   netAppClient.validateDirectoryServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> validateDirectoryServiceAsync(
+      ValidateDirectoryServiceRequest request) {
+    return validateDirectoryServiceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.validateDirectoryServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return stub.validateDirectoryServiceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.validateDirectoryServiceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return stub.validateDirectoryServiceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

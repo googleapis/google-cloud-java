@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface OutputFormatConfigOrBuilder
    *
    * <pre>
    * Configuration for the native output format. If this field is set or if no
-   * other output format field is set then transcripts will be written to the
+   * other output format field is set, then transcripts will be written to the
    * sink in the native format.
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface OutputFormatConfigOrBuilder
    *
    * <pre>
    * Configuration for the native output format. If this field is set or if no
-   * other output format field is set then transcripts will be written to the
+   * other output format field is set, then transcripts will be written to the
    * sink in the native format.
    * </pre>
    *
@@ -57,7 +57,7 @@ public interface OutputFormatConfigOrBuilder
    *
    * <pre>
    * Configuration for the native output format. If this field is set or if no
-   * other output format field is set then transcripts will be written to the
+   * other output format field is set, then transcripts will be written to the
    * sink in the native format.
    * </pre>
    *
@@ -69,8 +69,8 @@ public interface OutputFormatConfigOrBuilder
    *
    *
    * <pre>
-   * Configuration for the vtt output format. If this field is set then
-   * transcripts will be written to the sink in the vtt format.
+   * Configuration for the VTT output format. If this field is set, then
+   * transcripts will be written to the sink in the VTT format.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.VttOutputFileFormatConfig vtt = 2;</code>
@@ -82,8 +82,8 @@ public interface OutputFormatConfigOrBuilder
    *
    *
    * <pre>
-   * Configuration for the vtt output format. If this field is set then
-   * transcripts will be written to the sink in the vtt format.
+   * Configuration for the VTT output format. If this field is set, then
+   * transcripts will be written to the sink in the VTT format.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.VttOutputFileFormatConfig vtt = 2;</code>
@@ -95,8 +95,8 @@ public interface OutputFormatConfigOrBuilder
    *
    *
    * <pre>
-   * Configuration for the vtt output format. If this field is set then
-   * transcripts will be written to the sink in the vtt format.
+   * Configuration for the VTT output format. If this field is set, then
+   * transcripts will be written to the sink in the VTT format.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.VttOutputFileFormatConfig vtt = 2;</code>
@@ -107,8 +107,8 @@ public interface OutputFormatConfigOrBuilder
    *
    *
    * <pre>
-   * Configuration for the srt output format. If this field is set then
-   * transcripts will be written to the sink in the srt format.
+   * Configuration for the SRT output format. If this field is set, then
+   * transcripts will be written to the sink in the SRT format.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SrtOutputFileFormatConfig srt = 3;</code>
@@ -120,8 +120,8 @@ public interface OutputFormatConfigOrBuilder
    *
    *
    * <pre>
-   * Configuration for the srt output format. If this field is set then
-   * transcripts will be written to the sink in the srt format.
+   * Configuration for the SRT output format. If this field is set, then
+   * transcripts will be written to the sink in the SRT format.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SrtOutputFileFormatConfig srt = 3;</code>
@@ -133,8 +133,8 @@ public interface OutputFormatConfigOrBuilder
    *
    *
    * <pre>
-   * Configuration for the srt output format. If this field is set then
-   * transcripts will be written to the sink in the srt format.
+   * Configuration for the SRT output format. If this field is set, then
+   * transcripts will be written to the sink in the SRT format.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SrtOutputFileFormatConfig srt = 3;</code>

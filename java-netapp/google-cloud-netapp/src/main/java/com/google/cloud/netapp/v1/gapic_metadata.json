@@ -175,6 +175,9 @@
             "UpdateVolume": {
               "methods": ["updateVolumeAsync", "updateVolumeAsync", "updateVolumeOperationCallable", "updateVolumeCallable"]
             },
+            "ValidateDirectoryService": {
+              "methods": ["validateDirectoryServiceAsync", "validateDirectoryServiceOperationCallable", "validateDirectoryServiceCallable"]
+            },
             "VerifyKmsConfig": {
               "methods": ["verifyKmsConfig", "verifyKmsConfigCallable"]
             }

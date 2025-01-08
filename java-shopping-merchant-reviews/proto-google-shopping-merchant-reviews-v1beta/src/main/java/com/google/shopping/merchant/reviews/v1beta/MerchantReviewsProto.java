@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,12 +122,15 @@ public final class MerchantReviewsProto {
           + "\223\0025*3/reviews/v1beta/{name=accounts/*/me"
           + "rchantReviews/*}\032G\312A\032merchantapi.googlea"
           + "pis.com\322A\'https://www.googleapis.com/aut"
-          + "h/contentB\315\001\n+com.google.shopping.mercha"
+          + "h/contentB\317\002\n+com.google.shopping.mercha"
           + "nt.reviews.v1betaB\024MerchantReviewsProtoP"
           + "\001ZKcloud.google.com/go/shopping/merchant"
-          + "/reviews/apiv1beta/reviewspb;reviewspb\352A"
-          + "8\n\"merchantapi.googleapis.com/Account\022\022a"
-          + "ccounts/{account}b\006proto3"
+          + "/reviews/apiv1beta/reviewspb;reviewspb\252\002"
+          + "\'Google.Shopping.Merchant.Reviews.V1Beta"
+          + "\312\002\'Google\\Shopping\\Merchant\\Reviews\\V1be"
+          + "ta\352\002+Google::Shopping::Merchant::Reviews"
+          + "::V1beta\352A8\n\"merchantapi.googleapis.com/"
+          + "Account\022\022accounts/{account}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

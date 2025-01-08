@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,6 +115,16 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 3;</code>
      */
     ACTIVE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Account is suspended.
+     * </pre>
+     *
+     * <code>ACCOUNT_SUSPENDED = 4;</code>
+     */
+    ACCOUNT_SUSPENDED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,6 +168,16 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 3;</code>
      */
     public static final int ACTIVE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Account is suspended.
+     * </pre>
+     *
+     * <code>ACCOUNT_SUSPENDED = 4;</code>
+     */
+    public static final int ACCOUNT_SUSPENDED_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -191,6 +211,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
           return ACCOUNT_NOT_ACTIVE;
         case 3:
           return ACTIVE;
+        case 4:
+          return ACCOUNT_SUSPENDED;
         default:
           return null;
       }

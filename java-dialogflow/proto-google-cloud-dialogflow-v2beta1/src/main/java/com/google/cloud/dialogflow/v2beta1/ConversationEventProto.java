@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,28 +44,34 @@ public final class ConversationEventProto {
       "\n8google/cloud/dialogflow/v2beta1/conver"
           + "sation_event.proto\022\037google.cloud.dialogf"
           + "low.v2beta1\0321google/cloud/dialogflow/v2b"
-          + "eta1/participant.proto\032\027google/rpc/statu"
-          + "s.proto\"\213\003\n\021ConversationEvent\022\024\n\014convers"
-          + "ation\030\001 \001(\t\022E\n\004type\030\002 \001(\01627.google.cloud"
-          + ".dialogflow.v2beta1.ConversationEvent.Ty"
-          + "pe\022(\n\014error_status\030\003 \001(\0132\022.google.rpc.St"
-          + "atus\022G\n\023new_message_payload\030\004 \001(\0132(.goog"
-          + "le.cloud.dialogflow.v2beta1.MessageH\000\"\232\001"
-          + "\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\030\n\024CONVERSA"
-          + "TION_STARTED\020\001\022\031\n\025CONVERSATION_FINISHED\020"
-          + "\002\022\035\n\031HUMAN_INTERVENTION_NEEDED\020\003\022\017\n\013NEW_"
-          + "MESSAGE\020\005\022\027\n\023UNRECOVERABLE_ERROR\020\004B\t\n\007pa"
-          + "yloadB\253\001\n#com.google.cloud.dialogflow.v2"
-          + "beta1B\026ConversationEventProtoP\001ZCcloud.g"
-          + "oogle.com/go/dialogflow/apiv2beta1/dialo"
-          + "gflowpb;dialogflowpb\242\002\002DF\252\002\037Google.Cloud"
-          + ".Dialogflow.V2Beta1b\006proto3"
+          + "eta1/participant.proto\032-google/cloud/dia"
+          + "logflow/v2beta1/session.proto\032\027google/rp"
+          + "c/status.proto\"\216\004\n\021ConversationEvent\022\024\n\014"
+          + "conversation\030\001 \001(\t\022E\n\004type\030\002 \001(\01627.googl"
+          + "e.cloud.dialogflow.v2beta1.ConversationE"
+          + "vent.Type\022(\n\014error_status\030\003 \001(\0132\022.google"
+          + ".rpc.Status\022G\n\023new_message_payload\030\004 \001(\013"
+          + "2(.google.cloud.dialogflow.v2beta1.Messa"
+          + "geH\000\022e\n\036new_recognition_result_payload\030\005"
+          + " \001(\0132;.google.cloud.dialogflow.v2beta1.S"
+          + "treamingRecognitionResultH\000\"\266\001\n\004Type\022\024\n\020"
+          + "TYPE_UNSPECIFIED\020\000\022\030\n\024CONVERSATION_START"
+          + "ED\020\001\022\031\n\025CONVERSATION_FINISHED\020\002\022\035\n\031HUMAN"
+          + "_INTERVENTION_NEEDED\020\003\022\017\n\013NEW_MESSAGE\020\005\022"
+          + "\032\n\026NEW_RECOGNITION_RESULT\020\007\022\027\n\023UNRECOVER"
+          + "ABLE_ERROR\020\004B\t\n\007payloadB\253\001\n#com.google.c"
+          + "loud.dialogflow.v2beta1B\026ConversationEve"
+          + "ntProtoP\001ZCcloud.google.com/go/dialogflo"
+          + "w/apiv2beta1/dialogflowpb;dialogflowpb\242\002"
+          + "\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2beta1.SessionProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2beta1_ConversationEvent_descriptor =
@@ -74,9 +80,15 @@ public final class ConversationEventProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ConversationEvent_descriptor,
             new java.lang.String[] {
-              "Conversation", "Type", "ErrorStatus", "NewMessagePayload", "Payload",
+              "Conversation",
+              "Type",
+              "ErrorStatus",
+              "NewMessagePayload",
+              "NewRecognitionResultPayload",
+              "Payload",
             });
     com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor();
+    com.google.cloud.dialogflow.v2beta1.SessionProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
   }
 

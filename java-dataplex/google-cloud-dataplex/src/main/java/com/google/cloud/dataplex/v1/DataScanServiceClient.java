@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -622,7 +622,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param dataScan Required. DataScan resource to be updated.
    *     <p>Only fields specified in `update_mask` are updated.
-   * @param updateMask Required. Mask of fields to update.
+   * @param updateMask Optional. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataScan, OperationMetadata> updateDataScanAsync(
@@ -799,6 +799,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   dataScanServiceClient.deleteDataScanAsync(request).get();
    * }
@@ -828,6 +829,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       dataScanServiceClient.deleteDataScanOperationCallable().futureCall(request);
@@ -857,6 +859,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataScanServiceClient.deleteDataScanCallable().futureCall(request);

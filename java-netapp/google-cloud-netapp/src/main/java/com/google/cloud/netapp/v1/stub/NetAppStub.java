@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,7 @@ import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
 import com.google.cloud.netapp.v1.UpdateVolumeRequest;
+import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
@@ -172,6 +173,17 @@ public abstract class NetAppStub implements BackgroundResource {
 
   public UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteStoragePoolCallable()");
+  }
+
+  public OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: validateDirectoryServiceOperationCallable()");
+  }
+
+  public UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    throw new UnsupportedOperationException("Not implemented: validateDirectoryServiceCallable()");
   }
 
   public OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>

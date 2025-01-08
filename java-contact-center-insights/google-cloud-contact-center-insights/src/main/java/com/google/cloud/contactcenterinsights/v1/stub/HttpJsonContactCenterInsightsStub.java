@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1511,6 +1511,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                             serializer.putPathParam(fields, "location", request.getLocation());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{location=projects/*/locations/*/authorizedViewSet/*/authorizedView/*}:calculateStats")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2063,6 +2065,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                             serializer.putPathParam(fields, "location", request.getLocation());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{location=projects/*/locations/*/authorizedViewSet/*/authorizedView/*}:queryMetrics")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

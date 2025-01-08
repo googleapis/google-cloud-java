@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,8 @@ public class SyncGetAnalysisAnalysisname {
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       Analysis response = contactCenterInsightsClient.getAnalysis(name);
     }
   }

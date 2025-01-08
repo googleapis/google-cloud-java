@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,6 +113,96 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>ALAW = 3;</code>
      */
     ALAW(3),
+    /**
+     *
+     *
+     * <pre>
+     * AMR frames with an rfc4867.5 header.
+     * </pre>
+     *
+     * <code>AMR = 4;</code>
+     */
+    AMR(4),
+    /**
+     *
+     *
+     * <pre>
+     * AMR-WB frames with an rfc4867.5 header.
+     * </pre>
+     *
+     * <code>AMR_WB = 5;</code>
+     */
+    AMR_WB(5),
+    /**
+     *
+     *
+     * <pre>
+     * FLAC frames in the "native FLAC" container format.
+     * </pre>
+     *
+     * <code>FLAC = 6;</code>
+     */
+    FLAC(6),
+    /**
+     *
+     *
+     * <pre>
+     * MPEG audio frames with optional (ignored) ID3 metadata.
+     * </pre>
+     *
+     * <code>MP3 = 7;</code>
+     */
+    MP3(7),
+    /**
+     *
+     *
+     * <pre>
+     * Opus audio frames in an Ogg container.
+     * </pre>
+     *
+     * <code>OGG_OPUS = 8;</code>
+     */
+    OGG_OPUS(8),
+    /**
+     *
+     *
+     * <pre>
+     * Opus audio frames in a WebM container.
+     * </pre>
+     *
+     * <code>WEBM_OPUS = 9;</code>
+     */
+    WEBM_OPUS(9),
+    /**
+     *
+     *
+     * <pre>
+     * AAC audio frames in an MP4 container.
+     * </pre>
+     *
+     * <code>MP4_AAC = 10;</code>
+     */
+    MP4_AAC(10),
+    /**
+     *
+     *
+     * <pre>
+     * AAC audio frames in an M4A container.
+     * </pre>
+     *
+     * <code>M4A_AAC = 11;</code>
+     */
+    M4A_AAC(11),
+    /**
+     *
+     *
+     * <pre>
+     * AAC audio frames in an MOV container.
+     * </pre>
+     *
+     * <code>MOV_AAC = 12;</code>
+     */
+    MOV_AAC(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -156,6 +246,96 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>ALAW = 3;</code>
      */
     public static final int ALAW_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * AMR frames with an rfc4867.5 header.
+     * </pre>
+     *
+     * <code>AMR = 4;</code>
+     */
+    public static final int AMR_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * AMR-WB frames with an rfc4867.5 header.
+     * </pre>
+     *
+     * <code>AMR_WB = 5;</code>
+     */
+    public static final int AMR_WB_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * FLAC frames in the "native FLAC" container format.
+     * </pre>
+     *
+     * <code>FLAC = 6;</code>
+     */
+    public static final int FLAC_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * MPEG audio frames with optional (ignored) ID3 metadata.
+     * </pre>
+     *
+     * <code>MP3 = 7;</code>
+     */
+    public static final int MP3_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Opus audio frames in an Ogg container.
+     * </pre>
+     *
+     * <code>OGG_OPUS = 8;</code>
+     */
+    public static final int OGG_OPUS_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Opus audio frames in a WebM container.
+     * </pre>
+     *
+     * <code>WEBM_OPUS = 9;</code>
+     */
+    public static final int WEBM_OPUS_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * AAC audio frames in an MP4 container.
+     * </pre>
+     *
+     * <code>MP4_AAC = 10;</code>
+     */
+    public static final int MP4_AAC_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * AAC audio frames in an M4A container.
+     * </pre>
+     *
+     * <code>M4A_AAC = 11;</code>
+     */
+    public static final int M4A_AAC_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * AAC audio frames in an MOV container.
+     * </pre>
+     *
+     * <code>MOV_AAC = 12;</code>
+     */
+    public static final int MOV_AAC_VALUE = 12;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -189,6 +369,24 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
           return MULAW;
         case 3:
           return ALAW;
+        case 4:
+          return AMR;
+        case 5:
+          return AMR_WB;
+        case 6:
+          return FLAC;
+        case 7:
+          return MP3;
+        case 8:
+          return OGG_OPUS;
+        case 9:
+          return WEBM_OPUS;
+        case 10:
+          return MP4_AAC;
+        case 11:
+          return M4A_AAC;
+        case 12:
+          return MOV_AAC;
         default:
           return null;
       }
@@ -291,20 +489,15 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Sample rate in Hertz of the audio data sent for recognition. Valid
-   * values are: 8000-48000. 16000 is optimal. For best results, set the
+   * Optional. Sample rate in Hertz of the audio data sent for recognition.
+   * Valid values are: 8000-48000. 16000 is optimal. For best results, set the
    * sampling rate of the audio source to 16000 Hz. If that's not possible, use
    * the native sample rate of the audio source (instead of re-sampling).
-   * Supported for the following encodings:
-   *
-   * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-   *
-   * * MULAW: Headerless 8-bit companded mulaw samples.
-   *
-   * * ALAW: Headerless 8-bit companded alaw samples.
+   * Note that this field is marked as OPTIONAL for backward compatibility
+   * reasons. It is (and has always been) effectively REQUIRED.
    * </pre>
    *
-   * <code>int32 sample_rate_hertz = 2;</code>
+   * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sampleRateHertz.
    */
@@ -319,19 +512,14 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Number of channels present in the audio data sent for recognition.
-   * Supported for the following encodings:
-   *
-   * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-   *
-   * * MULAW: Headerless 8-bit companded mulaw samples.
-   *
-   * * ALAW: Headerless 8-bit companded alaw samples.
+   * Optional. Number of channels present in the audio data sent for
+   * recognition. Note that this field is marked as OPTIONAL for backward
+   * compatibility reasons. It is (and has always been) effectively REQUIRED.
    *
    * The maximum allowed value is 8.
    * </pre>
    *
-   * <code>int32 audio_channel_count = 3;</code>
+   * <code>int32 audio_channel_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The audioChannelCount.
    */
@@ -838,20 +1026,15 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Sample rate in Hertz of the audio data sent for recognition. Valid
-     * values are: 8000-48000. 16000 is optimal. For best results, set the
+     * Optional. Sample rate in Hertz of the audio data sent for recognition.
+     * Valid values are: 8000-48000. 16000 is optimal. For best results, set the
      * sampling rate of the audio source to 16000 Hz. If that's not possible, use
      * the native sample rate of the audio source (instead of re-sampling).
-     * Supported for the following encodings:
-     *
-     * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-     *
-     * * MULAW: Headerless 8-bit companded mulaw samples.
-     *
-     * * ALAW: Headerless 8-bit companded alaw samples.
+     * Note that this field is marked as OPTIONAL for backward compatibility
+     * reasons. It is (and has always been) effectively REQUIRED.
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 2;</code>
+     * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The sampleRateHertz.
      */
@@ -863,20 +1046,15 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Sample rate in Hertz of the audio data sent for recognition. Valid
-     * values are: 8000-48000. 16000 is optimal. For best results, set the
+     * Optional. Sample rate in Hertz of the audio data sent for recognition.
+     * Valid values are: 8000-48000. 16000 is optimal. For best results, set the
      * sampling rate of the audio source to 16000 Hz. If that's not possible, use
      * the native sample rate of the audio source (instead of re-sampling).
-     * Supported for the following encodings:
-     *
-     * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-     *
-     * * MULAW: Headerless 8-bit companded mulaw samples.
-     *
-     * * ALAW: Headerless 8-bit companded alaw samples.
+     * Note that this field is marked as OPTIONAL for backward compatibility
+     * reasons. It is (and has always been) effectively REQUIRED.
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 2;</code>
+     * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The sampleRateHertz to set.
      * @return This builder for chaining.
@@ -892,20 +1070,15 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Sample rate in Hertz of the audio data sent for recognition. Valid
-     * values are: 8000-48000. 16000 is optimal. For best results, set the
+     * Optional. Sample rate in Hertz of the audio data sent for recognition.
+     * Valid values are: 8000-48000. 16000 is optimal. For best results, set the
      * sampling rate of the audio source to 16000 Hz. If that's not possible, use
      * the native sample rate of the audio source (instead of re-sampling).
-     * Supported for the following encodings:
-     *
-     * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-     *
-     * * MULAW: Headerless 8-bit companded mulaw samples.
-     *
-     * * ALAW: Headerless 8-bit companded alaw samples.
+     * Note that this field is marked as OPTIONAL for backward compatibility
+     * reasons. It is (and has always been) effectively REQUIRED.
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 2;</code>
+     * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -921,19 +1094,14 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of channels present in the audio data sent for recognition.
-     * Supported for the following encodings:
-     *
-     * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-     *
-     * * MULAW: Headerless 8-bit companded mulaw samples.
-     *
-     * * ALAW: Headerless 8-bit companded alaw samples.
+     * Optional. Number of channels present in the audio data sent for
+     * recognition. Note that this field is marked as OPTIONAL for backward
+     * compatibility reasons. It is (and has always been) effectively REQUIRED.
      *
      * The maximum allowed value is 8.
      * </pre>
      *
-     * <code>int32 audio_channel_count = 3;</code>
+     * <code>int32 audio_channel_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The audioChannelCount.
      */
@@ -945,19 +1113,14 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of channels present in the audio data sent for recognition.
-     * Supported for the following encodings:
-     *
-     * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-     *
-     * * MULAW: Headerless 8-bit companded mulaw samples.
-     *
-     * * ALAW: Headerless 8-bit companded alaw samples.
+     * Optional. Number of channels present in the audio data sent for
+     * recognition. Note that this field is marked as OPTIONAL for backward
+     * compatibility reasons. It is (and has always been) effectively REQUIRED.
      *
      * The maximum allowed value is 8.
      * </pre>
      *
-     * <code>int32 audio_channel_count = 3;</code>
+     * <code>int32 audio_channel_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The audioChannelCount to set.
      * @return This builder for chaining.
@@ -973,19 +1136,14 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of channels present in the audio data sent for recognition.
-     * Supported for the following encodings:
-     *
-     * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
-     *
-     * * MULAW: Headerless 8-bit companded mulaw samples.
-     *
-     * * ALAW: Headerless 8-bit companded alaw samples.
+     * Optional. Number of channels present in the audio data sent for
+     * recognition. Note that this field is marked as OPTIONAL for backward
+     * compatibility reasons. It is (and has always been) effectively REQUIRED.
      *
      * The maximum allowed value is 8.
      * </pre>
      *
-     * <code>int32 audio_channel_count = 3;</code>
+     * <code>int32 audio_channel_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

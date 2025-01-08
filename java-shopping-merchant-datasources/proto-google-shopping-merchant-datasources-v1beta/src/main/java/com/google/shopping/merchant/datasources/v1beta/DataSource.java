@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -305,6 +305,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     LOCAL_INVENTORY_DATA_SOURCE(6),
     REGIONAL_INVENTORY_DATA_SOURCE(7),
     PROMOTION_DATA_SOURCE(8),
+    PRODUCT_REVIEW_DATA_SOURCE(9),
+    MERCHANT_REVIEW_DATA_SOURCE(12),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -333,6 +335,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           return REGIONAL_INVENTORY_DATA_SOURCE;
         case 8:
           return PROMOTION_DATA_SOURCE;
+        case 9:
+          return PRODUCT_REVIEW_DATA_SOURCE;
+        case 12:
+          return MERCHANT_REVIEW_DATA_SOURCE;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -354,13 +360,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [primary data
+   * The [primary data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
    * </code>
    *
    * @return Whether the primaryProductDataSource field is set.
@@ -373,13 +379,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [primary data
+   * The [primary data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
    * </code>
    *
    * @return The primaryProductDataSource.
@@ -397,13 +403,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [primary data
+   * The [primary data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
    * </code>
    */
   @java.lang.Override
@@ -421,13 +427,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [supplemental data
+   * The [supplemental data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
    * </code>
    *
    * @return Whether the supplementalProductDataSource field is set.
@@ -440,13 +446,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [supplemental data
+   * The [supplemental data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
    * </code>
    *
    * @return The supplementalProductDataSource.
@@ -464,13 +470,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [supplemental data
+   * The [supplemental data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
    * </code>
    */
   @java.lang.Override
@@ -488,13 +494,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [local
+   * The [local
    * inventory](https://support.google.com/merchants/answer/7023001) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
    * </code>
    *
    * @return Whether the localInventoryDataSource field is set.
@@ -507,13 +513,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [local
+   * The [local
    * inventory](https://support.google.com/merchants/answer/7023001) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
    * </code>
    *
    * @return The localInventoryDataSource.
@@ -531,13 +537,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [local
+   * The [local
    * inventory](https://support.google.com/merchants/answer/7023001) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
    * </code>
    */
   @java.lang.Override
@@ -555,13 +561,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [regional
+   * The [regional
    * inventory](https://support.google.com/merchants/answer/7439058) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
    * </code>
    *
    * @return Whether the regionalInventoryDataSource field is set.
@@ -574,13 +580,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [regional
+   * The [regional
    * inventory](https://support.google.com/merchants/answer/7439058) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
    * </code>
    *
    * @return The regionalInventoryDataSource.
@@ -598,13 +604,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [regional
+   * The [regional
    * inventory](https://support.google.com/merchants/answer/7439058) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
    * </code>
    */
   @java.lang.Override
@@ -622,13 +628,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The
+   * The
    * [promotion](https://support.google.com/merchants/answer/2906014) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
    * </code>
    *
    * @return Whether the promotionDataSource field is set.
@@ -641,13 +647,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The
+   * The
    * [promotion](https://support.google.com/merchants/answer/2906014) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
    * </code>
    *
    * @return The promotionDataSource.
@@ -664,13 +670,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The
+   * The
    * [promotion](https://support.google.com/merchants/answer/2906014) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
    * </code>
    */
   @java.lang.Override
@@ -680,6 +686,140 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return (com.google.shopping.merchant.datasources.v1beta.PromotionDataSource) type_;
     }
     return com.google.shopping.merchant.datasources.v1beta.PromotionDataSource.getDefaultInstance();
+  }
+
+  public static final int PRODUCT_REVIEW_DATA_SOURCE_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * The [product
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+   * </code>
+   *
+   * @return Whether the productReviewDataSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasProductReviewDataSource() {
+    return typeCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [product
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+   * </code>
+   *
+   * @return The productReviewDataSource.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+      getProductReviewDataSource() {
+    if (typeCase_ == 9) {
+      return (com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource) type_;
+    }
+    return com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [product
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSourceOrBuilder
+      getProductReviewDataSourceOrBuilder() {
+    if (typeCase_ == 9) {
+      return (com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource) type_;
+    }
+    return com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+        .getDefaultInstance();
+  }
+
+  public static final int MERCHANT_REVIEW_DATA_SOURCE_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * The [merchant
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+   * </code>
+   *
+   * @return Whether the merchantReviewDataSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasMerchantReviewDataSource() {
+    return typeCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [merchant
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+   * </code>
+   *
+   * @return The merchantReviewDataSource.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+      getMerchantReviewDataSource() {
+    if (typeCase_ == 12) {
+      return (com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource) type_;
+    }
+    return com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [merchant
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSourceOrBuilder
+      getMerchantReviewDataSourceOrBuilder() {
+    if (typeCase_ == 12) {
+      return (com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource) type_;
+    }
+    return com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+        .getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -951,6 +1091,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           8, (com.google.shopping.merchant.datasources.v1beta.PromotionDataSource) type_);
     }
+    if (typeCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource) type_);
+    }
     if (input_
         != com.google.shopping.merchant.datasources.v1beta.DataSource.Input.INPUT_UNSPECIFIED
             .getNumber()) {
@@ -958,6 +1102,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(11, getFileInput());
+    }
+    if (typeCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource) type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1005,6 +1153,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.shopping.merchant.datasources.v1beta.PromotionDataSource) type_);
     }
+    if (typeCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource) type_);
+    }
     if (input_
         != com.google.shopping.merchant.datasources.v1beta.DataSource.Input.INPUT_UNSPECIFIED
             .getNumber()) {
@@ -1012,6 +1165,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getFileInput());
+    }
+    if (typeCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource) type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1057,6 +1215,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         break;
       case 8:
         if (!getPromotionDataSource().equals(other.getPromotionDataSource())) return false;
+        break;
+      case 9:
+        if (!getProductReviewDataSource().equals(other.getProductReviewDataSource())) return false;
+        break;
+      case 12:
+        if (!getMerchantReviewDataSource().equals(other.getMerchantReviewDataSource()))
+          return false;
         break;
       case 0:
       default:
@@ -1104,6 +1269,14 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       case 8:
         hash = (37 * hash) + PROMOTION_DATA_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getPromotionDataSource().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + PRODUCT_REVIEW_DATA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getProductReviewDataSource().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + MERCHANT_REVIEW_DATA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getMerchantReviewDataSource().hashCode();
         break;
       case 0:
       default:
@@ -1273,6 +1446,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       if (promotionDataSourceBuilder_ != null) {
         promotionDataSourceBuilder_.clear();
       }
+      if (productReviewDataSourceBuilder_ != null) {
+        productReviewDataSourceBuilder_.clear();
+      }
+      if (merchantReviewDataSourceBuilder_ != null) {
+        merchantReviewDataSourceBuilder_.clear();
+      }
       name_ = "";
       dataSourceId_ = 0L;
       displayName_ = "";
@@ -1321,20 +1500,20 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.shopping.merchant.datasources.v1beta.DataSource result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.dataSourceId_ = dataSourceId_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.input_ = input_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.fileInput_ = fileInputBuilder_ == null ? fileInput_ : fileInputBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -1359,6 +1538,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       if (typeCase_ == 8 && promotionDataSourceBuilder_ != null) {
         result.type_ = promotionDataSourceBuilder_.build();
+      }
+      if (typeCase_ == 9 && productReviewDataSourceBuilder_ != null) {
+        result.type_ = productReviewDataSourceBuilder_.build();
+      }
+      if (typeCase_ == 12 && merchantReviewDataSourceBuilder_ != null) {
+        result.type_ = merchantReviewDataSourceBuilder_.build();
       }
     }
 
@@ -1410,7 +1595,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getDataSourceId() != 0L) {
@@ -1418,7 +1603,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.input_ != 0) {
@@ -1451,6 +1636,16 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         case PROMOTION_DATA_SOURCE:
           {
             mergePromotionDataSource(other.getPromotionDataSource());
+            break;
+          }
+        case PRODUCT_REVIEW_DATA_SOURCE:
+          {
+            mergeProductReviewDataSource(other.getProductReviewDataSource());
+            break;
+          }
+        case MERCHANT_REVIEW_DATA_SOURCE:
+          {
+            mergeMerchantReviewDataSource(other.getMerchantReviewDataSource());
             break;
           }
         case TYPE_NOT_SET:
@@ -1487,19 +1682,19 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 10
             case 16:
               {
                 dataSourceId_ = input.readInt64();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 16
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 26
             case 34:
@@ -1537,18 +1732,32 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
                 typeCase_ = 8;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getProductReviewDataSourceFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 9;
+                break;
+              } // case 74
             case 80:
               {
                 input_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(getFileInputFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getMerchantReviewDataSourceFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1591,13 +1800,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      *
      * @return Whether the primaryProductDataSource field is set.
@@ -1610,13 +1819,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      *
      * @return The primaryProductDataSource.
@@ -1642,13 +1851,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      */
     public Builder setPrimaryProductDataSource(
@@ -1669,13 +1878,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      */
     public Builder setPrimaryProductDataSource(
@@ -1694,13 +1903,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      */
     public Builder mergePrimaryProductDataSource(
@@ -1734,13 +1943,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      */
     public Builder clearPrimaryProductDataSource() {
@@ -1763,13 +1972,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      */
     public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Builder
@@ -1780,13 +1989,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      */
     @java.lang.Override
@@ -1806,13 +2015,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [primary data
+     * The [primary data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1850,13 +2059,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      *
      * @return Whether the supplementalProductDataSource field is set.
@@ -1869,13 +2078,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      *
      * @return The supplementalProductDataSource.
@@ -1902,13 +2111,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      */
     public Builder setSupplementalProductDataSource(
@@ -1929,13 +2138,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      */
     public Builder setSupplementalProductDataSource(
@@ -1954,13 +2163,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      */
     public Builder mergeSupplementalProductDataSource(
@@ -1996,13 +2205,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      */
     public Builder clearSupplementalProductDataSource() {
@@ -2025,13 +2234,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      */
     public com.google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource.Builder
@@ -2042,13 +2251,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      */
     @java.lang.Override
@@ -2069,13 +2278,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [supplemental data
+     * The [supplemental data
      * source](https://support.google.com/merchants/answer/7439058) for local
      * and online products.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2116,13 +2325,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      *
      * @return Whether the localInventoryDataSource field is set.
@@ -2135,13 +2344,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      *
      * @return The localInventoryDataSource.
@@ -2167,13 +2376,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      */
     public Builder setLocalInventoryDataSource(
@@ -2194,13 +2403,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      */
     public Builder setLocalInventoryDataSource(
@@ -2219,13 +2428,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      */
     public Builder mergeLocalInventoryDataSource(
@@ -2259,13 +2468,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      */
     public Builder clearLocalInventoryDataSource() {
@@ -2288,13 +2497,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      */
     public com.google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource.Builder
@@ -2305,13 +2514,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      */
     @java.lang.Override
@@ -2331,13 +2540,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [local
+     * The [local
      * inventory](https://support.google.com/merchants/answer/7023001) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2375,13 +2584,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      *
      * @return Whether the regionalInventoryDataSource field is set.
@@ -2394,13 +2603,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      *
      * @return The regionalInventoryDataSource.
@@ -2427,13 +2636,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      */
     public Builder setRegionalInventoryDataSource(
@@ -2454,13 +2663,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      */
     public Builder setRegionalInventoryDataSource(
@@ -2479,13 +2688,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      */
     public Builder mergeRegionalInventoryDataSource(
@@ -2520,13 +2729,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      */
     public Builder clearRegionalInventoryDataSource() {
@@ -2549,13 +2758,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      */
     public com.google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource.Builder
@@ -2566,13 +2775,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      */
     @java.lang.Override
@@ -2593,13 +2802,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [regional
+     * The [regional
      * inventory](https://support.google.com/merchants/answer/7439058) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2638,13 +2847,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      *
      * @return Whether the promotionDataSource field is set.
@@ -2657,13 +2866,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      *
      * @return The promotionDataSource.
@@ -2689,13 +2898,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      */
     public Builder setPromotionDataSource(
@@ -2716,13 +2925,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      */
     public Builder setPromotionDataSource(
@@ -2741,13 +2950,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      */
     public Builder mergePromotionDataSource(
@@ -2780,13 +2989,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      */
     public Builder clearPromotionDataSource() {
@@ -2809,13 +3018,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      */
     public com.google.shopping.merchant.datasources.v1beta.PromotionDataSource.Builder
@@ -2826,13 +3035,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      */
     @java.lang.Override
@@ -2852,13 +3061,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The
+     * The
      * [promotion](https://support.google.com/merchants/answer/2906014) data
      * source.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+     * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2885,6 +3094,524 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 8;
       onChanged();
       return promotionDataSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource,
+            com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource.Builder,
+            com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSourceOrBuilder>
+        productReviewDataSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     *
+     * @return Whether the productReviewDataSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasProductReviewDataSource() {
+      return typeCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     *
+     * @return The productReviewDataSource.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+        getProductReviewDataSource() {
+      if (productReviewDataSourceBuilder_ == null) {
+        if (typeCase_ == 9) {
+          return (com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource) type_;
+        }
+        return com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+            .getDefaultInstance();
+      } else {
+        if (typeCase_ == 9) {
+          return productReviewDataSourceBuilder_.getMessage();
+        }
+        return com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     */
+    public Builder setProductReviewDataSource(
+        com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource value) {
+      if (productReviewDataSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        productReviewDataSourceBuilder_.setMessage(value);
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     */
+    public Builder setProductReviewDataSource(
+        com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource.Builder
+            builderForValue) {
+      if (productReviewDataSourceBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        productReviewDataSourceBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     */
+    public Builder mergeProductReviewDataSource(
+        com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource value) {
+      if (productReviewDataSourceBuilder_ == null) {
+        if (typeCase_ == 9
+            && type_
+                != com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+                    .getDefaultInstance()) {
+          type_ =
+              com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource.newBuilder(
+                      (com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource)
+                          type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 9) {
+          productReviewDataSourceBuilder_.mergeFrom(value);
+        } else {
+          productReviewDataSourceBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     */
+    public Builder clearProductReviewDataSource() {
+      if (productReviewDataSourceBuilder_ == null) {
+        if (typeCase_ == 9) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 9) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        productReviewDataSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource.Builder
+        getProductReviewDataSourceBuilder() {
+      return getProductReviewDataSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSourceOrBuilder
+        getProductReviewDataSourceOrBuilder() {
+      if ((typeCase_ == 9) && (productReviewDataSourceBuilder_ != null)) {
+        return productReviewDataSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 9) {
+          return (com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource) type_;
+        }
+        return com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [product
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource,
+            com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource.Builder,
+            com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSourceOrBuilder>
+        getProductReviewDataSourceFieldBuilder() {
+      if (productReviewDataSourceBuilder_ == null) {
+        if (!(typeCase_ == 9)) {
+          type_ =
+              com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+                  .getDefaultInstance();
+        }
+        productReviewDataSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource,
+                com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource.Builder,
+                com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSourceOrBuilder>(
+                (com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 9;
+      onChanged();
+      return productReviewDataSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource,
+            com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource.Builder,
+            com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSourceOrBuilder>
+        merchantReviewDataSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     *
+     * @return Whether the merchantReviewDataSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasMerchantReviewDataSource() {
+      return typeCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     *
+     * @return The merchantReviewDataSource.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+        getMerchantReviewDataSource() {
+      if (merchantReviewDataSourceBuilder_ == null) {
+        if (typeCase_ == 12) {
+          return (com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource) type_;
+        }
+        return com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+            .getDefaultInstance();
+      } else {
+        if (typeCase_ == 12) {
+          return merchantReviewDataSourceBuilder_.getMessage();
+        }
+        return com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     */
+    public Builder setMerchantReviewDataSource(
+        com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource value) {
+      if (merchantReviewDataSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        merchantReviewDataSourceBuilder_.setMessage(value);
+      }
+      typeCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     */
+    public Builder setMerchantReviewDataSource(
+        com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource.Builder
+            builderForValue) {
+      if (merchantReviewDataSourceBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        merchantReviewDataSourceBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     */
+    public Builder mergeMerchantReviewDataSource(
+        com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource value) {
+      if (merchantReviewDataSourceBuilder_ == null) {
+        if (typeCase_ == 12
+            && type_
+                != com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+                    .getDefaultInstance()) {
+          type_ =
+              com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource.newBuilder(
+                      (com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource)
+                          type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 12) {
+          merchantReviewDataSourceBuilder_.mergeFrom(value);
+        } else {
+          merchantReviewDataSourceBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     */
+    public Builder clearMerchantReviewDataSource() {
+      if (merchantReviewDataSourceBuilder_ == null) {
+        if (typeCase_ == 12) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 12) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        merchantReviewDataSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource.Builder
+        getMerchantReviewDataSourceBuilder() {
+      return getMerchantReviewDataSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSourceOrBuilder
+        getMerchantReviewDataSourceOrBuilder() {
+      if ((typeCase_ == 12) && (merchantReviewDataSourceBuilder_ != null)) {
+        return merchantReviewDataSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 12) {
+          return (com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource) type_;
+        }
+        return com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [merchant
+     * review](https://support.google.com/merchants/answer/7045996)
+     * data source.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource,
+            com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource.Builder,
+            com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSourceOrBuilder>
+        getMerchantReviewDataSourceFieldBuilder() {
+      if (merchantReviewDataSourceBuilder_ == null) {
+        if (!(typeCase_ == 12)) {
+          type_ =
+              com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+                  .getDefaultInstance();
+        }
+        merchantReviewDataSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource,
+                com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource.Builder,
+                com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSourceOrBuilder>(
+                (com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 12;
+      onChanged();
+      return merchantReviewDataSourceBuilder_;
     }
 
     private java.lang.Object name_ = "";
@@ -2955,7 +3682,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2974,7 +3701,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2998,7 +3725,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3034,7 +3761,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public Builder setDataSourceId(long value) {
 
       dataSourceId_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3050,7 +3777,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataSourceId() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       dataSourceId_ = 0L;
       onChanged();
       return this;
@@ -3118,7 +3845,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3135,7 +3862,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3157,7 +3884,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3200,7 +3927,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setInputValue(int value) {
       input_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3248,7 +3975,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       input_ = value.getNumber();
       onChanged();
       return this;
@@ -3269,7 +3996,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInput() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       input_ = 0;
       onChanged();
       return this;
@@ -3295,7 +4022,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fileInput field is set.
      */
     public boolean hasFileInput() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3339,7 +4066,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       } else {
         fileInputBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3361,7 +4088,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       } else {
         fileInputBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3378,7 +4105,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFileInput(com.google.shopping.merchant.datasources.v1beta.FileInput value) {
       if (fileInputBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && fileInput_ != null
             && fileInput_
                 != com.google.shopping.merchant.datasources.v1beta.FileInput.getDefaultInstance()) {
@@ -3390,7 +4117,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         fileInputBuilder_.mergeFrom(value);
       }
       if (fileInput_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3407,7 +4134,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFileInput() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       fileInput_ = null;
       if (fileInputBuilder_ != null) {
         fileInputBuilder_.dispose();
@@ -3428,7 +4155,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.shopping.merchant.datasources.v1beta.FileInput.Builder getFileInputBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getFileInputFieldBuilder().getBuilder();
     }

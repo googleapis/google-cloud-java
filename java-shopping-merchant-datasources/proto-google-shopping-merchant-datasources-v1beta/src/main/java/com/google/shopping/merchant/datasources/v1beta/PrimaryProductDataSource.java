@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,10 +276,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -310,10 +308,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -344,10 +340,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -377,10 +371,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -412,10 +404,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -499,10 +489,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -536,10 +524,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -574,10 +560,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -610,10 +594,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -647,10 +629,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      * To link the data source to the default rule, you need to add a
      * new reference to this list (in sequential order).
      *
-     * To unlink the data source from the default rule, you need to remove the
-     * given reference from this list. To create attribute rules that are
-     * different from the default rule, see [Set up your attribute
-     * rules](//support.google.com/merchants/answer/14994083).
+     * To unlink the data source from the default rule, you need to
+     * remove the given reference from this list.
      *
      * Changing the order of this list will result in changing the priority of
      * data sources in the default rule.
@@ -1147,10 +1127,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1187,10 +1165,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1226,10 +1202,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1266,10 +1240,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1312,10 +1284,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1357,10 +1327,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1403,10 +1371,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1449,10 +1415,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1493,10 +1457,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1538,10 +1500,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1583,10 +1543,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1625,10 +1583,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1667,10 +1623,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1703,10 +1657,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1743,10 +1695,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1785,10 +1735,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1824,10 +1772,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.
@@ -1864,10 +1810,8 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
        * To link the data source to the default rule, you need to add a
        * new reference to this list (in sequential order).
        *
-       * To unlink the data source from the default rule, you need to remove the
-       * given reference from this list. To create attribute rules that are
-       * different from the default rule, see [Set up your attribute
-       * rules](//support.google.com/merchants/answer/14994083).
+       * To unlink the data source from the default rule, you need to
+       * remove the given reference from this list.
        *
        * Changing the order of this list will result in changing the priority of
        * data sources in the default rule.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,6 +118,63 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         : voice_;
   }
 
+  public static final int STREAMING_AUDIO_CONFIG_FIELD_NUMBER = 4;
+  private com.google.cloud.texttospeech.v1.StreamingAudioConfig streamingAudioConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingAudioConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasStreamingAudioConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingAudioConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.StreamingAudioConfig getStreamingAudioConfig() {
+    return streamingAudioConfig_ == null
+        ? com.google.cloud.texttospeech.v1.StreamingAudioConfig.getDefaultInstance()
+        : streamingAudioConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder
+      getStreamingAudioConfigOrBuilder() {
+    return streamingAudioConfig_ == null
+        ? com.google.cloud.texttospeech.v1.StreamingAudioConfig.getDefaultInstance()
+        : streamingAudioConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -135,6 +192,9 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getVoice());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getStreamingAudioConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -146,6 +206,10 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getVoice());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStreamingAudioConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -167,6 +231,10 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     if (hasVoice()) {
       if (!getVoice().equals(other.getVoice())) return false;
     }
+    if (hasStreamingAudioConfig() != other.hasStreamingAudioConfig()) return false;
+    if (hasStreamingAudioConfig()) {
+      if (!getStreamingAudioConfig().equals(other.getStreamingAudioConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -181,6 +249,10 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     if (hasVoice()) {
       hash = (37 * hash) + VOICE_FIELD_NUMBER;
       hash = (53 * hash) + getVoice().hashCode();
+    }
+    if (hasStreamingAudioConfig()) {
+      hash = (37 * hash) + STREAMING_AUDIO_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getStreamingAudioConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -324,6 +396,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getVoiceFieldBuilder();
+        getStreamingAudioConfigFieldBuilder();
       }
     }
 
@@ -335,6 +408,11 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       if (voiceBuilder_ != null) {
         voiceBuilder_.dispose();
         voiceBuilder_ = null;
+      }
+      streamingAudioConfig_ = null;
+      if (streamingAudioConfigBuilder_ != null) {
+        streamingAudioConfigBuilder_.dispose();
+        streamingAudioConfigBuilder_ = null;
       }
       return this;
     }
@@ -376,6 +454,13 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.voice_ = voiceBuilder_ == null ? voice_ : voiceBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.streamingAudioConfig_ =
+            streamingAudioConfigBuilder_ == null
+                ? streamingAudioConfig_
+                : streamingAudioConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -429,6 +514,9 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       if (other.hasVoice()) {
         mergeVoice(other.getVoice());
       }
+      if (other.hasStreamingAudioConfig()) {
+        mergeStreamingAudioConfig(other.getStreamingAudioConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -461,6 +549,13 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 34:
+              {
+                input.readMessage(
+                    getStreamingAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -683,6 +778,215 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         voice_ = null;
       }
       return voiceBuilder_;
+    }
+
+    private com.google.cloud.texttospeech.v1.StreamingAudioConfig streamingAudioConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.StreamingAudioConfig,
+            com.google.cloud.texttospeech.v1.StreamingAudioConfig.Builder,
+            com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder>
+        streamingAudioConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the streamingAudioConfig field is set.
+     */
+    public boolean hasStreamingAudioConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The streamingAudioConfig.
+     */
+    public com.google.cloud.texttospeech.v1.StreamingAudioConfig getStreamingAudioConfig() {
+      if (streamingAudioConfigBuilder_ == null) {
+        return streamingAudioConfig_ == null
+            ? com.google.cloud.texttospeech.v1.StreamingAudioConfig.getDefaultInstance()
+            : streamingAudioConfig_;
+      } else {
+        return streamingAudioConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStreamingAudioConfig(
+        com.google.cloud.texttospeech.v1.StreamingAudioConfig value) {
+      if (streamingAudioConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        streamingAudioConfig_ = value;
+      } else {
+        streamingAudioConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStreamingAudioConfig(
+        com.google.cloud.texttospeech.v1.StreamingAudioConfig.Builder builderForValue) {
+      if (streamingAudioConfigBuilder_ == null) {
+        streamingAudioConfig_ = builderForValue.build();
+      } else {
+        streamingAudioConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStreamingAudioConfig(
+        com.google.cloud.texttospeech.v1.StreamingAudioConfig value) {
+      if (streamingAudioConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && streamingAudioConfig_ != null
+            && streamingAudioConfig_
+                != com.google.cloud.texttospeech.v1.StreamingAudioConfig.getDefaultInstance()) {
+          getStreamingAudioConfigBuilder().mergeFrom(value);
+        } else {
+          streamingAudioConfig_ = value;
+        }
+      } else {
+        streamingAudioConfigBuilder_.mergeFrom(value);
+      }
+      if (streamingAudioConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStreamingAudioConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      streamingAudioConfig_ = null;
+      if (streamingAudioConfigBuilder_ != null) {
+        streamingAudioConfigBuilder_.dispose();
+        streamingAudioConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.StreamingAudioConfig.Builder
+        getStreamingAudioConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getStreamingAudioConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder
+        getStreamingAudioConfigOrBuilder() {
+      if (streamingAudioConfigBuilder_ != null) {
+        return streamingAudioConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return streamingAudioConfig_ == null
+            ? com.google.cloud.texttospeech.v1.StreamingAudioConfig.getDefaultInstance()
+            : streamingAudioConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of the synthesized audio.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.StreamingAudioConfig,
+            com.google.cloud.texttospeech.v1.StreamingAudioConfig.Builder,
+            com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder>
+        getStreamingAudioConfigFieldBuilder() {
+      if (streamingAudioConfigBuilder_ == null) {
+        streamingAudioConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.StreamingAudioConfig,
+                com.google.cloud.texttospeech.v1.StreamingAudioConfig.Builder,
+                com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder>(
+                getStreamingAudioConfig(), getParentForChildren(), isClean());
+        streamingAudioConfig_ = null;
+      }
+      return streamingAudioConfigBuilder_;
     }
 
     @java.lang.Override
