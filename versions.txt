@@ -823,3 +823,5 @@ grpc-google-shopping-merchant-reviews-v1beta:0.1.0:0.2.0-SNAPSHOT
 google-cloud-valkey:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-valkey-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-valkey-v1beta:0.1.0:0.2.0-SNAPSHOT
+proto-google-cloud-cloudquotas-v1beta:0.23.0:0.24.0-SNAPSHOT
+grpc-google-cloud-cloudquotas-v1beta:0.23.0:0.24.0-SNAPSHOT
