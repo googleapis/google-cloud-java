@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,58 @@ public final class CssProductInputsServiceGrpc {
       }
     }
     return getInsertCssProductInputMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.css.v1.UpdateCssProductInputRequest,
+          com.google.shopping.css.v1.CssProductInput>
+      getUpdateCssProductInputMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCssProductInput",
+      requestType = com.google.shopping.css.v1.UpdateCssProductInputRequest.class,
+      responseType = com.google.shopping.css.v1.CssProductInput.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.css.v1.UpdateCssProductInputRequest,
+          com.google.shopping.css.v1.CssProductInput>
+      getUpdateCssProductInputMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.css.v1.UpdateCssProductInputRequest,
+            com.google.shopping.css.v1.CssProductInput>
+        getUpdateCssProductInputMethod;
+    if ((getUpdateCssProductInputMethod =
+            CssProductInputsServiceGrpc.getUpdateCssProductInputMethod)
+        == null) {
+      synchronized (CssProductInputsServiceGrpc.class) {
+        if ((getUpdateCssProductInputMethod =
+                CssProductInputsServiceGrpc.getUpdateCssProductInputMethod)
+            == null) {
+          CssProductInputsServiceGrpc.getUpdateCssProductInputMethod =
+              getUpdateCssProductInputMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.css.v1.UpdateCssProductInputRequest,
+                          com.google.shopping.css.v1.CssProductInput>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCssProductInput"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.css.v1.UpdateCssProductInputRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.css.v1.CssProductInput.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CssProductInputsServiceMethodDescriptorSupplier(
+                              "UpdateCssProductInput"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCssProductInputMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -211,6 +263,22 @@ public final class CssProductInputsServiceGrpc {
      *
      *
      * <pre>
+     * Updates the existing Css Product input in your CSS Center account.
+     * After inserting, updating, or deleting a CSS Product input, it may take
+     * several minutes before the processed Css Product can be retrieved.
+     * </pre>
+     */
+    default void updateCssProductInput(
+        com.google.shopping.css.v1.UpdateCssProductInputRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.css.v1.CssProductInput> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCssProductInputMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a CSS Product input from your CSS Center account.
      * After a delete it may take several minutes until the input is no longer
      * available.
@@ -285,6 +353,24 @@ public final class CssProductInputsServiceGrpc {
      *
      *
      * <pre>
+     * Updates the existing Css Product input in your CSS Center account.
+     * After inserting, updating, or deleting a CSS Product input, it may take
+     * several minutes before the processed Css Product can be retrieved.
+     * </pre>
+     */
+    public void updateCssProductInput(
+        com.google.shopping.css.v1.UpdateCssProductInputRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.css.v1.CssProductInput> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCssProductInputMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a CSS Product input from your CSS Center account.
      * After a delete it may take several minutes until the input is no longer
      * available.
@@ -336,6 +422,21 @@ public final class CssProductInputsServiceGrpc {
         com.google.shopping.css.v1.InsertCssProductInputRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInsertCssProductInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the existing Css Product input in your CSS Center account.
+     * After inserting, updating, or deleting a CSS Product input, it may take
+     * several minutes before the processed Css Product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.css.v1.CssProductInput updateCssProductInput(
+        com.google.shopping.css.v1.UpdateCssProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCssProductInputMethod(), getCallOptions(), request);
     }
 
     /**
@@ -398,6 +499,22 @@ public final class CssProductInputsServiceGrpc {
      *
      *
      * <pre>
+     * Updates the existing Css Product input in your CSS Center account.
+     * After inserting, updating, or deleting a CSS Product input, it may take
+     * several minutes before the processed Css Product can be retrieved.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.css.v1.CssProductInput>
+        updateCssProductInput(com.google.shopping.css.v1.UpdateCssProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCssProductInputMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a CSS Product input from your CSS Center account.
      * After a delete it may take several minutes until the input is no longer
      * available.
@@ -411,7 +528,8 @@ public final class CssProductInputsServiceGrpc {
   }
 
   private static final int METHODID_INSERT_CSS_PRODUCT_INPUT = 0;
-  private static final int METHODID_DELETE_CSS_PRODUCT_INPUT = 1;
+  private static final int METHODID_UPDATE_CSS_PRODUCT_INPUT = 1;
+  private static final int METHODID_DELETE_CSS_PRODUCT_INPUT = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -433,6 +551,12 @@ public final class CssProductInputsServiceGrpc {
         case METHODID_INSERT_CSS_PRODUCT_INPUT:
           serviceImpl.insertCssProductInput(
               (com.google.shopping.css.v1.InsertCssProductInputRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.shopping.css.v1.CssProductInput>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CSS_PRODUCT_INPUT:
+          serviceImpl.updateCssProductInput(
+              (com.google.shopping.css.v1.UpdateCssProductInputRequest) request,
               (io.grpc.stub.StreamObserver<com.google.shopping.css.v1.CssProductInput>)
                   responseObserver);
           break;
@@ -466,6 +590,13 @@ public final class CssProductInputsServiceGrpc {
                     com.google.shopping.css.v1.InsertCssProductInputRequest,
                     com.google.shopping.css.v1.CssProductInput>(
                     service, METHODID_INSERT_CSS_PRODUCT_INPUT)))
+        .addMethod(
+            getUpdateCssProductInputMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.css.v1.UpdateCssProductInputRequest,
+                    com.google.shopping.css.v1.CssProductInput>(
+                    service, METHODID_UPDATE_CSS_PRODUCT_INPUT)))
         .addMethod(
             getDeleteCssProductInputMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -524,6 +655,7 @@ public final class CssProductInputsServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CssProductInputsServiceFileDescriptorSupplier())
                       .addMethod(getInsertCssProductInputMethod())
+                      .addMethod(getUpdateCssProductInputMethod())
                       .addMethod(getDeleteCssProductInputMethod())
                       .build();
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,10 @@ public class ContactCenterInsightsClientTest {
   public void createConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -163,7 +166,10 @@ public class ContactCenterInsightsClientTest {
   public void createConversationTest2() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -224,7 +230,10 @@ public class ContactCenterInsightsClientTest {
   public void uploadConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -305,7 +314,10 @@ public class ContactCenterInsightsClientTest {
   public void updateConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -363,7 +375,10 @@ public class ContactCenterInsightsClientTest {
   public void getConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -384,7 +399,9 @@ public class ContactCenterInsightsClientTest {
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
-    ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName name =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     Conversation actualResponse = client.getConversation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -406,7 +423,9 @@ public class ContactCenterInsightsClientTest {
     mockContactCenterInsights.addException(exception);
 
     try {
-      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName name =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.getConversation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -418,7 +437,10 @@ public class ContactCenterInsightsClientTest {
   public void getConversationTest2() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -562,7 +584,9 @@ public class ContactCenterInsightsClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
-    ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName name =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     client.deleteConversation(name);
 
@@ -583,7 +607,9 @@ public class ContactCenterInsightsClientTest {
     mockContactCenterInsights.addException(exception);
 
     try {
-      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName name =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.deleteConversation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -630,7 +656,8 @@ public class ContactCenterInsightsClientTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -645,7 +672,9 @@ public class ContactCenterInsightsClientTest {
             .build();
     mockContactCenterInsights.addResponse(resultOperation);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
     Analysis analysis = Analysis.newBuilder().build();
 
     Analysis actualResponse = client.createAnalysisAsync(parent, analysis).get();
@@ -669,7 +698,9 @@ public class ContactCenterInsightsClientTest {
     mockContactCenterInsights.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       Analysis analysis = Analysis.newBuilder().build();
       client.createAnalysisAsync(parent, analysis).get();
       Assert.fail("No exception raised");
@@ -685,7 +716,8 @@ public class ContactCenterInsightsClientTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -740,7 +772,8 @@ public class ContactCenterInsightsClientTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -749,7 +782,9 @@ public class ContactCenterInsightsClientTest {
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
-    AnalysisName name = AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+    AnalysisName name =
+        AnalysisName.ofProjectLocationConversationAnalysisName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
 
     Analysis actualResponse = client.getAnalysis(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -772,7 +807,8 @@ public class ContactCenterInsightsClientTest {
 
     try {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       client.getAnalysis(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -785,7 +821,8 @@ public class ContactCenterInsightsClientTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -834,7 +871,9 @@ public class ContactCenterInsightsClientTest {
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     ListAnalysesPagedResponse pagedListResponse = client.listAnalyses(parent);
 
@@ -860,7 +899,9 @@ public class ContactCenterInsightsClientTest {
     mockContactCenterInsights.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.listAnalyses(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -917,7 +958,9 @@ public class ContactCenterInsightsClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
-    AnalysisName name = AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+    AnalysisName name =
+        AnalysisName.ofProjectLocationConversationAnalysisName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
 
     client.deleteAnalysis(name);
 
@@ -939,7 +982,8 @@ public class ContactCenterInsightsClientTest {
 
     try {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       client.deleteAnalysis(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -5445,7 +5489,7 @@ public class ContactCenterInsightsClientTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -5454,7 +5498,9 @@ public class ContactCenterInsightsClientTest {
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
     FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
     String feedbackLabelId = "feedbackLabelId-1251198998";
 
@@ -5481,7 +5527,9 @@ public class ContactCenterInsightsClientTest {
     mockContactCenterInsights.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
       String feedbackLabelId = "feedbackLabelId-1251198998";
       client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
@@ -5496,7 +5544,7 @@ public class ContactCenterInsightsClientTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -5552,7 +5600,9 @@ public class ContactCenterInsightsClientTest {
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     ListFeedbackLabelsPagedResponse pagedListResponse = client.listFeedbackLabels(parent);
 
@@ -5578,7 +5628,9 @@ public class ContactCenterInsightsClientTest {
     mockContactCenterInsights.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.listFeedbackLabels(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -5635,7 +5687,7 @@ public class ContactCenterInsightsClientTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -5645,7 +5697,8 @@ public class ContactCenterInsightsClientTest {
     mockContactCenterInsights.addResponse(expectedResponse);
 
     FeedbackLabelName name =
-        FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+        FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
 
     FeedbackLabel actualResponse = client.getFeedbackLabel(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -5668,7 +5721,8 @@ public class ContactCenterInsightsClientTest {
 
     try {
       FeedbackLabelName name =
-          FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+          FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
       client.getFeedbackLabel(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -5681,7 +5735,7 @@ public class ContactCenterInsightsClientTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -5725,7 +5779,7 @@ public class ContactCenterInsightsClientTest {
     FeedbackLabel expectedResponse =
         FeedbackLabel.newBuilder()
             .setName(
-                FeedbackLabelName.of(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
                         "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
                     .toString())
             .setLabeledResource("labeledResource-527465535")
@@ -5773,7 +5827,8 @@ public class ContactCenterInsightsClientTest {
     mockContactCenterInsights.addResponse(expectedResponse);
 
     FeedbackLabelName name =
-        FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+        FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
 
     client.deleteFeedbackLabel(name);
 
@@ -5795,7 +5850,8 @@ public class ContactCenterInsightsClientTest {
 
     try {
       FeedbackLabelName name =
-          FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+          FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
       client.deleteFeedbackLabel(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

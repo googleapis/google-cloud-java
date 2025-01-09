@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,13 +62,13 @@ public final class Usage {
           + "Signal.UsageWithinTimeRangeEntry\032i\n\031Usag"
           + "eWithinTimeRangeEntry\022\013\n\003key\030\001 \001(\t\022;\n\005va"
           + "lue\030\002 \001(\0132,.google.cloud.datacatalog.v1b"
-          + "eta1.UsageStats:\0028\001B\337\001\n$com.google.cloud"
+          + "eta1.UsageStats:\0028\001B\334\001\n$com.google.cloud"
           + ".datacatalog.v1beta1P\001ZFcloud.google.com"
           + "/go/datacatalog/apiv1beta1/datacatalogpb"
-          + ";datacatalogpb\370\001\001\252\002 Google.Cloud.DataCat"
-          + "alog.V1Beta1\312\002 Google\\Cloud\\DataCatalog\\"
-          + "V1beta1\352\002#Google::Cloud::DataCatalog::V1"
-          + "beta1b\006proto3"
+          + ";datacatalogpb\252\002 Google.Cloud.DataCatalo"
+          + "g.V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1b"
+          + "eta1\352\002#Google::Cloud::DataCatalog::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

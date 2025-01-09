@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public interface GitHubEventsConfigOrBuilder
    * <code>int64 installation_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.GitHubEventsConfig.installation_id is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1880
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1941
    * @return The installationId.
    */
   @java.lang.Deprecated

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,4 +64,45 @@ public interface StreamingSynthesizeConfigOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingAudioConfig field is set.
+   */
+  boolean hasStreamingAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingAudioConfig.
+   */
+  com.google.cloud.texttospeech.v1.StreamingAudioConfig getStreamingAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.StreamingAudioConfig streaming_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder getStreamingAudioConfigOrBuilder();
 }

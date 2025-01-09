@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,4 +173,79 @@ public interface ConfigSyncVersionOrBuilder
    * @return The bytes for rootReconciler.
    */
   com.google.protobuf.ByteString getRootReconcilerBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed admission-webhook pod
+   * </pre>
+   *
+   * <code>string admission_webhook = 7;</code>
+   *
+   * @return The admissionWebhook.
+   */
+  java.lang.String getAdmissionWebhook();
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed admission-webhook pod
+   * </pre>
+   *
+   * <code>string admission_webhook = 7;</code>
+   *
+   * @return The bytes for admissionWebhook.
+   */
+  com.google.protobuf.ByteString getAdmissionWebhookBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed resource-group-controller-manager pod
+   * </pre>
+   *
+   * <code>string resource_group_controller_manager = 8;</code>
+   *
+   * @return The resourceGroupControllerManager.
+   */
+  java.lang.String getResourceGroupControllerManager();
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed resource-group-controller-manager pod
+   * </pre>
+   *
+   * <code>string resource_group_controller_manager = 8;</code>
+   *
+   * @return The bytes for resourceGroupControllerManager.
+   */
+  com.google.protobuf.ByteString getResourceGroupControllerManagerBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed otel-collector pod
+   * </pre>
+   *
+   * <code>string otel_collector = 9;</code>
+   *
+   * @return The otelCollector.
+   */
+  java.lang.String getOtelCollector();
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed otel-collector pod
+   * </pre>
+   *
+   * <code>string otel_collector = 9;</code>
+   *
+   * @return The bytes for otelCollector.
+   */
+  com.google.protobuf.ByteString getOtelCollectorBytes();
 }

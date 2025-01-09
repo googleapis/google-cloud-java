@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.servicehealth.v1;
  *
  *
  * <pre>
- * Message for response to listing events.
+ * Response to request for listing events.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicehealth.v1.ListEventsResponse}
@@ -459,7 +459,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Message for response to listing events.
+   * Response to request for listing events.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicehealth.v1.ListEventsResponse}

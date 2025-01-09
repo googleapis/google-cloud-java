@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,6 +69,16 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ERROR = 3;</code>
    */
   ERROR(3),
+  /**
+   *
+   *
+   * <pre>
+   * Deployment is installing or terminating
+   * </pre>
+   *
+   * <code>PENDING = 4;</code>
+   */
+  PENDING(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -112,6 +122,16 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ERROR = 3;</code>
    */
   public static final int ERROR_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Deployment is installing or terminating
+   * </pre>
+   *
+   * <code>PENDING = 4;</code>
+   */
+  public static final int PENDING_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -145,6 +165,8 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
         return INSTALLED;
       case 3:
         return ERROR;
+      case 4:
+        return PENDING;
       default:
         return null;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -257,6 +257,132 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     return logDeniesEnabled_;
   }
 
+  public static final int MUTATION_ENABLED_FIELD_NUMBER = 7;
+  private boolean mutationEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable mutation in policy controller.
+   * If true, mutation CRDs, webhook and controller deployment
+   * will be deployed to the cluster.
+   * </pre>
+   *
+   * <code>bool mutation_enabled = 7;</code>
+   *
+   * @return The mutationEnabled.
+   */
+  @java.lang.Override
+  public boolean getMutationEnabled() {
+    return mutationEnabled_;
+  }
+
+  public static final int MONITORING_FIELD_NUMBER = 8;
+  private com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring_;
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring specifies the configuration of monitoring.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+   * </code>
+   *
+   * @return Whether the monitoring field is set.
+   */
+  @java.lang.Override
+  public boolean hasMonitoring() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring specifies the configuration of monitoring.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+   * </code>
+   *
+   * @return The monitoring.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
+      getMonitoring() {
+    return monitoring_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
+            .getDefaultInstance()
+        : monitoring_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring specifies the configuration of monitoring.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoringOrBuilder
+      getMonitoringOrBuilder() {
+    return monitoring_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
+            .getDefaultInstance()
+        : monitoring_;
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last time this membership spec was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last time this membership spec was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last time this membership spec was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -290,6 +416,15 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     if (logDeniesEnabled_ != false) {
       output.writeBool(6, logDeniesEnabled_);
     }
+    if (mutationEnabled_ != false) {
+      output.writeBool(7, mutationEnabled_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(8, getMonitoring());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(9, getUpdateTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -322,6 +457,15 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     if (logDeniesEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, logDeniesEnabled_);
     }
+    if (mutationEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, mutationEnabled_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMonitoring());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUpdateTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -350,6 +494,15 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     if (!getExemptableNamespacesList().equals(other.getExemptableNamespacesList())) return false;
     if (getReferentialRulesEnabled() != other.getReferentialRulesEnabled()) return false;
     if (getLogDeniesEnabled() != other.getLogDeniesEnabled()) return false;
+    if (getMutationEnabled() != other.getMutationEnabled()) return false;
+    if (hasMonitoring() != other.hasMonitoring()) return false;
+    if (hasMonitoring()) {
+      if (!getMonitoring().equals(other.getMonitoring())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -379,6 +532,16 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReferentialRulesEnabled());
     hash = (37 * hash) + LOG_DENIES_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLogDeniesEnabled());
+    hash = (37 * hash) + MUTATION_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMutationEnabled());
+    if (hasMonitoring()) {
+      hash = (37 * hash) + MONITORING_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitoring().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -509,10 +672,20 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.gkehub.configmanagement.v1beta.PolicyController.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getMonitoringFieldBuilder();
+        getUpdateTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -525,6 +698,17 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       referentialRulesEnabled_ = false;
       logDeniesEnabled_ = false;
+      mutationEnabled_ = false;
+      monitoring_ = null;
+      if (monitoringBuilder_ != null) {
+        monitoringBuilder_.dispose();
+        monitoringBuilder_ = null;
+      }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -584,6 +768,17 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.logDeniesEnabled_ = logDeniesEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.mutationEnabled_ = mutationEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.monitoring_ = monitoringBuilder_ == null ? monitoring_ : monitoringBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -661,6 +856,15 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       if (other.getLogDeniesEnabled() != false) {
         setLogDeniesEnabled(other.getLogDeniesEnabled());
       }
+      if (other.getMutationEnabled() != false) {
+        setMutationEnabled(other.getMutationEnabled());
+      }
+      if (other.hasMonitoring()) {
+        mergeMonitoring(other.getMonitoring());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -724,6 +928,24 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 56:
+              {
+                mutationEnabled_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 66:
+              {
+                input.readMessage(getMonitoringFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1232,6 +1454,474 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       logDeniesEnabled_ = false;
       onChanged();
       return this;
+    }
+
+    private boolean mutationEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable mutation in policy controller.
+     * If true, mutation CRDs, webhook and controller deployment
+     * will be deployed to the cluster.
+     * </pre>
+     *
+     * <code>bool mutation_enabled = 7;</code>
+     *
+     * @return The mutationEnabled.
+     */
+    @java.lang.Override
+    public boolean getMutationEnabled() {
+      return mutationEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable mutation in policy controller.
+     * If true, mutation CRDs, webhook and controller deployment
+     * will be deployed to the cluster.
+     * </pre>
+     *
+     * <code>bool mutation_enabled = 7;</code>
+     *
+     * @param value The mutationEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMutationEnabled(boolean value) {
+
+      mutationEnabled_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable mutation in policy controller.
+     * If true, mutation CRDs, webhook and controller deployment
+     * will be deployed to the cluster.
+     * </pre>
+     *
+     * <code>bool mutation_enabled = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMutationEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      mutationEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring,
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring.Builder,
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoringOrBuilder>
+        monitoringBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     *
+     * @return Whether the monitoring field is set.
+     */
+    public boolean hasMonitoring() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     *
+     * @return The monitoring.
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
+        getMonitoring() {
+      if (monitoringBuilder_ == null) {
+        return monitoring_ == null
+            ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
+                .getDefaultInstance()
+            : monitoring_;
+      } else {
+        return monitoringBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     */
+    public Builder setMonitoring(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring value) {
+      if (monitoringBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        monitoring_ = value;
+      } else {
+        monitoringBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     */
+    public Builder setMonitoring(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring.Builder
+            builderForValue) {
+      if (monitoringBuilder_ == null) {
+        monitoring_ = builderForValue.build();
+      } else {
+        monitoringBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     */
+    public Builder mergeMonitoring(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring value) {
+      if (monitoringBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && monitoring_ != null
+            && monitoring_
+                != com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
+                    .getDefaultInstance()) {
+          getMonitoringBuilder().mergeFrom(value);
+        } else {
+          monitoring_ = value;
+        }
+      } else {
+        monitoringBuilder_.mergeFrom(value);
+      }
+      if (monitoring_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     */
+    public Builder clearMonitoring() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      monitoring_ = null;
+      if (monitoringBuilder_ != null) {
+        monitoringBuilder_.dispose();
+        monitoringBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring.Builder
+        getMonitoringBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getMonitoringFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoringOrBuilder
+        getMonitoringOrBuilder() {
+      if (monitoringBuilder_ != null) {
+        return monitoringBuilder_.getMessageOrBuilder();
+      } else {
+        return monitoring_ == null
+            ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
+                .getDefaultInstance()
+            : monitoring_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring specifies the configuration of monitoring.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring,
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring.Builder,
+            com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoringOrBuilder>
+        getMonitoringFieldBuilder() {
+      if (monitoringBuilder_ == null) {
+        monitoringBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring,
+                com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring.Builder,
+                com.google.cloud.gkehub.configmanagement.v1beta
+                    .PolicyControllerMonitoringOrBuilder>(
+                getMonitoring(), getParentForChildren(), isClean());
+        monitoring_ = null;
+      }
+      return monitoringBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last time this membership spec was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     @java.lang.Override

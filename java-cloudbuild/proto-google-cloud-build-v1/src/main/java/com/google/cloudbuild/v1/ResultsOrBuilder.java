@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -362,6 +362,73 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
    */
   com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder getMavenArtifactsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloudbuild.v1.UploadedGoModule> getGoModulesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.UploadedGoModule getGoModules(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getGoModulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.UploadedGoModuleOrBuilder>
+      getGoModulesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
+   * the build.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.UploadedGoModule go_modules = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.UploadedGoModuleOrBuilder getGoModulesOrBuilder(int index);
 
   /**
    *

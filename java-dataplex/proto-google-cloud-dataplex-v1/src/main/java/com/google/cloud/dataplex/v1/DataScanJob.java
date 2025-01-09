@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -425,13 +425,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The relative resource name of the DataScanJob, of the form:
+   * Output only. Identifier. The relative resource name of the DataScanJob, of
+   * the form:
    * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -451,13 +454,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The relative resource name of the DataScanJob, of the form:
+   * Output only. Identifier. The relative resource name of the DataScanJob, of
+   * the form:
    * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -485,7 +491,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    * Output only. System generated globally unique ID for the DataScanJob.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -508,7 +516,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    * Output only. System generated globally unique ID for the DataScanJob.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -1956,13 +1966,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -1981,13 +1994,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -2006,13 +2022,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2030,13 +2049,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2050,13 +2072,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2080,7 +2105,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The uid.
      */
@@ -2102,7 +2129,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for uid.
      */
@@ -2124,7 +2153,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The uid to set.
      * @return This builder for chaining.
@@ -2145,7 +2176,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2162,7 +2195,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.

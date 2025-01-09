@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,16 +100,21 @@ public interface InsertCssProductInputRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The primary or supplemental feed id. If CSS Product already
-   * exists and feed id provided is different, then the CSS Product will be
-   * moved to a new feed. Note: For now, CSSs do not need to provide feed ids as
-   * we create feeds on the fly. We do not have supplemental feed support for
-   * CSS Products yet.
+   * Optional. DEPRECATED. Feed id is not required for CSS Products.
+   * The primary or supplemental feed id. If CSS Product already exists and
+   * feed id provided is different, then the CSS Product will be moved to a
+   * new feed.
+   * Note: For now, CSSs do not need to provide feed ids as we create
+   * feeds on the fly.
+   * We do not have supplemental feed support for CSS Products yet.
    * </pre>
    *
-   * <code>int64 feed_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int64 feed_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.shopping.css.v1.InsertCssProductInputRequest.feed_id is deprecated. See
+   *     google/shopping/css/v1/css_product_inputs.proto;l=175
    * @return The feedId.
    */
+  @java.lang.Deprecated
   long getFeedId();
 }

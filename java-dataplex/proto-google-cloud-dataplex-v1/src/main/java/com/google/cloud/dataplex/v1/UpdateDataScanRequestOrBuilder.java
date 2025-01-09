@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,10 +75,10 @@ public interface UpdateDataScanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update.
+   * Optional. Mask of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -88,10 +88,10 @@ public interface UpdateDataScanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update.
+   * Optional. Mask of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -101,10 +101,10 @@ public interface UpdateDataScanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update.
+   * Optional. Mask of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();

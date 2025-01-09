@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,4 +101,43 @@ public interface PolicyControllerStateOrBuilder
    */
   com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentStateOrBuilder
       getDeploymentStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   *
+   * @return Whether the migration field is set.
+   */
+  boolean hasMigration();
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   *
+   * @return The migration.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration getMigration();
+  /**
+   *
+   *
+   * <pre>
+   * Record state of ACM -&gt; PoCo Hub migration for this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration = 4;
+   * </code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigrationOrBuilder
+      getMigrationOrBuilder();
 }

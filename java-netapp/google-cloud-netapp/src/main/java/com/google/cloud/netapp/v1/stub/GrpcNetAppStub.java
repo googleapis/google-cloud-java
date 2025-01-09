@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,6 +110,7 @@ import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
 import com.google.cloud.netapp.v1.UpdateVolumeRequest;
+import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
@@ -178,6 +179,16 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteStoragePool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteStoragePoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceMethodDescriptor =
+          MethodDescriptor.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ValidateDirectoryService")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ValidateDirectoryServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -697,6 +708,10 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable;
   private final OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable;
+  private final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable;
+  private final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable;
   private final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
       switchActiveReplicaZoneCallable;
   private final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
@@ -934,6 +949,17 @@ public class GrpcNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceTransportSettings =
+            GrpcCallSettings.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+                .setMethodDescriptor(validateDirectoryServiceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<SwitchActiveReplicaZoneRequest, Operation>
         switchActiveReplicaZoneTransportSettings =
             GrpcCallSettings.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
@@ -1505,6 +1531,17 @@ public class GrpcNetAppStub extends NetAppStub {
             settings.deleteStoragePoolOperationSettings(),
             clientContext,
             operationsStub);
+    this.validateDirectoryServiceCallable =
+        callableFactory.createUnaryCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceSettings(),
+            clientContext);
+    this.validateDirectoryServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.switchActiveReplicaZoneCallable =
         callableFactory.createUnaryCallable(
             switchActiveReplicaZoneTransportSettings,
@@ -1974,6 +2011,18 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable() {
     return deleteStoragePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return validateDirectoryServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return validateDirectoryServiceOperationCallable;
   }
 
   @Override

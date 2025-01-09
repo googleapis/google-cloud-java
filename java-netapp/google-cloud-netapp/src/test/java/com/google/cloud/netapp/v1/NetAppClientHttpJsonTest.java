@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -667,6 +667,59 @@ public class NetAppClientHttpJsonTest {
     try {
       String name = "projects/project-1868/locations/location-1868/storagePools/storagePool-1868";
       client.deleteStoragePoolAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void validateDirectoryServiceTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("validateDirectoryServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ValidateDirectoryServiceRequest request =
+        ValidateDirectoryServiceRequest.newBuilder()
+            .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+            .build();
+
+    client.validateDirectoryServiceAsync(request).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void validateDirectoryServiceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ValidateDirectoryServiceRequest request =
+          ValidateDirectoryServiceRequest.newBuilder()
+              .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+              .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+              .build();
+      client.validateDirectoryServiceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

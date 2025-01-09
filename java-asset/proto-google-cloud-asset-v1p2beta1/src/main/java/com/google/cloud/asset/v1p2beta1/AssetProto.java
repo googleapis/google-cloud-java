@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,11 +87,11 @@ public final class AssetProto {
           + "scovery_document_uri\030\002 \001(\t\022\026\n\016discovery_"
           + "name\030\003 \001(\t\022\024\n\014resource_url\030\004 \001(\t\022\016\n\006pare"
           + "nt\030\005 \001(\t\022%\n\004data\030\006 \001(\0132\027.google.protobuf"
-          + ".StructB\251\001\n com.google.cloud.asset.v1p2b"
+          + ".StructB\246\001\n com.google.cloud.asset.v1p2b"
           + "eta1B\nAssetProtoP\001Z6cloud.google.com/go/"
-          + "asset/apiv1p2beta1/assetpb;assetpb\370\001\001\252\002\034"
-          + "Google.Cloud.Asset.V1P2Beta1\312\002\034Google\\Cl"
-          + "oud\\Asset\\V1p2beta1b\006proto3"
+          + "asset/apiv1p2beta1/assetpb;assetpb\252\002\034Goo"
+          + "gle.Cloud.Asset.V1P2Beta1\312\002\034Google\\Cloud"
+          + "\\Asset\\V1p2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

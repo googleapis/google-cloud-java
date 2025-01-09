@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,14 @@ public final class DatasourcetypesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_datasources_v1beta_PromotionDataSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_datasources_v1beta_ProductReviewDataSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_datasources_v1beta_ProductReviewDataSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_datasources_v1beta_MerchantReviewDataSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_datasources_v1beta_MerchantReviewDataSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_datasources_v1beta_DataSourceReference_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_datasources_v1beta_DataSourceReference_fieldAccessorTable;
@@ -96,18 +104,20 @@ public final class DatasourcetypesProto {
           + "\004 \001(\tB\006\340A\002\340A\005\022 \n\020content_language\030\005 \001(\tB"
           + "\006\340A\002\340A\005\"W\n\023PromotionDataSource\022\036\n\016target"
           + "_country\030\001 \001(\tB\006\340A\002\340A\005\022 \n\020content_langua"
-          + "ge\030\002 \001(\tB\006\340A\002\340A\005\"\216\001\n\023DataSourceReference"
-          + "\022\016\n\004self\030\001 \001(\010H\000\022\'\n\030primary_data_source_"
-          + "name\030\003 \001(\tB\003\340A\001H\000\022,\n\035supplemental_data_s"
-          + "ource_name\030\002 \001(\tB\003\340A\001H\000B\020\n\016data_source_i"
-          + "dB\260\002\n/com.google.shopping.merchant.datas"
-          + "ources.v1betaB\024DatasourcetypesProtoP\001ZWc"
-          + "loud.google.com/go/shopping/merchant/dat"
-          + "asources/apiv1beta/datasourcespb;datasou"
-          + "rcespb\252\002+Google.Shopping.Merchant.DataSo"
-          + "urces.V1Beta\312\002+Google\\Shopping\\Merchant\\"
-          + "DataSources\\V1beta\352\002/Google::Shopping::M"
-          + "erchant::DataSources::V1betab\006proto3"
+          + "ge\030\002 \001(\tB\006\340A\002\340A\005\"\031\n\027ProductReviewDataSou"
+          + "rce\"\032\n\030MerchantReviewDataSource\"\216\001\n\023Data"
+          + "SourceReference\022\016\n\004self\030\001 \001(\010H\000\022\'\n\030prima"
+          + "ry_data_source_name\030\003 \001(\tB\003\340A\001H\000\022,\n\035supp"
+          + "lemental_data_source_name\030\002 \001(\tB\003\340A\001H\000B\020"
+          + "\n\016data_source_idB\260\002\n/com.google.shopping"
+          + ".merchant.datasources.v1betaB\024Datasource"
+          + "typesProtoP\001ZWcloud.google.com/go/shoppi"
+          + "ng/merchant/datasources/apiv1beta/dataso"
+          + "urcespb;datasourcespb\252\002+Google.Shopping."
+          + "Merchant.DataSources.V1Beta\312\002+Google\\Sho"
+          + "pping\\Merchant\\DataSources\\V1beta\352\002/Goog"
+          + "le::Shopping::Merchant::DataSources::V1b"
+          + "etab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -165,8 +175,20 @@ public final class DatasourcetypesProto {
             new java.lang.String[] {
               "TargetCountry", "ContentLanguage",
             });
-    internal_static_google_shopping_merchant_datasources_v1beta_DataSourceReference_descriptor =
+    internal_static_google_shopping_merchant_datasources_v1beta_ProductReviewDataSource_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_shopping_merchant_datasources_v1beta_ProductReviewDataSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_datasources_v1beta_ProductReviewDataSource_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_merchant_datasources_v1beta_MerchantReviewDataSource_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_shopping_merchant_datasources_v1beta_MerchantReviewDataSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_datasources_v1beta_MerchantReviewDataSource_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_merchant_datasources_v1beta_DataSourceReference_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_shopping_merchant_datasources_v1beta_DataSourceReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_datasources_v1beta_DataSourceReference_descriptor,

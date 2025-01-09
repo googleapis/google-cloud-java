@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.contactcenterinsights.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,11 +33,19 @@ public class AnalysisName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CONVERSATION_ANALYSIS =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/conversations/{conversation}/analyses/{analysis}");
+  private static final PathTemplate
+      PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_ANALYSIS =
+          PathTemplate.createWithoutUrlEncoding(
+              "projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}/authorizedViews/{authorized_view}/conversations/{conversation}/analyses/{analysis}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String conversation;
   private final String analysis;
+  private final String authorizedViewSet;
+  private final String authorizedView;
 
   @Deprecated
   protected AnalysisName() {
@@ -44,6 +53,8 @@ public class AnalysisName implements ResourceName {
     location = null;
     conversation = null;
     analysis = null;
+    authorizedViewSet = null;
+    authorizedView = null;
   }
 
   private AnalysisName(Builder builder) {
@@ -51,6 +62,20 @@ public class AnalysisName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     conversation = Preconditions.checkNotNull(builder.getConversation());
     analysis = Preconditions.checkNotNull(builder.getAnalysis());
+    authorizedViewSet = null;
+    authorizedView = null;
+    pathTemplate = PROJECT_LOCATION_CONVERSATION_ANALYSIS;
+  }
+
+  private AnalysisName(
+      ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    authorizedViewSet = Preconditions.checkNotNull(builder.getAuthorizedViewSet());
+    authorizedView = Preconditions.checkNotNull(builder.getAuthorizedView());
+    conversation = Preconditions.checkNotNull(builder.getConversation());
+    analysis = Preconditions.checkNotNull(builder.getAnalysis());
+    pathTemplate = PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_ANALYSIS;
   }
 
   public String getProject() {
@@ -69,8 +94,25 @@ public class AnalysisName implements ResourceName {
     return analysis;
   }
 
+  public String getAuthorizedViewSet() {
+    return authorizedViewSet;
+  }
+
+  public String getAuthorizedView() {
+    return authorizedView;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationConversationAnalysisBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder
+      newProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder() {
+    return new ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder();
   }
 
   public Builder toBuilder() {
@@ -87,6 +129,34 @@ public class AnalysisName implements ResourceName {
         .build();
   }
 
+  public static AnalysisName ofProjectLocationConversationAnalysisName(
+      String project, String location, String conversation, String analysis) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConversation(conversation)
+        .setAnalysis(analysis)
+        .build();
+  }
+
+  public static AnalysisName
+      ofProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisName(
+          String project,
+          String location,
+          String authorizedViewSet,
+          String authorizedView,
+          String conversation,
+          String analysis) {
+    return newProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAuthorizedViewSet(authorizedViewSet)
+        .setAuthorizedView(authorizedView)
+        .setConversation(conversation)
+        .setAnalysis(analysis)
+        .build();
+  }
+
   public static String format(
       String project, String location, String conversation, String analysis) {
     return newBuilder()
@@ -98,18 +168,60 @@ public class AnalysisName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationConversationAnalysisName(
+      String project, String location, String conversation, String analysis) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConversation(conversation)
+        .setAnalysis(analysis)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisName(
+      String project,
+      String location,
+      String authorizedViewSet,
+      String authorizedView,
+      String conversation,
+      String analysis) {
+    return newProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAuthorizedViewSet(authorizedViewSet)
+        .setAuthorizedView(authorizedView)
+        .setConversation(conversation)
+        .setAnalysis(analysis)
+        .build()
+        .toString();
+  }
+
   public static AnalysisName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_CONVERSATION_ANALYSIS.validatedMatch(
-            formattedString, "AnalysisName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("conversation"),
-        matchMap.get("analysis"));
+    if (PROJECT_LOCATION_CONVERSATION_ANALYSIS.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_CONVERSATION_ANALYSIS.match(formattedString);
+      return ofProjectLocationConversationAnalysisName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("conversation"),
+          matchMap.get("analysis"));
+    } else if (PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_ANALYSIS.matches(
+        formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_ANALYSIS.match(
+              formattedString);
+      return ofProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("authorized_view_set"),
+          matchMap.get("authorized_view"),
+          matchMap.get("conversation"),
+          matchMap.get("analysis"));
+    }
+    throw new ValidationException("AnalysisName.parse: formattedString not in valid format");
   }
 
   public static List<AnalysisName> parseList(List<String> formattedStrings) {
@@ -133,7 +245,9 @@ public class AnalysisName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_CONVERSATION_ANALYSIS.matches(formattedString);
+    return PROJECT_LOCATION_CONVERSATION_ANALYSIS.matches(formattedString)
+        || PROJECT_LOCATION_AUTHORIZED_VIEW_SET_AUTHORIZED_VIEW_CONVERSATION_ANALYSIS.matches(
+            formattedString);
   }
 
   @Override
@@ -154,6 +268,12 @@ public class AnalysisName implements ResourceName {
           if (analysis != null) {
             fieldMapBuilder.put("analysis", analysis);
           }
+          if (authorizedViewSet != null) {
+            fieldMapBuilder.put("authorized_view_set", authorizedViewSet);
+          }
+          if (authorizedView != null) {
+            fieldMapBuilder.put("authorized_view", authorizedView);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -167,15 +287,7 @@ public class AnalysisName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_CONVERSATION_ANALYSIS.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "conversation",
-        conversation,
-        "analysis",
-        analysis);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -188,7 +300,9 @@ public class AnalysisName implements ResourceName {
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.conversation, that.conversation)
-          && Objects.equals(this.analysis, that.analysis);
+          && Objects.equals(this.analysis, that.analysis)
+          && Objects.equals(this.authorizedViewSet, that.authorizedViewSet)
+          && Objects.equals(this.authorizedView, that.authorizedView);
     }
     return false;
   }
@@ -197,6 +311,8 @@ public class AnalysisName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
@@ -204,6 +320,10 @@ public class AnalysisName implements ResourceName {
     h ^= Objects.hashCode(conversation);
     h *= 1000003;
     h ^= Objects.hashCode(analysis);
+    h *= 1000003;
+    h ^= Objects.hashCode(authorizedViewSet);
+    h *= 1000003;
+    h ^= Objects.hashCode(authorizedView);
     return h;
   }
 
@@ -256,10 +376,92 @@ public class AnalysisName implements ResourceName {
     }
 
     private Builder(AnalysisName analysisName) {
+      Preconditions.checkArgument(
+          Objects.equals(analysisName.pathTemplate, PROJECT_LOCATION_CONVERSATION_ANALYSIS),
+          "toBuilder is only supported when AnalysisName has the pattern of projects/{project}/locations/{location}/conversations/{conversation}/analyses/{analysis}");
       this.project = analysisName.project;
       this.location = analysisName.location;
       this.conversation = analysisName.conversation;
       this.analysis = analysisName.analysis;
+    }
+
+    public AnalysisName build() {
+      return new AnalysisName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}/authorizedViews/{authorized_view}/conversations/{conversation}/analyses/{analysis}.
+   */
+  public static class ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder {
+    private String project;
+    private String location;
+    private String authorizedViewSet;
+    private String authorizedView;
+    private String conversation;
+    private String analysis;
+
+    protected ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getAuthorizedViewSet() {
+      return authorizedViewSet;
+    }
+
+    public String getAuthorizedView() {
+      return authorizedView;
+    }
+
+    public String getConversation() {
+      return conversation;
+    }
+
+    public String getAnalysis() {
+      return analysis;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder setProject(
+        String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder setLocation(
+        String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder
+        setAuthorizedViewSet(String authorizedViewSet) {
+      this.authorizedViewSet = authorizedViewSet;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder
+        setAuthorizedView(String authorizedView) {
+      this.authorizedView = authorizedView;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder
+        setConversation(String conversation) {
+      this.conversation = conversation;
+      return this;
+    }
+
+    public ProjectLocationAuthorizedViewSetAuthorizedViewConversationAnalysisBuilder setAnalysis(
+        String analysis) {
+      this.analysis = analysis;
+      return this;
     }
 
     public AnalysisName build() {

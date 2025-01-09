@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -263,6 +263,83 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Artifacts.MavenArtifactOrBuilder getMavenArtifactsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloudbuild.v1.Artifacts.GoModule> getGoModulesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.Artifacts.GoModule getGoModules(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getGoModulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder>
+      getGoModulesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   *
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Artifacts.GoModule go_modules = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder getGoModulesOrBuilder(int index);
 
   /**
    *

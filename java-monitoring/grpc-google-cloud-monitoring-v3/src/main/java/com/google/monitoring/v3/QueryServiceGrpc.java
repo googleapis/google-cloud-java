@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,9 +139,13 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language.
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
      * </pre>
      */
+    @java.lang.Deprecated
     default void queryTimeSeries(
         com.google.monitoring.v3.QueryTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.QueryTimeSeriesResponse>
@@ -193,9 +197,13 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language.
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
      * </pre>
      */
+    @java.lang.Deprecated
     public void queryTimeSeries(
         com.google.monitoring.v3.QueryTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.QueryTimeSeriesResponse>
@@ -232,9 +240,13 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language.
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.QueryTimeSeriesResponse queryTimeSeries(
         com.google.monitoring.v3.QueryTimeSeriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -267,9 +279,13 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language.
+     * Queries time series by using Monitoring Query Language (MQL). We recommend
+     * using PromQL instead of MQL. For more information about the status of MQL,
+     * see the [MQL deprecation
+     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.monitoring.v3.QueryTimeSeriesResponse>
         queryTimeSeries(com.google.monitoring.v3.QueryTimeSeriesRequest request) {

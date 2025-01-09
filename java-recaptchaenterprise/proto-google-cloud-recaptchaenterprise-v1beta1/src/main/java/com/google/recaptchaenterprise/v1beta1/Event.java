@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,10 +75,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default, unspecified setting. If opted in for automatic detection,
-     * `fraud_prevention_assessment` is returned based on the request.
-     * Otherwise, `fraud_prevention_assessment` is returned if
-     * `transaction_data` is present in the `Event` and Fraud Prevention is
+     * Default, unspecified setting. `fraud_prevention_assessment` is returned
+     * if `transaction_data` is present in `Event` and Fraud Prevention is
      * enabled in the Google Cloud console.
      * </pre>
      *
@@ -100,8 +98,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disable Fraud Prevention for this assessment, regardless of opt-in
-     * status or the Google Cloud console settings.
+     * Disable Fraud Prevention for this assessment, regardless of Google Cloud
+     * console settings.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -114,10 +112,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default, unspecified setting. If opted in for automatic detection,
-     * `fraud_prevention_assessment` is returned based on the request.
-     * Otherwise, `fraud_prevention_assessment` is returned if
-     * `transaction_data` is present in the `Event` and Fraud Prevention is
+     * Default, unspecified setting. `fraud_prevention_assessment` is returned
+     * if `transaction_data` is present in `Event` and Fraud Prevention is
      * enabled in the Google Cloud console.
      * </pre>
      *
@@ -139,8 +135,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disable Fraud Prevention for this assessment, regardless of opt-in
-     * status or the Google Cloud console settings.
+     * Disable Fraud Prevention for this assessment, regardless of Google Cloud
+     * console settings.
      * </pre>
      *
      * <code>DISABLED = 2;</code>

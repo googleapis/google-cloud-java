@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,16 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Dirhash of a Go module's source code which is then hex-encoded.
+     * </pre>
+     *
+     * <code>GO_MODULE_H1 = 3;</code>
+     */
+    GO_MODULE_H1(3),
+    /**
+     *
+     *
+     * <pre>
      * Use a sha512 hash.
      * </pre>
      *
@@ -150,6 +160,16 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Dirhash of a Go module's source code which is then hex-encoded.
+     * </pre>
+     *
+     * <code>GO_MODULE_H1 = 3;</code>
+     */
+    public static final int GO_MODULE_H1_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
      * Use a sha512 hash.
      * </pre>
      *
@@ -187,6 +207,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
           return SHA256;
         case 2:
           return MD5;
+        case 3:
+          return GO_MODULE_H1;
         case 4:
           return SHA512;
         default:
