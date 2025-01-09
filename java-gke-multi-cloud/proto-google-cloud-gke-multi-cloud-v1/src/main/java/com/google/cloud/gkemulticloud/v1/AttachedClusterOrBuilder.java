@@ -930,7 +930,8 @@ public interface AttachedClusterOrBuilder
    * encoded Unicode characters except single quotes ('), double quotes ("),
    * backslashes (&#92;), and forward slashes (/).
    *
-   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * See
+   * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
    * for more details on Google Cloud Platform tags.
    * </pre>
    *
@@ -953,7 +954,8 @@ public interface AttachedClusterOrBuilder
    * encoded Unicode characters except single quotes ('), double quotes ("),
    * backslashes (&#92;), and forward slashes (/).
    *
-   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * See
+   * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
    * for more details on Google Cloud Platform tags.
    * </pre>
    *
@@ -979,7 +981,8 @@ public interface AttachedClusterOrBuilder
    * encoded Unicode characters except single quotes ('), double quotes ("),
    * backslashes (&#92;), and forward slashes (/).
    *
-   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * See
+   * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
    * for more details on Google Cloud Platform tags.
    * </pre>
    *
@@ -1002,7 +1005,8 @@ public interface AttachedClusterOrBuilder
    * encoded Unicode characters except single quotes ('), double quotes ("),
    * backslashes (&#92;), and forward slashes (/).
    *
-   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * See
+   * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
    * for more details on Google Cloud Platform tags.
    * </pre>
    *
@@ -1029,7 +1033,8 @@ public interface AttachedClusterOrBuilder
    * encoded Unicode characters except single quotes ('), double quotes ("),
    * backslashes (&#92;), and forward slashes (/).
    *
-   * See [Tags](http://cloud/resource-manager/docs/tags/tags-overview)
+   * See
+   * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
    * for more details on Google Cloud Platform tags.
    * </pre>
    *
