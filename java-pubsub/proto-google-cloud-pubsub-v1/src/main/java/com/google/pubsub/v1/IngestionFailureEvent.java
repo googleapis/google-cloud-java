@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2754,6 +2754,4654 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public interface AwsMskFailureReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ARN of the cluster of the topic being ingested from.
+     * </pre>
+     *
+     * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clusterArn.
+     */
+    java.lang.String getClusterArn();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ARN of the cluster of the topic being ingested from.
+     * </pre>
+     *
+     * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clusterArn.
+     */
+    com.google.protobuf.ByteString getClusterArnBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Kafka topic being ingested from.
+     * </pre>
+     *
+     * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kafkaTopic.
+     */
+    java.lang.String getKafkaTopic();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Kafka topic being ingested from.
+     * </pre>
+     *
+     * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kafkaTopic.
+     */
+    com.google.protobuf.ByteString getKafkaTopicBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition ID of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The partitionId.
+     */
+    long getPartitionId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset within the partition of the message that failed to
+     * be ingested.
+     * </pre>
+     *
+     * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The offset.
+     */
+    long getOffset();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiViolationReason field is set.
+     */
+    boolean hasApiViolationReason();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+        getApiViolationReasonOrBuilder();
+
+    com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.ReasonCase getReasonCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Failure when ingesting from an Amazon MSK source.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason}
+   */
+  public static final class AwsMskFailureReason extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason)
+      AwsMskFailureReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AwsMskFailureReason.newBuilder() to construct.
+    private AwsMskFailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AwsMskFailureReason() {
+      clusterArn_ = "";
+      kafkaTopic_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AwsMskFailureReason();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsMskFailureReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsMskFailureReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.class,
+              com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.Builder.class);
+    }
+
+    private int reasonCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object reason_;
+
+    public enum ReasonCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      API_VIOLATION_REASON(5),
+      REASON_NOT_SET(0);
+      private final int value;
+
+      private ReasonCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ReasonCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ReasonCase forNumber(int value) {
+        switch (value) {
+          case 5:
+            return API_VIOLATION_REASON;
+          case 0:
+            return REASON_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ReasonCase getReasonCase() {
+      return ReasonCase.forNumber(reasonCase_);
+    }
+
+    public static final int CLUSTER_ARN_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterArn_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ARN of the cluster of the topic being ingested from.
+     * </pre>
+     *
+     * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clusterArn.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterArn() {
+      java.lang.Object ref = clusterArn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterArn_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ARN of the cluster of the topic being ingested from.
+     * </pre>
+     *
+     * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clusterArn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClusterArnBytes() {
+      java.lang.Object ref = clusterArn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterArn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KAFKA_TOPIC_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kafkaTopic_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Kafka topic being ingested from.
+     * </pre>
+     *
+     * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kafkaTopic.
+     */
+    @java.lang.Override
+    public java.lang.String getKafkaTopic() {
+      java.lang.Object ref = kafkaTopic_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kafkaTopic_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Kafka topic being ingested from.
+     * </pre>
+     *
+     * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kafkaTopic.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKafkaTopicBytes() {
+      java.lang.Object ref = kafkaTopic_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kafkaTopic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTITION_ID_FIELD_NUMBER = 3;
+    private long partitionId_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition ID of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The partitionId.
+     */
+    @java.lang.Override
+    public long getPartitionId() {
+      return partitionId_;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 4;
+    private long offset_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset within the partition of the message that failed to
+     * be ingested.
+     * </pre>
+     *
+     * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The offset.
+     */
+    @java.lang.Override
+    public long getOffset() {
+      return offset_;
+    }
+
+    public static final int API_VIOLATION_REASON_FIELD_NUMBER = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasApiViolationReason() {
+      return reasonCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason() {
+      if (reasonCase_ == 5) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+        getApiViolationReasonOrBuilder() {
+      if (reasonCase_ == 5) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterArn_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kafkaTopic_);
+      }
+      if (partitionId_ != 0L) {
+        output.writeInt64(3, partitionId_);
+      }
+      if (offset_ != 0L) {
+        output.writeInt64(4, offset_);
+      }
+      if (reasonCase_ == 5) {
+        output.writeMessage(
+            5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterArn_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clusterArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kafkaTopic_);
+      }
+      if (partitionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, partitionId_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, offset_);
+      }
+      if (reasonCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason other =
+          (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) obj;
+
+      if (!getClusterArn().equals(other.getClusterArn())) return false;
+      if (!getKafkaTopic().equals(other.getKafkaTopic())) return false;
+      if (getPartitionId() != other.getPartitionId()) return false;
+      if (getOffset() != other.getOffset()) return false;
+      if (!getReasonCase().equals(other.getReasonCase())) return false;
+      switch (reasonCase_) {
+        case 5:
+          if (!getApiViolationReason().equals(other.getApiViolationReason())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CLUSTER_ARN_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterArn().hashCode();
+      hash = (37 * hash) + KAFKA_TOPIC_FIELD_NUMBER;
+      hash = (53 * hash) + getKafkaTopic().hashCode();
+      hash = (37 * hash) + PARTITION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPartitionId());
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+      switch (reasonCase_) {
+        case 5:
+          hash = (37 * hash) + API_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getApiViolationReason().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Failure when ingesting from an Amazon MSK source.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason)
+        com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsMskFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsMskFailureReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.class,
+                com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.Builder.class);
+      }
+
+      // Construct using com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        clusterArn_ = "";
+        kafkaTopic_ = "";
+        partitionId_ = 0L;
+        offset_ = 0L;
+        if (apiViolationReasonBuilder_ != null) {
+          apiViolationReasonBuilder_.clear();
+        }
+        reasonCase_ = 0;
+        reason_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AwsMskFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason build() {
+        com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason buildPartial() {
+        com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason result =
+            new com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clusterArn_ = clusterArn_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.kafkaTopic_ = kafkaTopic_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.partitionId_ = partitionId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.offset_ = offset_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason result) {
+        result.reasonCase_ = reasonCase_;
+        result.reason_ = this.reason_;
+        if (reasonCase_ == 5 && apiViolationReasonBuilder_ != null) {
+          result.reason_ = apiViolationReasonBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) {
+          return mergeFrom((com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason other) {
+        if (other
+            == com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance())
+          return this;
+        if (!other.getClusterArn().isEmpty()) {
+          clusterArn_ = other.clusterArn_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getKafkaTopic().isEmpty()) {
+          kafkaTopic_ = other.kafkaTopic_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getPartitionId() != 0L) {
+          setPartitionId(other.getPartitionId());
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        switch (other.getReasonCase()) {
+          case API_VIOLATION_REASON:
+            {
+              mergeApiViolationReason(other.getApiViolationReason());
+              break;
+            }
+          case REASON_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  clusterArn_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  kafkaTopic_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  partitionId_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  offset_ = input.readInt64();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 42:
+                {
+                  input.readMessage(
+                      getApiViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 5;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int reasonCase_ = 0;
+      private java.lang.Object reason_;
+
+      public ReasonCase getReasonCase() {
+        return ReasonCase.forNumber(reasonCase_);
+      }
+
+      public Builder clearReason() {
+        reasonCase_ = 0;
+        reason_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object clusterArn_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ARN of the cluster of the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The clusterArn.
+       */
+      public java.lang.String getClusterArn() {
+        java.lang.Object ref = clusterArn_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterArn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ARN of the cluster of the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for clusterArn.
+       */
+      public com.google.protobuf.ByteString getClusterArnBytes() {
+        java.lang.Object ref = clusterArn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clusterArn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ARN of the cluster of the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The clusterArn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterArn(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterArn_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ARN of the cluster of the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterArn() {
+        clusterArn_ = getDefaultInstance().getClusterArn();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ARN of the cluster of the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_arn = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for clusterArn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterArnBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clusterArn_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object kafkaTopic_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The kafkaTopic.
+       */
+      public java.lang.String getKafkaTopic() {
+        java.lang.Object ref = kafkaTopic_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kafkaTopic_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for kafkaTopic.
+       */
+      public com.google.protobuf.ByteString getKafkaTopicBytes() {
+        java.lang.Object ref = kafkaTopic_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          kafkaTopic_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The kafkaTopic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafkaTopic(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kafkaTopic_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKafkaTopic() {
+        kafkaTopic_ = getDefaultInstance().getKafkaTopic();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for kafkaTopic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafkaTopicBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        kafkaTopic_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long partitionId_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The partitionId.
+       */
+      @java.lang.Override
+      public long getPartitionId() {
+        return partitionId_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The partitionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartitionId(long value) {
+
+        partitionId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPartitionId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        partitionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long offset_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The offset.
+       */
+      @java.lang.Override
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The offset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffset(long value) {
+
+        offset_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOffset() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
+          apiViolationReasonBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the apiViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasApiViolationReason() {
+        return reasonCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The apiViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        } else {
+          if (reasonCase_ == 5) {
+            return apiViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason value) {
+        if (apiViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          apiViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder builderForValue) {
+        if (apiViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          apiViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason value) {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 5) {
+            apiViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            apiViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearApiViolationReason() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 5) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          apiViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder
+          getApiViolationReasonBuilder() {
+        return getApiViolationReasonFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+          getApiViolationReasonOrBuilder() {
+        if ((reasonCase_ == 5) && (apiViolationReasonBuilder_ != null)) {
+          return apiViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 5) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
+          getApiViolationReasonFieldBuilder() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 5)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+          }
+          apiViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 5;
+        onChanged();
+        return apiViolationReasonBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason)
+    private static final com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason();
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AwsMskFailureReason> PARSER =
+        new com.google.protobuf.AbstractParser<AwsMskFailureReason>() {
+          @java.lang.Override
+          public AwsMskFailureReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AwsMskFailureReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AwsMskFailureReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AzureEventHubsFailureReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The namespace containing the event hub being ingested from.
+     * </pre>
+     *
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The namespace.
+     */
+    java.lang.String getNamespace();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The namespace containing the event hub being ingested from.
+     * </pre>
+     *
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for namespace.
+     */
+    com.google.protobuf.ByteString getNamespaceBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the event hub being ingested from.
+     * </pre>
+     *
+     * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The eventHub.
+     */
+    java.lang.String getEventHub();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the event hub being ingested from.
+     * </pre>
+     *
+     * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for eventHub.
+     */
+    com.google.protobuf.ByteString getEventHubBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition ID of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The partitionId.
+     */
+    long getPartitionId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset within the partition of the message that failed to
+     * be ingested.
+     * </pre>
+     *
+     * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The offset.
+     */
+    long getOffset();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiViolationReason field is set.
+     */
+    boolean hasApiViolationReason();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+        getApiViolationReasonOrBuilder();
+
+    com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.ReasonCase
+        getReasonCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Failure when ingesting from an Azure Event Hubs source.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason}
+   */
+  public static final class AzureEventHubsFailureReason
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason)
+      AzureEventHubsFailureReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AzureEventHubsFailureReason.newBuilder() to construct.
+    private AzureEventHubsFailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AzureEventHubsFailureReason() {
+      namespace_ = "";
+      eventHub_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AzureEventHubsFailureReason();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_AzureEventHubsFailureReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_AzureEventHubsFailureReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.class,
+              com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.Builder.class);
+    }
+
+    private int reasonCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object reason_;
+
+    public enum ReasonCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      API_VIOLATION_REASON(5),
+      REASON_NOT_SET(0);
+      private final int value;
+
+      private ReasonCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ReasonCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ReasonCase forNumber(int value) {
+        switch (value) {
+          case 5:
+            return API_VIOLATION_REASON;
+          case 0:
+            return REASON_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ReasonCase getReasonCase() {
+      return ReasonCase.forNumber(reasonCase_);
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object namespace_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The namespace containing the event hub being ingested from.
+     * </pre>
+     *
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The namespace.
+     */
+    @java.lang.Override
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The namespace containing the event hub being ingested from.
+     * </pre>
+     *
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for namespace.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EVENT_HUB_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object eventHub_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the event hub being ingested from.
+     * </pre>
+     *
+     * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The eventHub.
+     */
+    @java.lang.Override
+    public java.lang.String getEventHub() {
+      java.lang.Object ref = eventHub_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        eventHub_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the event hub being ingested from.
+     * </pre>
+     *
+     * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for eventHub.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEventHubBytes() {
+      java.lang.Object ref = eventHub_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        eventHub_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTITION_ID_FIELD_NUMBER = 3;
+    private long partitionId_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition ID of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The partitionId.
+     */
+    @java.lang.Override
+    public long getPartitionId() {
+      return partitionId_;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 4;
+    private long offset_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset within the partition of the message that failed to
+     * be ingested.
+     * </pre>
+     *
+     * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The offset.
+     */
+    @java.lang.Override
+    public long getOffset() {
+      return offset_;
+    }
+
+    public static final int API_VIOLATION_REASON_FIELD_NUMBER = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasApiViolationReason() {
+      return reasonCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason() {
+      if (reasonCase_ == 5) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+        getApiViolationReasonOrBuilder() {
+      if (reasonCase_ == 5) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventHub_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, eventHub_);
+      }
+      if (partitionId_ != 0L) {
+        output.writeInt64(3, partitionId_);
+      }
+      if (offset_ != 0L) {
+        output.writeInt64(4, offset_);
+      }
+      if (reasonCase_ == 5) {
+        output.writeMessage(
+            5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventHub_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, eventHub_);
+      }
+      if (partitionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, partitionId_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, offset_);
+      }
+      if (reasonCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason other =
+          (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) obj;
+
+      if (!getNamespace().equals(other.getNamespace())) return false;
+      if (!getEventHub().equals(other.getEventHub())) return false;
+      if (getPartitionId() != other.getPartitionId()) return false;
+      if (getOffset() != other.getOffset()) return false;
+      if (!getReasonCase().equals(other.getReasonCase())) return false;
+      switch (reasonCase_) {
+        case 5:
+          if (!getApiViolationReason().equals(other.getApiViolationReason())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (37 * hash) + EVENT_HUB_FIELD_NUMBER;
+      hash = (53 * hash) + getEventHub().hashCode();
+      hash = (37 * hash) + PARTITION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPartitionId());
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+      switch (reasonCase_) {
+        case 5:
+          hash = (37 * hash) + API_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getApiViolationReason().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Failure when ingesting from an Azure Event Hubs source.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason)
+        com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AzureEventHubsFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AzureEventHubsFailureReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.class,
+                com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        namespace_ = "";
+        eventHub_ = "";
+        partitionId_ = 0L;
+        offset_ = 0L;
+        if (apiViolationReasonBuilder_ != null) {
+          apiViolationReasonBuilder_.clear();
+        }
+        reasonCase_ = 0;
+        reason_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_AzureEventHubsFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason build() {
+        com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason buildPartial() {
+        com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason result =
+            new com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.namespace_ = namespace_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.eventHub_ = eventHub_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.partitionId_ = partitionId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.offset_ = offset_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason result) {
+        result.reasonCase_ = reasonCase_;
+        result.reason_ = this.reason_;
+        if (reasonCase_ == 5 && apiViolationReasonBuilder_ != null) {
+          result.reason_ = apiViolationReasonBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) {
+          return mergeFrom(
+              (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason other) {
+        if (other
+            == com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+                .getDefaultInstance()) return this;
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getEventHub().isEmpty()) {
+          eventHub_ = other.eventHub_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getPartitionId() != 0L) {
+          setPartitionId(other.getPartitionId());
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        switch (other.getReasonCase()) {
+          case API_VIOLATION_REASON:
+            {
+              mergeApiViolationReason(other.getApiViolationReason());
+              break;
+            }
+          case REASON_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  namespace_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  eventHub_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  partitionId_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  offset_ = input.readInt64();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 42:
+                {
+                  input.readMessage(
+                      getApiViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 5;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int reasonCase_ = 0;
+      private java.lang.Object reason_;
+
+      public ReasonCase getReasonCase() {
+        return ReasonCase.forNumber(reasonCase_);
+      }
+
+      public Builder clearReason() {
+        reasonCase_ = 0;
+        reason_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object namespace_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The namespace containing the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The namespace.
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The namespace containing the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for namespace.
+       */
+      public com.google.protobuf.ByteString getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The namespace containing the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The namespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespace(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        namespace_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The namespace containing the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNamespace() {
+        namespace_ = getDefaultInstance().getNamespace();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The namespace containing the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for namespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        namespace_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object eventHub_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The eventHub.
+       */
+      public java.lang.String getEventHub() {
+        java.lang.Object ref = eventHub_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          eventHub_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for eventHub.
+       */
+      public com.google.protobuf.ByteString getEventHubBytes() {
+        java.lang.Object ref = eventHub_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          eventHub_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The eventHub to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventHub(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        eventHub_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEventHub() {
+        eventHub_ = getDefaultInstance().getEventHub();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the event hub being ingested from.
+       * </pre>
+       *
+       * <code>string event_hub = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for eventHub to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventHubBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        eventHub_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long partitionId_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The partitionId.
+       */
+      @java.lang.Override
+      public long getPartitionId() {
+        return partitionId_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The partitionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartitionId(long value) {
+
+        partitionId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPartitionId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        partitionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long offset_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The offset.
+       */
+      @java.lang.Override
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The offset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffset(long value) {
+
+        offset_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOffset() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
+          apiViolationReasonBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the apiViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasApiViolationReason() {
+        return reasonCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The apiViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        } else {
+          if (reasonCase_ == 5) {
+            return apiViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason value) {
+        if (apiViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          apiViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder builderForValue) {
+        if (apiViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          apiViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason value) {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 5) {
+            apiViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            apiViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearApiViolationReason() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 5) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          apiViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder
+          getApiViolationReasonBuilder() {
+        return getApiViolationReasonFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+          getApiViolationReasonOrBuilder() {
+        if ((reasonCase_ == 5) && (apiViolationReasonBuilder_ != null)) {
+          return apiViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 5) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
+          getApiViolationReasonFieldBuilder() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 5)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+          }
+          apiViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 5;
+        onChanged();
+        return apiViolationReasonBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason)
+    private static final com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason();
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AzureEventHubsFailureReason> PARSER =
+        new com.google.protobuf.AbstractParser<AzureEventHubsFailureReason>() {
+          @java.lang.Override
+          public AzureEventHubsFailureReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AzureEventHubsFailureReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AzureEventHubsFailureReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ConfluentCloudFailureReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cluster ID containing the topic being ingested from.
+     * </pre>
+     *
+     * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clusterId.
+     */
+    java.lang.String getClusterId();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cluster ID containing the topic being ingested from.
+     * </pre>
+     *
+     * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clusterId.
+     */
+    com.google.protobuf.ByteString getClusterIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Kafka topic being ingested from.
+     * </pre>
+     *
+     * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kafkaTopic.
+     */
+    java.lang.String getKafkaTopic();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Kafka topic being ingested from.
+     * </pre>
+     *
+     * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kafkaTopic.
+     */
+    com.google.protobuf.ByteString getKafkaTopicBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition ID of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The partitionId.
+     */
+    long getPartitionId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset within the partition of the message that failed to
+     * be ingested.
+     * </pre>
+     *
+     * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The offset.
+     */
+    long getOffset();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiViolationReason field is set.
+     */
+    boolean hasApiViolationReason();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+        getApiViolationReasonOrBuilder();
+
+    com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.ReasonCase
+        getReasonCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Failure when ingesting from a Confluent Cloud source.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason}
+   */
+  public static final class ConfluentCloudFailureReason
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason)
+      ConfluentCloudFailureReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ConfluentCloudFailureReason.newBuilder() to construct.
+    private ConfluentCloudFailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConfluentCloudFailureReason() {
+      clusterId_ = "";
+      kafkaTopic_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConfluentCloudFailureReason();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_ConfluentCloudFailureReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionFailureEvent_ConfluentCloudFailureReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.class,
+              com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.Builder.class);
+    }
+
+    private int reasonCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object reason_;
+
+    public enum ReasonCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      API_VIOLATION_REASON(5),
+      REASON_NOT_SET(0);
+      private final int value;
+
+      private ReasonCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ReasonCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ReasonCase forNumber(int value) {
+        switch (value) {
+          case 5:
+            return API_VIOLATION_REASON;
+          case 0:
+            return REASON_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ReasonCase getReasonCase() {
+      return ReasonCase.forNumber(reasonCase_);
+    }
+
+    public static final int CLUSTER_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cluster ID containing the topic being ingested from.
+     * </pre>
+     *
+     * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clusterId.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterId() {
+      java.lang.Object ref = clusterId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cluster ID containing the topic being ingested from.
+     * </pre>
+     *
+     * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clusterId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClusterIdBytes() {
+      java.lang.Object ref = clusterId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KAFKA_TOPIC_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kafkaTopic_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Kafka topic being ingested from.
+     * </pre>
+     *
+     * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kafkaTopic.
+     */
+    @java.lang.Override
+    public java.lang.String getKafkaTopic() {
+      java.lang.Object ref = kafkaTopic_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kafkaTopic_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Kafka topic being ingested from.
+     * </pre>
+     *
+     * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kafkaTopic.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKafkaTopicBytes() {
+      java.lang.Object ref = kafkaTopic_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kafkaTopic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTITION_ID_FIELD_NUMBER = 3;
+    private long partitionId_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partition ID of the message that failed to be ingested.
+     * </pre>
+     *
+     * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The partitionId.
+     */
+    @java.lang.Override
+    public long getPartitionId() {
+      return partitionId_;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 4;
+    private long offset_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset within the partition of the message that failed to
+     * be ingested.
+     * </pre>
+     *
+     * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The offset.
+     */
+    @java.lang.Override
+    public long getOffset() {
+      return offset_;
+    }
+
+    public static final int API_VIOLATION_REASON_FIELD_NUMBER = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasApiViolationReason() {
+      return reasonCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason() {
+      if (reasonCase_ == 5) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Pub/Sub API limits prevented the desired message from
+     * being published.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+        getApiViolationReasonOrBuilder() {
+      if (reasonCase_ == 5) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kafkaTopic_);
+      }
+      if (partitionId_ != 0L) {
+        output.writeInt64(3, partitionId_);
+      }
+      if (offset_ != 0L) {
+        output.writeInt64(4, offset_);
+      }
+      if (reasonCase_ == 5) {
+        output.writeMessage(
+            5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clusterId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kafkaTopic_);
+      }
+      if (partitionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, partitionId_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, offset_);
+      }
+      if (reasonCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason other =
+          (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) obj;
+
+      if (!getClusterId().equals(other.getClusterId())) return false;
+      if (!getKafkaTopic().equals(other.getKafkaTopic())) return false;
+      if (getPartitionId() != other.getPartitionId()) return false;
+      if (getOffset() != other.getOffset()) return false;
+      if (!getReasonCase().equals(other.getReasonCase())) return false;
+      switch (reasonCase_) {
+        case 5:
+          if (!getApiViolationReason().equals(other.getApiViolationReason())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CLUSTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterId().hashCode();
+      hash = (37 * hash) + KAFKA_TOPIC_FIELD_NUMBER;
+      hash = (53 * hash) + getKafkaTopic().hashCode();
+      hash = (37 * hash) + PARTITION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPartitionId());
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+      switch (reasonCase_) {
+        case 5:
+          hash = (37 * hash) + API_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getApiViolationReason().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Failure when ingesting from a Confluent Cloud source.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason)
+        com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_ConfluentCloudFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_ConfluentCloudFailureReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.class,
+                com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        clusterId_ = "";
+        kafkaTopic_ = "";
+        partitionId_ = 0L;
+        offset_ = 0L;
+        if (apiViolationReasonBuilder_ != null) {
+          apiViolationReasonBuilder_.clear();
+        }
+        reasonCase_ = 0;
+        reason_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionFailureEvent_ConfluentCloudFailureReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason build() {
+        com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason buildPartial() {
+        com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason result =
+            new com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clusterId_ = clusterId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.kafkaTopic_ = kafkaTopic_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.partitionId_ = partitionId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.offset_ = offset_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason result) {
+        result.reasonCase_ = reasonCase_;
+        result.reason_ = this.reason_;
+        if (reasonCase_ == 5 && apiViolationReasonBuilder_ != null) {
+          result.reason_ = apiViolationReasonBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) {
+          return mergeFrom(
+              (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason other) {
+        if (other
+            == com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+                .getDefaultInstance()) return this;
+        if (!other.getClusterId().isEmpty()) {
+          clusterId_ = other.clusterId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getKafkaTopic().isEmpty()) {
+          kafkaTopic_ = other.kafkaTopic_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getPartitionId() != 0L) {
+          setPartitionId(other.getPartitionId());
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        switch (other.getReasonCase()) {
+          case API_VIOLATION_REASON:
+            {
+              mergeApiViolationReason(other.getApiViolationReason());
+              break;
+            }
+          case REASON_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  clusterId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  kafkaTopic_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  partitionId_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  offset_ = input.readInt64();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 42:
+                {
+                  input.readMessage(
+                      getApiViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 5;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int reasonCase_ = 0;
+      private java.lang.Object reason_;
+
+      public ReasonCase getReasonCase() {
+        return ReasonCase.forNumber(reasonCase_);
+      }
+
+      public Builder clearReason() {
+        reasonCase_ = 0;
+        reason_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object clusterId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The cluster ID containing the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The clusterId.
+       */
+      public java.lang.String getClusterId() {
+        java.lang.Object ref = clusterId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The cluster ID containing the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for clusterId.
+       */
+      public com.google.protobuf.ByteString getClusterIdBytes() {
+        java.lang.Object ref = clusterId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clusterId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The cluster ID containing the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The clusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The cluster ID containing the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterId() {
+        clusterId_ = getDefaultInstance().getClusterId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The cluster ID containing the topic being ingested from.
+       * </pre>
+       *
+       * <code>string cluster_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for clusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clusterId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object kafkaTopic_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The kafkaTopic.
+       */
+      public java.lang.String getKafkaTopic() {
+        java.lang.Object ref = kafkaTopic_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kafkaTopic_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for kafkaTopic.
+       */
+      public com.google.protobuf.ByteString getKafkaTopicBytes() {
+        java.lang.Object ref = kafkaTopic_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          kafkaTopic_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The kafkaTopic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafkaTopic(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kafkaTopic_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKafkaTopic() {
+        kafkaTopic_ = getDefaultInstance().getKafkaTopic();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Kafka topic being ingested from.
+       * </pre>
+       *
+       * <code>string kafka_topic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for kafkaTopic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafkaTopicBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        kafkaTopic_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long partitionId_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The partitionId.
+       */
+      @java.lang.Override
+      public long getPartitionId() {
+        return partitionId_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The partitionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartitionId(long value) {
+
+        partitionId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The partition ID of the message that failed to be ingested.
+       * </pre>
+       *
+       * <code>int64 partition_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPartitionId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        partitionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long offset_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The offset.
+       */
+      @java.lang.Override
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The offset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffset(long value) {
+
+        offset_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset within the partition of the message that failed to
+       * be ingested.
+       * </pre>
+       *
+       * <code>int64 offset = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOffset() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
+          apiViolationReasonBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the apiViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasApiViolationReason() {
+        return reasonCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The apiViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        } else {
+          if (reasonCase_ == 5) {
+            return apiViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason value) {
+        if (apiViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          apiViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder builderForValue) {
+        if (apiViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          apiViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason value) {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 5) {
+            apiViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            apiViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearApiViolationReason() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 5) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 5) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          apiViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder
+          getApiViolationReasonBuilder() {
+        return getApiViolationReasonFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+          getApiViolationReasonOrBuilder() {
+        if ((reasonCase_ == 5) && (apiViolationReasonBuilder_ != null)) {
+          return apiViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 5) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Pub/Sub API limits prevented the desired message from
+       * being published.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
+          getApiViolationReasonFieldBuilder() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 5)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+          }
+          apiViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 5;
+        onChanged();
+        return apiViolationReasonBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason)
+    private static final com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason();
+    }
+
+    public static com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfluentCloudFailureReason> PARSER =
+        new com.google.protobuf.AbstractParser<ConfluentCloudFailureReason>() {
+          @java.lang.Override
+          public ConfluentCloudFailureReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConfluentCloudFailureReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfluentCloudFailureReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int failureCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -2764,6 +7412,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_STORAGE_FAILURE(3),
+    AWS_MSK_FAILURE(4),
+    AZURE_EVENT_HUBS_FAILURE(5),
+    CONFLUENT_CLOUD_FAILURE(6),
     FAILURE_NOT_SET(0);
     private final int value;
 
@@ -2784,6 +7435,12 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 3:
           return CLOUD_STORAGE_FAILURE;
+        case 4:
+          return AWS_MSK_FAILURE;
+        case 5:
+          return AZURE_EVENT_HUBS_FAILURE;
+        case 6:
+          return CONFLUENT_CLOUD_FAILURE;
         case 0:
           return FAILURE_NOT_SET;
         default:
@@ -2962,6 +7619,186 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     return com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure.getDefaultInstance();
   }
 
+  public static final int AWS_MSK_FAILURE_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the awsMskFailure field is set.
+   */
+  @java.lang.Override
+  public boolean hasAwsMskFailure() {
+    return failureCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The awsMskFailure.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason getAwsMskFailure() {
+    if (failureCase_ == 4) {
+      return (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) failure_;
+    }
+    return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReasonOrBuilder
+      getAwsMskFailureOrBuilder() {
+    if (failureCase_ == 4) {
+      return (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) failure_;
+    }
+    return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
+  }
+
+  public static final int AZURE_EVENT_HUBS_FAILURE_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the azureEventHubsFailure field is set.
+   */
+  @java.lang.Override
+  public boolean hasAzureEventHubsFailure() {
+    return failureCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The azureEventHubsFailure.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+      getAzureEventHubsFailure() {
+    if (failureCase_ == 5) {
+      return (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) failure_;
+    }
+    return com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReasonOrBuilder
+      getAzureEventHubsFailureOrBuilder() {
+    if (failureCase_ == 5) {
+      return (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) failure_;
+    }
+    return com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+        .getDefaultInstance();
+  }
+
+  public static final int CONFLUENT_CLOUD_FAILURE_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the confluentCloudFailure field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfluentCloudFailure() {
+    return failureCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The confluentCloudFailure.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+      getConfluentCloudFailure() {
+    if (failureCase_ == 6) {
+      return (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_;
+    }
+    return com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure when ingesting from Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReasonOrBuilder
+      getConfluentCloudFailureOrBuilder() {
+    if (failureCase_ == 6) {
+      return (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_;
+    }
+    return com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2986,6 +7823,18 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       output.writeMessage(
           3, (com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure) failure_);
     }
+    if (failureCase_ == 4) {
+      output.writeMessage(
+          4, (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) failure_);
+    }
+    if (failureCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) failure_);
+    }
+    if (failureCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3005,6 +7854,21 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure) failure_);
+    }
+    if (failureCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) failure_);
+    }
+    if (failureCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) failure_);
+    }
+    if (failureCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3029,6 +7893,15 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       case 3:
         if (!getCloudStorageFailure().equals(other.getCloudStorageFailure())) return false;
         break;
+      case 4:
+        if (!getAwsMskFailure().equals(other.getAwsMskFailure())) return false;
+        break;
+      case 5:
+        if (!getAzureEventHubsFailure().equals(other.getAzureEventHubsFailure())) return false;
+        break;
+      case 6:
+        if (!getConfluentCloudFailure().equals(other.getConfluentCloudFailure())) return false;
+        break;
       case 0:
       default:
     }
@@ -3051,6 +7924,18 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       case 3:
         hash = (37 * hash) + CLOUD_STORAGE_FAILURE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudStorageFailure().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + AWS_MSK_FAILURE_FIELD_NUMBER;
+        hash = (53 * hash) + getAwsMskFailure().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + AZURE_EVENT_HUBS_FAILURE_FIELD_NUMBER;
+        hash = (53 * hash) + getAzureEventHubsFailure().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + CONFLUENT_CLOUD_FAILURE_FIELD_NUMBER;
+        hash = (53 * hash) + getConfluentCloudFailure().hashCode();
         break;
       case 0:
       default:
@@ -3200,6 +8085,15 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       if (cloudStorageFailureBuilder_ != null) {
         cloudStorageFailureBuilder_.clear();
       }
+      if (awsMskFailureBuilder_ != null) {
+        awsMskFailureBuilder_.clear();
+      }
+      if (azureEventHubsFailureBuilder_ != null) {
+        azureEventHubsFailureBuilder_.clear();
+      }
+      if (confluentCloudFailureBuilder_ != null) {
+        confluentCloudFailureBuilder_.clear();
+      }
       failureCase_ = 0;
       failure_ = null;
       return this;
@@ -3252,6 +8146,15 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       result.failure_ = this.failure_;
       if (failureCase_ == 3 && cloudStorageFailureBuilder_ != null) {
         result.failure_ = cloudStorageFailureBuilder_.build();
+      }
+      if (failureCase_ == 4 && awsMskFailureBuilder_ != null) {
+        result.failure_ = awsMskFailureBuilder_.build();
+      }
+      if (failureCase_ == 5 && azureEventHubsFailureBuilder_ != null) {
+        result.failure_ = azureEventHubsFailureBuilder_.build();
+      }
+      if (failureCase_ == 6 && confluentCloudFailureBuilder_ != null) {
+        result.failure_ = confluentCloudFailureBuilder_.build();
       }
     }
 
@@ -3316,6 +8219,21 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             mergeCloudStorageFailure(other.getCloudStorageFailure());
             break;
           }
+        case AWS_MSK_FAILURE:
+          {
+            mergeAwsMskFailure(other.getAwsMskFailure());
+            break;
+          }
+        case AZURE_EVENT_HUBS_FAILURE:
+          {
+            mergeAzureEventHubsFailure(other.getAzureEventHubsFailure());
+            break;
+          }
+        case CONFLUENT_CLOUD_FAILURE:
+          {
+            mergeConfluentCloudFailure(other.getConfluentCloudFailure());
+            break;
+          }
         case FAILURE_NOT_SET:
           {
             break;
@@ -3366,6 +8284,26 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                 failureCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getAwsMskFailureFieldBuilder().getBuilder(), extensionRegistry);
+                failureCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getAzureEventHubsFailureFieldBuilder().getBuilder(), extensionRegistry);
+                failureCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getConfluentCloudFailureFieldBuilder().getBuilder(), extensionRegistry);
+                failureCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3848,6 +8786,722 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 3;
       onChanged();
       return cloudStorageFailureBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason,
+            com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.Builder,
+            com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReasonOrBuilder>
+        awsMskFailureBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the awsMskFailure field is set.
+     */
+    @java.lang.Override
+    public boolean hasAwsMskFailure() {
+      return failureCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The awsMskFailure.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason getAwsMskFailure() {
+      if (awsMskFailureBuilder_ == null) {
+        if (failureCase_ == 4) {
+          return (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) failure_;
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
+      } else {
+        if (failureCase_ == 4) {
+          return awsMskFailureBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAwsMskFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason value) {
+      if (awsMskFailureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        failure_ = value;
+        onChanged();
+      } else {
+        awsMskFailureBuilder_.setMessage(value);
+      }
+      failureCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAwsMskFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.Builder builderForValue) {
+      if (awsMskFailureBuilder_ == null) {
+        failure_ = builderForValue.build();
+        onChanged();
+      } else {
+        awsMskFailureBuilder_.setMessage(builderForValue.build());
+      }
+      failureCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAwsMskFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason value) {
+      if (awsMskFailureBuilder_ == null) {
+        if (failureCase_ == 4
+            && failure_
+                != com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason
+                    .getDefaultInstance()) {
+          failure_ =
+              com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.newBuilder(
+                      (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) failure_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          failure_ = value;
+        }
+        onChanged();
+      } else {
+        if (failureCase_ == 4) {
+          awsMskFailureBuilder_.mergeFrom(value);
+        } else {
+          awsMskFailureBuilder_.setMessage(value);
+        }
+      }
+      failureCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAwsMskFailure() {
+      if (awsMskFailureBuilder_ == null) {
+        if (failureCase_ == 4) {
+          failureCase_ = 0;
+          failure_ = null;
+          onChanged();
+        }
+      } else {
+        if (failureCase_ == 4) {
+          failureCase_ = 0;
+          failure_ = null;
+        }
+        awsMskFailureBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.Builder
+        getAwsMskFailureBuilder() {
+      return getAwsMskFailureFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReasonOrBuilder
+        getAwsMskFailureOrBuilder() {
+      if ((failureCase_ == 4) && (awsMskFailureBuilder_ != null)) {
+        return awsMskFailureBuilder_.getMessageOrBuilder();
+      } else {
+        if (failureCase_ == 4) {
+          return (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) failure_;
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason aws_msk_failure = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason,
+            com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.Builder,
+            com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReasonOrBuilder>
+        getAwsMskFailureFieldBuilder() {
+      if (awsMskFailureBuilder_ == null) {
+        if (!(failureCase_ == 4)) {
+          failure_ =
+              com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
+        }
+        awsMskFailureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason,
+                com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.Builder,
+                com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReasonOrBuilder>(
+                (com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason) failure_,
+                getParentForChildren(),
+                isClean());
+        failure_ = null;
+      }
+      failureCase_ = 4;
+      onChanged();
+      return awsMskFailureBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason,
+            com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.Builder,
+            com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReasonOrBuilder>
+        azureEventHubsFailureBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the azureEventHubsFailure field is set.
+     */
+    @java.lang.Override
+    public boolean hasAzureEventHubsFailure() {
+      return failureCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The azureEventHubsFailure.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+        getAzureEventHubsFailure() {
+      if (azureEventHubsFailureBuilder_ == null) {
+        if (failureCase_ == 5) {
+          return (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) failure_;
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+            .getDefaultInstance();
+      } else {
+        if (failureCase_ == 5) {
+          return azureEventHubsFailureBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAzureEventHubsFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason value) {
+      if (azureEventHubsFailureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        failure_ = value;
+        onChanged();
+      } else {
+        azureEventHubsFailureBuilder_.setMessage(value);
+      }
+      failureCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAzureEventHubsFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.Builder
+            builderForValue) {
+      if (azureEventHubsFailureBuilder_ == null) {
+        failure_ = builderForValue.build();
+        onChanged();
+      } else {
+        azureEventHubsFailureBuilder_.setMessage(builderForValue.build());
+      }
+      failureCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAzureEventHubsFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason value) {
+      if (azureEventHubsFailureBuilder_ == null) {
+        if (failureCase_ == 5
+            && failure_
+                != com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+                    .getDefaultInstance()) {
+          failure_ =
+              com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.newBuilder(
+                      (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason)
+                          failure_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          failure_ = value;
+        }
+        onChanged();
+      } else {
+        if (failureCase_ == 5) {
+          azureEventHubsFailureBuilder_.mergeFrom(value);
+        } else {
+          azureEventHubsFailureBuilder_.setMessage(value);
+        }
+      }
+      failureCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAzureEventHubsFailure() {
+      if (azureEventHubsFailureBuilder_ == null) {
+        if (failureCase_ == 5) {
+          failureCase_ = 0;
+          failure_ = null;
+          onChanged();
+        }
+      } else {
+        if (failureCase_ == 5) {
+          failureCase_ = 0;
+          failure_ = null;
+        }
+        azureEventHubsFailureBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.Builder
+        getAzureEventHubsFailureBuilder() {
+      return getAzureEventHubsFailureFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReasonOrBuilder
+        getAzureEventHubsFailureOrBuilder() {
+      if ((failureCase_ == 5) && (azureEventHubsFailureBuilder_ != null)) {
+        return azureEventHubsFailureBuilder_.getMessageOrBuilder();
+      } else {
+        if (failureCase_ == 5) {
+          return (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) failure_;
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason azure_event_hubs_failure = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason,
+            com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.Builder,
+            com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReasonOrBuilder>
+        getAzureEventHubsFailureFieldBuilder() {
+      if (azureEventHubsFailureBuilder_ == null) {
+        if (!(failureCase_ == 5)) {
+          failure_ =
+              com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
+                  .getDefaultInstance();
+        }
+        azureEventHubsFailureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason,
+                com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.Builder,
+                com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReasonOrBuilder>(
+                (com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason) failure_,
+                getParentForChildren(),
+                isClean());
+        failure_ = null;
+      }
+      failureCase_ = 5;
+      onChanged();
+      return azureEventHubsFailureBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason,
+            com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.Builder,
+            com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReasonOrBuilder>
+        confluentCloudFailureBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the confluentCloudFailure field is set.
+     */
+    @java.lang.Override
+    public boolean hasConfluentCloudFailure() {
+      return failureCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The confluentCloudFailure.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+        getConfluentCloudFailure() {
+      if (confluentCloudFailureBuilder_ == null) {
+        if (failureCase_ == 6) {
+          return (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_;
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+            .getDefaultInstance();
+      } else {
+        if (failureCase_ == 6) {
+          return confluentCloudFailureBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfluentCloudFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason value) {
+      if (confluentCloudFailureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        failure_ = value;
+        onChanged();
+      } else {
+        confluentCloudFailureBuilder_.setMessage(value);
+      }
+      failureCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfluentCloudFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.Builder
+            builderForValue) {
+      if (confluentCloudFailureBuilder_ == null) {
+        failure_ = builderForValue.build();
+        onChanged();
+      } else {
+        confluentCloudFailureBuilder_.setMessage(builderForValue.build());
+      }
+      failureCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConfluentCloudFailure(
+        com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason value) {
+      if (confluentCloudFailureBuilder_ == null) {
+        if (failureCase_ == 6
+            && failure_
+                != com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+                    .getDefaultInstance()) {
+          failure_ =
+              com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.newBuilder(
+                      (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason)
+                          failure_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          failure_ = value;
+        }
+        onChanged();
+      } else {
+        if (failureCase_ == 6) {
+          confluentCloudFailureBuilder_.mergeFrom(value);
+        } else {
+          confluentCloudFailureBuilder_.setMessage(value);
+        }
+      }
+      failureCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConfluentCloudFailure() {
+      if (confluentCloudFailureBuilder_ == null) {
+        if (failureCase_ == 6) {
+          failureCase_ = 0;
+          failure_ = null;
+          onChanged();
+        }
+      } else {
+        if (failureCase_ == 6) {
+          failureCase_ = 0;
+          failure_ = null;
+        }
+        confluentCloudFailureBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.Builder
+        getConfluentCloudFailureBuilder() {
+      return getConfluentCloudFailureFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReasonOrBuilder
+        getConfluentCloudFailureOrBuilder() {
+      if ((failureCase_ == 6) && (confluentCloudFailureBuilder_ != null)) {
+        return confluentCloudFailureBuilder_.getMessageOrBuilder();
+      } else {
+        if (failureCase_ == 6) {
+          return (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_;
+        }
+        return com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure when ingesting from Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason confluent_cloud_failure = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason,
+            com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.Builder,
+            com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReasonOrBuilder>
+        getConfluentCloudFailureFieldBuilder() {
+      if (confluentCloudFailureBuilder_ == null) {
+        if (!(failureCase_ == 6)) {
+          failure_ =
+              com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
+                  .getDefaultInstance();
+        }
+        confluentCloudFailureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason,
+                com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.Builder,
+                com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReasonOrBuilder>(
+                (com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason) failure_,
+                getParentForChildren(),
+                isClean());
+        failure_ = null;
+      }
+      failureCase_ = 6;
+      onChanged();
+      return confluentCloudFailureBuilder_;
     }
 
     @java.lang.Override

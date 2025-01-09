@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,131 @@ public interface IngestionDataSourceSettingsOrBuilder
    * </code>
    */
   com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorageOrBuilder getCloudStorageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the azureEventHubs field is set.
+   */
+  boolean hasAzureEventHubs();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The azureEventHubs.
+   */
+  com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs getAzureEventHubs();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubsOrBuilder
+      getAzureEventHubsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the awsMsk field is set.
+   */
+  boolean hasAwsMsk();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The awsMsk.
+   */
+  com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk getAwsMsk();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.IngestionDataSourceSettings.AwsMskOrBuilder getAwsMskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the confluentCloud field is set.
+   */
+  boolean hasConfluentCloud();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The confluentCloud.
+   */
+  com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud getConfluentCloud();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloudOrBuilder
+      getConfluentCloudOrBuilder();
 
   /**
    *

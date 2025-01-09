@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -6475,6 +6475,6140 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
   }
 
+  public interface AzureEventHubsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the Event
+     * Hubs ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the Event
+     * Hubs ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State getState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the resource group within the azure subscription.
+     * </pre>
+     *
+     * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The resourceGroup.
+     */
+    java.lang.String getResourceGroup();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the resource group within the azure subscription.
+     * </pre>
+     *
+     * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for resourceGroup.
+     */
+    com.google.protobuf.ByteString getResourceGroupBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Event Hubs namespace.
+     * </pre>
+     *
+     * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The namespace.
+     */
+    java.lang.String getNamespace();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Event Hubs namespace.
+     * </pre>
+     *
+     * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for namespace.
+     */
+    com.google.protobuf.ByteString getNamespaceBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Event Hub.
+     * </pre>
+     *
+     * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The eventHub.
+     */
+    java.lang.String getEventHub();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Event Hub.
+     * </pre>
+     *
+     * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for eventHub.
+     */
+    com.google.protobuf.ByteString getEventHubBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client id of the Azure application that is being used to
+     * authenticate Pub/Sub.
+     * </pre>
+     *
+     * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clientId.
+     */
+    java.lang.String getClientId();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client id of the Azure application that is being used to
+     * authenticate Pub/Sub.
+     * </pre>
+     *
+     * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clientId.
+     */
+    com.google.protobuf.ByteString getClientIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tenant id of the Azure application that is being used to
+     * authenticate Pub/Sub.
+     * </pre>
+     *
+     * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The tenantId.
+     */
+    java.lang.String getTenantId();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tenant id of the Azure application that is being used to
+     * authenticate Pub/Sub.
+     * </pre>
+     *
+     * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for tenantId.
+     */
+    com.google.protobuf.ByteString getTenantIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Azure subscription id.
+     * </pre>
+     *
+     * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The subscriptionId.
+     */
+    java.lang.String getSubscriptionId();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Azure subscription id.
+     * </pre>
+     *
+     * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for subscriptionId.
+     */
+    com.google.protobuf.ByteString getSubscriptionIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The GCP service account to be used for Federated Identity
+     * authentication.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The gcpServiceAccount.
+     */
+    java.lang.String getGcpServiceAccount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The GCP service account to be used for Federated Identity
+     * authentication.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for gcpServiceAccount.
+     */
+    com.google.protobuf.ByteString getGcpServiceAccountBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Ingestion settings for Azure Event Hubs.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs}
+   */
+  public static final class AzureEventHubs extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs)
+      AzureEventHubsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AzureEventHubs.newBuilder() to construct.
+    private AzureEventHubs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AzureEventHubs() {
+      state_ = 0;
+      resourceGroup_ = "";
+      namespace_ = "";
+      eventHub_ = "";
+      clientId_ = "";
+      tenantId_ = "";
+      subscriptionId_ = "";
+      gcpServiceAccount_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AzureEventHubs();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AzureEventHubs_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AzureEventHubs_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.class,
+              com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Possible states for managed ingestion from Event Hubs.
+     * </pre>
+     *
+     * Protobuf enum {@code google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State}
+     */
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. This value is unused.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Ingestion is active.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      ACTIVE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while consuming data from Event Hubs.
+       * This can happen when `client_id`, or `tenant_id` are invalid. Or the
+       * right permissions haven't been granted.
+       * </pre>
+       *
+       * <code>EVENT_HUBS_PERMISSION_DENIED = 2;</code>
+       */
+      EVENT_HUBS_PERMISSION_DENIED(2),
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while publishing to the topic.
+       * </pre>
+       *
+       * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
+       */
+      PUBLISH_PERMISSION_DENIED(3),
+      /**
+       *
+       *
+       * <pre>
+       * The provided Event Hubs namespace couldn't be found.
+       * </pre>
+       *
+       * <code>NAMESPACE_NOT_FOUND = 4;</code>
+       */
+      NAMESPACE_NOT_FOUND(4),
+      /**
+       *
+       *
+       * <pre>
+       * The provided Event Hub couldn't be found.
+       * </pre>
+       *
+       * <code>EVENT_HUB_NOT_FOUND = 5;</code>
+       */
+      EVENT_HUB_NOT_FOUND(5),
+      /**
+       *
+       *
+       * <pre>
+       * The provided Event Hubs subscription couldn't be found.
+       * </pre>
+       *
+       * <code>SUBSCRIPTION_NOT_FOUND = 6;</code>
+       */
+      SUBSCRIPTION_NOT_FOUND(6),
+      /**
+       *
+       *
+       * <pre>
+       * The provided Event Hubs resource group couldn't be found.
+       * </pre>
+       *
+       * <code>RESOURCE_GROUP_NOT_FOUND = 7;</code>
+       */
+      RESOURCE_GROUP_NOT_FOUND(7),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. This value is unused.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Ingestion is active.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      public static final int ACTIVE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while consuming data from Event Hubs.
+       * This can happen when `client_id`, or `tenant_id` are invalid. Or the
+       * right permissions haven't been granted.
+       * </pre>
+       *
+       * <code>EVENT_HUBS_PERMISSION_DENIED = 2;</code>
+       */
+      public static final int EVENT_HUBS_PERMISSION_DENIED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while publishing to the topic.
+       * </pre>
+       *
+       * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
+       */
+      public static final int PUBLISH_PERMISSION_DENIED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The provided Event Hubs namespace couldn't be found.
+       * </pre>
+       *
+       * <code>NAMESPACE_NOT_FOUND = 4;</code>
+       */
+      public static final int NAMESPACE_NOT_FOUND_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * The provided Event Hub couldn't be found.
+       * </pre>
+       *
+       * <code>EVENT_HUB_NOT_FOUND = 5;</code>
+       */
+      public static final int EVENT_HUB_NOT_FOUND_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * The provided Event Hubs subscription couldn't be found.
+       * </pre>
+       *
+       * <code>SUBSCRIPTION_NOT_FOUND = 6;</code>
+       */
+      public static final int SUBSCRIPTION_NOT_FOUND_VALUE = 6;
+      /**
+       *
+       *
+       * <pre>
+       * The provided Event Hubs resource group couldn't be found.
+       * </pre>
+       *
+       * <code>RESOURCE_GROUP_NOT_FOUND = 7;</code>
+       */
+      public static final int RESOURCE_GROUP_NOT_FOUND_VALUE = 7;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return ACTIVE;
+          case 2:
+            return EVENT_HUBS_PERMISSION_DENIED;
+          case 3:
+            return PUBLISH_PERMISSION_DENIED;
+          case 4:
+            return NAMESPACE_NOT_FOUND;
+          case 5:
+            return EVENT_HUB_NOT_FOUND;
+          case 6:
+            return SUBSCRIPTION_NOT_FOUND;
+          case 7:
+            return RESOURCE_GROUP_NOT_FOUND;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State)
+    }
+
+    public static final int STATE_FIELD_NUMBER = 1;
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the Event
+     * Hubs ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the Event
+     * Hubs ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State getState() {
+      com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State result =
+          com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State.forNumber(state_);
+      return result == null
+          ? com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int RESOURCE_GROUP_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object resourceGroup_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the resource group within the azure subscription.
+     * </pre>
+     *
+     * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The resourceGroup.
+     */
+    @java.lang.Override
+    public java.lang.String getResourceGroup() {
+      java.lang.Object ref = resourceGroup_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceGroup_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the resource group within the azure subscription.
+     * </pre>
+     *
+     * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for resourceGroup.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getResourceGroupBytes() {
+      java.lang.Object ref = resourceGroup_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resourceGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object namespace_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Event Hubs namespace.
+     * </pre>
+     *
+     * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The namespace.
+     */
+    @java.lang.Override
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Event Hubs namespace.
+     * </pre>
+     *
+     * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for namespace.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EVENT_HUB_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object eventHub_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Event Hub.
+     * </pre>
+     *
+     * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The eventHub.
+     */
+    @java.lang.Override
+    public java.lang.String getEventHub() {
+      java.lang.Object ref = eventHub_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        eventHub_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Event Hub.
+     * </pre>
+     *
+     * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for eventHub.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEventHubBytes() {
+      java.lang.Object ref = eventHub_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        eventHub_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client id of the Azure application that is being used to
+     * authenticate Pub/Sub.
+     * </pre>
+     *
+     * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clientId.
+     */
+    @java.lang.Override
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client id of the Azure application that is being used to
+     * authenticate Pub/Sub.
+     * </pre>
+     *
+     * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clientId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tenantId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tenant id of the Azure application that is being used to
+     * authenticate Pub/Sub.
+     * </pre>
+     *
+     * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public java.lang.String getTenantId() {
+      java.lang.Object ref = tenantId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tenantId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tenant id of the Azure application that is being used to
+     * authenticate Pub/Sub.
+     * </pre>
+     *
+     * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for tenantId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTenantIdBytes() {
+      java.lang.Object ref = tenantId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tenantId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUBSCRIPTION_ID_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object subscriptionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Azure subscription id.
+     * </pre>
+     *
+     * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The subscriptionId.
+     */
+    @java.lang.Override
+    public java.lang.String getSubscriptionId() {
+      java.lang.Object ref = subscriptionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subscriptionId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Azure subscription id.
+     * </pre>
+     *
+     * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for subscriptionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSubscriptionIdBytes() {
+      java.lang.Object ref = subscriptionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        subscriptionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GCP_SERVICE_ACCOUNT_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcpServiceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The GCP service account to be used for Federated Identity
+     * authentication.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The gcpServiceAccount.
+     */
+    @java.lang.Override
+    public java.lang.String getGcpServiceAccount() {
+      java.lang.Object ref = gcpServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gcpServiceAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The GCP service account to be used for Federated Identity
+     * authentication.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for gcpServiceAccount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGcpServiceAccountBytes() {
+      java.lang.Object ref = gcpServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gcpServiceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (state_
+          != com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, state_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceGroup_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceGroup_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, namespace_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventHub_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, eventHub_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, clientId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tenantId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscriptionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, subscriptionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcpServiceAccount_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, gcpServiceAccount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (state_
+          != com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceGroup_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceGroup_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, namespace_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventHub_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, eventHub_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, clientId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tenantId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscriptionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, subscriptionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcpServiceAccount_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, gcpServiceAccount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs other =
+          (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) obj;
+
+      if (state_ != other.state_) return false;
+      if (!getResourceGroup().equals(other.getResourceGroup())) return false;
+      if (!getNamespace().equals(other.getNamespace())) return false;
+      if (!getEventHub().equals(other.getEventHub())) return false;
+      if (!getClientId().equals(other.getClientId())) return false;
+      if (!getTenantId().equals(other.getTenantId())) return false;
+      if (!getSubscriptionId().equals(other.getSubscriptionId())) return false;
+      if (!getGcpServiceAccount().equals(other.getGcpServiceAccount())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      hash = (37 * hash) + RESOURCE_GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceGroup().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (37 * hash) + EVENT_HUB_FIELD_NUMBER;
+      hash = (53 * hash) + getEventHub().hashCode();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantId().hashCode();
+      hash = (37 * hash) + SUBSCRIPTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscriptionId().hashCode();
+      hash = (37 * hash) + GCP_SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getGcpServiceAccount().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ingestion settings for Azure Event Hubs.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs)
+        com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AzureEventHubs_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AzureEventHubs_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.class,
+                com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.Builder.class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        state_ = 0;
+        resourceGroup_ = "";
+        namespace_ = "";
+        eventHub_ = "";
+        clientId_ = "";
+        tenantId_ = "";
+        subscriptionId_ = "";
+        gcpServiceAccount_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AzureEventHubs_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs build() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs buildPartial() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs result =
+            new com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.resourceGroup_ = resourceGroup_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.namespace_ = namespace_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.eventHub_ = eventHub_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.clientId_ = clientId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.tenantId_ = tenantId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.subscriptionId_ = subscriptionId_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.gcpServiceAccount_ = gcpServiceAccount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) {
+          return mergeFrom((com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs other) {
+        if (other
+            == com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance())
+          return this;
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        if (!other.getResourceGroup().isEmpty()) {
+          resourceGroup_ = other.resourceGroup_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getEventHub().isEmpty()) {
+          eventHub_ = other.eventHub_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getTenantId().isEmpty()) {
+          tenantId_ = other.tenantId_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getSubscriptionId().isEmpty()) {
+          subscriptionId_ = other.subscriptionId_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (!other.getGcpServiceAccount().isEmpty()) {
+          gcpServiceAccount_ = other.gcpServiceAccount_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  state_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  resourceGroup_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  namespace_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  eventHub_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  clientId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  tenantId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  subscriptionId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  gcpServiceAccount_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 66
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Event
+       * Hubs ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Event
+       * Hubs ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Event
+       * Hubs ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State getState() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State result =
+            com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State.forNumber(state_);
+        return result == null
+            ? com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Event
+       * Hubs ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(
+          com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Event
+       * Hubs ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resourceGroup_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the resource group within the azure subscription.
+       * </pre>
+       *
+       * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The resourceGroup.
+       */
+      public java.lang.String getResourceGroup() {
+        java.lang.Object ref = resourceGroup_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceGroup_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the resource group within the azure subscription.
+       * </pre>
+       *
+       * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for resourceGroup.
+       */
+      public com.google.protobuf.ByteString getResourceGroupBytes() {
+        java.lang.Object ref = resourceGroup_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resourceGroup_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the resource group within the azure subscription.
+       * </pre>
+       *
+       * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The resourceGroup to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceGroup(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceGroup_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the resource group within the azure subscription.
+       * </pre>
+       *
+       * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceGroup() {
+        resourceGroup_ = getDefaultInstance().getResourceGroup();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the resource group within the azure subscription.
+       * </pre>
+       *
+       * <code>string resource_group = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for resourceGroup to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceGroupBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        resourceGroup_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hubs namespace.
+       * </pre>
+       *
+       * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The namespace.
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hubs namespace.
+       * </pre>
+       *
+       * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for namespace.
+       */
+      public com.google.protobuf.ByteString getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hubs namespace.
+       * </pre>
+       *
+       * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The namespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespace(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        namespace_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hubs namespace.
+       * </pre>
+       *
+       * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNamespace() {
+        namespace_ = getDefaultInstance().getNamespace();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hubs namespace.
+       * </pre>
+       *
+       * <code>string namespace = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for namespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        namespace_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object eventHub_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hub.
+       * </pre>
+       *
+       * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The eventHub.
+       */
+      public java.lang.String getEventHub() {
+        java.lang.Object ref = eventHub_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          eventHub_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hub.
+       * </pre>
+       *
+       * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for eventHub.
+       */
+      public com.google.protobuf.ByteString getEventHubBytes() {
+        java.lang.Object ref = eventHub_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          eventHub_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hub.
+       * </pre>
+       *
+       * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The eventHub to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventHub(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        eventHub_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hub.
+       * </pre>
+       *
+       * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEventHub() {
+        eventHub_ = getDefaultInstance().getEventHub();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Event Hub.
+       * </pre>
+       *
+       * <code>string event_hub = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for eventHub to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventHubBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        eventHub_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clientId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The client id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The clientId.
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The client id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for clientId.
+       */
+      public com.google.protobuf.ByteString getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The client id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientId_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The client id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClientId() {
+        clientId_ = getDefaultInstance().getClientId();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The client id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string client_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clientId_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tenantId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The tenant id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The tenantId.
+       */
+      public java.lang.String getTenantId() {
+        java.lang.Object ref = tenantId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tenantId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The tenant id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for tenantId.
+       */
+      public com.google.protobuf.ByteString getTenantIdBytes() {
+        java.lang.Object ref = tenantId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          tenantId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The tenant id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tenantId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The tenant id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        tenantId_ = getDefaultInstance().getTenantId();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The tenant id of the Azure application that is being used to
+       * authenticate Pub/Sub.
+       * </pre>
+       *
+       * <code>string tenant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        tenantId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object subscriptionId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Azure subscription id.
+       * </pre>
+       *
+       * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The subscriptionId.
+       */
+      public java.lang.String getSubscriptionId() {
+        java.lang.Object ref = subscriptionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subscriptionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Azure subscription id.
+       * </pre>
+       *
+       * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for subscriptionId.
+       */
+      public com.google.protobuf.ByteString getSubscriptionIdBytes() {
+        java.lang.Object ref = subscriptionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          subscriptionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Azure subscription id.
+       * </pre>
+       *
+       * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The subscriptionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubscriptionId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        subscriptionId_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Azure subscription id.
+       * </pre>
+       *
+       * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSubscriptionId() {
+        subscriptionId_ = getDefaultInstance().getSubscriptionId();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Azure subscription id.
+       * </pre>
+       *
+       * <code>string subscription_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for subscriptionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubscriptionIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        subscriptionId_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object gcpServiceAccount_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The GCP service account to be used for Federated Identity
+       * authentication.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The gcpServiceAccount.
+       */
+      public java.lang.String getGcpServiceAccount() {
+        java.lang.Object ref = gcpServiceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gcpServiceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The GCP service account to be used for Federated Identity
+       * authentication.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for gcpServiceAccount.
+       */
+      public com.google.protobuf.ByteString getGcpServiceAccountBytes() {
+        java.lang.Object ref = gcpServiceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gcpServiceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The GCP service account to be used for Federated Identity
+       * authentication.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The gcpServiceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcpServiceAccount(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcpServiceAccount_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The GCP service account to be used for Federated Identity
+       * authentication.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGcpServiceAccount() {
+        gcpServiceAccount_ = getDefaultInstance().getGcpServiceAccount();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The GCP service account to be used for Federated Identity
+       * authentication.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for gcpServiceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcpServiceAccountBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        gcpServiceAccount_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs)
+    private static final com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs();
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AzureEventHubs> PARSER =
+        new com.google.protobuf.AbstractParser<AzureEventHubs>() {
+          @java.lang.Override
+          public AzureEventHubs parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AzureEventHubs> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AzureEventHubs> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AwsMskOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionDataSourceSettings.AwsMsk)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the Amazon
+     * MSK ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the Amazon
+     * MSK ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State getState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+     * cluster.
+     * </pre>
+     *
+     * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The clusterArn.
+     */
+    java.lang.String getClusterArn();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+     * cluster.
+     * </pre>
+     *
+     * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for clusterArn.
+     */
+    com.google.protobuf.ByteString getClusterArnBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+     * will import from.
+     * </pre>
+     *
+     * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The topic.
+     */
+    java.lang.String getTopic();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+     * will import from.
+     * </pre>
+     *
+     * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for topic.
+     */
+    com.google.protobuf.ByteString getTopicBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. AWS role ARN to be used for Federated Identity authentication
+     * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+     * the required permissions that need to be attached to it.
+     * </pre>
+     *
+     * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The awsRoleArn.
+     */
+    java.lang.String getAwsRoleArn();
+    /**
+     *
+     *
+     * <pre>
+     * Required. AWS role ARN to be used for Federated Identity authentication
+     * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+     * the required permissions that need to be attached to it.
+     * </pre>
+     *
+     * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for awsRoleArn.
+     */
+    com.google.protobuf.ByteString getAwsRoleArnBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The GCP service account to be used for Federated Identity
+     * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+     * for the provided role). The `aws_role_arn` must be set up with
+     * `accounts.google.com:sub` equals to this service account number.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The gcpServiceAccount.
+     */
+    java.lang.String getGcpServiceAccount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The GCP service account to be used for Federated Identity
+     * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+     * for the provided role). The `aws_role_arn` must be set up with
+     * `accounts.google.com:sub` equals to this service account number.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for gcpServiceAccount.
+     */
+    com.google.protobuf.ByteString getGcpServiceAccountBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Ingestion settings for Amazon MSK.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionDataSourceSettings.AwsMsk}
+   */
+  public static final class AwsMsk extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.AwsMsk)
+      AwsMskOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AwsMsk.newBuilder() to construct.
+    private AwsMsk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AwsMsk() {
+      state_ = 0;
+      clusterArn_ = "";
+      topic_ = "";
+      awsRoleArn_ = "";
+      gcpServiceAccount_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AwsMsk();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AwsMsk_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AwsMsk_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.class,
+              com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Possible states for managed ingestion from Amazon MSK.
+     * </pre>
+     *
+     * Protobuf enum {@code google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State}
+     */
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. This value is unused.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Ingestion is active.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      ACTIVE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while consuming data from Amazon MSK.
+       * </pre>
+       *
+       * <code>MSK_PERMISSION_DENIED = 2;</code>
+       */
+      MSK_PERMISSION_DENIED(2),
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while publishing to the topic.
+       * </pre>
+       *
+       * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
+       */
+      PUBLISH_PERMISSION_DENIED(3),
+      /**
+       *
+       *
+       * <pre>
+       * The provided MSK cluster wasn't found.
+       * </pre>
+       *
+       * <code>CLUSTER_NOT_FOUND = 4;</code>
+       */
+      CLUSTER_NOT_FOUND(4),
+      /**
+       *
+       *
+       * <pre>
+       * The provided topic wasn't found.
+       * </pre>
+       *
+       * <code>TOPIC_NOT_FOUND = 5;</code>
+       */
+      TOPIC_NOT_FOUND(5),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. This value is unused.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Ingestion is active.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      public static final int ACTIVE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while consuming data from Amazon MSK.
+       * </pre>
+       *
+       * <code>MSK_PERMISSION_DENIED = 2;</code>
+       */
+      public static final int MSK_PERMISSION_DENIED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while publishing to the topic.
+       * </pre>
+       *
+       * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
+       */
+      public static final int PUBLISH_PERMISSION_DENIED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The provided MSK cluster wasn't found.
+       * </pre>
+       *
+       * <code>CLUSTER_NOT_FOUND = 4;</code>
+       */
+      public static final int CLUSTER_NOT_FOUND_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * The provided topic wasn't found.
+       * </pre>
+       *
+       * <code>TOPIC_NOT_FOUND = 5;</code>
+       */
+      public static final int TOPIC_NOT_FOUND_VALUE = 5;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return ACTIVE;
+          case 2:
+            return MSK_PERMISSION_DENIED;
+          case 3:
+            return PUBLISH_PERMISSION_DENIED;
+          case 4:
+            return CLUSTER_NOT_FOUND;
+          case 5:
+            return TOPIC_NOT_FOUND;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State)
+    }
+
+    public static final int STATE_FIELD_NUMBER = 1;
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the Amazon
+     * MSK ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the Amazon
+     * MSK ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State getState() {
+      com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State result =
+          com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State.forNumber(state_);
+      return result == null
+          ? com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int CLUSTER_ARN_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterArn_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+     * cluster.
+     * </pre>
+     *
+     * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The clusterArn.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterArn() {
+      java.lang.Object ref = clusterArn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterArn_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+     * cluster.
+     * </pre>
+     *
+     * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for clusterArn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClusterArnBytes() {
+      java.lang.Object ref = clusterArn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterArn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOPIC_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topic_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+     * will import from.
+     * </pre>
+     *
+     * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The topic.
+     */
+    @java.lang.Override
+    public java.lang.String getTopic() {
+      java.lang.Object ref = topic_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        topic_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+     * will import from.
+     * </pre>
+     *
+     * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for topic.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTopicBytes() {
+      java.lang.Object ref = topic_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        topic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AWS_ROLE_ARN_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object awsRoleArn_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. AWS role ARN to be used for Federated Identity authentication
+     * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+     * the required permissions that need to be attached to it.
+     * </pre>
+     *
+     * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The awsRoleArn.
+     */
+    @java.lang.Override
+    public java.lang.String getAwsRoleArn() {
+      java.lang.Object ref = awsRoleArn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        awsRoleArn_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. AWS role ARN to be used for Federated Identity authentication
+     * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+     * the required permissions that need to be attached to it.
+     * </pre>
+     *
+     * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for awsRoleArn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAwsRoleArnBytes() {
+      java.lang.Object ref = awsRoleArn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        awsRoleArn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GCP_SERVICE_ACCOUNT_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcpServiceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The GCP service account to be used for Federated Identity
+     * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+     * for the provided role). The `aws_role_arn` must be set up with
+     * `accounts.google.com:sub` equals to this service account number.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The gcpServiceAccount.
+     */
+    @java.lang.Override
+    public java.lang.String getGcpServiceAccount() {
+      java.lang.Object ref = gcpServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gcpServiceAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The GCP service account to be used for Federated Identity
+     * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+     * for the provided role). The `aws_role_arn` must be set up with
+     * `accounts.google.com:sub` equals to this service account number.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for gcpServiceAccount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGcpServiceAccountBytes() {
+      java.lang.Object ref = gcpServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gcpServiceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (state_
+          != com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, state_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterArn_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topic_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(awsRoleArn_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, awsRoleArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcpServiceAccount_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, gcpServiceAccount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (state_
+          != com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterArn_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topic_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(awsRoleArn_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, awsRoleArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcpServiceAccount_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, gcpServiceAccount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk other =
+          (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) obj;
+
+      if (state_ != other.state_) return false;
+      if (!getClusterArn().equals(other.getClusterArn())) return false;
+      if (!getTopic().equals(other.getTopic())) return false;
+      if (!getAwsRoleArn().equals(other.getAwsRoleArn())) return false;
+      if (!getGcpServiceAccount().equals(other.getGcpServiceAccount())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      hash = (37 * hash) + CLUSTER_ARN_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterArn().hashCode();
+      hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+      hash = (53 * hash) + getTopic().hashCode();
+      hash = (37 * hash) + AWS_ROLE_ARN_FIELD_NUMBER;
+      hash = (53 * hash) + getAwsRoleArn().hashCode();
+      hash = (37 * hash) + GCP_SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getGcpServiceAccount().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ingestion settings for Amazon MSK.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.IngestionDataSourceSettings.AwsMsk}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionDataSourceSettings.AwsMsk)
+        com.google.pubsub.v1.IngestionDataSourceSettings.AwsMskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AwsMsk_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AwsMsk_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.class,
+                com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder.class);
+      }
+
+      // Construct using com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        state_ = 0;
+        clusterArn_ = "";
+        topic_ = "";
+        awsRoleArn_ = "";
+        gcpServiceAccount_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_AwsMsk_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk build() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk buildPartial() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk result =
+            new com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.clusterArn_ = clusterArn_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.topic_ = topic_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.awsRoleArn_ = awsRoleArn_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.gcpServiceAccount_ = gcpServiceAccount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) {
+          return mergeFrom((com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk other) {
+        if (other == com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance())
+          return this;
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        if (!other.getClusterArn().isEmpty()) {
+          clusterArn_ = other.clusterArn_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getTopic().isEmpty()) {
+          topic_ = other.topic_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getAwsRoleArn().isEmpty()) {
+          awsRoleArn_ = other.awsRoleArn_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getGcpServiceAccount().isEmpty()) {
+          gcpServiceAccount_ = other.gcpServiceAccount_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  state_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  clusterArn_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  topic_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  awsRoleArn_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  gcpServiceAccount_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Amazon
+       * MSK ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Amazon
+       * MSK ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Amazon
+       * MSK ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State getState() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State result =
+            com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State.forNumber(state_);
+        return result == null
+            ? com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Amazon
+       * MSK ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the Amazon
+       * MSK ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clusterArn_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+       * cluster.
+       * </pre>
+       *
+       * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The clusterArn.
+       */
+      public java.lang.String getClusterArn() {
+        java.lang.Object ref = clusterArn_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterArn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+       * cluster.
+       * </pre>
+       *
+       * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for clusterArn.
+       */
+      public com.google.protobuf.ByteString getClusterArnBytes() {
+        java.lang.Object ref = clusterArn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clusterArn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+       * cluster.
+       * </pre>
+       *
+       * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The clusterArn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterArn(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterArn_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+       * cluster.
+       * </pre>
+       *
+       * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterArn() {
+        clusterArn_ = getDefaultInstance().getClusterArn();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Amazon Resource Name (ARN) that uniquely identifies the
+       * cluster.
+       * </pre>
+       *
+       * <code>string cluster_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for clusterArn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterArnBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clusterArn_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object topic_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+       * will import from.
+       * </pre>
+       *
+       * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The topic.
+       */
+      public java.lang.String getTopic() {
+        java.lang.Object ref = topic_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          topic_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+       * will import from.
+       * </pre>
+       *
+       * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for topic.
+       */
+      public com.google.protobuf.ByteString getTopicBytes() {
+        java.lang.Object ref = topic_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          topic_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+       * will import from.
+       * </pre>
+       *
+       * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The topic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopic(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        topic_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+       * will import from.
+       * </pre>
+       *
+       * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTopic() {
+        topic_ = getDefaultInstance().getTopic();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub
+       * will import from.
+       * </pre>
+       *
+       * <code>string topic = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopicBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        topic_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object awsRoleArn_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. AWS role ARN to be used for Federated Identity authentication
+       * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+       * the required permissions that need to be attached to it.
+       * </pre>
+       *
+       * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The awsRoleArn.
+       */
+      public java.lang.String getAwsRoleArn() {
+        java.lang.Object ref = awsRoleArn_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          awsRoleArn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. AWS role ARN to be used for Federated Identity authentication
+       * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+       * the required permissions that need to be attached to it.
+       * </pre>
+       *
+       * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for awsRoleArn.
+       */
+      public com.google.protobuf.ByteString getAwsRoleArnBytes() {
+        java.lang.Object ref = awsRoleArn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          awsRoleArn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. AWS role ARN to be used for Federated Identity authentication
+       * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+       * the required permissions that need to be attached to it.
+       * </pre>
+       *
+       * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The awsRoleArn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAwsRoleArn(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        awsRoleArn_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. AWS role ARN to be used for Federated Identity authentication
+       * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+       * the required permissions that need to be attached to it.
+       * </pre>
+       *
+       * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAwsRoleArn() {
+        awsRoleArn_ = getDefaultInstance().getAwsRoleArn();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. AWS role ARN to be used for Federated Identity authentication
+       * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and
+       * the required permissions that need to be attached to it.
+       * </pre>
+       *
+       * <code>string aws_role_arn = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for awsRoleArn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAwsRoleArnBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        awsRoleArn_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object gcpServiceAccount_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+       * for the provided role). The `aws_role_arn` must be set up with
+       * `accounts.google.com:sub` equals to this service account number.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The gcpServiceAccount.
+       */
+      public java.lang.String getGcpServiceAccount() {
+        java.lang.Object ref = gcpServiceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gcpServiceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+       * for the provided role). The `aws_role_arn` must be set up with
+       * `accounts.google.com:sub` equals to this service account number.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for gcpServiceAccount.
+       */
+      public com.google.protobuf.ByteString getGcpServiceAccountBytes() {
+        java.lang.Object ref = gcpServiceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gcpServiceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+       * for the provided role). The `aws_role_arn` must be set up with
+       * `accounts.google.com:sub` equals to this service account number.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The gcpServiceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcpServiceAccount(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcpServiceAccount_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+       * for the provided role). The `aws_role_arn` must be set up with
+       * `accounts.google.com:sub` equals to this service account number.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGcpServiceAccount() {
+        gcpServiceAccount_ = getDefaultInstance().getGcpServiceAccount();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call
+       * for the provided role). The `aws_role_arn` must be set up with
+       * `accounts.google.com:sub` equals to this service account number.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for gcpServiceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcpServiceAccountBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        gcpServiceAccount_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionDataSourceSettings.AwsMsk)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionDataSourceSettings.AwsMsk)
+    private static final com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk();
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AwsMsk> PARSER =
+        new com.google.protobuf.AbstractParser<AwsMsk>() {
+          @java.lang.Override
+          public AwsMsk parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AwsMsk> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AwsMsk> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ConfluentCloudOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the
+     * Confluent Cloud ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the
+     * Confluent Cloud ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State getState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The address of the bootstrap server. The format is url:port.
+     * </pre>
+     *
+     * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bootstrapServer.
+     */
+    java.lang.String getBootstrapServer();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The address of the bootstrap server. The format is url:port.
+     * </pre>
+     *
+     * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for bootstrapServer.
+     */
+    com.google.protobuf.ByteString getBootstrapServerBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the cluster.
+     * </pre>
+     *
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The clusterId.
+     */
+    java.lang.String getClusterId();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the cluster.
+     * </pre>
+     *
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for clusterId.
+     */
+    com.google.protobuf.ByteString getClusterIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the topic in the Confluent Cloud cluster that
+     * Pub/Sub will import from.
+     * </pre>
+     *
+     * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The topic.
+     */
+    java.lang.String getTopic();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the topic in the Confluent Cloud cluster that
+     * Pub/Sub will import from.
+     * </pre>
+     *
+     * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for topic.
+     */
+    com.google.protobuf.ByteString getTopicBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the identity pool to be used for Federated Identity
+     * authentication with Confluent Cloud. See
+     * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+     * </pre>
+     *
+     * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The identityPoolId.
+     */
+    java.lang.String getIdentityPoolId();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the identity pool to be used for Federated Identity
+     * authentication with Confluent Cloud. See
+     * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+     * </pre>
+     *
+     * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for identityPoolId.
+     */
+    com.google.protobuf.ByteString getIdentityPoolIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The GCP service account to be used for Federated Identity
+     * authentication with `identity_pool_id`.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The gcpServiceAccount.
+     */
+    java.lang.String getGcpServiceAccount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The GCP service account to be used for Federated Identity
+     * authentication with `identity_pool_id`.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for gcpServiceAccount.
+     */
+    com.google.protobuf.ByteString getGcpServiceAccountBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Ingestion settings for Confluent Cloud.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud}
+   */
+  public static final class ConfluentCloud extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud)
+      ConfluentCloudOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ConfluentCloud.newBuilder() to construct.
+    private ConfluentCloud(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConfluentCloud() {
+      state_ = 0;
+      bootstrapServer_ = "";
+      clusterId_ = "";
+      topic_ = "";
+      identityPoolId_ = "";
+      gcpServiceAccount_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConfluentCloud();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionDataSourceSettings_ConfluentCloud_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_IngestionDataSourceSettings_ConfluentCloud_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.class,
+              com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Possible states for managed ingestion from Confluent Cloud.
+     * </pre>
+     *
+     * Protobuf enum {@code google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State}
+     */
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. This value is unused.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Ingestion is active.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      ACTIVE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while consuming data from Confluent
+       * Cloud.
+       * </pre>
+       *
+       * <code>CONFLUENT_CLOUD_PERMISSION_DENIED = 2;</code>
+       */
+      CONFLUENT_CLOUD_PERMISSION_DENIED(2),
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while publishing to the topic.
+       * </pre>
+       *
+       * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
+       */
+      PUBLISH_PERMISSION_DENIED(3),
+      /**
+       *
+       *
+       * <pre>
+       * The provided bootstrap server address is unreachable.
+       * </pre>
+       *
+       * <code>UNREACHABLE_BOOTSTRAP_SERVER = 4;</code>
+       */
+      UNREACHABLE_BOOTSTRAP_SERVER(4),
+      /**
+       *
+       *
+       * <pre>
+       * The provided cluster wasn't found.
+       * </pre>
+       *
+       * <code>CLUSTER_NOT_FOUND = 5;</code>
+       */
+      CLUSTER_NOT_FOUND(5),
+      /**
+       *
+       *
+       * <pre>
+       * The provided topic wasn't found.
+       * </pre>
+       *
+       * <code>TOPIC_NOT_FOUND = 6;</code>
+       */
+      TOPIC_NOT_FOUND(6),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. This value is unused.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Ingestion is active.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      public static final int ACTIVE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while consuming data from Confluent
+       * Cloud.
+       * </pre>
+       *
+       * <code>CONFLUENT_CLOUD_PERMISSION_DENIED = 2;</code>
+       */
+      public static final int CONFLUENT_CLOUD_PERMISSION_DENIED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Permission denied encountered while publishing to the topic.
+       * </pre>
+       *
+       * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
+       */
+      public static final int PUBLISH_PERMISSION_DENIED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The provided bootstrap server address is unreachable.
+       * </pre>
+       *
+       * <code>UNREACHABLE_BOOTSTRAP_SERVER = 4;</code>
+       */
+      public static final int UNREACHABLE_BOOTSTRAP_SERVER_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * The provided cluster wasn't found.
+       * </pre>
+       *
+       * <code>CLUSTER_NOT_FOUND = 5;</code>
+       */
+      public static final int CLUSTER_NOT_FOUND_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * The provided topic wasn't found.
+       * </pre>
+       *
+       * <code>TOPIC_NOT_FOUND = 6;</code>
+       */
+      public static final int TOPIC_NOT_FOUND_VALUE = 6;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return ACTIVE;
+          case 2:
+            return CONFLUENT_CLOUD_PERMISSION_DENIED;
+          case 3:
+            return PUBLISH_PERMISSION_DENIED;
+          case 4:
+            return UNREACHABLE_BOOTSTRAP_SERVER;
+          case 5:
+            return CLUSTER_NOT_FOUND;
+          case 6:
+            return TOPIC_NOT_FOUND;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State)
+    }
+
+    public static final int STATE_FIELD_NUMBER = 1;
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the
+     * Confluent Cloud ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field that indicates the state of the
+     * Confluent Cloud ingestion source.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State getState() {
+      com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State result =
+          com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State.forNumber(state_);
+      return result == null
+          ? com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int BOOTSTRAP_SERVER_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bootstrapServer_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The address of the bootstrap server. The format is url:port.
+     * </pre>
+     *
+     * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bootstrapServer.
+     */
+    @java.lang.Override
+    public java.lang.String getBootstrapServer() {
+      java.lang.Object ref = bootstrapServer_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bootstrapServer_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The address of the bootstrap server. The format is url:port.
+     * </pre>
+     *
+     * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for bootstrapServer.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBootstrapServerBytes() {
+      java.lang.Object ref = bootstrapServer_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bootstrapServer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_ID_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the cluster.
+     * </pre>
+     *
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The clusterId.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterId() {
+      java.lang.Object ref = clusterId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the cluster.
+     * </pre>
+     *
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for clusterId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClusterIdBytes() {
+      java.lang.Object ref = clusterId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOPIC_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topic_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the topic in the Confluent Cloud cluster that
+     * Pub/Sub will import from.
+     * </pre>
+     *
+     * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The topic.
+     */
+    @java.lang.Override
+    public java.lang.String getTopic() {
+      java.lang.Object ref = topic_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        topic_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the topic in the Confluent Cloud cluster that
+     * Pub/Sub will import from.
+     * </pre>
+     *
+     * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for topic.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTopicBytes() {
+      java.lang.Object ref = topic_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        topic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IDENTITY_POOL_ID_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object identityPoolId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the identity pool to be used for Federated Identity
+     * authentication with Confluent Cloud. See
+     * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+     * </pre>
+     *
+     * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The identityPoolId.
+     */
+    @java.lang.Override
+    public java.lang.String getIdentityPoolId() {
+      java.lang.Object ref = identityPoolId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        identityPoolId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the identity pool to be used for Federated Identity
+     * authentication with Confluent Cloud. See
+     * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+     * </pre>
+     *
+     * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for identityPoolId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIdentityPoolIdBytes() {
+      java.lang.Object ref = identityPoolId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        identityPoolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GCP_SERVICE_ACCOUNT_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcpServiceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The GCP service account to be used for Federated Identity
+     * authentication with `identity_pool_id`.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The gcpServiceAccount.
+     */
+    @java.lang.Override
+    public java.lang.String getGcpServiceAccount() {
+      java.lang.Object ref = gcpServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gcpServiceAccount_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The GCP service account to be used for Federated Identity
+     * authentication with `identity_pool_id`.
+     * </pre>
+     *
+     * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for gcpServiceAccount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGcpServiceAccountBytes() {
+      java.lang.Object ref = gcpServiceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gcpServiceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (state_
+          != com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, state_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootstrapServer_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bootstrapServer_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, topic_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityPoolId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, identityPoolId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcpServiceAccount_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, gcpServiceAccount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (state_
+          != com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootstrapServer_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bootstrapServer_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, topic_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityPoolId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, identityPoolId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcpServiceAccount_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, gcpServiceAccount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud other =
+          (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) obj;
+
+      if (state_ != other.state_) return false;
+      if (!getBootstrapServer().equals(other.getBootstrapServer())) return false;
+      if (!getClusterId().equals(other.getClusterId())) return false;
+      if (!getTopic().equals(other.getTopic())) return false;
+      if (!getIdentityPoolId().equals(other.getIdentityPoolId())) return false;
+      if (!getGcpServiceAccount().equals(other.getGcpServiceAccount())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      hash = (37 * hash) + BOOTSTRAP_SERVER_FIELD_NUMBER;
+      hash = (53 * hash) + getBootstrapServer().hashCode();
+      hash = (37 * hash) + CLUSTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterId().hashCode();
+      hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+      hash = (53 * hash) + getTopic().hashCode();
+      hash = (37 * hash) + IDENTITY_POOL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentityPoolId().hashCode();
+      hash = (37 * hash) + GCP_SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getGcpServiceAccount().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ingestion settings for Confluent Cloud.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud)
+        com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloudOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_ConfluentCloud_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_ConfluentCloud_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.class,
+                com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.Builder.class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        state_ = 0;
+        bootstrapServer_ = "";
+        clusterId_ = "";
+        topic_ = "";
+        identityPoolId_ = "";
+        gcpServiceAccount_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_IngestionDataSourceSettings_ConfluentCloud_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud build() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud buildPartial() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud result =
+            new com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bootstrapServer_ = bootstrapServer_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.clusterId_ = clusterId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.topic_ = topic_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.identityPoolId_ = identityPoolId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.gcpServiceAccount_ = gcpServiceAccount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) {
+          return mergeFrom((com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud other) {
+        if (other
+            == com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance())
+          return this;
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        if (!other.getBootstrapServer().isEmpty()) {
+          bootstrapServer_ = other.bootstrapServer_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getClusterId().isEmpty()) {
+          clusterId_ = other.clusterId_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getTopic().isEmpty()) {
+          topic_ = other.topic_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getIdentityPoolId().isEmpty()) {
+          identityPoolId_ = other.identityPoolId_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getGcpServiceAccount().isEmpty()) {
+          gcpServiceAccount_ = other.gcpServiceAccount_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  state_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  bootstrapServer_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  clusterId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  topic_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  identityPoolId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  gcpServiceAccount_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the
+       * Confluent Cloud ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the
+       * Confluent Cloud ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the
+       * Confluent Cloud ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State getState() {
+        com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State result =
+            com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State.forNumber(state_);
+        return result == null
+            ? com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the
+       * Confluent Cloud ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(
+          com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An output-only field that indicates the state of the
+       * Confluent Cloud ingestion source.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bootstrapServer_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The address of the bootstrap server. The format is url:port.
+       * </pre>
+       *
+       * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bootstrapServer.
+       */
+      public java.lang.String getBootstrapServer() {
+        java.lang.Object ref = bootstrapServer_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bootstrapServer_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The address of the bootstrap server. The format is url:port.
+       * </pre>
+       *
+       * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for bootstrapServer.
+       */
+      public com.google.protobuf.ByteString getBootstrapServerBytes() {
+        java.lang.Object ref = bootstrapServer_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          bootstrapServer_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The address of the bootstrap server. The format is url:port.
+       * </pre>
+       *
+       * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bootstrapServer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBootstrapServer(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bootstrapServer_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The address of the bootstrap server. The format is url:port.
+       * </pre>
+       *
+       * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBootstrapServer() {
+        bootstrapServer_ = getDefaultInstance().getBootstrapServer();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The address of the bootstrap server. The format is url:port.
+       * </pre>
+       *
+       * <code>string bootstrap_server = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for bootstrapServer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBootstrapServerBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        bootstrapServer_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clusterId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the cluster.
+       * </pre>
+       *
+       * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The clusterId.
+       */
+      public java.lang.String getClusterId() {
+        java.lang.Object ref = clusterId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the cluster.
+       * </pre>
+       *
+       * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for clusterId.
+       */
+      public com.google.protobuf.ByteString getClusterIdBytes() {
+        java.lang.Object ref = clusterId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clusterId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the cluster.
+       * </pre>
+       *
+       * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The clusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the cluster.
+       * </pre>
+       *
+       * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterId() {
+        clusterId_ = getDefaultInstance().getClusterId();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the cluster.
+       * </pre>
+       *
+       * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for clusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clusterId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object topic_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Confluent Cloud cluster that
+       * Pub/Sub will import from.
+       * </pre>
+       *
+       * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The topic.
+       */
+      public java.lang.String getTopic() {
+        java.lang.Object ref = topic_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          topic_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Confluent Cloud cluster that
+       * Pub/Sub will import from.
+       * </pre>
+       *
+       * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for topic.
+       */
+      public com.google.protobuf.ByteString getTopicBytes() {
+        java.lang.Object ref = topic_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          topic_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Confluent Cloud cluster that
+       * Pub/Sub will import from.
+       * </pre>
+       *
+       * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The topic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopic(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        topic_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Confluent Cloud cluster that
+       * Pub/Sub will import from.
+       * </pre>
+       *
+       * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTopic() {
+        topic_ = getDefaultInstance().getTopic();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the topic in the Confluent Cloud cluster that
+       * Pub/Sub will import from.
+       * </pre>
+       *
+       * <code>string topic = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopicBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        topic_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object identityPoolId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the identity pool to be used for Federated Identity
+       * authentication with Confluent Cloud. See
+       * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+       * </pre>
+       *
+       * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The identityPoolId.
+       */
+      public java.lang.String getIdentityPoolId() {
+        java.lang.Object ref = identityPoolId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          identityPoolId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the identity pool to be used for Federated Identity
+       * authentication with Confluent Cloud. See
+       * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+       * </pre>
+       *
+       * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for identityPoolId.
+       */
+      public com.google.protobuf.ByteString getIdentityPoolIdBytes() {
+        java.lang.Object ref = identityPoolId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          identityPoolId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the identity pool to be used for Federated Identity
+       * authentication with Confluent Cloud. See
+       * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+       * </pre>
+       *
+       * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The identityPoolId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentityPoolId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identityPoolId_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the identity pool to be used for Federated Identity
+       * authentication with Confluent Cloud. See
+       * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+       * </pre>
+       *
+       * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIdentityPoolId() {
+        identityPoolId_ = getDefaultInstance().getIdentityPoolId();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the identity pool to be used for Federated Identity
+       * authentication with Confluent Cloud. See
+       * https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-pools.
+       * </pre>
+       *
+       * <code>string identity_pool_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for identityPoolId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentityPoolIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        identityPoolId_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object gcpServiceAccount_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with `identity_pool_id`.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The gcpServiceAccount.
+       */
+      public java.lang.String getGcpServiceAccount() {
+        java.lang.Object ref = gcpServiceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gcpServiceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with `identity_pool_id`.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for gcpServiceAccount.
+       */
+      public com.google.protobuf.ByteString getGcpServiceAccountBytes() {
+        java.lang.Object ref = gcpServiceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gcpServiceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with `identity_pool_id`.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The gcpServiceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcpServiceAccount(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcpServiceAccount_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with `identity_pool_id`.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGcpServiceAccount() {
+        gcpServiceAccount_ = getDefaultInstance().getGcpServiceAccount();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The GCP service account to be used for Federated Identity
+       * authentication with `identity_pool_id`.
+       * </pre>
+       *
+       * <code>string gcp_service_account = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for gcpServiceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcpServiceAccountBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        gcpServiceAccount_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud)
+    private static final com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud();
+    }
+
+    public static com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfluentCloud> PARSER =
+        new com.google.protobuf.AbstractParser<ConfluentCloud>() {
+          @java.lang.Override
+          public ConfluentCloud parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConfluentCloud> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfluentCloud> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int sourceCase_ = 0;
 
@@ -6487,6 +12621,9 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AWS_KINESIS(1),
     CLOUD_STORAGE(2),
+    AZURE_EVENT_HUBS(3),
+    AWS_MSK(5),
+    CONFLUENT_CLOUD(6),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -6509,6 +12646,12 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return AWS_KINESIS;
         case 2:
           return CLOUD_STORAGE;
+        case 3:
+          return AZURE_EVENT_HUBS;
+        case 5:
+          return AWS_MSK;
+        case 6:
+          return CONFLUENT_CLOUD;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -6641,6 +12784,179 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     return com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.getDefaultInstance();
   }
 
+  public static final int AZURE_EVENT_HUBS_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the azureEventHubs field is set.
+   */
+  @java.lang.Override
+  public boolean hasAzureEventHubs() {
+    return sourceCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The azureEventHubs.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs getAzureEventHubs() {
+    if (sourceCase_ == 3) {
+      return (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) source_;
+    }
+    return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Azure Event Hubs.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubsOrBuilder
+      getAzureEventHubsOrBuilder() {
+    if (sourceCase_ == 3) {
+      return (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) source_;
+    }
+    return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
+  }
+
+  public static final int AWS_MSK_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the awsMsk field is set.
+   */
+  @java.lang.Override
+  public boolean hasAwsMsk() {
+    return sourceCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The awsMsk.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk getAwsMsk() {
+    if (sourceCase_ == 5) {
+      return (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) source_;
+    }
+    return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amazon MSK.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMskOrBuilder getAwsMskOrBuilder() {
+    if (sourceCase_ == 5) {
+      return (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) source_;
+    }
+    return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
+  }
+
+  public static final int CONFLUENT_CLOUD_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the confluentCloud field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfluentCloud() {
+    return sourceCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The confluentCloud.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud getConfluentCloud() {
+    if (sourceCase_ == 6) {
+      return (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) source_;
+    }
+    return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confluent Cloud.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloudOrBuilder
+      getConfluentCloudOrBuilder() {
+    if (sourceCase_ == 6) {
+      return (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) source_;
+    }
+    return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
+  }
+
   public static final int PLATFORM_LOGS_SETTINGS_FIELD_NUMBER = 4;
   private com.google.pubsub.v1.PlatformLogsSettings platformLogsSettings_;
   /**
@@ -6721,8 +13037,19 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       output.writeMessage(
           2, (com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage) source_);
     }
+    if (sourceCase_ == 3) {
+      output.writeMessage(
+          3, (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) source_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getPlatformLogsSettings());
+    }
+    if (sourceCase_ == 5) {
+      output.writeMessage(5, (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) source_);
+    }
+    if (sourceCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) source_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -6743,9 +13070,24 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage) source_);
     }
+    if (sourceCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) source_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPlatformLogsSettings());
+    }
+    if (sourceCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) source_);
+    }
+    if (sourceCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6775,6 +13117,15 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       case 2:
         if (!getCloudStorage().equals(other.getCloudStorage())) return false;
         break;
+      case 3:
+        if (!getAzureEventHubs().equals(other.getAzureEventHubs())) return false;
+        break;
+      case 5:
+        if (!getAwsMsk().equals(other.getAwsMsk())) return false;
+        break;
+      case 6:
+        if (!getConfluentCloud().equals(other.getConfluentCloud())) return false;
+        break;
       case 0:
       default:
     }
@@ -6801,6 +13152,18 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       case 2:
         hash = (37 * hash) + CLOUD_STORAGE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudStorage().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + AZURE_EVENT_HUBS_FIELD_NUMBER;
+        hash = (53 * hash) + getAzureEventHubs().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + AWS_MSK_FIELD_NUMBER;
+        hash = (53 * hash) + getAwsMsk().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + CONFLUENT_CLOUD_FIELD_NUMBER;
+        hash = (53 * hash) + getConfluentCloud().hashCode();
         break;
       case 0:
       default:
@@ -6959,6 +13322,15 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       if (cloudStorageBuilder_ != null) {
         cloudStorageBuilder_.clear();
       }
+      if (azureEventHubsBuilder_ != null) {
+        azureEventHubsBuilder_.clear();
+      }
+      if (awsMskBuilder_ != null) {
+        awsMskBuilder_.clear();
+      }
+      if (confluentCloudBuilder_ != null) {
+        confluentCloudBuilder_.clear();
+      }
       platformLogsSettings_ = null;
       if (platformLogsSettingsBuilder_ != null) {
         platformLogsSettingsBuilder_.dispose();
@@ -7004,7 +13376,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     private void buildPartial0(com.google.pubsub.v1.IngestionDataSourceSettings result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.platformLogsSettings_ =
             platformLogsSettingsBuilder_ == null
                 ? platformLogsSettings_
@@ -7022,6 +13394,15 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
       if (sourceCase_ == 2 && cloudStorageBuilder_ != null) {
         result.source_ = cloudStorageBuilder_.build();
+      }
+      if (sourceCase_ == 3 && azureEventHubsBuilder_ != null) {
+        result.source_ = azureEventHubsBuilder_.build();
+      }
+      if (sourceCase_ == 5 && awsMskBuilder_ != null) {
+        result.source_ = awsMskBuilder_.build();
+      }
+      if (sourceCase_ == 6 && confluentCloudBuilder_ != null) {
+        result.source_ = confluentCloudBuilder_.build();
       }
     }
 
@@ -7085,6 +13466,21 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             mergeCloudStorage(other.getCloudStorage());
             break;
           }
+        case AZURE_EVENT_HUBS:
+          {
+            mergeAzureEventHubs(other.getAzureEventHubs());
+            break;
+          }
+        case AWS_MSK:
+          {
+            mergeAwsMsk(other.getAwsMsk());
+            break;
+          }
+        case CONFLUENT_CLOUD:
+          {
+            mergeConfluentCloud(other.getConfluentCloud());
+            break;
+          }
         case SOURCE_NOT_SET:
           {
             break;
@@ -7128,13 +13524,31 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
                 sourceCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getAzureEventHubsFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 3;
+                break;
+              } // case 26
             case 34:
               {
                 input.readMessage(
                     getPlatformLogsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getAwsMskFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getConfluentCloudFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7636,6 +14050,702 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       return cloudStorageBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs,
+            com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.Builder,
+            com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubsOrBuilder>
+        azureEventHubsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the azureEventHubs field is set.
+     */
+    @java.lang.Override
+    public boolean hasAzureEventHubs() {
+      return sourceCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The azureEventHubs.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs getAzureEventHubs() {
+      if (azureEventHubsBuilder_ == null) {
+        if (sourceCase_ == 3) {
+          return (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) source_;
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 3) {
+          return azureEventHubsBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAzureEventHubs(
+        com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs value) {
+      if (azureEventHubsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        azureEventHubsBuilder_.setMessage(value);
+      }
+      sourceCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAzureEventHubs(
+        com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.Builder builderForValue) {
+      if (azureEventHubsBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        azureEventHubsBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAzureEventHubs(
+        com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs value) {
+      if (azureEventHubsBuilder_ == null) {
+        if (sourceCase_ == 3
+            && source_
+                != com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs
+                    .getDefaultInstance()) {
+          source_ =
+              com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.newBuilder(
+                      (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 3) {
+          azureEventHubsBuilder_.mergeFrom(value);
+        } else {
+          azureEventHubsBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAzureEventHubs() {
+      if (azureEventHubsBuilder_ == null) {
+        if (sourceCase_ == 3) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 3) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        azureEventHubsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.Builder
+        getAzureEventHubsBuilder() {
+      return getAzureEventHubsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubsOrBuilder
+        getAzureEventHubsOrBuilder() {
+      if ((sourceCase_ == 3) && (azureEventHubsBuilder_ != null)) {
+        return azureEventHubsBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 3) {
+          return (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) source_;
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Azure Event Hubs.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs azure_event_hubs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs,
+            com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.Builder,
+            com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubsOrBuilder>
+        getAzureEventHubsFieldBuilder() {
+      if (azureEventHubsBuilder_ == null) {
+        if (!(sourceCase_ == 3)) {
+          source_ =
+              com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
+        }
+        azureEventHubsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs,
+                com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.Builder,
+                com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubsOrBuilder>(
+                (com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 3;
+      onChanged();
+      return azureEventHubsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk,
+            com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder,
+            com.google.pubsub.v1.IngestionDataSourceSettings.AwsMskOrBuilder>
+        awsMskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the awsMsk field is set.
+     */
+    @java.lang.Override
+    public boolean hasAwsMsk() {
+      return sourceCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The awsMsk.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk getAwsMsk() {
+      if (awsMskBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          return (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) source_;
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 5) {
+          return awsMskBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAwsMsk(com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk value) {
+      if (awsMskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        awsMskBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAwsMsk(
+        com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder builderForValue) {
+      if (awsMskBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        awsMskBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAwsMsk(com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk value) {
+      if (awsMskBuilder_ == null) {
+        if (sourceCase_ == 5
+            && source_
+                != com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance()) {
+          source_ =
+              com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.newBuilder(
+                      (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 5) {
+          awsMskBuilder_.mergeFrom(value);
+        } else {
+          awsMskBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAwsMsk() {
+      if (awsMskBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        awsMskBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder getAwsMskBuilder() {
+      return getAwsMskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMskOrBuilder getAwsMskOrBuilder() {
+      if ((sourceCase_ == 5) && (awsMskBuilder_ != null)) {
+        return awsMskBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 5) {
+          return (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) source_;
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amazon MSK.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.AwsMsk aws_msk = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk,
+            com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder,
+            com.google.pubsub.v1.IngestionDataSourceSettings.AwsMskOrBuilder>
+        getAwsMskFieldBuilder() {
+      if (awsMskBuilder_ == null) {
+        if (!(sourceCase_ == 5)) {
+          source_ = com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
+        }
+        awsMskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk,
+                com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder,
+                com.google.pubsub.v1.IngestionDataSourceSettings.AwsMskOrBuilder>(
+                (com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 5;
+      onChanged();
+      return awsMskBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud,
+            com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.Builder,
+            com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloudOrBuilder>
+        confluentCloudBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the confluentCloud field is set.
+     */
+    @java.lang.Override
+    public boolean hasConfluentCloud() {
+      return sourceCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The confluentCloud.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud getConfluentCloud() {
+      if (confluentCloudBuilder_ == null) {
+        if (sourceCase_ == 6) {
+          return (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) source_;
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 6) {
+          return confluentCloudBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfluentCloud(
+        com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud value) {
+      if (confluentCloudBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        confluentCloudBuilder_.setMessage(value);
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfluentCloud(
+        com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.Builder builderForValue) {
+      if (confluentCloudBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        confluentCloudBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConfluentCloud(
+        com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud value) {
+      if (confluentCloudBuilder_ == null) {
+        if (sourceCase_ == 6
+            && source_
+                != com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud
+                    .getDefaultInstance()) {
+          source_ =
+              com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.newBuilder(
+                      (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 6) {
+          confluentCloudBuilder_.mergeFrom(value);
+        } else {
+          confluentCloudBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConfluentCloud() {
+      if (confluentCloudBuilder_ == null) {
+        if (sourceCase_ == 6) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 6) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        confluentCloudBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.Builder
+        getConfluentCloudBuilder() {
+      return getConfluentCloudFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloudOrBuilder
+        getConfluentCloudOrBuilder() {
+      if ((sourceCase_ == 6) && (confluentCloudBuilder_ != null)) {
+        return confluentCloudBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 6) {
+          return (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) source_;
+        }
+        return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confluent Cloud.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud confluent_cloud = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud,
+            com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.Builder,
+            com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloudOrBuilder>
+        getConfluentCloudFieldBuilder() {
+      if (confluentCloudBuilder_ == null) {
+        if (!(sourceCase_ == 6)) {
+          source_ =
+              com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
+        }
+        confluentCloudBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud,
+                com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.Builder,
+                com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloudOrBuilder>(
+                (com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 6;
+      onChanged();
+      return confluentCloudBuilder_;
+    }
+
     private com.google.pubsub.v1.PlatformLogsSettings platformLogsSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.PlatformLogsSettings,
@@ -7657,7 +14767,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return Whether the platformLogsSettings field is set.
      */
     public boolean hasPlatformLogsSettings() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -7703,7 +14813,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       } else {
         platformLogsSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7726,7 +14836,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       } else {
         platformLogsSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7744,7 +14854,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      */
     public Builder mergePlatformLogsSettings(com.google.pubsub.v1.PlatformLogsSettings value) {
       if (platformLogsSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && platformLogsSettings_ != null
             && platformLogsSettings_
                 != com.google.pubsub.v1.PlatformLogsSettings.getDefaultInstance()) {
@@ -7756,7 +14866,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         platformLogsSettingsBuilder_.mergeFrom(value);
       }
       if (platformLogsSettings_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -7774,7 +14884,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearPlatformLogsSettings() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       platformLogsSettings_ = null;
       if (platformLogsSettingsBuilder_ != null) {
         platformLogsSettingsBuilder_.dispose();
@@ -7796,7 +14906,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.pubsub.v1.PlatformLogsSettings.Builder getPlatformLogsSettingsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getPlatformLogsSettingsFieldBuilder().getBuilder();
     }
