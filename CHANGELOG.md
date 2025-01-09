@@ -1,5 +1,62 @@
 # Changelog
 
+## [1.50.0](https://github.com/googleapis/google-cloud-java/compare/v1.49.0...v1.50.0) (2025-01-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* [gkehub] Update the configmanagement feature
+
+### Features
+
+* [aiplatform] add a new thought field in content proto ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [aiplatform] add Model Garden deploy API ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [cloudbuild] Add GoModule to Artifact and Results messages and new GO_MODULE_H1 hash type ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [contact-center-insights] A new resource pattern value `projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}/authorizedViews/{authorized_view}/conversations/{conversation}` added to the resource definition `contactcenterinsights.googleapis.com/Conversation` ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [dataplex] A new field `force` is added to message `.google.cloud.dataplex.v1.DeleteDataScanRequest` ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [dialogflow] add new fields for delivering intermediate transcriptions through PubSub ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [dialogflow] add new fields for delivering intermediate transcriptions through PubSub ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [gke-multi-cloud] added support for optionally disabling built-in GKE metrics ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [gkehub] Update the configmanagement feature ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [managedkafka] adds new resource_definition option ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [monitoring] added SqlCondition in AlertPolicy ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [netapp] Add ValidateDirectoryService API for testing AD connection of a storage pool ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [oracledatabase] A new value `ACCOUNT_SUSPENDED` is added to enum `State` ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [shopping-css] UpdateCssProduct is added to CssProductInput proto ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [shopping-merchant-datasources] New field `product_review_data_source` added in message `.google.shopping.merchant.datasources.v1beta.DataSource` to specify the datasource of the product review ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [speech] expand the set of supported explicit audio encodings ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [storage-transfer] support cross-bucket replication ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [talent] A new enum `RelevanceThreshold` is added ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [talent] A new enum `RelevanceThreshold` is added ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [texttospeech] StreamingSynthesize now supports opus ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [texttospeech] StreamingSynthesize now supports opus ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.47.0 ([#11385](https://github.com/googleapis/google-cloud-java/issues/11385)) ([11faf74](https://github.com/googleapis/google-cloud-java/commit/11faf74f02ece9ee944e4af29b64cfc38d114195))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.51.1 ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* renovate-bot now updates native-image-sample libraries-bom version ([#11367](https://github.com/googleapis/google-cloud-java/issues/11367)) ([8748cb9](https://github.com/googleapis/google-cloud-java/commit/8748cb9008c77ca4f7b1689ddc150f2d46069a50))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#11382](https://github.com/googleapis/google-cloud-java/issues/11382)) ([a4fd23c](https://github.com/googleapis/google-cloud-java/commit/a4fd23ce1dfa364959de1e97e3b769996f3c7d0d))
+* update native-image-sample's libraries-bom version to 26.52.0 ([#11369](https://github.com/googleapis/google-cloud-java/issues/11369)) ([2a37d4d](https://github.com/googleapis/google-cloud-java/commit/2a37d4d114a5cc9bc31825ddbb1252d8dcc61e10))
+
+
+### Documentation
+
+* [batch] fix a few broken references in documentation ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [batch] fix broken references in comments ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [datacatalog] A comment for field `parent` in message `.google.cloud.datacatalog.v1beta1.CreateTagRequest` is changed ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [datacatalog] fix markdown reference in `TagTemplate.is_publicly_readable` comment ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [gke-multi-cloud] fix comments of existing field ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [kms] code documentation improvements ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [kms] modify enum comment ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [oracledatabase] the CloudVmClusterProperties.system_version field is no longer labeled as output only ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [parallelstore] fix links in documentation ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [private-catalog] fixed format string formatting ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [recaptchaenterprise] tweak comments ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [recaptchaenterprise] Update docs for FraudPrevention field in CreateAssessment ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* [servicehealth] update documentation for various messages ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+
 ## [1.49.0](https://github.com/googleapis/google-cloud-java/compare/v1.48.0...v1.49.0) (2024-12-13)
 
 
