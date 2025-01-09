@@ -56,9 +56,14 @@ public class ConnImplBenchmark {
   public void setUp() throws IOException {
     java.util.logging.Logger.getGlobal().setLevel(Level.ALL);
 
-    connectionSettingsReadAPIEnabled = ConnectionSettings.newBuilder().setUseReadAPI(true).build();
-    connectionSettingsReadAPIDisabled =
-        ConnectionSettings.newBuilder().setUseReadAPI(false).build();
+    connectionSettingsReadAPIEnabled = ConnectionSettings.newBuilder()
+            .setUseReadAPI(true)
+            .setMaxResults(500L)
+            .setJobTimeoutMs(Long.MAX_VALUE)
+            .build();
+    connectionSettingsReadAPIDisabled = ConnectionSettings.newBuilder()
+            .setUseReadAPI(false)
+            .build();
   }
 
   @Benchmark
@@ -153,8 +158,8 @@ public class ConnImplBenchmark {
     System.out.println("\n Running");
     while (rs.next()) {
       hash += computeHash(rs, "vendor_id", ResultSet::getString);
-      hash += computeHash(rs, "pickup_datetime", ResultSet::getString);
-      hash += computeHash(rs, "dropoff_datetime", ResultSet::getString);
+      hash += computeHash(rs, "pickup_datetime", ResultSet::getLong);
+      hash += computeHash(rs, "dropoff_datetime", ResultSet::getLong);
       hash += computeHash(rs, "passenger_count", ResultSet::getLong);
       hash += computeHash(rs, "trip_distance", ResultSet::getDouble);
       hash += computeHash(rs, "rate_code", ResultSet::getString);
