@@ -3492,6 +3492,24 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testExecuteSelectReadApiEmptyResultSet() throws SQLException {
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setJobTimeoutMs(
+                Long.MAX_VALUE) // Force executeSelect to use ReadAPI instead of fast query.
+            .setUseReadAPI(true)
+            .setUseQueryCache(false)
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    String query = "SELECT TIMESTAMP '2022-01-24T23:54:25.095574Z' LIMIT 0";
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+
+    ResultSet rs = bigQueryResult.getResultSet();
+    assertThat(rs.next()).isFalse();
+    assertThat(bigQueryResult.getTotalRows()).isEqualTo(0);
+  }
+
+  @Test
   public void testExecuteSelectWithCredentials() throws SQLException {
     // This test validate that executeSelect uses the same credential provided by the BigQuery
     // object used to create the Connection client.

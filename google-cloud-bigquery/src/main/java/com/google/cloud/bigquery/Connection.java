@@ -140,7 +140,7 @@ public interface Connection {
    *   &#64;code
    *  ConnectionSettings connectionSettings =
    *        ConnectionSettings.newBuilder()
-   *            ..setUseReadAPI(true)
+   *            .setUseReadAPI(true)
    *            .build();
    *   Connection connection = bigquery.createConnection(connectionSettings);
    *     String selectQuery =

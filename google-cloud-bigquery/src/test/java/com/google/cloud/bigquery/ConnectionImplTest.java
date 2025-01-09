@@ -411,7 +411,7 @@ public class ConnectionImplTest {
 
   // calls executeSelect with a nonFast query where the query returns an empty result.
   @Test
-  public void testLegacyQuerySinglePageEmptyResults() throws BigQuerySQLException {
+  public void testLegacyQuerySinglePageEmptyResults() throws BigQuerySQLException, SQLException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     com.google.api.services.bigquery.model.Job jobResponseMock =
         new com.google.api.services.bigquery.model.Job()
@@ -428,6 +428,10 @@ public class ConnectionImplTest {
     BigQueryResult res = connectionSpy.executeSelect(SQL_QUERY);
     assertEquals(res.getTotalRows(), 0);
     assertEquals(QUERY_SCHEMA, res.getSchema());
+    assertEquals(
+        false,
+        res.getResultSet()
+            .next()); // Validates that NPE does not occur when reading from empty ResultSet.
     verify(bigqueryRpcMock, times(1))
         .createJobForQuery(any(com.google.api.services.bigquery.model.Job.class));
   }

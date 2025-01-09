@@ -113,6 +113,9 @@ public class BigQueryResultImpl<T> implements BigQueryResult<T> {
     @Override
     /*Advances the result set to the next row, returning false if no such row exists. Potentially blocking operation*/
     public boolean next() throws SQLException {
+      if (buffer == null) {
+        return false;
+      }
       if (hasReachedEnd) { // if end of stream is reached then we can simply return false
         return false;
       }
