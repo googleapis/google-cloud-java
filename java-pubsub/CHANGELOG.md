@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.136.0](https://github.com/googleapis/java-pubsub/compare/v1.135.0...v1.136.0) (2025-01-10)
+
+
+### Features
+
+* Add Kafka-based sources to IngestionDataSourceSettings proto and IngestionFailureEvent proto ([2947169](https://github.com/googleapis/java-pubsub/commit/2947169c009fa553202bc1e44276cf5a7954cd96))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.1 ([9c166f7](https://github.com/googleapis/java-pubsub/commit/9c166f76db78b0c6b2e0218460d5c0336102717a))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.45.0 ([#2292](https://github.com/googleapis/java-pubsub/issues/2292)) ([79a8982](https://github.com/googleapis/java-pubsub/commit/79a89823c6cbcc9a718f44856040b1525863cab6))
+* Update dependency com.google.cloud:google-cloud-storage to v2.46.0 ([#2291](https://github.com/googleapis/java-pubsub/issues/2291)) ([7b60884](https://github.com/googleapis/java-pubsub/commit/7b60884cc4e17df616155f7530a056c4c5e3af29))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#2301](https://github.com/googleapis/java-pubsub/issues/2301)) ([53c1a8a](https://github.com/googleapis/java-pubsub/commit/53c1a8abdd3114e0f432b3b6618133fb93e44636))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.29.2 ([#2294](https://github.com/googleapis/java-pubsub/issues/2294)) ([48d4ac1](https://github.com/googleapis/java-pubsub/commit/48d4ac1ab2f0b9f9005292977c288f55322dd16a))
+* Update dependency org.assertj:assertj-core to v3.27.2 ([#2296](https://github.com/googleapis/java-pubsub/issues/2296)) ([e5b68a5](https://github.com/googleapis/java-pubsub/commit/e5b68a563aa6ebb2bd69665624fc7fc6aef50b64))
+* Update googleapis/sdk-platform-java action to v2.51.1 ([#2298](https://github.com/googleapis/java-pubsub/issues/2298)) ([16e0144](https://github.com/googleapis/java-pubsub/commit/16e0144d83c149b60e7b8fca6c4e61546d93462f))
+
 ## [1.135.0](https://github.com/googleapis/java-pubsub/compare/v1.134.2...v1.135.0) (2024-12-12)
 
 
