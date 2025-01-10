@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.51.1](https://github.com/googleapis/java-bigtable/compare/v2.51.0...v2.51.1) (2025-01-10)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.50.0 ([#2464](https://github.com/googleapis/java-bigtable/issues/2464)) ([d63dd43](https://github.com/googleapis/java-bigtable/commit/d63dd4333e94f8ad32f260315e44b622db157002))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#2461](https://github.com/googleapis/java-bigtable/issues/2461)) ([ed24b4c](https://github.com/googleapis/java-bigtable/commit/ed24b4c0aebc2666850f103f551128f02c2ba2ae))
+* Update googleapis/sdk-platform-java action to v2.51.1 ([#2460](https://github.com/googleapis/java-bigtable/issues/2460)) ([35c979f](https://github.com/googleapis/java-bigtable/commit/35c979fff1d1194cc241f90057245de78cd5f010))
+
 ## [2.51.0](https://github.com/googleapis/java-bigtable/compare/v2.50.0...v2.51.0) (2024-12-17)
 
 
