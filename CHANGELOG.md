@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.11.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.11.0...v3.11.1) (2025-01-10)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.1 ([693c294](https://github.com/googleapis/java-bigquerystorage/commit/693c29419be0c0daad404500ba764f62de9ad56a))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.45.0 ([#2812](https://github.com/googleapis/java-bigquerystorage/issues/2812)) ([5c8ebc0](https://github.com/googleapis/java-bigquerystorage/commit/5c8ebc0e01171495c37d14d451b5fe63b9b9371b))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#2819](https://github.com/googleapis/java-bigquerystorage/issues/2819)) ([059cd9b](https://github.com/googleapis/java-bigquerystorage/commit/059cd9bf77365603f45d01c71275e51b654ff381))
+* Update dependency org.json:json to v20241224 ([#2815](https://github.com/googleapis/java-bigquerystorage/issues/2815)) ([d93cf86](https://github.com/googleapis/java-bigquerystorage/commit/d93cf8628dcb2e632a317330d43f22c3b360f36e))
+* Update dependency org.json:json to v20250107 ([#2818](https://github.com/googleapis/java-bigquerystorage/issues/2818)) ([7cfebde](https://github.com/googleapis/java-bigquerystorage/commit/7cfebdeec471eae027204743abec57a6fadab06f))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.11.4 ([#2805](https://github.com/googleapis/java-bigquerystorage/issues/2805)) ([ab94a44](https://github.com/googleapis/java-bigquerystorage/commit/ab94a44a2fd75f1b1b8f78a642ea51e37acee570))
+* Update googleapis/sdk-platform-java action to v2.51.1 ([#2817](https://github.com/googleapis/java-bigquerystorage/issues/2817)) ([2d290ac](https://github.com/googleapis/java-bigquerystorage/commit/2d290ac07f0ad9e0c2af3556e2efeeb3305f2bdf))
+
 ## [3.11.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.10.3...v3.11.0) (2024-12-12)
 
 
