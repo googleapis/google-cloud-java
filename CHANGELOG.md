@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.25.2](https://github.com/googleapis/java-datastore/compare/v2.25.1...v2.25.2) (2025-01-09)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.1 ([90d8b30](https://github.com/googleapis/java-datastore/commit/90d8b3034d5a583d880a822d1e763035a2120f4a))
+* Fix emulator command arg data-dir ([#1695](https://github.com/googleapis/java-datastore/issues/1695)) ([9d53195](https://github.com/googleapis/java-datastore/commit/9d531957da3f017f0702a126601eaa8afe3113d6))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.49.0 ([#1693](https://github.com/googleapis/java-datastore/issues/1693)) ([8160c28](https://github.com/googleapis/java-datastore/commit/8160c2895e947c118cea24e92d9a31a1fdf4653f))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#1703](https://github.com/googleapis/java-datastore/issues/1703)) ([bf9537f](https://github.com/googleapis/java-datastore/commit/bf9537f81b6e7cc2252ad0183fb87db656b009d7))
+* Update dependency com.google.guava:guava-testlib to v33.4.0-jre ([#1694](https://github.com/googleapis/java-datastore/issues/1694)) ([b91a2af](https://github.com/googleapis/java-datastore/commit/b91a2af534eb7568ec86a0b27a80a6bd2943af7b))
+
 ## [2.25.1](https://github.com/googleapis/java-datastore/compare/v2.25.0...v2.25.1) (2024-12-13)
 
 
