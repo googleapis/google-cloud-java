@@ -41,6 +41,7 @@ public class SyncListMetricDescriptors {
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setActiveOnly(true)
               .build();
       for (MetricDescriptor element :
           metricServiceClient.listMetricDescriptors(request).iterateAll()) {

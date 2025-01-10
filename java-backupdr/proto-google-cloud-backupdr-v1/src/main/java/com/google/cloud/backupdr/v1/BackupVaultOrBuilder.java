@@ -486,8 +486,7 @@ public interface BackupVaultOrBuilder
    *
    *
    * <pre>
-   * Output only. Output only
-   * Immutable after resource creation until resource deletion.
+   * Output only. Immutable after resource creation until resource deletion.
    * </pre>
    *
    * <code>
@@ -501,8 +500,7 @@ public interface BackupVaultOrBuilder
    *
    *
    * <pre>
-   * Output only. Output only
-   * Immutable after resource creation until resource deletion.
+   * Output only. Immutable after resource creation until resource deletion.
    * </pre>
    *
    * <code>
@@ -588,8 +586,6 @@ public interface BackupVaultOrBuilder
    * Optional. Note: This field is added for future use case and will not be
    * supported in the current release.
    *
-   * Optional.
-   *
    * Access restriction for the backup vault.
    * Default value is WITHIN_ORGANIZATION if not provided during creation.
    * </pre>
@@ -607,8 +603,6 @@ public interface BackupVaultOrBuilder
    * <pre>
    * Optional. Note: This field is added for future use case and will not be
    * supported in the current release.
-   *
-   * Optional.
    *
    * Access restriction for the backup vault.
    * Default value is WITHIN_ORGANIZATION if not provided during creation.

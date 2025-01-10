@@ -378,6 +378,18 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
     return ((BackupDRStubSettings) getStubSettings()).triggerBackupOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to initializeService. */
+  public UnaryCallSettings<InitializeServiceRequest, Operation> initializeServiceSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).initializeServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to initializeService. */
+  public OperationCallSettings<
+          InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).initializeServiceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -770,6 +782,19 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
             TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
         triggerBackupOperationSettings() {
       return getStubSettingsBuilder().triggerBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to initializeService. */
+    public UnaryCallSettings.Builder<InitializeServiceRequest, Operation>
+        initializeServiceSettings() {
+      return getStubSettingsBuilder().initializeServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to initializeService. */
+    public OperationCallSettings.Builder<
+            InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+        initializeServiceOperationSettings() {
+      return getStubSettingsBuilder().initializeServiceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -381,12 +381,13 @@ public interface ManagementServerOrBuilder
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.NetworkConfig> getNetworksList();
@@ -394,12 +395,13 @@ public interface ManagementServerOrBuilder
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.backupdr.v1.NetworkConfig getNetworks(int index);
@@ -407,12 +409,13 @@ public interface ManagementServerOrBuilder
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getNetworksCount();
@@ -420,12 +423,13 @@ public interface ManagementServerOrBuilder
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.NetworkConfigOrBuilder>
@@ -434,12 +438,13 @@ public interface ManagementServerOrBuilder
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.backupdr.v1.NetworkConfigOrBuilder getNetworksOrBuilder(int index);

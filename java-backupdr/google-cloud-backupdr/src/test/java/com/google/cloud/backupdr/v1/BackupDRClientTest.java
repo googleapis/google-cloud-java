@@ -2747,6 +2747,65 @@ public class BackupDRClientTest {
   }
 
   @Test
+  public void initializeServiceTest() throws Exception {
+    InitializeServiceResponse expectedResponse =
+        InitializeServiceResponse.newBuilder()
+            .setBackupVaultName("backupVaultName1928739899")
+            .setBackupPlanName("backupPlanName42972470")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("initializeServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    InitializeServiceRequest request =
+        InitializeServiceRequest.newBuilder()
+            .setName("name3373707")
+            .setResourceType("resourceType-384364440")
+            .setRequestId("requestId693933066")
+            .build();
+
+    InitializeServiceResponse actualResponse = client.initializeServiceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    InitializeServiceRequest actualRequest = ((InitializeServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getResourceType(), actualRequest.getResourceType());
+    Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void initializeServiceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      InitializeServiceRequest request =
+          InitializeServiceRequest.newBuilder()
+              .setName("name3373707")
+              .setResourceType("resourceType-384364440")
+              .setRequestId("requestId693933066")
+              .build();
+      client.initializeServiceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

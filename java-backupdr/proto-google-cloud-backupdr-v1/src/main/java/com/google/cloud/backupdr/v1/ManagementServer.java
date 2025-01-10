@@ -1022,12 +1022,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1038,12 +1039,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1055,12 +1057,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1071,12 +1074,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1087,12 +1091,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported.
+   * Optional. VPC networks to which the ManagementServer instance is connected.
+   * For this version, only a single network is supported. This field is
+   * optional if MS is created without PSA
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -3771,12 +3776,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.backupdr.v1.NetworkConfig> getNetworksList() {
@@ -3790,12 +3796,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getNetworksCount() {
@@ -3809,12 +3816,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.backupdr.v1.NetworkConfig getNetworks(int index) {
@@ -3828,12 +3836,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setNetworks(int index, com.google.cloud.backupdr.v1.NetworkConfig value) {
@@ -3853,12 +3862,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setNetworks(
@@ -3876,12 +3886,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addNetworks(com.google.cloud.backupdr.v1.NetworkConfig value) {
@@ -3901,12 +3912,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addNetworks(int index, com.google.cloud.backupdr.v1.NetworkConfig value) {
@@ -3926,12 +3938,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addNetworks(com.google.cloud.backupdr.v1.NetworkConfig.Builder builderForValue) {
@@ -3948,12 +3961,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addNetworks(
@@ -3971,12 +3985,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllNetworks(
@@ -3994,12 +4009,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearNetworks() {
@@ -4016,12 +4032,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeNetworks(int index) {
@@ -4038,12 +4055,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.backupdr.v1.NetworkConfig.Builder getNetworksBuilder(int index) {
@@ -4053,12 +4071,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.backupdr.v1.NetworkConfigOrBuilder getNetworksOrBuilder(int index) {
@@ -4072,12 +4091,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.cloud.backupdr.v1.NetworkConfigOrBuilder>
@@ -4092,12 +4112,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.backupdr.v1.NetworkConfig.Builder addNetworksBuilder() {
@@ -4108,12 +4129,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.backupdr.v1.NetworkConfig.Builder addNetworksBuilder(int index) {
@@ -4124,12 +4146,13 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. VPC networks to which the ManagementServer instance is connected.
-     * For this version, only a single network is supported.
+     * Optional. VPC networks to which the ManagementServer instance is connected.
+     * For this version, only a single network is supported. This field is
+     * optional if MS is created without PSA
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.backupdr.v1.NetworkConfig networks = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.backupdr.v1.NetworkConfig.Builder>

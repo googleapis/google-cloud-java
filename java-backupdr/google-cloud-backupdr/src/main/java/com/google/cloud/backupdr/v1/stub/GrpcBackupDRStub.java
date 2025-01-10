@@ -55,6 +55,8 @@ import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
@@ -378,6 +380,16 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<InitializeServiceRequest, Operation>
+      initializeServiceMethodDescriptor =
+          MethodDescriptor.<InitializeServiceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/InitializeService")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(InitializeServiceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -508,6 +520,10 @@ public class GrpcBackupDRStub extends BackupDRStub {
   private final UnaryCallable<TriggerBackupRequest, Operation> triggerBackupCallable;
   private final OperationCallable<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationCallable;
+  private final UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable;
+  private final OperationCallable<
+          InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -843,6 +859,16 @@ public class GrpcBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<InitializeServiceRequest, Operation> initializeServiceTransportSettings =
+        GrpcCallSettings.<InitializeServiceRequest, Operation>newBuilder()
+            .setMethodDescriptor(initializeServiceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1109,6 +1135,17 @@ public class GrpcBackupDRStub extends BackupDRStub {
         callableFactory.createOperationCallable(
             triggerBackupTransportSettings,
             settings.triggerBackupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.initializeServiceCallable =
+        callableFactory.createUnaryCallable(
+            initializeServiceTransportSettings,
+            settings.initializeServiceSettings(),
+            clientContext);
+    this.initializeServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            initializeServiceTransportSettings,
+            settings.initializeServiceOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -1406,6 +1443,17 @@ public class GrpcBackupDRStub extends BackupDRStub {
   public OperationCallable<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationCallable() {
     return triggerBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable() {
+    return initializeServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationCallable() {
+    return initializeServiceOperationCallable;
   }
 
   @Override

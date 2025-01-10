@@ -16,42 +16,35 @@
 
 package com.google.cloud.backupdr.v1.samples;
 
-// [START backupdr_v1_generated_BackupDR_DeleteBackupVault_LRO_async]
-import com.google.api.gax.longrunning.OperationFuture;
+// [START backupdr_v1_generated_BackupDR_InitializeService_async]
+import com.google.api.core.ApiFuture;
 import com.google.cloud.backupdr.v1.BackupDRClient;
-import com.google.cloud.backupdr.v1.BackupVaultName;
-import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
-import com.google.cloud.backupdr.v1.OperationMetadata;
-import com.google.protobuf.Empty;
+import com.google.cloud.backupdr.v1.InitializeServiceRequest;
+import com.google.longrunning.Operation;
 
-public class AsyncDeleteBackupVaultLRO {
+public class AsyncInitializeService {
 
   public static void main(String[] args) throws Exception {
-    asyncDeleteBackupVaultLRO();
+    asyncInitializeService();
   }
 
-  public static void asyncDeleteBackupVaultLRO() throws Exception {
+  public static void asyncInitializeService() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (BackupDRClient backupDRClient = BackupDRClient.create()) {
-      DeleteBackupVaultRequest request =
-          DeleteBackupVaultRequest.newBuilder()
-              .setName(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
+      InitializeServiceRequest request =
+          InitializeServiceRequest.newBuilder()
+              .setName("name3373707")
+              .setResourceType("resourceType-384364440")
               .setRequestId("requestId693933066")
-              .setForce(true)
-              .setEtag("etag3123477")
-              .setValidateOnly(true)
-              .setAllowMissing(true)
-              .setIgnoreBackupPlanReferences(true)
               .build();
-      OperationFuture<Empty, OperationMetadata> future =
-          backupDRClient.deleteBackupVaultOperationCallable().futureCall(request);
+      ApiFuture<Operation> future = backupDRClient.initializeServiceCallable().futureCall(request);
       // Do something.
-      future.get();
+      Operation response = future.get();
     }
   }
 }
-// [END backupdr_v1_generated_BackupDR_DeleteBackupVault_LRO_async]
+// [END backupdr_v1_generated_BackupDR_InitializeService_async]
