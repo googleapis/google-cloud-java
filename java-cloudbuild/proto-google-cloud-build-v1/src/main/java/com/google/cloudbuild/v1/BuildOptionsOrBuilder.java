@@ -616,4 +616,19 @@ public interface BuildOptionsOrBuilder
    * @return The defaultLogsBucketBehavior.
    */
   com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior getDefaultLogsBucketBehavior();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to specify whether structured logging is enabled.
+   *
+   * If true, JSON-formatted logs are parsed as structured logs.
+   * </pre>
+   *
+   * <code>bool enable_structured_logging = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableStructuredLogging.
+   */
+  boolean getEnableStructuredLogging();
 }

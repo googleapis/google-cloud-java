@@ -742,7 +742,7 @@ public final class Cloudbuild {
           + "\027\n\ntrigger_id\030\002 \001(\tB\003\340A\002\022A\n\007trigger\030\003 \001("
           + "\0132+.google.devtools.cloudbuild.v1.BuildT"
           + "riggerB\003\340A\002\022/\n\013update_mask\030\005 \001(\0132\032.googl"
-          + "e.protobuf.FieldMask\"\372\013\n\014BuildOptions\022L\n"
+          + "e.protobuf.FieldMask\"\242\014\n\014BuildOptions\022L\n"
           + "\026source_provenance_hash\030\001 \003(\0162,.google.d"
           + "evtools.cloudbuild.v1.Hash.HashType\022Y\n\027r"
           + "equested_verify_option\030\002 \001(\01628.google.de"
@@ -765,7 +765,8 @@ public final class Cloudbuild {
           + "loudbuild.v1.Volume\022p\n\034default_logs_buck"
           + "et_behavior\030\025 \001(\0162E.google.devtools.clou"
           + "dbuild.v1.BuildOptions.DefaultLogsBucket"
-          + "BehaviorB\003\340A\001\032E\n\nPoolOption\0227\n\004name\030\001 \001("
+          + "BehaviorB\003\340A\001\022&\n\031enable_structured_loggi"
+          + "ng\030\027 \001(\010B\003\340A\001\032E\n\nPoolOption\0227\n\004name\030\001 \001("
           + "\tB)\372A&\n$cloudbuild.googleapis.com/Worker"
           + "Pool\".\n\014VerifyOption\022\020\n\014NOT_VERIFIED\020\000\022\014"
           + "\n\010VERIFIED\020\001\"w\n\013MachineType\022\017\n\013UNSPECIFI"
@@ -779,9 +780,9 @@ public final class Cloudbuild {
           + "_ONLY\020\002\022\030\n\020STACKDRIVER_ONLY\020\003\032\002\010\001\022\026\n\022CLO"
           + "UD_LOGGING_ONLY\020\005\022\010\n\004NONE\020\004\"|\n\031DefaultLo"
           + "gsBucketBehavior\022,\n(DEFAULT_LOGS_BUCKET_"
-          + "BEHAVIOR_UNSPECIFIED\020\000\022\036\n\032REGIONAL_USER_"
-          + "OWNED_BUCKET\020\001\022\021\n\rLEGACY_BUCKET\020\002\"\205\001\n\034Re",
-      "ceiveTriggerWebhookRequest\022\014\n\004name\030\005 \001(\t"
+          + "BEHAVIOR_UNSPECIFIED\020\000\022\036\n\032REGIONAL_USER_",
+      "OWNED_BUCKET\020\001\022\021\n\rLEGACY_BUCKET\020\002\"\205\001\n\034Re"
+          + "ceiveTriggerWebhookRequest\022\014\n\004name\030\005 \001(\t"
           + "\022\"\n\004body\030\001 \001(\0132\024.google.api.HttpBody\022\022\n\n"
           + "project_id\030\002 \001(\t\022\017\n\007trigger\030\003 \001(\t\022\016\n\006sec"
           + "ret\030\004 \001(\t\"\037\n\035ReceiveTriggerWebhookRespon"
@@ -1723,6 +1724,7 @@ public final class Cloudbuild {
               "SecretEnv",
               "Volumes",
               "DefaultLogsBucketBehavior",
+              "EnableStructuredLogging",
             });
     internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_descriptor =
         internal_static_google_devtools_cloudbuild_v1_BuildOptions_descriptor
