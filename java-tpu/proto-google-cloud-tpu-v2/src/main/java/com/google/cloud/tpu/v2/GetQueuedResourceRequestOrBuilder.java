@@ -19,47 +19,37 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.tpu.v2;
 
-public interface SchedulingConfigOrBuilder
+public interface GetQueuedResourceRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2.SchedulingConfig)
+    // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2.GetQueuedResourceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Defines whether the node is preemptible.
+   * Required. The resource name.
    * </pre>
    *
-   * <code>bool preemptible = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
-   * @return The preemptible.
+   * @return The name.
    */
-  boolean getPreemptible();
-
+  java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Whether the node is created under a reservation.
+   * Required. The resource name.
    * </pre>
    *
-   * <code>bool reserved = 2;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
-   * @return The reserved.
+   * @return The bytes for name.
    */
-  boolean getReserved();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Defines whether the node is Spot VM.
-   * </pre>
-   *
-   * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The spot.
-   */
-  boolean getSpot();
+  com.google.protobuf.ByteString getNameBytes();
 }

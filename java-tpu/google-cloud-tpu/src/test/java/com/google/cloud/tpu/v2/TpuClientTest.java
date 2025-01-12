@@ -19,6 +19,7 @@ package com.google.cloud.tpu.v2;
 import static com.google.cloud.tpu.v2.TpuClient.ListAcceleratorTypesPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListNodesPagedResponse;
+import static com.google.cloud.tpu.v2.TpuClient.ListQueuedResourcesPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -194,6 +195,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -252,6 +254,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -310,6 +313,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -382,6 +386,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -538,6 +543,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -610,6 +616,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -682,6 +689,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -733,6 +741,489 @@ public class TpuClientTest {
       Node node = Node.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateNodeAsync(node, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listQueuedResourcesTest() throws Exception {
+    QueuedResource responsesElement = QueuedResource.newBuilder().build();
+    ListQueuedResourcesResponse expectedResponse =
+        ListQueuedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQueuedResources(Arrays.asList(responsesElement))
+            .build();
+    mockTpu.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListQueuedResourcesPagedResponse pagedListResponse = client.listQueuedResources(parent);
+
+    List<QueuedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQueuedResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQueuedResourcesRequest actualRequest = ((ListQueuedResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQueuedResourcesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listQueuedResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQueuedResourcesTest2() throws Exception {
+    QueuedResource responsesElement = QueuedResource.newBuilder().build();
+    ListQueuedResourcesResponse expectedResponse =
+        ListQueuedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQueuedResources(Arrays.asList(responsesElement))
+            .build();
+    mockTpu.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListQueuedResourcesPagedResponse pagedListResponse = client.listQueuedResources(parent);
+
+    List<QueuedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQueuedResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQueuedResourcesRequest actualRequest = ((ListQueuedResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQueuedResourcesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listQueuedResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQueuedResourceTest() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    mockTpu.addResponse(expectedResponse);
+
+    QueuedResourceName name = QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+
+    QueuedResource actualResponse = client.getQueuedResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQueuedResourceRequest actualRequest = ((GetQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQueuedResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      QueuedResourceName name =
+          QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+      client.getQueuedResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQueuedResourceTest2() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    mockTpu.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QueuedResource actualResponse = client.getQueuedResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQueuedResourceRequest actualRequest = ((GetQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQueuedResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getQueuedResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQueuedResourceTest() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    QueuedResource queuedResource = QueuedResource.newBuilder().build();
+    String queuedResourceId = "queuedResourceId437646236";
+
+    QueuedResource actualResponse =
+        client.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQueuedResourceRequest actualRequest =
+        ((CreateQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(queuedResource, actualRequest.getQueuedResource());
+    Assert.assertEquals(queuedResourceId, actualRequest.getQueuedResourceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQueuedResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      QueuedResource queuedResource = QueuedResource.newBuilder().build();
+      String queuedResourceId = "queuedResourceId437646236";
+      client.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createQueuedResourceTest2() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    QueuedResource queuedResource = QueuedResource.newBuilder().build();
+    String queuedResourceId = "queuedResourceId437646236";
+
+    QueuedResource actualResponse =
+        client.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQueuedResourceRequest actualRequest =
+        ((CreateQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(queuedResource, actualRequest.getQueuedResource());
+    Assert.assertEquals(queuedResourceId, actualRequest.getQueuedResourceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQueuedResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      QueuedResource queuedResource = QueuedResource.newBuilder().build();
+      String queuedResourceId = "queuedResourceId437646236";
+      client.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteQueuedResourceTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    QueuedResourceName name = QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+
+    client.deleteQueuedResourceAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQueuedResourceRequest actualRequest =
+        ((DeleteQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQueuedResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      QueuedResourceName name =
+          QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+      client.deleteQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteQueuedResourceTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteQueuedResourceAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQueuedResourceRequest actualRequest =
+        ((DeleteQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQueuedResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void resetQueuedResourceTest() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("resetQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    QueuedResourceName name = QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+
+    QueuedResource actualResponse = client.resetQueuedResourceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResetQueuedResourceRequest actualRequest = ((ResetQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resetQueuedResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      QueuedResourceName name =
+          QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+      client.resetQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void resetQueuedResourceTest2() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("resetQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    QueuedResource actualResponse = client.resetQueuedResourceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResetQueuedResourceRequest actualRequest = ((ResetQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resetQueuedResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.resetQueuedResourceAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

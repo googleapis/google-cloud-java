@@ -23,96 +23,100 @@ package com.google.cloud.tpu.v2;
  *
  *
  * <pre>
- * Sets the scheduling options for this node.
+ * Request for
+ * [ResetQueuedResource][google.cloud.tpu.v2.Tpu.ResetQueuedResource].
  * </pre>
  *
- * Protobuf type {@code google.cloud.tpu.v2.SchedulingConfig}
+ * Protobuf type {@code google.cloud.tpu.v2.ResetQueuedResourceRequest}
  */
-public final class SchedulingConfig extends com.google.protobuf.GeneratedMessageV3
+public final class ResetQueuedResourceRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.SchedulingConfig)
-    SchedulingConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.ResetQueuedResourceRequest)
+    ResetQueuedResourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use SchedulingConfig.newBuilder() to construct.
-  private SchedulingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ResetQueuedResourceRequest.newBuilder() to construct.
+  private ResetQueuedResourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private SchedulingConfig() {}
+  private ResetQueuedResourceRequest() {
+    name_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new SchedulingConfig();
+    return new ResetQueuedResourceRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tpu.v2.CloudTpuProto
-        .internal_static_google_cloud_tpu_v2_SchedulingConfig_descriptor;
+        .internal_static_google_cloud_tpu_v2_ResetQueuedResourceRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.tpu.v2.CloudTpuProto
-        .internal_static_google_cloud_tpu_v2_SchedulingConfig_fieldAccessorTable
+        .internal_static_google_cloud_tpu_v2_ResetQueuedResourceRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tpu.v2.SchedulingConfig.class,
-            com.google.cloud.tpu.v2.SchedulingConfig.Builder.class);
+            com.google.cloud.tpu.v2.ResetQueuedResourceRequest.class,
+            com.google.cloud.tpu.v2.ResetQueuedResourceRequest.Builder.class);
   }
 
-  public static final int PREEMPTIBLE_FIELD_NUMBER = 1;
-  private boolean preemptible_ = false;
+  public static final int NAME_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
    * <pre>
-   * Defines whether the node is preemptible.
+   * Required. The name of the queued resource.
    * </pre>
    *
-   * <code>bool preemptible = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
-   * @return The preemptible.
+   * @return The name.
    */
   @java.lang.Override
-  public boolean getPreemptible() {
-    return preemptible_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
-
-  public static final int RESERVED_FIELD_NUMBER = 2;
-  private boolean reserved_ = false;
   /**
    *
    *
    * <pre>
-   * Whether the node is created under a reservation.
+   * Required. The name of the queued resource.
    * </pre>
    *
-   * <code>bool reserved = 2;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
-   * @return The reserved.
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public boolean getReserved() {
-    return reserved_;
-  }
-
-  public static final int SPOT_FIELD_NUMBER = 3;
-  private boolean spot_ = false;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Defines whether the node is Spot VM.
-   * </pre>
-   *
-   * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The spot.
-   */
-  @java.lang.Override
-  public boolean getSpot() {
-    return spot_;
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -129,14 +133,8 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (preemptible_ != false) {
-      output.writeBool(1, preemptible_);
-    }
-    if (reserved_ != false) {
-      output.writeBool(2, reserved_);
-    }
-    if (spot_ != false) {
-      output.writeBool(3, spot_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -147,14 +145,8 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (preemptible_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, preemptible_);
-    }
-    if (reserved_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, reserved_);
-    }
-    if (spot_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, spot_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,14 +158,13 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.tpu.v2.SchedulingConfig)) {
+    if (!(obj instanceof com.google.cloud.tpu.v2.ResetQueuedResourceRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.tpu.v2.SchedulingConfig other = (com.google.cloud.tpu.v2.SchedulingConfig) obj;
+    com.google.cloud.tpu.v2.ResetQueuedResourceRequest other =
+        (com.google.cloud.tpu.v2.ResetQueuedResourceRequest) obj;
 
-    if (getPreemptible() != other.getPreemptible()) return false;
-    if (getReserved() != other.getReserved()) return false;
-    if (getSpot() != other.getSpot()) return false;
+    if (!getName().equals(other.getName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -185,82 +176,78 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreemptible());
-    hash = (37 * hash) + RESERVED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReserved());
-    hash = (37 * hash) + SPOT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSpot());
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(byte[] data)
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseDelimitedFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseDelimitedFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig parseFrom(
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -277,7 +264,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.tpu.v2.SchedulingConfig prototype) {
+  public static Builder newBuilder(com.google.cloud.tpu.v2.ResetQueuedResourceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -295,31 +282,32 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Sets the scheduling options for this node.
+   * Request for
+   * [ResetQueuedResource][google.cloud.tpu.v2.Tpu.ResetQueuedResource].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.tpu.v2.SchedulingConfig}
+   * Protobuf type {@code google.cloud.tpu.v2.ResetQueuedResourceRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.tpu.v2.SchedulingConfig)
-      com.google.cloud.tpu.v2.SchedulingConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.tpu.v2.ResetQueuedResourceRequest)
+      com.google.cloud.tpu.v2.ResetQueuedResourceRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.tpu.v2.CloudTpuProto
-          .internal_static_google_cloud_tpu_v2_SchedulingConfig_descriptor;
+          .internal_static_google_cloud_tpu_v2_ResetQueuedResourceRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.tpu.v2.CloudTpuProto
-          .internal_static_google_cloud_tpu_v2_SchedulingConfig_fieldAccessorTable
+          .internal_static_google_cloud_tpu_v2_ResetQueuedResourceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tpu.v2.SchedulingConfig.class,
-              com.google.cloud.tpu.v2.SchedulingConfig.Builder.class);
+              com.google.cloud.tpu.v2.ResetQueuedResourceRequest.class,
+              com.google.cloud.tpu.v2.ResetQueuedResourceRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.tpu.v2.SchedulingConfig.newBuilder()
+    // Construct using com.google.cloud.tpu.v2.ResetQueuedResourceRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -330,26 +318,24 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      preemptible_ = false;
-      reserved_ = false;
-      spot_ = false;
+      name_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.tpu.v2.CloudTpuProto
-          .internal_static_google_cloud_tpu_v2_SchedulingConfig_descriptor;
+          .internal_static_google_cloud_tpu_v2_ResetQueuedResourceRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.tpu.v2.SchedulingConfig getDefaultInstanceForType() {
-      return com.google.cloud.tpu.v2.SchedulingConfig.getDefaultInstance();
+    public com.google.cloud.tpu.v2.ResetQueuedResourceRequest getDefaultInstanceForType() {
+      return com.google.cloud.tpu.v2.ResetQueuedResourceRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.tpu.v2.SchedulingConfig build() {
-      com.google.cloud.tpu.v2.SchedulingConfig result = buildPartial();
+    public com.google.cloud.tpu.v2.ResetQueuedResourceRequest build() {
+      com.google.cloud.tpu.v2.ResetQueuedResourceRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -357,9 +343,9 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.cloud.tpu.v2.SchedulingConfig buildPartial() {
-      com.google.cloud.tpu.v2.SchedulingConfig result =
-          new com.google.cloud.tpu.v2.SchedulingConfig(this);
+    public com.google.cloud.tpu.v2.ResetQueuedResourceRequest buildPartial() {
+      com.google.cloud.tpu.v2.ResetQueuedResourceRequest result =
+          new com.google.cloud.tpu.v2.ResetQueuedResourceRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -367,16 +353,10 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.tpu.v2.SchedulingConfig result) {
+    private void buildPartial0(com.google.cloud.tpu.v2.ResetQueuedResourceRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.preemptible_ = preemptible_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.reserved_ = reserved_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.spot_ = spot_;
+        result.name_ = name_;
       }
     }
 
@@ -415,24 +395,21 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.tpu.v2.SchedulingConfig) {
-        return mergeFrom((com.google.cloud.tpu.v2.SchedulingConfig) other);
+      if (other instanceof com.google.cloud.tpu.v2.ResetQueuedResourceRequest) {
+        return mergeFrom((com.google.cloud.tpu.v2.ResetQueuedResourceRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.tpu.v2.SchedulingConfig other) {
-      if (other == com.google.cloud.tpu.v2.SchedulingConfig.getDefaultInstance()) return this;
-      if (other.getPreemptible() != false) {
-        setPreemptible(other.getPreemptible());
-      }
-      if (other.getReserved() != false) {
-        setReserved(other.getReserved());
-      }
-      if (other.getSpot() != false) {
-        setSpot(other.getSpot());
+    public Builder mergeFrom(com.google.cloud.tpu.v2.ResetQueuedResourceRequest other) {
+      if (other == com.google.cloud.tpu.v2.ResetQueuedResourceRequest.getDefaultInstance())
+        return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -460,24 +437,12 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
-            case 8:
+            case 10:
               {
-                preemptible_ = input.readBool();
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
-            case 16:
-              {
-                reserved_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-            case 24:
-              {
-                spot_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -497,37 +462,74 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private boolean preemptible_;
+    private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * Defines whether the node is preemptible.
+     * Required. The name of the queued resource.
      * </pre>
      *
-     * <code>bool preemptible = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
-     * @return The preemptible.
+     * @return The name.
      */
-    @java.lang.Override
-    public boolean getPreemptible() {
-      return preemptible_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Defines whether the node is preemptible.
+     * Required. The name of the queued resource.
      * </pre>
      *
-     * <code>bool preemptible = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
-     * @param value The preemptible to set.
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the queued resource.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setPreemptible(boolean value) {
-
-      preemptible_ = value;
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -536,52 +538,18 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Defines whether the node is preemptible.
+     * Required. The name of the queued resource.
      * </pre>
      *
-     * <code>bool preemptible = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPreemptible() {
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
       bitField0_ = (bitField0_ & ~0x00000001);
-      preemptible_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean reserved_;
-    /**
-     *
-     *
-     * <pre>
-     * Whether the node is created under a reservation.
-     * </pre>
-     *
-     * <code>bool reserved = 2;</code>
-     *
-     * @return The reserved.
-     */
-    @java.lang.Override
-    public boolean getReserved() {
-      return reserved_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether the node is created under a reservation.
-     * </pre>
-     *
-     * <code>bool reserved = 2;</code>
-     *
-     * @param value The reserved to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReserved(boolean value) {
-
-      reserved_ = value;
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -589,69 +557,23 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Whether the node is created under a reservation.
+     * Required. The name of the queued resource.
      * </pre>
      *
-     * <code>bool reserved = 2;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder clearReserved() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      reserved_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean spot_;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Defines whether the node is Spot VM.
-     * </pre>
-     *
-     * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The spot.
-     */
-    @java.lang.Override
-    public boolean getSpot() {
-      return spot_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Defines whether the node is Spot VM.
-     * </pre>
-     *
-     * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The spot to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSpot(boolean value) {
-
-      spot_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Defines whether the node is Spot VM.
-     * </pre>
-     *
-     * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearSpot() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      spot_ = false;
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,24 +589,24 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.tpu.v2.SchedulingConfig)
+    // @@protoc_insertion_point(builder_scope:google.cloud.tpu.v2.ResetQueuedResourceRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.tpu.v2.SchedulingConfig)
-  private static final com.google.cloud.tpu.v2.SchedulingConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.tpu.v2.ResetQueuedResourceRequest)
+  private static final com.google.cloud.tpu.v2.ResetQueuedResourceRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.tpu.v2.SchedulingConfig();
+    DEFAULT_INSTANCE = new com.google.cloud.tpu.v2.ResetQueuedResourceRequest();
   }
 
-  public static com.google.cloud.tpu.v2.SchedulingConfig getDefaultInstance() {
+  public static com.google.cloud.tpu.v2.ResetQueuedResourceRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SchedulingConfig> PARSER =
-      new com.google.protobuf.AbstractParser<SchedulingConfig>() {
+  private static final com.google.protobuf.Parser<ResetQueuedResourceRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ResetQueuedResourceRequest>() {
         @java.lang.Override
-        public SchedulingConfig parsePartialFrom(
+        public ResetQueuedResourceRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -703,17 +625,17 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
         }
       };
 
-  public static com.google.protobuf.Parser<SchedulingConfig> parser() {
+  public static com.google.protobuf.Parser<ResetQueuedResourceRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SchedulingConfig> getParserForType() {
+  public com.google.protobuf.Parser<ResetQueuedResourceRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.tpu.v2.SchedulingConfig getDefaultInstanceForType() {
+  public com.google.cloud.tpu.v2.ResetQueuedResourceRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

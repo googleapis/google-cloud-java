@@ -45,6 +45,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     healthDescription_ = "";
     runtimeVersion_ = "";
+    networkConfigs_ = java.util.Collections.emptyList();
     cidrBlock_ = "";
     networkEndpoints_ = java.util.Collections.emptyList();
     health_ = 0;
@@ -251,6 +252,16 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>UNHIDING = 15;</code>
      */
     UNHIDING(15),
+    /**
+     *
+     *
+     * <pre>
+     * TPU node has unknown state after a failed repair.
+     * </pre>
+     *
+     * <code>UNKNOWN = 16;</code>
+     */
+    UNKNOWN(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -406,6 +417,16 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>UNHIDING = 15;</code>
      */
     public static final int UNHIDING_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * TPU node has unknown state after a failed repair.
+     * </pre>
+     *
+     * <code>UNKNOWN = 16;</code>
+     */
+    public static final int UNKNOWN_VALUE = 16;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -461,6 +482,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           return HIDDEN;
         case 15:
           return UNHIDING;
+        case 16:
+          return UNKNOWN;
         default:
           return null;
       }
@@ -1224,7 +1247,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Network configurations for the TPU node.
+   * Network configurations for the TPU node. network_config and network_configs
+   * are mutually exclusive, you can only specify one of them. If both are
+   * specified, an error will be returned.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -1239,7 +1264,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Network configurations for the TPU node.
+   * Network configurations for the TPU node. network_config and network_configs
+   * are mutually exclusive, you can only specify one of them. If both are
+   * specified, an error will be returned.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -1256,7 +1283,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Network configurations for the TPU node.
+   * Network configurations for the TPU node. network_config and network_configs
+   * are mutually exclusive, you can only specify one of them. If both are
+   * specified, an error will be returned.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -1266,6 +1295,102 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     return networkConfig_ == null
         ? com.google.cloud.tpu.v2.NetworkConfig.getDefaultInstance()
         : networkConfig_;
+  }
+
+  public static final int NETWORK_CONFIGS_FIELD_NUMBER = 49;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.tpu.v2.NetworkConfig> networkConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.tpu.v2.NetworkConfig> getNetworkConfigsList() {
+    return networkConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.tpu.v2.NetworkConfigOrBuilder>
+      getNetworkConfigsOrBuilderList() {
+    return networkConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getNetworkConfigsCount() {
+    return networkConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2.NetworkConfig getNetworkConfigs(int index) {
+    return networkConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2.NetworkConfigOrBuilder getNetworkConfigsOrBuilder(int index) {
+    return networkConfigs_.get(index);
   }
 
   public static final int CIDR_BLOCK_FIELD_NUMBER = 13;
@@ -2353,6 +2478,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (multisliceNode_ != false) {
       output.writeBool(48, multisliceNode_);
     }
+    for (int i = 0; i < networkConfigs_.size(); i++) {
+      output.writeMessage(49, networkConfigs_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2456,6 +2584,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (multisliceNode_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(48, multisliceNode_);
     }
+    for (int i = 0; i < networkConfigs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, networkConfigs_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2481,6 +2612,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (hasNetworkConfig()) {
       if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
     }
+    if (!getNetworkConfigsList().equals(other.getNetworkConfigsList())) return false;
     if (!getCidrBlock().equals(other.getCidrBlock())) return false;
     if (hasServiceAccount() != other.hasServiceAccount()) return false;
     if (hasServiceAccount()) {
@@ -2539,6 +2671,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (hasNetworkConfig()) {
       hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkConfig().hashCode();
+    }
+    if (getNetworkConfigsCount() > 0) {
+      hash = (37 * hash) + NETWORK_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkConfigsList().hashCode();
     }
     hash = (37 * hash) + CIDR_BLOCK_FIELD_NUMBER;
     hash = (53 * hash) + getCidrBlock().hashCode();
@@ -2761,6 +2897,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getNetworkConfigFieldBuilder();
+        getNetworkConfigsFieldBuilder();
         getServiceAccountFieldBuilder();
         getCreateTimeFieldBuilder();
         getSchedulingConfigFieldBuilder();
@@ -2787,6 +2924,13 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         networkConfigBuilder_.dispose();
         networkConfigBuilder_ = null;
       }
+      if (networkConfigsBuilder_ == null) {
+        networkConfigs_ = java.util.Collections.emptyList();
+      } else {
+        networkConfigs_ = null;
+        networkConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
       cidrBlock_ = "";
       serviceAccount_ = null;
       if (serviceAccountBuilder_ != null) {
@@ -2809,7 +2953,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         networkEndpoints_ = null;
         networkEndpointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       health_ = 0;
       internalGetMutableLabels().clear();
       internalGetMutableMetadata().clear();
@@ -2821,7 +2965,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         dataDisks_ = null;
         dataDisksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       apiVersion_ = 0;
       if (symptomsBuilder_ == null) {
         symptoms_ = java.util.Collections.emptyList();
@@ -2829,7 +2973,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         symptoms_ = null;
         symptomsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       shieldedInstanceConfig_ = null;
       if (shieldedInstanceConfigBuilder_ != null) {
         shieldedInstanceConfigBuilder_.dispose();
@@ -2877,28 +3021,37 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.tpu.v2.Node result) {
+      if (networkConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          networkConfigs_ = java.util.Collections.unmodifiableList(networkConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.networkConfigs_ = networkConfigs_;
+      } else {
+        result.networkConfigs_ = networkConfigsBuilder_.build();
+      }
       if (networkEndpointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           networkEndpoints_ = java.util.Collections.unmodifiableList(networkEndpoints_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.networkEndpoints_ = networkEndpoints_;
       } else {
         result.networkEndpoints_ = networkEndpointsBuilder_.build();
       }
       if (dataDisksBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           dataDisks_ = java.util.Collections.unmodifiableList(dataDisks_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00040000);
         }
         result.dataDisks_ = dataDisks_;
       } else {
         result.dataDisks_ = dataDisksBuilder_.build();
       }
       if (symptomsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           symptoms_ = java.util.Collections.unmodifiableList(symptoms_);
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.symptoms_ = symptoms_;
       } else {
@@ -2932,62 +3085,62 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.cidrBlock_ = cidrBlock_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.serviceAccount_ =
             serviceAccountBuilder_ == null ? serviceAccount_ : serviceAccountBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.schedulingConfig_ =
             schedulingConfigBuilder_ == null ? schedulingConfig_ : schedulingConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.health_ = health_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         tags_.makeImmutable();
         result.tags_ = tags_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.id_ = id_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.apiVersion_ = apiVersion_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.shieldedInstanceConfig_ =
             shieldedInstanceConfigBuilder_ == null
                 ? shieldedInstanceConfig_
                 : shieldedInstanceConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.acceleratorConfig_ =
             acceleratorConfigBuilder_ == null
                 ? acceleratorConfig_
                 : acceleratorConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.queuedResource_ = queuedResource_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.multisliceNode_ = multisliceNode_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3069,9 +3222,36 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (other.hasNetworkConfig()) {
         mergeNetworkConfig(other.getNetworkConfig());
       }
+      if (networkConfigsBuilder_ == null) {
+        if (!other.networkConfigs_.isEmpty()) {
+          if (networkConfigs_.isEmpty()) {
+            networkConfigs_ = other.networkConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureNetworkConfigsIsMutable();
+            networkConfigs_.addAll(other.networkConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.networkConfigs_.isEmpty()) {
+          if (networkConfigsBuilder_.isEmpty()) {
+            networkConfigsBuilder_.dispose();
+            networkConfigsBuilder_ = null;
+            networkConfigs_ = other.networkConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            networkConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNetworkConfigsFieldBuilder()
+                    : null;
+          } else {
+            networkConfigsBuilder_.addAllMessages(other.networkConfigs_);
+          }
+        }
+      }
       if (!other.getCidrBlock().isEmpty()) {
         cidrBlock_ = other.cidrBlock_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasServiceAccount()) {
@@ -3087,7 +3267,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         if (!other.networkEndpoints_.isEmpty()) {
           if (networkEndpoints_.isEmpty()) {
             networkEndpoints_ = other.networkEndpoints_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureNetworkEndpointsIsMutable();
             networkEndpoints_.addAll(other.networkEndpoints_);
@@ -3100,7 +3280,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             networkEndpointsBuilder_.dispose();
             networkEndpointsBuilder_ = null;
             networkEndpoints_ = other.networkEndpoints_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             networkEndpointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNetworkEndpointsFieldBuilder()
@@ -3114,13 +3294,13 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         setHealthValue(other.getHealthValue());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00002000;
-      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
       bitField0_ |= 0x00004000;
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00008000;
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ |= 0x00008000;
+          bitField0_ |= 0x00010000;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -3134,7 +3314,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         if (!other.dataDisks_.isEmpty()) {
           if (dataDisks_.isEmpty()) {
             dataDisks_ = other.dataDisks_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
           } else {
             ensureDataDisksIsMutable();
             dataDisks_.addAll(other.dataDisks_);
@@ -3147,7 +3327,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             dataDisksBuilder_.dispose();
             dataDisksBuilder_ = null;
             dataDisks_ = other.dataDisks_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
             dataDisksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDataDisksFieldBuilder()
@@ -3164,7 +3344,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         if (!other.symptoms_.isEmpty()) {
           if (symptoms_.isEmpty()) {
             symptoms_ = other.symptoms_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensureSymptomsIsMutable();
             symptoms_.addAll(other.symptoms_);
@@ -3177,7 +3357,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             symptomsBuilder_.dispose();
             symptomsBuilder_ = null;
             symptoms_ = other.symptoms_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
             symptomsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSymptomsFieldBuilder()
@@ -3195,7 +3375,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getQueuedResource().isEmpty()) {
         queuedResource_ = other.queuedResource_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.getMultisliceNode() != false) {
@@ -3266,20 +3446,20 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 cidrBlock_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 106
             case 130:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 130
             case 138:
               {
                 input.readMessage(
                     getSchedulingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 138
             case 170:
@@ -3298,7 +3478,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             case 176:
               {
                 health_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 176
             case 194:
@@ -3310,13 +3490,13 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 194
             case 264:
               {
                 id_ = input.readInt64();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 264
             case 274:
@@ -3328,7 +3508,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 274
             case 290:
@@ -3340,13 +3520,13 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             case 298:
               {
                 input.readMessage(getServiceAccountFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 298
             case 304:
               {
                 apiVersion_ = input.readEnum();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 304
             case 314:
@@ -3385,28 +3565,41 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 362
             case 370:
               {
                 input.readMessage(
                     getAcceleratorConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 370
             case 378:
               {
                 queuedResource_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 378
             case 384:
               {
                 multisliceNode_ = input.readBool();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 384
+            case 394:
+              {
+                com.google.cloud.tpu.v2.NetworkConfig m =
+                    input.readMessage(
+                        com.google.cloud.tpu.v2.NetworkConfig.parser(), extensionRegistry);
+                if (networkConfigsBuilder_ == null) {
+                  ensureNetworkConfigsIsMutable();
+                  networkConfigs_.add(m);
+                } else {
+                  networkConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 394
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4076,7 +4269,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4090,7 +4285,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4110,7 +4307,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4132,7 +4331,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4151,7 +4352,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4178,7 +4381,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4197,7 +4402,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4211,7 +4418,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4229,7 +4438,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network configurations for the TPU node.
+     * Network configurations for the TPU node. network_config and network_configs
+     * are mutually exclusive, you can only specify one of them. If both are
+     * specified, an error will be returned.
      * </pre>
      *
      * <code>.google.cloud.tpu.v2.NetworkConfig network_config = 36;</code>
@@ -4249,6 +4460,450 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         networkConfig_ = null;
       }
       return networkConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.tpu.v2.NetworkConfig> networkConfigs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureNetworkConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        networkConfigs_ =
+            new java.util.ArrayList<com.google.cloud.tpu.v2.NetworkConfig>(networkConfigs_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.tpu.v2.NetworkConfig,
+            com.google.cloud.tpu.v2.NetworkConfig.Builder,
+            com.google.cloud.tpu.v2.NetworkConfigOrBuilder>
+        networkConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.tpu.v2.NetworkConfig> getNetworkConfigsList() {
+      if (networkConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(networkConfigs_);
+      } else {
+        return networkConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getNetworkConfigsCount() {
+      if (networkConfigsBuilder_ == null) {
+        return networkConfigs_.size();
+      } else {
+        return networkConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tpu.v2.NetworkConfig getNetworkConfigs(int index) {
+      if (networkConfigsBuilder_ == null) {
+        return networkConfigs_.get(index);
+      } else {
+        return networkConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkConfigs(int index, com.google.cloud.tpu.v2.NetworkConfig value) {
+      if (networkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkConfigsIsMutable();
+        networkConfigs_.set(index, value);
+        onChanged();
+      } else {
+        networkConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkConfigs(
+        int index, com.google.cloud.tpu.v2.NetworkConfig.Builder builderForValue) {
+      if (networkConfigsBuilder_ == null) {
+        ensureNetworkConfigsIsMutable();
+        networkConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        networkConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNetworkConfigs(com.google.cloud.tpu.v2.NetworkConfig value) {
+      if (networkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkConfigsIsMutable();
+        networkConfigs_.add(value);
+        onChanged();
+      } else {
+        networkConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNetworkConfigs(int index, com.google.cloud.tpu.v2.NetworkConfig value) {
+      if (networkConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkConfigsIsMutable();
+        networkConfigs_.add(index, value);
+        onChanged();
+      } else {
+        networkConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNetworkConfigs(
+        com.google.cloud.tpu.v2.NetworkConfig.Builder builderForValue) {
+      if (networkConfigsBuilder_ == null) {
+        ensureNetworkConfigsIsMutable();
+        networkConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        networkConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNetworkConfigs(
+        int index, com.google.cloud.tpu.v2.NetworkConfig.Builder builderForValue) {
+      if (networkConfigsBuilder_ == null) {
+        ensureNetworkConfigsIsMutable();
+        networkConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        networkConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllNetworkConfigs(
+        java.lang.Iterable<? extends com.google.cloud.tpu.v2.NetworkConfig> values) {
+      if (networkConfigsBuilder_ == null) {
+        ensureNetworkConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkConfigs_);
+        onChanged();
+      } else {
+        networkConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNetworkConfigs() {
+      if (networkConfigsBuilder_ == null) {
+        networkConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        networkConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeNetworkConfigs(int index) {
+      if (networkConfigsBuilder_ == null) {
+        ensureNetworkConfigsIsMutable();
+        networkConfigs_.remove(index);
+        onChanged();
+      } else {
+        networkConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tpu.v2.NetworkConfig.Builder getNetworkConfigsBuilder(int index) {
+      return getNetworkConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tpu.v2.NetworkConfigOrBuilder getNetworkConfigsOrBuilder(int index) {
+      if (networkConfigsBuilder_ == null) {
+        return networkConfigs_.get(index);
+      } else {
+        return networkConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.tpu.v2.NetworkConfigOrBuilder>
+        getNetworkConfigsOrBuilderList() {
+      if (networkConfigsBuilder_ != null) {
+        return networkConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(networkConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tpu.v2.NetworkConfig.Builder addNetworkConfigsBuilder() {
+      return getNetworkConfigsFieldBuilder()
+          .addBuilder(com.google.cloud.tpu.v2.NetworkConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tpu.v2.NetworkConfig.Builder addNetworkConfigsBuilder(int index) {
+      return getNetworkConfigsFieldBuilder()
+          .addBuilder(index, com.google.cloud.tpu.v2.NetworkConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repeated network configurations for the TPU node. This field is
+     * used to specify multiple networks configs for the TPU node. network_config
+     * and network_configs are mutually exclusive, you can only specify one of
+     * them. If both are specified, an error will be returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.tpu.v2.NetworkConfig network_configs = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.tpu.v2.NetworkConfig.Builder>
+        getNetworkConfigsBuilderList() {
+      return getNetworkConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.tpu.v2.NetworkConfig,
+            com.google.cloud.tpu.v2.NetworkConfig.Builder,
+            com.google.cloud.tpu.v2.NetworkConfigOrBuilder>
+        getNetworkConfigsFieldBuilder() {
+      if (networkConfigsBuilder_ == null) {
+        networkConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.tpu.v2.NetworkConfig,
+                com.google.cloud.tpu.v2.NetworkConfig.Builder,
+                com.google.cloud.tpu.v2.NetworkConfigOrBuilder>(
+                networkConfigs_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        networkConfigs_ = null;
+      }
+      return networkConfigsBuilder_;
     }
 
     private java.lang.Object cidrBlock_ = "";
@@ -4334,7 +4989,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       cidrBlock_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4358,7 +5013,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCidrBlock() {
       cidrBlock_ = getDefaultInstance().getCidrBlock();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4387,7 +5042,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       cidrBlock_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4411,7 +5066,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceAccount field is set.
      */
     public boolean hasServiceAccount() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4453,7 +5108,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         serviceAccountBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4474,7 +5129,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         serviceAccountBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4490,7 +5145,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeServiceAccount(com.google.cloud.tpu.v2.ServiceAccount value) {
       if (serviceAccountBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && serviceAccount_ != null
             && serviceAccount_ != com.google.cloud.tpu.v2.ServiceAccount.getDefaultInstance()) {
           getServiceAccountBuilder().mergeFrom(value);
@@ -4501,7 +5156,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         serviceAccountBuilder_.mergeFrom(value);
       }
       if (serviceAccount_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -4517,7 +5172,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tpu.v2.ServiceAccount service_account = 37;</code>
      */
     public Builder clearServiceAccount() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       serviceAccount_ = null;
       if (serviceAccountBuilder_ != null) {
         serviceAccountBuilder_.dispose();
@@ -4537,7 +5192,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tpu.v2.ServiceAccount service_account = 37;</code>
      */
     public com.google.cloud.tpu.v2.ServiceAccount.Builder getServiceAccountBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getServiceAccountFieldBuilder().getBuilder();
     }
@@ -4607,7 +5262,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4651,7 +5306,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4672,7 +5327,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4689,7 +5344,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4700,7 +5355,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -4717,7 +5372,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4738,7 +5393,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4808,7 +5463,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schedulingConfig field is set.
      */
     public boolean hasSchedulingConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4848,7 +5503,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4868,7 +5523,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4883,7 +5538,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSchedulingConfig(com.google.cloud.tpu.v2.SchedulingConfig value) {
       if (schedulingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && schedulingConfig_ != null
             && schedulingConfig_ != com.google.cloud.tpu.v2.SchedulingConfig.getDefaultInstance()) {
           getSchedulingConfigBuilder().mergeFrom(value);
@@ -4894,7 +5549,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         schedulingConfigBuilder_.mergeFrom(value);
       }
       if (schedulingConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4909,7 +5564,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tpu.v2.SchedulingConfig scheduling_config = 17;</code>
      */
     public Builder clearSchedulingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       schedulingConfig_ = null;
       if (schedulingConfigBuilder_ != null) {
         schedulingConfigBuilder_.dispose();
@@ -4928,7 +5583,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tpu.v2.SchedulingConfig scheduling_config = 17;</code>
      */
     public com.google.cloud.tpu.v2.SchedulingConfig.Builder getSchedulingConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getSchedulingConfigFieldBuilder().getBuilder();
     }
@@ -4980,10 +5635,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNetworkEndpointsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         networkEndpoints_ =
             new java.util.ArrayList<com.google.cloud.tpu.v2.NetworkEndpoint>(networkEndpoints_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -5243,7 +5898,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNetworkEndpoints() {
       if (networkEndpointsBuilder_ == null) {
         networkEndpoints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         networkEndpointsBuilder_.clear();
@@ -5395,7 +6050,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.tpu.v2.NetworkEndpoint.Builder,
                 com.google.cloud.tpu.v2.NetworkEndpointOrBuilder>(
                 networkEndpoints_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         networkEndpoints_ = null;
@@ -5433,7 +6088,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setHealthValue(int value) {
       health_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5470,7 +6125,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       health_ = value.getNumber();
       onChanged();
       return this;
@@ -5487,7 +6142,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHealth() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       health_ = 0;
       onChanged();
       return this;
@@ -5510,7 +6165,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return labels_;
     }
@@ -5595,7 +6250,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -5618,7 +6273,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -5638,7 +6293,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -5652,7 +6307,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
 
@@ -5674,7 +6329,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return metadata_;
     }
@@ -5763,7 +6418,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -5787,7 +6442,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -5808,7 +6463,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableMetadata().getMutableMap().put(key, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -5823,7 +6478,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -5834,7 +6489,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
     }
     /**
      *
@@ -5919,7 +6574,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5942,7 +6597,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5962,7 +6617,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5980,7 +6635,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       ;
       onChanged();
       return this;
@@ -6005,7 +6660,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6041,7 +6696,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6057,7 +6712,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       id_ = 0L;
       onChanged();
       return this;
@@ -6067,9 +6722,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDataDisksIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         dataDisks_ = new java.util.ArrayList<com.google.cloud.tpu.v2.AttachedDisk>(dataDisks_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
       }
     }
 
@@ -6284,7 +6939,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDataDisks() {
       if (dataDisksBuilder_ == null) {
         dataDisks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
       } else {
         dataDisksBuilder_.clear();
@@ -6405,7 +7060,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.tpu.v2.AttachedDisk,
                 com.google.cloud.tpu.v2.AttachedDisk.Builder,
                 com.google.cloud.tpu.v2.AttachedDiskOrBuilder>(
-                dataDisks_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+                dataDisks_, ((bitField0_ & 0x00040000) != 0), getParentForChildren(), isClean());
         dataDisks_ = null;
       }
       return dataDisksBuilder_;
@@ -6445,7 +7100,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setApiVersionValue(int value) {
       apiVersion_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6486,7 +7141,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       apiVersion_ = value.getNumber();
       onChanged();
       return this;
@@ -6505,7 +7160,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApiVersion() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       apiVersion_ = 0;
       onChanged();
       return this;
@@ -6515,9 +7170,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSymptomsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         symptoms_ = new java.util.ArrayList<com.google.cloud.tpu.v2.Symptom>(symptoms_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -6752,7 +7407,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSymptoms() {
       if (symptomsBuilder_ == null) {
         symptoms_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         symptomsBuilder_.clear();
@@ -6887,7 +7542,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.tpu.v2.Symptom,
                 com.google.cloud.tpu.v2.Symptom.Builder,
                 com.google.cloud.tpu.v2.SymptomOrBuilder>(
-                symptoms_, ((bitField0_ & 0x00080000) != 0), getParentForChildren(), isClean());
+                symptoms_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
         symptoms_ = null;
       }
       return symptomsBuilder_;
@@ -6911,7 +7566,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shieldedInstanceConfig field is set.
      */
     public boolean hasShieldedInstanceConfig() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -6951,7 +7606,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6971,7 +7626,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6987,7 +7642,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeShieldedInstanceConfig(
         com.google.cloud.tpu.v2.ShieldedInstanceConfig value) {
       if (shieldedInstanceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && shieldedInstanceConfig_ != null
             && shieldedInstanceConfig_
                 != com.google.cloud.tpu.v2.ShieldedInstanceConfig.getDefaultInstance()) {
@@ -6999,7 +7654,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         shieldedInstanceConfigBuilder_.mergeFrom(value);
       }
       if (shieldedInstanceConfig_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -7014,7 +7669,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tpu.v2.ShieldedInstanceConfig shielded_instance_config = 45;</code>
      */
     public Builder clearShieldedInstanceConfig() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       shieldedInstanceConfig_ = null;
       if (shieldedInstanceConfigBuilder_ != null) {
         shieldedInstanceConfigBuilder_.dispose();
@@ -7034,7 +7689,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.tpu.v2.ShieldedInstanceConfig.Builder
         getShieldedInstanceConfigBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
@@ -7101,7 +7756,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the acceleratorConfig field is set.
      */
     public boolean hasAcceleratorConfig() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -7141,7 +7796,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         acceleratorConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7161,7 +7816,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         acceleratorConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7176,7 +7831,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAcceleratorConfig(com.google.cloud.tpu.v2.AcceleratorConfig value) {
       if (acceleratorConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && acceleratorConfig_ != null
             && acceleratorConfig_
                 != com.google.cloud.tpu.v2.AcceleratorConfig.getDefaultInstance()) {
@@ -7188,7 +7843,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         acceleratorConfigBuilder_.mergeFrom(value);
       }
       if (acceleratorConfig_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -7203,7 +7858,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tpu.v2.AcceleratorConfig accelerator_config = 46;</code>
      */
     public Builder clearAcceleratorConfig() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       acceleratorConfig_ = null;
       if (acceleratorConfigBuilder_ != null) {
         acceleratorConfigBuilder_.dispose();
@@ -7222,7 +7877,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tpu.v2.AcceleratorConfig accelerator_config = 46;</code>
      */
     public com.google.cloud.tpu.v2.AcceleratorConfig.Builder getAcceleratorConfigBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getAcceleratorConfigFieldBuilder().getBuilder();
     }
@@ -7335,7 +7990,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       queuedResource_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7353,7 +8008,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearQueuedResource() {
       queuedResource_ = getDefaultInstance().getQueuedResource();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7376,7 +8031,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       queuedResource_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7412,7 +8067,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder setMultisliceNode(boolean value) {
 
       multisliceNode_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7428,7 +8083,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMultisliceNode() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       multisliceNode_ = false;
       onChanged();
       return this;
