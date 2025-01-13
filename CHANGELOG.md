@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.21.1](https://github.com/googleapis/java-logging/compare/v3.21.0...v3.21.1) (2025-01-13)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.1 ([705dba2](https://github.com/googleapis/java-logging/commit/705dba2d6c12bd9f9e281c962cfb232ab28b31a9))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#1745](https://github.com/googleapis/java-logging/issues/1745)) ([6a7280d](https://github.com/googleapis/java-logging/commit/6a7280d0851024c1b44457fa7064a7f3d6fc2d5b))
+* Update dependency org.easymock:easymock to v5.5.0 ([#1639](https://github.com/googleapis/java-logging/issues/1639)) ([f559d89](https://github.com/googleapis/java-logging/commit/f559d89bf36201fce609ef752f27baa0c5f6f1c1))
+* Update googleapis/sdk-platform-java action to v2.51.1 ([#1742](https://github.com/googleapis/java-logging/issues/1742)) ([3c7a2c7](https://github.com/googleapis/java-logging/commit/3c7a2c70fd46cc7196ef7b037d6017971e8a020a))
+
 ## [3.21.0](https://github.com/googleapis/java-logging/compare/v3.20.7...v3.21.0) (2024-12-13)
 
 
