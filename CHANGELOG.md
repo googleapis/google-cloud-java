@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.46.0](https://github.com/googleapis/java-bigquery/compare/v2.45.0...v2.46.0) (2025-01-11)
+
+
+### Features
+
+* **bigquery:** Support IAM conditions in datasets in Java client. ([#3602](https://github.com/googleapis/java-bigquery/issues/3602)) ([6696a9c](https://github.com/googleapis/java-bigquery/commit/6696a9c7d42970e3c24bda4da713a855dbe40ce5))
+
+
+### Bug Fixes
+
+* NPE when reading BigQueryResultSet from empty tables ([#3627](https://github.com/googleapis/java-bigquery/issues/3627)) ([9a0b05a](https://github.com/googleapis/java-bigquery/commit/9a0b05a3b57797b7cdd8ca9739699fc018dbd868))
+* **test:** Force usage of ReadAPI ([#3625](https://github.com/googleapis/java-bigquery/issues/3625)) ([5ca7d4a](https://github.com/googleapis/java-bigquery/commit/5ca7d4acbbc40d6ef337732464b3bbd130c86430))
+
+
+### Dependencies
+
+* Update actions/upload-artifact action to v4.5.0 ([#3620](https://github.com/googleapis/java-bigquery/issues/3620)) ([cc25099](https://github.com/googleapis/java-bigquery/commit/cc25099f81cbf94e9e2ee9db03a7d9ecd913c176))
+* Update actions/upload-artifact action to v4.6.0 ([#3633](https://github.com/googleapis/java-bigquery/issues/3633)) ([ca20aa4](https://github.com/googleapis/java-bigquery/commit/ca20aa47ea7826594975ab6aeb8498e2377f8553))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.57.0 ([#3617](https://github.com/googleapis/java-bigquery/issues/3617)) ([51370a9](https://github.com/googleapis/java-bigquery/commit/51370a92e7ab29dfce91199666f23576d2d1b64a))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.58.0 ([#3631](https://github.com/googleapis/java-bigquery/issues/3631)) ([b0ea0d5](https://github.com/googleapis/java-bigquery/commit/b0ea0d5bc4ac730b0e2eaf47e8a7441dc113686b))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20241222-2.0.0 ([#3623](https://github.com/googleapis/java-bigquery/issues/3623)) ([4061922](https://github.com/googleapis/java-bigquery/commit/4061922e46135d673bfa48c00bbf284efa46e065))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.61.0 ([#3618](https://github.com/googleapis/java-bigquery/issues/3618)) ([6cba626](https://github.com/googleapis/java-bigquery/commit/6cba626ff14cebbc04fa4f6058b273de0c5dd96e))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.62.0 ([#3632](https://github.com/googleapis/java-bigquery/issues/3632)) ([e9ff265](https://github.com/googleapis/java-bigquery/commit/e9ff265041f6771a71c8c378ed3ff5fdec6e837b))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#3628](https://github.com/googleapis/java-bigquery/issues/3628)) ([442d217](https://github.com/googleapis/java-bigquery/commit/442d217606b7d93d26887344a7a4a01303b18b8c))
+* Update dependency com.google.oauth-client:google-oauth-client-java6 to v1.37.0 ([#3614](https://github.com/googleapis/java-bigquery/issues/3614)) ([f5faa69](https://github.com/googleapis/java-bigquery/commit/f5faa69bc5b6fdae137724df5693f8aecf27d609))
+* Update dependency com.google.oauth-client:google-oauth-client-jetty to v1.37.0 ([#3615](https://github.com/googleapis/java-bigquery/issues/3615)) ([a6c7944](https://github.com/googleapis/java-bigquery/commit/a6c79443a5e675a01ecb91e362e261a6f6ecc055))
+* Update github/codeql-action action to v2.27.9 ([#3608](https://github.com/googleapis/java-bigquery/issues/3608)) ([567ce01](https://github.com/googleapis/java-bigquery/commit/567ce01ed77d44760ddcd872a0d61abdd6a09832))
+* Update github/codeql-action action to v2.28.0 ([#3621](https://github.com/googleapis/java-bigquery/issues/3621)) ([e0e09ec](https://github.com/googleapis/java-bigquery/commit/e0e09ec4954f5b5e2f094e4c67600f38353f453c))
+
 ## [2.45.0](https://github.com/googleapis/java-bigquery/compare/v2.44.0...v2.45.0) (2024-12-13)
 
 
