@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.30.3](https://github.com/googleapis/java-firestore/compare/v3.30.2...v3.30.3) (2025-01-11)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.51.1 ([f6fcbf1](https://github.com/googleapis/java-firestore/commit/f6fcbf10485317ff370d9698947f3bbf2ae63cfb))
+* Sort document reference by long type id ([#1945](https://github.com/googleapis/java-firestore/issues/1945)) ([c38e3ad](https://github.com/googleapis/java-firestore/commit/c38e3adc08e50a7946523aa0ba4ef46943cf2b85))
+
+
+### Dependencies
+
+* Update dependency com.diffplug.spotless:spotless-maven-plugin to v2.44.1 ([#1969](https://github.com/googleapis/java-firestore/issues/1969)) ([7a4813b](https://github.com/googleapis/java-firestore/commit/7a4813b2e5c6be246f7f6a312afba78d76ff3927))
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.55.0 ([#1961](https://github.com/googleapis/java-firestore/issues/1961)) ([5c62282](https://github.com/googleapis/java-firestore/commit/5c6228215e1c40de420c765e6aecb81a312e7954))
+* Update dependency com.google.cloud:google-cloud-trace to v2.55.0 ([#1962](https://github.com/googleapis/java-firestore/issues/1962)) ([d8144b5](https://github.com/googleapis/java-firestore/commit/d8144b55ba68b79fafd4f5a3a6a640d959caf2be))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#1970](https://github.com/googleapis/java-firestore/issues/1970)) ([bbf75cc](https://github.com/googleapis/java-firestore/commit/bbf75cc4b7421ddab8ac5538fc0084218a4e3a1b))
+* Update googleapis/sdk-platform-java action to v2.51.1 ([#1968](https://github.com/googleapis/java-firestore/issues/1968)) ([9f318b0](https://github.com/googleapis/java-firestore/commit/9f318b030637a8e354e4d10651ea2d4073098c2a))
+
 ## [3.30.2](https://github.com/googleapis/java-firestore/compare/v3.30.1...v3.30.2) (2024-12-13)
 
 
