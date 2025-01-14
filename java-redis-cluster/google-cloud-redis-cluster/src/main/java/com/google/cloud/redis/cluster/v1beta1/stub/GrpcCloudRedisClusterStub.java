@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1beta1.stub;
 
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListLocationsPagedResponse;
 
@@ -32,14 +34,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1beta1.Backup;
+import com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.BackupCollection;
 import com.google.cloud.redis.cluster.v1beta1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1beta1.Cluster;
 import com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1beta1.UpdateClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -124,6 +138,89 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   ProtoUtils.marshaller(CertificateAuthority.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceMethodDescriptor =
+          MethodDescriptor.<RescheduleClusterMaintenanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/RescheduleClusterMaintenance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RescheduleClusterMaintenanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsMethodDescriptor =
+          MethodDescriptor.<ListBackupCollectionsRequest, ListBackupCollectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/ListBackupCollections")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListBackupCollectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBackupCollectionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionMethodDescriptor =
+          MethodDescriptor.<GetBackupCollectionRequest, BackupCollection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/GetBackupCollection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetBackupCollectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BackupCollection.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
+      listBackupsMethodDescriptor =
+          MethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1beta1.CloudRedisCluster/ListBackups")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
+      MethodDescriptor.<GetBackupRequest, Backup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.redis.cluster.v1beta1.CloudRedisCluster/GetBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteBackupRequest, Operation>
+      deleteBackupMethodDescriptor =
+          MethodDescriptor.<DeleteBackupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/DeleteBackup")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ExportBackupRequest, Operation>
+      exportBackupMethodDescriptor =
+          MethodDescriptor.<ExportBackupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/ExportBackup")
+              .setRequestMarshaller(ProtoUtils.marshaller(ExportBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<BackupClusterRequest, Operation>
+      backupClusterMethodDescriptor =
+          MethodDescriptor.<BackupClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/BackupCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BackupClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -157,6 +254,27 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
       createClusterOperationCallable;
   private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable;
+  private final UnaryCallable<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceCallable;
+  private final OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationCallable;
+  private final UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable;
+  private final UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable;
+  private final UnaryCallable<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable;
+  private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
+  private final OperationCallable<DeleteBackupRequest, Empty, Any> deleteBackupOperationCallable;
+  private final UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable;
+  private final OperationCallable<ExportBackupRequest, Backup, Any> exportBackupOperationCallable;
+  private final UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable;
+  private final OperationCallable<BackupClusterRequest, Cluster, Any>
+      backupClusterOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -268,6 +386,90 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<RescheduleClusterMaintenanceRequest, Operation>
+        rescheduleClusterMaintenanceTransportSettings =
+            GrpcCallSettings.<RescheduleClusterMaintenanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(rescheduleClusterMaintenanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+        listBackupCollectionsTransportSettings =
+            GrpcCallSettings
+                .<ListBackupCollectionsRequest, ListBackupCollectionsResponse>newBuilder()
+                .setMethodDescriptor(listBackupCollectionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionTransportSettings =
+            GrpcCallSettings.<GetBackupCollectionRequest, BackupCollection>newBuilder()
+                .setMethodDescriptor(getBackupCollectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
+        GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(getBackupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
+        GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ExportBackupRequest, Operation> exportBackupTransportSettings =
+        GrpcCallSettings.<ExportBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportBackupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BackupClusterRequest, Operation> backupClusterTransportSettings =
+        GrpcCallSettings.<BackupClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(backupClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -330,6 +532,68 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
             getClusterCertificateAuthorityTransportSettings,
             settings.getClusterCertificateAuthoritySettings(),
             clientContext);
+    this.rescheduleClusterMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            rescheduleClusterMaintenanceTransportSettings,
+            settings.rescheduleClusterMaintenanceSettings(),
+            clientContext);
+    this.rescheduleClusterMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            rescheduleClusterMaintenanceTransportSettings,
+            settings.rescheduleClusterMaintenanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listBackupCollectionsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupCollectionsTransportSettings,
+            settings.listBackupCollectionsSettings(),
+            clientContext);
+    this.listBackupCollectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupCollectionsTransportSettings,
+            settings.listBackupCollectionsSettings(),
+            clientContext);
+    this.getBackupCollectionCallable =
+        callableFactory.createUnaryCallable(
+            getBackupCollectionTransportSettings,
+            settings.getBackupCollectionSettings(),
+            clientContext);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.getBackupCallable =
+        callableFactory.createUnaryCallable(
+            getBackupTransportSettings, settings.getBackupSettings(), clientContext);
+    this.deleteBackupCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.deleteBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupTransportSettings,
+            settings.deleteBackupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportBackupCallable =
+        callableFactory.createUnaryCallable(
+            exportBackupTransportSettings, settings.exportBackupSettings(), clientContext);
+    this.exportBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            exportBackupTransportSettings,
+            settings.exportBackupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.backupClusterCallable =
+        callableFactory.createUnaryCallable(
+            backupClusterTransportSettings, settings.backupClusterSettings(), clientContext);
+    this.backupClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            backupClusterTransportSettings,
+            settings.backupClusterOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -397,6 +661,80 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   public UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable() {
     return getClusterCertificateAuthorityCallable;
+  }
+
+  @Override
+  public UnaryCallable<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceCallable() {
+    return rescheduleClusterMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationCallable() {
+    return rescheduleClusterMaintenanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable() {
+    return listBackupCollectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable() {
+    return listBackupCollectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupCollectionRequest, BackupCollection> getBackupCollectionCallable() {
+    return getBackupCollectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupRequest, Empty, Any> deleteBackupOperationCallable() {
+    return deleteBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable() {
+    return exportBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportBackupRequest, Backup, Any> exportBackupOperationCallable() {
+    return exportBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable() {
+    return backupClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<BackupClusterRequest, Cluster, Any> backupClusterOperationCallable() {
+    return backupClusterOperationCallable;
   }
 
   @Override

@@ -476,6 +476,45 @@
         }
       }
     },
+    "GenAiCacheService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenAiCacheServiceClient",
+          "rpcs": {
+            "CreateCachedContent": {
+              "methods": ["createCachedContent", "createCachedContent", "createCachedContent", "createCachedContentCallable"]
+            },
+            "DeleteCachedContent": {
+              "methods": ["deleteCachedContent", "deleteCachedContent", "deleteCachedContent", "deleteCachedContentCallable"]
+            },
+            "GetCachedContent": {
+              "methods": ["getCachedContent", "getCachedContent", "getCachedContent", "getCachedContentCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCachedContents": {
+              "methods": ["listCachedContents", "listCachedContents", "listCachedContents", "listCachedContentsPagedCallable", "listCachedContentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateCachedContent": {
+              "methods": ["updateCachedContent", "updateCachedContent", "updateCachedContentCallable"]
+            }
+          }
+        }
+      }
+    },
     "GenAiTuningService": {
       "clients": {
         "grpc": {

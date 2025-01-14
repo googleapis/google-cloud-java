@@ -39,6 +39,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -65,15 +66,6 @@ import javax.annotation.Generated;
  *
  * <ul>
  *   <li>`projects/redpepper-1290/locations/us-central1/clusters/my-redis`
- * </ul>
- *
- * <p>We use API version selector for Flex APIs
- *
- * <ul>
- *   <li>The versioning strategy is release-based versioning
- *   <li>Our backend CLH only deals with the superset version (called v1main)
- *   <li>Existing backend for Redis Gen1 and MRR is not touched.
- *   <li>More details in go/redis-flex-api-versioning
  * </ul>
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
@@ -223,6 +215,160 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getClusterCertificateAuthorityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RescheduleClusterMaintenance</td>
+ *      <td><p> Reschedules upcoming maintenance event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rescheduleClusterMaintenanceAsync(RescheduleClusterMaintenanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> rescheduleClusterMaintenanceAsync(ClusterName name, RescheduleClusterMaintenanceRequest.RescheduleType rescheduleType, Timestamp scheduleTime)
+ *           <li><p> rescheduleClusterMaintenanceAsync(String name, RescheduleClusterMaintenanceRequest.RescheduleType rescheduleType, Timestamp scheduleTime)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rescheduleClusterMaintenanceOperationCallable()
+ *           <li><p> rescheduleClusterMaintenanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBackupCollections</td>
+ *      <td><p> Lists all backup collections owned by a consumer project in either the specified location (region) or all locations.
+ * <p>  If `location_id` is specified as `-` (wildcard), then all regions available to the project are queried, and the results are aggregated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBackupCollections(ListBackupCollectionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBackupCollections(LocationName parent)
+ *           <li><p> listBackupCollections(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBackupCollectionsPagedCallable()
+ *           <li><p> listBackupCollectionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBackupCollection</td>
+ *      <td><p> Get a backup collection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBackupCollection(GetBackupCollectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBackupCollection(BackupCollectionName name)
+ *           <li><p> getBackupCollection(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBackupCollectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBackups</td>
+ *      <td><p> Lists all backups owned by a backup collection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBackups(ListBackupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBackups(BackupCollectionName parent)
+ *           <li><p> listBackups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBackupsPagedCallable()
+ *           <li><p> listBackupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBackup</td>
+ *      <td><p> Gets the details of a specific backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBackup(GetBackupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBackup(BackupName name)
+ *           <li><p> getBackup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBackup</td>
+ *      <td><p> Deletes a specific backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBackupAsync(DeleteBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupAsync(BackupName name)
+ *           <li><p> deleteBackupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupOperationCallable()
+ *           <li><p> deleteBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportBackup</td>
+ *      <td><p> Exports a specific backup to a customer target Cloud Storage URI.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportBackupAsync(ExportBackupRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportBackupOperationCallable()
+ *           <li><p> exportBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BackupCluster</td>
+ *      <td><p> Backup Redis Cluster. If this is the first time a backup is being created, a backup collection will be created at the backend, and this backup belongs to this collection. Both collection and backup will have a resource name. Backup will be executed for each shard. A replica (primary if nonHA) will be selected to perform the execution. Backup call will be rejected if there is an ongoing backup or update operation. Be aware that during preview, if the cluster's internal software version is too old, critical update will be performed before actual backup. Once the internal software version is updated to the minimum version required by the backup feature, subsequent backups will not require critical update. After preview, there will be no critical update needed for backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> backupClusterAsync(BackupClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> backupClusterAsync(ClusterName name)
+ *           <li><p> backupClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> backupClusterOperationCallable()
+ *           <li><p> backupClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1343,6 +1489,1218 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   RescheduleClusterMaintenanceRequest.RescheduleType rescheduleType =
+   *       RescheduleClusterMaintenanceRequest.RescheduleType.forNumber(0);
+   *   Timestamp scheduleTime = Timestamp.newBuilder().build();
+   *   Cluster response =
+   *       cloudRedisClusterClient
+   *           .rescheduleClusterMaintenanceAsync(name, rescheduleType, scheduleTime)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis Cluster instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param rescheduleType Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time
+   *     as well.
+   * @param scheduleTime Optional. Timestamp when the maintenance shall be rescheduled to if
+   *     reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example `2012-11-15T16:19:00.094Z`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, Any> rescheduleClusterMaintenanceAsync(
+      ClusterName name,
+      RescheduleClusterMaintenanceRequest.RescheduleType rescheduleType,
+      Timestamp scheduleTime) {
+    RescheduleClusterMaintenanceRequest request =
+        RescheduleClusterMaintenanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRescheduleType(rescheduleType)
+            .setScheduleTime(scheduleTime)
+            .build();
+    return rescheduleClusterMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   RescheduleClusterMaintenanceRequest.RescheduleType rescheduleType =
+   *       RescheduleClusterMaintenanceRequest.RescheduleType.forNumber(0);
+   *   Timestamp scheduleTime = Timestamp.newBuilder().build();
+   *   Cluster response =
+   *       cloudRedisClusterClient
+   *           .rescheduleClusterMaintenanceAsync(name, rescheduleType, scheduleTime)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis Cluster instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param rescheduleType Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time
+   *     as well.
+   * @param scheduleTime Optional. Timestamp when the maintenance shall be rescheduled to if
+   *     reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example `2012-11-15T16:19:00.094Z`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, Any> rescheduleClusterMaintenanceAsync(
+      String name,
+      RescheduleClusterMaintenanceRequest.RescheduleType rescheduleType,
+      Timestamp scheduleTime) {
+    RescheduleClusterMaintenanceRequest request =
+        RescheduleClusterMaintenanceRequest.newBuilder()
+            .setName(name)
+            .setRescheduleType(rescheduleType)
+            .setScheduleTime(scheduleTime)
+            .build();
+    return rescheduleClusterMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   RescheduleClusterMaintenanceRequest request =
+   *       RescheduleClusterMaintenanceRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   Cluster response = cloudRedisClusterClient.rescheduleClusterMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, Any> rescheduleClusterMaintenanceAsync(
+      RescheduleClusterMaintenanceRequest request) {
+    return rescheduleClusterMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   RescheduleClusterMaintenanceRequest request =
+   *       RescheduleClusterMaintenanceRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Cluster, Any> future =
+   *       cloudRedisClusterClient
+   *           .rescheduleClusterMaintenanceOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationCallable() {
+    return stub.rescheduleClusterMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   RescheduleClusterMaintenanceRequest request =
+   *       RescheduleClusterMaintenanceRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudRedisClusterClient.rescheduleClusterMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceCallable() {
+    return stub.rescheduleClusterMaintenanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backup collections owned by a consumer project in either the specified location
+   * (region) or all locations.
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (BackupCollection element :
+   *       cloudRedisClusterClient.listBackupCollections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the backupCollection location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupCollectionsPagedResponse listBackupCollections(LocationName parent) {
+    ListBackupCollectionsRequest request =
+        ListBackupCollectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBackupCollections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backup collections owned by a consumer project in either the specified location
+   * (region) or all locations.
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (BackupCollection element :
+   *       cloudRedisClusterClient.listBackupCollections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the backupCollection location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupCollectionsPagedResponse listBackupCollections(String parent) {
+    ListBackupCollectionsRequest request =
+        ListBackupCollectionsRequest.newBuilder().setParent(parent).build();
+    return listBackupCollections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backup collections owned by a consumer project in either the specified location
+   * (region) or all locations.
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListBackupCollectionsRequest request =
+   *       ListBackupCollectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (BackupCollection element :
+   *       cloudRedisClusterClient.listBackupCollections(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupCollectionsPagedResponse listBackupCollections(
+      ListBackupCollectionsRequest request) {
+    return listBackupCollectionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backup collections owned by a consumer project in either the specified location
+   * (region) or all locations.
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListBackupCollectionsRequest request =
+   *       ListBackupCollectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<BackupCollection> future =
+   *       cloudRedisClusterClient.listBackupCollectionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BackupCollection element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable() {
+    return stub.listBackupCollectionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backup collections owned by a consumer project in either the specified location
+   * (region) or all locations.
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListBackupCollectionsRequest request =
+   *       ListBackupCollectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListBackupCollectionsResponse response =
+   *         cloudRedisClusterClient.listBackupCollectionsCallable().call(request);
+   *     for (BackupCollection element : response.getBackupCollectionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable() {
+    return stub.listBackupCollectionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   BackupCollectionName name =
+   *       BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]");
+   *   BackupCollection response = cloudRedisClusterClient.getBackupCollection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis backupCollection resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}`
+   *     where `location_id` refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupCollection getBackupCollection(BackupCollectionName name) {
+    GetBackupCollectionRequest request =
+        GetBackupCollectionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getBackupCollection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name =
+   *       BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]").toString();
+   *   BackupCollection response = cloudRedisClusterClient.getBackupCollection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis backupCollection resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}`
+   *     where `location_id` refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupCollection getBackupCollection(String name) {
+    GetBackupCollectionRequest request =
+        GetBackupCollectionRequest.newBuilder().setName(name).build();
+    return getBackupCollection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetBackupCollectionRequest request =
+   *       GetBackupCollectionRequest.newBuilder()
+   *           .setName(
+   *               BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+   *                   .toString())
+   *           .build();
+   *   BackupCollection response = cloudRedisClusterClient.getBackupCollection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupCollection getBackupCollection(GetBackupCollectionRequest request) {
+    return getBackupCollectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetBackupCollectionRequest request =
+   *       GetBackupCollectionRequest.newBuilder()
+   *           .setName(
+   *               BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<BackupCollection> future =
+   *       cloudRedisClusterClient.getBackupCollectionCallable().futureCall(request);
+   *   // Do something.
+   *   BackupCollection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionCallable() {
+    return stub.getBackupCollectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backups owned by a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   BackupCollectionName parent =
+   *       BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]");
+   *   for (Backup element : cloudRedisClusterClient.listBackups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the backupCollection using the form:
+   *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(BackupCollectionName parent) {
+    ListBackupsRequest request =
+        ListBackupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBackups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backups owned by a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String parent =
+   *       BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]").toString();
+   *   for (Backup element : cloudRedisClusterClient.listBackups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the backupCollection using the form:
+   *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(String parent) {
+    ListBackupsRequest request = ListBackupsRequest.newBuilder().setParent(parent).build();
+    return listBackups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backups owned by a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListBackupsRequest request =
+   *       ListBackupsRequest.newBuilder()
+   *           .setParent(
+   *               BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Backup element : cloudRedisClusterClient.listBackups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(ListBackupsRequest request) {
+    return listBackupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backups owned by a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListBackupsRequest request =
+   *       ListBackupsRequest.newBuilder()
+   *           .setParent(
+   *               BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Backup> future =
+   *       cloudRedisClusterClient.listBackupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Backup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable() {
+    return stub.listBackupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all backups owned by a backup collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListBackupsRequest request =
+   *       ListBackupsRequest.newBuilder()
+   *           .setParent(
+   *               BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListBackupsResponse response = cloudRedisClusterClient.listBackupsCallable().call(request);
+   *     for (Backup element : response.getBackupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return stub.listBackupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]");
+   *   Backup response = cloudRedisClusterClient.getBackup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis backup resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(BackupName name) {
+    GetBackupRequest request =
+        GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name =
+   *       BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]").toString();
+   *   Backup response = cloudRedisClusterClient.getBackup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis backup resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(String name) {
+    GetBackupRequest request = GetBackupRequest.newBuilder().setName(name).build();
+    return getBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetBackupRequest request =
+   *       GetBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+   *                   .toString())
+   *           .build();
+   *   Backup response = cloudRedisClusterClient.getBackup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(GetBackupRequest request) {
+    return getBackupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetBackupRequest request =
+   *       GetBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Backup> future = cloudRedisClusterClient.getBackupCallable().futureCall(request);
+   *   // Do something.
+   *   Backup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return stub.getBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]");
+   *   cloudRedisClusterClient.deleteBackupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis backup resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Any> deleteBackupAsync(BackupName name) {
+    DeleteBackupRequest request =
+        DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name =
+   *       BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]").toString();
+   *   cloudRedisClusterClient.deleteBackupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis backup resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Any> deleteBackupAsync(String name) {
+    DeleteBackupRequest request = DeleteBackupRequest.newBuilder().setName(name).build();
+    return deleteBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   DeleteBackupRequest request =
+   *       DeleteBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   cloudRedisClusterClient.deleteBackupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Any> deleteBackupAsync(DeleteBackupRequest request) {
+    return deleteBackupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   DeleteBackupRequest request =
+   *       DeleteBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, Any> future =
+   *       cloudRedisClusterClient.deleteBackupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteBackupRequest, Empty, Any> deleteBackupOperationCallable() {
+    return stub.deleteBackupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   DeleteBackupRequest request =
+   *       DeleteBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudRedisClusterClient.deleteBackupCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    return stub.deleteBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a specific backup to a customer target Cloud Storage URI.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ExportBackupRequest request =
+   *       ExportBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+   *                   .toString())
+   *           .build();
+   *   Backup response = cloudRedisClusterClient.exportBackupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Backup, Any> exportBackupAsync(ExportBackupRequest request) {
+    return exportBackupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a specific backup to a customer target Cloud Storage URI.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ExportBackupRequest request =
+   *       ExportBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Backup, Any> future =
+   *       cloudRedisClusterClient.exportBackupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Backup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportBackupRequest, Backup, Any> exportBackupOperationCallable() {
+    return stub.exportBackupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a specific backup to a customer target Cloud Storage URI.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ExportBackupRequest request =
+   *       ExportBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudRedisClusterClient.exportBackupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable() {
+    return stub.exportBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Backup Redis Cluster. If this is the first time a backup is being created, a backup collection
+   * will be created at the backend, and this backup belongs to this collection. Both collection and
+   * backup will have a resource name. Backup will be executed for each shard. A replica (primary if
+   * nonHA) will be selected to perform the execution. Backup call will be rejected if there is an
+   * ongoing backup or update operation. Be aware that during preview, if the cluster's internal
+   * software version is too old, critical update will be performed before actual backup. Once the
+   * internal software version is updated to the minimum version required by the backup feature,
+   * subsequent backups will not require critical update. After preview, there will be no critical
+   * update needed for backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   Cluster response = cloudRedisClusterClient.backupClusterAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis cluster resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}` where `location_id`
+   *     refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, Any> backupClusterAsync(ClusterName name) {
+    BackupClusterRequest request =
+        BackupClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return backupClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Backup Redis Cluster. If this is the first time a backup is being created, a backup collection
+   * will be created at the backend, and this backup belongs to this collection. Both collection and
+   * backup will have a resource name. Backup will be executed for each shard. A replica (primary if
+   * nonHA) will be selected to perform the execution. Backup call will be rejected if there is an
+   * ongoing backup or update operation. Be aware that during preview, if the cluster's internal
+   * software version is too old, critical update will be performed before actual backup. Once the
+   * internal software version is updated to the minimum version required by the backup feature,
+   * subsequent backups will not require critical update. After preview, there will be no critical
+   * update needed for backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   Cluster response = cloudRedisClusterClient.backupClusterAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis cluster resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}` where `location_id`
+   *     refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, Any> backupClusterAsync(String name) {
+    BackupClusterRequest request = BackupClusterRequest.newBuilder().setName(name).build();
+    return backupClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Backup Redis Cluster. If this is the first time a backup is being created, a backup collection
+   * will be created at the backend, and this backup belongs to this collection. Both collection and
+   * backup will have a resource name. Backup will be executed for each shard. A replica (primary if
+   * nonHA) will be selected to perform the execution. Backup call will be rejected if there is an
+   * ongoing backup or update operation. Be aware that during preview, if the cluster's internal
+   * software version is too old, critical update will be performed before actual backup. Once the
+   * internal software version is updated to the minimum version required by the backup feature,
+   * subsequent backups will not require critical update. After preview, there will be no critical
+   * update needed for backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   BackupClusterRequest request =
+   *       BackupClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setTtl(Duration.newBuilder().build())
+   *           .setBackupId("backupId2121930365")
+   *           .build();
+   *   Cluster response = cloudRedisClusterClient.backupClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, Any> backupClusterAsync(BackupClusterRequest request) {
+    return backupClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Backup Redis Cluster. If this is the first time a backup is being created, a backup collection
+   * will be created at the backend, and this backup belongs to this collection. Both collection and
+   * backup will have a resource name. Backup will be executed for each shard. A replica (primary if
+   * nonHA) will be selected to perform the execution. Backup call will be rejected if there is an
+   * ongoing backup or update operation. Be aware that during preview, if the cluster's internal
+   * software version is too old, critical update will be performed before actual backup. Once the
+   * internal software version is updated to the minimum version required by the backup feature,
+   * subsequent backups will not require critical update. After preview, there will be no critical
+   * update needed for backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   BackupClusterRequest request =
+   *       BackupClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setTtl(Duration.newBuilder().build())
+   *           .setBackupId("backupId2121930365")
+   *           .build();
+   *   OperationFuture<Cluster, Any> future =
+   *       cloudRedisClusterClient.backupClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BackupClusterRequest, Cluster, Any>
+      backupClusterOperationCallable() {
+    return stub.backupClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Backup Redis Cluster. If this is the first time a backup is being created, a backup collection
+   * will be created at the backend, and this backup belongs to this collection. Both collection and
+   * backup will have a resource name. Backup will be executed for each shard. A replica (primary if
+   * nonHA) will be selected to perform the execution. Backup call will be rejected if there is an
+   * ongoing backup or update operation. Be aware that during preview, if the cluster's internal
+   * software version is too old, critical update will be performed before actual backup. Once the
+   * internal software version is updated to the minimum version required by the backup feature,
+   * subsequent backups will not require critical update. After preview, there will be no critical
+   * update needed for backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   BackupClusterRequest request =
+   *       BackupClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setTtl(Duration.newBuilder().build())
+   *           .setBackupId("backupId2121930365")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudRedisClusterClient.backupClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable() {
+    return stub.backupClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -1600,6 +2958,163 @@ public class CloudRedisClusterClient implements BackgroundResource {
     protected ListClustersFixedSizeCollection createCollection(
         List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupCollectionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          BackupCollection,
+          ListBackupCollectionsPage,
+          ListBackupCollectionsFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupCollectionsPagedResponse> createAsync(
+        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+            context,
+        ApiFuture<ListBackupCollectionsResponse> futureResponse) {
+      ApiFuture<ListBackupCollectionsPage> futurePage =
+          ListBackupCollectionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBackupCollectionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBackupCollectionsPagedResponse(ListBackupCollectionsPage page) {
+      super(page, ListBackupCollectionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupCollectionsPage
+      extends AbstractPage<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          BackupCollection,
+          ListBackupCollectionsPage> {
+
+    private ListBackupCollectionsPage(
+        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+            context,
+        ListBackupCollectionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupCollectionsPage createEmptyPage() {
+      return new ListBackupCollectionsPage(null, null);
+    }
+
+    @Override
+    protected ListBackupCollectionsPage createPage(
+        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+            context,
+        ListBackupCollectionsResponse response) {
+      return new ListBackupCollectionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupCollectionsPage> createPageAsync(
+        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+            context,
+        ApiFuture<ListBackupCollectionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupCollectionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          BackupCollection,
+          ListBackupCollectionsPage,
+          ListBackupCollectionsFixedSizeCollection> {
+
+    private ListBackupCollectionsFixedSizeCollection(
+        List<ListBackupCollectionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupCollectionsFixedSizeCollection createEmptyCollection() {
+      return new ListBackupCollectionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupCollectionsFixedSizeCollection createCollection(
+        List<ListBackupCollectionsPage> pages, int collectionSize) {
+      return new ListBackupCollectionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupsRequest,
+          ListBackupsResponse,
+          Backup,
+          ListBackupsPage,
+          ListBackupsFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupsPagedResponse> createAsync(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ApiFuture<ListBackupsResponse> futureResponse) {
+      ApiFuture<ListBackupsPage> futurePage =
+          ListBackupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListBackupsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListBackupsPagedResponse(ListBackupsPage page) {
+      super(page, ListBackupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupsPage
+      extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
+
+    private ListBackupsPage(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ListBackupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupsPage createEmptyPage() {
+      return new ListBackupsPage(null, null);
+    }
+
+    @Override
+    protected ListBackupsPage createPage(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ListBackupsResponse response) {
+      return new ListBackupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupsPage> createPageAsync(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ApiFuture<ListBackupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupsRequest,
+          ListBackupsResponse,
+          Backup,
+          ListBackupsPage,
+          ListBackupsFixedSizeCollection> {
+
+    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupsFixedSizeCollection createEmptyCollection() {
+      return new ListBackupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupsFixedSizeCollection createCollection(
+        List<ListBackupsPage> pages, int collectionSize) {
+      return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
 

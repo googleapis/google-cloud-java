@@ -28,12 +28,106 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Unique name of the resource in this scope including project and
-   * location using the form:
+   * Optional. Backups stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the clusters.
+   * Read permission is required to import from the provided Cloud Storage
+   * objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gcsSource field is set.
+   */
+  boolean hasGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the clusters.
+   * Read permission is required to import from the provided Cloud Storage
+   * objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gcsSource.
+   */
+  com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource getGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the clusters.
+   * Read permission is required to import from the provided Cloud Storage
+   * objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSourceOrBuilder getGcsSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups generated and managed by memorystore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the managedBackupSource field is set.
+   */
+  boolean hasManagedBackupSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups generated and managed by memorystore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The managedBackupSource.
+   */
+  com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource getManagedBackupSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups generated and managed by memorystore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceOrBuilder
+      getManagedBackupSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Identifier. Unique name of the resource in this scope including
+   * project and location using the form:
    *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -42,12 +136,14 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Unique name of the resource in this scope including project and
-   * location using the form:
+   * Required. Identifier. Unique name of the resource in this scope including
+   * project and location using the form:
    *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -265,10 +361,10 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Number of shards for the Redis cluster.
+   * Optional. Number of shards for the Redis cluster.
    * </pre>
    *
-   * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the shardCount field is set.
    */
@@ -277,10 +373,10 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Number of shards for the Redis cluster.
+   * Optional. Number of shards for the Redis cluster.
    * </pre>
    *
-   * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The shardCount.
    */
@@ -290,13 +386,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1beta1.PscConfig> getPscConfigsList();
@@ -304,13 +400,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.redis.cluster.v1beta1.PscConfig getPscConfigs(int index);
@@ -318,13 +414,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getPscConfigsCount();
@@ -332,13 +428,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1beta1.PscConfigOrBuilder>
@@ -347,13 +443,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.redis.cluster.v1beta1.PscConfigOrBuilder getPscConfigsOrBuilder(int index);
@@ -431,8 +527,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -444,8 +540,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -457,8 +553,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -470,8 +566,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -484,8 +580,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -748,6 +844,49 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. Cross cluster replication config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the crossClusterReplicationConfig field is set.
+   */
+  boolean hasCrossClusterReplicationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cross cluster replication config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The crossClusterReplicationConfig.
+   */
+  com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
+      getCrossClusterReplicationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cross cluster replication config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfigOrBuilder
+      getCrossClusterReplicationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The delete operation will fail when the value is set to true.
    * </pre>
    *
@@ -770,4 +909,395 @@ public interface ClusterOrBuilder
    * @return The deletionProtectionEnabled.
    */
   boolean getDeletionProtectionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ClusterMaintenancePolicy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  boolean hasMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ClusterMaintenancePolicy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy getMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ClusterMaintenancePolicy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicyOrBuilder
+      getMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+   * schedule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  boolean hasMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+   * schedule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule getMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+   * schedule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceScheduleOrBuilder
+      getMaintenanceScheduleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment>
+      getPscServiceAttachmentsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment getPscServiceAttachments(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPscServiceAttachmentsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder>
+      getPscServiceAttachmentsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder
+      getPscServiceAttachmentsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint> getClusterEndpointsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint getClusterEndpoints(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getClusterEndpointsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder>
+      getClusterEndpointsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder getClusterEndpointsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the backupCollection field is set.
+   */
+  boolean hasBackupCollection();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupCollection.
+   */
+  java.lang.String getBackupCollection();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupCollection.
+   */
+  com.google.protobuf.ByteString getBackupCollectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  boolean hasKmsKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the automatedBackupConfig field is set.
+   */
+  boolean hasAutomatedBackupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The automatedBackupConfig.
+   */
+  com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig getAutomatedBackupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfigOrBuilder
+      getAutomatedBackupConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  boolean hasEncryptionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  com.google.cloud.redis.cluster.v1beta1.EncryptionInfo getEncryptionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
+
+  com.google.cloud.redis.cluster.v1beta1.Cluster.ImportSourcesCase getImportSourcesCase();
 }

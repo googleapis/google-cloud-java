@@ -1398,6 +1398,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
@@ -1433,6 +1435,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
@@ -1469,6 +1473,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())

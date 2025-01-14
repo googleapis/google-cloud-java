@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1.samples;
 
 // [START aiplatform_v1_generated_PredictionService_GenerateContent_sync]
+import com.google.cloud.aiplatform.v1.CachedContentName;
 import com.google.cloud.aiplatform.v1.Content;
 import com.google.cloud.aiplatform.v1.GenerateContentRequest;
 import com.google.cloud.aiplatform.v1.GenerateContentResponse;
@@ -46,6 +47,8 @@ public class SyncGenerateContent {
               .setModel("model104069929")
               .addAllContents(new ArrayList<Content>())
               .setSystemInstruction(Content.newBuilder().build())
+              .setCachedContent(
+                  CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
               .addAllTools(new ArrayList<Tool>())
               .setToolConfig(ToolConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
