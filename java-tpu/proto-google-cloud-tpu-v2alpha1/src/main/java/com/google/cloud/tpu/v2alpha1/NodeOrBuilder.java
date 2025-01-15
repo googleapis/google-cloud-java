@@ -188,7 +188,9 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Network configurations for the TPU node.
+   * Network configurations for the TPU node. network_config and network_configs
+   * are mutually exclusive, you can only specify one of them. If both are
+   * specified, an error will be returned.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.NetworkConfig network_config = 36;</code>
@@ -200,7 +202,9 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Network configurations for the TPU node.
+   * Network configurations for the TPU node. network_config and network_configs
+   * are mutually exclusive, you can only specify one of them. If both are
+   * specified, an error will be returned.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.NetworkConfig network_config = 36;</code>
@@ -212,12 +216,91 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Network configurations for the TPU node.
+   * Network configurations for the TPU node. network_config and network_configs
+   * are mutually exclusive, you can only specify one of them. If both are
+   * specified, an error will be returned.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.NetworkConfig network_config = 36;</code>
    */
   com.google.cloud.tpu.v2alpha1.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2alpha1.NetworkConfig network_configs = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.tpu.v2alpha1.NetworkConfig> getNetworkConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2alpha1.NetworkConfig network_configs = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.tpu.v2alpha1.NetworkConfig getNetworkConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2alpha1.NetworkConfig network_configs = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getNetworkConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2alpha1.NetworkConfig network_configs = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.tpu.v2alpha1.NetworkConfigOrBuilder>
+      getNetworkConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repeated network configurations for the TPU node. This field is
+   * used to specify multiple networks configs for the TPU node. network_config
+   * and network_configs are mutually exclusive, you can only specify one of
+   * them. If both are specified, an error will be returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.tpu.v2alpha1.NetworkConfig network_configs = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.tpu.v2alpha1.NetworkConfigOrBuilder getNetworkConfigsOrBuilder(int index);
 
   /**
    *
@@ -913,6 +996,19 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
+   * Optional. Whether Autocheckpoint is enabled.
+   * </pre>
+   *
+   * <code>bool autocheckpoint_enabled = 48 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autocheckpointEnabled.
+   */
+  boolean getAutocheckpointEnabled();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Boot disk configuration.
    * </pre>
    *
@@ -949,4 +1045,45 @@ public interface NodeOrBuilder
    * </code>
    */
   com.google.cloud.tpu.v2alpha1.BootDiskConfigOrBuilder getBootDiskConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance on this TPU node.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.UpcomingMaintenance upcoming_maintenance = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upcomingMaintenance field is set.
+   */
+  boolean hasUpcomingMaintenance();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance on this TPU node.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.UpcomingMaintenance upcoming_maintenance = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upcomingMaintenance.
+   */
+  com.google.cloud.tpu.v2alpha1.UpcomingMaintenance getUpcomingMaintenance();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance on this TPU node.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.UpcomingMaintenance upcoming_maintenance = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.tpu.v2alpha1.UpcomingMaintenanceOrBuilder getUpcomingMaintenanceOrBuilder();
 }

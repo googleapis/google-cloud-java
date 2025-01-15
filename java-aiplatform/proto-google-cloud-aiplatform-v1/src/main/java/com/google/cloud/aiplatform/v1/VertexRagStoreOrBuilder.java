@@ -114,7 +114,7 @@ public interface VertexRagStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.VertexRagStore.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1/tool.proto;l=173
+   *     google/cloud/aiplatform/v1/tool.proto;l=174
    * @return Whether the similarityTopK field is set.
    */
   @java.lang.Deprecated
@@ -131,7 +131,7 @@ public interface VertexRagStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.VertexRagStore.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1/tool.proto;l=173
+   *     google/cloud/aiplatform/v1/tool.proto;l=174
    * @return The similarityTopK.
    */
   @java.lang.Deprecated
@@ -150,7 +150,7 @@ public interface VertexRagStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.VertexRagStore.vector_distance_threshold is deprecated.
-   *     See google/cloud/aiplatform/v1/tool.proto;l=178
+   *     See google/cloud/aiplatform/v1/tool.proto;l=179
    * @return Whether the vectorDistanceThreshold field is set.
    */
   @java.lang.Deprecated
@@ -168,7 +168,7 @@ public interface VertexRagStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.VertexRagStore.vector_distance_threshold is deprecated.
-   *     See google/cloud/aiplatform/v1/tool.proto;l=178
+   *     See google/cloud/aiplatform/v1/tool.proto;l=179
    * @return The vectorDistanceThreshold.
    */
   @java.lang.Deprecated

@@ -49,4 +49,17 @@ public interface SchedulingConfigOrBuilder
    * @return The reserved.
    */
   boolean getReserved();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether the node is Spot VM.
+   * </pre>
+   *
+   * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The spot.
+   */
+  boolean getSpot();
 }
