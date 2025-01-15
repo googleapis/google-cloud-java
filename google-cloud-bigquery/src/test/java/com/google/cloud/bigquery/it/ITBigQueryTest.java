@@ -3489,6 +3489,63 @@ public class ITBigQueryTest {
     String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     BigQueryResult bigQueryResult = connection.executeSelect(query);
     assertEquals(42, bigQueryResult.getTotalRows());
+    assertFalse(bigQueryResult.getBigQueryResultStats().getQueryStatistics().getUseReadApi());
+  }
+
+  @Test
+  public void testExecuteSelectWithReadApi() throws SQLException {
+    final int rowLimit = 5000;
+    final String QUERY =
+        "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 LIMIT %s";
+    // Job timeout is somewhat arbitrary - just ensures that fast query is not used.
+    // min result size and page row count ratio ensure that the ReadAPI is used.
+    ConnectionSettings connectionSettingsReadAPIEnabledFastQueryDisabled =
+        ConnectionSettings.newBuilder()
+            .setUseReadAPI(true)
+            .setJobTimeoutMs(Long.MAX_VALUE)
+            .setMinResultSize(500)
+            .setTotalToPageRowCountRatio(1)
+            .build();
+
+    Connection connectionReadAPIEnabled =
+        bigquery.createConnection(connectionSettingsReadAPIEnabledFastQueryDisabled);
+
+    String selectQuery = String.format(QUERY, rowLimit);
+
+    BigQueryResult bigQueryResultSet = connectionReadAPIEnabled.executeSelect(selectQuery);
+    ResultSet rs = bigQueryResultSet.getResultSet();
+    // Paginate results to avoid an InterruptedException
+    while (rs.next()) {}
+
+    assertTrue(bigQueryResultSet.getBigQueryResultStats().getQueryStatistics().getUseReadApi());
+    connectionReadAPIEnabled.close();
+  }
+
+  @Test
+  public void testExecuteSelectWithFastQueryReadApi() throws SQLException {
+    final int rowLimit = 5000;
+    final String QUERY =
+        "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 LIMIT %s";
+    // min result size and page row count ratio ensure that the ReadAPI is used.
+    ConnectionSettings connectionSettingsReadAPIEnabledFastQueryDisabled =
+        ConnectionSettings.newBuilder()
+            .setUseReadAPI(true)
+            .setMinResultSize(500)
+            .setTotalToPageRowCountRatio(1)
+            .build();
+
+    Connection connectionReadAPIEnabled =
+        bigquery.createConnection(connectionSettingsReadAPIEnabledFastQueryDisabled);
+
+    String selectQuery = String.format(QUERY, rowLimit);
+
+    BigQueryResult bigQueryResultSet = connectionReadAPIEnabled.executeSelect(selectQuery);
+    ResultSet rs = bigQueryResultSet.getResultSet();
+    // Paginate results to avoid an InterruptedException
+    while (rs.next()) {}
+
+    assertTrue(bigQueryResultSet.getBigQueryResultStats().getQueryStatistics().getUseReadApi());
+    connectionReadAPIEnabled.close();
   }
 
   @Test
@@ -3540,6 +3597,7 @@ public class ITBigQueryTest {
             + TABLE_ID_LARGE.getTable(); // Large query result is needed to use BigQueryReadClient.
     BigQueryResult bigQueryResult = connectionGoodCredentials.executeSelect(query);
     assertEquals(313348, bigQueryResult.getTotalRows());
+    assertTrue(bigQueryResult.getBigQueryResultStats().getQueryStatistics().getUseReadApi());
 
     // Scenario 2.
     // Create a new bigQuery object but explicitly an invalid credential.

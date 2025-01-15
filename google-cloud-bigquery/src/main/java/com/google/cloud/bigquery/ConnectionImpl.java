@@ -476,22 +476,29 @@ class ConnectionImpl implements Connection {
     }
 
     // Query finished running and we can paginate all the results
-    if (results.getJobComplete() && results.getSchema() != null) {
+    // Results should be read using the high throughput read API if sufficiently large.
+    boolean resultsLargeEnoughForReadApi =
+        connectionSettings.getUseReadAPI()
+            && results.getTotalRows() != null
+            && results.getTotalRows().longValue() > connectionSettings.getMinResultSize();
+    if (results.getJobComplete() && results.getSchema() != null && !resultsLargeEnoughForReadApi) {
       return processQueryResponseResults(results);
     } else {
-      // Query is long-running (> 10s) and hasn't completed yet, or query completed but didn't
-      // return the schema, fallback to jobs.insert path. Some operations don't return the schema
-      // and can be optimized here, but this is left as future work.
-      Long totalRows = results.getTotalRows() == null ? null : results.getTotalRows().longValue();
-      Long pageRows = results.getRows() == null ? null : (long) (results.getRows().size());
+      // Query is long-running (> 10s) and hasn't completed yet, query completed but didn't
+      // return the schema, or results are sufficiently large to use the high throughput read API,
+      // fallback to jobs.insert path. Some operations don't return the schema and can be optimized
+      // here, but this is left as future work.
+      JobId jobId = JobId.fromPb(results.getJobReference());
+      GetQueryResultsResponse firstPage = getQueryResultsFirstPage(jobId);
+      Long totalRows =
+          firstPage.getTotalRows() == null ? null : firstPage.getTotalRows().longValue();
+      Long pageRows = firstPage.getRows() == null ? null : (long) (firstPage.getRows().size());
       logger.log(
           Level.WARNING,
           "\n"
               + String.format(
                   "results.getJobComplete(): %s, isSchemaNull: %s , totalRows: %s, pageRows: %s",
                   results.getJobComplete(), results.getSchema() == null, totalRows, pageRows));
-      JobId jobId = JobId.fromPb(results.getJobReference());
-      GetQueryResultsResponse firstPage = getQueryResultsFirstPage(jobId);
       return getSubsequentQueryResultsWithJob(
           totalRows, pageRows, jobId, firstPage, hasQueryParameters);
     }
@@ -996,6 +1003,7 @@ class ConnectionImpl implements Connection {
           schema);
 
       logger.log(Level.INFO, "\n Using BigQuery Read API");
+      stats.getQueryStatistics().setUseReadApi(true);
       return new BigQueryResultImpl<BigQueryResultImpl.Row>(schema, totalRows, bufferRow, stats);
 
     } catch (IOException e) {
