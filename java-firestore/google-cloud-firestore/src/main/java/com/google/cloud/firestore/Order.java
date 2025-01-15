@@ -115,7 +115,7 @@ class Order implements Comparator<Value> {
       case TIMESTAMP:
         return compareTimestamps(left, right);
       case STRING:
-        return compareStrings(left, right);
+        return compareUtf8Strings(left.getStringValue(), right.getStringValue());
       case BLOB:
         return compareBlobs(left, right);
       case REF:
@@ -134,14 +134,20 @@ class Order implements Comparator<Value> {
     }
   }
 
-  private int compareStrings(Value left, Value right) {
-    return left.getStringValue().compareTo(right.getStringValue());
+  /** Compare strings in UTF-8 encoded byte order */
+  public static int compareUtf8Strings(String left, String right) {
+    ByteString leftBytes = ByteString.copyFromUtf8(left);
+    ByteString rightBytes = ByteString.copyFromUtf8(right);
+    return compareByteStrings(leftBytes, rightBytes);
   }
 
   private int compareBlobs(Value left, Value right) {
     ByteString leftBytes = left.getBytesValue();
     ByteString rightBytes = right.getBytesValue();
+    return compareByteStrings(leftBytes, rightBytes);
+  }
 
+  private static int compareByteStrings(ByteString leftBytes, ByteString rightBytes) {
     int size = Math.min(leftBytes.size(), rightBytes.size());
     for (int i = 0; i < size; i++) {
       // Make sure the bytes are unsigned
@@ -211,7 +217,7 @@ class Order implements Comparator<Value> {
     while (leftIterator.hasNext() && rightIterator.hasNext()) {
       Entry<String, Value> leftEntry = leftIterator.next();
       Entry<String, Value> rightEntry = rightIterator.next();
-      int keyCompare = leftEntry.getKey().compareTo(rightEntry.getKey());
+      int keyCompare = compareUtf8Strings(leftEntry.getKey(), rightEntry.getKey());
       if (keyCompare != 0) {
         return keyCompare;
       }

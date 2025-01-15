@@ -1155,4 +1155,205 @@ public class ITQueryTest extends ITBaseTest {
 
     assertEquals(queryOrder, listenerOrder); // Assert order in the SDK
   }
+
+  @Test
+  public void snapshotListenerSortsUnicodeStringsSameWayAsServer() throws Exception {
+    CollectionReference col = createEmptyCollection();
+
+    firestore
+        .batch()
+        .set(col.document("a"), map("value", "Łukasiewicz"))
+        .set(col.document("b"), map("value", "Sierpiński"))
+        .set(col.document("c"), map("value", "岩澤"))
+        .set(col.document("d"), map("value", "🄟"))
+        .set(col.document("e"), map("value", "Ｐ"))
+        .set(col.document("f"), map("value", "︒"))
+        .set(col.document("g"), map("value", "🐵"))
+        .commit()
+        .get();
+
+    Query query = col.orderBy("value", Direction.ASCENDING);
+
+    QuerySnapshot snapshot = query.get().get();
+    List<String> queryOrder =
+        snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<String> listenerOrder = new ArrayList<>();
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              listenerOrder.addAll(
+                  value.getDocuments().stream()
+                      .map(doc -> doc.getId())
+                      .collect(Collectors.toList()));
+              latch.countDown();
+            });
+    latch.await();
+    registration.remove();
+
+    assertEquals(queryOrder, Arrays.asList("b", "a", "c", "f", "e", "d", "g"));
+    assertEquals(queryOrder, listenerOrder);
+  }
+
+  @Test
+  public void snapshotListenerSortsUnicodeStringsInArraySameWayAsServer() throws Exception {
+    CollectionReference col = createEmptyCollection();
+
+    firestore
+        .batch()
+        .set(col.document("a"), map("value", Arrays.asList("Łukasiewicz")))
+        .set(col.document("b"), map("value", Arrays.asList("Sierpiński")))
+        .set(col.document("c"), map("value", Arrays.asList("岩澤")))
+        .set(col.document("d"), map("value", Arrays.asList("🄟")))
+        .set(col.document("e"), map("value", Arrays.asList("Ｐ")))
+        .set(col.document("f"), map("value", Arrays.asList("︒")))
+        .set(col.document("g"), map("value", Arrays.asList("🐵")))
+        .commit()
+        .get();
+
+    Query query = col.orderBy("value", Direction.ASCENDING);
+
+    QuerySnapshot snapshot = query.get().get();
+    List<String> queryOrder =
+        snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<String> listenerOrder = new ArrayList<>();
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              listenerOrder.addAll(
+                  value.getDocuments().stream()
+                      .map(doc -> doc.getId())
+                      .collect(Collectors.toList()));
+              latch.countDown();
+            });
+    latch.await();
+    registration.remove();
+
+    assertEquals(queryOrder, Arrays.asList("b", "a", "c", "f", "e", "d", "g"));
+    assertEquals(queryOrder, listenerOrder);
+  }
+
+  @Test
+  public void snapshotListenerSortsUnicodeStringsInMapSameWayAsServer() throws Exception {
+    CollectionReference col = createEmptyCollection();
+
+    firestore
+        .batch()
+        .set(col.document("a"), map("value", map("foo", "Łukasiewicz")))
+        .set(col.document("b"), map("value", map("foo", "Sierpiński")))
+        .set(col.document("c"), map("value", map("foo", "岩澤")))
+        .set(col.document("d"), map("value", map("foo", "🄟")))
+        .set(col.document("e"), map("value", map("foo", "Ｐ")))
+        .set(col.document("f"), map("value", map("foo", "︒")))
+        .set(col.document("g"), map("value", map("foo", "🐵")))
+        .commit()
+        .get();
+
+    Query query = col.orderBy("value", Direction.ASCENDING);
+
+    QuerySnapshot snapshot = query.get().get();
+    List<String> queryOrder =
+        snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<String> listenerOrder = new ArrayList<>();
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              listenerOrder.addAll(
+                  value.getDocuments().stream()
+                      .map(doc -> doc.getId())
+                      .collect(Collectors.toList()));
+              latch.countDown();
+            });
+    latch.await();
+    registration.remove();
+
+    assertEquals(queryOrder, Arrays.asList("b", "a", "c", "f", "e", "d", "g"));
+    assertEquals(queryOrder, listenerOrder);
+  }
+
+  @Test
+  public void snapshotListenerSortsUnicodeStringsInMapKeySameWayAsServer() throws Exception {
+    CollectionReference col = createEmptyCollection();
+
+    firestore
+        .batch()
+        .set(col.document("a"), map("value", map("Łukasiewicz", "foo")))
+        .set(col.document("b"), map("value", map("Sierpiński", "foo")))
+        .set(col.document("c"), map("value", map("岩澤", "foo")))
+        .set(col.document("d"), map("value", map("🄟", "foo")))
+        .set(col.document("e"), map("value", map("Ｐ", "foo")))
+        .set(col.document("f"), map("value", map("︒", "foo")))
+        .set(col.document("g"), map("value", map("🐵", "foo")))
+        .commit()
+        .get();
+
+    Query query = col.orderBy("value", Direction.ASCENDING);
+
+    QuerySnapshot snapshot = query.get().get();
+    List<String> queryOrder =
+        snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<String> listenerOrder = new ArrayList<>();
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              listenerOrder.addAll(
+                  value.getDocuments().stream()
+                      .map(doc -> doc.getId())
+                      .collect(Collectors.toList()));
+              latch.countDown();
+            });
+    latch.await();
+    registration.remove();
+
+    assertEquals(queryOrder, Arrays.asList("b", "a", "c", "f", "e", "d", "g"));
+    assertEquals(queryOrder, listenerOrder);
+  }
+
+  @Test
+  public void snapshotListenerSortsUnicodeStringsInDocumentKeySameWayAsServer() throws Exception {
+    CollectionReference col = createEmptyCollection();
+
+    firestore
+        .batch()
+        .set(col.document("Łukasiewicz"), map("value", "foo"))
+        .set(col.document("Sierpiński"), map("value", "foo"))
+        .set(col.document("岩澤"), map("value", "foo"))
+        .set(col.document("🄟"), map("value", "foo"))
+        .set(col.document("Ｐ"), map("value", "foo"))
+        .set(col.document("︒"), map("value", "foo"))
+        .set(col.document("🐵"), map("value", "foo"))
+        .commit()
+        .get();
+
+    Query query = col.orderBy(FieldPath.documentId());
+
+    QuerySnapshot snapshot = query.get().get();
+    List<String> queryOrder =
+        snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<String> listenerOrder = new ArrayList<>();
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              listenerOrder.addAll(
+                  value.getDocuments().stream()
+                      .map(doc -> doc.getId())
+                      .collect(Collectors.toList()));
+              latch.countDown();
+            });
+    latch.await();
+    registration.remove();
+
+    assertEquals(
+        queryOrder, Arrays.asList("Sierpiński", "Łukasiewicz", "岩澤", "︒", "Ｐ", "🄟", "🐵"));
+    assertEquals(queryOrder, listenerOrder);
+  }
 }
