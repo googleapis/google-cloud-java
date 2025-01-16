@@ -72,14 +72,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the Pub/Sub topic that will be published to,
-   * in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to succeed,
-   * the Secret Manager service agent must have the `pubsub.topic.publish`
-   * permission on the topic. The Pub/Sub Publisher role
+   * Identifier. The resource name of the Pub/Sub topic that will be published
+   * to, in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to
+   * succeed, the Secret Manager service agent must have the
+   * `pubsub.topic.publish` permission on the topic. The Pub/Sub Publisher role
    * (`roles/pubsub.publisher`) includes this permission.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -99,14 +99,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the Pub/Sub topic that will be published to,
-   * in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to succeed,
-   * the Secret Manager service agent must have the `pubsub.topic.publish`
-   * permission on the topic. The Pub/Sub Publisher role
+   * Identifier. The resource name of the Pub/Sub topic that will be published
+   * to, in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to
+   * succeed, the Secret Manager service agent must have the
+   * `pubsub.topic.publish` permission on the topic. The Pub/Sub Publisher role
    * (`roles/pubsub.publisher`) includes this permission.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -469,14 +469,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Pub/Sub topic that will be published to,
-     * in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to succeed,
-     * the Secret Manager service agent must have the `pubsub.topic.publish`
-     * permission on the topic. The Pub/Sub Publisher role
+     * Identifier. The resource name of the Pub/Sub topic that will be published
+     * to, in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to
+     * succeed, the Secret Manager service agent must have the
+     * `pubsub.topic.publish` permission on the topic. The Pub/Sub Publisher role
      * (`roles/pubsub.publisher`) includes this permission.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -495,14 +495,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Pub/Sub topic that will be published to,
-     * in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to succeed,
-     * the Secret Manager service agent must have the `pubsub.topic.publish`
-     * permission on the topic. The Pub/Sub Publisher role
+     * Identifier. The resource name of the Pub/Sub topic that will be published
+     * to, in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to
+     * succeed, the Secret Manager service agent must have the
+     * `pubsub.topic.publish` permission on the topic. The Pub/Sub Publisher role
      * (`roles/pubsub.publisher`) includes this permission.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -521,14 +521,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Pub/Sub topic that will be published to,
-     * in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to succeed,
-     * the Secret Manager service agent must have the `pubsub.topic.publish`
-     * permission on the topic. The Pub/Sub Publisher role
+     * Identifier. The resource name of the Pub/Sub topic that will be published
+     * to, in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to
+     * succeed, the Secret Manager service agent must have the
+     * `pubsub.topic.publish` permission on the topic. The Pub/Sub Publisher role
      * (`roles/pubsub.publisher`) includes this permission.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -546,14 +546,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Pub/Sub topic that will be published to,
-     * in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to succeed,
-     * the Secret Manager service agent must have the `pubsub.topic.publish`
-     * permission on the topic. The Pub/Sub Publisher role
+     * Identifier. The resource name of the Pub/Sub topic that will be published
+     * to, in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to
+     * succeed, the Secret Manager service agent must have the
+     * `pubsub.topic.publish` permission on the topic. The Pub/Sub Publisher role
      * (`roles/pubsub.publisher`) includes this permission.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -567,14 +567,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Pub/Sub topic that will be published to,
-     * in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to succeed,
-     * the Secret Manager service agent must have the `pubsub.topic.publish`
-     * permission on the topic. The Pub/Sub Publisher role
+     * Identifier. The resource name of the Pub/Sub topic that will be published
+     * to, in the following format: `projects/&#42;&#47;topics/&#42;`. For publication to
+     * succeed, the Secret Manager service agent must have the
+     * `pubsub.topic.publish` permission on the topic. The Pub/Sub Publisher role
      * (`roles/pubsub.publisher`) includes this permission.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
