@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.25.3](https://github.com/googleapis/java-datastore/compare/v2.25.2...v2.25.3) (2025-01-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.50.0 ([#1708](https://github.com/googleapis/java-datastore/issues/1708)) ([b78660f](https://github.com/googleapis/java-datastore/commit/b78660f3866ce5c1198db4590b5e1f645170ecff))
+
 ## [2.25.2](https://github.com/googleapis/java-datastore/compare/v2.25.1...v2.25.2) (2025-01-09)
 
 
