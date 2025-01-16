@@ -97,6 +97,7 @@ class ConnectionImpl implements Connection {
   private final Logger logger = Logger.getLogger(this.getClass().getName());
   private BigQueryReadClient bqReadClient;
   private static final long EXECUTOR_TIMEOUT_SEC = 10;
+  private static final long BIGQUERY_TIMEOUT_SEC = 10;
   private BlockingQueue<AbstractList<FieldValue>>
       bufferFvl; // initialized lazily iff we end up using the tabledata.list end point
   private BlockingQueue<BigQueryResultImpl.Row>
@@ -148,8 +149,15 @@ class ConnectionImpl implements Connection {
     flagEndOfStream(); // an End of Stream flag in the buffer so that the `ResultSet.next()` stops
     // advancing the cursor
     queryTaskExecutor.shutdownNow();
+    boolean isBqReadClientTerminated = true;
     try {
-      if (queryTaskExecutor.awaitTermination(EXECUTOR_TIMEOUT_SEC, TimeUnit.SECONDS)) {
+      if (bqReadClient != null) {
+        bqReadClient.shutdownNow();
+        isBqReadClientTerminated =
+            bqReadClient.awaitTermination(BIGQUERY_TIMEOUT_SEC, TimeUnit.SECONDS);
+      }
+      if (queryTaskExecutor.awaitTermination(EXECUTOR_TIMEOUT_SEC, TimeUnit.SECONDS)
+          && isBqReadClientTerminated) {
         return true;
       } // else queryTaskExecutor.isShutdown() will be returned outside this try block
     } catch (InterruptedException e) {
@@ -159,7 +167,9 @@ class ConnectionImpl implements Connection {
           e); // Logging InterruptedException instead of throwing the exception back, close method
       // will return queryTaskExecutor.isShutdown()
     }
-    return queryTaskExecutor.isShutdown(); // check if the executor has been shutdown
+
+    return queryTaskExecutor.isShutdown()
+        && isBqReadClientTerminated; // check if the executor has been shutdown
   }
 
   /**
@@ -992,7 +1002,6 @@ class ConnectionImpl implements Connection {
           // DO a regex check using order by and use multiple streams
           ;
       ReadSession readSession = bqReadClient.createReadSession(builder.build());
-
       bufferRow = new LinkedBlockingDeque<>(getBufferSize());
       Map<String, Integer> arrowNameToIndex = new HashMap<>();
       // deserialize and populate the buffer async, so that the client isn't blocked
@@ -1050,6 +1059,7 @@ class ConnectionImpl implements Connection {
                   "\n" + Thread.currentThread().getName() + " Interrupted @ markLast",
                   e);
             }
+            bqReadClient.shutdownNow(); // Shutdown the read client
             queryTaskExecutor.shutdownNow(); // Shutdown the thread pool
           }
         };
