@@ -254,13 +254,13 @@ public final class ServiceProto {
           + "ocations/*/secrets/*}:testIamPermissions"
           + ":\001*\032P\312A\034secretmanager.googleapis.com\322A.h"
           + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\201\002\n&com.google.cloud.secretmanager"
+          + "tformB\376\001\n&com.google.cloud.secretmanager"
           + ".v1beta2B\014ServiceProtoP\001ZLcloud.google.c"
           + "om/go/secretmanager/apiv1beta2/secretman"
-          + "agerpb;secretmanagerpb\370\001\001\242\002\003GSM\252\002\"Google"
-          + ".Cloud.SecretManager.V1Beta2\312\002\"Google\\Cl"
-          + "oud\\SecretManager\\V1beta2\352\002%Google::Clou"
-          + "d::SecretManager::V1beta2b\006proto3"
+          + "agerpb;secretmanagerpb\242\002\003GSM\252\002\"Google.Cl"
+          + "oud.SecretManager.V1Beta2\312\002\"Google\\Cloud"
+          + "\\SecretManager\\V1beta2\352\002%Google::Cloud::"
+          + "SecretManager::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
