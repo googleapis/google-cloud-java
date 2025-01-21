@@ -91,10 +91,10 @@ public interface OracleAsmConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Password for the Oracle ASM connection.
+   * Optional. Password for the Oracle ASM connection.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The password.
    */
@@ -103,10 +103,10 @@ public interface OracleAsmConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Password for the Oracle ASM connection.
+   * Optional. Password for the Oracle ASM connection.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for password.
    */

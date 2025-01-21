@@ -28,10 +28,12 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource's name.
+   * Output only. Identifier. The resource's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -40,10 +42,12 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource's name.
+   * Output only. Identifier. The resource's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
