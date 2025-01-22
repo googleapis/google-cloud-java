@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.30.4](https://github.com/googleapis/java-firestore/compare/v3.30.3...v3.30.4) (2025-01-16)
+
+
+### Bug Fixes
+
+* Comparing double with long  ([#1960](https://github.com/googleapis/java-firestore/issues/1960)) ([8cb4dc8](https://github.com/googleapis/java-firestore/commit/8cb4dc8859b1d8331657704f36baba472ea3115c))
+* Sort strings in UTF-8 encoded byte order ([#1967](https://github.com/googleapis/java-firestore/issues/1967)) ([4309639](https://github.com/googleapis/java-firestore/commit/43096393dd9e49dd9144fd2351e29cb40ea855c5))
+
+
+### Dependencies
+
+* Update dependency com.diffplug.spotless:spotless-maven-plugin to v2.44.2 ([#1981](https://github.com/googleapis/java-firestore/issues/1981)) ([c4ea331](https://github.com/googleapis/java-firestore/commit/c4ea33134a63c722a15288421cc023a1ec5c5c74))
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.56.0 ([#1975](https://github.com/googleapis/java-firestore/issues/1975)) ([7388291](https://github.com/googleapis/java-firestore/commit/73882910443407c529e4d6763ebe78fd1c0411b1))
+* Update dependency com.google.cloud:google-cloud-trace to v2.56.0 ([#1976](https://github.com/googleapis/java-firestore/issues/1976)) ([978c053](https://github.com/googleapis/java-firestore/commit/978c053b0801da5f708d0016cae3358d33f1b2bd))
+* Update opentelemetry.version to v1.46.0 ([#1977](https://github.com/googleapis/java-firestore/issues/1977)) ([2b3de13](https://github.com/googleapis/java-firestore/commit/2b3de13db866badf1b405b3b2383cc85076460eb))
+
 ## [3.30.3](https://github.com/googleapis/java-firestore/compare/v3.30.2...v3.30.3) (2025-01-11)
 
 
