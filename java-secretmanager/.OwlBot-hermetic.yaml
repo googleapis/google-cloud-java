@@ -25,14 +25,14 @@ deep-preserve-regex:
 
 
 deep-copy-regex:
-# The first four configurations are for v1beta1 configured in /google/cloud/secret/{version}
-- source: "/google/cloud/secret/(v\\d.*)/.*-java/proto-google-.*/src"
+# The first four configurations are for v1beta1 configured in /google/cloud/secrets/{version}
+- source: "/google/cloud/secrets/(v\\d.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-secretmanager/$1/proto-google-cloud-secretmanager-$1/src"
-- source: "/google/cloud/secret/(v\\d.*)/.*-java/grpc-google-.*/src"
+- source: "/google/cloud/secrets/(v\\d.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-secretmanager/$1/grpc-google-cloud-secretmanager-$1/src"
-- source: "/google/cloud/secret/(v\\d.*)/.*-java/gapic-google-.*/src"
+- source: "/google/cloud/secrets/(v\\d.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-secretmanager/$1/google-cloud-secretmanager/src"
-- source: "/google/cloud/secret/(v\\d.*)/.*-java/samples/snippets/generated"
+- source: "/google/cloud/secrets/(v\\d.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-secretmanager/$1/samples/snippets/generated"
 # The next four configurations are for all others versions configured in /google/cloud/secretmanager/{version}
 - source: "/google/cloud/secretmanager/(v\\d.*)/.*-java/proto-google-.*/src"
