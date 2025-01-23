@@ -30,7 +30,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-firestore</artifactId>
-      <version>3.30.3</version>
+      <version>3.30.4</version>
     </dependency>
     <!-- [END firestore_install_without_bom] -->
 
