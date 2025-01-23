@@ -28,7 +28,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint;
+   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -39,7 +39,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint;
+   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -50,7 +50,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint;
+   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -61,7 +61,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint;
+   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -73,7 +73,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint;
+   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -86,7 +86,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] The network endpoint;
+   * [Output only] The network endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
@@ -98,7 +98,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] The network endpoint;
+   * [Output only] The network endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
@@ -110,7 +110,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] The network endpoint;
+   * [Output only] The network endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>

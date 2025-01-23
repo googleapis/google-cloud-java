@@ -1324,6 +1324,9 @@
             "AddRule": {
               "methods": ["addRuleAsync", "addRuleAsync", "addRuleOperationCallable", "addRuleCallable"]
             },
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
             "CloneRules": {
               "methods": ["cloneRulesAsync", "cloneRulesAsync", "cloneRulesOperationCallable", "cloneRulesCallable"]
             },

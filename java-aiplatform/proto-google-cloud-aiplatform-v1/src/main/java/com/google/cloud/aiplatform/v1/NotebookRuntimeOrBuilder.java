@@ -307,7 +307,15 @@ public interface NotebookRuntimeOrBuilder
    *
    *
    * <pre>
-   * Output only. The service account that the NotebookRuntime workload runs as.
+   * Output only. Deprecated: This field is no longer used and the "Vertex AI
+   * Notebook Service Account"
+   * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+   * used for the runtime workload identity.
+   * See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+   * for more details.
+   *
+   * The service account that the NotebookRuntime workload runs as.
    * </pre>
    *
    * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -319,7 +327,15 @@ public interface NotebookRuntimeOrBuilder
    *
    *
    * <pre>
-   * Output only. The service account that the NotebookRuntime workload runs as.
+   * Output only. Deprecated: This field is no longer used and the "Vertex AI
+   * Notebook Service Account"
+   * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+   * used for the runtime workload identity.
+   * See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+   * for more details.
+   *
+   * The service account that the NotebookRuntime workload runs as.
    * </pre>
    *
    * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -624,6 +640,138 @@ public interface NotebookRuntimeOrBuilder
    *
    *
    * <pre>
+   * Output only. The specification of a single machine used by the notebook
+   * runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the machineSpec field is set.
+   */
+  boolean hasMachineSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of a single machine used by the notebook
+   * runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The machineSpec.
+   */
+  com.google.cloud.aiplatform.v1.MachineSpec getMachineSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of a single machine used by the notebook
+   * runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.MachineSpecOrBuilder getMachineSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of [persistent
+   * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+   * attached to the notebook runtime as data disk storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataPersistentDiskSpec field is set.
+   */
+  boolean hasDataPersistentDiskSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of [persistent
+   * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+   * attached to the notebook runtime as data disk storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataPersistentDiskSpec.
+   */
+  com.google.cloud.aiplatform.v1.PersistentDiskSpec getDataPersistentDiskSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of [persistent
+   * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+   * attached to the notebook runtime as data disk storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PersistentDiskSpecOrBuilder getDataPersistentDiskSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network spec of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the networkSpec field is set.
+   */
+  boolean hasNetworkSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network spec of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The networkSpec.
+   */
+  com.google.cloud.aiplatform.v1.NetworkSpec getNetworkSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network spec of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.NetworkSpecOrBuilder getNetworkSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The idle shutdown configuration of the notebook runtime.
    * </pre>
    *
@@ -661,6 +809,88 @@ public interface NotebookRuntimeOrBuilder
    */
   com.google.cloud.aiplatform.v1.NotebookIdleShutdownConfigOrBuilder
       getIdleShutdownConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. EUC configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the eucConfig field is set.
+   */
+  boolean hasEucConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. EUC configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The eucConfig.
+   */
+  com.google.cloud.aiplatform.v1.NotebookEucConfig getEucConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. EUC configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.NotebookEucConfigOrBuilder getEucConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime Shielded VM spec.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the shieldedVmConfig field is set.
+   */
+  boolean hasShieldedVmConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime Shielded VM spec.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The shieldedVmConfig.
+   */
+  com.google.cloud.aiplatform.v1.ShieldedVmConfig getShieldedVmConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime Shielded VM spec.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ShieldedVmConfigOrBuilder getShieldedVmConfigOrBuilder();
 
   /**
    *

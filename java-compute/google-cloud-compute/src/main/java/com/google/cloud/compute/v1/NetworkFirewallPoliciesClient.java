@@ -31,6 +31,7 @@ import com.google.cloud.compute.v1.stub.NetworkFirewallPoliciesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -101,6 +102,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> addRuleOperationCallable()
  *           <li><p> addRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregatedList</td>
+ *      <td><p> Retrieves an aggregated list of network firewall policies, listing network firewall policies from all applicable scopes (global and regional) and grouping the results per scope. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(AggregatedListNetworkFirewallPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -745,6 +765,172 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
    */
   public final UnaryCallable<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleCallable() {
     return stub.addRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an aggregated list of network firewall policies, listing network firewall policies
+   * from all applicable scopes (global and regional) and grouping the results per scope. To prevent
+   * failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, FirewallPoliciesScopedList> element :
+   *       networkFirewallPoliciesClient.aggregatedList(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(String project) {
+    AggregatedListNetworkFirewallPoliciesRequest request =
+        AggregatedListNetworkFirewallPoliciesRequest.newBuilder().setProject(project).build();
+    return aggregatedList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an aggregated list of network firewall policies, listing network firewall policies
+   * from all applicable scopes (global and regional) and grouping the results per scope. To prevent
+   * failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   AggregatedListNetworkFirewallPoliciesRequest request =
+   *       AggregatedListNetworkFirewallPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   for (Map.Entry<String, FirewallPoliciesScopedList> element :
+   *       networkFirewallPoliciesClient.aggregatedList(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(
+      AggregatedListNetworkFirewallPoliciesRequest request) {
+    return aggregatedListPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an aggregated list of network firewall policies, listing network firewall policies
+   * from all applicable scopes (global and regional) and grouping the results per scope. To prevent
+   * failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   AggregatedListNetworkFirewallPoliciesRequest request =
+   *       AggregatedListNetworkFirewallPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, FirewallPoliciesScopedList>> future =
+   *       networkFirewallPoliciesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, FirewallPoliciesScopedList> element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return stub.aggregatedListPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an aggregated list of network firewall policies, listing network firewall policies
+   * from all applicable scopes (global and regional) and grouping the results per scope. To prevent
+   * failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   AggregatedListNetworkFirewallPoliciesRequest request =
+   *       AggregatedListNetworkFirewallPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   while (true) {
+   *     NetworkFirewallPolicyAggregatedList response =
+   *         networkFirewallPoliciesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, FirewallPoliciesScopedList> element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+      aggregatedListCallable() {
+    return stub.aggregatedListCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2456,6 +2642,101 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class AggregatedListPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListNetworkFirewallPoliciesRequest,
+          NetworkFirewallPolicyAggregatedList,
+          Map.Entry<String, FirewallPoliciesScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    public static ApiFuture<AggregatedListPagedResponse> createAsync(
+        PageContext<
+                AggregatedListNetworkFirewallPoliciesRequest,
+                NetworkFirewallPolicyAggregatedList,
+                Map.Entry<String, FirewallPoliciesScopedList>>
+            context,
+        ApiFuture<NetworkFirewallPolicyAggregatedList> futureResponse) {
+      ApiFuture<AggregatedListPage> futurePage =
+          AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregatedListPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregatedListPagedResponse(AggregatedListPage page) {
+      super(page, AggregatedListFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregatedListPage
+      extends AbstractPage<
+          AggregatedListNetworkFirewallPoliciesRequest,
+          NetworkFirewallPolicyAggregatedList,
+          Map.Entry<String, FirewallPoliciesScopedList>,
+          AggregatedListPage> {
+
+    private AggregatedListPage(
+        PageContext<
+                AggregatedListNetworkFirewallPoliciesRequest,
+                NetworkFirewallPolicyAggregatedList,
+                Map.Entry<String, FirewallPoliciesScopedList>>
+            context,
+        NetworkFirewallPolicyAggregatedList response) {
+      super(context, response);
+    }
+
+    private static AggregatedListPage createEmptyPage() {
+      return new AggregatedListPage(null, null);
+    }
+
+    @Override
+    protected AggregatedListPage createPage(
+        PageContext<
+                AggregatedListNetworkFirewallPoliciesRequest,
+                NetworkFirewallPolicyAggregatedList,
+                Map.Entry<String, FirewallPoliciesScopedList>>
+            context,
+        NetworkFirewallPolicyAggregatedList response) {
+      return new AggregatedListPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregatedListPage> createPageAsync(
+        PageContext<
+                AggregatedListNetworkFirewallPoliciesRequest,
+                NetworkFirewallPolicyAggregatedList,
+                Map.Entry<String, FirewallPoliciesScopedList>>
+            context,
+        ApiFuture<NetworkFirewallPolicyAggregatedList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregatedListFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListNetworkFirewallPoliciesRequest,
+          NetworkFirewallPolicyAggregatedList,
+          Map.Entry<String, FirewallPoliciesScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregatedListFixedSizeCollection createEmptyCollection() {
+      return new AggregatedListFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregatedListFixedSizeCollection createCollection(
+        List<AggregatedListPage> pages, int collectionSize) {
+      return new AggregatedListFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListPagedResponse
