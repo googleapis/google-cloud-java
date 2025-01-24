@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/googleapis/java-shared-config/compare/v1.13.0...v1.14.0) (2025-01-24)
+
+
+### Features
+
+* Update GraalVM image B to GraalVM for JDK 23 ([79c31bc](https://github.com/googleapis/java-shared-config/commit/79c31bcfb0ae4767eaa8ea5045b20729d9cb3fb8))
+
 ## [1.13.0](https://github.com/googleapis/java-shared-config/compare/v1.12.3...v1.13.0) (2025-01-07)
 
 
