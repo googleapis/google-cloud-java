@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.30.5](https://github.com/googleapis/java-firestore/compare/v3.30.4...v3.30.5) (2025-01-24)
+
+
+### Bug Fixes
+
+* Bump default deadline on CreateDatabase and RestoreDatabase to 2 minutes ([f3dac25](https://github.com/googleapis/java-firestore/commit/f3dac255a9ffb81b95da6a60ad2487f138157578))
+
+
+### Dependencies
+
+* Update beam.version to v2.62.0 ([#1984](https://github.com/googleapis/java-firestore/issues/1984)) ([cbf1ceb](https://github.com/googleapis/java-firestore/commit/cbf1cebfa3c17fe3dca103cf6bb2d523857529c9))
+
 ## [3.30.4](https://github.com/googleapis/java-firestore/compare/v3.30.3...v3.30.4) (2025-01-16)
 
 
