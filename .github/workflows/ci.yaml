@@ -59,6 +59,7 @@ jobs:
         env:
           JOB_TYPE: test
   windows:
+    # Building using Java 11 and run the tests with Java 8 runtime
     runs-on: windows-latest
     steps:
     - name: Support longpaths
@@ -66,8 +67,15 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
-        distribution: temurin
         java-version: 8
+        distribution: temurin
+    - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
+      run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}\bin\java" >> $GITHUB_ENV
+      shell: bash
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 11
     - run: java -version
     - run: .kokoro/build.bat
       env:

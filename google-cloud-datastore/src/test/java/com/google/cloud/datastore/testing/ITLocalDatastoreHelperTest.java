@@ -76,11 +76,13 @@ public class ITLocalDatastoreHelperTest {
             .setConsistency(0.75)
             .setPort(8081)
             .setStoreOnDisk(false)
+            .setFirestoreInDatastoreMode(true)
             .setDataDir(dataDir)
             .build();
     assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
     assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
     assertFalse(helper.isStoreOnDisk());
+    assertTrue(helper.isFirestoreInDatastoreMode());
     assertEquals(8081, helper.getPort());
     assertEquals(dataDir, helper.getGcdPath());
     LocalDatastoreHelper incompleteHelper = LocalDatastoreHelper.newBuilder().build();
@@ -103,11 +105,13 @@ public class ITLocalDatastoreHelperTest {
             .setConsistency(0.75)
             .setPort(8081)
             .setStoreOnDisk(false)
+            .setFirestoreInDatastoreMode(true)
             .setDataDir(dataDir)
             .build();
     assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
     assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
     assertFalse(helper.isStoreOnDisk());
+    assertTrue(helper.isFirestoreInDatastoreMode());
     assertEquals(8081, helper.getPort());
     assertEquals(dataDir, helper.getGcdPath());
     LocalDatastoreHelper actualHelper = helper.toBuilder().build();
@@ -119,10 +123,12 @@ public class ITLocalDatastoreHelperTest {
             .setConsistency(0.85)
             .setPort(9091)
             .setStoreOnDisk(true)
+            .setFirestoreInDatastoreMode(false)
             .setDataDir(dataDir)
             .build();
     assertTrue(Math.abs(0.85 - actualHelper.getConsistency()) < TOLERANCE);
     assertTrue(actualHelper.isStoreOnDisk());
+    assertFalse(actualHelper.isFirestoreInDatastoreMode());
     assertEquals(9091, actualHelper.getPort());
     assertEquals(dataDir, actualHelper.getGcdPath());
     LocalDatastoreHelper.deleteRecursively(dataDir);
@@ -206,10 +212,28 @@ public class ITLocalDatastoreHelperTest {
     }
   }
 
+  @Test
+  public void testCreateWithFirestoreInDatastoreMode()
+      throws IOException, InterruptedException, TimeoutException {
+    LocalDatastoreHelper helper =
+        LocalDatastoreHelper.newBuilder().setFirestoreInDatastoreMode(true).build();
+    assertTrue(helper.isFirestoreInDatastoreMode());
+    helper.start();
+    Datastore datastore = helper.getOptions().getService();
+    Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
+    Entity expected = Entity.newBuilder(key).build();
+    datastore.put(expected);
+    assertNotNull(datastore.get(key));
+    Entity actual = datastore.get(key);
+    assertEquals(expected, actual);
+    helper.stop();
+  }
+
   public void assertLocalDatastoreHelpersEquivelent(
       LocalDatastoreHelper expected, LocalDatastoreHelper actual) {
     assertEquals(expected.getConsistency(), actual.getConsistency(), 0);
     assertEquals(expected.isStoreOnDisk(), actual.isStoreOnDisk());
+    assertEquals(expected.isFirestoreInDatastoreMode(), actual.isFirestoreInDatastoreMode());
     assertEquals(expected.getGcdPath(), actual.getGcdPath());
   }
 }

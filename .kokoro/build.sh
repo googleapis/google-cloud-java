@@ -60,6 +60,18 @@ javadoc)
     RETURN_CODE=$?
     ;;
 integration)
+    # Kokoro integration tests use both JDK 11 and JDK 8. Integration
+    # tests require JDK 11 export as JAVA env variable to run cloud datastore
+    # emulator (https://cloud.google.com/sdk/docs/release-notes#39300_2022-07-12).
+    # For Java 8 environment, we will still run the tests using Java 8 with
+    # SUREFIRE_JVM_OPT for Maven surefire plugin:
+    # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
+    if [[ -n "${JAVA11_HOME}"  &&  -n "${JAVA8_HOME}" ]]
+    then
+      export JAVA=${JAVA11_HOME}/bin/java
+      export SUREFIRE_JVM_OPT=-Djvm=${JAVA8_HOME}/bin/java
+    fi
+
     mvn -B ${INTEGRATION_TEST_ARGS} \
       -ntp \
       -Penable-integration-tests \
