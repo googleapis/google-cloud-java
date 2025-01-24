@@ -740,6 +740,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListBackupsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

@@ -62,4 +62,51 @@ public interface ListBackupsRequestOrBuilder
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * An expression that filters the list of returned backups.
+   *
+   * A filter expression consists of a field name, a comparison operator, and a
+   * value for filtering.
+   * The value must be a string, a number, or a boolean. The comparison operator
+   * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
+   * Colon `:` is the contains operator. Filter rules are not case sensitive.
+   *
+   * The following fields in the [Backup][google.firestore.admin.v1.Backup] are
+   * eligible for filtering:
+   *
+   *   * `database_uid` (supports `=` only)
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * An expression that filters the list of returned backups.
+   *
+   * A filter expression consists of a field name, a comparison operator, and a
+   * value for filtering.
+   * The value must be a string, a number, or a boolean. The comparison operator
+   * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
+   * Colon `:` is the contains operator. Filter rules are not case sensitive.
+   *
+   * The following fields in the [Backup][google.firestore.admin.v1.Backup] are
+   * eligible for filtering:
+   *
+   *   * `database_uid` (supports `=` only)
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

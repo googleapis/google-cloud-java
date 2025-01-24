@@ -3168,6 +3168,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *   ListBackupsRequest request =
    *       ListBackupsRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ListBackupsResponse response = firestoreAdminClient.listBackups(request);
    * }
@@ -3196,6 +3197,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *   ListBackupsRequest request =
    *       ListBackupsRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<ListBackupsResponse> future =
    *       firestoreAdminClient.listBackupsCallable().futureCall(request);
