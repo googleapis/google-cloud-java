@@ -19,7 +19,6 @@ package pubsub;
 // [START pubsub_create_topic_with_confluent_cloud_ingestion]
 
 import com.google.cloud.pubsub.v1.TopicAdminClient;
-import com.google.cloud.pubsub.v1.TopicAdminSettings;
 import com.google.pubsub.v1.IngestionDataSourceSettings;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;

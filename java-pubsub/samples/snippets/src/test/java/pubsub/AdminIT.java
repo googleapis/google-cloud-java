@@ -92,7 +92,7 @@ public class AdminIT {
   private static final String cloudStorageMinimumObjectCreateTimeSeconds = "seconds: 1";
   // AWS MSK ingestion settings.
   String clusterArn =
-        "arn:aws:kafka:us-east-1:111111111111:cluster/fake-cluster-name/11111111-1111-1";
+      "arn:aws:kafka:us-east-1:111111111111:cluster/fake-cluster-name/11111111-1111-1";
   String mskTopic = "fake-msk-topic-name";
   // Confluent Cloud ingestion settings.
   String bootstrapServer = "fake-bootstrap-server-id.us-south1.gcp.confluent.cloud:9092";
@@ -394,12 +394,7 @@ public class AdminIT {
     bout.reset();
     // Test create topic with AWS MSK ingestion settings.
     CreateTopicWithAwsMskIngestionExample.createTopicWithAwsMskIngestionExample(
-        projectId,
-        awsMskIngestionTopicId,
-        clusterArn,
-        mskTopic,
-        awsRoleArn,
-        gcpServiceAccount);
+        projectId, awsMskIngestionTopicId, clusterArn, mskTopic, awsRoleArn, gcpServiceAccount);
     assertThat(bout.toString())
         .contains("google.pubsub.v1.Topic.name=" + awsMskIngestionTopicName.toString());
     assertThat(bout.toString()).contains(clusterArn);
@@ -447,8 +442,8 @@ public class AdminIT {
         tenantId,
         subscriptionId,
         gcpServiceAccount);
-    assertThat(bout.toString()).contains(
-        "google.pubsub.v1.Topic.name=" + azureEventHubsIngestionTopicName.toString());
+    assertThat(bout.toString())
+        .contains("google.pubsub.v1.Topic.name=" + azureEventHubsIngestionTopicName.toString());
     assertThat(bout.toString()).contains(resourceGroup);
     assertThat(bout.toString()).contains(namespace);
     assertThat(bout.toString()).contains(eventHub);
