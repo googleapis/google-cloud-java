@@ -23,7 +23,7 @@ package com.google.cloud.gsuiteaddons.v1;
  *
  *
  * <pre>
- * Request message to get Google Workspace Add-ons authorization information.
+ * Request message to get Google Workspace add-ons authorization information.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gsuiteaddons.v1.GetAuthorizationRequest}
@@ -71,7 +71,7 @@ public final class GetAuthorizationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Name of the project for which to get the Google Workspace Add-ons
+   * Required. Name of the project for which to get the Google Workspace add-ons
    * authorization information.
    *
    * Example: `projects/my_project/authorization`.
@@ -99,7 +99,7 @@ public final class GetAuthorizationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Name of the project for which to get the Google Workspace Add-ons
+   * Required. Name of the project for which to get the Google Workspace add-ons
    * authorization information.
    *
    * Example: `projects/my_project/authorization`.
@@ -288,7 +288,7 @@ public final class GetAuthorizationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message to get Google Workspace Add-ons authorization information.
+   * Request message to get Google Workspace add-ons authorization information.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gsuiteaddons.v1.GetAuthorizationRequest}
@@ -472,7 +472,7 @@ public final class GetAuthorizationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of the project for which to get the Google Workspace Add-ons
+     * Required. Name of the project for which to get the Google Workspace add-ons
      * authorization information.
      *
      * Example: `projects/my_project/authorization`.
@@ -499,7 +499,7 @@ public final class GetAuthorizationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of the project for which to get the Google Workspace Add-ons
+     * Required. Name of the project for which to get the Google Workspace add-ons
      * authorization information.
      *
      * Example: `projects/my_project/authorization`.
@@ -526,7 +526,7 @@ public final class GetAuthorizationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of the project for which to get the Google Workspace Add-ons
+     * Required. Name of the project for which to get the Google Workspace add-ons
      * authorization information.
      *
      * Example: `projects/my_project/authorization`.
@@ -552,7 +552,7 @@ public final class GetAuthorizationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of the project for which to get the Google Workspace Add-ons
+     * Required. Name of the project for which to get the Google Workspace add-ons
      * authorization information.
      *
      * Example: `projects/my_project/authorization`.
@@ -574,7 +574,7 @@ public final class GetAuthorizationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of the project for which to get the Google Workspace Add-ons
+     * Required. Name of the project for which to get the Google Workspace add-ons
      * authorization information.
      *
      * Example: `projects/my_project/authorization`.
