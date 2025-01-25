@@ -58,6 +58,8 @@ import com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -209,6 +211,17 @@ public abstract class FeatureRegistryServiceStub implements BackgroundResource {
   public UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>
       listFeatureMonitorsCallable() {
     throw new UnsupportedOperationException("Not implemented: listFeatureMonitorsCallable()");
+  }
+
+  public OperationCallable<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateFeatureMonitorOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateFeatureMonitorCallable()");
   }
 
   public OperationCallable<DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>

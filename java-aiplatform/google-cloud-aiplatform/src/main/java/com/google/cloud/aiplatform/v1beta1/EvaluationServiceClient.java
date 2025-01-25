@@ -59,6 +59,7 @@ import javax.annotation.Generated;
  *   EvaluateInstancesRequest request =
  *       EvaluateInstancesRequest.newBuilder()
  *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
  *           .build();
  *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
  * }
@@ -272,6 +273,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *   EvaluateInstancesRequest request =
    *       EvaluateInstancesRequest.newBuilder()
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
    *           .build();
    *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
    * }
@@ -300,6 +302,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *   EvaluateInstancesRequest request =
    *       EvaluateInstancesRequest.newBuilder()
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<EvaluateInstancesResponse> future =
    *       evaluationServiceClient.evaluateInstancesCallable().futureCall(request);

@@ -444,6 +444,9 @@
             },
             "UpdateFeatureGroup": {
               "methods": ["updateFeatureGroupAsync", "updateFeatureGroupAsync", "updateFeatureGroupOperationCallable", "updateFeatureGroupCallable"]
+            },
+            "UpdateFeatureMonitor": {
+              "methods": ["updateFeatureMonitorAsync", "updateFeatureMonitorAsync", "updateFeatureMonitorOperationCallable", "updateFeatureMonitorCallable"]
             }
           }
         }

@@ -130,4 +130,31 @@ public interface CustomerOrBuilder
    * @return The isOnboarded.
    */
   boolean getIsOnboarded();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customer organization domain, extracted from
+   * CRM Organization’s display_name field. e.g. "google.com"
+   * </pre>
+   *
+   * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The organizationDomain.
+   */
+  java.lang.String getOrganizationDomain();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customer organization domain, extracted from
+   * CRM Organization’s display_name field. e.g. "google.com"
+   * </pre>
+   *
+   * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for organizationDomain.
+   */
+  com.google.protobuf.ByteString getOrganizationDomainBytes();
 }

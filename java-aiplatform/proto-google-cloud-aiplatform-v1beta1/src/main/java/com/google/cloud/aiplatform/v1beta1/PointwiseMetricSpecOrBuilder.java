@@ -63,4 +63,41 @@ public interface PointwiseMetricSpecOrBuilder
    * @return The bytes for metricPromptTemplate.
    */
   com.google.protobuf.ByteString getMetricPromptTemplateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the systemInstruction field is set.
+   */
+  boolean hasSystemInstruction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The systemInstruction.
+   */
+  java.lang.String getSystemInstruction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for systemInstruction.
+   */
+  com.google.protobuf.ByteString getSystemInstructionBytes();
 }

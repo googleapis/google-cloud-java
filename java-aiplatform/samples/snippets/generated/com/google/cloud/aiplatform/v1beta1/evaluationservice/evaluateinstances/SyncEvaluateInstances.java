@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_EvaluationService_EvaluateInstances_sync]
+import com.google.cloud.aiplatform.v1beta1.AutoraterConfig;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
 import com.google.cloud.aiplatform.v1beta1.EvaluationServiceClient;
@@ -38,6 +39,7 @@ public class SyncEvaluateInstances {
       EvaluateInstancesRequest request =
           EvaluateInstancesRequest.newBuilder()
               .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setAutoraterConfig(AutoraterConfig.newBuilder().build())
               .build();
       EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
     }

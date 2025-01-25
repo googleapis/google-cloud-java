@@ -355,6 +355,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateFeatureMonitor</td>
+ *      <td><p> Updates the parameters of a single FeatureMonitor.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFeatureMonitorAsync(UpdateFeatureMonitorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateFeatureMonitorAsync(FeatureMonitor featureMonitor, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFeatureMonitorOperationCallable()
+ *           <li><p> updateFeatureMonitorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteFeatureMonitor</td>
  *      <td><p> Deletes a single FeatureMonitor.</td>
  *      <td>
@@ -3018,6 +3037,144 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
   public final UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>
       listFeatureMonitorsCallable() {
     return stub.listFeatureMonitorsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single FeatureMonitor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   FeatureMonitor featureMonitor = FeatureMonitor.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   FeatureMonitor response =
+   *       featureRegistryServiceClient.updateFeatureMonitorAsync(featureMonitor, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param featureMonitor Required. The FeatureMonitor's `name` field is used to identify the
+   *     FeatureMonitor to be updated. Format:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}/featureMonitors/{feature_monitor}`
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     FeatureMonitor resource by the update. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then only the non-empty fields present in the request will
+   *     be overwritten. Set the update_mask to `&#42;` to override all fields.
+   *     <p>Updatable fields:
+   *     <p>&#42; `labels`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorAsync(FeatureMonitor featureMonitor, FieldMask updateMask) {
+    UpdateFeatureMonitorRequest request =
+        UpdateFeatureMonitorRequest.newBuilder()
+            .setFeatureMonitor(featureMonitor)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateFeatureMonitorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single FeatureMonitor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   UpdateFeatureMonitorRequest request =
+   *       UpdateFeatureMonitorRequest.newBuilder()
+   *           .setFeatureMonitor(FeatureMonitor.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   FeatureMonitor response =
+   *       featureRegistryServiceClient.updateFeatureMonitorAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorAsync(UpdateFeatureMonitorRequest request) {
+    return updateFeatureMonitorOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single FeatureMonitor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   UpdateFeatureMonitorRequest request =
+   *       UpdateFeatureMonitorRequest.newBuilder()
+   *           .setFeatureMonitor(FeatureMonitor.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<FeatureMonitor, UpdateFeatureMonitorOperationMetadata> future =
+   *       featureRegistryServiceClient.updateFeatureMonitorOperationCallable().futureCall(request);
+   *   // Do something.
+   *   FeatureMonitor response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationCallable() {
+    return stub.updateFeatureMonitorOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single FeatureMonitor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+   *     FeatureRegistryServiceClient.create()) {
+   *   UpdateFeatureMonitorRequest request =
+   *       UpdateFeatureMonitorRequest.newBuilder()
+   *           .setFeatureMonitor(FeatureMonitor.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       featureRegistryServiceClient.updateFeatureMonitorCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateFeatureMonitorRequest, Operation>
+      updateFeatureMonitorCallable() {
+    return stub.updateFeatureMonitorCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

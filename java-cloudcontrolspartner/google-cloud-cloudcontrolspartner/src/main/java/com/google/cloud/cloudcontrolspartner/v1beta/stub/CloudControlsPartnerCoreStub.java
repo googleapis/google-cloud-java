@@ -23,7 +23,9 @@ import static com.google.cloud.cloudcontrolspartner.v1beta.CloudControlsPartnerC
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.cloudcontrolspartner.v1beta.CreateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1beta.Customer;
+import com.google.cloud.cloudcontrolspartner.v1beta.DeleteCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1beta.EkmConnections;
 import com.google.cloud.cloudcontrolspartner.v1beta.GetCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1beta.GetEkmConnectionsRequest;
@@ -38,7 +40,9 @@ import com.google.cloud.cloudcontrolspartner.v1beta.ListWorkloadsRequest;
 import com.google.cloud.cloudcontrolspartner.v1beta.ListWorkloadsResponse;
 import com.google.cloud.cloudcontrolspartner.v1beta.Partner;
 import com.google.cloud.cloudcontrolspartner.v1beta.PartnerPermissions;
+import com.google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1beta.Workload;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -102,6 +106,18 @@ public abstract class CloudControlsPartnerCoreStub implements BackgroundResource
 
   public UnaryCallable<GetPartnerRequest, Partner> getPartnerCallable() {
     throw new UnsupportedOperationException("Not implemented: getPartnerCallable()");
+  }
+
+  public UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomerCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCustomerCallable()");
+  }
+
+  public UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCustomerCallable()");
   }
 
   @Override

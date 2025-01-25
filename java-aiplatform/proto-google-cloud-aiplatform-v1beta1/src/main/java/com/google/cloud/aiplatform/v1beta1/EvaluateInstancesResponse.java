@@ -93,6 +93,8 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     TOOL_NAME_MATCH_RESULTS(19),
     TOOL_PARAMETER_KEY_MATCH_RESULTS(20),
     TOOL_PARAMETER_KV_MATCH_RESULTS(21),
+    COMET_RESULT(29),
+    METRICX_RESULT(30),
     TRAJECTORY_EXACT_MATCH_RESULTS(31),
     TRAJECTORY_IN_ORDER_MATCH_RESULTS(32),
     TRAJECTORY_ANY_ORDER_MATCH_RESULTS(33),
@@ -163,6 +165,10 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
           return TOOL_PARAMETER_KEY_MATCH_RESULTS;
         case 21:
           return TOOL_PARAMETER_KV_MATCH_RESULTS;
+        case 29:
+          return COMET_RESULT;
+        case 30:
+          return METRICX_RESULT;
         case 31:
           return TRAJECTORY_EXACT_MATCH_RESULTS;
         case 32:
@@ -1514,6 +1520,111 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     return com.google.cloud.aiplatform.v1beta1.ToolParameterKVMatchResults.getDefaultInstance();
   }
 
+  public static final int COMET_RESULT_FIELD_NUMBER = 29;
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+   *
+   * @return Whether the cometResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasCometResult() {
+    return evaluationResultsCase_ == 29;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+   *
+   * @return The cometResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CometResult getCometResult() {
+    if (evaluationResultsCase_ == 29) {
+      return (com.google.cloud.aiplatform.v1beta1.CometResult) evaluationResults_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.CometResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CometResultOrBuilder getCometResultOrBuilder() {
+    if (evaluationResultsCase_ == 29) {
+      return (com.google.cloud.aiplatform.v1beta1.CometResult) evaluationResults_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.CometResult.getDefaultInstance();
+  }
+
+  public static final int METRICX_RESULT_FIELD_NUMBER = 30;
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+   *
+   * @return Whether the metricxResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetricxResult() {
+    return evaluationResultsCase_ == 30;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+   *
+   * @return The metricxResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricxResult getMetricxResult() {
+    if (evaluationResultsCase_ == 30) {
+      return (com.google.cloud.aiplatform.v1beta1.MetricxResult) evaluationResults_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.MetricxResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricxResultOrBuilder getMetricxResultOrBuilder() {
+    if (evaluationResultsCase_ == 30) {
+      return (com.google.cloud.aiplatform.v1beta1.MetricxResult) evaluationResults_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.MetricxResult.getDefaultInstance();
+  }
+
   public static final int TRAJECTORY_EXACT_MATCH_RESULTS_FIELD_NUMBER = 31;
   /**
    *
@@ -1985,6 +2096,13 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       output.writeMessage(
           28, (com.google.cloud.aiplatform.v1beta1.PairwiseMetricResult) evaluationResults_);
     }
+    if (evaluationResultsCase_ == 29) {
+      output.writeMessage(29, (com.google.cloud.aiplatform.v1beta1.CometResult) evaluationResults_);
+    }
+    if (evaluationResultsCase_ == 30) {
+      output.writeMessage(
+          30, (com.google.cloud.aiplatform.v1beta1.MetricxResult) evaluationResults_);
+    }
     if (evaluationResultsCase_ == 31) {
       output.writeMessage(
           31, (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchResults) evaluationResults_);
@@ -2156,6 +2274,16 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, (com.google.cloud.aiplatform.v1beta1.PairwiseMetricResult) evaluationResults_);
     }
+    if (evaluationResultsCase_ == 29) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29, (com.google.cloud.aiplatform.v1beta1.CometResult) evaluationResults_);
+    }
+    if (evaluationResultsCase_ == 30) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, (com.google.cloud.aiplatform.v1beta1.MetricxResult) evaluationResults_);
+    }
     if (evaluationResultsCase_ == 31) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2292,6 +2420,12 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
         if (!getToolParameterKvMatchResults().equals(other.getToolParameterKvMatchResults()))
           return false;
         break;
+      case 29:
+        if (!getCometResult().equals(other.getCometResult())) return false;
+        break;
+      case 30:
+        if (!getMetricxResult().equals(other.getMetricxResult())) return false;
+        break;
       case 31:
         if (!getTrajectoryExactMatchResults().equals(other.getTrajectoryExactMatchResults()))
           return false;
@@ -2421,6 +2555,14 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       case 21:
         hash = (37 * hash) + TOOL_PARAMETER_KV_MATCH_RESULTS_FIELD_NUMBER;
         hash = (53 * hash) + getToolParameterKvMatchResults().hashCode();
+        break;
+      case 29:
+        hash = (37 * hash) + COMET_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getCometResult().hashCode();
+        break;
+      case 30:
+        hash = (37 * hash) + METRICX_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getMetricxResult().hashCode();
         break;
       case 31:
         hash = (37 * hash) + TRAJECTORY_EXACT_MATCH_RESULTS_FIELD_NUMBER;
@@ -2658,6 +2800,12 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       if (toolParameterKvMatchResultsBuilder_ != null) {
         toolParameterKvMatchResultsBuilder_.clear();
       }
+      if (cometResultBuilder_ != null) {
+        cometResultBuilder_.clear();
+      }
+      if (metricxResultBuilder_ != null) {
+        metricxResultBuilder_.clear();
+      }
       if (trajectoryExactMatchResultsBuilder_ != null) {
         trajectoryExactMatchResultsBuilder_.clear();
       }
@@ -2791,6 +2939,12 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       }
       if (evaluationResultsCase_ == 21 && toolParameterKvMatchResultsBuilder_ != null) {
         result.evaluationResults_ = toolParameterKvMatchResultsBuilder_.build();
+      }
+      if (evaluationResultsCase_ == 29 && cometResultBuilder_ != null) {
+        result.evaluationResults_ = cometResultBuilder_.build();
+      }
+      if (evaluationResultsCase_ == 30 && metricxResultBuilder_ != null) {
+        result.evaluationResults_ = metricxResultBuilder_.build();
       }
       if (evaluationResultsCase_ == 31 && trajectoryExactMatchResultsBuilder_ != null) {
         result.evaluationResults_ = trajectoryExactMatchResultsBuilder_.build();
@@ -2974,6 +3128,16 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
         case TOOL_PARAMETER_KV_MATCH_RESULTS:
           {
             mergeToolParameterKvMatchResults(other.getToolParameterKvMatchResults());
+            break;
+          }
+        case COMET_RESULT:
+          {
+            mergeCometResult(other.getCometResult());
+            break;
+          }
+        case METRICX_RESULT:
+          {
+            mergeMetricxResult(other.getMetricxResult());
             break;
           }
         case TRAJECTORY_EXACT_MATCH_RESULTS:
@@ -3200,6 +3364,18 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
                 evaluationResultsCase_ = 28;
                 break;
               } // case 226
+            case 234:
+              {
+                input.readMessage(getCometResultFieldBuilder().getBuilder(), extensionRegistry);
+                evaluationResultsCase_ = 29;
+                break;
+              } // case 234
+            case 242:
+              {
+                input.readMessage(getMetricxResultFieldBuilder().getBuilder(), extensionRegistry);
+                evaluationResultsCase_ = 30;
+                break;
+              } // case 242
             case 250:
               {
                 input.readMessage(
@@ -8606,6 +8782,436 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       evaluationResultsCase_ = 21;
       onChanged();
       return toolParameterKvMatchResultsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CometResult,
+            com.google.cloud.aiplatform.v1beta1.CometResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.CometResultOrBuilder>
+        cometResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     *
+     * @return Whether the cometResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasCometResult() {
+      return evaluationResultsCase_ == 29;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     *
+     * @return The cometResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CometResult getCometResult() {
+      if (cometResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 29) {
+          return (com.google.cloud.aiplatform.v1beta1.CometResult) evaluationResults_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.CometResult.getDefaultInstance();
+      } else {
+        if (evaluationResultsCase_ == 29) {
+          return cometResultBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.CometResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     */
+    public Builder setCometResult(com.google.cloud.aiplatform.v1beta1.CometResult value) {
+      if (cometResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evaluationResults_ = value;
+        onChanged();
+      } else {
+        cometResultBuilder_.setMessage(value);
+      }
+      evaluationResultsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     */
+    public Builder setCometResult(
+        com.google.cloud.aiplatform.v1beta1.CometResult.Builder builderForValue) {
+      if (cometResultBuilder_ == null) {
+        evaluationResults_ = builderForValue.build();
+        onChanged();
+      } else {
+        cometResultBuilder_.setMessage(builderForValue.build());
+      }
+      evaluationResultsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     */
+    public Builder mergeCometResult(com.google.cloud.aiplatform.v1beta1.CometResult value) {
+      if (cometResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 29
+            && evaluationResults_
+                != com.google.cloud.aiplatform.v1beta1.CometResult.getDefaultInstance()) {
+          evaluationResults_ =
+              com.google.cloud.aiplatform.v1beta1.CometResult.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.CometResult) evaluationResults_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          evaluationResults_ = value;
+        }
+        onChanged();
+      } else {
+        if (evaluationResultsCase_ == 29) {
+          cometResultBuilder_.mergeFrom(value);
+        } else {
+          cometResultBuilder_.setMessage(value);
+        }
+      }
+      evaluationResultsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     */
+    public Builder clearCometResult() {
+      if (cometResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 29) {
+          evaluationResultsCase_ = 0;
+          evaluationResults_ = null;
+          onChanged();
+        }
+      } else {
+        if (evaluationResultsCase_ == 29) {
+          evaluationResultsCase_ = 0;
+          evaluationResults_ = null;
+        }
+        cometResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CometResult.Builder getCometResultBuilder() {
+      return getCometResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CometResultOrBuilder getCometResultOrBuilder() {
+      if ((evaluationResultsCase_ == 29) && (cometResultBuilder_ != null)) {
+        return cometResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (evaluationResultsCase_ == 29) {
+          return (com.google.cloud.aiplatform.v1beta1.CometResult) evaluationResults_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.CometResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Result for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CometResult,
+            com.google.cloud.aiplatform.v1beta1.CometResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.CometResultOrBuilder>
+        getCometResultFieldBuilder() {
+      if (cometResultBuilder_ == null) {
+        if (!(evaluationResultsCase_ == 29)) {
+          evaluationResults_ = com.google.cloud.aiplatform.v1beta1.CometResult.getDefaultInstance();
+        }
+        cometResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.CometResult,
+                com.google.cloud.aiplatform.v1beta1.CometResult.Builder,
+                com.google.cloud.aiplatform.v1beta1.CometResultOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.CometResult) evaluationResults_,
+                getParentForChildren(),
+                isClean());
+        evaluationResults_ = null;
+      }
+      evaluationResultsCase_ = 29;
+      onChanged();
+      return cometResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.MetricxResult,
+            com.google.cloud.aiplatform.v1beta1.MetricxResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricxResultOrBuilder>
+        metricxResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     *
+     * @return Whether the metricxResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetricxResult() {
+      return evaluationResultsCase_ == 30;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     *
+     * @return The metricxResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.MetricxResult getMetricxResult() {
+      if (metricxResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 30) {
+          return (com.google.cloud.aiplatform.v1beta1.MetricxResult) evaluationResults_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.MetricxResult.getDefaultInstance();
+      } else {
+        if (evaluationResultsCase_ == 30) {
+          return metricxResultBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.MetricxResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     */
+    public Builder setMetricxResult(com.google.cloud.aiplatform.v1beta1.MetricxResult value) {
+      if (metricxResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evaluationResults_ = value;
+        onChanged();
+      } else {
+        metricxResultBuilder_.setMessage(value);
+      }
+      evaluationResultsCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     */
+    public Builder setMetricxResult(
+        com.google.cloud.aiplatform.v1beta1.MetricxResult.Builder builderForValue) {
+      if (metricxResultBuilder_ == null) {
+        evaluationResults_ = builderForValue.build();
+        onChanged();
+      } else {
+        metricxResultBuilder_.setMessage(builderForValue.build());
+      }
+      evaluationResultsCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     */
+    public Builder mergeMetricxResult(com.google.cloud.aiplatform.v1beta1.MetricxResult value) {
+      if (metricxResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 30
+            && evaluationResults_
+                != com.google.cloud.aiplatform.v1beta1.MetricxResult.getDefaultInstance()) {
+          evaluationResults_ =
+              com.google.cloud.aiplatform.v1beta1.MetricxResult.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.MetricxResult) evaluationResults_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          evaluationResults_ = value;
+        }
+        onChanged();
+      } else {
+        if (evaluationResultsCase_ == 30) {
+          metricxResultBuilder_.mergeFrom(value);
+        } else {
+          metricxResultBuilder_.setMessage(value);
+        }
+      }
+      evaluationResultsCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     */
+    public Builder clearMetricxResult() {
+      if (metricxResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 30) {
+          evaluationResultsCase_ = 0;
+          evaluationResults_ = null;
+          onChanged();
+        }
+      } else {
+        if (evaluationResultsCase_ == 30) {
+          evaluationResultsCase_ = 0;
+          evaluationResults_ = null;
+        }
+        metricxResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricxResult.Builder getMetricxResultBuilder() {
+      return getMetricxResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.MetricxResultOrBuilder getMetricxResultOrBuilder() {
+      if ((evaluationResultsCase_ == 30) && (metricxResultBuilder_ != null)) {
+        return metricxResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (evaluationResultsCase_ == 30) {
+          return (com.google.cloud.aiplatform.v1beta1.MetricxResult) evaluationResults_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.MetricxResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.MetricxResult,
+            com.google.cloud.aiplatform.v1beta1.MetricxResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricxResultOrBuilder>
+        getMetricxResultFieldBuilder() {
+      if (metricxResultBuilder_ == null) {
+        if (!(evaluationResultsCase_ == 30)) {
+          evaluationResults_ =
+              com.google.cloud.aiplatform.v1beta1.MetricxResult.getDefaultInstance();
+        }
+        metricxResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.MetricxResult,
+                com.google.cloud.aiplatform.v1beta1.MetricxResult.Builder,
+                com.google.cloud.aiplatform.v1beta1.MetricxResultOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.MetricxResult) evaluationResults_,
+                getParentForChildren(),
+                isClean());
+        evaluationResults_ = null;
+      }
+      evaluationResultsCase_ = 30;
+      onChanged();
+      return metricxResultBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

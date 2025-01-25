@@ -1811,6 +1811,201 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return The cachedContentTokenCount.
      */
     int getCachedContentTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount> getPromptTokensDetailsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ModalityTokenCount getPromptTokensDetails(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getPromptTokensDetailsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+        getPromptTokensDetailsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder getPromptTokensDetailsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount> getCacheTokensDetailsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ModalityTokenCount getCacheTokensDetails(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getCacheTokensDetailsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+        getCacheTokensDetailsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder getCacheTokensDetailsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+        getCandidatesTokensDetailsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ModalityTokenCount getCandidatesTokensDetails(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getCandidatesTokensDetailsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+        getCandidatesTokensDetailsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder getCandidatesTokensDetailsOrBuilder(
+        int index);
   }
   /**
    *
@@ -1831,7 +2026,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       super(builder);
     }
 
-    private UsageMetadata() {}
+    private UsageMetadata() {
+      promptTokensDetails_ = java.util.Collections.emptyList();
+      cacheTokensDetails_ = java.util.Collections.emptyList();
+      candidatesTokensDetails_ = java.util.Collections.emptyList();
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -1930,6 +2129,261 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       return cachedContentTokenCount_;
     }
 
+    public static final int PROMPT_TOKENS_DETAILS_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount> promptTokensDetails_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+        getPromptTokensDetailsList() {
+      return promptTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+        getPromptTokensDetailsOrBuilderList() {
+      return promptTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getPromptTokensDetailsCount() {
+      return promptTokensDetails_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModalityTokenCount getPromptTokensDetails(int index) {
+      return promptTokensDetails_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+        getPromptTokensDetailsOrBuilder(int index) {
+      return promptTokensDetails_.get(index);
+    }
+
+    public static final int CACHE_TOKENS_DETAILS_FIELD_NUMBER = 10;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount> cacheTokensDetails_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+        getCacheTokensDetailsList() {
+      return cacheTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+        getCacheTokensDetailsOrBuilderList() {
+      return cacheTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getCacheTokensDetailsCount() {
+      return cacheTokensDetails_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModalityTokenCount getCacheTokensDetails(int index) {
+      return cacheTokensDetails_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+        getCacheTokensDetailsOrBuilder(int index) {
+      return cacheTokensDetails_.get(index);
+    }
+
+    public static final int CANDIDATES_TOKENS_DETAILS_FIELD_NUMBER = 11;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+        candidatesTokensDetails_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+        getCandidatesTokensDetailsList() {
+      return candidatesTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+        getCandidatesTokensDetailsOrBuilderList() {
+      return candidatesTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getCandidatesTokensDetailsCount() {
+      return candidatesTokensDetails_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModalityTokenCount getCandidatesTokensDetails(int index) {
+      return candidatesTokensDetails_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+        getCandidatesTokensDetailsOrBuilder(int index) {
+      return candidatesTokensDetails_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1956,6 +2410,15 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (cachedContentTokenCount_ != 0) {
         output.writeInt32(5, cachedContentTokenCount_);
       }
+      for (int i = 0; i < promptTokensDetails_.size(); i++) {
+        output.writeMessage(9, promptTokensDetails_.get(i));
+      }
+      for (int i = 0; i < cacheTokensDetails_.size(); i++) {
+        output.writeMessage(10, cacheTokensDetails_.get(i));
+      }
+      for (int i = 0; i < candidatesTokensDetails_.size(); i++) {
+        output.writeMessage(11, candidatesTokensDetails_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1977,6 +2440,21 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (cachedContentTokenCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, cachedContentTokenCount_);
       }
+      for (int i = 0; i < promptTokensDetails_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                9, promptTokensDetails_.get(i));
+      }
+      for (int i = 0; i < cacheTokensDetails_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                10, cacheTokensDetails_.get(i));
+      }
+      for (int i = 0; i < candidatesTokensDetails_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                11, candidatesTokensDetails_.get(i));
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1997,6 +2475,10 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (getCandidatesTokenCount() != other.getCandidatesTokenCount()) return false;
       if (getTotalTokenCount() != other.getTotalTokenCount()) return false;
       if (getCachedContentTokenCount() != other.getCachedContentTokenCount()) return false;
+      if (!getPromptTokensDetailsList().equals(other.getPromptTokensDetailsList())) return false;
+      if (!getCacheTokensDetailsList().equals(other.getCacheTokensDetailsList())) return false;
+      if (!getCandidatesTokensDetailsList().equals(other.getCandidatesTokensDetailsList()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2016,6 +2498,18 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       hash = (53 * hash) + getTotalTokenCount();
       hash = (37 * hash) + CACHED_CONTENT_TOKEN_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCachedContentTokenCount();
+      if (getPromptTokensDetailsCount() > 0) {
+        hash = (37 * hash) + PROMPT_TOKENS_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getPromptTokensDetailsList().hashCode();
+      }
+      if (getCacheTokensDetailsCount() > 0) {
+        hash = (37 * hash) + CACHE_TOKENS_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getCacheTokensDetailsList().hashCode();
+      }
+      if (getCandidatesTokensDetailsCount() > 0) {
+        hash = (37 * hash) + CANDIDATES_TOKENS_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getCandidatesTokensDetailsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2164,6 +2658,27 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         candidatesTokenCount_ = 0;
         totalTokenCount_ = 0;
         cachedContentTokenCount_ = 0;
+        if (promptTokensDetailsBuilder_ == null) {
+          promptTokensDetails_ = java.util.Collections.emptyList();
+        } else {
+          promptTokensDetails_ = null;
+          promptTokensDetailsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (cacheTokensDetailsBuilder_ == null) {
+          cacheTokensDetails_ = java.util.Collections.emptyList();
+        } else {
+          cacheTokensDetails_ = null;
+          cacheTokensDetailsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        if (candidatesTokensDetailsBuilder_ == null) {
+          candidatesTokensDetails_ = java.util.Collections.emptyList();
+        } else {
+          candidatesTokensDetails_ = null;
+          candidatesTokensDetailsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -2194,11 +2709,44 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata buildPartial() {
         com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata result =
             new com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata result) {
+        if (promptTokensDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            promptTokensDetails_ = java.util.Collections.unmodifiableList(promptTokensDetails_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.promptTokensDetails_ = promptTokensDetails_;
+        } else {
+          result.promptTokensDetails_ = promptTokensDetailsBuilder_.build();
+        }
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)) {
+            cacheTokensDetails_ = java.util.Collections.unmodifiableList(cacheTokensDetails_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.cacheTokensDetails_ = cacheTokensDetails_;
+        } else {
+          result.cacheTokensDetails_ = cacheTokensDetailsBuilder_.build();
+        }
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)) {
+            candidatesTokensDetails_ =
+                java.util.Collections.unmodifiableList(candidatesTokensDetails_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.candidatesTokensDetails_ = candidatesTokensDetails_;
+        } else {
+          result.candidatesTokensDetails_ = candidatesTokensDetailsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -2281,6 +2829,87 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         if (other.getCachedContentTokenCount() != 0) {
           setCachedContentTokenCount(other.getCachedContentTokenCount());
         }
+        if (promptTokensDetailsBuilder_ == null) {
+          if (!other.promptTokensDetails_.isEmpty()) {
+            if (promptTokensDetails_.isEmpty()) {
+              promptTokensDetails_ = other.promptTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensurePromptTokensDetailsIsMutable();
+              promptTokensDetails_.addAll(other.promptTokensDetails_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.promptTokensDetails_.isEmpty()) {
+            if (promptTokensDetailsBuilder_.isEmpty()) {
+              promptTokensDetailsBuilder_.dispose();
+              promptTokensDetailsBuilder_ = null;
+              promptTokensDetails_ = other.promptTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              promptTokensDetailsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getPromptTokensDetailsFieldBuilder()
+                      : null;
+            } else {
+              promptTokensDetailsBuilder_.addAllMessages(other.promptTokensDetails_);
+            }
+          }
+        }
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (!other.cacheTokensDetails_.isEmpty()) {
+            if (cacheTokensDetails_.isEmpty()) {
+              cacheTokensDetails_ = other.cacheTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureCacheTokensDetailsIsMutable();
+              cacheTokensDetails_.addAll(other.cacheTokensDetails_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.cacheTokensDetails_.isEmpty()) {
+            if (cacheTokensDetailsBuilder_.isEmpty()) {
+              cacheTokensDetailsBuilder_.dispose();
+              cacheTokensDetailsBuilder_ = null;
+              cacheTokensDetails_ = other.cacheTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              cacheTokensDetailsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getCacheTokensDetailsFieldBuilder()
+                      : null;
+            } else {
+              cacheTokensDetailsBuilder_.addAllMessages(other.cacheTokensDetails_);
+            }
+          }
+        }
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (!other.candidatesTokensDetails_.isEmpty()) {
+            if (candidatesTokensDetails_.isEmpty()) {
+              candidatesTokensDetails_ = other.candidatesTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureCandidatesTokensDetailsIsMutable();
+              candidatesTokensDetails_.addAll(other.candidatesTokensDetails_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.candidatesTokensDetails_.isEmpty()) {
+            if (candidatesTokensDetailsBuilder_.isEmpty()) {
+              candidatesTokensDetailsBuilder_.dispose();
+              candidatesTokensDetailsBuilder_ = null;
+              candidatesTokensDetails_ = other.candidatesTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              candidatesTokensDetailsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getCandidatesTokensDetailsFieldBuilder()
+                      : null;
+            } else {
+              candidatesTokensDetailsBuilder_.addAllMessages(other.candidatesTokensDetails_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2331,6 +2960,48 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 40
+              case 74:
+                {
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount m =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1.ModalityTokenCount.parser(),
+                          extensionRegistry);
+                  if (promptTokensDetailsBuilder_ == null) {
+                    ensurePromptTokensDetailsIsMutable();
+                    promptTokensDetails_.add(m);
+                  } else {
+                    promptTokensDetailsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 74
+              case 82:
+                {
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount m =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1.ModalityTokenCount.parser(),
+                          extensionRegistry);
+                  if (cacheTokensDetailsBuilder_ == null) {
+                    ensureCacheTokensDetailsIsMutable();
+                    cacheTokensDetails_.add(m);
+                  } else {
+                    cacheTokensDetailsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 82
+              case 90:
+                {
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount m =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1.ModalityTokenCount.parser(),
+                          extensionRegistry);
+                  if (candidatesTokensDetailsBuilder_ == null) {
+                    ensureCandidatesTokensDetailsIsMutable();
+                    candidatesTokensDetails_.add(m);
+                  } else {
+                    candidatesTokensDetailsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 90
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2572,6 +3243,1225 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         cachedContentTokenCount_ = 0;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+          promptTokensDetails_ = java.util.Collections.emptyList();
+
+      private void ensurePromptTokensDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          promptTokensDetails_ =
+              new java.util.ArrayList<com.google.cloud.aiplatform.v1.ModalityTokenCount>(
+                  promptTokensDetails_);
+          bitField0_ |= 0x00000010;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ModalityTokenCount,
+              com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+              com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          promptTokensDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+          getPromptTokensDetailsList() {
+        if (promptTokensDetailsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(promptTokensDetails_);
+        } else {
+          return promptTokensDetailsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getPromptTokensDetailsCount() {
+        if (promptTokensDetailsBuilder_ == null) {
+          return promptTokensDetails_.size();
+        } else {
+          return promptTokensDetailsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount getPromptTokensDetails(int index) {
+        if (promptTokensDetailsBuilder_ == null) {
+          return promptTokensDetails_.get(index);
+        } else {
+          return promptTokensDetailsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setPromptTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (promptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.set(index, value);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setPromptTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addPromptTokensDetails(
+          com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (promptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.add(value);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addPromptTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (promptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.add(index, value);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addPromptTokensDetails(
+          com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.add(builderForValue.build());
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addPromptTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllPromptTokensDetails(
+          java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.ModalityTokenCount> values) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promptTokensDetails_);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearPromptTokensDetails() {
+        if (promptTokensDetailsBuilder_ == null) {
+          promptTokensDetails_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removePromptTokensDetails(int index) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.remove(index);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          getPromptTokensDetailsBuilder(int index) {
+        return getPromptTokensDetailsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+          getPromptTokensDetailsOrBuilder(int index) {
+        if (promptTokensDetailsBuilder_ == null) {
+          return promptTokensDetails_.get(index);
+        } else {
+          return promptTokensDetailsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          getPromptTokensDetailsOrBuilderList() {
+        if (promptTokensDetailsBuilder_ != null) {
+          return promptTokensDetailsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(promptTokensDetails_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          addPromptTokensDetailsBuilder() {
+        return getPromptTokensDetailsFieldBuilder()
+            .addBuilder(com.google.cloud.aiplatform.v1.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          addPromptTokensDetailsBuilder(int index) {
+        return getPromptTokensDetailsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.aiplatform.v1.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder>
+          getPromptTokensDetailsBuilderList() {
+        return getPromptTokensDetailsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ModalityTokenCount,
+              com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+              com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          getPromptTokensDetailsFieldBuilder() {
+        if (promptTokensDetailsBuilder_ == null) {
+          promptTokensDetailsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount,
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+                  com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>(
+                  promptTokensDetails_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          promptTokensDetails_ = null;
+        }
+        return promptTokensDetailsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+          cacheTokensDetails_ = java.util.Collections.emptyList();
+
+      private void ensureCacheTokensDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          cacheTokensDetails_ =
+              new java.util.ArrayList<com.google.cloud.aiplatform.v1.ModalityTokenCount>(
+                  cacheTokensDetails_);
+          bitField0_ |= 0x00000020;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ModalityTokenCount,
+              com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+              com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          cacheTokensDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+          getCacheTokensDetailsList() {
+        if (cacheTokensDetailsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(cacheTokensDetails_);
+        } else {
+          return cacheTokensDetailsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getCacheTokensDetailsCount() {
+        if (cacheTokensDetailsBuilder_ == null) {
+          return cacheTokensDetails_.size();
+        } else {
+          return cacheTokensDetailsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount getCacheTokensDetails(int index) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          return cacheTokensDetails_.get(index);
+        } else {
+          return cacheTokensDetailsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCacheTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.set(index, value);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCacheTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCacheTokensDetails(
+          com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.add(value);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCacheTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.add(index, value);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCacheTokensDetails(
+          com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.add(builderForValue.build());
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCacheTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllCacheTokensDetails(
+          java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.ModalityTokenCount> values) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cacheTokensDetails_);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearCacheTokensDetails() {
+        if (cacheTokensDetailsBuilder_ == null) {
+          cacheTokensDetails_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeCacheTokensDetails(int index) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.remove(index);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder getCacheTokensDetailsBuilder(
+          int index) {
+        return getCacheTokensDetailsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+          getCacheTokensDetailsOrBuilder(int index) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          return cacheTokensDetails_.get(index);
+        } else {
+          return cacheTokensDetailsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          getCacheTokensDetailsOrBuilderList() {
+        if (cacheTokensDetailsBuilder_ != null) {
+          return cacheTokensDetailsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(cacheTokensDetails_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          addCacheTokensDetailsBuilder() {
+        return getCacheTokensDetailsFieldBuilder()
+            .addBuilder(com.google.cloud.aiplatform.v1.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder addCacheTokensDetailsBuilder(
+          int index) {
+        return getCacheTokensDetailsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.aiplatform.v1.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder>
+          getCacheTokensDetailsBuilderList() {
+        return getCacheTokensDetailsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ModalityTokenCount,
+              com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+              com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          getCacheTokensDetailsFieldBuilder() {
+        if (cacheTokensDetailsBuilder_ == null) {
+          cacheTokensDetailsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount,
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+                  com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>(
+                  cacheTokensDetails_,
+                  ((bitField0_ & 0x00000020) != 0),
+                  getParentForChildren(),
+                  isClean());
+          cacheTokensDetails_ = null;
+        }
+        return cacheTokensDetailsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+          candidatesTokensDetails_ = java.util.Collections.emptyList();
+
+      private void ensureCandidatesTokensDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000040) != 0)) {
+          candidatesTokensDetails_ =
+              new java.util.ArrayList<com.google.cloud.aiplatform.v1.ModalityTokenCount>(
+                  candidatesTokensDetails_);
+          bitField0_ |= 0x00000040;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ModalityTokenCount,
+              com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+              com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          candidatesTokensDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+          getCandidatesTokensDetailsList() {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(candidatesTokensDetails_);
+        } else {
+          return candidatesTokensDetailsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getCandidatesTokensDetailsCount() {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          return candidatesTokensDetails_.size();
+        } else {
+          return candidatesTokensDetailsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount getCandidatesTokensDetails(
+          int index) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          return candidatesTokensDetails_.get(index);
+        } else {
+          return candidatesTokensDetailsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCandidatesTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.set(index, value);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCandidatesTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCandidatesTokensDetails(
+          com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.add(value);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCandidatesTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.add(index, value);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCandidatesTokensDetails(
+          com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.add(builderForValue.build());
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCandidatesTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllCandidatesTokensDetails(
+          java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.ModalityTokenCount> values) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, candidatesTokensDetails_);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearCandidatesTokensDetails() {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          candidatesTokensDetails_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeCandidatesTokensDetails(int index) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.remove(index);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          getCandidatesTokensDetailsBuilder(int index) {
+        return getCandidatesTokensDetailsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+          getCandidatesTokensDetailsOrBuilder(int index) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          return candidatesTokensDetails_.get(index);
+        } else {
+          return candidatesTokensDetailsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          getCandidatesTokensDetailsOrBuilderList() {
+        if (candidatesTokensDetailsBuilder_ != null) {
+          return candidatesTokensDetailsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(candidatesTokensDetails_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          addCandidatesTokensDetailsBuilder() {
+        return getCandidatesTokensDetailsFieldBuilder()
+            .addBuilder(com.google.cloud.aiplatform.v1.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          addCandidatesTokensDetailsBuilder(int index) {
+        return getCandidatesTokensDetailsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.aiplatform.v1.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder>
+          getCandidatesTokensDetailsBuilderList() {
+        return getCandidatesTokensDetailsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ModalityTokenCount,
+              com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+              com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          getCandidatesTokensDetailsFieldBuilder() {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          candidatesTokensDetailsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount,
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+                  com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>(
+                  candidatesTokensDetails_,
+                  ((bitField0_ & 0x00000040) != 0),
+                  getParentForChildren(),
+                  isClean());
+          candidatesTokensDetails_ = null;
+        }
+        return candidatesTokensDetailsBuilder_;
       }
 
       @java.lang.Override

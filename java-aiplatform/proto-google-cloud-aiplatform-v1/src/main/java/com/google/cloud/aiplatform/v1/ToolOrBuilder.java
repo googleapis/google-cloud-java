@@ -215,4 +215,51 @@ public interface ToolOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.GoogleSearchRetrievalOrBuilder getGoogleSearchRetrievalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the codeExecution field is set.
+   */
+  boolean hasCodeExecution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The codeExecution.
+   */
+  com.google.cloud.aiplatform.v1.Tool.CodeExecution getCodeExecution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.Tool.CodeExecutionOrBuilder getCodeExecutionOrBuilder();
 }

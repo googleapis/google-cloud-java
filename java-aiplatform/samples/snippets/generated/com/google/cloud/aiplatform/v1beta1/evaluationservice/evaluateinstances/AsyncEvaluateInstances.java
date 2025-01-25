@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_EvaluationService_EvaluateInstances_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.aiplatform.v1beta1.AutoraterConfig;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
 import com.google.cloud.aiplatform.v1beta1.EvaluationServiceClient;
@@ -39,6 +40,7 @@ public class AsyncEvaluateInstances {
       EvaluateInstancesRequest request =
           EvaluateInstancesRequest.newBuilder()
               .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setAutoraterConfig(AutoraterConfig.newBuilder().build())
               .build();
       ApiFuture<EvaluateInstancesResponse> future =
           evaluationServiceClient.evaluateInstancesCallable().futureCall(request);
