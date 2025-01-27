@@ -283,20 +283,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * the unix-cron format, this header will contain the job schedule as an
    * offset of UTC parsed according to RFC3339.
    *
-   * If the job has an
-   * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-   * sets the following headers:
+   * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+   * and the following headers are not set by the user, Cloud Scheduler sets
+   * default values:
    *
-   * * `Content-Type`: By default, the `Content-Type` header is set to
-   *   `"application/octet-stream"`. The default can be overridden by explictly
-   *   setting `Content-Type` to a particular media type when the job is
-   *   created.
-   *   For example, `Content-Type` can be set to `"application/json"`.
-   * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-   *   output only. It cannot be changed.
+   * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+   *   can override this default by explicitly setting `Content-Type` to a
+   *   particular media type when creating the job. For example, you can set
+   *   `Content-Type` to `"application/json"`.
    *
    * The headers below are output only. They cannot be set or overridden:
    *
+   * * `Content-Length`: This is computed by Cloud Scheduler.
    * * `X-Google-*`: For Google internal use only.
    * * `X-AppEngine-*`: For Google internal use only.
    *
@@ -341,20 +339,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * the unix-cron format, this header will contain the job schedule as an
    * offset of UTC parsed according to RFC3339.
    *
-   * If the job has an
-   * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-   * sets the following headers:
+   * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+   * and the following headers are not set by the user, Cloud Scheduler sets
+   * default values:
    *
-   * * `Content-Type`: By default, the `Content-Type` header is set to
-   *   `"application/octet-stream"`. The default can be overridden by explictly
-   *   setting `Content-Type` to a particular media type when the job is
-   *   created.
-   *   For example, `Content-Type` can be set to `"application/json"`.
-   * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-   *   output only. It cannot be changed.
+   * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+   *   can override this default by explicitly setting `Content-Type` to a
+   *   particular media type when creating the job. For example, you can set
+   *   `Content-Type` to `"application/json"`.
    *
    * The headers below are output only. They cannot be set or overridden:
    *
+   * * `Content-Length`: This is computed by Cloud Scheduler.
    * * `X-Google-*`: For Google internal use only.
    * * `X-AppEngine-*`: For Google internal use only.
    *
@@ -390,20 +386,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * the unix-cron format, this header will contain the job schedule as an
    * offset of UTC parsed according to RFC3339.
    *
-   * If the job has an
-   * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-   * sets the following headers:
+   * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+   * and the following headers are not set by the user, Cloud Scheduler sets
+   * default values:
    *
-   * * `Content-Type`: By default, the `Content-Type` header is set to
-   *   `"application/octet-stream"`. The default can be overridden by explictly
-   *   setting `Content-Type` to a particular media type when the job is
-   *   created.
-   *   For example, `Content-Type` can be set to `"application/json"`.
-   * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-   *   output only. It cannot be changed.
+   * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+   *   can override this default by explicitly setting `Content-Type` to a
+   *   particular media type when creating the job. For example, you can set
+   *   `Content-Type` to `"application/json"`.
    *
    * The headers below are output only. They cannot be set or overridden:
    *
+   * * `Content-Length`: This is computed by Cloud Scheduler.
    * * `X-Google-*`: For Google internal use only.
    * * `X-AppEngine-*`: For Google internal use only.
    *
@@ -446,20 +440,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * the unix-cron format, this header will contain the job schedule as an
    * offset of UTC parsed according to RFC3339.
    *
-   * If the job has an
-   * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-   * sets the following headers:
+   * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+   * and the following headers are not set by the user, Cloud Scheduler sets
+   * default values:
    *
-   * * `Content-Type`: By default, the `Content-Type` header is set to
-   *   `"application/octet-stream"`. The default can be overridden by explictly
-   *   setting `Content-Type` to a particular media type when the job is
-   *   created.
-   *   For example, `Content-Type` can be set to `"application/json"`.
-   * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-   *   output only. It cannot be changed.
+   * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+   *   can override this default by explicitly setting `Content-Type` to a
+   *   particular media type when creating the job. For example, you can set
+   *   `Content-Type` to `"application/json"`.
    *
    * The headers below are output only. They cannot be set or overridden:
    *
+   * * `Content-Length`: This is computed by Cloud Scheduler.
    * * `X-Google-*`: For Google internal use only.
    * * `X-AppEngine-*`: For Google internal use only.
    *
@@ -1464,20 +1456,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
      *
-     * If the job has an
-     * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-     * sets the following headers:
+     * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+     * and the following headers are not set by the user, Cloud Scheduler sets
+     * default values:
      *
-     * * `Content-Type`: By default, the `Content-Type` header is set to
-     *   `"application/octet-stream"`. The default can be overridden by explictly
-     *   setting `Content-Type` to a particular media type when the job is
-     *   created.
-     *   For example, `Content-Type` can be set to `"application/json"`.
-     * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-     *   output only. It cannot be changed.
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The headers below are output only. They cannot be set or overridden:
      *
+     * * `Content-Length`: This is computed by Cloud Scheduler.
      * * `X-Google-*`: For Google internal use only.
      * * `X-AppEngine-*`: For Google internal use only.
      *
@@ -1522,20 +1512,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
      *
-     * If the job has an
-     * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-     * sets the following headers:
+     * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+     * and the following headers are not set by the user, Cloud Scheduler sets
+     * default values:
      *
-     * * `Content-Type`: By default, the `Content-Type` header is set to
-     *   `"application/octet-stream"`. The default can be overridden by explictly
-     *   setting `Content-Type` to a particular media type when the job is
-     *   created.
-     *   For example, `Content-Type` can be set to `"application/json"`.
-     * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-     *   output only. It cannot be changed.
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The headers below are output only. They cannot be set or overridden:
      *
+     * * `Content-Length`: This is computed by Cloud Scheduler.
      * * `X-Google-*`: For Google internal use only.
      * * `X-AppEngine-*`: For Google internal use only.
      *
@@ -1571,20 +1559,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
      *
-     * If the job has an
-     * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-     * sets the following headers:
+     * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+     * and the following headers are not set by the user, Cloud Scheduler sets
+     * default values:
      *
-     * * `Content-Type`: By default, the `Content-Type` header is set to
-     *   `"application/octet-stream"`. The default can be overridden by explictly
-     *   setting `Content-Type` to a particular media type when the job is
-     *   created.
-     *   For example, `Content-Type` can be set to `"application/json"`.
-     * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-     *   output only. It cannot be changed.
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The headers below are output only. They cannot be set or overridden:
      *
+     * * `Content-Length`: This is computed by Cloud Scheduler.
      * * `X-Google-*`: For Google internal use only.
      * * `X-AppEngine-*`: For Google internal use only.
      *
@@ -1627,20 +1613,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
      *
-     * If the job has an
-     * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-     * sets the following headers:
+     * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+     * and the following headers are not set by the user, Cloud Scheduler sets
+     * default values:
      *
-     * * `Content-Type`: By default, the `Content-Type` header is set to
-     *   `"application/octet-stream"`. The default can be overridden by explictly
-     *   setting `Content-Type` to a particular media type when the job is
-     *   created.
-     *   For example, `Content-Type` can be set to `"application/json"`.
-     * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-     *   output only. It cannot be changed.
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The headers below are output only. They cannot be set or overridden:
      *
+     * * `Content-Length`: This is computed by Cloud Scheduler.
      * * `X-Google-*`: For Google internal use only.
      * * `X-AppEngine-*`: For Google internal use only.
      *
@@ -1689,20 +1673,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
      *
-     * If the job has an
-     * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-     * sets the following headers:
+     * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+     * and the following headers are not set by the user, Cloud Scheduler sets
+     * default values:
      *
-     * * `Content-Type`: By default, the `Content-Type` header is set to
-     *   `"application/octet-stream"`. The default can be overridden by explictly
-     *   setting `Content-Type` to a particular media type when the job is
-     *   created.
-     *   For example, `Content-Type` can be set to `"application/json"`.
-     * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-     *   output only. It cannot be changed.
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The headers below are output only. They cannot be set or overridden:
      *
+     * * `Content-Length`: This is computed by Cloud Scheduler.
      * * `X-Google-*`: For Google internal use only.
      * * `X-AppEngine-*`: For Google internal use only.
      *
@@ -1747,20 +1729,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
      *
-     * If the job has an
-     * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-     * sets the following headers:
+     * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+     * and the following headers are not set by the user, Cloud Scheduler sets
+     * default values:
      *
-     * * `Content-Type`: By default, the `Content-Type` header is set to
-     *   `"application/octet-stream"`. The default can be overridden by explictly
-     *   setting `Content-Type` to a particular media type when the job is
-     *   created.
-     *   For example, `Content-Type` can be set to `"application/json"`.
-     * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-     *   output only. It cannot be changed.
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The headers below are output only. They cannot be set or overridden:
      *
+     * * `Content-Length`: This is computed by Cloud Scheduler.
      * * `X-Google-*`: For Google internal use only.
      * * `X-AppEngine-*`: For Google internal use only.
      *
@@ -1803,20 +1783,18 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
      *
-     * If the job has an
-     * [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body], Cloud Scheduler
-     * sets the following headers:
+     * If the job has a [body][google.cloud.scheduler.v1.AppEngineHttpTarget.body]
+     * and the following headers are not set by the user, Cloud Scheduler sets
+     * default values:
      *
-     * * `Content-Type`: By default, the `Content-Type` header is set to
-     *   `"application/octet-stream"`. The default can be overridden by explictly
-     *   setting `Content-Type` to a particular media type when the job is
-     *   created.
-     *   For example, `Content-Type` can be set to `"application/json"`.
-     * * `Content-Length`: This is computed by Cloud Scheduler. This value is
-     *   output only. It cannot be changed.
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The headers below are output only. They cannot be set or overridden:
      *
+     * * `Content-Length`: This is computed by Cloud Scheduler.
      * * `X-Google-*`: For Google internal use only.
      * * `X-AppEngine-*`: For Google internal use only.
      *
