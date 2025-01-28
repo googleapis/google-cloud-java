@@ -825,3 +825,6 @@ proto-google-cloud-valkey-v1:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-valkey-v1beta:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-cloudquotas-v1beta:0.24.0:0.25.0-SNAPSHOT
 grpc-google-cloud-cloudquotas-v1beta:0.24.0:0.25.0-SNAPSHOT
+google-cloud-parametermanager:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-parametermanager-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-parametermanager-v1:0.0.0:0.0.1-SNAPSHOT

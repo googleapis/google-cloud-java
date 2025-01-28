@@ -1,0 +1,16 @@
+{
+  "api_shortname": "parametermanager",
+  "name_pretty": "Parameter Manager API",
+  "product_documentation": "https://cloud.google.com/secret-manager/parameter-manager/docs/overview",
+  "api_description": "(Public Preview) Parameter Manager is a single source of truth to store,     access and manage the lifecycle of your workload parameters. Parameter     Manager aims to make management of sensitive application parameters     effortless for customers without diminishing focus on security.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-parametermanager/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-parametermanager",
+  "distribution_name": "com.google.cloud:google-cloud-parametermanager",
+  "api_id": "parametermanager.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
