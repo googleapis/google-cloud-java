@@ -55,8 +55,17 @@
             "ListQueuedResources": {
               "methods": ["listQueuedResources", "listQueuedResources", "listQueuedResources", "listQueuedResourcesPagedCallable", "listQueuedResourcesCallable"]
             },
+            "ListReservations": {
+              "methods": ["listReservations", "listReservationsPagedCallable", "listReservationsCallable"]
+            },
             "ListRuntimeVersions": {
               "methods": ["listRuntimeVersions", "listRuntimeVersions", "listRuntimeVersions", "listRuntimeVersionsPagedCallable", "listRuntimeVersionsCallable"]
+            },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
+            },
+            "PerformMaintenanceQueuedResource": {
+              "methods": ["performMaintenanceQueuedResourceAsync", "performMaintenanceQueuedResourceOperationCallable", "performMaintenanceQueuedResourceCallable"]
             },
             "ResetQueuedResource": {
               "methods": ["resetQueuedResourceAsync", "resetQueuedResourceAsync", "resetQueuedResourceAsync", "resetQueuedResourceOperationCallable", "resetQueuedResourceCallable"]

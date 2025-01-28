@@ -69,6 +69,16 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RICH_LINK = 3;</code>
    */
   RICH_LINK(3),
+  /**
+   *
+   *
+   * <pre>
+   * A custom emoji annotation.
+   * </pre>
+   *
+   * <code>CUSTOM_EMOJI = 4;</code>
+   */
+  CUSTOM_EMOJI(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -112,6 +122,16 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RICH_LINK = 3;</code>
    */
   public static final int RICH_LINK_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A custom emoji annotation.
+   * </pre>
+   *
+   * <code>CUSTOM_EMOJI = 4;</code>
+   */
+  public static final int CUSTOM_EMOJI_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -145,6 +165,8 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
         return SLASH_COMMAND;
       case 3:
         return RICH_LINK;
+      case 4:
+        return CUSTOM_EMOJI;
       default:
         return null;
     }

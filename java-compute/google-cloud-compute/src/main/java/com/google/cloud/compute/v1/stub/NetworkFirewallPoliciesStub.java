@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -23,6 +24,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.AggregatedListNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.CloneRulesNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.DeleteNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.FirewallPolicy;
@@ -35,6 +37,7 @@ import com.google.cloud.compute.v1.GetNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.InsertNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListNetworkFirewallPoliciesRequest;
+import com.google.cloud.compute.v1.NetworkFirewallPolicyAggregatedList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleNetworkFirewallPolicyRequest;
@@ -72,6 +75,17 @@ public abstract class NetworkFirewallPoliciesStub implements BackgroundResource 
 
   public UnaryCallable<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: addRuleCallable()");
+  }
+
+  public UnaryCallable<AggregatedListNetworkFirewallPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
   public OperationCallable<CloneRulesNetworkFirewallPolicyRequest, Operation, Operation>

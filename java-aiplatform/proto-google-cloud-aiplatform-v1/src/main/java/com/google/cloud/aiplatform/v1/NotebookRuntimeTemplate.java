@@ -247,14 +247,21 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The default template to use if not specified.
+   * Output only. Deprecated: This field has no behavior. Use
+   * notebook_runtime_type = 'ONE_CLICK' instead.
+   *
+   * The default template to use if not specified.
    * </pre>
    *
-   * <code>bool is_default = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bool is_default = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.is_default is deprecated. See
+   *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=73
    * @return The isDefault.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getIsDefault() {
     return isDefault_;
   }
@@ -445,6 +452,15 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    *
    *
    * <pre>
+   * Deprecated: This field is ignored and the "Vertex AI Notebook Service
+   * Account"
+   * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+   * used for the runtime workload identity.
+   * See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+   * for more details.
+   * For NotebookExecutionJob, use NotebookExecutionJob.service_account instead.
+   *
    * The service account that the runtime workload runs as.
    * You can use any service account within the same project, but you
    * must have the service account user permission to use the instance.
@@ -454,11 +470,14 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    * is used.
    * </pre>
    *
-   * <code>string service_account = 13;</code>
+   * <code>string service_account = 13 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
+   *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
    * @return The serviceAccount.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -474,6 +493,15 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    *
    *
    * <pre>
+   * Deprecated: This field is ignored and the "Vertex AI Notebook Service
+   * Account"
+   * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+   * used for the runtime workload identity.
+   * See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+   * for more details.
+   * For NotebookExecutionJob, use NotebookExecutionJob.service_account instead.
+   *
    * The service account that the runtime workload runs as.
    * You can use any service account within the same project, but you
    * must have the service account user permission to use the instance.
@@ -483,11 +511,14 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    * is used.
    * </pre>
    *
-   * <code>string service_account = 13;</code>
+   * <code>string service_account = 13 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
+   *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
    * @return The bytes for serviceAccount.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -2342,14 +2373,21 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The default template to use if not specified.
+     * Output only. Deprecated: This field has no behavior. Use
+     * notebook_runtime_type = 'ONE_CLICK' instead.
+     *
+     * The default template to use if not specified.
      * </pre>
      *
-     * <code>bool is_default = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool is_default = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.is_default is deprecated. See
+     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=73
      * @return The isDefault.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getIsDefault() {
       return isDefault_;
     }
@@ -2357,14 +2395,21 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The default template to use if not specified.
+     * Output only. Deprecated: This field has no behavior. Use
+     * notebook_runtime_type = 'ONE_CLICK' instead.
+     *
+     * The default template to use if not specified.
      * </pre>
      *
-     * <code>bool is_default = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool is_default = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.is_default is deprecated. See
+     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=73
      * @param value The isDefault to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setIsDefault(boolean value) {
 
       isDefault_ = value;
@@ -2376,13 +2421,20 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The default template to use if not specified.
+     * Output only. Deprecated: This field has no behavior. Use
+     * notebook_runtime_type = 'ONE_CLICK' instead.
+     *
+     * The default template to use if not specified.
      * </pre>
      *
-     * <code>bool is_default = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool is_default = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.is_default is deprecated. See
+     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=73
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearIsDefault() {
       bitField0_ = (bitField0_ & ~0x00000008);
       isDefault_ = false;
@@ -3039,6 +3091,15 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is ignored and the "Vertex AI Notebook Service
+     * Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     * For NotebookExecutionJob, use NotebookExecutionJob.service_account instead.
+     *
      * The service account that the runtime workload runs as.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
@@ -3048,10 +3109,13 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * is used.
      * </pre>
      *
-     * <code>string service_account = 13;</code>
+     * <code>string service_account = 13 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
      * @return The serviceAccount.
      */
+    @java.lang.Deprecated
     public java.lang.String getServiceAccount() {
       java.lang.Object ref = serviceAccount_;
       if (!(ref instanceof java.lang.String)) {
@@ -3067,6 +3131,15 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is ignored and the "Vertex AI Notebook Service
+     * Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     * For NotebookExecutionJob, use NotebookExecutionJob.service_account instead.
+     *
      * The service account that the runtime workload runs as.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
@@ -3076,10 +3149,13 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * is used.
      * </pre>
      *
-     * <code>string service_account = 13;</code>
+     * <code>string service_account = 13 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
      * @return The bytes for serviceAccount.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getServiceAccountBytes() {
       java.lang.Object ref = serviceAccount_;
       if (ref instanceof String) {
@@ -3095,6 +3171,15 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is ignored and the "Vertex AI Notebook Service
+     * Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     * For NotebookExecutionJob, use NotebookExecutionJob.service_account instead.
+     *
      * The service account that the runtime workload runs as.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
@@ -3104,11 +3189,14 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * is used.
      * </pre>
      *
-     * <code>string service_account = 13;</code>
+     * <code>string service_account = 13 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
      * @param value The serviceAccount to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setServiceAccount(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3122,6 +3210,15 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is ignored and the "Vertex AI Notebook Service
+     * Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     * For NotebookExecutionJob, use NotebookExecutionJob.service_account instead.
+     *
      * The service account that the runtime workload runs as.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
@@ -3131,10 +3228,13 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * is used.
      * </pre>
      *
-     * <code>string service_account = 13;</code>
+     * <code>string service_account = 13 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -3145,6 +3245,15 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is ignored and the "Vertex AI Notebook Service
+     * Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     * For NotebookExecutionJob, use NotebookExecutionJob.service_account instead.
+     *
      * The service account that the runtime workload runs as.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
@@ -3154,11 +3263,14 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * is used.
      * </pre>
      *
-     * <code>string service_account = 13;</code>
+     * <code>string service_account = 13 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
      * @param value The bytes for serviceAccount to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

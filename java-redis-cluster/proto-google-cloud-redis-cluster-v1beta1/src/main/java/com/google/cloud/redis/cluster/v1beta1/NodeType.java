@@ -29,7 +29,15 @@ package com.google.cloud.redis.cluster.v1beta1;
  * Protobuf enum {@code google.cloud.redis.cluster.v1beta1.NodeType}
  */
 public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>NODE_TYPE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Node type unspecified
+   * </pre>
+   *
+   * <code>NODE_TYPE_UNSPECIFIED = 0;</code>
+   */
   NODE_TYPE_UNSPECIFIED(0),
   /**
    *
@@ -74,7 +82,15 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>NODE_TYPE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Node type unspecified
+   * </pre>
+   *
+   * <code>NODE_TYPE_UNSPECIFIED = 0;</code>
+   */
   public static final int NODE_TYPE_UNSPECIFIED_VALUE = 0;
   /**
    *
@@ -182,7 +198,7 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(2);
   }
 
   private static final NodeType[] VALUES = values();

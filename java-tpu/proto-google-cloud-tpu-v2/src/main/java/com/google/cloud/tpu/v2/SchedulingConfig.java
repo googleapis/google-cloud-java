@@ -97,6 +97,24 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     return reserved_;
   }
 
+  public static final int SPOT_FIELD_NUMBER = 3;
+  private boolean spot_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether the node is Spot VM.
+   * </pre>
+   *
+   * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The spot.
+   */
+  @java.lang.Override
+  public boolean getSpot() {
+    return spot_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -117,6 +135,9 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     if (reserved_ != false) {
       output.writeBool(2, reserved_);
     }
+    if (spot_ != false) {
+      output.writeBool(3, spot_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -131,6 +152,9 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     }
     if (reserved_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, reserved_);
+    }
+    if (spot_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, spot_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -149,6 +173,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
 
     if (getPreemptible() != other.getPreemptible()) return false;
     if (getReserved() != other.getReserved()) return false;
+    if (getSpot() != other.getSpot()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -164,6 +189,8 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreemptible());
     hash = (37 * hash) + RESERVED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReserved());
+    hash = (37 * hash) + SPOT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSpot());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -305,6 +332,7 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       preemptible_ = false;
       reserved_ = false;
+      spot_ = false;
       return this;
     }
 
@@ -346,6 +374,9 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.reserved_ = reserved_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.spot_ = spot_;
       }
     }
 
@@ -400,6 +431,9 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
       if (other.getReserved() != false) {
         setReserved(other.getReserved());
       }
+      if (other.getSpot() != false) {
+        setSpot(other.getSpot());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -438,6 +472,12 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                spot_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -559,6 +599,59 @@ public final class SchedulingConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearReserved() {
       bitField0_ = (bitField0_ & ~0x00000002);
       reserved_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean spot_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the node is Spot VM.
+     * </pre>
+     *
+     * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The spot.
+     */
+    @java.lang.Override
+    public boolean getSpot() {
+      return spot_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the node is Spot VM.
+     * </pre>
+     *
+     * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The spot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpot(boolean value) {
+
+      spot_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the node is Spot VM.
+     * </pre>
+     *
+     * <code>bool spot = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpot() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      spot_ = false;
       onChanged();
       return this;
     }

@@ -16,6 +16,8 @@
 
 package com.google.apps.meet.v2beta;
 
+import static com.google.apps.meet.v2beta.SpacesServiceClient.ListMembersPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.apps.meet.v2beta.stub.SpacesServiceStubSettings;
@@ -104,6 +107,27 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
   /** Returns the object with the settings used for calls to endActiveConference. */
   public UnaryCallSettings<EndActiveConferenceRequest, Empty> endActiveConferenceSettings() {
     return ((SpacesServiceStubSettings) getStubSettings()).endActiveConferenceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMember. */
+  public UnaryCallSettings<CreateMemberRequest, Member> createMemberSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).createMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMember. */
+  public UnaryCallSettings<GetMemberRequest, Member> getMemberSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).getMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMembers. */
+  public PagedCallSettings<ListMembersRequest, ListMembersResponse, ListMembersPagedResponse>
+      listMembersSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).listMembersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMember. */
+  public UnaryCallSettings<DeleteMemberRequest, Empty> deleteMemberSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).deleteMemberSettings();
   }
 
   public static final SpacesServiceSettings create(SpacesServiceStubSettings stub)
@@ -237,6 +261,28 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
     public UnaryCallSettings.Builder<EndActiveConferenceRequest, Empty>
         endActiveConferenceSettings() {
       return getStubSettingsBuilder().endActiveConferenceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMember. */
+    public UnaryCallSettings.Builder<CreateMemberRequest, Member> createMemberSettings() {
+      return getStubSettingsBuilder().createMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMember. */
+    public UnaryCallSettings.Builder<GetMemberRequest, Member> getMemberSettings() {
+      return getStubSettingsBuilder().getMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMembers. */
+    public PagedCallSettings.Builder<
+            ListMembersRequest, ListMembersResponse, ListMembersPagedResponse>
+        listMembersSettings() {
+      return getStubSettingsBuilder().listMembersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMember. */
+    public UnaryCallSettings.Builder<DeleteMemberRequest, Empty> deleteMemberSettings() {
+      return getStubSettingsBuilder().deleteMemberSettings();
     }
 
     @Override

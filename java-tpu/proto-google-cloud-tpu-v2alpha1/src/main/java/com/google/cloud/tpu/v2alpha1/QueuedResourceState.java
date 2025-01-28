@@ -4856,7 +4856,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The initiator of the QueuedResources's current state.
+   * Output only. The initiator of the QueuedResources's current state. Used to
+   * indicate whether the SUSPENDING/SUSPENDED state was initiated by the user
+   * or the service.
    * </pre>
    *
    * <code>
@@ -4873,7 +4875,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The initiator of the QueuedResources's current state.
+   * Output only. The initiator of the QueuedResources's current state. Used to
+   * indicate whether the SUSPENDING/SUSPENDED state was initiated by the user
+   * or the service.
    * </pre>
    *
    * <code>
@@ -7416,7 +7420,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The initiator of the QueuedResources's current state.
+     * Output only. The initiator of the QueuedResources's current state. Used to
+     * indicate whether the SUSPENDING/SUSPENDED state was initiated by the user
+     * or the service.
      * </pre>
      *
      * <code>
@@ -7433,7 +7439,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The initiator of the QueuedResources's current state.
+     * Output only. The initiator of the QueuedResources's current state. Used to
+     * indicate whether the SUSPENDING/SUSPENDED state was initiated by the user
+     * or the service.
      * </pre>
      *
      * <code>
@@ -7453,7 +7461,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The initiator of the QueuedResources's current state.
+     * Output only. The initiator of the QueuedResources's current state. Used to
+     * indicate whether the SUSPENDING/SUSPENDED state was initiated by the user
+     * or the service.
      * </pre>
      *
      * <code>
@@ -7475,7 +7485,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The initiator of the QueuedResources's current state.
+     * Output only. The initiator of the QueuedResources's current state. Used to
+     * indicate whether the SUSPENDING/SUSPENDED state was initiated by the user
+     * or the service.
      * </pre>
      *
      * <code>
@@ -7499,7 +7511,9 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The initiator of the QueuedResources's current state.
+     * Output only. The initiator of the QueuedResources's current state. Used to
+     * indicate whether the SUSPENDING/SUSPENDED state was initiated by the user
+     * or the service.
      * </pre>
      *
      * <code>

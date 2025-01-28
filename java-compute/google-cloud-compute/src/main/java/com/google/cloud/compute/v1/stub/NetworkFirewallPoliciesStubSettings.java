@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -46,8 +47,10 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.AggregatedListNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.CloneRulesNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.DeleteNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.FirewallPoliciesScopedList;
 import com.google.cloud.compute.v1.FirewallPolicy;
 import com.google.cloud.compute.v1.FirewallPolicyAssociation;
 import com.google.cloud.compute.v1.FirewallPolicyList;
@@ -58,6 +61,7 @@ import com.google.cloud.compute.v1.GetNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.InsertNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListNetworkFirewallPoliciesRequest;
+import com.google.cloud.compute.v1.NetworkFirewallPolicyAggregatedList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleNetworkFirewallPolicyRequest;
@@ -74,6 +78,7 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -171,6 +176,11 @@ public class NetworkFirewallPoliciesStubSettings
   private final UnaryCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleSettings;
   private final OperationCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
       addRuleOperationSettings;
+  private final PagedCallSettings<
+          AggregatedListNetworkFirewallPoliciesRequest,
+          NetworkFirewallPolicyAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<CloneRulesNetworkFirewallPolicyRequest, Operation>
       cloneRulesSettings;
   private final OperationCallSettings<CloneRulesNetworkFirewallPolicyRequest, Operation, Operation>
@@ -215,6 +225,53 @@ public class NetworkFirewallPoliciesStubSettings
       testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
+          AggregatedListNetworkFirewallPoliciesRequest,
+          NetworkFirewallPolicyAggregatedList,
+          Map.Entry<String, FirewallPoliciesScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListNetworkFirewallPoliciesRequest,
+              NetworkFirewallPolicyAggregatedList,
+              Map.Entry<String, FirewallPoliciesScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListNetworkFirewallPoliciesRequest injectToken(
+                AggregatedListNetworkFirewallPoliciesRequest payload, String token) {
+              return AggregatedListNetworkFirewallPoliciesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListNetworkFirewallPoliciesRequest injectPageSize(
+                AggregatedListNetworkFirewallPoliciesRequest payload, int pageSize) {
+              return AggregatedListNetworkFirewallPoliciesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListNetworkFirewallPoliciesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(NetworkFirewallPolicyAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, FirewallPoliciesScopedList>> extractResources(
+                NetworkFirewallPolicyAggregatedList payload) {
+              return payload.getItemsMap().entrySet();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListNetworkFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy>
       LIST_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -257,6 +314,34 @@ public class NetworkFirewallPoliciesStubSettings
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListNetworkFirewallPoliciesRequest,
+          NetworkFirewallPolicyAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListNetworkFirewallPoliciesRequest,
+              NetworkFirewallPolicyAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AggregatedListNetworkFirewallPoliciesRequest,
+                        NetworkFirewallPolicyAggregatedList>
+                    callable,
+                AggregatedListNetworkFirewallPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<NetworkFirewallPolicyAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListNetworkFirewallPoliciesRequest,
+                      NetworkFirewallPolicyAggregatedList,
+                      Map.Entry<String, FirewallPoliciesScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListNetworkFirewallPoliciesRequest, FirewallPolicyList, ListPagedResponse>
       LIST_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -294,6 +379,15 @@ public class NetworkFirewallPoliciesStubSettings
   public OperationCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
       addRuleOperationSettings() {
     return addRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListNetworkFirewallPoliciesRequest,
+          NetworkFirewallPolicyAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
   }
 
   /** Returns the object with the settings used for calls to cloneRules. */
@@ -502,6 +596,7 @@ public class NetworkFirewallPoliciesStubSettings
     addAssociationOperationSettings = settingsBuilder.addAssociationOperationSettings().build();
     addRuleSettings = settingsBuilder.addRuleSettings().build();
     addRuleOperationSettings = settingsBuilder.addRuleOperationSettings().build();
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     cloneRulesSettings = settingsBuilder.cloneRulesSettings().build();
     cloneRulesOperationSettings = settingsBuilder.cloneRulesOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
@@ -540,6 +635,11 @@ public class NetworkFirewallPoliciesStubSettings
     private final OperationCallSettings.Builder<
             AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
         addRuleOperationSettings;
+    private final PagedCallSettings.Builder<
+            AggregatedListNetworkFirewallPoliciesRequest,
+            NetworkFirewallPolicyAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<CloneRulesNetworkFirewallPolicyRequest, Operation>
         cloneRulesSettings;
     private final OperationCallSettings.Builder<
@@ -647,6 +747,7 @@ public class NetworkFirewallPoliciesStubSettings
       addAssociationOperationSettings = OperationCallSettings.newBuilder();
       addRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addRuleOperationSettings = OperationCallSettings.newBuilder();
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       cloneRulesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cloneRulesOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -673,6 +774,7 @@ public class NetworkFirewallPoliciesStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAssociationSettings,
               addRuleSettings,
+              aggregatedListSettings,
               cloneRulesSettings,
               deleteSettings,
               getSettings,
@@ -697,6 +799,7 @@ public class NetworkFirewallPoliciesStubSettings
       addAssociationOperationSettings = settings.addAssociationOperationSettings.toBuilder();
       addRuleSettings = settings.addRuleSettings.toBuilder();
       addRuleOperationSettings = settings.addRuleOperationSettings.toBuilder();
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       cloneRulesSettings = settings.cloneRulesSettings.toBuilder();
       cloneRulesOperationSettings = settings.cloneRulesOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
@@ -723,6 +826,7 @@ public class NetworkFirewallPoliciesStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAssociationSettings,
               addRuleSettings,
+              aggregatedListSettings,
               cloneRulesSettings,
               deleteSettings,
               getSettings,
@@ -761,6 +865,11 @@ public class NetworkFirewallPoliciesStubSettings
           .addRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .cloneRulesSettings()
@@ -1098,6 +1207,15 @@ public class NetworkFirewallPoliciesStubSettings
     public OperationCallSettings.Builder<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
         addRuleOperationSettings() {
       return addRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListNetworkFirewallPoliciesRequest,
+            NetworkFirewallPolicyAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
     }
 
     /** Returns the builder for the settings used for calls to cloneRules. */

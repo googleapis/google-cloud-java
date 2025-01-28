@@ -65,12 +65,10 @@ public interface EmojiOrBuilder
    *
    *
    * <pre>
-   * Output only. A custom emoji.
+   * A custom emoji.
    * </pre>
    *
-   * <code>
-   * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
    *
    * @return Whether the customEmoji field is set.
    */
@@ -79,12 +77,10 @@ public interface EmojiOrBuilder
    *
    *
    * <pre>
-   * Output only. A custom emoji.
+   * A custom emoji.
    * </pre>
    *
-   * <code>
-   * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
    *
    * @return The customEmoji.
    */
@@ -93,12 +89,10 @@ public interface EmojiOrBuilder
    *
    *
    * <pre>
-   * Output only. A custom emoji.
+   * A custom emoji.
    * </pre>
    *
-   * <code>
-   * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
    */
   com.google.chat.v1.CustomEmojiOrBuilder getCustomEmojiOrBuilder();
 

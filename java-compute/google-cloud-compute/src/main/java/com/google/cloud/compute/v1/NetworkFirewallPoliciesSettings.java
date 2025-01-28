@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -137,6 +138,15 @@ public class NetworkFirewallPoliciesSettings
   public OperationCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
       addRuleOperationSettings() {
     return ((NetworkFirewallPoliciesStubSettings) getStubSettings()).addRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListNetworkFirewallPoliciesRequest,
+          NetworkFirewallPolicyAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((NetworkFirewallPoliciesStubSettings) getStubSettings()).aggregatedListSettings();
   }
 
   /** Returns the object with the settings used for calls to cloneRules. */
@@ -381,6 +391,15 @@ public class NetworkFirewallPoliciesSettings
     public OperationCallSettings.Builder<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
         addRuleOperationSettings() {
       return getStubSettingsBuilder().addRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListNetworkFirewallPoliciesRequest,
+            NetworkFirewallPolicyAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
     }
 
     /** Returns the builder for the settings used for calls to cloneRules. */

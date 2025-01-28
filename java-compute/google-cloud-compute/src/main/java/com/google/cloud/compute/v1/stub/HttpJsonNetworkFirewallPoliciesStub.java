@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.InternalApi;
@@ -34,6 +35,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.AggregatedListNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.CloneRulesNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.DeleteNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.FirewallPolicy;
@@ -46,6 +48,7 @@ import com.google.cloud.compute.v1.GetNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.InsertNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListNetworkFirewallPoliciesRequest;
+import com.google.cloud.compute.v1.NetworkFirewallPolicyAggregatedList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchNetworkFirewallPolicyRequest;
@@ -201,6 +204,72 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                         .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
                         .build();
                   })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+                  newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/AggregatedList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<AggregatedListNetworkFirewallPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/firewallPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNetworkFirewallPoliciesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNetworkFirewallPoliciesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NetworkFirewallPolicyAggregatedList>newBuilder()
+                      .setDefaultInstance(NetworkFirewallPolicyAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<CloneRulesNetworkFirewallPolicyRequest, Operation>
@@ -885,6 +954,12 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   private final UnaryCallable<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleCallable;
   private final OperationCallable<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
       addRuleOperationCallable;
+  private final UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<CloneRulesNetworkFirewallPolicyRequest, Operation> cloneRulesCallable;
   private final OperationCallable<CloneRulesNetworkFirewallPolicyRequest, Operation, Operation>
       cloneRulesOperationCallable;
@@ -995,6 +1070,21 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<
+            AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+                    newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CloneRulesNetworkFirewallPolicyRequest, Operation>
         cloneRulesTransportSettings =
             HttpJsonCallSettings.<CloneRulesNetworkFirewallPolicyRequest, Operation>newBuilder()
@@ -1196,6 +1286,12 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
             settings.addRuleOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.cloneRulesCallable =
         callableFactory.createUnaryCallable(
             cloneRulesTransportSettings, settings.cloneRulesSettings(), clientContext);
@@ -1297,6 +1393,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(addAssociationMethodDescriptor);
     methodDescriptors.add(addRuleMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(cloneRulesMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
@@ -1335,6 +1432,19 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   public OperationCallable<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
       addRuleOperationCallable() {
     return addRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListNetworkFirewallPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override

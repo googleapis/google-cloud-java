@@ -100,6 +100,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     USER_MENTION(4),
     SLASH_COMMAND(5),
     RICH_LINK_METADATA(6),
+    CUSTOM_EMOJI_METADATA(7),
     METADATA_NOT_SET(0);
     private final int value;
 
@@ -124,6 +125,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           return SLASH_COMMAND;
         case 6:
           return RICH_LINK_METADATA;
+        case 7:
+          return CUSTOM_EMOJI_METADATA;
         case 0:
           return METADATA_NOT_SET;
         default:
@@ -381,6 +384,57 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
   }
 
+  public static final int CUSTOM_EMOJI_METADATA_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a custom emoji.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+   *
+   * @return Whether the customEmojiMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomEmojiMetadata() {
+    return metadataCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a custom emoji.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+   *
+   * @return The customEmojiMetadata.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.CustomEmojiMetadata getCustomEmojiMetadata() {
+    if (metadataCase_ == 7) {
+      return (com.google.chat.v1.CustomEmojiMetadata) metadata_;
+    }
+    return com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a custom emoji.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.CustomEmojiMetadataOrBuilder getCustomEmojiMetadataOrBuilder() {
+    if (metadataCase_ == 7) {
+      return (com.google.chat.v1.CustomEmojiMetadata) metadata_;
+    }
+    return com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -412,6 +466,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
     if (metadataCase_ == 6) {
       output.writeMessage(6, (com.google.chat.v1.RichLinkMetadata) metadata_);
+    }
+    if (metadataCase_ == 7) {
+      output.writeMessage(7, (com.google.chat.v1.CustomEmojiMetadata) metadata_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -446,6 +503,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.chat.v1.RichLinkMetadata) metadata_);
     }
+    if (metadataCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.chat.v1.CustomEmojiMetadata) metadata_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -477,6 +539,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         break;
       case 6:
         if (!getRichLinkMetadata().equals(other.getRichLinkMetadata())) return false;
+        break;
+      case 7:
+        if (!getCustomEmojiMetadata().equals(other.getCustomEmojiMetadata())) return false;
         break;
       case 0:
       default:
@@ -512,6 +577,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + RICH_LINK_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getRichLinkMetadata().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + CUSTOM_EMOJI_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomEmojiMetadata().hashCode();
         break;
       case 0:
       default:
@@ -691,6 +760,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (richLinkMetadataBuilder_ != null) {
         richLinkMetadataBuilder_.clear();
       }
+      if (customEmojiMetadataBuilder_ != null) {
+        customEmojiMetadataBuilder_.clear();
+      }
       metadataCase_ = 0;
       metadata_ = null;
       return this;
@@ -754,6 +826,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       }
       if (metadataCase_ == 6 && richLinkMetadataBuilder_ != null) {
         result.metadata_ = richLinkMetadataBuilder_.build();
+      }
+      if (metadataCase_ == 7 && customEmojiMetadataBuilder_ != null) {
+        result.metadata_ = customEmojiMetadataBuilder_.build();
       }
     }
 
@@ -827,6 +902,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             mergeRichLinkMetadata(other.getRichLinkMetadata());
             break;
           }
+        case CUSTOM_EMOJI_METADATA:
+          {
+            mergeCustomEmojiMetadata(other.getCustomEmojiMetadata());
+            break;
+          }
         case METADATA_NOT_SET:
           {
             break;
@@ -895,6 +975,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
                 metadataCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getCustomEmojiMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                metadataCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1767,6 +1854,215 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 6;
       onChanged();
       return richLinkMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.CustomEmojiMetadata,
+            com.google.chat.v1.CustomEmojiMetadata.Builder,
+            com.google.chat.v1.CustomEmojiMetadataOrBuilder>
+        customEmojiMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     *
+     * @return Whether the customEmojiMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomEmojiMetadata() {
+      return metadataCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     *
+     * @return The customEmojiMetadata.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.CustomEmojiMetadata getCustomEmojiMetadata() {
+      if (customEmojiMetadataBuilder_ == null) {
+        if (metadataCase_ == 7) {
+          return (com.google.chat.v1.CustomEmojiMetadata) metadata_;
+        }
+        return com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
+      } else {
+        if (metadataCase_ == 7) {
+          return customEmojiMetadataBuilder_.getMessage();
+        }
+        return com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     */
+    public Builder setCustomEmojiMetadata(com.google.chat.v1.CustomEmojiMetadata value) {
+      if (customEmojiMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        customEmojiMetadataBuilder_.setMessage(value);
+      }
+      metadataCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     */
+    public Builder setCustomEmojiMetadata(
+        com.google.chat.v1.CustomEmojiMetadata.Builder builderForValue) {
+      if (customEmojiMetadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        customEmojiMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      metadataCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     */
+    public Builder mergeCustomEmojiMetadata(com.google.chat.v1.CustomEmojiMetadata value) {
+      if (customEmojiMetadataBuilder_ == null) {
+        if (metadataCase_ == 7
+            && metadata_ != com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance()) {
+          metadata_ =
+              com.google.chat.v1.CustomEmojiMetadata.newBuilder(
+                      (com.google.chat.v1.CustomEmojiMetadata) metadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (metadataCase_ == 7) {
+          customEmojiMetadataBuilder_.mergeFrom(value);
+        } else {
+          customEmojiMetadataBuilder_.setMessage(value);
+        }
+      }
+      metadataCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     */
+    public Builder clearCustomEmojiMetadata() {
+      if (customEmojiMetadataBuilder_ == null) {
+        if (metadataCase_ == 7) {
+          metadataCase_ = 0;
+          metadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (metadataCase_ == 7) {
+          metadataCase_ = 0;
+          metadata_ = null;
+        }
+        customEmojiMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     */
+    public com.google.chat.v1.CustomEmojiMetadata.Builder getCustomEmojiMetadataBuilder() {
+      return getCustomEmojiMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.CustomEmojiMetadataOrBuilder getCustomEmojiMetadataOrBuilder() {
+      if ((metadataCase_ == 7) && (customEmojiMetadataBuilder_ != null)) {
+        return customEmojiMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (metadataCase_ == 7) {
+          return (com.google.chat.v1.CustomEmojiMetadata) metadata_;
+        }
+        return com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a custom emoji.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.CustomEmojiMetadata,
+            com.google.chat.v1.CustomEmojiMetadata.Builder,
+            com.google.chat.v1.CustomEmojiMetadataOrBuilder>
+        getCustomEmojiMetadataFieldBuilder() {
+      if (customEmojiMetadataBuilder_ == null) {
+        if (!(metadataCase_ == 7)) {
+          metadata_ = com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
+        }
+        customEmojiMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.chat.v1.CustomEmojiMetadata,
+                com.google.chat.v1.CustomEmojiMetadata.Builder,
+                com.google.chat.v1.CustomEmojiMetadataOrBuilder>(
+                (com.google.chat.v1.CustomEmojiMetadata) metadata_,
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      metadataCase_ = 7;
+      onChanged();
+      return customEmojiMetadataBuilder_;
     }
 
     @java.lang.Override

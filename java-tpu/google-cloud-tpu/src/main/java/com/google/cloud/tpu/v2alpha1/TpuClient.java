@@ -203,6 +203,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> PerformMaintenance</td>
+ *      <td><p> Perform manual maintenance on a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(PerformMaintenanceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceOperationCallable()
+ *           <li><p> performMaintenanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListQueuedResources</td>
  *      <td><p> Lists queued resources.</td>
  *      <td>
@@ -298,6 +313,21 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> resetQueuedResourceOperationCallable()
  *           <li><p> resetQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PerformMaintenanceQueuedResource</td>
+ *      <td><p> Perform manual maintenance on specific nodes of a QueuedResource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceQueuedResourceAsync(PerformMaintenanceQueuedResourceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceQueuedResourceOperationCallable()
+ *           <li><p> performMaintenanceQueuedResourceCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -404,6 +434,21 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getGuestAttributesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListReservations</td>
+ *      <td><p> Retrieves the reservations for the given project in the given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listReservations(ListReservationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listReservationsPagedCallable()
+ *           <li><p> listReservationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1407,6 +1452,91 @@ public class TpuClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform manual maintenance on a node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceRequest request =
+   *       PerformMaintenanceRequest.newBuilder()
+   *           .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .build();
+   *   Node response = tpuClient.performMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Node, OperationMetadata> performMaintenanceAsync(
+      PerformMaintenanceRequest request) {
+    return performMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform manual maintenance on a node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceRequest request =
+   *       PerformMaintenanceRequest.newBuilder()
+   *           .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .build();
+   *   OperationFuture<Node, OperationMetadata> future =
+   *       tpuClient.performMaintenanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Node response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PerformMaintenanceRequest, Node, OperationMetadata>
+      performMaintenanceOperationCallable() {
+    return stub.performMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform manual maintenance on a node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceRequest request =
+   *       PerformMaintenanceRequest.newBuilder()
+   *           .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = tpuClient.performMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PerformMaintenanceRequest, Operation> performMaintenanceCallable() {
+    return stub.performMaintenanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists queued resources.
    *
    * <p>Sample code:
@@ -2161,6 +2291,100 @@ public class TpuClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform manual maintenance on specific nodes of a QueuedResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceQueuedResourceRequest request =
+   *       PerformMaintenanceQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .addAllNodeNames(new ArrayList<String>())
+   *           .build();
+   *   QueuedResource response = tpuClient.performMaintenanceQueuedResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceAsync(PerformMaintenanceQueuedResourceRequest request) {
+    return performMaintenanceQueuedResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform manual maintenance on specific nodes of a QueuedResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceQueuedResourceRequest request =
+   *       PerformMaintenanceQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .addAllNodeNames(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<QueuedResource, OperationMetadata> future =
+   *       tpuClient.performMaintenanceQueuedResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QueuedResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceOperationCallable() {
+    return stub.performMaintenanceQueuedResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform manual maintenance on specific nodes of a QueuedResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceQueuedResourceRequest request =
+   *       PerformMaintenanceQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .addAllNodeNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       tpuClient.performMaintenanceQueuedResourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceCallable() {
+    return stub.performMaintenanceQueuedResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Generates the Cloud TPU service identity for the project.
    *
    * <p>Sample code:
@@ -2857,6 +3081,109 @@ public class TpuClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves the reservations for the given project in the given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Reservation element : tpuClient.listReservations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReservationsPagedResponse listReservations(ListReservationsRequest request) {
+    return listReservationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the reservations for the given project in the given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Reservation> future = tpuClient.listReservationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Reservation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
+      listReservationsPagedCallable() {
+    return stub.listReservationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the reservations for the given project in the given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListReservationsResponse response = tpuClient.listReservationsCallable().call(request);
+   *     for (Reservation element : response.getReservationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
+      listReservationsCallable() {
+    return stub.listReservationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Simulates a maintenance event.
    *
    * <p>Sample code:
@@ -3443,6 +3770,83 @@ public class TpuClient implements BackgroundResource {
     protected ListRuntimeVersionsFixedSizeCollection createCollection(
         List<ListRuntimeVersionsPage> pages, int collectionSize) {
       return new ListRuntimeVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListReservationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListReservationsRequest,
+          ListReservationsResponse,
+          Reservation,
+          ListReservationsPage,
+          ListReservationsFixedSizeCollection> {
+
+    public static ApiFuture<ListReservationsPagedResponse> createAsync(
+        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        ApiFuture<ListReservationsResponse> futureResponse) {
+      ApiFuture<ListReservationsPage> futurePage =
+          ListReservationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListReservationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListReservationsPagedResponse(ListReservationsPage page) {
+      super(page, ListReservationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListReservationsPage
+      extends AbstractPage<
+          ListReservationsRequest, ListReservationsResponse, Reservation, ListReservationsPage> {
+
+    private ListReservationsPage(
+        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        ListReservationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListReservationsPage createEmptyPage() {
+      return new ListReservationsPage(null, null);
+    }
+
+    @Override
+    protected ListReservationsPage createPage(
+        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        ListReservationsResponse response) {
+      return new ListReservationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListReservationsPage> createPageAsync(
+        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        ApiFuture<ListReservationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListReservationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListReservationsRequest,
+          ListReservationsResponse,
+          Reservation,
+          ListReservationsPage,
+          ListReservationsFixedSizeCollection> {
+
+    private ListReservationsFixedSizeCollection(
+        List<ListReservationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListReservationsFixedSizeCollection createEmptyCollection() {
+      return new ListReservationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListReservationsFixedSizeCollection createCollection(
+        List<ListReservationsPage> pages, int collectionSize) {
+      return new ListReservationsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -48,6 +48,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     discoveryEndpoints_ = java.util.Collections.emptyList();
     pscConnections_ = java.util.Collections.emptyList();
     nodeType_ = 0;
+    pscServiceAttachments_ = java.util.Collections.emptyList();
+    clusterEndpoints_ = java.util.Collections.emptyList();
+    backupCollection_ = "";
+    kmsKey_ = "";
   }
 
   @java.lang.Override
@@ -1924,7 +1928,1669 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface GcsBackupSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URIs of the GCS objects to import.
+     * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the uris.
+     */
+    java.util.List<java.lang.String> getUrisList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URIs of the GCS objects to import.
+     * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of uris.
+     */
+    int getUrisCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URIs of the GCS objects to import.
+     * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The uris at the given index.
+     */
+    java.lang.String getUris(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URIs of the GCS objects to import.
+     * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the uris at the given index.
+     */
+    com.google.protobuf.ByteString getUrisBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Backups stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the clusters.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource}
+   */
+  public static final class GcsBackupSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource)
+      GcsBackupSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GcsBackupSource.newBuilder() to construct.
+    private GcsBackupSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GcsBackupSource() {
+      uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GcsBackupSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+          .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_GcsBackupSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+          .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_GcsBackupSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.class,
+              com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.Builder.class);
+    }
+
+    public static final int URIS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList uris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URIs of the GCS objects to import.
+     * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the uris.
+     */
+    public com.google.protobuf.ProtocolStringList getUrisList() {
+      return uris_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URIs of the GCS objects to import.
+     * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of uris.
+     */
+    public int getUrisCount() {
+      return uris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URIs of the GCS objects to import.
+     * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The uris at the given index.
+     */
+    public java.lang.String getUris(int index) {
+      return uris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URIs of the GCS objects to import.
+     * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the uris at the given index.
+     */
+    public com.google.protobuf.ByteString getUrisBytes(int index) {
+      return uris_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < uris_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uris_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < uris_.size(); i++) {
+          dataSize += computeStringSizeNoTag(uris_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUrisList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource other =
+          (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) obj;
+
+      if (!getUrisList().equals(other.getUrisList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getUrisCount() > 0) {
+        hash = (37 * hash) + URIS_FIELD_NUMBER;
+        hash = (53 * hash) + getUrisList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource)
+        com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+            .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_GcsBackupSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+            .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_GcsBackupSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.class,
+                com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+            .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_GcsBackupSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource build() {
+        com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource buildPartial() {
+        com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource result =
+            new com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          uris_.makeImmutable();
+          result.uris_ = uris_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) {
+          return mergeFrom((com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource other) {
+        if (other
+            == com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.getDefaultInstance())
+          return this;
+        if (!other.uris_.isEmpty()) {
+          if (uris_.isEmpty()) {
+            uris_ = other.uris_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureUrisIsMutable();
+            uris_.addAll(other.uris_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureUrisIsMutable();
+                  uris_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList uris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureUrisIsMutable() {
+        if (!uris_.isModifiable()) {
+          uris_ = new com.google.protobuf.LazyStringArrayList(uris_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the uris.
+       */
+      public com.google.protobuf.ProtocolStringList getUrisList() {
+        uris_.makeImmutable();
+        return uris_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of uris.
+       */
+      public int getUrisCount() {
+        return uris_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The uris at the given index.
+       */
+      public java.lang.String getUris(int index) {
+        return uris_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the uris at the given index.
+       */
+      public com.google.protobuf.ByteString getUrisBytes(int index) {
+        return uris_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The uris to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUris(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUrisIsMutable();
+        uris_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The uris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUris(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUrisIsMutable();
+        uris_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The uris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUris(java.lang.Iterable<java.lang.String> values) {
+        ensureUrisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, uris_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUris() {
+        uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URIs of the GCS objects to import.
+       * Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the uris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUrisBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureUrisIsMutable();
+        uris_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource)
+    private static final com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource();
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GcsBackupSource> PARSER =
+        new com.google.protobuf.AbstractParser<GcsBackupSource>() {
+          @java.lang.Override
+          public GcsBackupSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GcsBackupSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GcsBackupSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ManagedBackupSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example:
+     * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+     * A shorter version (without the prefix) of the backup name is also
+     * supported, like
+     * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+     * In this case, it assumes the backup is under redis.googleapis.com.
+     * </pre>
+     *
+     * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The backup.
+     */
+    java.lang.String getBackup();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example:
+     * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+     * A shorter version (without the prefix) of the backup name is also
+     * supported, like
+     * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+     * In this case, it assumes the backup is under redis.googleapis.com.
+     * </pre>
+     *
+     * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for backup.
+     */
+    com.google.protobuf.ByteString getBackupBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Backups that generated and managed by memorystore.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource}
+   */
+  public static final class ManagedBackupSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)
+      ManagedBackupSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ManagedBackupSource.newBuilder() to construct.
+    private ManagedBackupSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ManagedBackupSource() {
+      backup_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ManagedBackupSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+          .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_ManagedBackupSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+          .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_ManagedBackupSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.class,
+              com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.Builder.class);
+    }
+
+    public static final int BACKUP_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object backup_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example:
+     * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+     * A shorter version (without the prefix) of the backup name is also
+     * supported, like
+     * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+     * In this case, it assumes the backup is under redis.googleapis.com.
+     * </pre>
+     *
+     * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The backup.
+     */
+    @java.lang.Override
+    public java.lang.String getBackup() {
+      java.lang.Object ref = backup_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backup_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example:
+     * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+     * A shorter version (without the prefix) of the backup name is also
+     * supported, like
+     * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+     * In this case, it assumes the backup is under redis.googleapis.com.
+     * </pre>
+     *
+     * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for backup.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBackupBytes() {
+      java.lang.Object ref = backup_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backup_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, backup_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backup_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, backup_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource other =
+          (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource) obj;
+
+      if (!getBackup().equals(other.getBackup())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BACKUP_FIELD_NUMBER;
+      hash = (53 * hash) + getBackup().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Backups that generated and managed by memorystore.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)
+        com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+            .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_ManagedBackupSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+            .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_ManagedBackupSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.class,
+                com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        backup_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto
+            .internal_static_google_cloud_redis_cluster_v1beta1_Cluster_ManagedBackupSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource build() {
+        com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource buildPartial() {
+        com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource result =
+            new com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.backup_ = backup_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource) {
+          return mergeFrom(
+              (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource other) {
+        if (other
+            == com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+                .getDefaultInstance()) return this;
+        if (!other.getBackup().isEmpty()) {
+          backup_ = other.backup_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  backup_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object backup_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under redis.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The backup.
+       */
+      public java.lang.String getBackup() {
+        java.lang.Object ref = backup_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          backup_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under redis.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for backup.
+       */
+      public com.google.protobuf.ByteString getBackupBytes() {
+        java.lang.Object ref = backup_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          backup_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under redis.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The backup to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackup(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backup_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under redis.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBackup() {
+        backup_ = getDefaultInstance().getBackup();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //redis.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under redis.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for backup to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        backup_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)
+    private static final com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource();
+    }
+
+    public static com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ManagedBackupSource> PARSER =
+        new com.google.protobuf.AbstractParser<ManagedBackupSource>() {
+          @java.lang.Override
+          public ManagedBackupSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ManagedBackupSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ManagedBackupSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  private int importSourcesCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object importSources_;
+
+  public enum ImportSourcesCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    GCS_SOURCE(34),
+    MANAGED_BACKUP_SOURCE(35),
+    IMPORTSOURCES_NOT_SET(0);
+    private final int value;
+
+    private ImportSourcesCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ImportSourcesCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ImportSourcesCase forNumber(int value) {
+      switch (value) {
+        case 34:
+          return GCS_SOURCE;
+        case 35:
+          return MANAGED_BACKUP_SOURCE;
+        case 0:
+          return IMPORTSOURCES_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ImportSourcesCase getImportSourcesCase() {
+    return ImportSourcesCase.forNumber(importSourcesCase_);
+  }
+
+  public static final int GCS_SOURCE_FIELD_NUMBER = 34;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the clusters.
+   * Read permission is required to import from the provided Cloud Storage
+   * objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gcsSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcsSource() {
+    return importSourcesCase_ == 34;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the clusters.
+   * Read permission is required to import from the provided Cloud Storage
+   * objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gcsSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource getGcsSource() {
+    if (importSourcesCase_ == 34) {
+      return (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) importSources_;
+    }
+    return com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the clusters.
+   * Read permission is required to import from the provided Cloud Storage
+   * objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSourceOrBuilder
+      getGcsSourceOrBuilder() {
+    if (importSourcesCase_ == 34) {
+      return (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) importSources_;
+    }
+    return com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.getDefaultInstance();
+  }
+
+  public static final int MANAGED_BACKUP_SOURCE_FIELD_NUMBER = 35;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups generated and managed by memorystore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the managedBackupSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagedBackupSource() {
+    return importSourcesCase_ == 35;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups generated and managed by memorystore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The managedBackupSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+      getManagedBackupSource() {
+    if (importSourcesCase_ == 35) {
+      return (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource) importSources_;
+    }
+    return com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backups generated and managed by memorystore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceOrBuilder
+      getManagedBackupSourceOrBuilder() {
+    if (importSourcesCase_ == 35) {
+      return (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource) importSources_;
+    }
+    return com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1933,12 +3599,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Unique name of the resource in this scope including project and
-   * location using the form:
+   * Required. Identifier. Unique name of the resource in this scope including
+   * project and location using the form:
    *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -1958,12 +3626,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Unique name of the resource in this scope including project and
-   * location using the form:
+   * Required. Identifier. Unique name of the resource in this scope including
+   * project and location using the form:
    *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -2284,10 +3954,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Number of shards for the Redis cluster.
+   * Optional. Number of shards for the Redis cluster.
    * </pre>
    *
-   * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the shardCount field is set.
    */
@@ -2299,10 +3969,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Number of shards for the Redis cluster.
+   * Optional. Number of shards for the Redis cluster.
    * </pre>
    *
-   * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The shardCount.
    */
@@ -2319,13 +3989,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2336,13 +4006,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2354,13 +4024,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2371,13 +4041,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2388,13 +4058,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Each PscConfig configures the consumer network where IPs will
+   * Optional. Each PscConfig configures the consumer network where IPs will
    * be designated to the cluster for client access through Private Service
    * Connect Automation. Currently, only one PscConfig is supported.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2500,8 +4170,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -2517,8 +4187,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -2534,8 +4204,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -2550,8 +4220,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -2566,8 +4236,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. PSC connections for discovery of the cluster topology and
-   * accessing the cluster.
+   * Output only. The list of PSC connections that are auto-created through
+   * service connectivity automation.
    * </pre>
    *
    * <code>
@@ -2937,6 +4607,65 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : zoneDistributionConfig_;
   }
 
+  public static final int CROSS_CLUSTER_REPLICATION_CONFIG_FIELD_NUMBER = 24;
+  private com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
+      crossClusterReplicationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cross cluster replication config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the crossClusterReplicationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCrossClusterReplicationConfig() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cross cluster replication config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The crossClusterReplicationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
+      getCrossClusterReplicationConfig() {
+    return crossClusterReplicationConfig_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.getDefaultInstance()
+        : crossClusterReplicationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cross cluster replication config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfigOrBuilder
+      getCrossClusterReplicationConfigOrBuilder() {
+    return crossClusterReplicationConfig_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.getDefaultInstance()
+        : crossClusterReplicationConfig_;
+  }
+
   public static final int DELETION_PROTECTION_ENABLED_FIELD_NUMBER = 25;
   private boolean deletionProtectionEnabled_ = false;
   /**
@@ -2953,7 +4682,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDeletionProtectionEnabled() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -2970,6 +4699,557 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getDeletionProtectionEnabled() {
     return deletionProtectionEnabled_;
+  }
+
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 26;
+  private com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenancePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ClusterMaintenancePolicy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ClusterMaintenancePolicy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy getMaintenancePolicy() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ClusterMaintenancePolicy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicyOrBuilder
+      getMaintenancePolicyOrBuilder() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
+  public static final int MAINTENANCE_SCHEDULE_FIELD_NUMBER = 27;
+  private com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenanceSchedule_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+   * schedule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceSchedule() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+   * schedule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule
+      getMaintenanceSchedule() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+   * schedule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceScheduleOrBuilder
+      getMaintenanceScheduleOrBuilder() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+
+  public static final int PSC_SERVICE_ATTACHMENTS_FIELD_NUMBER = 30;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment>
+      pscServiceAttachments_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment>
+      getPscServiceAttachmentsList() {
+    return pscServiceAttachments_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder>
+      getPscServiceAttachmentsOrBuilderList() {
+    return pscServiceAttachments_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPscServiceAttachmentsCount() {
+    return pscServiceAttachments_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment getPscServiceAttachments(
+      int index) {
+    return pscServiceAttachments_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure Psc connections
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder
+      getPscServiceAttachmentsOrBuilder(int index) {
+    return pscServiceAttachments_.get(index);
+  }
+
+  public static final int CLUSTER_ENDPOINTS_FIELD_NUMBER = 36;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint> clusterEndpoints_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint>
+      getClusterEndpointsList() {
+    return clusterEndpoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder>
+      getClusterEndpointsOrBuilderList() {
+    return clusterEndpoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getClusterEndpointsCount() {
+    return clusterEndpoints_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint getClusterEndpoints(int index) {
+    return clusterEndpoints_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of cluster enpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder
+      getClusterEndpointsOrBuilder(int index) {
+    return clusterEndpoints_.get(index);
+  }
+
+  public static final int BACKUP_COLLECTION_FIELD_NUMBER = 39;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupCollection_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the backupCollection field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupCollection() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupCollection.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupCollection() {
+    java.lang.Object ref = backupCollection_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupCollection_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupCollection.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupCollectionBytes() {
+    java.lang.Object ref = backupCollection_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupCollection_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int KMS_KEY_FIELD_NUMBER = 40;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasKmsKey() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AUTOMATED_BACKUP_CONFIG_FIELD_NUMBER = 42;
+  private com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automatedBackupConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the automatedBackupConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutomatedBackupConfig() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The automatedBackupConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig getAutomatedBackupConfig() {
+    return automatedBackupConfig_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.getDefaultInstance()
+        : automatedBackupConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfigOrBuilder
+      getAutomatedBackupConfigOrBuilder() {
+    return automatedBackupConfig_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.getDefaultInstance()
+        : automatedBackupConfig_;
+  }
+
+  public static final int ENCRYPTION_INFO_FIELD_NUMBER = 43;
+  private com.google.cloud.redis.cluster.v1beta1.EncryptionInfo encryptionInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionInfo() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.EncryptionInfo getEncryptionInfo() {
+    return encryptionInfo_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.getDefaultInstance()
+        : encryptionInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.EncryptionInfoOrBuilder
+      getEncryptionInfoOrBuilder() {
+    return encryptionInfo_ == null
+        ? com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.getDefaultInstance()
+        : encryptionInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3047,7 +5327,42 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(23, getZoneDistributionConfig());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(24, getCrossClusterReplicationConfig());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(25, deletionProtectionEnabled_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(26, getMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(27, getMaintenanceSchedule());
+    }
+    for (int i = 0; i < pscServiceAttachments_.size(); i++) {
+      output.writeMessage(30, pscServiceAttachments_.get(i));
+    }
+    if (importSourcesCase_ == 34) {
+      output.writeMessage(
+          34, (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) importSources_);
+    }
+    if (importSourcesCase_ == 35) {
+      output.writeMessage(
+          35, (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource) importSources_);
+    }
+    for (int i = 0; i < clusterEndpoints_.size(); i++) {
+      output.writeMessage(36, clusterEndpoints_.get(i));
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39, backupCollection_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40, kmsKey_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(42, getAutomatedBackupConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeMessage(43, getEncryptionInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3129,7 +5444,52 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(23, getZoneDistributionConfig());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, getCrossClusterReplicationConfig());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, deletionProtectionEnabled_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(27, getMaintenanceSchedule());
+    }
+    for (int i = 0; i < pscServiceAttachments_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, pscServiceAttachments_.get(i));
+    }
+    if (importSourcesCase_ == 34) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              34, (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) importSources_);
+    }
+    if (importSourcesCase_ == 35) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              35,
+              (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource) importSources_);
+    }
+    for (int i = 0; i < clusterEndpoints_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(36, clusterEndpoints_.get(i));
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, backupCollection_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40, kmsKey_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(42, getAutomatedBackupConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, getEncryptionInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3190,9 +5550,52 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasZoneDistributionConfig()) {
       if (!getZoneDistributionConfig().equals(other.getZoneDistributionConfig())) return false;
     }
+    if (hasCrossClusterReplicationConfig() != other.hasCrossClusterReplicationConfig())
+      return false;
+    if (hasCrossClusterReplicationConfig()) {
+      if (!getCrossClusterReplicationConfig().equals(other.getCrossClusterReplicationConfig()))
+        return false;
+    }
     if (hasDeletionProtectionEnabled() != other.hasDeletionProtectionEnabled()) return false;
     if (hasDeletionProtectionEnabled()) {
       if (getDeletionProtectionEnabled() != other.getDeletionProtectionEnabled()) return false;
+    }
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
+    if (hasMaintenancePolicy()) {
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
+    }
+    if (hasMaintenanceSchedule() != other.hasMaintenanceSchedule()) return false;
+    if (hasMaintenanceSchedule()) {
+      if (!getMaintenanceSchedule().equals(other.getMaintenanceSchedule())) return false;
+    }
+    if (!getPscServiceAttachmentsList().equals(other.getPscServiceAttachmentsList())) return false;
+    if (!getClusterEndpointsList().equals(other.getClusterEndpointsList())) return false;
+    if (hasBackupCollection() != other.hasBackupCollection()) return false;
+    if (hasBackupCollection()) {
+      if (!getBackupCollection().equals(other.getBackupCollection())) return false;
+    }
+    if (hasKmsKey() != other.hasKmsKey()) return false;
+    if (hasKmsKey()) {
+      if (!getKmsKey().equals(other.getKmsKey())) return false;
+    }
+    if (hasAutomatedBackupConfig() != other.hasAutomatedBackupConfig()) return false;
+    if (hasAutomatedBackupConfig()) {
+      if (!getAutomatedBackupConfig().equals(other.getAutomatedBackupConfig())) return false;
+    }
+    if (hasEncryptionInfo() != other.hasEncryptionInfo()) return false;
+    if (hasEncryptionInfo()) {
+      if (!getEncryptionInfo().equals(other.getEncryptionInfo())) return false;
+    }
+    if (!getImportSourcesCase().equals(other.getImportSourcesCase())) return false;
+    switch (importSourcesCase_) {
+      case 34:
+        if (!getGcsSource().equals(other.getGcsSource())) return false;
+        break;
+      case 35:
+        if (!getManagedBackupSource().equals(other.getManagedBackupSource())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3268,9 +5671,57 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ZONE_DISTRIBUTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getZoneDistributionConfig().hashCode();
     }
+    if (hasCrossClusterReplicationConfig()) {
+      hash = (37 * hash) + CROSS_CLUSTER_REPLICATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCrossClusterReplicationConfig().hashCode();
+    }
     if (hasDeletionProtectionEnabled()) {
       hash = (37 * hash) + DELETION_PROTECTION_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtectionEnabled());
+    }
+    if (hasMaintenancePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
+    }
+    if (hasMaintenanceSchedule()) {
+      hash = (37 * hash) + MAINTENANCE_SCHEDULE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceSchedule().hashCode();
+    }
+    if (getPscServiceAttachmentsCount() > 0) {
+      hash = (37 * hash) + PSC_SERVICE_ATTACHMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getPscServiceAttachmentsList().hashCode();
+    }
+    if (getClusterEndpointsCount() > 0) {
+      hash = (37 * hash) + CLUSTER_ENDPOINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterEndpointsList().hashCode();
+    }
+    if (hasBackupCollection()) {
+      hash = (37 * hash) + BACKUP_COLLECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupCollection().hashCode();
+    }
+    if (hasKmsKey()) {
+      hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKey().hashCode();
+    }
+    if (hasAutomatedBackupConfig()) {
+      hash = (37 * hash) + AUTOMATED_BACKUP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAutomatedBackupConfig().hashCode();
+    }
+    if (hasEncryptionInfo()) {
+      hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionInfo().hashCode();
+    }
+    switch (importSourcesCase_) {
+      case 34:
+        hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsSource().hashCode();
+        break;
+      case 35:
+        hash = (37 * hash) + MANAGED_BACKUP_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getManagedBackupSource().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3441,6 +5892,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getStateInfoFieldBuilder();
         getPersistenceConfigFieldBuilder();
         getZoneDistributionConfigFieldBuilder();
+        getCrossClusterReplicationConfigFieldBuilder();
+        getMaintenancePolicyFieldBuilder();
+        getMaintenanceScheduleFieldBuilder();
+        getPscServiceAttachmentsFieldBuilder();
+        getClusterEndpointsFieldBuilder();
+        getAutomatedBackupConfigFieldBuilder();
+        getEncryptionInfoFieldBuilder();
       }
     }
 
@@ -3448,6 +5906,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.clear();
+      }
+      if (managedBackupSourceBuilder_ != null) {
+        managedBackupSourceBuilder_.clear();
+      }
       name_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -3467,21 +5931,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         pscConfigs_ = null;
         pscConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (discoveryEndpointsBuilder_ == null) {
         discoveryEndpoints_ = java.util.Collections.emptyList();
       } else {
         discoveryEndpoints_ = null;
         discoveryEndpointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (pscConnectionsBuilder_ == null) {
         pscConnections_ = java.util.Collections.emptyList();
       } else {
         pscConnections_ = null;
         pscConnectionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       stateInfo_ = null;
       if (stateInfoBuilder_ != null) {
         stateInfoBuilder_.dispose();
@@ -3500,7 +5964,50 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         zoneDistributionConfigBuilder_.dispose();
         zoneDistributionConfigBuilder_ = null;
       }
+      crossClusterReplicationConfig_ = null;
+      if (crossClusterReplicationConfigBuilder_ != null) {
+        crossClusterReplicationConfigBuilder_.dispose();
+        crossClusterReplicationConfigBuilder_ = null;
+      }
       deletionProtectionEnabled_ = false;
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
+      }
+      maintenanceSchedule_ = null;
+      if (maintenanceScheduleBuilder_ != null) {
+        maintenanceScheduleBuilder_.dispose();
+        maintenanceScheduleBuilder_ = null;
+      }
+      if (pscServiceAttachmentsBuilder_ == null) {
+        pscServiceAttachments_ = java.util.Collections.emptyList();
+      } else {
+        pscServiceAttachments_ = null;
+        pscServiceAttachmentsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x01000000);
+      if (clusterEndpointsBuilder_ == null) {
+        clusterEndpoints_ = java.util.Collections.emptyList();
+      } else {
+        clusterEndpoints_ = null;
+        clusterEndpointsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x02000000);
+      backupCollection_ = "";
+      kmsKey_ = "";
+      automatedBackupConfig_ = null;
+      if (automatedBackupConfigBuilder_ != null) {
+        automatedBackupConfigBuilder_.dispose();
+        automatedBackupConfigBuilder_ = null;
+      }
+      encryptionInfo_ = null;
+      if (encryptionInfoBuilder_ != null) {
+        encryptionInfoBuilder_.dispose();
+        encryptionInfoBuilder_ = null;
+      }
+      importSourcesCase_ = 0;
+      importSources_ = null;
       return this;
     }
 
@@ -3532,108 +6039,179 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.redis.cluster.v1beta1.Cluster result) {
       if (pscConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           pscConfigs_ = java.util.Collections.unmodifiableList(pscConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.pscConfigs_ = pscConfigs_;
       } else {
         result.pscConfigs_ = pscConfigsBuilder_.build();
       }
       if (discoveryEndpointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           discoveryEndpoints_ = java.util.Collections.unmodifiableList(discoveryEndpoints_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.discoveryEndpoints_ = discoveryEndpoints_;
       } else {
         result.discoveryEndpoints_ = discoveryEndpointsBuilder_.build();
       }
       if (pscConnectionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           pscConnections_ = java.util.Collections.unmodifiableList(pscConnections_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.pscConnections_ = pscConnections_;
       } else {
         result.pscConnections_ = pscConnectionsBuilder_.build();
       }
+      if (pscServiceAttachmentsBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)) {
+          pscServiceAttachments_ = java.util.Collections.unmodifiableList(pscServiceAttachments_);
+          bitField0_ = (bitField0_ & ~0x01000000);
+        }
+        result.pscServiceAttachments_ = pscServiceAttachments_;
+      } else {
+        result.pscServiceAttachments_ = pscServiceAttachmentsBuilder_.build();
+      }
+      if (clusterEndpointsBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)) {
+          clusterEndpoints_ = java.util.Collections.unmodifiableList(clusterEndpoints_);
+          bitField0_ = (bitField0_ & ~0x02000000);
+        }
+        result.clusterEndpoints_ = clusterEndpoints_;
+      } else {
+        result.clusterEndpoints_ = clusterEndpointsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.redis.cluster.v1beta1.Cluster result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.uid_ = uid_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.replicaCount_ = replicaCount_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.authorizationMode_ = authorizationMode_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.transitEncryptionMode_ = transitEncryptionMode_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.sizeGb_ = sizeGb_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.shardCount_ = shardCount_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.stateInfo_ = stateInfoBuilder_ == null ? stateInfo_ : stateInfoBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.nodeType_ = nodeType_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.persistenceConfig_ =
             persistenceConfigBuilder_ == null
                 ? persistenceConfig_
                 : persistenceConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.redisConfigs_ = internalGetRedisConfigs();
         result.redisConfigs_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.preciseSizeGb_ = preciseSizeGb_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.zoneDistributionConfig_ =
             zoneDistributionConfigBuilder_ == null
                 ? zoneDistributionConfig_
                 : zoneDistributionConfigBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.deletionProtectionEnabled_ = deletionProtectionEnabled_;
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.crossClusterReplicationConfig_ =
+            crossClusterReplicationConfigBuilder_ == null
+                ? crossClusterReplicationConfig_
+                : crossClusterReplicationConfigBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.deletionProtectionEnabled_ = deletionProtectionEnabled_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.maintenancePolicy_ =
+            maintenancePolicyBuilder_ == null
+                ? maintenancePolicy_
+                : maintenancePolicyBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.maintenanceSchedule_ =
+            maintenanceScheduleBuilder_ == null
+                ? maintenanceSchedule_
+                : maintenanceScheduleBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.backupCollection_ = backupCollection_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.kmsKey_ = kmsKey_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.automatedBackupConfig_ =
+            automatedBackupConfigBuilder_ == null
+                ? automatedBackupConfig_
+                : automatedBackupConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.encryptionInfo_ =
+            encryptionInfoBuilder_ == null ? encryptionInfo_ : encryptionInfoBuilder_.build();
+        to_bitField0_ |= 0x00008000;
+      }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.redis.cluster.v1beta1.Cluster result) {
+      result.importSourcesCase_ = importSourcesCase_;
+      result.importSources_ = this.importSources_;
+      if (importSourcesCase_ == 34 && gcsSourceBuilder_ != null) {
+        result.importSources_ = gcsSourceBuilder_.build();
+      }
+      if (importSourcesCase_ == 35 && managedBackupSourceBuilder_ != null) {
+        result.importSources_ = managedBackupSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3683,7 +6261,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.redis.cluster.v1beta1.Cluster.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -3694,7 +6272,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasReplicaCount()) {
@@ -3716,7 +6294,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (!other.pscConfigs_.isEmpty()) {
           if (pscConfigs_.isEmpty()) {
             pscConfigs_ = other.pscConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensurePscConfigsIsMutable();
             pscConfigs_.addAll(other.pscConfigs_);
@@ -3729,7 +6307,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             pscConfigsBuilder_.dispose();
             pscConfigsBuilder_ = null;
             pscConfigs_ = other.pscConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000800);
             pscConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPscConfigsFieldBuilder()
@@ -3743,7 +6321,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (!other.discoveryEndpoints_.isEmpty()) {
           if (discoveryEndpoints_.isEmpty()) {
             discoveryEndpoints_ = other.discoveryEndpoints_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureDiscoveryEndpointsIsMutable();
             discoveryEndpoints_.addAll(other.discoveryEndpoints_);
@@ -3756,7 +6334,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             discoveryEndpointsBuilder_.dispose();
             discoveryEndpointsBuilder_ = null;
             discoveryEndpoints_ = other.discoveryEndpoints_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
             discoveryEndpointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDiscoveryEndpointsFieldBuilder()
@@ -3770,7 +6348,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (!other.pscConnections_.isEmpty()) {
           if (pscConnections_.isEmpty()) {
             pscConnections_ = other.pscConnections_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensurePscConnectionsIsMutable();
             pscConnections_.addAll(other.pscConnections_);
@@ -3783,7 +6361,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             pscConnectionsBuilder_.dispose();
             pscConnectionsBuilder_ = null;
             pscConnections_ = other.pscConnections_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00002000);
             pscConnectionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPscConnectionsFieldBuilder()
@@ -3803,15 +6381,110 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         mergePersistenceConfig(other.getPersistenceConfig());
       }
       internalGetMutableRedisConfigs().mergeFrom(other.internalGetRedisConfigs());
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       if (other.hasPreciseSizeGb()) {
         setPreciseSizeGb(other.getPreciseSizeGb());
       }
       if (other.hasZoneDistributionConfig()) {
         mergeZoneDistributionConfig(other.getZoneDistributionConfig());
       }
+      if (other.hasCrossClusterReplicationConfig()) {
+        mergeCrossClusterReplicationConfig(other.getCrossClusterReplicationConfig());
+      }
       if (other.hasDeletionProtectionEnabled()) {
         setDeletionProtectionEnabled(other.getDeletionProtectionEnabled());
+      }
+      if (other.hasMaintenancePolicy()) {
+        mergeMaintenancePolicy(other.getMaintenancePolicy());
+      }
+      if (other.hasMaintenanceSchedule()) {
+        mergeMaintenanceSchedule(other.getMaintenanceSchedule());
+      }
+      if (pscServiceAttachmentsBuilder_ == null) {
+        if (!other.pscServiceAttachments_.isEmpty()) {
+          if (pscServiceAttachments_.isEmpty()) {
+            pscServiceAttachments_ = other.pscServiceAttachments_;
+            bitField0_ = (bitField0_ & ~0x01000000);
+          } else {
+            ensurePscServiceAttachmentsIsMutable();
+            pscServiceAttachments_.addAll(other.pscServiceAttachments_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pscServiceAttachments_.isEmpty()) {
+          if (pscServiceAttachmentsBuilder_.isEmpty()) {
+            pscServiceAttachmentsBuilder_.dispose();
+            pscServiceAttachmentsBuilder_ = null;
+            pscServiceAttachments_ = other.pscServiceAttachments_;
+            bitField0_ = (bitField0_ & ~0x01000000);
+            pscServiceAttachmentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPscServiceAttachmentsFieldBuilder()
+                    : null;
+          } else {
+            pscServiceAttachmentsBuilder_.addAllMessages(other.pscServiceAttachments_);
+          }
+        }
+      }
+      if (clusterEndpointsBuilder_ == null) {
+        if (!other.clusterEndpoints_.isEmpty()) {
+          if (clusterEndpoints_.isEmpty()) {
+            clusterEndpoints_ = other.clusterEndpoints_;
+            bitField0_ = (bitField0_ & ~0x02000000);
+          } else {
+            ensureClusterEndpointsIsMutable();
+            clusterEndpoints_.addAll(other.clusterEndpoints_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.clusterEndpoints_.isEmpty()) {
+          if (clusterEndpointsBuilder_.isEmpty()) {
+            clusterEndpointsBuilder_.dispose();
+            clusterEndpointsBuilder_ = null;
+            clusterEndpoints_ = other.clusterEndpoints_;
+            bitField0_ = (bitField0_ & ~0x02000000);
+            clusterEndpointsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getClusterEndpointsFieldBuilder()
+                    : null;
+          } else {
+            clusterEndpointsBuilder_.addAllMessages(other.clusterEndpoints_);
+          }
+        }
+      }
+      if (other.hasBackupCollection()) {
+        backupCollection_ = other.backupCollection_;
+        bitField0_ |= 0x04000000;
+        onChanged();
+      }
+      if (other.hasKmsKey()) {
+        kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      if (other.hasAutomatedBackupConfig()) {
+        mergeAutomatedBackupConfig(other.getAutomatedBackupConfig());
+      }
+      if (other.hasEncryptionInfo()) {
+        mergeEncryptionInfo(other.getEncryptionInfo());
+      }
+      switch (other.getImportSourcesCase()) {
+        case GCS_SOURCE:
+          {
+            mergeGcsSource(other.getGcsSource());
+            break;
+          }
+        case MANAGED_BACKUP_SOURCE:
+          {
+            mergeManagedBackupSource(other.getManagedBackupSource());
+            break;
+          }
+        case IMPORTSOURCES_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3842,55 +6515,55 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 64:
               {
                 replicaCount_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 88:
               {
                 authorizationMode_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 88
             case 96:
               {
                 transitEncryptionMode_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 96
             case 104:
               {
                 sizeGb_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 104
             case 112:
               {
                 shardCount_ = input.readInt32();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 112
             case 122:
@@ -3938,20 +6611,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 input.readMessage(getStateInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 146
             case 152:
               {
                 nodeType_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 152
             case 162:
               {
                 input.readMessage(
                     getPersistenceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 162
             case 170:
@@ -3963,28 +6636,115 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableRedisConfigs()
                     .getMutableMap()
                     .put(redisConfigs__.getKey(), redisConfigs__.getValue());
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 170
             case 177:
               {
                 preciseSizeGb_ = input.readDouble();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 177
             case 186:
               {
                 input.readMessage(
                     getZoneDistributionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 186
+            case 194:
+              {
+                input.readMessage(
+                    getCrossClusterReplicationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 194
             case 200:
               {
                 deletionProtectionEnabled_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 200
+            case 210:
+              {
+                input.readMessage(
+                    getMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 210
+            case 218:
+              {
+                input.readMessage(
+                    getMaintenanceScheduleFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 218
+            case 242:
+              {
+                com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment m =
+                    input.readMessage(
+                        com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.parser(),
+                        extensionRegistry);
+                if (pscServiceAttachmentsBuilder_ == null) {
+                  ensurePscServiceAttachmentsIsMutable();
+                  pscServiceAttachments_.add(m);
+                } else {
+                  pscServiceAttachmentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 242
+            case 274:
+              {
+                input.readMessage(getGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
+                importSourcesCase_ = 34;
+                break;
+              } // case 274
+            case 282:
+              {
+                input.readMessage(
+                    getManagedBackupSourceFieldBuilder().getBuilder(), extensionRegistry);
+                importSourcesCase_ = 35;
+                break;
+              } // case 282
+            case 290:
+              {
+                com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint m =
+                    input.readMessage(
+                        com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.parser(),
+                        extensionRegistry);
+                if (clusterEndpointsBuilder_ == null) {
+                  ensureClusterEndpointsIsMutable();
+                  clusterEndpoints_.add(m);
+                } else {
+                  clusterEndpointsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 290
+            case 314:
+              {
+                backupCollection_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 314
+            case 322:
+              {
+                kmsKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 322
+            case 338:
+              {
+                input.readMessage(
+                    getAutomatedBackupConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 338
+            case 346:
+              {
+                input.readMessage(getEncryptionInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 346
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4002,19 +6762,540 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int importSourcesCase_ = 0;
+    private java.lang.Object importSources_;
+
+    public ImportSourcesCase getImportSourcesCase() {
+      return ImportSourcesCase.forNumber(importSourcesCase_);
+    }
+
+    public Builder clearImportSources() {
+      importSourcesCase_ = 0;
+      importSources_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource,
+            com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.Builder,
+            com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSourceOrBuilder>
+        gcsSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gcsSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsSource() {
+      return importSourcesCase_ == 34;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gcsSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource getGcsSource() {
+      if (gcsSourceBuilder_ == null) {
+        if (importSourcesCase_ == 34) {
+          return (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) importSources_;
+        }
+        return com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.getDefaultInstance();
+      } else {
+        if (importSourcesCase_ == 34) {
+          return gcsSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGcsSource(
+        com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource value) {
+      if (gcsSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importSources_ = value;
+        onChanged();
+      } else {
+        gcsSourceBuilder_.setMessage(value);
+      }
+      importSourcesCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGcsSource(
+        com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.Builder builderForValue) {
+      if (gcsSourceBuilder_ == null) {
+        importSources_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcsSourceBuilder_.setMessage(builderForValue.build());
+      }
+      importSourcesCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGcsSource(
+        com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource value) {
+      if (gcsSourceBuilder_ == null) {
+        if (importSourcesCase_ == 34
+            && importSources_
+                != com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource
+                    .getDefaultInstance()) {
+          importSources_ =
+              com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.newBuilder(
+                      (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource)
+                          importSources_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importSources_ = value;
+        }
+        onChanged();
+      } else {
+        if (importSourcesCase_ == 34) {
+          gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
+        }
+      }
+      importSourcesCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGcsSource() {
+      if (gcsSourceBuilder_ == null) {
+        if (importSourcesCase_ == 34) {
+          importSourcesCase_ = 0;
+          importSources_ = null;
+          onChanged();
+        }
+      } else {
+        if (importSourcesCase_ == 34) {
+          importSourcesCase_ = 0;
+          importSources_ = null;
+        }
+        gcsSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.Builder
+        getGcsSourceBuilder() {
+      return getGcsSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSourceOrBuilder
+        getGcsSourceOrBuilder() {
+      if ((importSourcesCase_ == 34) && (gcsSourceBuilder_ != null)) {
+        return gcsSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (importSourcesCase_ == 34) {
+          return (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) importSources_;
+        }
+        return com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the clusters.
+     * Read permission is required to import from the provided Cloud Storage
+     * objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource gcs_source = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource,
+            com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.Builder,
+            com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSourceOrBuilder>
+        getGcsSourceFieldBuilder() {
+      if (gcsSourceBuilder_ == null) {
+        if (!(importSourcesCase_ == 34)) {
+          importSources_ =
+              com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.getDefaultInstance();
+        }
+        gcsSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource,
+                com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource.Builder,
+                com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSourceOrBuilder>(
+                (com.google.cloud.redis.cluster.v1beta1.Cluster.GcsBackupSource) importSources_,
+                getParentForChildren(),
+                isClean());
+        importSources_ = null;
+      }
+      importSourcesCase_ = 34;
+      onChanged();
+      return gcsSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource,
+            com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.Builder,
+            com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceOrBuilder>
+        managedBackupSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the managedBackupSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasManagedBackupSource() {
+      return importSourcesCase_ == 35;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The managedBackupSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+        getManagedBackupSource() {
+      if (managedBackupSourceBuilder_ == null) {
+        if (importSourcesCase_ == 35) {
+          return (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)
+              importSources_;
+        }
+        return com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+            .getDefaultInstance();
+      } else {
+        if (importSourcesCase_ == 35) {
+          return managedBackupSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setManagedBackupSource(
+        com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource value) {
+      if (managedBackupSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importSources_ = value;
+        onChanged();
+      } else {
+        managedBackupSourceBuilder_.setMessage(value);
+      }
+      importSourcesCase_ = 35;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setManagedBackupSource(
+        com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.Builder
+            builderForValue) {
+      if (managedBackupSourceBuilder_ == null) {
+        importSources_ = builderForValue.build();
+        onChanged();
+      } else {
+        managedBackupSourceBuilder_.setMessage(builderForValue.build());
+      }
+      importSourcesCase_ = 35;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeManagedBackupSource(
+        com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource value) {
+      if (managedBackupSourceBuilder_ == null) {
+        if (importSourcesCase_ == 35
+            && importSources_
+                != com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+                    .getDefaultInstance()) {
+          importSources_ =
+              com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.newBuilder(
+                      (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)
+                          importSources_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importSources_ = value;
+        }
+        onChanged();
+      } else {
+        if (importSourcesCase_ == 35) {
+          managedBackupSourceBuilder_.mergeFrom(value);
+        } else {
+          managedBackupSourceBuilder_.setMessage(value);
+        }
+      }
+      importSourcesCase_ = 35;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearManagedBackupSource() {
+      if (managedBackupSourceBuilder_ == null) {
+        if (importSourcesCase_ == 35) {
+          importSourcesCase_ = 0;
+          importSources_ = null;
+          onChanged();
+        }
+      } else {
+        if (importSourcesCase_ == 35) {
+          importSourcesCase_ = 0;
+          importSources_ = null;
+        }
+        managedBackupSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.Builder
+        getManagedBackupSourceBuilder() {
+      return getManagedBackupSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceOrBuilder
+        getManagedBackupSourceOrBuilder() {
+      if ((importSourcesCase_ == 35) && (managedBackupSourceBuilder_ != null)) {
+        return managedBackupSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (importSourcesCase_ == 35) {
+          return (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource)
+              importSources_;
+        }
+        return com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backups generated and managed by memorystore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource managed_backup_source = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource,
+            com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.Builder,
+            com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceOrBuilder>
+        getManagedBackupSourceFieldBuilder() {
+      if (managedBackupSourceBuilder_ == null) {
+        if (!(importSourcesCase_ == 35)) {
+          importSources_ =
+              com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource
+                  .getDefaultInstance();
+        }
+        managedBackupSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource,
+                com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource.Builder,
+                com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceOrBuilder>(
+                (com.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSource) importSources_,
+                getParentForChildren(),
+                isClean());
+        importSources_ = null;
+      }
+      importSourcesCase_ = 35;
+      onChanged();
+      return managedBackupSourceBuilder_;
+    }
 
     private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Unique name of the resource in this scope including project and
-     * location using the form:
+     * Required. Identifier. Unique name of the resource in this scope including
+     * project and location using the form:
      *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -4033,12 +7314,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unique name of the resource in this scope including project and
-     * location using the form:
+     * Required. Identifier. Unique name of the resource in this scope including
+     * project and location using the form:
      *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -4057,12 +7340,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unique name of the resource in this scope including project and
-     * location using the form:
+     * Required. Identifier. Unique name of the resource in this scope including
+     * project and location using the form:
      *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4072,7 +7357,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4080,18 +7365,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unique name of the resource in this scope including project and
-     * location using the form:
+     * Required. Identifier. Unique name of the resource in this scope including
+     * project and location using the form:
      *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -4099,12 +7386,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unique name of the resource in this scope including project and
-     * location using the form:
+     * Required. Identifier. Unique name of the resource in this scope including
+     * project and location using the form:
      *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4115,7 +7404,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4140,7 +7429,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -4184,7 +7473,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4205,7 +7494,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4222,7 +7511,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4233,7 +7522,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -4250,7 +7539,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4271,7 +7560,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4359,7 +7648,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4404,7 +7693,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4424,7 +7713,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;
@@ -4492,7 +7781,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4509,7 +7798,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4531,7 +7820,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4550,7 +7839,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasReplicaCount() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4582,7 +7871,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setReplicaCount(int value) {
 
       replicaCount_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4598,7 +7887,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReplicaCount() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       replicaCount_ = 0;
       onChanged();
       return this;
@@ -4640,7 +7929,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setAuthorizationModeValue(int value) {
       authorizationMode_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4686,7 +7975,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       authorizationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -4706,7 +7995,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAuthorizationMode() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       authorizationMode_ = 0;
       onChanged();
       return this;
@@ -4748,7 +8037,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTransitEncryptionModeValue(int value) {
       transitEncryptionMode_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4795,7 +8084,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       transitEncryptionMode_ = value.getNumber();
       onChanged();
       return this;
@@ -4815,7 +8104,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTransitEncryptionMode() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       transitEncryptionMode_ = 0;
       onChanged();
       return this;
@@ -4836,7 +8125,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSizeGb() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4870,7 +8159,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeGb(int value) {
 
       sizeGb_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4887,7 +8176,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       sizeGb_ = 0;
       onChanged();
       return this;
@@ -4898,25 +8187,25 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Number of shards for the Redis cluster.
+     * Optional. Number of shards for the Redis cluster.
      * </pre>
      *
-     * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the shardCount field is set.
      */
     @java.lang.Override
     public boolean hasShardCount() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. Number of shards for the Redis cluster.
+     * Optional. Number of shards for the Redis cluster.
      * </pre>
      *
-     * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The shardCount.
      */
@@ -4928,10 +8217,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Number of shards for the Redis cluster.
+     * Optional. Number of shards for the Redis cluster.
      * </pre>
      *
-     * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The shardCount to set.
      * @return This builder for chaining.
@@ -4939,7 +8228,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setShardCount(int value) {
 
       shardCount_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4947,15 +8236,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Number of shards for the Redis cluster.
+     * Optional. Number of shards for the Redis cluster.
      * </pre>
      *
-     * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int32 shard_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearShardCount() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       shardCount_ = 0;
       onChanged();
       return this;
@@ -4965,10 +8254,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePscConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         pscConfigs_ =
             new java.util.ArrayList<com.google.cloud.redis.cluster.v1beta1.PscConfig>(pscConfigs_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -4982,13 +8271,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.redis.cluster.v1beta1.PscConfig> getPscConfigsList() {
@@ -5002,13 +8291,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getPscConfigsCount() {
@@ -5022,13 +8311,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.redis.cluster.v1beta1.PscConfig getPscConfigs(int index) {
@@ -5042,13 +8331,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPscConfigs(
@@ -5069,13 +8358,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPscConfigs(
@@ -5093,13 +8382,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPscConfigs(com.google.cloud.redis.cluster.v1beta1.PscConfig value) {
@@ -5119,13 +8408,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPscConfigs(
@@ -5146,13 +8435,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPscConfigs(
@@ -5170,13 +8459,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPscConfigs(
@@ -5194,13 +8483,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllPscConfigs(
@@ -5218,19 +8507,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearPscConfigs() {
       if (pscConfigsBuilder_ == null) {
         pscConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         pscConfigsBuilder_.clear();
@@ -5241,13 +8530,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removePscConfigs(int index) {
@@ -5264,13 +8553,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.redis.cluster.v1beta1.PscConfig.Builder getPscConfigsBuilder(
@@ -5281,13 +8570,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.redis.cluster.v1beta1.PscConfigOrBuilder getPscConfigsOrBuilder(
@@ -5302,13 +8591,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.cloud.redis.cluster.v1beta1.PscConfigOrBuilder>
@@ -5323,13 +8612,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.redis.cluster.v1beta1.PscConfig.Builder addPscConfigsBuilder() {
@@ -5340,13 +8629,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.redis.cluster.v1beta1.PscConfig.Builder addPscConfigsBuilder(
@@ -5358,13 +8647,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Each PscConfig configures the consumer network where IPs will
+     * Optional. Each PscConfig configures the consumer network where IPs will
      * be designated to the cluster for client access through Private Service
      * Connect Automation. Currently, only one PscConfig is supported.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.redis.cluster.v1beta1.PscConfig psc_configs = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.redis.cluster.v1beta1.PscConfig.Builder>
@@ -5383,7 +8672,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.redis.cluster.v1beta1.PscConfig,
                 com.google.cloud.redis.cluster.v1beta1.PscConfig.Builder,
                 com.google.cloud.redis.cluster.v1beta1.PscConfigOrBuilder>(
-                pscConfigs_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                pscConfigs_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         pscConfigs_ = null;
       }
       return pscConfigsBuilder_;
@@ -5393,11 +8682,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         discoveryEndpoints_ = java.util.Collections.emptyList();
 
     private void ensureDiscoveryEndpointsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         discoveryEndpoints_ =
             new java.util.ArrayList<com.google.cloud.redis.cluster.v1beta1.DiscoveryEndpoint>(
                 discoveryEndpoints_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -5654,7 +8943,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDiscoveryEndpoints() {
       if (discoveryEndpointsBuilder_ == null) {
         discoveryEndpoints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         discoveryEndpointsBuilder_.clear();
@@ -5805,7 +9094,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.redis.cluster.v1beta1.DiscoveryEndpoint.Builder,
                 com.google.cloud.redis.cluster.v1beta1.DiscoveryEndpointOrBuilder>(
                 discoveryEndpoints_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         discoveryEndpoints_ = null;
@@ -5817,11 +9106,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePscConnectionsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         pscConnections_ =
             new java.util.ArrayList<com.google.cloud.redis.cluster.v1beta1.PscConnection>(
                 pscConnections_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -5835,8 +9124,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -5855,8 +9144,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -5874,8 +9163,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -5893,8 +9182,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -5919,8 +9208,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -5942,8 +9231,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -5967,8 +9256,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -5993,8 +9282,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6016,8 +9305,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6039,8 +9328,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6062,8 +9351,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6073,7 +9362,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPscConnections() {
       if (pscConnectionsBuilder_ == null) {
         pscConnections_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         pscConnectionsBuilder_.clear();
@@ -6084,8 +9373,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6106,8 +9395,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6122,8 +9411,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6142,8 +9431,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6162,8 +9451,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6178,8 +9467,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6196,8 +9485,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. PSC connections for discovery of the cluster topology and
-     * accessing the cluster.
+     * Output only. The list of PSC connections that are auto-created through
+     * service connectivity automation.
      * </pre>
      *
      * <code>
@@ -6221,7 +9510,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.redis.cluster.v1beta1.PscConnection.Builder,
                 com.google.cloud.redis.cluster.v1beta1.PscConnectionOrBuilder>(
                 pscConnections_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         pscConnections_ = null;
@@ -6249,7 +9538,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateInfo field is set.
      */
     public boolean hasStateInfo() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -6293,7 +9582,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         stateInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6315,7 +9604,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         stateInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6332,7 +9621,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStateInfo(com.google.cloud.redis.cluster.v1beta1.Cluster.StateInfo value) {
       if (stateInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && stateInfo_ != null
             && stateInfo_
                 != com.google.cloud.redis.cluster.v1beta1.Cluster.StateInfo.getDefaultInstance()) {
@@ -6344,7 +9633,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         stateInfoBuilder_.mergeFrom(value);
       }
       if (stateInfo_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -6361,7 +9650,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStateInfo() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       stateInfo_ = null;
       if (stateInfoBuilder_ != null) {
         stateInfoBuilder_.dispose();
@@ -6382,7 +9671,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.redis.cluster.v1beta1.Cluster.StateInfo.Builder getStateInfoBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getStateInfoFieldBuilder().getBuilder();
     }
@@ -6471,7 +9760,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setNodeTypeValue(int value) {
       nodeType_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6514,7 +9803,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       nodeType_ = value.getNumber();
       onChanged();
       return this;
@@ -6534,7 +9823,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNodeType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       nodeType_ = 0;
       onChanged();
       return this;
@@ -6560,7 +9849,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the persistenceConfig field is set.
      */
     public boolean hasPersistenceConfig() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -6605,7 +9894,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         persistenceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6627,7 +9916,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         persistenceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6645,7 +9934,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePersistenceConfig(
         com.google.cloud.redis.cluster.v1beta1.ClusterPersistenceConfig value) {
       if (persistenceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && persistenceConfig_ != null
             && persistenceConfig_
                 != com.google.cloud.redis.cluster.v1beta1.ClusterPersistenceConfig
@@ -6658,7 +9947,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         persistenceConfigBuilder_.mergeFrom(value);
       }
       if (persistenceConfig_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6675,7 +9964,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersistenceConfig() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       persistenceConfig_ = null;
       if (persistenceConfigBuilder_ != null) {
         persistenceConfigBuilder_.dispose();
@@ -6697,7 +9986,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.redis.cluster.v1beta1.ClusterPersistenceConfig.Builder
         getPersistenceConfigBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getPersistenceConfigFieldBuilder().getBuilder();
     }
@@ -6770,7 +10059,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!redisConfigs_.isMutable()) {
         redisConfigs_ = redisConfigs_.copy();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return redisConfigs_;
     }
@@ -6859,7 +10148,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearRedisConfigs() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableRedisConfigs().getMutableMap().clear();
       return this;
     }
@@ -6883,7 +10172,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableRedisConfigs() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return internalGetMutableRedisConfigs().getMutableMap();
     }
     /**
@@ -6904,7 +10193,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableRedisConfigs().getMutableMap().put(key, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return this;
     }
     /**
@@ -6919,7 +10208,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllRedisConfigs(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableRedisConfigs().getMutableMap().putAll(values);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -6939,7 +10228,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPreciseSizeGb() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -6975,7 +10264,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setPreciseSizeGb(double value) {
 
       preciseSizeGb_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6993,7 +10282,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPreciseSizeGb() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       preciseSizeGb_ = 0D;
       onChanged();
       return this;
@@ -7020,7 +10309,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zoneDistributionConfig field is set.
      */
     public boolean hasZoneDistributionConfig() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -7068,7 +10357,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         zoneDistributionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7091,7 +10380,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         zoneDistributionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7110,7 +10399,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeZoneDistributionConfig(
         com.google.cloud.redis.cluster.v1beta1.ZoneDistributionConfig value) {
       if (zoneDistributionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && zoneDistributionConfig_ != null
             && zoneDistributionConfig_
                 != com.google.cloud.redis.cluster.v1beta1.ZoneDistributionConfig
@@ -7123,7 +10412,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         zoneDistributionConfigBuilder_.mergeFrom(value);
       }
       if (zoneDistributionConfig_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -7141,7 +10430,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearZoneDistributionConfig() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       zoneDistributionConfig_ = null;
       if (zoneDistributionConfigBuilder_ != null) {
         zoneDistributionConfigBuilder_.dispose();
@@ -7164,7 +10453,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.redis.cluster.v1beta1.ZoneDistributionConfig.Builder
         getZoneDistributionConfigBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getZoneDistributionConfigFieldBuilder().getBuilder();
     }
@@ -7219,6 +10508,221 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return zoneDistributionConfigBuilder_;
     }
 
+    private com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
+        crossClusterReplicationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig,
+            com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.Builder,
+            com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfigOrBuilder>
+        crossClusterReplicationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the crossClusterReplicationConfig field is set.
+     */
+    public boolean hasCrossClusterReplicationConfig() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The crossClusterReplicationConfig.
+     */
+    public com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
+        getCrossClusterReplicationConfig() {
+      if (crossClusterReplicationConfigBuilder_ == null) {
+        return crossClusterReplicationConfig_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
+                .getDefaultInstance()
+            : crossClusterReplicationConfig_;
+      } else {
+        return crossClusterReplicationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCrossClusterReplicationConfig(
+        com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig value) {
+      if (crossClusterReplicationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        crossClusterReplicationConfig_ = value;
+      } else {
+        crossClusterReplicationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCrossClusterReplicationConfig(
+        com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.Builder
+            builderForValue) {
+      if (crossClusterReplicationConfigBuilder_ == null) {
+        crossClusterReplicationConfig_ = builderForValue.build();
+      } else {
+        crossClusterReplicationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCrossClusterReplicationConfig(
+        com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig value) {
+      if (crossClusterReplicationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && crossClusterReplicationConfig_ != null
+            && crossClusterReplicationConfig_
+                != com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
+                    .getDefaultInstance()) {
+          getCrossClusterReplicationConfigBuilder().mergeFrom(value);
+        } else {
+          crossClusterReplicationConfig_ = value;
+        }
+      } else {
+        crossClusterReplicationConfigBuilder_.mergeFrom(value);
+      }
+      if (crossClusterReplicationConfig_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCrossClusterReplicationConfig() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      crossClusterReplicationConfig_ = null;
+      if (crossClusterReplicationConfigBuilder_ != null) {
+        crossClusterReplicationConfigBuilder_.dispose();
+        crossClusterReplicationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.Builder
+        getCrossClusterReplicationConfigBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getCrossClusterReplicationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfigOrBuilder
+        getCrossClusterReplicationConfigOrBuilder() {
+      if (crossClusterReplicationConfigBuilder_ != null) {
+        return crossClusterReplicationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return crossClusterReplicationConfig_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
+                .getDefaultInstance()
+            : crossClusterReplicationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cross cluster replication config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig cross_cluster_replication_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig,
+            com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.Builder,
+            com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfigOrBuilder>
+        getCrossClusterReplicationConfigFieldBuilder() {
+      if (crossClusterReplicationConfigBuilder_ == null) {
+        crossClusterReplicationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig,
+                com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.Builder,
+                com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfigOrBuilder>(
+                getCrossClusterReplicationConfig(), getParentForChildren(), isClean());
+        crossClusterReplicationConfig_ = null;
+      }
+      return crossClusterReplicationConfigBuilder_;
+    }
+
     private boolean deletionProtectionEnabled_;
     /**
      *
@@ -7235,7 +10739,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDeletionProtectionEnabled() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -7271,7 +10775,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeletionProtectionEnabled(boolean value) {
 
       deletionProtectionEnabled_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7289,10 +10793,1945 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeletionProtectionEnabled() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       deletionProtectionEnabled_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy,
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.Builder,
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenancePolicy field is set.
+     */
+    public boolean hasMaintenancePolicy() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenancePolicy.
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy getMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      } else {
+        return maintenancePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenancePolicy_ = value;
+      } else {
+        maintenancePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.Builder builderForValue) {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = builderForValue.build();
+      } else {
+        maintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaintenancePolicy(
+        com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && maintenancePolicy_ != null
+            && maintenancePolicy_
+                != com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy
+                    .getDefaultInstance()) {
+          getMaintenancePolicyBuilder().mergeFrom(value);
+        } else {
+          maintenancePolicy_ = value;
+        }
+      } else {
+        maintenancePolicyBuilder_.mergeFrom(value);
+      }
+      if (maintenancePolicy_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenancePolicy() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.Builder
+        getMaintenancePolicyBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getMaintenancePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicyOrBuilder
+        getMaintenancePolicyOrBuilder() {
+      if (maintenancePolicyBuilder_ != null) {
+        return maintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ClusterMaintenancePolicy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy maintenance_policy = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy,
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.Builder,
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicyOrBuilder>
+        getMaintenancePolicyFieldBuilder() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy,
+                com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicy.Builder,
+                com.google.cloud.redis.cluster.v1beta1.ClusterMaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
+        maintenancePolicy_ = null;
+      }
+      return maintenancePolicyBuilder_;
+    }
+
+    private com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenanceSchedule_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule,
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.Builder,
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceScheduleOrBuilder>
+        maintenanceScheduleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the maintenanceSchedule field is set.
+     */
+    public boolean hasMaintenanceSchedule() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The maintenanceSchedule.
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule
+        getMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      } else {
+        return maintenanceScheduleBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceSchedule_ = value;
+      } else {
+        maintenanceScheduleBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.Builder builderForValue) {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = builderForValue.build();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMaintenanceSchedule(
+        com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && maintenanceSchedule_ != null
+            && maintenanceSchedule_
+                != com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule
+                    .getDefaultInstance()) {
+          getMaintenanceScheduleBuilder().mergeFrom(value);
+        } else {
+          maintenanceSchedule_ = value;
+        }
+      } else {
+        maintenanceScheduleBuilder_.mergeFrom(value);
+      }
+      if (maintenanceSchedule_ != null) {
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMaintenanceSchedule() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      maintenanceSchedule_ = null;
+      if (maintenanceScheduleBuilder_ != null) {
+        maintenanceScheduleBuilder_.dispose();
+        maintenanceScheduleBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.Builder
+        getMaintenanceScheduleBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return getMaintenanceScheduleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceScheduleOrBuilder
+        getMaintenanceScheduleOrBuilder() {
+      if (maintenanceScheduleBuilder_ != null) {
+        return maintenanceScheduleBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ClusterMaintenanceSchedule Output only Published maintenance
+     * schedule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule maintenance_schedule = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule,
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.Builder,
+            com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceScheduleOrBuilder>
+        getMaintenanceScheduleFieldBuilder() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceScheduleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule,
+                com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceSchedule.Builder,
+                com.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceScheduleOrBuilder>(
+                getMaintenanceSchedule(), getParentForChildren(), isClean());
+        maintenanceSchedule_ = null;
+      }
+      return maintenanceScheduleBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment>
+        pscServiceAttachments_ = java.util.Collections.emptyList();
+
+    private void ensurePscServiceAttachmentsIsMutable() {
+      if (!((bitField0_ & 0x01000000) != 0)) {
+        pscServiceAttachments_ =
+            new java.util.ArrayList<com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment>(
+                pscServiceAttachments_);
+        bitField0_ |= 0x01000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment,
+            com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder,
+            com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder>
+        pscServiceAttachmentsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment>
+        getPscServiceAttachmentsList() {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pscServiceAttachments_);
+      } else {
+        return pscServiceAttachmentsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPscServiceAttachmentsCount() {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        return pscServiceAttachments_.size();
+      } else {
+        return pscServiceAttachmentsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment getPscServiceAttachments(
+        int index) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        return pscServiceAttachments_.get(index);
+      } else {
+        return pscServiceAttachmentsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPscServiceAttachments(
+        int index, com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment value) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscServiceAttachmentsIsMutable();
+        pscServiceAttachments_.set(index, value);
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPscServiceAttachments(
+        int index,
+        com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder builderForValue) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        ensurePscServiceAttachmentsIsMutable();
+        pscServiceAttachments_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPscServiceAttachments(
+        com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment value) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscServiceAttachmentsIsMutable();
+        pscServiceAttachments_.add(value);
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPscServiceAttachments(
+        int index, com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment value) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscServiceAttachmentsIsMutable();
+        pscServiceAttachments_.add(index, value);
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPscServiceAttachments(
+        com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder builderForValue) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        ensurePscServiceAttachmentsIsMutable();
+        pscServiceAttachments_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPscServiceAttachments(
+        int index,
+        com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder builderForValue) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        ensurePscServiceAttachmentsIsMutable();
+        pscServiceAttachments_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPscServiceAttachments(
+        java.lang.Iterable<? extends com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment>
+            values) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        ensurePscServiceAttachmentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pscServiceAttachments_);
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPscServiceAttachments() {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        pscServiceAttachments_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x01000000);
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePscServiceAttachments(int index) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        ensurePscServiceAttachmentsIsMutable();
+        pscServiceAttachments_.remove(index);
+        onChanged();
+      } else {
+        pscServiceAttachmentsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder
+        getPscServiceAttachmentsBuilder(int index) {
+      return getPscServiceAttachmentsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder
+        getPscServiceAttachmentsOrBuilder(int index) {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        return pscServiceAttachments_.get(index);
+      } else {
+        return pscServiceAttachmentsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder>
+        getPscServiceAttachmentsOrBuilderList() {
+      if (pscServiceAttachmentsBuilder_ != null) {
+        return pscServiceAttachmentsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pscServiceAttachments_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder
+        addPscServiceAttachmentsBuilder() {
+      return getPscServiceAttachmentsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder
+        addPscServiceAttachmentsBuilder(int index) {
+      return getPscServiceAttachmentsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure Psc connections
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.PscServiceAttachment psc_service_attachments = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder>
+        getPscServiceAttachmentsBuilderList() {
+      return getPscServiceAttachmentsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment,
+            com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder,
+            com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder>
+        getPscServiceAttachmentsFieldBuilder() {
+      if (pscServiceAttachmentsBuilder_ == null) {
+        pscServiceAttachmentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment,
+                com.google.cloud.redis.cluster.v1beta1.PscServiceAttachment.Builder,
+                com.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentOrBuilder>(
+                pscServiceAttachments_,
+                ((bitField0_ & 0x01000000) != 0),
+                getParentForChildren(),
+                isClean());
+        pscServiceAttachments_ = null;
+      }
+      return pscServiceAttachmentsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint>
+        clusterEndpoints_ = java.util.Collections.emptyList();
+
+    private void ensureClusterEndpointsIsMutable() {
+      if (!((bitField0_ & 0x02000000) != 0)) {
+        clusterEndpoints_ =
+            new java.util.ArrayList<com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint>(
+                clusterEndpoints_);
+        bitField0_ |= 0x02000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint,
+            com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder,
+            com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder>
+        clusterEndpointsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint>
+        getClusterEndpointsList() {
+      if (clusterEndpointsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(clusterEndpoints_);
+      } else {
+        return clusterEndpointsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getClusterEndpointsCount() {
+      if (clusterEndpointsBuilder_ == null) {
+        return clusterEndpoints_.size();
+      } else {
+        return clusterEndpointsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint getClusterEndpoints(int index) {
+      if (clusterEndpointsBuilder_ == null) {
+        return clusterEndpoints_.get(index);
+      } else {
+        return clusterEndpointsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClusterEndpoints(
+        int index, com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint value) {
+      if (clusterEndpointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClusterEndpointsIsMutable();
+        clusterEndpoints_.set(index, value);
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClusterEndpoints(
+        int index, com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder builderForValue) {
+      if (clusterEndpointsBuilder_ == null) {
+        ensureClusterEndpointsIsMutable();
+        clusterEndpoints_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addClusterEndpoints(
+        com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint value) {
+      if (clusterEndpointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClusterEndpointsIsMutable();
+        clusterEndpoints_.add(value);
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addClusterEndpoints(
+        int index, com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint value) {
+      if (clusterEndpointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClusterEndpointsIsMutable();
+        clusterEndpoints_.add(index, value);
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addClusterEndpoints(
+        com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder builderForValue) {
+      if (clusterEndpointsBuilder_ == null) {
+        ensureClusterEndpointsIsMutable();
+        clusterEndpoints_.add(builderForValue.build());
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addClusterEndpoints(
+        int index, com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder builderForValue) {
+      if (clusterEndpointsBuilder_ == null) {
+        ensureClusterEndpointsIsMutable();
+        clusterEndpoints_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllClusterEndpoints(
+        java.lang.Iterable<? extends com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint>
+            values) {
+      if (clusterEndpointsBuilder_ == null) {
+        ensureClusterEndpointsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, clusterEndpoints_);
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClusterEndpoints() {
+      if (clusterEndpointsBuilder_ == null) {
+        clusterEndpoints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x02000000);
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeClusterEndpoints(int index) {
+      if (clusterEndpointsBuilder_ == null) {
+        ensureClusterEndpointsIsMutable();
+        clusterEndpoints_.remove(index);
+        onChanged();
+      } else {
+        clusterEndpointsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder
+        getClusterEndpointsBuilder(int index) {
+      return getClusterEndpointsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder
+        getClusterEndpointsOrBuilder(int index) {
+      if (clusterEndpointsBuilder_ == null) {
+        return clusterEndpoints_.get(index);
+      } else {
+        return clusterEndpointsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder>
+        getClusterEndpointsOrBuilderList() {
+      if (clusterEndpointsBuilder_ != null) {
+        return clusterEndpointsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(clusterEndpoints_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder
+        addClusterEndpointsBuilder() {
+      return getClusterEndpointsFieldBuilder()
+          .addBuilder(com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder
+        addClusterEndpointsBuilder(int index) {
+      return getClusterEndpointsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of cluster enpoints.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.cluster.v1beta1.ClusterEndpoint cluster_endpoints = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder>
+        getClusterEndpointsBuilderList() {
+      return getClusterEndpointsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint,
+            com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder,
+            com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder>
+        getClusterEndpointsFieldBuilder() {
+      if (clusterEndpointsBuilder_ == null) {
+        clusterEndpointsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint,
+                com.google.cloud.redis.cluster.v1beta1.ClusterEndpoint.Builder,
+                com.google.cloud.redis.cluster.v1beta1.ClusterEndpointOrBuilder>(
+                clusterEndpoints_,
+                ((bitField0_ & 0x02000000) != 0),
+                getParentForChildren(),
+                isClean());
+        clusterEndpoints_ = null;
+      }
+      return clusterEndpointsBuilder_;
+    }
+
+    private java.lang.Object backupCollection_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the backupCollection field is set.
+     */
+    public boolean hasBackupCollection() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The backupCollection.
+     */
+    public java.lang.String getBackupCollection() {
+      java.lang.Object ref = backupCollection_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupCollection_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for backupCollection.
+     */
+    public com.google.protobuf.ByteString getBackupCollectionBytes() {
+      java.lang.Object ref = backupCollection_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupCollection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The backupCollection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupCollection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupCollection_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupCollection() {
+      backupCollection_ = getDefaultInstance().getBackupCollection();
+      bitField0_ = (bitField0_ & ~0x04000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 39 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for backupCollection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupCollectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupCollection_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the kmsKey field is set.
+     */
+    public boolean hasKmsKey() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKey_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x08000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKey_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automatedBackupConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig,
+            com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.Builder,
+            com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfigOrBuilder>
+        automatedBackupConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the automatedBackupConfig field is set.
+     */
+    public boolean hasAutomatedBackupConfig() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The automatedBackupConfig.
+     */
+    public com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig getAutomatedBackupConfig() {
+      if (automatedBackupConfigBuilder_ == null) {
+        return automatedBackupConfig_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.getDefaultInstance()
+            : automatedBackupConfig_;
+      } else {
+        return automatedBackupConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutomatedBackupConfig(
+        com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig value) {
+      if (automatedBackupConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        automatedBackupConfig_ = value;
+      } else {
+        automatedBackupConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutomatedBackupConfig(
+        com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.Builder builderForValue) {
+      if (automatedBackupConfigBuilder_ == null) {
+        automatedBackupConfig_ = builderForValue.build();
+      } else {
+        automatedBackupConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutomatedBackupConfig(
+        com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig value) {
+      if (automatedBackupConfigBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && automatedBackupConfig_ != null
+            && automatedBackupConfig_
+                != com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig
+                    .getDefaultInstance()) {
+          getAutomatedBackupConfigBuilder().mergeFrom(value);
+        } else {
+          automatedBackupConfig_ = value;
+        }
+      } else {
+        automatedBackupConfigBuilder_.mergeFrom(value);
+      }
+      if (automatedBackupConfig_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutomatedBackupConfig() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      automatedBackupConfig_ = null;
+      if (automatedBackupConfigBuilder_ != null) {
+        automatedBackupConfigBuilder_.dispose();
+        automatedBackupConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.Builder
+        getAutomatedBackupConfigBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getAutomatedBackupConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfigOrBuilder
+        getAutomatedBackupConfigOrBuilder() {
+      if (automatedBackupConfigBuilder_ != null) {
+        return automatedBackupConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return automatedBackupConfig_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.getDefaultInstance()
+            : automatedBackupConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig automated_backup_config = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig,
+            com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.Builder,
+            com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfigOrBuilder>
+        getAutomatedBackupConfigFieldBuilder() {
+      if (automatedBackupConfigBuilder_ == null) {
+        automatedBackupConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig,
+                com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.Builder,
+                com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfigOrBuilder>(
+                getAutomatedBackupConfig(), getParentForChildren(), isClean());
+        automatedBackupConfig_ = null;
+      }
+      return automatedBackupConfigBuilder_;
+    }
+
+    private com.google.cloud.redis.cluster.v1beta1.EncryptionInfo encryptionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.EncryptionInfo,
+            com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.Builder,
+            com.google.cloud.redis.cluster.v1beta1.EncryptionInfoOrBuilder>
+        encryptionInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the encryptionInfo field is set.
+     */
+    public boolean hasEncryptionInfo() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The encryptionInfo.
+     */
+    public com.google.cloud.redis.cluster.v1beta1.EncryptionInfo getEncryptionInfo() {
+      if (encryptionInfoBuilder_ == null) {
+        return encryptionInfo_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.getDefaultInstance()
+            : encryptionInfo_;
+      } else {
+        return encryptionInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionInfo(com.google.cloud.redis.cluster.v1beta1.EncryptionInfo value) {
+      if (encryptionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionInfo_ = value;
+      } else {
+        encryptionInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionInfo(
+        com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.Builder builderForValue) {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfo_ = builderForValue.build();
+      } else {
+        encryptionInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEncryptionInfo(
+        com.google.cloud.redis.cluster.v1beta1.EncryptionInfo value) {
+      if (encryptionInfoBuilder_ == null) {
+        if (((bitField0_ & 0x20000000) != 0)
+            && encryptionInfo_ != null
+            && encryptionInfo_
+                != com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.getDefaultInstance()) {
+          getEncryptionInfoBuilder().mergeFrom(value);
+        } else {
+          encryptionInfo_ = value;
+        }
+      } else {
+        encryptionInfoBuilder_.mergeFrom(value);
+      }
+      if (encryptionInfo_ != null) {
+        bitField0_ |= 0x20000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEncryptionInfo() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      encryptionInfo_ = null;
+      if (encryptionInfoBuilder_ != null) {
+        encryptionInfoBuilder_.dispose();
+        encryptionInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.Builder
+        getEncryptionInfoBuilder() {
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return getEncryptionInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.EncryptionInfoOrBuilder
+        getEncryptionInfoOrBuilder() {
+      if (encryptionInfoBuilder_ != null) {
+        return encryptionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionInfo_ == null
+            ? com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.getDefaultInstance()
+            : encryptionInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.EncryptionInfo encryption_info = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1beta1.EncryptionInfo,
+            com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.Builder,
+            com.google.cloud.redis.cluster.v1beta1.EncryptionInfoOrBuilder>
+        getEncryptionInfoFieldBuilder() {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1beta1.EncryptionInfo,
+                com.google.cloud.redis.cluster.v1beta1.EncryptionInfo.Builder,
+                com.google.cloud.redis.cluster.v1beta1.EncryptionInfoOrBuilder>(
+                getEncryptionInfo(), getParentForChildren(), isClean());
+        encryptionInfo_ = null;
+      }
+      return encryptionInfoBuilder_;
     }
 
     @java.lang.Override

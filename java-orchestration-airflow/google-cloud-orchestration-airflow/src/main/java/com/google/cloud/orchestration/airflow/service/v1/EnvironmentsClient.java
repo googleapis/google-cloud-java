@@ -207,7 +207,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListWorkloads</td>
  *      <td><p> Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer component.
- * <p>  This method is supported for Cloud Composer environments in versions composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
+ * <p>  This method is supported for Cloud Composer environments in versions composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1476,7 +1476,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1513,7 +1513,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1547,7 +1547,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1585,7 +1585,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *
@@ -1623,7 +1623,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * component.
    *
    * <p>This method is supported for Cloud Composer environments in versions
-   * composer-3.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   * composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *
    * <p>Sample code:
    *

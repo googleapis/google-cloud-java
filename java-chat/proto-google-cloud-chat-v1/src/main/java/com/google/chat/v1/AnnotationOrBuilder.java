@@ -195,5 +195,40 @@ public interface AnnotationOrBuilder
    */
   com.google.chat.v1.RichLinkMetadataOrBuilder getRichLinkMetadataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a custom emoji.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+   *
+   * @return Whether the customEmojiMetadata field is set.
+   */
+  boolean hasCustomEmojiMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a custom emoji.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+   *
+   * @return The customEmojiMetadata.
+   */
+  com.google.chat.v1.CustomEmojiMetadata getCustomEmojiMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a custom emoji.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CustomEmojiMetadata custom_emoji_metadata = 7;</code>
+   */
+  com.google.chat.v1.CustomEmojiMetadataOrBuilder getCustomEmojiMetadataOrBuilder();
+
   com.google.chat.v1.Annotation.MetadataCase getMetadataCase();
 }

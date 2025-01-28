@@ -120,11 +120,12 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * EKM Partner Virtu
+     * This enum value is never used.
      * </pre>
      *
-     * <code>VIRTRU = 4;</code>
+     * <code>VIRTRU = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     VIRTRU(4),
     UNRECOGNIZED(-1),
     ;
@@ -173,12 +174,12 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * EKM Partner Virtu
+     * This enum value is never used.
      * </pre>
      *
-     * <code>VIRTRU = 4;</code>
+     * <code>VIRTRU = 4 [deprecated = true];</code>
      */
-    public static final int VIRTRU_VALUE = 4;
+    @java.lang.Deprecated public static final int VIRTRU_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {

@@ -28,9 +28,7 @@ public interface RuleConfigInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * Backup Rule id fetched from backup plan.
+   * Output only. Backup Rule id fetched from backup plan.
    * </pre>
    *
    * <code>string rule_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -42,9 +40,7 @@ public interface RuleConfigInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * Backup Rule id fetched from backup plan.
+   * Output only. Backup Rule id fetched from backup plan.
    * </pre>
    *
    * <code>string rule_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -86,9 +82,7 @@ public interface RuleConfigInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * google.rpc.Status object to store the last backup error.
+   * Output only. google.rpc.Status object to store the last backup error.
    * </pre>
    *
    * <code>.google.rpc.Status last_backup_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -101,9 +95,7 @@ public interface RuleConfigInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * google.rpc.Status object to store the last backup error.
+   * Output only. google.rpc.Status object to store the last backup error.
    * </pre>
    *
    * <code>.google.rpc.Status last_backup_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -116,9 +108,7 @@ public interface RuleConfigInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * google.rpc.Status object to store the last backup error.
+   * Output only. google.rpc.Status object to store the last backup error.
    * </pre>
    *
    * <code>.google.rpc.Status last_backup_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];

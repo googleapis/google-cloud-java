@@ -270,6 +270,33 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
     }
   }
 
+  public static final int ACTIVE_ONLY_FIELD_NUMBER = 6;
+  private boolean activeOnly_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, only metrics and monitored resource types that have
+   * recent data (within roughly 25 hours) will be included in the response.
+   *  - If a metric descriptor enumerates monitored resource types, only the
+   *    monitored resource types for which the metric type has recent data will
+   *    be included in the returned metric descriptor, and if none of them have
+   *    recent data, the metric descriptor will not be returned.
+   *  - If a metric descriptor does not enumerate the compatible monitored
+   *    resource types, it will be returned only if the metric type has recent
+   *    data for some monitored resource type. The returned descriptor will not
+   *    enumerate any monitored resource types.
+   * </pre>
+   *
+   * <code>bool active_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The activeOnly.
+   */
+  @java.lang.Override
+  public boolean getActiveOnly() {
+    return activeOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -296,6 +323,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
     }
+    if (activeOnly_ != false) {
+      output.writeBool(6, activeOnly_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -317,6 +347,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
     }
+    if (activeOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, activeOnly_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -337,6 +370,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
     if (!getFilter().equals(other.getFilter())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getActiveOnly() != other.getActiveOnly()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -356,6 +390,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + ACTIVE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getActiveOnly());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -500,6 +536,7 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
       filter_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      activeOnly_ = false;
       return this;
     }
 
@@ -547,6 +584,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.activeOnly_ = activeOnly_;
       }
     }
 
@@ -614,6 +654,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.getActiveOnly() != false) {
+        setActiveOnly(other.getActiveOnly());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -664,6 +707,12 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000001;
                 break;
               } // case 42
+            case 48:
+              {
+                activeOnly_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1136,6 +1185,86 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean activeOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, only metrics and monitored resource types that have
+     * recent data (within roughly 25 hours) will be included in the response.
+     *  - If a metric descriptor enumerates monitored resource types, only the
+     *    monitored resource types for which the metric type has recent data will
+     *    be included in the returned metric descriptor, and if none of them have
+     *    recent data, the metric descriptor will not be returned.
+     *  - If a metric descriptor does not enumerate the compatible monitored
+     *    resource types, it will be returned only if the metric type has recent
+     *    data for some monitored resource type. The returned descriptor will not
+     *    enumerate any monitored resource types.
+     * </pre>
+     *
+     * <code>bool active_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The activeOnly.
+     */
+    @java.lang.Override
+    public boolean getActiveOnly() {
+      return activeOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, only metrics and monitored resource types that have
+     * recent data (within roughly 25 hours) will be included in the response.
+     *  - If a metric descriptor enumerates monitored resource types, only the
+     *    monitored resource types for which the metric type has recent data will
+     *    be included in the returned metric descriptor, and if none of them have
+     *    recent data, the metric descriptor will not be returned.
+     *  - If a metric descriptor does not enumerate the compatible monitored
+     *    resource types, it will be returned only if the metric type has recent
+     *    data for some monitored resource type. The returned descriptor will not
+     *    enumerate any monitored resource types.
+     * </pre>
+     *
+     * <code>bool active_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The activeOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveOnly(boolean value) {
+
+      activeOnly_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, only metrics and monitored resource types that have
+     * recent data (within roughly 25 hours) will be included in the response.
+     *  - If a metric descriptor enumerates monitored resource types, only the
+     *    monitored resource types for which the metric type has recent data will
+     *    be included in the returned metric descriptor, and if none of them have
+     *    recent data, the metric descriptor will not be returned.
+     *  - If a metric descriptor does not enumerate the compatible monitored
+     *    resource types, it will be returned only if the metric type has recent
+     *    data for some monitored resource type. The returned descriptor will not
+     *    enumerate any monitored resource types.
+     * </pre>
+     *
+     * <code>bool active_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearActiveOnly() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      activeOnly_ = false;
       onChanged();
       return this;
     }

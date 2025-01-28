@@ -43,7 +43,7 @@ public enum HttpAuthorizationHeader implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * Send an ID token for the project-specific Google Workspace Add-ons system
+   * Send an ID token for the project-specific Google Workspace add-ons system
    * service account (default)
    * </pre>
    *
@@ -87,7 +87,7 @@ public enum HttpAuthorizationHeader implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * Send an ID token for the project-specific Google Workspace Add-ons system
+   * Send an ID token for the project-specific Google Workspace add-ons system
    * service account (default)
    * </pre>
    *

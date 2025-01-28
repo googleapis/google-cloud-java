@@ -310,10 +310,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The resource's name.
+   * Output only. Identifier. The resource's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -333,10 +335,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The resource's name.
+   * Output only. Identifier. The resource's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -1345,10 +1349,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The resource's name.
+     * Output only. Identifier. The resource's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The name.
      */
@@ -1367,10 +1373,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The resource's name.
+     * Output only. Identifier. The resource's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -1389,10 +1397,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The resource's name.
+     * Output only. Identifier. The resource's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1410,10 +1420,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The resource's name.
+     * Output only. Identifier. The resource's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1427,10 +1439,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The resource's name.
+     * Output only. Identifier. The resource's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

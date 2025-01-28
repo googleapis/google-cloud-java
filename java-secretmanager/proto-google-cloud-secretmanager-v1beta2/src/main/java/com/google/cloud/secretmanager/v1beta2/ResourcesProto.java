@@ -205,14 +205,14 @@ public final class ResourcesProto {
           + "mpB\003\340A\001\0227\n\017rotation_period\030\002 \001(\0132\031.googl"
           + "e.protobuf.DurationB\003\340A\004\"L\n\rSecretPayloa"
           + "d\022\014\n\004data\030\001 \001(\014\022\035\n\013data_crc32c\030\002 \001(\003B\003\340A"
-          + "\001H\000\210\001\001B\016\n\014_data_crc32cB\203\002\n&com.google.cl"
+          + "\001H\000\210\001\001B\016\n\014_data_crc32cB\200\002\n&com.google.cl"
           + "oud.secretmanager.v1beta2B\016ResourcesProt"
           + "oP\001ZLcloud.google.com/go/secretmanager/a"
           + "piv1beta2/secretmanagerpb;secretmanagerp"
-          + "b\370\001\001\242\002\003GSM\252\002\"Google.Cloud.SecretManager."
-          + "V1Beta2\312\002\"Google\\Cloud\\SecretManager\\V1b"
-          + "eta2\352\002%Google::Cloud::SecretManager::V1b"
-          + "eta2b\006proto3"
+          + "b\242\002\003GSM\252\002\"Google.Cloud.SecretManager.V1B"
+          + "eta2\312\002\"Google\\Cloud\\SecretManager\\V1beta"
+          + "2\352\002%Google::Cloud::SecretManager::V1beta"
+          + "2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

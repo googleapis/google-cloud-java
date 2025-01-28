@@ -1841,8 +1841,7 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a reaction and adds it to a message. Only unicode emojis are
-     * supported. For an example, see
+     * Creates a reaction and adds it to a message. For an example, see
      * [Add a reaction to a
      * message](https://developers.google.com/workspace/chat/create-reactions).
      * Requires [user
@@ -1878,8 +1877,7 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a reaction to a message. Only unicode emojis are supported.
-     * For an example, see
+     * Deletes a reaction to a message. For an example, see
      * [Delete a
      * reaction](https://developers.google.com/workspace/chat/delete-reactions).
      * Requires [user
@@ -2661,8 +2659,7 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a reaction and adds it to a message. Only unicode emojis are
-     * supported. For an example, see
+     * Creates a reaction and adds it to a message. For an example, see
      * [Add a reaction to a
      * message](https://developers.google.com/workspace/chat/create-reactions).
      * Requires [user
@@ -2702,8 +2699,7 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a reaction to a message. Only unicode emojis are supported.
-     * For an example, see
+     * Deletes a reaction to a message. For an example, see
      * [Delete a
      * reaction](https://developers.google.com/workspace/chat/delete-reactions).
      * Requires [user
@@ -3419,8 +3415,7 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a reaction and adds it to a message. Only unicode emojis are
-     * supported. For an example, see
+     * Creates a reaction and adds it to a message. For an example, see
      * [Add a reaction to a
      * message](https://developers.google.com/workspace/chat/create-reactions).
      * Requires [user
@@ -3454,8 +3449,7 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a reaction to a message. Only unicode emojis are supported.
-     * For an example, see
+     * Deletes a reaction to a message. For an example, see
      * [Delete a
      * reaction](https://developers.google.com/workspace/chat/delete-reactions).
      * Requires [user
@@ -4164,8 +4158,7 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a reaction and adds it to a message. Only unicode emojis are
-     * supported. For an example, see
+     * Creates a reaction and adds it to a message. For an example, see
      * [Add a reaction to a
      * message](https://developers.google.com/workspace/chat/create-reactions).
      * Requires [user
@@ -4200,8 +4193,7 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a reaction to a message. Only unicode emojis are supported.
-     * For an example, see
+     * Deletes a reaction to a message. For an example, see
      * [Delete a
      * reaction](https://developers.google.com/workspace/chat/delete-reactions).
      * Requires [user

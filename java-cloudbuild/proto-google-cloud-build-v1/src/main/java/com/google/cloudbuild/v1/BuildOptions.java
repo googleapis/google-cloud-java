@@ -2624,6 +2624,26 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int ENABLE_STRUCTURED_LOGGING_FIELD_NUMBER = 23;
+  private boolean enableStructuredLogging_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to specify whether structured logging is enabled.
+   *
+   * If true, JSON-formatted logs are parsed as structured logs.
+   * </pre>
+   *
+   * <code>bool enable_structured_logging = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableStructuredLogging.
+   */
+  @java.lang.Override
+  public boolean getEnableStructuredLogging() {
+    return enableStructuredLogging_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2694,6 +2714,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     }
     if (automapSubstitutions_ != false) {
       output.writeBool(22, automapSubstitutions_);
+    }
+    if (enableStructuredLogging_ != false) {
+      output.writeBool(23, enableStructuredLogging_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2777,6 +2800,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     if (automapSubstitutions_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, automapSubstitutions_);
     }
+    if (enableStructuredLogging_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, enableStructuredLogging_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2810,6 +2836,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     if (!getSecretEnvList().equals(other.getSecretEnvList())) return false;
     if (!getVolumesList().equals(other.getVolumesList())) return false;
     if (defaultLogsBucketBehavior_ != other.defaultLogsBucketBehavior_) return false;
+    if (getEnableStructuredLogging() != other.getEnableStructuredLogging()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2861,6 +2888,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DEFAULT_LOGS_BUCKET_BEHAVIOR_FIELD_NUMBER;
     hash = (53 * hash) + defaultLogsBucketBehavior_;
+    hash = (37 * hash) + ENABLE_STRUCTURED_LOGGING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStructuredLogging());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3035,6 +3064,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00002000);
       defaultLogsBucketBehavior_ = 0;
+      enableStructuredLogging_ = false;
       return this;
     }
 
@@ -3131,6 +3161,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.defaultLogsBucketBehavior_ = defaultLogsBucketBehavior_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.enableStructuredLogging_ = enableStructuredLogging_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3272,6 +3305,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (other.defaultLogsBucketBehavior_ != 0) {
         setDefaultLogsBucketBehaviorValue(other.getDefaultLogsBucketBehaviorValue());
       }
+      if (other.getEnableStructuredLogging() != false) {
+        setEnableStructuredLogging(other.getEnableStructuredLogging());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3409,6 +3445,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 176
+            case 184:
+              {
+                enableStructuredLogging_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 184
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5737,6 +5779,65 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDefaultLogsBucketBehavior() {
       bitField0_ = (bitField0_ & ~0x00004000);
       defaultLogsBucketBehavior_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableStructuredLogging_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify whether structured logging is enabled.
+     *
+     * If true, JSON-formatted logs are parsed as structured logs.
+     * </pre>
+     *
+     * <code>bool enable_structured_logging = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableStructuredLogging.
+     */
+    @java.lang.Override
+    public boolean getEnableStructuredLogging() {
+      return enableStructuredLogging_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify whether structured logging is enabled.
+     *
+     * If true, JSON-formatted logs are parsed as structured logs.
+     * </pre>
+     *
+     * <code>bool enable_structured_logging = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableStructuredLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableStructuredLogging(boolean value) {
+
+      enableStructuredLogging_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify whether structured logging is enabled.
+     *
+     * If true, JSON-formatted logs are parsed as structured logs.
+     * </pre>
+     *
+     * <code>bool enable_structured_logging = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableStructuredLogging() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      enableStructuredLogging_ = false;
       onChanged();
       return this;
     }

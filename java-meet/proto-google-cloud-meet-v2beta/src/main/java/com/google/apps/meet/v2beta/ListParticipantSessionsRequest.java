@@ -23,7 +23,7 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * Request to fetch list of participant sessions per conference record per
+ * Request to fetch list of participant sessions per conference record, per
  * participant.
  * </pre>
  *
@@ -204,8 +204,9 @@ public final class ListParticipantSessionsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. User specified filtering condition in EBNF format. The following
-   * are the filterable fields:
+   * Optional. User specified filtering condition in [EBNF
+   * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+   * The following are the filterable fields:
    *
    * * `start_time`
    * * `end_time`
@@ -234,8 +235,9 @@ public final class ListParticipantSessionsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. User specified filtering condition in EBNF format. The following
-   * are the filterable fields:
+   * Optional. User specified filtering condition in [EBNF
+   * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+   * The following are the filterable fields:
    *
    * * `start_time`
    * * `end_time`
@@ -452,7 +454,7 @@ public final class ListParticipantSessionsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request to fetch list of participant sessions per conference record per
+   * Request to fetch list of participant sessions per conference record, per
    * participant.
    * </pre>
    *
@@ -969,8 +971,9 @@ public final class ListParticipantSessionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `start_time`
      * * `end_time`
@@ -998,8 +1001,9 @@ public final class ListParticipantSessionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `start_time`
      * * `end_time`
@@ -1027,8 +1031,9 @@ public final class ListParticipantSessionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `start_time`
      * * `end_time`
@@ -1055,8 +1060,9 @@ public final class ListParticipantSessionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `start_time`
      * * `end_time`
@@ -1079,8 +1085,9 @@ public final class ListParticipantSessionsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `start_time`
      * * `end_time`

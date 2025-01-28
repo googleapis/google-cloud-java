@@ -3043,6 +3043,66 @@ public class BackupDRClientHttpJsonTest {
   }
 
   @Test
+  public void initializeServiceTest() throws Exception {
+    InitializeServiceResponse expectedResponse =
+        InitializeServiceResponse.newBuilder()
+            .setBackupVaultName("backupVaultName1928739899")
+            .setBackupPlanName("backupPlanName42972470")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("initializeServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InitializeServiceRequest request =
+        InitializeServiceRequest.newBuilder()
+            .setName("projects/project-6002/locations/location-6002/serviceConfig")
+            .setResourceType("resourceType-384364440")
+            .setRequestId("requestId693933066")
+            .build();
+
+    InitializeServiceResponse actualResponse = client.initializeServiceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void initializeServiceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InitializeServiceRequest request =
+          InitializeServiceRequest.newBuilder()
+              .setName("projects/project-6002/locations/location-6002/serviceConfig")
+              .setResourceType("resourceType-384364440")
+              .setRequestId("requestId693933066")
+              .build();
+      client.initializeServiceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

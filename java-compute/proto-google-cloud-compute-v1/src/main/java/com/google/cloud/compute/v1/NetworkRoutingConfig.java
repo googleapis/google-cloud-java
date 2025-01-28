@@ -41,6 +41,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   private NetworkRoutingConfig() {
     bgpBestPathSelectionMode_ = "";
     bgpInterRegionCost_ = "";
+    effectiveBgpInterRegionCost_ = "";
     routingMode_ = "";
   }
 
@@ -198,6 +199,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * ADD_COST_TO_MED
+   * DEFAULT
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkRoutingConfig.BgpInterRegionCost}
@@ -325,6 +329,125 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * [Output Only] Effective value of the bgp_inter_region_cost field.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * ADD_COST_TO_MED
+   * DEFAULT
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NetworkRoutingConfig.EffectiveBgpInterRegionCost}
+   */
+  public enum EffectiveBgpInterRegionCost implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_EFFECTIVE_BGP_INTER_REGION_COST = 0;</code>
+     */
+    UNDEFINED_EFFECTIVE_BGP_INTER_REGION_COST(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_EFFECTIVE_BGP_INTER_REGION_COST = 0;</code>
+     */
+    public static final int UNDEFINED_EFFECTIVE_BGP_INTER_REGION_COST_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EffectiveBgpInterRegionCost valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EffectiveBgpInterRegionCost forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_EFFECTIVE_BGP_INTER_REGION_COST;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EffectiveBgpInterRegionCost>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EffectiveBgpInterRegionCost>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EffectiveBgpInterRegionCost>() {
+              public EffectiveBgpInterRegionCost findValueByNumber(int number) {
+                return EffectiveBgpInterRegionCost.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NetworkRoutingConfig.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final EffectiveBgpInterRegionCost[] VALUES = values();
+
+    public static EffectiveBgpInterRegionCost valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EffectiveBgpInterRegionCost(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkRoutingConfig.EffectiveBgpInterRegionCost)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
    * </pre>
    *
@@ -422,7 +545,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.NetworkRoutingConfig.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.compute.v1.NetworkRoutingConfig.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final RoutingMode[] VALUES = values();
@@ -618,6 +741,108 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int EFFECTIVE_BGP_ALWAYS_COMPARE_MED_FIELD_NUMBER = 214661838;
+  private boolean effectiveBgpAlwaysCompareMed_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective value of the bgp_always_compare_med field.
+   * </pre>
+   *
+   * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
+   *
+   * @return Whether the effectiveBgpAlwaysCompareMed field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveBgpAlwaysCompareMed() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective value of the bgp_always_compare_med field.
+   * </pre>
+   *
+   * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
+   *
+   * @return The effectiveBgpAlwaysCompareMed.
+   */
+  @java.lang.Override
+  public boolean getEffectiveBgpAlwaysCompareMed() {
+    return effectiveBgpAlwaysCompareMed_;
+  }
+
+  public static final int EFFECTIVE_BGP_INTER_REGION_COST_FIELD_NUMBER = 185098313;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object effectiveBgpInterRegionCost_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective value of the bgp_inter_region_cost field.
+   * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+   *
+   * @return Whether the effectiveBgpInterRegionCost field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveBgpInterRegionCost() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective value of the bgp_inter_region_cost field.
+   * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+   *
+   * @return The effectiveBgpInterRegionCost.
+   */
+  @java.lang.Override
+  public java.lang.String getEffectiveBgpInterRegionCost() {
+    java.lang.Object ref = effectiveBgpInterRegionCost_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      effectiveBgpInterRegionCost_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective value of the bgp_inter_region_cost field.
+   * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+   *
+   * @return The bytes for effectiveBgpInterRegionCost.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEffectiveBgpInterRegionCostBytes() {
+    java.lang.Object ref = effectiveBgpInterRegionCost_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      effectiveBgpInterRegionCost_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ROUTING_MODE_FIELD_NUMBER = 475143548;
 
   @SuppressWarnings("serial")
@@ -636,7 +861,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasRoutingMode() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -701,8 +926,15 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 185098313, effectiveBgpInterRegionCost_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(213102902, bgpAlwaysCompareMed_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(214661838, effectiveBgpAlwaysCompareMed_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
@@ -711,7 +943,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 462142689, bgpInterRegionCost_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 475143548, routingMode_);
     }
     getUnknownFields().writeTo(output);
@@ -723,9 +955,19 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              185098313, effectiveBgpInterRegionCost_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(213102902, bgpAlwaysCompareMed_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              214661838, effectiveBgpAlwaysCompareMed_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -736,7 +978,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(462142689, bgpInterRegionCost_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(475143548, routingMode_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -767,6 +1009,16 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     if (hasBgpInterRegionCost()) {
       if (!getBgpInterRegionCost().equals(other.getBgpInterRegionCost())) return false;
     }
+    if (hasEffectiveBgpAlwaysCompareMed() != other.hasEffectiveBgpAlwaysCompareMed()) return false;
+    if (hasEffectiveBgpAlwaysCompareMed()) {
+      if (getEffectiveBgpAlwaysCompareMed() != other.getEffectiveBgpAlwaysCompareMed())
+        return false;
+    }
+    if (hasEffectiveBgpInterRegionCost() != other.hasEffectiveBgpInterRegionCost()) return false;
+    if (hasEffectiveBgpInterRegionCost()) {
+      if (!getEffectiveBgpInterRegionCost().equals(other.getEffectiveBgpInterRegionCost()))
+        return false;
+    }
     if (hasRoutingMode() != other.hasRoutingMode()) return false;
     if (hasRoutingMode()) {
       if (!getRoutingMode().equals(other.getRoutingMode())) return false;
@@ -793,6 +1045,15 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     if (hasBgpInterRegionCost()) {
       hash = (37 * hash) + BGP_INTER_REGION_COST_FIELD_NUMBER;
       hash = (53 * hash) + getBgpInterRegionCost().hashCode();
+    }
+    if (hasEffectiveBgpAlwaysCompareMed()) {
+      hash = (37 * hash) + EFFECTIVE_BGP_ALWAYS_COMPARE_MED_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEffectiveBgpAlwaysCompareMed());
+    }
+    if (hasEffectiveBgpInterRegionCost()) {
+      hash = (37 * hash) + EFFECTIVE_BGP_INTER_REGION_COST_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveBgpInterRegionCost().hashCode();
     }
     if (hasRoutingMode()) {
       hash = (37 * hash) + ROUTING_MODE_FIELD_NUMBER;
@@ -940,6 +1201,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       bgpAlwaysCompareMed_ = false;
       bgpBestPathSelectionMode_ = "";
       bgpInterRegionCost_ = "";
+      effectiveBgpAlwaysCompareMed_ = false;
+      effectiveBgpInterRegionCost_ = "";
       routingMode_ = "";
       return this;
     }
@@ -991,8 +1254,16 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.routingMode_ = routingMode_;
+        result.effectiveBgpAlwaysCompareMed_ = effectiveBgpAlwaysCompareMed_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.effectiveBgpInterRegionCost_ = effectiveBgpInterRegionCost_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.routingMode_ = routingMode_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1056,9 +1327,17 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasEffectiveBgpAlwaysCompareMed()) {
+        setEffectiveBgpAlwaysCompareMed(other.getEffectiveBgpAlwaysCompareMed());
+      }
+      if (other.hasEffectiveBgpInterRegionCost()) {
+        effectiveBgpInterRegionCost_ = other.effectiveBgpInterRegionCost_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasRoutingMode()) {
         routingMode_ = other.routingMode_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1087,12 +1366,24 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
             case 0:
               done = true;
               break;
+            case 1480786506:
+              {
+                effectiveBgpInterRegionCost_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 1480786506
             case 1704823216:
               {
                 bgpAlwaysCompareMed_ = input.readBool();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 1704823216
+            case 1717294704:
+              {
+                effectiveBgpAlwaysCompareMed_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 1717294704
             case -1752436918:
               {
                 bgpBestPathSelectionMode_ = input.readStringRequireUtf8();
@@ -1108,7 +1399,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
             case -493818910:
               {
                 routingMode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -493818910
             default:
@@ -1450,6 +1741,200 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private boolean effectiveBgpAlwaysCompareMed_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_always_compare_med field.
+     * </pre>
+     *
+     * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
+     *
+     * @return Whether the effectiveBgpAlwaysCompareMed field is set.
+     */
+    @java.lang.Override
+    public boolean hasEffectiveBgpAlwaysCompareMed() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_always_compare_med field.
+     * </pre>
+     *
+     * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
+     *
+     * @return The effectiveBgpAlwaysCompareMed.
+     */
+    @java.lang.Override
+    public boolean getEffectiveBgpAlwaysCompareMed() {
+      return effectiveBgpAlwaysCompareMed_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_always_compare_med field.
+     * </pre>
+     *
+     * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
+     *
+     * @param value The effectiveBgpAlwaysCompareMed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveBgpAlwaysCompareMed(boolean value) {
+
+      effectiveBgpAlwaysCompareMed_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_always_compare_med field.
+     * </pre>
+     *
+     * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveBgpAlwaysCompareMed() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      effectiveBgpAlwaysCompareMed_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object effectiveBgpInterRegionCost_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+     *
+     * @return Whether the effectiveBgpInterRegionCost field is set.
+     */
+    public boolean hasEffectiveBgpInterRegionCost() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+     *
+     * @return The effectiveBgpInterRegionCost.
+     */
+    public java.lang.String getEffectiveBgpInterRegionCost() {
+      java.lang.Object ref = effectiveBgpInterRegionCost_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        effectiveBgpInterRegionCost_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+     *
+     * @return The bytes for effectiveBgpInterRegionCost.
+     */
+    public com.google.protobuf.ByteString getEffectiveBgpInterRegionCostBytes() {
+      java.lang.Object ref = effectiveBgpInterRegionCost_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        effectiveBgpInterRegionCost_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+     *
+     * @param value The effectiveBgpInterRegionCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveBgpInterRegionCost(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      effectiveBgpInterRegionCost_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveBgpInterRegionCost() {
+      effectiveBgpInterRegionCost_ = getDefaultInstance().getEffectiveBgpInterRegionCost();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string effective_bgp_inter_region_cost = 185098313;</code>
+     *
+     * @param value The bytes for effectiveBgpInterRegionCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveBgpInterRegionCostBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      effectiveBgpInterRegionCost_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object routingMode_ = "";
     /**
      *
@@ -1464,7 +1949,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the routingMode field is set.
      */
     public boolean hasRoutingMode() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1530,7 +2015,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       routingMode_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1548,7 +2033,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder clearRoutingMode() {
       routingMode_ = getDefaultInstance().getRoutingMode();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1571,7 +2056,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       routingMode_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

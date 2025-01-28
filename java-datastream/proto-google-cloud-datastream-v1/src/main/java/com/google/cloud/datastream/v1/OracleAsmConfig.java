@@ -24,6 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  * <pre>
  * Configuration for Oracle Automatic Storage Management (ASM) connection.
+ * .
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.OracleAsmConfig}
@@ -207,10 +208,10 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Password for the Oracle ASM connection.
+   * Optional. Password for the Oracle ASM connection.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The password.
    */
@@ -230,10 +231,10 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Password for the Oracle ASM connection.
+   * Optional. Password for the Oracle ASM connection.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for password.
    */
@@ -706,6 +707,7 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Configuration for Oracle Automatic Storage Management (ASM) connection.
+   * .
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.OracleAsmConfig}
@@ -1283,10 +1285,10 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The password.
      */
@@ -1305,10 +1307,10 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for password.
      */
@@ -1327,10 +1329,10 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The password to set.
      * @return This builder for chaining.
@@ -1348,10 +1350,10 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1365,10 +1367,10 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for password to set.
      * @return This builder for chaining.

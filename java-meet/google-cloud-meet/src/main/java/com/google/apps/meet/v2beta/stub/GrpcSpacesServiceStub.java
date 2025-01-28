@@ -16,6 +16,8 @@
 
 package com.google.apps.meet.v2beta.stub;
 
+import static com.google.apps.meet.v2beta.SpacesServiceClient.ListMembersPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -24,9 +26,15 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.CreateMemberRequest;
 import com.google.apps.meet.v2beta.CreateSpaceRequest;
+import com.google.apps.meet.v2beta.DeleteMemberRequest;
 import com.google.apps.meet.v2beta.EndActiveConferenceRequest;
+import com.google.apps.meet.v2beta.GetMemberRequest;
 import com.google.apps.meet.v2beta.GetSpaceRequest;
+import com.google.apps.meet.v2beta.ListMembersRequest;
+import com.google.apps.meet.v2beta.ListMembersResponse;
+import com.google.apps.meet.v2beta.Member;
 import com.google.apps.meet.v2beta.Space;
 import com.google.apps.meet.v2beta.UpdateSpaceRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -80,10 +88,50 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateMemberRequest, Member> createMemberMethodDescriptor =
+      MethodDescriptor.<CreateMemberRequest, Member>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.apps.meet.v2beta.SpacesService/CreateMember")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateMemberRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Member.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetMemberRequest, Member> getMemberMethodDescriptor =
+      MethodDescriptor.<GetMemberRequest, Member>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.apps.meet.v2beta.SpacesService/GetMember")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetMemberRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Member.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListMembersRequest, ListMembersResponse>
+      listMembersMethodDescriptor =
+          MethodDescriptor.<ListMembersRequest, ListMembersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.apps.meet.v2beta.SpacesService/ListMembers")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListMembersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMembersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteMemberRequest, Empty> deleteMemberMethodDescriptor =
+      MethodDescriptor.<DeleteMemberRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.apps.meet.v2beta.SpacesService/DeleteMember")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteMemberRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable;
   private final UnaryCallable<EndActiveConferenceRequest, Empty> endActiveConferenceCallable;
+  private final UnaryCallable<CreateMemberRequest, Member> createMemberCallable;
+  private final UnaryCallable<GetMemberRequest, Member> getMemberCallable;
+  private final UnaryCallable<ListMembersRequest, ListMembersResponse> listMembersCallable;
+  private final UnaryCallable<ListMembersRequest, ListMembersPagedResponse>
+      listMembersPagedCallable;
+  private final UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -161,6 +209,46 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateMemberRequest, Member> createMemberTransportSettings =
+        GrpcCallSettings.<CreateMemberRequest, Member>newBuilder()
+            .setMethodDescriptor(createMemberMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetMemberRequest, Member> getMemberTransportSettings =
+        GrpcCallSettings.<GetMemberRequest, Member>newBuilder()
+            .setMethodDescriptor(getMemberMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListMembersRequest, ListMembersResponse> listMembersTransportSettings =
+        GrpcCallSettings.<ListMembersRequest, ListMembersResponse>newBuilder()
+            .setMethodDescriptor(listMembersMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteMemberRequest, Empty> deleteMemberTransportSettings =
+        GrpcCallSettings.<DeleteMemberRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteMemberMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.createSpaceCallable =
         callableFactory.createUnaryCallable(
@@ -176,6 +264,21 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
             endActiveConferenceTransportSettings,
             settings.endActiveConferenceSettings(),
             clientContext);
+    this.createMemberCallable =
+        callableFactory.createUnaryCallable(
+            createMemberTransportSettings, settings.createMemberSettings(), clientContext);
+    this.getMemberCallable =
+        callableFactory.createUnaryCallable(
+            getMemberTransportSettings, settings.getMemberSettings(), clientContext);
+    this.listMembersCallable =
+        callableFactory.createUnaryCallable(
+            listMembersTransportSettings, settings.listMembersSettings(), clientContext);
+    this.listMembersPagedCallable =
+        callableFactory.createPagedCallable(
+            listMembersTransportSettings, settings.listMembersSettings(), clientContext);
+    this.deleteMemberCallable =
+        callableFactory.createUnaryCallable(
+            deleteMemberTransportSettings, settings.deleteMemberSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -203,6 +306,31 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
   @Override
   public UnaryCallable<EndActiveConferenceRequest, Empty> endActiveConferenceCallable() {
     return endActiveConferenceCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMemberRequest, Member> createMemberCallable() {
+    return createMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMemberRequest, Member> getMemberCallable() {
+    return getMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMembersRequest, ListMembersResponse> listMembersCallable() {
+    return listMembersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMembersRequest, ListMembersPagedResponse> listMembersPagedCallable() {
+    return listMembersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable() {
+    return deleteMemberCallable;
   }
 
   @Override

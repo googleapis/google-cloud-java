@@ -2210,6 +2210,63 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int SPECULATIVE_DECODING_SPEC_FIELD_NUMBER = 30;
+  private com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculativeDecodingSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speculativeDecodingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeculativeDecodingSpec() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speculativeDecodingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec getSpeculativeDecodingSpec() {
+    return speculativeDecodingSpec_ == null
+        ? com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.getDefaultInstance()
+        : speculativeDecodingSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SpeculativeDecodingSpecOrBuilder
+      getSpeculativeDecodingSpecOrBuilder() {
+    return speculativeDecodingSpec_ == null
+        ? com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.getDefaultInstance()
+        : speculativeDecodingSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2276,6 +2333,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSystemLabels(), SystemLabelsDefaultEntryHolder.defaultEntry, 28);
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(30, getSpeculativeDecodingSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2348,6 +2408,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, systemLabels__);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, getSpeculativeDecodingSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2393,6 +2458,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!internalGetSystemLabels().equals(other.internalGetSystemLabels())) return false;
+    if (hasSpeculativeDecodingSpec() != other.hasSpeculativeDecodingSpec()) return false;
+    if (hasSpeculativeDecodingSpec()) {
+      if (!getSpeculativeDecodingSpec().equals(other.getSpeculativeDecodingSpec())) return false;
+    }
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
     switch (predictionResourcesCase_) {
       case 7:
@@ -2457,6 +2526,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetSystemLabels().getMap().isEmpty()) {
       hash = (37 * hash) + SYSTEM_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSystemLabels().hashCode();
+    }
+    if (hasSpeculativeDecodingSpec()) {
+      hash = (37 * hash) + SPECULATIVE_DECODING_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeculativeDecodingSpec().hashCode();
     }
     switch (predictionResourcesCase_) {
       case 7:
@@ -2641,6 +2714,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         getPrivateEndpointsFieldBuilder();
         getFasterDeploymentConfigFieldBuilder();
         getStatusFieldBuilder();
+        getSpeculativeDecodingSpecFieldBuilder();
       }
     }
 
@@ -2688,6 +2762,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         statusBuilder_ = null;
       }
       internalGetMutableSystemLabels().clear();
+      speculativeDecodingSpec_ = null;
+      if (speculativeDecodingSpecBuilder_ != null) {
+        speculativeDecodingSpecBuilder_.dispose();
+        speculativeDecodingSpecBuilder_ = null;
+      }
       predictionResourcesCase_ = 0;
       predictionResources_ = null;
       return this;
@@ -2780,6 +2859,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.systemLabels_ = internalGetSystemLabels();
         result.systemLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.speculativeDecodingSpec_ =
+            speculativeDecodingSpecBuilder_ == null
+                ? speculativeDecodingSpec_
+                : speculativeDecodingSpecBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2891,6 +2977,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableSystemLabels().mergeFrom(other.internalGetSystemLabels());
       bitField0_ |= 0x00010000;
+      if (other.hasSpeculativeDecodingSpec()) {
+        mergeSpeculativeDecodingSpec(other.getSpeculativeDecodingSpec());
+      }
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
           {
@@ -3053,6 +3142,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 226
+            case 242:
+              {
+                input.readMessage(
+                    getSpeculativeDecodingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5865,6 +5961,215 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSystemLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00010000;
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculativeDecodingSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec,
+            com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.Builder,
+            com.google.cloud.aiplatform.v1.SpeculativeDecodingSpecOrBuilder>
+        speculativeDecodingSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the speculativeDecodingSpec field is set.
+     */
+    public boolean hasSpeculativeDecodingSpec() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speculativeDecodingSpec.
+     */
+    public com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec getSpeculativeDecodingSpec() {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        return speculativeDecodingSpec_ == null
+            ? com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.getDefaultInstance()
+            : speculativeDecodingSpec_;
+      } else {
+        return speculativeDecodingSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec value) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speculativeDecodingSpec_ = value;
+      } else {
+        speculativeDecodingSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.Builder builderForValue) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        speculativeDecodingSpec_ = builderForValue.build();
+      } else {
+        speculativeDecodingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec value) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && speculativeDecodingSpec_ != null
+            && speculativeDecodingSpec_
+                != com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.getDefaultInstance()) {
+          getSpeculativeDecodingSpecBuilder().mergeFrom(value);
+        } else {
+          speculativeDecodingSpec_ = value;
+        }
+      } else {
+        speculativeDecodingSpecBuilder_.mergeFrom(value);
+      }
+      if (speculativeDecodingSpec_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpeculativeDecodingSpec() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      speculativeDecodingSpec_ = null;
+      if (speculativeDecodingSpecBuilder_ != null) {
+        speculativeDecodingSpecBuilder_.dispose();
+        speculativeDecodingSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.Builder
+        getSpeculativeDecodingSpecBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getSpeculativeDecodingSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.SpeculativeDecodingSpecOrBuilder
+        getSpeculativeDecodingSpecOrBuilder() {
+      if (speculativeDecodingSpecBuilder_ != null) {
+        return speculativeDecodingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return speculativeDecodingSpec_ == null
+            ? com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.getDefaultInstance()
+            : speculativeDecodingSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec,
+            com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.Builder,
+            com.google.cloud.aiplatform.v1.SpeculativeDecodingSpecOrBuilder>
+        getSpeculativeDecodingSpecFieldBuilder() {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        speculativeDecodingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec,
+                com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.Builder,
+                com.google.cloud.aiplatform.v1.SpeculativeDecodingSpecOrBuilder>(
+                getSpeculativeDecodingSpec(), getParentForChildren(), isClean());
+        speculativeDecodingSpec_ = null;
+      }
+      return speculativeDecodingSpecBuilder_;
     }
 
     @java.lang.Override

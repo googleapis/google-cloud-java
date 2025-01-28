@@ -709,6 +709,57 @@ public final class FeatureRegistryServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest,
+          com.google.longrunning.Operation>
+      getUpdateFeatureMonitorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateFeatureMonitor",
+      requestType = com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest,
+          com.google.longrunning.Operation>
+      getUpdateFeatureMonitorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest,
+            com.google.longrunning.Operation>
+        getUpdateFeatureMonitorMethod;
+    if ((getUpdateFeatureMonitorMethod = FeatureRegistryServiceGrpc.getUpdateFeatureMonitorMethod)
+        == null) {
+      synchronized (FeatureRegistryServiceGrpc.class) {
+        if ((getUpdateFeatureMonitorMethod =
+                FeatureRegistryServiceGrpc.getUpdateFeatureMonitorMethod)
+            == null) {
+          FeatureRegistryServiceGrpc.getUpdateFeatureMonitorMethod =
+              getUpdateFeatureMonitorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateFeatureMonitor"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FeatureRegistryServiceMethodDescriptorSupplier(
+                              "UpdateFeatureMonitor"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateFeatureMonitorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.DeleteFeatureMonitorRequest,
           com.google.longrunning.Operation>
       getDeleteFeatureMonitorMethod;
@@ -1172,6 +1223,20 @@ public final class FeatureRegistryServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single FeatureMonitor.
+     * </pre>
+     */
+    default void updateFeatureMonitor(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateFeatureMonitorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single FeatureMonitor.
      * </pre>
      */
@@ -1497,6 +1562,22 @@ public final class FeatureRegistryServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single FeatureMonitor.
+     * </pre>
+     */
+    public void updateFeatureMonitor(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateFeatureMonitorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single FeatureMonitor.
      * </pre>
      */
@@ -1763,6 +1844,19 @@ public final class FeatureRegistryServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListFeatureMonitorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single FeatureMonitor.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFeatureMonitor(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFeatureMonitorMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2036,6 +2130,20 @@ public final class FeatureRegistryServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single FeatureMonitor.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateFeatureMonitor(
+            com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateFeatureMonitorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single FeatureMonitor.
      * </pre>
      */
@@ -2106,10 +2214,11 @@ public final class FeatureRegistryServiceGrpc {
   private static final int METHODID_CREATE_FEATURE_MONITOR = 11;
   private static final int METHODID_GET_FEATURE_MONITOR = 12;
   private static final int METHODID_LIST_FEATURE_MONITORS = 13;
-  private static final int METHODID_DELETE_FEATURE_MONITOR = 14;
-  private static final int METHODID_CREATE_FEATURE_MONITOR_JOB = 15;
-  private static final int METHODID_GET_FEATURE_MONITOR_JOB = 16;
-  private static final int METHODID_LIST_FEATURE_MONITOR_JOBS = 17;
+  private static final int METHODID_UPDATE_FEATURE_MONITOR = 14;
+  private static final int METHODID_DELETE_FEATURE_MONITOR = 15;
+  private static final int METHODID_CREATE_FEATURE_MONITOR_JOB = 16;
+  private static final int METHODID_GET_FEATURE_MONITOR_JOB = 17;
+  private static final int METHODID_LIST_FEATURE_MONITOR_JOBS = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2206,6 +2315,11 @@ public final class FeatureRegistryServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsResponse>)
                   responseObserver);
+          break;
+        case METHODID_UPDATE_FEATURE_MONITOR:
+          serviceImpl.updateFeatureMonitor(
+              (com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_FEATURE_MONITOR:
           serviceImpl.deleteFeatureMonitor(
@@ -2339,6 +2453,12 @@ public final class FeatureRegistryServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsResponse>(
                     service, METHODID_LIST_FEATURE_MONITORS)))
         .addMethod(
+            getUpdateFeatureMonitorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_FEATURE_MONITOR)))
+        .addMethod(
             getDeleteFeatureMonitorMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2430,6 +2550,7 @@ public final class FeatureRegistryServiceGrpc {
                       .addMethod(getCreateFeatureMonitorMethod())
                       .addMethod(getGetFeatureMonitorMethod())
                       .addMethod(getListFeatureMonitorsMethod())
+                      .addMethod(getUpdateFeatureMonitorMethod())
                       .addMethod(getDeleteFeatureMonitorMethod())
                       .addMethod(getCreateFeatureMonitorJobMethod())
                       .addMethod(getGetFeatureMonitorJobMethod())

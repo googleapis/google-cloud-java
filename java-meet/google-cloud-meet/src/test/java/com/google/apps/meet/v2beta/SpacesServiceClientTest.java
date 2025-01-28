@@ -16,6 +16,8 @@
 
 package com.google.apps.meet.v2beta;
 
+import static com.google.apps.meet.v2beta.SpacesServiceClient.ListMembersPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -23,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -310,6 +313,328 @@ public class SpacesServiceClientTest {
     try {
       String name = "name3373707";
       client.endActiveConference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMemberTest() throws Exception {
+    Member expectedResponse =
+        Member.newBuilder()
+            .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+            .setEmail("email96619420")
+            .setUser("user3599307")
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    SpaceName parent = SpaceName.of("[SPACE]");
+    Member member = Member.newBuilder().build();
+
+    Member actualResponse = client.createMember(parent, member);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMemberRequest actualRequest = ((CreateMemberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(member, actualRequest.getMember());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMemberExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      SpaceName parent = SpaceName.of("[SPACE]");
+      Member member = Member.newBuilder().build();
+      client.createMember(parent, member);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMemberTest2() throws Exception {
+    Member expectedResponse =
+        Member.newBuilder()
+            .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+            .setEmail("email96619420")
+            .setUser("user3599307")
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Member member = Member.newBuilder().build();
+
+    Member actualResponse = client.createMember(parent, member);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMemberRequest actualRequest = ((CreateMemberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(member, actualRequest.getMember());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMemberExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Member member = Member.newBuilder().build();
+      client.createMember(parent, member);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMemberTest() throws Exception {
+    Member expectedResponse =
+        Member.newBuilder()
+            .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+            .setEmail("email96619420")
+            .setUser("user3599307")
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    MemberName name = MemberName.of("[SPACE]", "[MEMBER]");
+
+    Member actualResponse = client.getMember(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMemberRequest actualRequest = ((GetMemberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMemberExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      MemberName name = MemberName.of("[SPACE]", "[MEMBER]");
+      client.getMember(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMemberTest2() throws Exception {
+    Member expectedResponse =
+        Member.newBuilder()
+            .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+            .setEmail("email96619420")
+            .setUser("user3599307")
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Member actualResponse = client.getMember(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMemberRequest actualRequest = ((GetMemberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMemberExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMember(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMembersTest() throws Exception {
+    Member responsesElement = Member.newBuilder().build();
+    ListMembersResponse expectedResponse =
+        ListMembersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMembers(Arrays.asList(responsesElement))
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    SpaceName parent = SpaceName.of("[SPACE]");
+
+    ListMembersPagedResponse pagedListResponse = client.listMembers(parent);
+
+    List<Member> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMembersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMembersRequest actualRequest = ((ListMembersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMembersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      SpaceName parent = SpaceName.of("[SPACE]");
+      client.listMembers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMembersTest2() throws Exception {
+    Member responsesElement = Member.newBuilder().build();
+    ListMembersResponse expectedResponse =
+        ListMembersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMembers(Arrays.asList(responsesElement))
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMembersPagedResponse pagedListResponse = client.listMembers(parent);
+
+    List<Member> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMembersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMembersRequest actualRequest = ((ListMembersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMembersExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMembers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMemberTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    MemberName name = MemberName.of("[SPACE]", "[MEMBER]");
+
+    client.deleteMember(name);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMemberRequest actualRequest = ((DeleteMemberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMemberExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      MemberName name = MemberName.of("[SPACE]", "[MEMBER]");
+      client.deleteMember(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMemberTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteMember(name);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMemberRequest actualRequest = ((DeleteMemberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMemberExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteMember(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

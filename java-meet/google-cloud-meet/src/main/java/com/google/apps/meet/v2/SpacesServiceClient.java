@@ -75,7 +75,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetSpace</td>
- *      <td><p> Gets a space by `space_id` or `meeting_code`.</td>
+ *      <td><p> Gets details about a meeting space.
+ * <p>  For an example, see [Get a meeting space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -94,7 +95,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateSpace</td>
- *      <td><p> Updates a space.</td>
+ *      <td><p> Updates details about a meeting space.
+ * <p>  For an example, see [Update a meeting space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -112,7 +114,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> EndActiveConference</td>
- *      <td><p> Ends an active conference (if there's one).</td>
+ *      <td><p> Ends an active conference (if there's one).
+ * <p>  For an example, see [End active conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -314,7 +317,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a space by `space_id` or `meeting_code`.
+   * Gets details about a meeting space.
+   *
+   * <p>For an example, see [Get a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -331,6 +337,17 @@ public class SpacesServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the space.
+   *     <p>Format: `spaces/{space}` or `spaces/{meetingCode}`.
+   *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
+   *     and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *     <p>`{meetingCode}` is an alias for the space. It's a typeable, unique character string and
+   *     is non-case sensitive. For example, `abc-mnop-xyz`. The maximum length is 128 characters.
+   *     <p>A `meetingCode` shouldn't be stored long term as it can become dissociated from a
+   *     meeting space and can be reused for different meeting spaces in the future. Generally, a
+   *     `meetingCode` expires 365 days after last use. For more information, see [Learn about
+   *     meeting codes in Google Meet](https://support.google.com/meet/answer/10710509).
+   *     <p>For more information, see [How Meet identifies a meeting
+   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space getSpace(SpaceName name) {
@@ -341,7 +358,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a space by `space_id` or `meeting_code`.
+   * Gets details about a meeting space.
+   *
+   * <p>For an example, see [Get a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -358,6 +378,17 @@ public class SpacesServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the space.
+   *     <p>Format: `spaces/{space}` or `spaces/{meetingCode}`.
+   *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
+   *     and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *     <p>`{meetingCode}` is an alias for the space. It's a typeable, unique character string and
+   *     is non-case sensitive. For example, `abc-mnop-xyz`. The maximum length is 128 characters.
+   *     <p>A `meetingCode` shouldn't be stored long term as it can become dissociated from a
+   *     meeting space and can be reused for different meeting spaces in the future. Generally, a
+   *     `meetingCode` expires 365 days after last use. For more information, see [Learn about
+   *     meeting codes in Google Meet](https://support.google.com/meet/answer/10710509).
+   *     <p>For more information, see [How Meet identifies a meeting
+   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space getSpace(String name) {
@@ -367,7 +398,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a space by `space_id` or `meeting_code`.
+   * Gets details about a meeting space.
+   *
+   * <p>For an example, see [Get a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -393,7 +427,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a space by `space_id` or `meeting_code`.
+   * Gets details about a meeting space.
+   *
+   * <p>For an example, see [Get a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -418,7 +455,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a space.
+   * Updates details about a meeting space.
+   *
+   * <p>For an example, see [Update a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -437,8 +477,9 @@ public class SpacesServiceClient implements BackgroundResource {
    *
    * @param space Required. Space to be updated.
    * @param updateMask Optional. Field mask used to specify the fields to be updated in the space.
-   *     If update_mask isn't provided, it defaults to '&#42;' and updates all fields provided in
-   *     the request, including deleting fields not set in the request.
+   *     If update_mask isn't provided(not set, set with empty paths, or only has "" as paths), it
+   *     defaults to update all fields provided with values in the request. Using "&#42;" as
+   *     update_mask will update all fields, including deleting fields not set in the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space updateSpace(Space space, FieldMask updateMask) {
@@ -449,7 +490,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a space.
+   * Updates details about a meeting space.
+   *
+   * <p>For an example, see [Update a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -478,7 +522,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a space.
+   * Updates details about a meeting space.
+   *
+   * <p>For an example, see [Update a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -508,6 +555,9 @@ public class SpacesServiceClient implements BackgroundResource {
   /**
    * Ends an active conference (if there's one).
    *
+   * <p>For an example, see [End active
+   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -523,6 +573,11 @@ public class SpacesServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the space.
+   *     <p>Format: `spaces/{space}`.
+   *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
+   *     and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *     <p>For more information, see [How Meet identifies a meeting
+   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void endActiveConference(SpaceName name) {
@@ -536,6 +591,9 @@ public class SpacesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Ends an active conference (if there's one).
+   *
+   * <p>For an example, see [End active
+   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -552,6 +610,11 @@ public class SpacesServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the space.
+   *     <p>Format: `spaces/{space}`.
+   *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
+   *     and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *     <p>For more information, see [How Meet identifies a meeting
+   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void endActiveConference(String name) {
@@ -563,6 +626,9 @@ public class SpacesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Ends an active conference (if there's one).
+   *
+   * <p>For an example, see [End active
+   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -591,6 +657,9 @@ public class SpacesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Ends an active conference (if there's one).
+   *
+   * <p>For an example, see [End active
+   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *

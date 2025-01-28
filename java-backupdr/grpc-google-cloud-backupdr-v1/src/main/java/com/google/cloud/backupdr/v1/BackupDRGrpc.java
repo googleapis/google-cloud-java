@@ -1259,6 +1259,49 @@ public final class BackupDRGrpc {
     return getTriggerBackupMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.InitializeServiceRequest, com.google.longrunning.Operation>
+      getInitializeServiceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InitializeService",
+      requestType = com.google.cloud.backupdr.v1.InitializeServiceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.InitializeServiceRequest, com.google.longrunning.Operation>
+      getInitializeServiceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.InitializeServiceRequest, com.google.longrunning.Operation>
+        getInitializeServiceMethod;
+    if ((getInitializeServiceMethod = BackupDRGrpc.getInitializeServiceMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getInitializeServiceMethod = BackupDRGrpc.getInitializeServiceMethod) == null) {
+          BackupDRGrpc.getInitializeServiceMethod =
+              getInitializeServiceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.InitializeServiceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "InitializeService"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.InitializeServiceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("InitializeService"))
+                      .build();
+        }
+      }
+    }
+    return getInitializeServiceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BackupDRStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BackupDRStub> factory =
@@ -1694,6 +1737,20 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTriggerBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes the service related config for a project.
+     * </pre>
+     */
+    default void initializeService(
+        com.google.cloud.backupdr.v1.InitializeServiceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getInitializeServiceMethod(), responseObserver);
     }
   }
 
@@ -2169,6 +2226,22 @@ public final class BackupDRGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes the service related config for a project.
+     * </pre>
+     */
+    public void initializeService(
+        com.google.cloud.backupdr.v1.InitializeServiceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getInitializeServiceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2541,6 +2614,19 @@ public final class BackupDRGrpc {
         com.google.cloud.backupdr.v1.TriggerBackupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTriggerBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes the service related config for a project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation initializeService(
+        com.google.cloud.backupdr.v1.InitializeServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInitializeServiceMethod(), getCallOptions(), request);
     }
   }
 
@@ -2931,6 +3017,19 @@ public final class BackupDRGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTriggerBackupMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes the service related config for a project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        initializeService(com.google.cloud.backupdr.v1.InitializeServiceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getInitializeServiceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_MANAGEMENT_SERVERS = 0;
@@ -2960,6 +3059,7 @@ public final class BackupDRGrpc {
   private static final int METHODID_LIST_BACKUP_PLAN_ASSOCIATIONS = 24;
   private static final int METHODID_DELETE_BACKUP_PLAN_ASSOCIATION = 25;
   private static final int METHODID_TRIGGER_BACKUP = 26;
+  private static final int METHODID_INITIALIZE_SERVICE = 27;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3126,6 +3226,11 @@ public final class BackupDRGrpc {
         case METHODID_TRIGGER_BACKUP:
           serviceImpl.triggerBackup(
               (com.google.cloud.backupdr.v1.TriggerBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_INITIALIZE_SERVICE:
+          serviceImpl.initializeService(
+              (com.google.cloud.backupdr.v1.InitializeServiceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -3319,6 +3424,12 @@ public final class BackupDRGrpc {
                 new MethodHandlers<
                     com.google.cloud.backupdr.v1.TriggerBackupRequest,
                     com.google.longrunning.Operation>(service, METHODID_TRIGGER_BACKUP)))
+        .addMethod(
+            getInitializeServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.InitializeServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_INITIALIZE_SERVICE)))
         .build();
   }
 
@@ -3395,6 +3506,7 @@ public final class BackupDRGrpc {
                       .addMethod(getListBackupPlanAssociationsMethod())
                       .addMethod(getDeleteBackupPlanAssociationMethod())
                       .addMethod(getTriggerBackupMethod())
+                      .addMethod(getInitializeServiceMethod())
                       .build();
         }
       }

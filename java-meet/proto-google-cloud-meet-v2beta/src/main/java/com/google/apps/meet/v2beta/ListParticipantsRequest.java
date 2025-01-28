@@ -23,7 +23,7 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * Request to fetch list of participant per conference.
+ * Request to fetch list of participants per conference.
  * </pre>
  *
  * Protobuf type {@code google.apps.meet.v2beta.ListParticipantsRequest}
@@ -201,8 +201,9 @@ public final class ListParticipantsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. User specified filtering condition in EBNF format. The following
-   * are the filterable fields:
+   * Optional. User specified filtering condition in [EBNF
+   * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+   * The following are the filterable fields:
    *
    * * `earliest_start_time`
    * * `latest_end_time`
@@ -231,8 +232,9 @@ public final class ListParticipantsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. User specified filtering condition in EBNF format. The following
-   * are the filterable fields:
+   * Optional. User specified filtering condition in [EBNF
+   * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+   * The following are the filterable fields:
    *
    * * `earliest_start_time`
    * * `latest_end_time`
@@ -448,7 +450,7 @@ public final class ListParticipantsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request to fetch list of participant per conference.
+   * Request to fetch list of participants per conference.
    * </pre>
    *
    * Protobuf type {@code google.apps.meet.v2beta.ListParticipantsRequest}
@@ -962,8 +964,9 @@ public final class ListParticipantsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `earliest_start_time`
      * * `latest_end_time`
@@ -991,8 +994,9 @@ public final class ListParticipantsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `earliest_start_time`
      * * `latest_end_time`
@@ -1020,8 +1024,9 @@ public final class ListParticipantsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `earliest_start_time`
      * * `latest_end_time`
@@ -1048,8 +1053,9 @@ public final class ListParticipantsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `earliest_start_time`
      * * `latest_end_time`
@@ -1072,8 +1078,9 @@ public final class ListParticipantsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. User specified filtering condition in EBNF format. The following
-     * are the filterable fields:
+     * Optional. User specified filtering condition in [EBNF
+     * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+     * The following are the filterable fields:
      *
      * * `earliest_start_time`
      * * `latest_end_time`

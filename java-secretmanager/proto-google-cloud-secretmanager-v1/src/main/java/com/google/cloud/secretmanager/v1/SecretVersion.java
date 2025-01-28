@@ -620,9 +620,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * Optional. Output only. Scheduled destroy time for secret version.
    * This is a part of the Delayed secret version destroy feature. For a
    * Secret with a valid version destroy TTL, when a secert version is
-   * destroyed, the version is moved to disabled state and it is scheduled for
-   * destruction. The version is destroyed only after the
-   * `scheduled_destroy_time`.
+   * destroyed, version is moved to disabled state and it is scheduled for
+   * destruction Version is destroyed only after the scheduled_destroy_time.
    * </pre>
    *
    * <code>
@@ -642,9 +641,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * Optional. Output only. Scheduled destroy time for secret version.
    * This is a part of the Delayed secret version destroy feature. For a
    * Secret with a valid version destroy TTL, when a secert version is
-   * destroyed, the version is moved to disabled state and it is scheduled for
-   * destruction. The version is destroyed only after the
-   * `scheduled_destroy_time`.
+   * destroyed, version is moved to disabled state and it is scheduled for
+   * destruction Version is destroyed only after the scheduled_destroy_time.
    * </pre>
    *
    * <code>
@@ -666,9 +664,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * Optional. Output only. Scheduled destroy time for secret version.
    * This is a part of the Delayed secret version destroy feature. For a
    * Secret with a valid version destroy TTL, when a secert version is
-   * destroyed, the version is moved to disabled state and it is scheduled for
-   * destruction. The version is destroyed only after the
-   * `scheduled_destroy_time`.
+   * destroyed, version is moved to disabled state and it is scheduled for
+   * destruction Version is destroyed only after the scheduled_destroy_time.
    * </pre>
    *
    * <code>
@@ -692,7 +689,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * Output only. The customer-managed encryption status of the
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
    * populated if customer-managed encryption is used and
-   * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+   * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
    * </pre>
    *
    * <code>
@@ -712,7 +709,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * Output only. The customer-managed encryption status of the
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
    * populated if customer-managed encryption is used and
-   * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+   * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
    * </pre>
    *
    * <code>
@@ -735,7 +732,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * Output only. The customer-managed encryption status of the
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
    * populated if customer-managed encryption is used and
-   * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+   * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
    * </pre>
    *
    * <code>
@@ -2448,9 +2445,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2469,9 +2465,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2496,9 +2491,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2525,9 +2519,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2551,9 +2544,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2585,9 +2577,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2611,9 +2602,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2632,9 +2622,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2657,9 +2646,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Optional. Output only. Scheduled destroy time for secret version.
      * This is a part of the Delayed secret version destroy feature. For a
      * Secret with a valid version destroy TTL, when a secert version is
-     * destroyed, the version is moved to disabled state and it is scheduled for
-     * destruction. The version is destroyed only after the
-     * `scheduled_destroy_time`.
+     * destroyed, version is moved to disabled state and it is scheduled for
+     * destruction Version is destroyed only after the scheduled_destroy_time.
      * </pre>
      *
      * <code>
@@ -2697,7 +2685,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>
@@ -2716,7 +2704,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>
@@ -2742,7 +2730,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>
@@ -2770,7 +2758,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>
@@ -2795,7 +2783,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>
@@ -2830,7 +2818,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>
@@ -2854,7 +2842,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>
@@ -2874,7 +2862,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>
@@ -2898,7 +2886,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The customer-managed encryption status of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used and
-     * [Secret][google.cloud.secretmanager.v1.Secret] is a Regionalised Secret.
+     * [Secret][google.cloud.secretmanager.v1.Secret] is a regionalized secret.
      * </pre>
      *
      * <code>

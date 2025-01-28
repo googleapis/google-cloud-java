@@ -41,6 +41,30 @@ public final class ResourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_apps_meet_v2beta_SpaceConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_Member_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_Member_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_apps_meet_v2beta_ConferenceRecord_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_apps_meet_v2beta_ConferenceRecord_fieldAccessorTable;
@@ -105,16 +129,71 @@ public final class ResourceProto {
           + "ence:.\352A+\n\031meet.googleapis.com/Space\022\016sp"
           + "aces/{space}\"[\n\020ActiveConference\022G\n\021conf"
           + "erence_record\030\001 \001(\tB,\340A\003\372A&\n$meet.google"
-          + "apis.com/ConferenceRecord\"\317\002\n\013SpaceConfi"
+          + "apis.com/ConferenceRecord\"\373\021\n\013SpaceConfi"
           + "g\022D\n\013access_type\030\001 \001(\0162/.google.apps.mee"
           + "t.v2beta.SpaceConfig.AccessType\022Q\n\022entry"
           + "_point_access\030\002 \001(\01625.google.apps.meet.v"
-          + "2beta.SpaceConfig.EntryPointAccess\"P\n\nAc"
-          + "cessType\022\033\n\027ACCESS_TYPE_UNSPECIFIED\020\000\022\010\n"
-          + "\004OPEN\020\001\022\013\n\007TRUSTED\020\002\022\016\n\nRESTRICTED\020\003\"U\n\020"
-          + "EntryPointAccess\022\"\n\036ENTRY_POINT_ACCESS_U"
-          + "NSPECIFIED\020\000\022\007\n\003ALL\020\001\022\024\n\020CREATOR_APP_ONL"
-          + "Y\020\002\"\354\002\n\020ConferenceRecord\022\021\n\004name\030\001 \001(\tB\003"
+          + "2beta.SpaceConfig.EntryPointAccess\022C\n\nmo"
+          + "deration\030\003 \001(\0162/.google.apps.meet.v2beta"
+          + ".SpaceConfig.Moderation\022\\\n\027moderation_re"
+          + "strictions\030\004 \001(\0132;.google.apps.meet.v2be"
+          + "ta.SpaceConfig.ModerationRestrictions\022n\n"
+          + "!attendance_report_generation_type\030\006 \001(\016"
+          + "2C.google.apps.meet.v2beta.SpaceConfig.A"
+          + "ttendanceReportGenerationType\022L\n\017artifac"
+          + "t_config\030\007 \001(\01323.google.apps.meet.v2beta"
+          + ".SpaceConfig.ArtifactConfig\032\200\005\n\026Moderati"
+          + "onRestrictions\022e\n\020chat_restriction\030\001 \001(\016"
+          + "2K.google.apps.meet.v2beta.SpaceConfig.M"
+          + "oderationRestrictions.RestrictionType\022i\n"
+          + "\024reaction_restriction\030\002 \001(\0162K.google.app"
+          + "s.meet.v2beta.SpaceConfig.ModerationRest"
+          + "rictions.RestrictionType\022h\n\023present_rest"
+          + "riction\030\003 \001(\0162K.google.apps.meet.v2beta."
+          + "SpaceConfig.ModerationRestrictions.Restr"
+          + "ictionType\022x\n\033default_join_as_viewer_typ"
+          + "e\030\004 \001(\0162S.google.apps.meet.v2beta.SpaceC"
+          + "onfig.ModerationRestrictions.DefaultJoin"
+          + "AsViewerType\"W\n\017RestrictionType\022 \n\034RESTR"
+          + "ICTION_TYPE_UNSPECIFIED\020\000\022\016\n\nHOSTS_ONLY\020"
+          + "\001\022\022\n\016NO_RESTRICTION\020\002\"W\n\027DefaultJoinAsVi"
+          + "ewerType\022+\n\'DEFAULT_JOIN_AS_VIEWER_TYPE_"
+          + "UNSPECIFIED\020\000\022\006\n\002ON\020\001\022\007\n\003OFF\020\002\032\213\006\n\016Artif"
+          + "actConfig\022]\n\020recording_config\030\001 \001(\0132C.go"
+          + "ogle.apps.meet.v2beta.SpaceConfig.Artifa"
+          + "ctConfig.RecordingConfig\022e\n\024transcriptio"
+          + "n_config\030\002 \001(\0132G.google.apps.meet.v2beta"
+          + ".SpaceConfig.ArtifactConfig.Transcriptio"
+          + "nConfig\022`\n\022smart_notes_config\030\003 \001(\0132D.go"
+          + "ogle.apps.meet.v2beta.SpaceConfig.Artifa"
+          + "ctConfig.SmartNotesConfig\032|\n\017RecordingCo"
+          + "nfig\022i\n\031auto_recording_generation\030\002 \001(\0162"
+          + "F.google.apps.meet.v2beta.SpaceConfig.Ar"
+          + "tifactConfig.AutoGenerationType\032\204\001\n\023Tran"
+          + "scriptionConfig\022m\n\035auto_transcription_ge"
+          + "neration\030\002 \001(\0162F.google.apps.meet.v2beta"
+          + ".SpaceConfig.ArtifactConfig.AutoGenerati"
+          + "onType\032\177\n\020SmartNotesConfig\022k\n\033auto_smart"
+          + "_notes_generation\030\002 \001(\0162F.google.apps.me"
+          + "et.v2beta.SpaceConfig.ArtifactConfig.Aut"
+          + "oGenerationType\"K\n\022AutoGenerationType\022$\n"
+          + " AUTO_GENERATION_TYPE_UNSPECIFIED\020\000\022\006\n\002O"
+          + "N\020\001\022\007\n\003OFF\020\002\"P\n\nAccessType\022\033\n\027ACCESS_TYP"
+          + "E_UNSPECIFIED\020\000\022\010\n\004OPEN\020\001\022\013\n\007TRUSTED\020\002\022\016"
+          + "\n\nRESTRICTED\020\003\"U\n\020EntryPointAccess\022\"\n\036EN"
+          + "TRY_POINT_ACCESS_UNSPECIFIED\020\000\022\007\n\003ALL\020\001\022"
+          + "\024\n\020CREATOR_APP_ONLY\020\002\"9\n\nModeration\022\032\n\026M"
+          + "ODERATION_UNSPECIFIED\020\000\022\007\n\003OFF\020\001\022\006\n\002ON\020\002"
+          + "\"}\n\036AttendanceReportGenerationType\0221\n-AT"
+          + "TENDANCE_REPORT_GENERATION_TYPE_UNSPECIF"
+          + "IED\020\000\022\023\n\017GENERATE_REPORT\020\001\022\023\n\017DO_NOT_GEN"
+          + "ERATE\020\002\"\351\001\n\006Member\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\r\n"
+          + "\005email\030\002 \001(\t\0222\n\004role\030\003 \001(\0162$.google.apps"
+          + ".meet.v2beta.Member.Role\022\014\n\004user\030\004 \001(\t\"("
+          + "\n\004Role\022\024\n\020ROLE_UNSPECIFIED\020\000\022\n\n\006COHOST\020\001"
+          + ":Q\352AN\n\032meet.googleapis.com/Member\022\037space"
+          + "s/{space}/members/{member}*\007members2\006mem"
+          + "ber\"\354\002\n\020ConferenceRecord\022\021\n\004name\030\001 \001(\tB\003"
           + "\340A\010\0223\n\nstart_time\030\002 \001(\0132\032.google.protobu"
           + "f.TimestampB\003\340A\003\0221\n\010end_time\030\003 \001(\0132\032.goo"
           + "gle.protobuf.TimestampB\003\340A\003\0224\n\013expire_ti"
@@ -222,10 +301,72 @@ public final class ResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_SpaceConfig_descriptor,
             new java.lang.String[] {
-              "AccessType", "EntryPointAccess",
+              "AccessType",
+              "EntryPointAccess",
+              "Moderation",
+              "ModerationRestrictions",
+              "AttendanceReportGenerationType",
+              "ArtifactConfig",
+            });
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_descriptor =
+        internal_static_google_apps_meet_v2beta_SpaceConfig_descriptor.getNestedTypes().get(0);
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_descriptor,
+            new java.lang.String[] {
+              "ChatRestriction",
+              "ReactionRestriction",
+              "PresentRestriction",
+              "DefaultJoinAsViewerType",
+            });
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor =
+        internal_static_google_apps_meet_v2beta_SpaceConfig_descriptor.getNestedTypes().get(1);
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor,
+            new java.lang.String[] {
+              "RecordingConfig", "TranscriptionConfig", "SmartNotesConfig",
+            });
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_descriptor =
+        internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_descriptor,
+            new java.lang.String[] {
+              "AutoRecordingGeneration",
+            });
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_descriptor =
+        internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_descriptor,
+            new java.lang.String[] {
+              "AutoTranscriptionGeneration",
+            });
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_descriptor =
+        internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_descriptor,
+            new java.lang.String[] {
+              "AutoSmartNotesGeneration",
+            });
+    internal_static_google_apps_meet_v2beta_Member_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_apps_meet_v2beta_Member_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_Member_descriptor,
+            new java.lang.String[] {
+              "Name", "Email", "Role", "User",
             });
     internal_static_google_apps_meet_v2beta_ConferenceRecord_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_apps_meet_v2beta_ConferenceRecord_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_ConferenceRecord_descriptor,
@@ -233,7 +374,7 @@ public final class ResourceProto {
               "Name", "StartTime", "EndTime", "ExpireTime", "Space",
             });
     internal_static_google_apps_meet_v2beta_Participant_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_apps_meet_v2beta_Participant_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_Participant_descriptor,
@@ -247,7 +388,7 @@ public final class ResourceProto {
               "User",
             });
     internal_static_google_apps_meet_v2beta_ParticipantSession_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_apps_meet_v2beta_ParticipantSession_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_ParticipantSession_descriptor,
@@ -255,7 +396,7 @@ public final class ResourceProto {
               "Name", "StartTime", "EndTime",
             });
     internal_static_google_apps_meet_v2beta_SignedinUser_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_apps_meet_v2beta_SignedinUser_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_SignedinUser_descriptor,
@@ -263,7 +404,7 @@ public final class ResourceProto {
               "User", "DisplayName",
             });
     internal_static_google_apps_meet_v2beta_AnonymousUser_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_apps_meet_v2beta_AnonymousUser_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_AnonymousUser_descriptor,
@@ -271,7 +412,7 @@ public final class ResourceProto {
               "DisplayName",
             });
     internal_static_google_apps_meet_v2beta_PhoneUser_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_apps_meet_v2beta_PhoneUser_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_PhoneUser_descriptor,
@@ -279,7 +420,7 @@ public final class ResourceProto {
               "DisplayName",
             });
     internal_static_google_apps_meet_v2beta_Recording_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_apps_meet_v2beta_Recording_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_Recording_descriptor,
@@ -287,7 +428,7 @@ public final class ResourceProto {
               "DriveDestination", "Name", "State", "StartTime", "EndTime", "Destination",
             });
     internal_static_google_apps_meet_v2beta_DriveDestination_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_apps_meet_v2beta_DriveDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_DriveDestination_descriptor,
@@ -295,7 +436,7 @@ public final class ResourceProto {
               "File", "ExportUri",
             });
     internal_static_google_apps_meet_v2beta_Transcript_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_apps_meet_v2beta_Transcript_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_Transcript_descriptor,
@@ -303,7 +444,7 @@ public final class ResourceProto {
               "DocsDestination", "Name", "State", "StartTime", "EndTime", "Destination",
             });
     internal_static_google_apps_meet_v2beta_DocsDestination_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_apps_meet_v2beta_DocsDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_DocsDestination_descriptor,
@@ -311,7 +452,7 @@ public final class ResourceProto {
               "Document", "ExportUri",
             });
     internal_static_google_apps_meet_v2beta_TranscriptEntry_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_apps_meet_v2beta_TranscriptEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_TranscriptEntry_descriptor,

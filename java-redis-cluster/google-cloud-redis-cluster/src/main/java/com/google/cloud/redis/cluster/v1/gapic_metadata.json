@@ -10,11 +10,26 @@
         "grpc": {
           "libraryClient": "CloudRedisClusterClient",
           "rpcs": {
+            "BackupCluster": {
+              "methods": ["backupClusterAsync", "backupClusterAsync", "backupClusterAsync", "backupClusterOperationCallable", "backupClusterCallable"]
+            },
             "CreateCluster": {
               "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
             },
+            "DeleteBackup": {
+              "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
+            },
             "DeleteCluster": {
               "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
+            },
+            "ExportBackup": {
+              "methods": ["exportBackupAsync", "exportBackupOperationCallable", "exportBackupCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetBackupCollection": {
+              "methods": ["getBackupCollection", "getBackupCollection", "getBackupCollection", "getBackupCollectionCallable"]
             },
             "GetCluster": {
               "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
@@ -25,11 +40,20 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "ListBackupCollections": {
+              "methods": ["listBackupCollections", "listBackupCollections", "listBackupCollections", "listBackupCollectionsPagedCallable", "listBackupCollectionsCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RescheduleClusterMaintenance": {
+              "methods": ["rescheduleClusterMaintenanceAsync", "rescheduleClusterMaintenanceAsync", "rescheduleClusterMaintenanceAsync", "rescheduleClusterMaintenanceOperationCallable", "rescheduleClusterMaintenanceCallable"]
             },
             "UpdateCluster": {
               "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]

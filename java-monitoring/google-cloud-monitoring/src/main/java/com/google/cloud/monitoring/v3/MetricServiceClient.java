@@ -895,6 +895,7 @@ public class MetricServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setActiveOnly(true)
    *           .build();
    *   for (MetricDescriptor element :
    *       metricServiceClient.listMetricDescriptors(request).iterateAll()) {
@@ -930,6 +931,7 @@ public class MetricServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setActiveOnly(true)
    *           .build();
    *   ApiFuture<MetricDescriptor> future =
    *       metricServiceClient.listMetricDescriptorsPagedCallable().futureCall(request);
@@ -964,6 +966,7 @@ public class MetricServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setActiveOnly(true)
    *           .build();
    *   while (true) {
    *     ListMetricDescriptorsResponse response =

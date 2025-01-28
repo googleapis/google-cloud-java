@@ -987,7 +987,15 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The service account that the NotebookRuntime workload runs as.
+   * Output only. Deprecated: This field is no longer used and the "Vertex AI
+   * Notebook Service Account"
+   * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+   * used for the runtime workload identity.
+   * See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+   * for more details.
+   *
+   * The service account that the NotebookRuntime workload runs as.
    * </pre>
    *
    * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1010,7 +1018,15 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The service account that the NotebookRuntime workload runs as.
+   * Output only. Deprecated: This field is no longer used and the "Vertex AI
+   * Notebook Service Account"
+   * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+   * used for the runtime workload identity.
+   * See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+   * for more details.
+   *
+   * The service account that the NotebookRuntime workload runs as.
    * </pre>
    *
    * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1419,6 +1435,184 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int MACHINE_SPEC_FIELD_NUMBER = 20;
+  private com.google.cloud.aiplatform.v1beta1.MachineSpec machineSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of a single machine used by the notebook
+   * runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the machineSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasMachineSpec() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of a single machine used by the notebook
+   * runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The machineSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MachineSpec getMachineSpec() {
+    return machineSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()
+        : machineSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of a single machine used by the notebook
+   * runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder getMachineSpecOrBuilder() {
+    return machineSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()
+        : machineSpec_;
+  }
+
+  public static final int DATA_PERSISTENT_DISK_SPEC_FIELD_NUMBER = 21;
+  private com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec dataPersistentDiskSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of [persistent
+   * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+   * attached to the notebook runtime as data disk storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataPersistentDiskSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataPersistentDiskSpec() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of [persistent
+   * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+   * attached to the notebook runtime as data disk storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataPersistentDiskSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec getDataPersistentDiskSpec() {
+    return dataPersistentDiskSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.getDefaultInstance()
+        : dataPersistentDiskSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specification of [persistent
+   * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+   * attached to the notebook runtime as data disk storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PersistentDiskSpecOrBuilder
+      getDataPersistentDiskSpecOrBuilder() {
+    return dataPersistentDiskSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.getDefaultInstance()
+        : dataPersistentDiskSpec_;
+  }
+
+  public static final int NETWORK_SPEC_FIELD_NUMBER = 22;
+  private com.google.cloud.aiplatform.v1beta1.NetworkSpec networkSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network spec of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the networkSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkSpec() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network spec of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The networkSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NetworkSpec getNetworkSpec() {
+    return networkSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.NetworkSpec.getDefaultInstance()
+        : networkSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network spec of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NetworkSpecOrBuilder getNetworkSpecOrBuilder() {
+    return networkSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.NetworkSpec.getDefaultInstance()
+        : networkSpec_;
+  }
+
   public static final int IDLE_SHUTDOWN_CONFIG_FIELD_NUMBER = 23;
   private com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idleShutdownConfig_;
   /**
@@ -1436,7 +1630,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasIdleShutdownConfig() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1474,6 +1668,119 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     return idleShutdownConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.getDefaultInstance()
         : idleShutdownConfig_;
+  }
+
+  public static final int EUC_CONFIG_FIELD_NUMBER = 24;
+  private com.google.cloud.aiplatform.v1beta1.NotebookEucConfig eucConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. EUC configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the eucConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEucConfig() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. EUC configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The eucConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NotebookEucConfig getEucConfig() {
+    return eucConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.getDefaultInstance()
+        : eucConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. EUC configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NotebookEucConfigOrBuilder getEucConfigOrBuilder() {
+    return eucConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.getDefaultInstance()
+        : eucConfig_;
+  }
+
+  public static final int SHIELDED_VM_CONFIG_FIELD_NUMBER = 32;
+  private com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig shieldedVmConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime Shielded VM spec.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the shieldedVmConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasShieldedVmConfig() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime Shielded VM spec.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The shieldedVmConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig getShieldedVmConfig() {
+    return shieldedVmConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.getDefaultInstance()
+        : shieldedVmConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime Shielded VM spec.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ShieldedVmConfigOrBuilder
+      getShieldedVmConfigOrBuilder() {
+    return shieldedVmConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.getDefaultInstance()
+        : shieldedVmConfig_;
   }
 
   public static final int NETWORK_TAGS_FIELD_NUMBER = 25;
@@ -1561,7 +1868,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasEncryptionSpec() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1705,12 +2012,24 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       output.writeEnum(19, notebookRuntimeType_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(20, getMachineSpec());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(21, getDataPersistentDiskSpec());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(22, getNetworkSpec());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(23, getIdleShutdownConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(24, getEucConfig());
     }
     for (int i = 0; i < networkTags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, networkTags_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(28, getEncryptionSpec());
     }
     if (satisfiesPzs_ != false) {
@@ -1718,6 +2037,9 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
     if (satisfiesPzi_ != false) {
       output.writeBool(30, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(32, getShieldedVmConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1793,7 +2115,20 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, notebookRuntimeType_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getMachineSpec());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(21, getDataPersistentDiskSpec());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getNetworkSpec());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getIdleShutdownConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getEucConfig());
     }
     {
       int dataSize = 0;
@@ -1803,7 +2138,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       size += dataSize;
       size += 2 * getNetworkTagsList().size();
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getEncryptionSpec());
     }
     if (satisfiesPzs_ != false) {
@@ -1811,6 +2146,9 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getShieldedVmConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1857,9 +2195,29 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
     if (!getVersion().equals(other.getVersion())) return false;
     if (notebookRuntimeType_ != other.notebookRuntimeType_) return false;
+    if (hasMachineSpec() != other.hasMachineSpec()) return false;
+    if (hasMachineSpec()) {
+      if (!getMachineSpec().equals(other.getMachineSpec())) return false;
+    }
+    if (hasDataPersistentDiskSpec() != other.hasDataPersistentDiskSpec()) return false;
+    if (hasDataPersistentDiskSpec()) {
+      if (!getDataPersistentDiskSpec().equals(other.getDataPersistentDiskSpec())) return false;
+    }
+    if (hasNetworkSpec() != other.hasNetworkSpec()) return false;
+    if (hasNetworkSpec()) {
+      if (!getNetworkSpec().equals(other.getNetworkSpec())) return false;
+    }
     if (hasIdleShutdownConfig() != other.hasIdleShutdownConfig()) return false;
     if (hasIdleShutdownConfig()) {
       if (!getIdleShutdownConfig().equals(other.getIdleShutdownConfig())) return false;
+    }
+    if (hasEucConfig() != other.hasEucConfig()) return false;
+    if (hasEucConfig()) {
+      if (!getEucConfig().equals(other.getEucConfig())) return false;
+    }
+    if (hasShieldedVmConfig() != other.hasShieldedVmConfig()) return false;
+    if (hasShieldedVmConfig()) {
+      if (!getShieldedVmConfig().equals(other.getShieldedVmConfig())) return false;
     }
     if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
@@ -1921,9 +2279,29 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getVersion().hashCode();
     hash = (37 * hash) + NOTEBOOK_RUNTIME_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + notebookRuntimeType_;
+    if (hasMachineSpec()) {
+      hash = (37 * hash) + MACHINE_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getMachineSpec().hashCode();
+    }
+    if (hasDataPersistentDiskSpec()) {
+      hash = (37 * hash) + DATA_PERSISTENT_DISK_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getDataPersistentDiskSpec().hashCode();
+    }
+    if (hasNetworkSpec()) {
+      hash = (37 * hash) + NETWORK_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkSpec().hashCode();
+    }
     if (hasIdleShutdownConfig()) {
       hash = (37 * hash) + IDLE_SHUTDOWN_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getIdleShutdownConfig().hashCode();
+    }
+    if (hasEucConfig()) {
+      hash = (37 * hash) + EUC_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEucConfig().hashCode();
+    }
+    if (hasShieldedVmConfig()) {
+      hash = (37 * hash) + SHIELDED_VM_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getShieldedVmConfig().hashCode();
     }
     if (getNetworkTagsCount() > 0) {
       hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
@@ -2105,7 +2483,12 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getExpirationTimeFieldBuilder();
+        getMachineSpecFieldBuilder();
+        getDataPersistentDiskSpecFieldBuilder();
+        getNetworkSpecFieldBuilder();
         getIdleShutdownConfigFieldBuilder();
+        getEucConfigFieldBuilder();
+        getShieldedVmConfigFieldBuilder();
         getEncryptionSpecFieldBuilder();
       }
     }
@@ -2146,10 +2529,35 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       version_ = "";
       notebookRuntimeType_ = 0;
+      machineSpec_ = null;
+      if (machineSpecBuilder_ != null) {
+        machineSpecBuilder_.dispose();
+        machineSpecBuilder_ = null;
+      }
+      dataPersistentDiskSpec_ = null;
+      if (dataPersistentDiskSpecBuilder_ != null) {
+        dataPersistentDiskSpecBuilder_.dispose();
+        dataPersistentDiskSpecBuilder_ = null;
+      }
+      networkSpec_ = null;
+      if (networkSpecBuilder_ != null) {
+        networkSpecBuilder_.dispose();
+        networkSpecBuilder_ = null;
+      }
       idleShutdownConfig_ = null;
       if (idleShutdownConfigBuilder_ != null) {
         idleShutdownConfigBuilder_.dispose();
         idleShutdownConfigBuilder_ = null;
+      }
+      eucConfig_ = null;
+      if (eucConfigBuilder_ != null) {
+        eucConfigBuilder_.dispose();
+        eucConfigBuilder_ = null;
+      }
+      shieldedVmConfig_ = null;
+      if (shieldedVmConfigBuilder_ != null) {
+        shieldedVmConfigBuilder_.dispose();
+        shieldedVmConfigBuilder_ = null;
       }
       networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       encryptionSpec_ = null;
@@ -2254,25 +2662,51 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         result.notebookRuntimeType_ = notebookRuntimeType_;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.machineSpec_ =
+            machineSpecBuilder_ == null ? machineSpec_ : machineSpecBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.dataPersistentDiskSpec_ =
+            dataPersistentDiskSpecBuilder_ == null
+                ? dataPersistentDiskSpec_
+                : dataPersistentDiskSpecBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.networkSpec_ =
+            networkSpecBuilder_ == null ? networkSpec_ : networkSpecBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.idleShutdownConfig_ =
             idleShutdownConfigBuilder_ == null
                 ? idleShutdownConfig_
                 : idleShutdownConfigBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.eucConfig_ = eucConfigBuilder_ == null ? eucConfig_ : eucConfigBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.shieldedVmConfig_ =
+            shieldedVmConfigBuilder_ == null ? shieldedVmConfig_ : shieldedVmConfigBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         networkTags_.makeImmutable();
         result.networkTags_ = networkTags_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2385,13 +2819,28 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       if (other.notebookRuntimeType_ != 0) {
         setNotebookRuntimeTypeValue(other.getNotebookRuntimeTypeValue());
       }
+      if (other.hasMachineSpec()) {
+        mergeMachineSpec(other.getMachineSpec());
+      }
+      if (other.hasDataPersistentDiskSpec()) {
+        mergeDataPersistentDiskSpec(other.getDataPersistentDiskSpec());
+      }
+      if (other.hasNetworkSpec()) {
+        mergeNetworkSpec(other.getNetworkSpec());
+      }
       if (other.hasIdleShutdownConfig()) {
         mergeIdleShutdownConfig(other.getIdleShutdownConfig());
+      }
+      if (other.hasEucConfig()) {
+        mergeEucConfig(other.getEucConfig());
+      }
+      if (other.hasShieldedVmConfig()) {
+        mergeShieldedVmConfig(other.getShieldedVmConfig());
       }
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00400000;
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -2536,13 +2985,38 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00008000;
                 break;
               } // case 152
+            case 162:
+              {
+                input.readMessage(getMachineSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getDataPersistentDiskSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(getNetworkSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 178
             case 186:
               {
                 input.readMessage(
                     getIdleShutdownConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 186
+            case 194:
+              {
+                input.readMessage(getEucConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 194
             case 202:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2553,21 +3027,28 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             case 226:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 226
             case 232:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 232
             case 240:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 240
+            case 258:
+              {
+                input.readMessage(
+                    getShieldedVmConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 258
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3862,7 +4343,15 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The service account that the NotebookRuntime workload runs as.
+     * Output only. Deprecated: This field is no longer used and the "Vertex AI
+     * Notebook Service Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     *
+     * The service account that the NotebookRuntime workload runs as.
      * </pre>
      *
      * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3884,7 +4373,15 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The service account that the NotebookRuntime workload runs as.
+     * Output only. Deprecated: This field is no longer used and the "Vertex AI
+     * Notebook Service Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     *
+     * The service account that the NotebookRuntime workload runs as.
      * </pre>
      *
      * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3906,7 +4403,15 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The service account that the NotebookRuntime workload runs as.
+     * Output only. Deprecated: This field is no longer used and the "Vertex AI
+     * Notebook Service Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     *
+     * The service account that the NotebookRuntime workload runs as.
      * </pre>
      *
      * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3927,7 +4432,15 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The service account that the NotebookRuntime workload runs as.
+     * Output only. Deprecated: This field is no longer used and the "Vertex AI
+     * Notebook Service Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     *
+     * The service account that the NotebookRuntime workload runs as.
      * </pre>
      *
      * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3944,7 +4457,15 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The service account that the NotebookRuntime workload runs as.
+     * Output only. Deprecated: This field is no longer used and the "Vertex AI
+     * Notebook Service Account"
+     * (service-PROJECT_NUMBER&#64;gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is
+     * used for the runtime workload identity.
+     * See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account
+     * for more details.
+     *
+     * The service account that the NotebookRuntime workload runs as.
      * </pre>
      *
      * <code>string service_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4849,6 +5370,652 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.MachineSpec machineSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.MachineSpec,
+            com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder>
+        machineSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the machineSpec field is set.
+     */
+    public boolean hasMachineSpec() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The machineSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.MachineSpec getMachineSpec() {
+      if (machineSpecBuilder_ == null) {
+        return machineSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()
+            : machineSpec_;
+      } else {
+        return machineSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMachineSpec(com.google.cloud.aiplatform.v1beta1.MachineSpec value) {
+      if (machineSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        machineSpec_ = value;
+      } else {
+        machineSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMachineSpec(
+        com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder builderForValue) {
+      if (machineSpecBuilder_ == null) {
+        machineSpec_ = builderForValue.build();
+      } else {
+        machineSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMachineSpec(com.google.cloud.aiplatform.v1beta1.MachineSpec value) {
+      if (machineSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && machineSpec_ != null
+            && machineSpec_
+                != com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()) {
+          getMachineSpecBuilder().mergeFrom(value);
+        } else {
+          machineSpec_ = value;
+        }
+      } else {
+        machineSpecBuilder_.mergeFrom(value);
+      }
+      if (machineSpec_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMachineSpec() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      machineSpec_ = null;
+      if (machineSpecBuilder_ != null) {
+        machineSpecBuilder_.dispose();
+        machineSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder getMachineSpecBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getMachineSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder getMachineSpecOrBuilder() {
+      if (machineSpecBuilder_ != null) {
+        return machineSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return machineSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()
+            : machineSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of a single machine used by the notebook
+     * runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.MachineSpec,
+            com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder>
+        getMachineSpecFieldBuilder() {
+      if (machineSpecBuilder_ == null) {
+        machineSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.MachineSpec,
+                com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder>(
+                getMachineSpec(), getParentForChildren(), isClean());
+        machineSpec_ = null;
+      }
+      return machineSpecBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec dataPersistentDiskSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec,
+            com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.PersistentDiskSpecOrBuilder>
+        dataPersistentDiskSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataPersistentDiskSpec field is set.
+     */
+    public boolean hasDataPersistentDiskSpec() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataPersistentDiskSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec getDataPersistentDiskSpec() {
+      if (dataPersistentDiskSpecBuilder_ == null) {
+        return dataPersistentDiskSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.getDefaultInstance()
+            : dataPersistentDiskSpec_;
+      } else {
+        return dataPersistentDiskSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataPersistentDiskSpec(
+        com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec value) {
+      if (dataPersistentDiskSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataPersistentDiskSpec_ = value;
+      } else {
+        dataPersistentDiskSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataPersistentDiskSpec(
+        com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.Builder builderForValue) {
+      if (dataPersistentDiskSpecBuilder_ == null) {
+        dataPersistentDiskSpec_ = builderForValue.build();
+      } else {
+        dataPersistentDiskSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataPersistentDiskSpec(
+        com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec value) {
+      if (dataPersistentDiskSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && dataPersistentDiskSpec_ != null
+            && dataPersistentDiskSpec_
+                != com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.getDefaultInstance()) {
+          getDataPersistentDiskSpecBuilder().mergeFrom(value);
+        } else {
+          dataPersistentDiskSpec_ = value;
+        }
+      } else {
+        dataPersistentDiskSpecBuilder_.mergeFrom(value);
+      }
+      if (dataPersistentDiskSpec_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataPersistentDiskSpec() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      dataPersistentDiskSpec_ = null;
+      if (dataPersistentDiskSpecBuilder_ != null) {
+        dataPersistentDiskSpecBuilder_.dispose();
+        dataPersistentDiskSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.Builder
+        getDataPersistentDiskSpecBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getDataPersistentDiskSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PersistentDiskSpecOrBuilder
+        getDataPersistentDiskSpecOrBuilder() {
+      if (dataPersistentDiskSpecBuilder_ != null) {
+        return dataPersistentDiskSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return dataPersistentDiskSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.getDefaultInstance()
+            : dataPersistentDiskSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specification of [persistent
+     * disk][https://cloud.google.com/compute/docs/disks/persistent-disks]
+     * attached to the notebook runtime as data disk storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PersistentDiskSpec data_persistent_disk_spec = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec,
+            com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.PersistentDiskSpecOrBuilder>
+        getDataPersistentDiskSpecFieldBuilder() {
+      if (dataPersistentDiskSpecBuilder_ == null) {
+        dataPersistentDiskSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec,
+                com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.PersistentDiskSpecOrBuilder>(
+                getDataPersistentDiskSpec(), getParentForChildren(), isClean());
+        dataPersistentDiskSpec_ = null;
+      }
+      return dataPersistentDiskSpecBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.NetworkSpec networkSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NetworkSpec,
+            com.google.cloud.aiplatform.v1beta1.NetworkSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.NetworkSpecOrBuilder>
+        networkSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the networkSpec field is set.
+     */
+    public boolean hasNetworkSpec() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The networkSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.NetworkSpec getNetworkSpec() {
+      if (networkSpecBuilder_ == null) {
+        return networkSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.NetworkSpec.getDefaultInstance()
+            : networkSpec_;
+      } else {
+        return networkSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setNetworkSpec(com.google.cloud.aiplatform.v1beta1.NetworkSpec value) {
+      if (networkSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkSpec_ = value;
+      } else {
+        networkSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setNetworkSpec(
+        com.google.cloud.aiplatform.v1beta1.NetworkSpec.Builder builderForValue) {
+      if (networkSpecBuilder_ == null) {
+        networkSpec_ = builderForValue.build();
+      } else {
+        networkSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeNetworkSpec(com.google.cloud.aiplatform.v1beta1.NetworkSpec value) {
+      if (networkSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && networkSpec_ != null
+            && networkSpec_
+                != com.google.cloud.aiplatform.v1beta1.NetworkSpec.getDefaultInstance()) {
+          getNetworkSpecBuilder().mergeFrom(value);
+        } else {
+          networkSpec_ = value;
+        }
+      } else {
+        networkSpecBuilder_.mergeFrom(value);
+      }
+      if (networkSpec_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearNetworkSpec() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      networkSpec_ = null;
+      if (networkSpecBuilder_ != null) {
+        networkSpecBuilder_.dispose();
+        networkSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NetworkSpec.Builder getNetworkSpecBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getNetworkSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NetworkSpecOrBuilder getNetworkSpecOrBuilder() {
+      if (networkSpecBuilder_ != null) {
+        return networkSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return networkSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.NetworkSpec.getDefaultInstance()
+            : networkSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network spec of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NetworkSpec network_spec = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NetworkSpec,
+            com.google.cloud.aiplatform.v1beta1.NetworkSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.NetworkSpecOrBuilder>
+        getNetworkSpecFieldBuilder() {
+      if (networkSpecBuilder_ == null) {
+        networkSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.NetworkSpec,
+                com.google.cloud.aiplatform.v1beta1.NetworkSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.NetworkSpecOrBuilder>(
+                getNetworkSpec(), getParentForChildren(), isClean());
+        networkSpec_ = null;
+      }
+      return networkSpecBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idleShutdownConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig,
@@ -4869,7 +6036,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * @return Whether the idleShutdownConfig field is set.
      */
     public boolean hasIdleShutdownConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -4914,7 +6081,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       } else {
         idleShutdownConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4936,7 +6103,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       } else {
         idleShutdownConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4954,7 +6121,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public Builder mergeIdleShutdownConfig(
         com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig value) {
       if (idleShutdownConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && idleShutdownConfig_ != null
             && idleShutdownConfig_
                 != com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig
@@ -4967,7 +6134,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         idleShutdownConfigBuilder_.mergeFrom(value);
       }
       if (idleShutdownConfig_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -4984,7 +6151,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearIdleShutdownConfig() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       idleShutdownConfig_ = null;
       if (idleShutdownConfigBuilder_ != null) {
         idleShutdownConfigBuilder_.dispose();
@@ -5006,7 +6173,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.Builder
         getIdleShutdownConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getIdleShutdownConfigFieldBuilder().getBuilder();
     }
@@ -5059,6 +6226,419 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return idleShutdownConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.NotebookEucConfig eucConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NotebookEucConfig,
+            com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.NotebookEucConfigOrBuilder>
+        eucConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the eucConfig field is set.
+     */
+    public boolean hasEucConfig() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The eucConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.NotebookEucConfig getEucConfig() {
+      if (eucConfigBuilder_ == null) {
+        return eucConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.getDefaultInstance()
+            : eucConfig_;
+      } else {
+        return eucConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEucConfig(com.google.cloud.aiplatform.v1beta1.NotebookEucConfig value) {
+      if (eucConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        eucConfig_ = value;
+      } else {
+        eucConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEucConfig(
+        com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.Builder builderForValue) {
+      if (eucConfigBuilder_ == null) {
+        eucConfig_ = builderForValue.build();
+      } else {
+        eucConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEucConfig(com.google.cloud.aiplatform.v1beta1.NotebookEucConfig value) {
+      if (eucConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && eucConfig_ != null
+            && eucConfig_
+                != com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.getDefaultInstance()) {
+          getEucConfigBuilder().mergeFrom(value);
+        } else {
+          eucConfig_ = value;
+        }
+      } else {
+        eucConfigBuilder_.mergeFrom(value);
+      }
+      if (eucConfig_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEucConfig() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      eucConfig_ = null;
+      if (eucConfigBuilder_ != null) {
+        eucConfigBuilder_.dispose();
+        eucConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.Builder getEucConfigBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getEucConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NotebookEucConfigOrBuilder getEucConfigOrBuilder() {
+      if (eucConfigBuilder_ != null) {
+        return eucConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return eucConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.getDefaultInstance()
+            : eucConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. EUC configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookEucConfig euc_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NotebookEucConfig,
+            com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.NotebookEucConfigOrBuilder>
+        getEucConfigFieldBuilder() {
+      if (eucConfigBuilder_ == null) {
+        eucConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.NotebookEucConfig,
+                com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.NotebookEucConfigOrBuilder>(
+                getEucConfig(), getParentForChildren(), isClean());
+        eucConfig_ = null;
+      }
+      return eucConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig shieldedVmConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig,
+            com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ShieldedVmConfigOrBuilder>
+        shieldedVmConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the shieldedVmConfig field is set.
+     */
+    public boolean hasShieldedVmConfig() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The shieldedVmConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig getShieldedVmConfig() {
+      if (shieldedVmConfigBuilder_ == null) {
+        return shieldedVmConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.getDefaultInstance()
+            : shieldedVmConfig_;
+      } else {
+        return shieldedVmConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setShieldedVmConfig(com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig value) {
+      if (shieldedVmConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shieldedVmConfig_ = value;
+      } else {
+        shieldedVmConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setShieldedVmConfig(
+        com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.Builder builderForValue) {
+      if (shieldedVmConfigBuilder_ == null) {
+        shieldedVmConfig_ = builderForValue.build();
+      } else {
+        shieldedVmConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeShieldedVmConfig(
+        com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig value) {
+      if (shieldedVmConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && shieldedVmConfig_ != null
+            && shieldedVmConfig_
+                != com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.getDefaultInstance()) {
+          getShieldedVmConfigBuilder().mergeFrom(value);
+        } else {
+          shieldedVmConfig_ = value;
+        }
+      } else {
+        shieldedVmConfigBuilder_.mergeFrom(value);
+      }
+      if (shieldedVmConfig_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearShieldedVmConfig() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      shieldedVmConfig_ = null;
+      if (shieldedVmConfigBuilder_ != null) {
+        shieldedVmConfigBuilder_.dispose();
+        shieldedVmConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.Builder
+        getShieldedVmConfigBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getShieldedVmConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ShieldedVmConfigOrBuilder
+        getShieldedVmConfigOrBuilder() {
+      if (shieldedVmConfigBuilder_ != null) {
+        return shieldedVmConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return shieldedVmConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.getDefaultInstance()
+            : shieldedVmConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime Shielded VM spec.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ShieldedVmConfig shielded_vm_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig,
+            com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ShieldedVmConfigOrBuilder>
+        getShieldedVmConfigFieldBuilder() {
+      if (shieldedVmConfigBuilder_ == null) {
+        shieldedVmConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig,
+                com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ShieldedVmConfigOrBuilder>(
+                getShieldedVmConfig(), getParentForChildren(), isClean());
+        shieldedVmConfig_ = null;
+      }
+      return shieldedVmConfigBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList networkTags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -5066,7 +6646,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       if (!networkTags_.isModifiable()) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00400000;
     }
     /**
      *
@@ -5151,7 +6731,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       ensureNetworkTagsIsMutable();
       networkTags_.set(index, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5174,7 +6754,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5194,7 +6774,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
       ensureNetworkTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5212,7 +6792,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearNetworkTags() {
       networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       ;
       onChanged();
       return this;
@@ -5237,7 +6817,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5262,7 +6842,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -5306,7 +6886,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5328,7 +6908,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5345,7 +6925,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()) {
@@ -5357,7 +6937,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         encryptionSpecBuilder_.mergeFrom(value);
       }
       if (encryptionSpec_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -5374,7 +6954,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -5395,7 +6975,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -5479,7 +7059,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -5495,7 +7075,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -5532,7 +7112,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -5548,7 +7128,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       satisfiesPzi_ = false;
       onChanged();
       return this;
