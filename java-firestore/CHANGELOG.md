@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.30.6](https://github.com/googleapis/java-firestore/compare/v3.30.5...v3.30.6) (2025-01-28)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#1996](https://github.com/googleapis/java-firestore/issues/1996)) ([050fe55](https://github.com/googleapis/java-firestore/commit/050fe55ab6f117866fa81012ca5ada1b334dd404))
+* Update googleapis/sdk-platform-java action to v2.52.0 ([#1993](https://github.com/googleapis/java-firestore/issues/1993)) ([24dfe38](https://github.com/googleapis/java-firestore/commit/24dfe38b0c2e06662151b76fb5b1b8a793119fdb))
+
 ## [3.30.5](https://github.com/googleapis/java-firestore/compare/v3.30.4...v3.30.5) (2025-01-24)
 
 
