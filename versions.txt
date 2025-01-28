@@ -825,3 +825,5 @@ proto-google-cloud-valkey-v1:0.2.0:0.2.0
 proto-google-cloud-valkey-v1beta:0.2.0:0.2.0
 proto-google-cloud-cloudquotas-v1beta:0.24.0:0.24.0
 grpc-google-cloud-cloudquotas-v1beta:0.24.0:0.24.0
+proto-google-cloud-secretmanager-v1beta1:2.56.0:2.56.0
+grpc-google-cloud-secretmanager-v1beta1:2.56.0:2.56.0
