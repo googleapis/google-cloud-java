@@ -128,9 +128,9 @@ public final class SignedinUser extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. For a personal device, it's the user's first and last name.
-   * For a robot account, it's the admin specified device name. For example,
-   * "Altostrat Room".
+   * Output only. For a personal device, it's the user's first name and last
+   * name. For a robot account, it's the administrator-specified device name.
+   * For example, "Altostrat Room".
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -153,9 +153,9 @@ public final class SignedinUser extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. For a personal device, it's the user's first and last name.
-   * For a robot account, it's the admin specified device name. For example,
-   * "Altostrat Room".
+   * Output only. For a personal device, it's the user's first name and last
+   * name. For a robot account, it's the administrator-specified device name.
+   * For example, "Altostrat Room".
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -658,9 +658,9 @@ public final class SignedinUser extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For a personal device, it's the user's first and last name.
-     * For a robot account, it's the admin specified device name. For example,
-     * "Altostrat Room".
+     * Output only. For a personal device, it's the user's first name and last
+     * name. For a robot account, it's the administrator-specified device name.
+     * For example, "Altostrat Room".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -682,9 +682,9 @@ public final class SignedinUser extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For a personal device, it's the user's first and last name.
-     * For a robot account, it's the admin specified device name. For example,
-     * "Altostrat Room".
+     * Output only. For a personal device, it's the user's first name and last
+     * name. For a robot account, it's the administrator-specified device name.
+     * For example, "Altostrat Room".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -706,9 +706,9 @@ public final class SignedinUser extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For a personal device, it's the user's first and last name.
-     * For a robot account, it's the admin specified device name. For example,
-     * "Altostrat Room".
+     * Output only. For a personal device, it's the user's first name and last
+     * name. For a robot account, it's the administrator-specified device name.
+     * For example, "Altostrat Room".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -729,9 +729,9 @@ public final class SignedinUser extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For a personal device, it's the user's first and last name.
-     * For a robot account, it's the admin specified device name. For example,
-     * "Altostrat Room".
+     * Output only. For a personal device, it's the user's first name and last
+     * name. For a robot account, it's the administrator-specified device name.
+     * For example, "Altostrat Room".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -748,9 +748,9 @@ public final class SignedinUser extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For a personal device, it's the user's first and last name.
-     * For a robot account, it's the admin specified device name. For example,
-     * "Altostrat Room".
+     * Output only. For a personal device, it's the user's first name and last
+     * name. For a robot account, it's the administrator-specified device name.
+     * For example, "Altostrat Room".
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

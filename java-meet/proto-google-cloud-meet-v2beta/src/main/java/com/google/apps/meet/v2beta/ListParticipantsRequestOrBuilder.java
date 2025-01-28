@@ -99,8 +99,9 @@ public interface ListParticipantsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. User specified filtering condition in EBNF format. The following
-   * are the filterable fields:
+   * Optional. User specified filtering condition in [EBNF
+   * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+   * The following are the filterable fields:
    *
    * * `earliest_start_time`
    * * `latest_end_time`
@@ -118,8 +119,9 @@ public interface ListParticipantsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. User specified filtering condition in EBNF format. The following
-   * are the filterable fields:
+   * Optional. User specified filtering condition in [EBNF
+   * format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+   * The following are the filterable fields:
    *
    * * `earliest_start_time`
    * * `latest_end_time`

@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionCheckpointsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
@@ -52,6 +53,8 @@ import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionCheckpointsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelsRequest;
@@ -128,6 +131,20 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelVersionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsMethodDescriptor =
+          MethodDescriptor
+              .<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelService/ListModelVersionCheckpoints")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListModelVersionCheckpointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListModelVersionCheckpointsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
@@ -343,6 +360,12 @@ public class GrpcModelServiceStub extends ModelServiceStub {
       listModelVersionsCallable;
   private final UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
       listModelVersionsPagedCallable;
+  private final UnaryCallable<
+          ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsCallable;
+  private final UnaryCallable<
+          ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsPagedCallable;
   private final UnaryCallable<UpdateModelRequest, Model> updateModelCallable;
   private final UnaryCallable<UpdateExplanationDatasetRequest, Operation>
       updateExplanationDatasetCallable;
@@ -471,6 +494,19 @@ public class GrpcModelServiceStub extends ModelServiceStub {
         listModelVersionsTransportSettings =
             GrpcCallSettings.<ListModelVersionsRequest, ListModelVersionsResponse>newBuilder()
                 .setMethodDescriptor(listModelVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+        listModelVersionCheckpointsTransportSettings =
+            GrpcCallSettings
+                .<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listModelVersionCheckpointsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -713,6 +749,16 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             listModelVersionsTransportSettings,
             settings.listModelVersionsSettings(),
             clientContext);
+    this.listModelVersionCheckpointsCallable =
+        callableFactory.createUnaryCallable(
+            listModelVersionCheckpointsTransportSettings,
+            settings.listModelVersionCheckpointsSettings(),
+            clientContext);
+    this.listModelVersionCheckpointsPagedCallable =
+        callableFactory.createPagedCallable(
+            listModelVersionCheckpointsTransportSettings,
+            settings.listModelVersionCheckpointsSettings(),
+            clientContext);
     this.updateModelCallable =
         callableFactory.createUnaryCallable(
             updateModelTransportSettings, settings.updateModelSettings(), clientContext);
@@ -880,6 +926,18 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
       listModelVersionsPagedCallable() {
     return listModelVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsCallable() {
+    return listModelVersionCheckpointsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsPagedCallable() {
+    return listModelVersionCheckpointsPagedCallable;
   }
 
   @Override

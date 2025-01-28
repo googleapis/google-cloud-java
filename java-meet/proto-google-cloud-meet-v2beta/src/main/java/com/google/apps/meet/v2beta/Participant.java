@@ -23,7 +23,6 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * [Developer Preview](https://developers.google.com/workspace/preview).
  * User who attended or is attending a conference.
  * </pre>
  *
@@ -224,7 +223,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User who calls in from their phone.
+   * User calling from their phone.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -239,7 +238,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User who calls in from their phone.
+   * User calling from their phone.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -257,7 +256,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User who calls in from their phone.
+   * User calling from their phone.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -329,8 +328,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when the participant joined the meeting for the first
-   * time.
+   * Output only. Time when the participant first joined the meeting.
    * </pre>
    *
    * <code>
@@ -347,8 +345,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when the participant joined the meeting for the first
-   * time.
+   * Output only. Time when the participant first joined the meeting.
    * </pre>
    *
    * <code>
@@ -367,8 +364,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when the participant joined the meeting for the first
-   * time.
+   * Output only. Time when the participant first joined the meeting.
    * </pre>
    *
    * <code>
@@ -389,7 +385,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time when the participant left the meeting for the last time.
-   * This can be null if it is an active meeting.
+   * This can be null if it's an active meeting.
    * </pre>
    *
    * <code>
@@ -407,7 +403,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time when the participant left the meeting for the last time.
-   * This can be null if it is an active meeting.
+   * This can be null if it's an active meeting.
    * </pre>
    *
    * <code>
@@ -427,7 +423,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time when the participant left the meeting for the last time.
-   * This can be null if it is an active meeting.
+   * This can be null if it's an active meeting.
    * </pre>
    *
    * <code>
@@ -685,7 +681,6 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview).
    * User who attended or is attending a conference.
    * </pre>
    *
@@ -1423,7 +1418,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1438,7 +1433,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1463,7 +1458,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1485,7 +1480,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1504,7 +1499,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1535,7 +1530,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1560,7 +1555,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1572,7 +1567,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1592,7 +1587,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User who calls in from their phone.
+     * User calling from their phone.
      * </pre>
      *
      * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -1740,8 +1735,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1757,8 +1751,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1780,8 +1773,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1805,8 +1797,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1827,8 +1818,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1857,8 +1847,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1879,8 +1868,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1896,8 +1884,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1917,8 +1904,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the participant joined the meeting for the first
-     * time.
+     * Output only. Time when the participant first joined the meeting.
      * </pre>
      *
      * <code>
@@ -1953,7 +1939,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>
@@ -1970,7 +1956,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>
@@ -1993,7 +1979,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>
@@ -2018,7 +2004,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>
@@ -2040,7 +2026,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>
@@ -2070,7 +2056,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>
@@ -2092,7 +2078,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>
@@ -2109,7 +2095,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>
@@ -2130,7 +2116,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time when the participant left the meeting for the last time.
-     * This can be null if it is an active meeting.
+     * This can be null if it's an active meeting.
      * </pre>
      *
      * <code>

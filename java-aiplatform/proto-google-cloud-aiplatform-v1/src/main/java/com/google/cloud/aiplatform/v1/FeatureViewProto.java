@@ -65,6 +65,10 @@ public final class FeatureViewProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FeatureView_VertexRagSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FeatureView_OptimizedConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FeatureView_OptimizedConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_fieldAccessorTable;
@@ -80,73 +84,79 @@ public final class FeatureViewProto {
       "\n-google/cloud/aiplatform/v1/feature_vie"
           + "w.proto\022\032google.cloud.aiplatform.v1\032\037goo"
           + "gle/api/field_behavior.proto\032\031google/api"
-          + "/resource.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\315\022\n\013FeatureView\022W\n\020big_query_so"
-          + "urce\030\006 \001(\01326.google.cloud.aiplatform.v1."
-          + "FeatureView.BigQuerySourceB\003\340A\001H\000\022e\n\027fea"
-          + "ture_registry_source\030\t \001(\0132=.google.clou"
-          + "d.aiplatform.v1.FeatureView.FeatureRegis"
-          + "trySourceB\003\340A\001H\000\022Y\n\021vertex_rag_source\030\022 "
-          + "\001(\01327.google.cloud.aiplatform.v1.Feature"
-          + "View.VertexRagSourceB\003\340A\001H\000\022\021\n\004name\030\001 \001("
-          + "\tB\003\340A\010\0224\n\013create_time\030\002 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\0224\n\013update_time\030\003 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n\004et"
-          + "ag\030\004 \001(\tB\003\340A\001\022H\n\006labels\030\005 \003(\01323.google.c"
-          + "loud.aiplatform.v1.FeatureView.LabelsEnt"
-          + "ryB\003\340A\001\022G\n\013sync_config\030\007 \001(\01322.google.cl"
-          + "oud.aiplatform.v1.FeatureView.SyncConfig"
-          + "\022N\n\014index_config\030\017 \001(\01323.google.cloud.ai"
-          + "platform.v1.FeatureView.IndexConfigB\003\340A\001"
-          + "\022Y\n\022service_agent_type\030\016 \001(\01628.google.cl"
-          + "oud.aiplatform.v1.FeatureView.ServiceAge"
-          + "ntTypeB\003\340A\001\022\"\n\025service_account_email\030\r \001"
-          + "(\tB\003\340A\003\022\032\n\rsatisfies_pzs\030\023 \001(\010B\003\340A\003\022\032\n\rs"
-          + "atisfies_pzi\030\024 \001(\010B\003\340A\003\032B\n\016BigQuerySourc"
-          + "e\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\036\n\021entity_id_columns"
-          + "\030\002 \003(\tB\003\340A\002\0323\n\nSyncConfig\022\014\n\004cron\030\001 \001(\t\022"
-          + "\027\n\ncontinuous\030\002 \001(\010B\003\340A\001\032\347\005\n\013IndexConfig"
-          + "\022_\n\016tree_ah_config\030\006 \001(\0132@.google.cloud."
-          + "aiplatform.v1.FeatureView.IndexConfig.Tr"
-          + "eeAHConfigB\003\340A\001H\000\022g\n\022brute_force_config\030"
-          + "\007 \001(\0132D.google.cloud.aiplatform.v1.Featu"
-          + "reView.IndexConfig.BruteForceConfigB\003\340A\001"
-          + "H\000\022\035\n\020embedding_column\030\001 \001(\tB\003\340A\001\022\033\n\016fil"
-          + "ter_columns\030\002 \003(\tB\003\340A\001\022\034\n\017crowding_colum"
-          + "n\030\003 \001(\tB\003\340A\001\022%\n\023embedding_dimension\030\004 \001("
-          + "\005B\003\340A\001H\001\210\001\001\022k\n\025distance_measure_type\030\005 \001"
-          + "(\0162G.google.cloud.aiplatform.v1.FeatureV"
-          + "iew.IndexConfig.DistanceMeasureTypeB\003\340A\001"
-          + "\032\022\n\020BruteForceConfig\032Y\n\014TreeAHConfig\022+\n\031"
-          + "leaf_node_embedding_count\030\001 \001(\003B\003\340A\001H\000\210\001"
-          + "\001B\034\n\032_leaf_node_embedding_count\"\204\001\n\023Dist"
-          + "anceMeasureType\022%\n!DISTANCE_MEASURE_TYPE"
-          + "_UNSPECIFIED\020\000\022\027\n\023SQUARED_L2_DISTANCE\020\001\022"
-          + "\023\n\017COSINE_DISTANCE\020\002\022\030\n\024DOT_PRODUCT_DIST"
-          + "ANCE\020\003B\022\n\020algorithm_configB\026\n\024_embedding"
-          + "_dimension\032\376\001\n\025FeatureRegistrySource\022g\n\016"
-          + "feature_groups\030\001 \003(\0132J.google.cloud.aipl"
-          + "atform.v1.FeatureView.FeatureRegistrySou"
-          + "rce.FeatureGroupB\003\340A\002\022 \n\016project_number\030"
-          + "\002 \001(\003B\003\340A\001H\000\210\001\001\032G\n\014FeatureGroup\022\035\n\020featu"
-          + "re_group_id\030\001 \001(\tB\003\340A\002\022\030\n\013feature_ids\030\002 "
-          + "\003(\tB\003\340A\002B\021\n\017_project_number\032?\n\017VertexRag"
-          + "Source\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\032\n\rrag_corpus_i"
-          + "d\030\002 \001(\003B\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\t:\0028\001\"{\n\020ServiceAgentType\022"
-          + "\"\n\036SERVICE_AGENT_TYPE_UNSPECIFIED\020\000\022\036\n\032S"
-          + "ERVICE_AGENT_TYPE_PROJECT\020\001\022#\n\037SERVICE_A"
-          + "GENT_TYPE_FEATURE_VIEW\020\002:\233\001\352A\227\001\n%aiplatf"
-          + "orm.googleapis.com/FeatureView\022nprojects"
-          + "/{project}/locations/{location}/featureO"
-          + "nlineStores/{feature_online_store}/featu"
-          + "reViews/{feature_view}B\010\n\006sourceB\316\001\n\036com"
-          + ".google.cloud.aiplatform.v1B\020FeatureView"
-          + "ProtoP\001Z>cloud.google.com/go/aiplatform/"
-          + "apiv1/aiplatformpb;aiplatformpb\252\002\032Google"
-          + ".Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPl"
-          + "atform\\V1\352\002\035Google::Cloud::AIPlatform::V"
-          + "1b\006proto3"
+          + "/resource.proto\0322google/cloud/aiplatform"
+          + "/v1/machine_resources.proto\032\037google/prot"
+          + "obuf/timestamp.proto\"\212\024\n\013FeatureView\022W\n\020"
+          + "big_query_source\030\006 \001(\01326.google.cloud.ai"
+          + "platform.v1.FeatureView.BigQuerySourceB\003"
+          + "\340A\001H\000\022e\n\027feature_registry_source\030\t \001(\0132="
+          + ".google.cloud.aiplatform.v1.FeatureView."
+          + "FeatureRegistrySourceB\003\340A\001H\000\022Y\n\021vertex_r"
+          + "ag_source\030\022 \001(\01327.google.cloud.aiplatfor"
+          + "m.v1.FeatureView.VertexRagSourceB\003\340A\001H\000\022"
+          + "\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013create_time\030\002 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upda"
+          + "te_time\030\003 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\022\021\n\004etag\030\004 \001(\tB\003\340A\001\022H\n\006labels\030\005 \003("
+          + "\01323.google.cloud.aiplatform.v1.FeatureVi"
+          + "ew.LabelsEntryB\003\340A\001\022G\n\013sync_config\030\007 \001(\013"
+          + "22.google.cloud.aiplatform.v1.FeatureVie"
+          + "w.SyncConfig\022N\n\014index_config\030\017 \001(\01323.goo"
+          + "gle.cloud.aiplatform.v1.FeatureView.Inde"
+          + "xConfigB\003\340A\001\022V\n\020optimized_config\030\020 \001(\01327"
+          + ".google.cloud.aiplatform.v1.FeatureView."
+          + "OptimizedConfigB\003\340A\001\022Y\n\022service_agent_ty"
+          + "pe\030\016 \001(\01628.google.cloud.aiplatform.v1.Fe"
+          + "atureView.ServiceAgentTypeB\003\340A\001\022\"\n\025servi"
+          + "ce_account_email\030\r \001(\tB\003\340A\003\022\032\n\rsatisfies"
+          + "_pzs\030\023 \001(\010B\003\340A\003\022\032\n\rsatisfies_pzi\030\024 \001(\010B\003"
+          + "\340A\003\032B\n\016BigQuerySource\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022"
+          + "\036\n\021entity_id_columns\030\002 \003(\tB\003\340A\002\0323\n\nSyncC"
+          + "onfig\022\014\n\004cron\030\001 \001(\t\022\027\n\ncontinuous\030\002 \001(\010B"
+          + "\003\340A\001\032\347\005\n\013IndexConfig\022_\n\016tree_ah_config\030\006"
+          + " \001(\0132@.google.cloud.aiplatform.v1.Featur"
+          + "eView.IndexConfig.TreeAHConfigB\003\340A\001H\000\022g\n"
+          + "\022brute_force_config\030\007 \001(\0132D.google.cloud"
+          + ".aiplatform.v1.FeatureView.IndexConfig.B"
+          + "ruteForceConfigB\003\340A\001H\000\022\035\n\020embedding_colu"
+          + "mn\030\001 \001(\tB\003\340A\001\022\033\n\016filter_columns\030\002 \003(\tB\003\340"
+          + "A\001\022\034\n\017crowding_column\030\003 \001(\tB\003\340A\001\022%\n\023embe"
+          + "dding_dimension\030\004 \001(\005B\003\340A\001H\001\210\001\001\022k\n\025dista"
+          + "nce_measure_type\030\005 \001(\0162G.google.cloud.ai"
+          + "platform.v1.FeatureView.IndexConfig.Dist"
+          + "anceMeasureTypeB\003\340A\001\032\022\n\020BruteForceConfig"
+          + "\032Y\n\014TreeAHConfig\022+\n\031leaf_node_embedding_"
+          + "count\030\001 \001(\003B\003\340A\001H\000\210\001\001B\034\n\032_leaf_node_embe"
+          + "dding_count\"\204\001\n\023DistanceMeasureType\022%\n!D"
+          + "ISTANCE_MEASURE_TYPE_UNSPECIFIED\020\000\022\027\n\023SQ"
+          + "UARED_L2_DISTANCE\020\001\022\023\n\017COSINE_DISTANCE\020\002"
+          + "\022\030\n\024DOT_PRODUCT_DISTANCE\020\003B\022\n\020algorithm_"
+          + "configB\026\n\024_embedding_dimension\032\376\001\n\025Featu"
+          + "reRegistrySource\022g\n\016feature_groups\030\001 \003(\013"
+          + "2J.google.cloud.aiplatform.v1.FeatureVie"
+          + "w.FeatureRegistrySource.FeatureGroupB\003\340A"
+          + "\002\022 \n\016project_number\030\002 \001(\003B\003\340A\001H\000\210\001\001\032G\n\014F"
+          + "eatureGroup\022\035\n\020feature_group_id\030\001 \001(\tB\003\340"
+          + "A\002\022\030\n\013feature_ids\030\002 \003(\tB\003\340A\002B\021\n\017_project"
+          + "_number\032?\n\017VertexRagSource\022\020\n\003uri\030\001 \001(\tB"
+          + "\003\340A\002\022\032\n\rrag_corpus_id\030\002 \001(\003B\003\340A\001\032c\n\017Opti"
+          + "mizedConfig\022P\n\023automatic_resources\030\007 \001(\013"
+          + "2..google.cloud.aiplatform.v1.AutomaticR"
+          + "esourcesB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"{\n\020ServiceAgentType"
+          + "\022\"\n\036SERVICE_AGENT_TYPE_UNSPECIFIED\020\000\022\036\n\032"
+          + "SERVICE_AGENT_TYPE_PROJECT\020\001\022#\n\037SERVICE_"
+          + "AGENT_TYPE_FEATURE_VIEW\020\002:\233\001\352A\227\001\n%aiplat"
+          + "form.googleapis.com/FeatureView\022nproject"
+          + "s/{project}/locations/{location}/feature"
+          + "OnlineStores/{feature_online_store}/feat"
+          + "ureViews/{feature_view}B\010\n\006sourceB\316\001\n\036co"
+          + "m.google.cloud.aiplatform.v1B\020FeatureVie"
+          + "wProtoP\001Z>cloud.google.com/go/aiplatform"
+          + "/apiv1/aiplatformpb;aiplatformpb\252\002\032Googl"
+          + "e.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIP"
+          + "latform\\V1\352\002\035Google::Cloud::AIPlatform::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -154,6 +164,7 @@ public final class FeatureViewProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.MachineResourcesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_FeatureView_descriptor =
@@ -172,6 +183,7 @@ public final class FeatureViewProto {
               "Labels",
               "SyncConfig",
               "IndexConfig",
+              "OptimizedConfig",
               "ServiceAgentType",
               "ServiceAccountEmail",
               "SatisfiesPzs",
@@ -253,8 +265,16 @@ public final class FeatureViewProto {
             new java.lang.String[] {
               "Uri", "RagCorpusId",
             });
-    internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_descriptor =
+    internal_static_google_cloud_aiplatform_v1_FeatureView_OptimizedConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1_FeatureView_descriptor.getNestedTypes().get(5);
+    internal_static_google_cloud_aiplatform_v1_FeatureView_OptimizedConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FeatureView_OptimizedConfig_descriptor,
+            new java.lang.String[] {
+              "AutomaticResources",
+            });
+    internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_FeatureView_descriptor.getNestedTypes().get(6);
     internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_FeatureView_LabelsEntry_descriptor,
@@ -269,6 +289,7 @@ public final class FeatureViewProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.MachineResourcesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

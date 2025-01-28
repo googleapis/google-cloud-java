@@ -23,7 +23,6 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * [Developer Preview](https://developers.google.com/workspace/preview).
  * Single instance of a meeting held in a space.
  * </pre>
  *
@@ -76,7 +75,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Identifier. Resource name of the conference record.
    * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-   * is a unique id for each instance of a call within a space.
+   * is a unique ID for each instance of a call within a space.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -101,7 +100,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Identifier. Resource name of the conference record.
    * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-   * is a unique id for each instance of a call within a space.
+   * is a unique ID for each instance of a call within a space.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -127,7 +126,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when the conference started, always set.
+   * Output only. Timestamp when the conference started. Always set.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -143,7 +142,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when the conference started, always set.
+   * Output only. Timestamp when the conference started. Always set.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -159,7 +158,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when the conference started, always set.
+   * Output only. Timestamp when the conference started. Always set.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -228,9 +227,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Server enforced expire time for when this conference record
-   * resource is deleted. The resource is deleted 30 days after the conference
-   * ends.
+   * Output only. Server enforced expiration time for when this conference
+   * record resource is deleted. The resource is deleted 30 days after the
+   * conference ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -246,9 +245,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Server enforced expire time for when this conference record
-   * resource is deleted. The resource is deleted 30 days after the conference
-   * ends.
+   * Output only. Server enforced expiration time for when this conference
+   * record resource is deleted. The resource is deleted 30 days after the
+   * conference ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -264,9 +263,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Server enforced expire time for when this conference record
-   * resource is deleted. The resource is deleted 30 days after the conference
-   * ends.
+   * Output only. Server enforced expiration time for when this conference
+   * record resource is deleted. The resource is deleted 30 days after the
+   * conference ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -546,7 +545,6 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview).
    * Single instance of a meeting held in a space.
    * </pre>
    *
@@ -814,7 +812,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. Resource name of the conference record.
      * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-     * is a unique id for each instance of a call within a space.
+     * is a unique ID for each instance of a call within a space.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -838,7 +836,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. Resource name of the conference record.
      * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-     * is a unique id for each instance of a call within a space.
+     * is a unique ID for each instance of a call within a space.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -862,7 +860,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. Resource name of the conference record.
      * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-     * is a unique id for each instance of a call within a space.
+     * is a unique ID for each instance of a call within a space.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -885,7 +883,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. Resource name of the conference record.
      * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-     * is a unique id for each instance of a call within a space.
+     * is a unique ID for each instance of a call within a space.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -904,7 +902,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. Resource name of the conference record.
      * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-     * is a unique id for each instance of a call within a space.
+     * is a unique ID for each instance of a call within a space.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -933,7 +931,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -948,7 +946,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -967,7 +965,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -990,7 +988,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1010,7 +1008,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1038,7 +1036,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1058,7 +1056,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1073,7 +1071,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1090,7 +1088,7 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when the conference started, always set.
+     * Output only. Timestamp when the conference started. Always set.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1322,9 +1320,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>
@@ -1340,9 +1338,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>
@@ -1364,9 +1362,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>
@@ -1390,9 +1388,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>
@@ -1413,9 +1411,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>
@@ -1444,9 +1442,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>
@@ -1467,9 +1465,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>
@@ -1485,9 +1483,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>
@@ -1507,9 +1505,9 @@ public final class ConferenceRecord extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Server enforced expire time for when this conference record
-     * resource is deleted. The resource is deleted 30 days after the conference
-     * ends.
+     * Output only. Server enforced expiration time for when this conference
+     * record resource is deleted. The resource is deleted 30 days after the
+     * conference ends.
      * </pre>
      *
      * <code>

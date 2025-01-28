@@ -28,7 +28,7 @@ public interface RecordingOrBuilder
    *
    *
    * <pre>
-   * Output only. Recording is saved to Google Drive as an mp4 file. The
+   * Output only. Recording is saved to Google Drive as an MP4 file. The
    * `drive_destination` includes the Drive `fileId` that can be used to
    * download the file using the `files.get` method of the Drive API.
    * </pre>
@@ -44,7 +44,7 @@ public interface RecordingOrBuilder
    *
    *
    * <pre>
-   * Output only. Recording is saved to Google Drive as an mp4 file. The
+   * Output only. Recording is saved to Google Drive as an MP4 file. The
    * `drive_destination` includes the Drive `fileId` that can be used to
    * download the file using the `files.get` method of the Drive API.
    * </pre>
@@ -60,7 +60,7 @@ public interface RecordingOrBuilder
    *
    *
    * <pre>
-   * Output only. Recording is saved to Google Drive as an mp4 file. The
+   * Output only. Recording is saved to Google Drive as an MP4 file. The
    * `drive_destination` includes the Drive `fileId` that can be used to
    * download the file using the `files.get` method of the Drive API.
    * </pre>

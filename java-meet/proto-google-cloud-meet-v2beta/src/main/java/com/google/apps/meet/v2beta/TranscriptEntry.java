@@ -23,7 +23,6 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * [Developer Preview](https://developers.google.com/workspace/preview).
  * Single entry for one user’s speech during a transcript session.
  * </pre>
  *
@@ -129,7 +128,7 @@ public final class TranscriptEntry extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Refer to the participant who speaks.
+   * Output only. Refers to the participant who speaks.
    * </pre>
    *
    * <code>
@@ -154,7 +153,7 @@ public final class TranscriptEntry extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Refer to the participant who speaks.
+   * Output only. Refers to the participant who speaks.
    * </pre>
    *
    * <code>
@@ -598,7 +597,6 @@ public final class TranscriptEntry extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview).
    * Single entry for one user’s speech during a transcript session.
    * </pre>
    *
@@ -986,7 +984,7 @@ public final class TranscriptEntry extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Refer to the participant who speaks.
+     * Output only. Refers to the participant who speaks.
      * </pre>
      *
      * <code>
@@ -1010,7 +1008,7 @@ public final class TranscriptEntry extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Refer to the participant who speaks.
+     * Output only. Refers to the participant who speaks.
      * </pre>
      *
      * <code>
@@ -1034,7 +1032,7 @@ public final class TranscriptEntry extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Refer to the participant who speaks.
+     * Output only. Refers to the participant who speaks.
      * </pre>
      *
      * <code>
@@ -1057,7 +1055,7 @@ public final class TranscriptEntry extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Refer to the participant who speaks.
+     * Output only. Refers to the participant who speaks.
      * </pre>
      *
      * <code>
@@ -1076,7 +1074,7 @@ public final class TranscriptEntry extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Refer to the participant who speaks.
+     * Output only. Refers to the participant who speaks.
      * </pre>
      *
      * <code>

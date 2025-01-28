@@ -23,7 +23,7 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * Response for ListTranscriptEntries method
+ * Response for ListTranscriptEntries method.
  * </pre>
  *
  * Protobuf type {@code google.apps.meet.v2beta.ListTranscriptEntriesResponse}
@@ -365,7 +365,7 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Response for ListTranscriptEntries method
+   * Response for ListTranscriptEntries method.
    * </pre>
    *
    * Protobuf type {@code google.apps.meet.v2beta.ListTranscriptEntriesResponse}

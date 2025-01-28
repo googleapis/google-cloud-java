@@ -487,6 +487,50 @@ public interface FeatureViewOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the optimizedConfig field is set.
+   */
+  boolean hasOptimizedConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The optimizedConfig.
+   */
+  com.google.cloud.aiplatform.v1.FeatureView.OptimizedConfig getOptimizedConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.FeatureView.OptimizedConfigOrBuilder getOptimizedConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Service agent type used during data sync. By default, the Vertex
    * AI Service Agent is used. When using an IAM Policy to isolate this
    * FeatureView within a project, a separate service account should be

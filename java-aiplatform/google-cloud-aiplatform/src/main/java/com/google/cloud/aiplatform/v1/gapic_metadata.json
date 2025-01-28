@@ -1063,6 +1063,9 @@
             "ListModelEvaluations": {
               "methods": ["listModelEvaluations", "listModelEvaluations", "listModelEvaluations", "listModelEvaluationsPagedCallable", "listModelEvaluationsCallable"]
             },
+            "ListModelVersionCheckpoints": {
+              "methods": ["listModelVersionCheckpoints", "listModelVersionCheckpoints", "listModelVersionCheckpoints", "listModelVersionCheckpointsPagedCallable", "listModelVersionCheckpointsCallable"]
+            },
             "ListModelVersions": {
               "methods": ["listModelVersions", "listModelVersions", "listModelVersions", "listModelVersionsPagedCallable", "listModelVersionsCallable"]
             },
