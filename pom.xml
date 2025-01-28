@@ -150,6 +150,7 @@
     <module>java-os-config</module>
     <module>java-os-login</module>
     <module>java-parallelstore</module>
+    <module>java-parametermanager</module>
     <module>java-phishingprotection</module>
     <module>java-policy-troubleshooter</module>
     <module>java-policysimulator</module>
